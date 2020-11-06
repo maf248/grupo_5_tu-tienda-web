@@ -59,7 +59,7 @@ Reemplazar por una breve descripción de integrante!!
 
 ○ [Carrito de compras](https://wireframe.cc/FjKUBs)
 
-○ Formulario de registro
+○ [Formulario de registro](https://wireframe.cc/iI57vq)
 
 ○ Formulario de login
 
