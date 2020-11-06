@@ -21,6 +21,11 @@ Un listado de al menos 5 sitios de referencia indicando brevemente por qué fuer
 
 [- Wix](https://es.wix.com)
 
+[- Donweb](https://donweb.com/es-ar/)
+
+[- Juicy Minds](https://juicyminds.com.ar/)
+
+[- Webnode](https://www.webnode.es/#top)
 
 ## ● Información del grupo:
 ### Grupo #5 - Digital House, Full Stack Web Developer - 2020
