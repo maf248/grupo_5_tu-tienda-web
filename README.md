@@ -53,9 +53,9 @@ Reemplazar por una breve descripción de integrante!!
 
 ## ★ Wireframe de las siguientes páginas
 
-○ Home
+○ [Home](https://wireframe.cc/eTJ5Tl)
 
-○ Detalle de producto
+○ [Detalle de producto](https://wireframe.cc/dQMXjd)
 
 ○ Carrito de compras
 
