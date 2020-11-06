@@ -61,7 +61,7 @@ Reemplazar por una breve descripción de integrante!!
 
 ○ [Formulario de registro](https://wireframe.cc/iI57vq)
 
-○ Formulario de login
+○ [Formulario de login](https://wireframe.cc/1MSEsi)
 
 ### ★ Opcional: Identidad visual del sitio
 (logo, colores, tipografías, etc) [en este caso, es recomendado crear carpeta design]
