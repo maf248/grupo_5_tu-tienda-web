@@ -36,9 +36,9 @@ Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostra
 Reemplazar por una breve descripción de integrante!!
 
 #### Marcelo Fanego:
-Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final. 
+Tengo 29 años, soy técnico electrico, psicólgo y amante de la computación desde chico. Dentro de mis hobbies se destacan la música, la lectura, el parkour, la comedia, entre otros...
+Hoy en día estoy profundizando mis conocimientos en informatica y programación para, a futuro, poder aprovechar mi potencial en el mercado laboral.
 
-Reemplazar por una breve descripción de integrante!!
 
 #### Gonzalo Molina Ferrer:
 Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final. 
