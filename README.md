@@ -31,9 +31,8 @@ Un listado de al menos 5 sitios de referencia indicando brevemente por qué fuer
 ### Grupo #5 - Digital House, Full Stack Web Developer - 2020
 
 #### Tobias Blaksley:
-Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final. 
+Tengo 30 años, soy recaudador de fondos en una ONG y vendedor de seguros patrimoniales. Desde chico me gustó la informática y siempre me sentí atraído por ella pero soy nuevo en esto de la programación. Dentro de mis hobbies se encuentra el fútbol, juntarme con amigos. También me gusta mucho viajar, sobre todo a playas.
 
-Reemplazar por una breve descripción de integrante!!
 
 #### Marcelo Fanego:
 Tengo 29 años, soy técnico electrico, psicólgo y amante de la computación desde chico. Dentro de mis hobbies se destacan la música, la lectura, el parkour, la comedia, entre otros...
