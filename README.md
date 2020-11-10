@@ -40,9 +40,8 @@ Hoy en día estoy profundizando mis conocimientos en informatica y programación
 
 
 #### Gonzalo Molina Ferrer:
-Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final. 
-
-Reemplazar por una breve descripción de integrante!!
+Tengo 25 años, soy estudiante de contabilidad y trabajo de eso mismo. Estoy haciendo mis primeros pasos en el mundo de la programacion y me encantaria en un futuro poder aplicar mis conocimientos en algun proyecto laboral.
+Dentro de mis hobbies se destacan juntarme con amigos y viajar.
 
 #### Sergio Casas:
 Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final. 
