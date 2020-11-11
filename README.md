@@ -61,4 +61,13 @@ Tengo 29 años, estudiante de marketing. Me interesé últimamente por la progra
 ○ [Formulario de login](https://wireframe.cc/1MSEsi)
 
 ### ★ Opcional: Identidad visual del sitio
-(logo, colores, tipografías, etc) [en este caso, es recomendado crear carpeta design]
+
+Carpeta design creada. Incluye fuente, iconos, imagenes, logos.
+
+Referencias:
+
+○ [Fuente Kaushan Script](https://fonts.google.com/specimen/Kaushan+Script)
+
+○ [Iconos flat icon](https://www.flaticon.com/free-icon/shopping-cart_2611076)
+
+○ [Imagen diseño de referencia](https://buenosaireswebs.com/productos/tienda-online/)
