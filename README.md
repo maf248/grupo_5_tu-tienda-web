@@ -44,9 +44,8 @@ Tengo 25 años, soy estudiante de contabilidad y trabajo de eso mismo. Estoy hac
 Dentro de mis hobbies se destacan juntarme con amigos y viajar.
 
 #### Sergio Casas:
-Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de borradores de diseño para probar el diseño visual antes de insertar el texto final. 
+tengo 29 años, estudiante de marketing. me interesé últimamente por la programación y decidí  dar mis primeros pasos con el curso de DH. mi propósito es obtener los suficientes conocimientos para empezar a trabajar en este mundo de la programación. soy padre de Gabriella con quien me encanta pasar tiempo.
 
-Reemplazar por una breve descripción de integrante!!
 
 
 ## ★ Wireframe de las siguientes páginas
