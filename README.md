@@ -44,7 +44,7 @@ Tengo 25 años, soy estudiante de contabilidad y trabajo de eso mismo. Estoy hac
 Dentro de mis hobbies se destacan juntarme con amigos y viajar.
 
 #### Sergio Casas:
-tengo 29 años, estudiante de marketing. me interesé últimamente por la programación y decidí  dar mis primeros pasos con el curso de DH. mi propósito es obtener los suficientes conocimientos para empezar a trabajar en este mundo de la programación. soy padre de Gabriella con quien me encanta pasar tiempo.
+Tengo 29 años, estudiante de marketing. Me interesé últimamente por la programación y decidí  dar mis primeros pasos con el curso de DH. Mi propósito es obtener los suficientes conocimientos para empezar a trabajar en este mundo de la programación. Soy padre de Gabriella con quien me encanta pasar tiempo.
 
 
 
