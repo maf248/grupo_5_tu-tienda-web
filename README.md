@@ -60,5 +60,6 @@ Tengo 29 años, estudiante de marketing. Me interesé últimamente por la progra
 
 ○ [Formulario de login](https://wireframe.cc/1MSEsi)
 
-### ★ Opcional: Identidad visual del sitio
-(logo, colores, tipografías, etc) [en este caso, es recomendado crear carpeta design]
+### ★ Trello:
+
+○ [Tablero del proyecto integrador](https://trello.com/b/sT9rfvf7/proyecto-integrador)
