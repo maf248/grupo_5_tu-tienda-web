@@ -2,9 +2,10 @@
   "name": "grupo_5_tu-tienda-web",
   "version": "1.0.0",
   "description": "Tu Tienda Web es un sitio que te permite armar tu propia tienda online para vender productos físicos o digitales. También podes armar tu propia página web.",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./src/app.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/maf248/grupo_5_tu-tienda-web/issues"
   },
-  "homepage": "https://github.com/maf248/grupo_5_tu-tienda-web#readme"
+  "homepage": "https://github.com/maf248/grupo_5_tu-tienda-web#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
