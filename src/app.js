@@ -16,5 +16,7 @@ app.listen(3000, function () {
 });
 
 app.get('*', function(req, res) {
-    res.sendFile(__dirname + '/public/' + req.url)
+    path = require('path')
+    let reqPath = path.join(__dirname, '../public/')
+    res.sendFile(reqPath + req.url)
 });
