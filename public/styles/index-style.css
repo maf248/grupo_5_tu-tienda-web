@@ -1,6 +1,7 @@
 * {
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
 }
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -8,6 +9,9 @@ body {
 .principal {
     display: flex;
     flex-direction: column;
+    height: 500px;
+    background-color: blueviolet;
+    justify-content: space-between;
 }
 .barraSuperior {
     display: flex;
@@ -66,4 +70,28 @@ body {
     padding: 10px;
     background-color: royalblue;
 
+}
+
+
+
+
+/*footer*/
+.redes-sociales{
+    width: 25%;
+    display: block;
+}
+
+.redes-sociales img{
+    width: 25%;
+}
+footer{
+    background-color: blue;
+    justify-content: flex-end;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+.contacto{
+    background-color: white;
 }
