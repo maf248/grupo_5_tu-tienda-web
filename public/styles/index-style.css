@@ -17,6 +17,7 @@ body {
     display: flex;
     flex-direction: row;
     background-color:black;
+    border-radius: 0 0 20px 20px;
     height: 100px;
     align-items: center;
     justify-content: flex-start
@@ -76,22 +77,38 @@ body {
 
 
 /*footer*/
-.redes-sociales{
-    width: 25%;
+
+
+footer {
+    background-color: blue;
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+
+}
+.redes-sociales {
+    align-self: center;
     display: block;
 }
-
-.redes-sociales img{
-    width: 25%;
+.redes-sociales img {
+    justify-content: center;
+    padding: 20px;
+    width: 70px;
 }
-footer{
-    background-color: blue;
-    justify-content: flex-end;
+.contacto {
+    width: 100%;
+    background-color: white;
+    align-self: center;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    
+    justify-content: space-evenly;
 }
-.contacto{
-    background-color: white;
+.contacto a {
+    text-align: center;
+    line-height: 25px;
+    text-decoration: none;
+}
+.copyright {
+    font-size: 16px;
+    align-self: center;
 }
