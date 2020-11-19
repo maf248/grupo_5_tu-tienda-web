@@ -10,6 +10,12 @@ app.get('/registro', function (req, res) {
 app.get('/login', function (req, res) {
     res.sendFile(__dirname + '/views/login.html')
 });
+app.get('/carrito', function (req, res) {
+    res.sendFile(__dirname + '/views/carrito.html')
+});
+app.get('/producto', function (req, res) {
+    res.sendFile(__dirname + '/views/producto.html')
+});
 
 app.listen(3000, function () {
     console.log('Para ver el sitio ingresa a http://localhost:3000')
@@ -17,6 +23,6 @@ app.listen(3000, function () {
 
 app.get('*', function(req, res) {
     path = require('path')
-    let reqPath = path.join(__dirname, '../public/')
+    let reqPath = path.join(__dirname, '../')
     res.sendFile(reqPath + req.url)
 });
