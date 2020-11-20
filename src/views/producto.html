@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/public/styles/index-style.css">
+    <link rel="stylesheet" href="/public/styles/producto-style.css">
     <link href="/public/icons/logo-color.svg" rel="icon">
     <title>Tu Tienda Web</title>
 </head>
@@ -12,21 +13,81 @@
 <div class="barraSuperior">
     <img class="logo" src="/public/logo/logo2d.png">
     <nav class="navbar">
-        <ul class="navlist">
+        <!--<ul class="navlist">
             <li class="listlinks"><a href="#">Productos</a></li>
             <li class="listlinks"><a href="#">Sobre nosotros</a></li>
             <li class="listlinks"><a href="#">Contacto</a></li>
             <li class="listlinks"><a href="#">FAQ's</a></li>
-        </ul>      
+        </ul>-->      
     </nav>
     <div class="navExtra">
-        <a class="login" href="#">Iniciar Sesión</a>
-        <a href="/login.html"><img class="carrito" src="/public/icons/logo-color-borde.svg"></a>
+        <!--<a class="login" href="#">Iniciar Sesión</a>
+        <a href="/login.html"><img class="carrito" src="/public/icons/logo-color-borde.svg"></a>-->
     </div>
 </div>
 
+<section class="banner-versiones">
 
-<!--Acá iría el contenido-->
+
+    <img src="/public/images/responsive-design.jpg" alt="imagen de un monitor de pc con una foto adentro" class="imagen-escritorio">
+    <img src="/public/images/modelo.jpeg" alt="imagen de una pantalla de celular con una foto adentro" class="imagen-mobile">
+
+
+</section>
+<section class="banner-descuento">
+
+    <a href="http://localhost:3000/registro">
+        <img class="imagen-descuento" src="/public/images/descuento.png"    alt="imagen de descuento">
+        <p class="texto-descuento">Registrate antes del 31 de diciembre del 2020 y obtené un  25% de descuento</p>
+    </a>
+
+</section>
+<section class="productos">
+
+    <article class="productos-articulo">
+        <img class="productos-logo" src="/public/logo/logo3d.png" alt="imagen de una tienda">
+        <img class="medalla" src="/public/images/plan-oro.png" alt="imagen de una medalla de oro">
+        <h3 class="tituloSuscripcionOro">Suscripción oro</h3>
+        <ul>Incluye:
+            <li>Servicio de hosting</li>
+            <li>Atención personalizada de nuestro equipo de marketing y comercialización</li>
+            <li>Acceso a todas las plantillas y accesorios de disenio de páginas web</li>
+            <li>Carrito de compras</li>
+        </ul>
+        <span>Precio final por mes: $600</span>
+        <form action="http://localhost:3000/carrito" method="GET">
+            <button class="contratar">Contratar</button>
+        </form>
+    </article>
+    <article class="productos-articulo">
+        <img class="productos-logo" src="/public/logo/logo3d.png" alt="imagen de una tienda">
+        <img class="medalla" src="/public/images/plan-plata.png" alt="imagen de una medalla de plata">
+        <h3 class="tituloSuscripcionPlata">Suscripción plata</h3>
+        <ul>Incluye:
+            <li>Acceso a más de 100 plantillas y accesorios de disenio de páginas web</li>
+            <li>Atención personalizada de nuestro equipo de marketing y comercialización</li>
+            <li>Carrito de compras</li>
+        </ul>
+        <span>Precio final por mes: $300</span>
+        <form action="http://localhost:3000/carrito" method="GET">
+            <button class="contratar">Contratar</button>
+        </form>
+    </article>
+    <article class="productos-articulo">
+        <img class="productos-logo" src="/public/logo/logo3d.png" alt="imagen de una tienda">
+        <img class="medalla" src="/public/images/plan-bronce.png" alt="imagen de una medalla de bronce">
+        <h3 class="tituloSuscripcionBronce">Suscripción bronce</h3>
+        <ul>Incluye:
+            <li>Acceso a 50 plantillas y accesorios de disenio de páginas web</li>
+            <li>Carrito de compras</li>
+        </ul>
+        <span>Precio final por mes: $100</span>
+        <form action="http://localhost:3000/carrito" method="GET">
+            <button class="contratar">Contratar</button>
+        </form>
+    </article>
+
+</section>
 
 <footer>  
     <div class = "redes-sociales">
