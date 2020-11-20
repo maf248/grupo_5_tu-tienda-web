@@ -9,8 +9,7 @@ body {
 .principal {
     display: flex;
     flex-direction: column;
-    height: 500px;
-    background-color: blueviolet;
+    background-color: white;
     justify-content: space-between;
 }
 .barraSuperior {
