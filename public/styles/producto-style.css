@@ -55,14 +55,35 @@
     display: flex;
     text-align: justify;
 }
+.banner-descuento a:hover {
+    border: 3px solid green;
+}
 .imagen-descuento {
     width: 25%;
 }
 .texto-descuento {
     padding: 0% 5%;
     align-self: center;
+    font-family: 'Modak', cursive;
+    font-size: 48px;
+    color: green;
+    text-shadow: 2px 2px 3px black; 
 }
-
+@media (max-width: 768px) {
+    .texto-descuento {
+        font-size: 24px;
+    }
+}
+@media (max-width: 425px) {
+    .texto-descuento {
+        font-size: 18px;
+    }
+}
+@media (max-width: 425px) {
+    .texto-descuento {
+        font-size: 12px;
+    }
+}
 /*END BANNER DESCUENTO*/
 
 /*PRODUCTOS*/
