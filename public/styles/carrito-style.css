@@ -1,0 +1,37 @@
+.contenedor{
+    width: 80%;
+    height: 300px;
+    background-color: red;
+    margin: 20px;
+    justify-self: center;
+    align-self: center;
+    display: flex;
+}
+
+.contenedor-producto{
+    width: 60%;
+    height: 300px;
+    border: 3px solid blue;
+    flex-direction: row;
+     }
+.contenedor-precios{
+    width: 40%;
+    height: 300px;
+    border: 3px solid crimson;
+    
+}
+.pago{
+    width: 80%;
+    height: 100px;
+    background-color:green;
+
+    margin: 20px;
+    align-self: center;
+}
+.datos{
+    width: 80%;
+    height: 300px;
+    background-color:blueviolet;
+    margin: 30px;
+    align-self: center;
+}
