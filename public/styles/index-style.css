@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Arial, Helvetica, sans-serif
 }
 .principal {
     display: flex;
@@ -15,63 +15,73 @@ body {
 .barraSuperior {
     display: flex;
     flex-direction: row;
-    background-color:black;
+    border: 2px solid black;
     border-radius: 0 0 20px 20px;
     height: 100px;
     align-items: center;
     justify-content: flex-start
 }
-.logo {
+.barraSuperior a {
+    font-family: 'Kaushan Script', Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: black;
+}
+.barraSuperior-logo {
     box-sizing: border-box;
-    height: 100%;
+    height: 100px;
     padding: 5px;
     
 }
-.navbar {
+.barraSuperior-navbar {
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 100%;
-    width: 70%;
-    background-color: red;
+    width: 75%;
+    border: 1px solid red;
 }
-.navlist {
+.barraSuperior-navlist {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    
     list-style-type: none;
     text-decoration: none;
     padding: 10px;
 }
-.carrito {
+.barraSuperior-navExtra-carrito {
     margin-left: auto;
     margin-right: 2%;
-    height: 50px;
+    height: 40px;
+    border: 2px solid rgb(100, 197, 149);
 }
-.navExtra {
+.barraSuperior-navExtra {
     display: flex;
     flex-direction: row;
-    width: 20%;
+    width: 15%;
     justify-content: space-between
 }
-.carrito {
-    background-color: red;
-}
-.login {
+.barraSuperior-navExtra-login {
+    font-size: 16px;
     padding: 10px;
-    background-color: royalblue;
+    background-color: rgb(100, 197, 149);
+    border-radius: 20px;
     align-self: center;
-
     justify-self: flex-start;
 }
-.listlinks {
-    padding: 10px;
-    background-color: royalblue;
-
+.barraSuperior-navlist-links a {
+    text-decoration: none;
+    padding: 20px;
 }
+.barraSuperior-navlist-links:hover {
+    background-color: rgb(100, 197, 149);
+    border-radius: 20px;
+}
+    
 
+/* Acá termina la barra superior de navegacion */
+
+/* Banner */
 .banner {
     display: flex;
     flex-direction: row;
@@ -90,27 +100,65 @@ body {
     transform: scale(1.2);
 }
 
+/*Productos*/
+.productosContenedor {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    max-height: 400px;
 
-/*footer*/
+    border: 1px solid red;
+}
+.productosContenedor-producto-1 {
+
+    text-align: center;
+    margin: 20px;
+    width: 30%;
+    background-color: saddlebrown;
+    
+}
+.productosContenedor-producto-1 img {
+    
+
+    max-height: 150px;
+}
+.productosContenedor-producto-2 {
+    text-align: center;
+    margin: 20px;
+    width: 30%;
+
+    background-color: salmon;
+}
+.productosContenedor-producto-2 img {
+    justify-self: center;
+
+    max-height: 150px;
+}
+
+/*Quienes somos*/
 
 
-footer {
-    background-color: blue;
+/*Footer*/
+
+.piePagina {
+    background-color: rgb(100, 197, 149);
     display: flex;
     flex-direction: column;
     height: 150px;
 
 }
-.redes-sociales {
+.piePagina-redesSociales {
     align-self: center;
     display: block;
 }
-.redes-sociales img {
+.piePagina-redesSociales img {
     justify-content: center;
     padding: 20px;
     width: 70px;
 }
-.contacto {
+.piePagina-contacto {
     width: 100%;
     background-color: white;
     align-self: center;
@@ -118,12 +166,21 @@ footer {
     flex-direction: row;
     justify-content: space-evenly;
 }
-.contacto a {
+.piePagina-contacto a {
     text-align: center;
     line-height: 25px;
     text-decoration: none;
 }
-.copyright {
+.piePagina-copyright {
     font-size: 16px;
     align-self: center;
+}
+
+@media (max-width: 500px) {
+    .barraSuperior-navlist {
+        display: none;
+    }
+    .barraSuperior-navExtra-login {
+        display: none;
+    }
 }
