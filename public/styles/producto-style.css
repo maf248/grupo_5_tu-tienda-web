@@ -14,6 +14,7 @@
     display: flex;
     flex-direction: column;
     position: relative;
+    margin-top: 5%;
 }
 .imagen-escritorio {
     max-width: 80%;
@@ -35,7 +36,7 @@
 /*BANNER DE DESCUENTO*/
 
 .banner-descuento {
-    margin-top: 5%;
+    margin: 10% 0% 5% 0%;
     background-color: rgb(100, 197, 149);
 }
 .banner-descuento a {
@@ -83,6 +84,15 @@
     flex-direction: row;
     justify-content: space-around;
     margin: 10% 0;
+    position: relative;
+}
+.productos h2 {
+    font-family: 'Montserrat', sans-serif;
+    position: absolute;
+    bottom: 108%;
+    text-align: center;
+    text-decoration: underline;
+    text-transform: uppercase;
 }
 .contenedor-productos {
     width: 25%;
@@ -115,6 +125,7 @@
 }
 .productos-articulo h3 {
     text-align: center;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 300;
     margin-bottom: 10%;
     color: black;
@@ -130,6 +141,7 @@
 }
 .productos-articulo ul {
     list-style: none;
+    font-family: 'Montserrat', sans-serif;
     text-align: center;
     padding: 1%;
     margin-bottom: 10%;
@@ -138,15 +150,23 @@
     text-align: center;
     border-top: green solid 1px;
     margin: 1% 0;
+    font-family: 'Montserrat', sans-serif;
 }
 .productos-articulo span {
     color: white;
+    font-family: 'Montserrat', sans-serif;
     text-align: center;
     color: black;
 }
-@media (max-width: 500px) {
+@media (max-width: 425px) {
     .productos {
         flex-direction: column;
+    }
+    .productos h2 {
+        bottom: 100%;
+        font-size: large;
+        align-self: center;
+        width: 90%;
     }
     .contenedor-productos {
         width: 90%;
@@ -159,6 +179,17 @@
         flex-direction: column;
         margin: 0%;
         align-self: flex-end;
+    }
+}
+@media (max-width: 375px) {
+    .productos h2 {
+        font-size: medium;
+        align-self: center;
+    }
+}
+@media (max-width: 325px) {
+    .productos h2 {
+        bottom: 99.5%;
     }
 }
 /*END PRODUCTOS*/
