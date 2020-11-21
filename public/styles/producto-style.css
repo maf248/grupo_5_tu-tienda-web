@@ -93,7 +93,6 @@
     border: 3px solid black;
     padding: 5% 0;
     border-radius: 10px;
-    color: white;
 }
 .productos-articulo:hover {
     border: 5px solid black;
@@ -112,6 +111,7 @@
     text-align: center;
     font-weight: 300;
     margin-bottom: 1%;
+    color: black;
 }
 .tituloSuscripcionOro {
     background-color: gold;
@@ -130,22 +130,20 @@
 .productos-articulo ul li {
     text-align: center;
     border-top: green solid 1px;
+    margin: 1% 0;
 }
 .productos-articulo span {
     color: white;
     text-align: right;
     padding: 1%;
+    color: black;
 }
 .productos-articulo button {
     width: 100%;
     padding: 2% 0;
     border: none;
-    background-color: rgb(250, 239, 239);
-    margin: 3% 0%;
-    border: 1px solid black;
-}
-.productos-articulo button:hover {
-    border: 3px solid black;
+    background-color: rgb(100, 197, 149);
+    color: white;
 }
 
 @media (min-width: 500px) {
