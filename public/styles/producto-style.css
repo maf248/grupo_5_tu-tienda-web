@@ -37,7 +37,8 @@
 
 .banner-descuento {
     margin: 10% 0% 5% 0%;
-    background-color: rgb(100, 197, 149);
+    background-image: url("/public/images/fondo-banner-descuento-4.jpg");
+    background-size: 100%;
 }
 .banner-descuento a {
     text-decoration: none;
@@ -99,7 +100,7 @@
     display: flex;
 }
 .contratar {
-    background-color: rgb(100, 197, 149);
+    background-color: rgb(38, 146, 235);
     color: white;
     border: 3px solid black;
     border-radius: 10px;
