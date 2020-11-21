@@ -80,37 +80,41 @@
 
 .productos {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-around;
     margin: 10% 0;
 }
+.contenedor-productos {
+    width: 25%;
+    display: flex;
+}
+.contratar {
+    background-color: rgb(100, 197, 149);
+    color: white;
+    background-color: rgb(100, 197, 149);
+    border: 3px solid black;
+    border-radius: 10px;
+    align-self: flex-end;
+}
 .productos-articulo {
-    width: 80%;
     align-self: center;
     display: flex;
     flex-direction: column;
-    background-color: rgb(100, 197, 149);
-    margin-bottom: 10%;
-    border: 3px solid black;
-    padding: 5% 0;
-    border-radius: 10px;
-}
-.productos-articulo:hover {
-    border: 5px solid black;
 }
 .productos-logo {
     width: 50%;
     align-self: center;
-    margin-bottom: 5%;
+    margin-top: 10%;
 }
 .medalla {
     width: 15%;
     align-self: center;
-    margin-bottom: 5%;
+    margin-bottom: 3%;
 }
 .productos-articulo h3 {
     text-align: center;
     font-weight: 300;
-    margin-bottom: 1%;
+    margin-bottom: 10%;
     color: black;
 }
 .tituloSuscripcionOro {
@@ -126,6 +130,7 @@
     list-style: none;
     text-align: center;
     padding: 1%;
+    margin-bottom: 10%;
 }
 .productos-articulo ul li {
     text-align: center;
@@ -134,34 +139,24 @@
 }
 .productos-articulo span {
     color: white;
-    text-align: right;
-    padding: 1%;
+    text-align: center;
     color: black;
 }
-.productos-articulo button {
-    width: 100%;
-    padding: 2% 0;
-    border: none;
-    background-color: rgb(100, 197, 149);
-    color: white;
-}
-
-@media (min-width: 500px) {
+@media (max-width: 500px) {
     .productos {
+        flex-direction: column;
+    }
+    .contenedor-productos {
+        width: 90%;
         flex-direction: row;
         justify-content: space-around;
+        align-self: center;
         margin: 5% 0;
     }
     .productos-articulo {
-        width: 25%;
+        flex-direction: column;
         margin: 0%;
         align-self: flex-end;
-    }
-}
-@media (max-width: 1024px) {
-    .productos-articulo span {
-        text-align: center;
-        padding: 2%;
     }
 }
 /*END PRODUCTOS*/
