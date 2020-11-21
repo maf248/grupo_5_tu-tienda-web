@@ -91,10 +91,12 @@
 .contratar {
     background-color: rgb(100, 197, 149);
     color: white;
-    background-color: rgb(100, 197, 149);
     border: 3px solid black;
     border-radius: 10px;
     align-self: flex-end;
+}
+.contratar:hover {
+    border: 5px solid black;
 }
 .productos-articulo {
     align-self: center;
