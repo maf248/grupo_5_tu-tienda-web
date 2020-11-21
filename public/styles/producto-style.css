@@ -21,25 +21,14 @@
     
 }
 .imagen-mobile {
-    max-width: 30%;
+    max-width: 20%;
     z-index: 1;
     align-self: flex-end;
     position: absolute;
-    top: 98px;
-    right: 35px;
+    top: 38%;
+    right: 12%;
 }
-@media (min-width: 500px){
-    .imagen-mobile {
-        top: 65%;
-        right: 12%;
-    }
-}
-@media (max-width: 330px){
-    .imagen-mobile {
-        top: 65%;
-        right: 12%;
-    }
-}
+
 
 /*END BANNER RESPONSIVE DESIGN*/
 
