@@ -154,16 +154,38 @@
 }
 .contratar:hover {
     border: 5px solid black;
+    cursor: pointer;
 }
 .productos-articulo {
     align-self: center;
     display: flex;
     flex-direction: column;
 }
-.productos-logo {
+.productos-img {
     width: 50%;
     align-self: center;
     margin-top: 10%;
+}
+.productos-img:hover { 
+    cursor: pointer;
+    transform: scale(1.05);
+    animation-name: anime;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    -moz-animation-timing-function: ease-out;
+}
+@keyframes anime {
+25% {
+   transform: skew(10deg);
+}
+50% {
+    transform: skew(-10deg);
+}
+75% {
+    transform: skew(10deg);
+}
 }
 .medalla {
     width: 15%;
