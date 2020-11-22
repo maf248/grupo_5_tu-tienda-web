@@ -167,7 +167,6 @@
     margin-top: 10%;
 }
 .productos-img:hover { 
-    cursor: pointer;
     transform: scale(1.05);
     animation-name: anime;
     animation-duration: 0.5s;
