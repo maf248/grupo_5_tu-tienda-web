@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.form-registro {
+    height: 650px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-registro h1 {
+    text-align: center;
+    font-weight: 700;
+}
+.form{
+background: white;
+padding: 40px 0;
+box-shadow: 0 0 6 rgba(255, 255, 255, 0.8);
+border-radius: 10px;
+}
+.grupo {
+    position: relative;
+    margin: 45px;
+}
+.grupo input {
+    background: none;
+    color: green;
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid;
+}
+.grupo input:focus {
+    outline: none;
+    color: rgb(94, 93, 93);
+
+}
+.grupo label {
+    font-size: 16px;
+    position: absolute;
+    left: 5px;
+}
