@@ -31,7 +31,11 @@ body {
     box-sizing: border-box;
     height: 100px;
     padding: 5px;
-    
+}
+.barraSuperior-logo:hover {
+    transform: scale(1.1);
+    position: relative;
+    top: 5px;
 }
 .barraSuperior-navbar {
     display: flex;
@@ -39,6 +43,9 @@ body {
     justify-content: center;
     height: 100%;
     width: 70%;
+}
+.barraSuperior-navbar-desplegable {
+    display: none;
 }
 .barraSuperior-navlist {
     display: flex;
@@ -99,6 +106,7 @@ body {
     justify-content: center;
     width: 100%;
     max-height: 250px;
+    margin-top: 10px;
     
 }
 .banner img {
@@ -236,7 +244,7 @@ body {
     background-color: rgb(100, 197, 149);
     display: flex;
     flex-direction: column;
-    height: 150px;
+    height: 170px;
 
 }
 .piePagina-redesSociales {
@@ -259,7 +267,7 @@ body {
 }
 .piePagina-contacto a {
     text-align: center;
-    line-height: 25px;
+    line-height: 30px;
     text-decoration: none;
 }
 .piePagina-copyright {
@@ -282,16 +290,26 @@ body {
     .barraSuperior-navExtra-usuario {
         display: none;
     }
-    .barraSuperior-navExtra {
-        border-radius: 50%;
-        background-color: rgba(100, 197, 149, 0.6);
+    .barraSuperior-navbar-desplegable {
+        display: inline-block;
+        align-self: center;
+        padding: 10px 16px;
+        background-color: rgb(100, 197, 149);
+        border-radius: 50px;
         box-shadow: 0px 0px 20px 0px rgba(100, 197, 149, 0.7);
     }
-    .productosContenedor {
-        margin: 30px;
+    .barraSuperior-navExtra {
+        background-color: white;
+    }
+    .productosContenedor img {
+        max-width: 100%;
     }
     .productosContenedor-producto-1, .productosContenedor-producto-2 {
-        width: 60%;
+        width: 50%;
+        margin: 5px;
     }
     
+    .piePagina-contacto {
+        font-size: 10px;
+    }
 }
