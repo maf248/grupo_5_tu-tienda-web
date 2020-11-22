@@ -19,7 +19,8 @@ body {
     border-radius: 0 0 20px 20px;
     height: 100px;
     align-items: center;
-    justify-content: flex-start
+    align-content: flex-end;
+    justify-content: center;
 }
 .barraSuperior a {
     font-family: 'Kaushan Script', Arial, Helvetica, sans-serif;
@@ -37,8 +38,7 @@ body {
     flex-direction: column;
     justify-content: center;
     height: 100%;
-    width: 75%;
-    border: 1px solid red;
+    width: 70%;
 }
 .barraSuperior-navlist {
     display: flex;
@@ -47,34 +47,44 @@ body {
     align-items: center;
     list-style-type: none;
     text-decoration: none;
-    padding: 10px;
 }
 .barraSuperior-navExtra-carrito {
-    margin-left: auto;
-    margin-right: 2%;
     height: 40px;
-    border: 2px solid rgb(100, 197, 149);
+    box-sizing: content-box;
+    padding: 10px;
+}
+.barraSuperior-navExtra-carrito:hover {
+    transform: scale(1.1);
 }
 .barraSuperior-navExtra {
     display: flex;
     flex-direction: row;
-    width: 15%;
-    justify-content: space-between
-}
-.barraSuperior-navExtra-login {
-    font-size: 16px;
-    padding: 10px;
+    width: 20%;
+    align-items: center;
+    justify-content: space-around;
     background-color: rgb(100, 197, 149);
-    border-radius: 20px;
+    border-radius: 0px 0px 20px 0px;
+}
+.barraSuperior-navExtra-usuario {
+    display: flex;
+    flex-direction: column;
+}
+.barraSuperior-navExtra-usuario-login, .barraSuperior-navExtra-usuario-registro {
+    align-self: flex-start;
     align-self: center;
-    justify-self: flex-start;
+    padding: 5px;
+}
+.barraSuperior-navExtra-usuario-login:hover, .barraSuperior-navExtra-usuario-registro:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 5px 5px 50px 5px white;
+    border-radius: 20px;
 }
 .barraSuperior-navlist-links a {
     text-decoration: none;
-    padding: 20px;
 }
 .barraSuperior-navlist-links:hover {
-    background-color: rgb(100, 197, 149);
+    background-color: rgba(100, 197, 149, 0.7);
+    box-shadow: 5px 5px 20px 5px rgba(100, 197, 149, 0.7);
     border-radius: 20px;
 }
     
@@ -269,13 +279,19 @@ body {
     .barraSuperior-navlist {
         display: none;
     }
-    .barraSuperior-navExtra-login {
+    .barraSuperior-navExtra-usuario {
         display: none;
+    }
+    .barraSuperior-navExtra {
+        border-radius: 50%;
+        background-color: rgba(100, 197, 149, 0.6);
+        box-shadow: 0px 0px 20px 0px rgba(100, 197, 149, 0.7);
     }
     .productosContenedor {
         margin: 30px;
-        
     }
     .productosContenedor-producto-1, .productosContenedor-producto-2 {
         width: 60%;
+    }
+    
 }
