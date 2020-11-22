@@ -26,10 +26,33 @@
     z-index: 1;
     align-self: flex-end;
     position: absolute;
-    top: 38%;
+    top: 23%;
     right: 12%;
 }
-
+.banner-versiones strong h3 {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    color: rgb(38, 146, 235);
+    text-decoration: underline;
+}
+@media (max-width: 500px) {
+    .imagen-mobile {
+        top: 18%;
+    }
+    .banner-versiones strong h3 {
+        font-size: small;
+    }
+}
+@media (max-width: 400px) {
+    .imagen-mobile {
+        top: 14%;
+    }
+}
+@media (max-width: 325px) {
+    .banner-versiones strong h3 {
+        font-size: x-small;
+    }
+}
 
 /*END BANNER RESPONSIVE DESIGN*/
 
@@ -44,7 +67,7 @@
     text-decoration: none;
     color: black;
     display: flex;
-    text-align: justify;
+    text-align: left;
 }
 .banner-descuento a:hover {
     border: 3px solid black;
@@ -61,17 +84,22 @@
     color: white;
 
 }
+@media (min-width: 769px) and (max-width: 1054px) {
+    .texto-descuento {
+        font-size: 30px;
+    }
+}
 @media (max-width: 768px) {
     .texto-descuento {
         font-size: 24px;
     }
 }
-@media (max-width: 425px) {
+@media (min-width: 396px) and (max-width: 527px) {
     .texto-descuento {
         font-size: 18px;
     }
 }
-@media (max-width: 425px) {
+@media (max-width: 395px) {
     .texto-descuento {
         font-size: 12px;
     }
