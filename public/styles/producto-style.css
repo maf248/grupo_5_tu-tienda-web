@@ -26,7 +26,7 @@
     z-index: 1;
     align-self: flex-end;
     position: absolute;
-    top: 23%;
+    top: 21%;
     right: 12%;
 }
 .banner-versiones strong h3 {
@@ -45,6 +45,14 @@
     50% { opacity: 0.5; }
     100% { opacity: 1.0;}
   }
+@media (max-width: 768px) {
+    .imagen-mobile {
+        top: 16%;
+    }
+    .banner-versiones strong h3 {
+        font-size: small;
+    }
+}
 @media (max-width: 500px) {
     .imagen-mobile {
         top: 18%;
