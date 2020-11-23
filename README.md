@@ -35,7 +35,7 @@ Tengo 30 años, soy recaudador de fondos en una ONG y vendedor de seguros patrim
 
 
 #### Marcelo Fanego:
-Tengo 29 años, soy técnico electrico, psicólgo y amante de la computación desde chico. Dentro de mis hobbies se destacan la música, la lectura, el parkour, la comedia, entre otros...
+Tengo 29 años, soy técnico electrico, psicólogo y amante de la computación desde chico. Dentro de mis hobbies se destacan la música, la lectura, el parkour, la comedia, entre otros...
 Hoy en día estoy profundizando mis conocimientos en informatica y programación para, a futuro, poder aprovechar mi potencial en el mercado laboral.
 
 
