@@ -16,6 +16,26 @@
     position: relative;
     margin-top: 5%;
 }
+.spin-1 { 
+    animation-name: remolino;
+    animation-direction: linear;
+    animation-duration: 2s;
+}
+.spin-2 { 
+    animation-name: remolino2;
+    animation-direction: linear;
+    animation-duration: 2s;
+}
+@keyframes remolino {
+    0% {width: 40%;}
+    100% {width: 80%;
+        transform: rotate(360deg)}
+}
+@keyframes remolino2 {
+    0% {width: 10%;}
+    100% {width: 80%;
+        transform: rotate(360deg)}
+}
 .imagen-escritorio {
     max-width: 80%;
     align-self: center;
@@ -151,19 +171,42 @@
     border: 3px solid black;
     border-radius: 10px;
     align-self: flex-end;
+    box-shadow: 7px 13px 37px #000;
 }
 .contratar:hover {
     border: 5px solid black;
+    cursor: pointer;
+    box-shadow: 10px 16px 37px #000;
 }
 .productos-articulo {
     align-self: center;
     display: flex;
     flex-direction: column;
 }
-.productos-logo {
+.productos-img {
     width: 50%;
     align-self: center;
     margin-top: 10%;
+}
+.productos-img:hover { 
+    transform: scale(1.05);
+    animation-name: anime;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    -moz-animation-timing-function: ease-out;
+}
+@keyframes anime {
+25% {
+   transform: skew(10deg);
+}
+50% {
+    transform: skew(-10deg);
+}
+75% {
+    transform: skew(10deg);
+}
 }
 .medalla {
     width: 15%;

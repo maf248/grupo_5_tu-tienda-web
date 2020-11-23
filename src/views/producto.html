@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/public/styles/index-style.css">
 <link rel="stylesheet" href="/public/styles/producto-style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
@@ -18,16 +19,22 @@
         <img class="barraSuperior-logo" src="/public/logo/logo2d.png">
     </a>
     <nav class="barraSuperior-navbar">
+        <div class="barraSuperior-navbar-desplegable">
+            <a><i class="fa fa-bars"></i></a>
+        </div>
         <ul class="barraSuperior-navlist">
             <li class="barraSuperior-navlist-links"><a href="/producto">Productos</a></li>
-            <li class="barraSuperior-navlist-links"><a href="#nosotros">Sobre nosotros</a></li>
+            <li class="barraSuperior-navlist-links"><a href="/#nosotros">Sobre nosotros</a></li>
             <li class="barraSuperior-navlist-links"><a href="#contacto">Contacto</a></li>
             <li class="barraSuperior-navlist-links"><a href="#">FAQ's</a></li>
         </ul>      
     </nav>
     <div class="barraSuperior-navExtra">
-        <a class="barraSuperior-navExtra-login" href="/login">Iniciar Sesión</a>
-        <a href="/login"><img class="barraSuperior-navExtra-carrito" src="/public/icons/logo-color-borde.svg"></a>
+        <div class="barraSuperior-navExtra-usuario">
+            <a class="barraSuperior-navExtra-usuario-registro" href="/registro">Registrarse</a>
+            <a class="barraSuperior-navExtra-usuario-login" href="/login">Iniciar Sesión</a>
+        </div>
+        <a href="/carrito"><img class="barraSuperior-navExtra-carrito" src="/public/icons/logo-color-borde.svg"></a>
     </div>
 </div>
 
@@ -36,8 +43,8 @@
 <section class="banner-versiones">
 
 
-    <img src="/public/images/web-pc2.png" alt="imagen de un monitor de pc con una foto adentro" class="imagen-escritorio">
-    <img src="/public/images/web-mobile.png" alt="imagen de una pantalla de celular con una foto adentro" class="imagen-mobile">
+    <img src="/public/images/web-pc2.png" alt="imagen de un monitor de pc con una foto adentro" class="imagen-escritorio spin-1">
+    <img src="/public/images/web-mobile.png" alt="imagen de una pantalla de celular con una foto adentro" class="imagen-mobile spin-2">
     <strong><h3>Te dejamos todas las herramientas para que tu pantalla se vea correctamente en <br><em>todos tus dispositivos!</em><br>
     <i>(Incluido en todos los planes).</i></h3></strong>
 
@@ -56,13 +63,13 @@
     <form action="http://localhost:3000/carrito" method="GET" class="contenedor-productos">
         <button class="contratar">
             <article class="productos-articulo">      
-                <img class="productos-logo" src="/public/icons/web-color-borde.png" alt="imagen de una tienda"><br>
+                <img class="productos-img" src="/public/icons/web-color-borde.png" alt="imagen de una tienda"><br>
                 <img class="medalla" src="/public/images/plan-oro.png" alt="imagen de una medalla de oro">
                 <h3 class="tituloSuscripcionOro">Suscripción oro</h3>
                 <ul>Incluye:
                     <li>Servicio de hosting</li>
                     <li>Atención personalizada de nuestro equipo de marketing y comercialización</li>
-                    <li>Acceso a todas las plantillas y accesorios de disenio de páginas web</li>
+                    <li>Acceso a todas las plantillas y accesorios de diseño de páginas web</li>
                 </ul>
                 <span>Precio final por mes: $600</span><br>
                 <span class="span1">Clickeá en la imagen para contratar el servicio</span>
@@ -72,11 +79,11 @@
     <form action="http://localhost:3000/carrito" method="GET" class="contenedor-productos">
         <button class="contratar">
             <article class="productos-articulo">
-                <img class="productos-logo" src="/public/icons/web-color-borde.png" alt="imagen de una tienda"><br>
+                <img class="productos-img" src="/public/icons/web-color-borde.png" alt="imagen de una tienda"><br>
                 <img class="medalla" src="/public/images/plan-plata.png" alt="imagen de una medalla de plata">
                 <h3 class="tituloSuscripcionPlata">Suscripción plata</h3>
                 <ul>Incluye:
-                    <li>Acceso a más de 100 plantillas y accesorios de disenio de páginas web</li>
+                    <li>Acceso a más de 100 plantillas y accesorios de diseño de páginas web</li>
                     <li>Atención personalizada de nuestro equipo de marketing y comercialización</li>
                 </ul>
                 <span>Precio final por mes: $300</span><br>
@@ -87,11 +94,11 @@
     <form action="http://localhost:3000/carrito" method="GET" class="contenedor-productos">
         <button class="contratar">
             <article class="productos-articulo">
-                <img class="productos-logo" src="/public/icons/web-color-borde.png" alt="imagen de una tienda"><br>
+                <img class="productos-img" src="/public/icons/web-color-borde.png" alt="imagen de una tienda"><br>
                 <img class="medalla" src="/public/images/plan-bronce.png" alt="imagen de una medalla de bronce">
                 <h3 class="tituloSuscripcionBronce">Suscripción bronce</h3>
                 <ul>Incluye:
-                    <li>Acceso a 50 plantillas y accesorios de disenio de páginas web</li>
+                    <li>Acceso a 50 plantillas y accesorios de diseño de páginas web</li>
                 </ul>
                 <span>Precio final por mes: $100</span><br>
                 <span class="span1">Clickeá en la imagen para contratar el servicio</span>
@@ -111,11 +118,11 @@
     </div>
     <div class = "piePagina-contacto">
         <a href="mailto:tutienda@web.com">tutienda@web.com</a>
-        <a href="tel:+54 0800-888-4363">Llamanos a nuestro 0800!</a>
         <a target="_blank" href="https://www.google.com.ar/maps/place/Av.+Corrientes+1538,+C1042AAO+CABA/@-34.6043326,-58.3909866,17z/data=!3m1!4b1!4m5!3m4!1s0x95bccac6ac9bdc79:0x269f5e7751aefbea!8m2!3d-34.604332!4d-58.388797">Av. Corrientes 1538 - CABA, Argentina.</a>
+        <a href="tel:+54 0800-888-4363">Llamanos a nuestro 0800!</a>
     </div>
     <br>
-    <div class="piePagina-copyright"><p>Copyright © 2020 Tu Tienda Web S.R.L.</p></div>
+    <div class="piePagina-copyright"><p>Copyright © 2020 <em>Tu Tienda Web</em> S.R.L.</p></div>
     </a>
  </footer>
 </main>
