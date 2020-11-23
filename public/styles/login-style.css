@@ -9,13 +9,14 @@
     width: 400px;
     height: 400px;
     background: white;
-    margin: auto;
-    margin-top: 150px;
     box-shadow: 7px 13px 37px #000;
     padding: 20px 30px;
     border-top: 4px solid white;
     color: green;
-    margin-bottom: 150px;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    justify-self: center;
+    align-self: center;
 }
 .form-login h5 {
     margin: 0;
