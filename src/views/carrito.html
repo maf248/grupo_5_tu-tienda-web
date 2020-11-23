@@ -36,18 +36,80 @@
 
 <div class="contenedor">
     <div class="contenedor-producto">
-        
+        <h1>cracteristicas del producto</h1>
     </div>
 
-    <div class="contenedor-precios"></div>
-
+    <div class="contenedor-precios"> 
+        <h2>felicitaciones¡¡ mira los descuentos</h2>
+        
+    </div>
+        
 </div>
 
-<div class="pago"></div>
+<div class="pago">
+    <img src="/public/images/logo-tarjetas.jpg" alt="imagen de pagos" class="medios-de-pago"> 
+    <div class="pago-descripcion">
+        <h1>Formas y medios de pago</h1>
+      <form action="carrito.html" method="GET">
+        <p><label for="">Elige el medio de pago que prefieras</label></p>
+        <p><input type="radio" name="pago" value="d">Debito</p>
+        <p><input type="radio" name="pago" value="c">Credito</p>
+        <p><input type="radio" name="pago" value="p">Pago facil</p>
+        <p><input type="radio" name="pago" value="r">Rapi pado</p>
+        <p><input type="radio" name="pago" value="m">Mercado pago</p>
+    </form>
+    </div>
+
+    
+</div>
 
 
 <div class="datos">
-    <button>pagar</button>
+    <form action="carrito.html" method="GET">
+        <p><label for="pais"> pais</label></p> 
+        <p><input type="pais" id="pais" name="pais"></p>
+        <p><label for="ciudad"> ciudad</label></p>
+        <p><input type="ciudad" id="ciudad" name="ciudad"></p>
+        <p><label for="">seleccione tarjeta: </label></p>
+            <select name="tarjeta" id="">
+                <option value="vi">Visa</option>
+                <option value="mc">Master card</option>
+                <option value="am">American express</option>
+                <option value="ts">Tarjeta shopping</option>
+                <option value="ac">argencard</option>
+                <option value="ca">Cabal</option>
+                <option value="na">Nativa</option>
+                <option value="pn">Provincia net</option>
+                <option value="ba">Banelco</option>
+                <option value="li">Link</option>
+                <option value="na">Naranja</option>
+
+            </select>
+        
+        <p><label for="numero tarjeta">numero tarjeta </label></p>
+        <p><input type="numero tarjeta" id="numero tarjeta" name="numero tarjeta"></p>
+        <p><label for="cuotas">cuotas </label></p> 
+        <p><input type="cuotas" id="cuotas" name="cuotas"></p>
+        <p><label for="cupón de descuento">cupón de descuento </label></p> 
+        <p><input type="cupón de descuento" id="cupón de descuento" name="cupón de descuento"></p>
+        <p><label for="codigo de seguridad"> codigo de seguridad</label></p>
+        <p><input type="codigo de seguridad" id="codigo de seguridad" name="codigo de seguridad"></p>
+        <button>pagar</button>
+        
+</form>
+
+    <div class="datos-generar">
+        <img src="/public/images/pago-facil-logo.jpg" alt="imagen pago facil" class="imagen-pago-facil">
+        <img src="/public/images/logo-rapipago.png" alt="imagen mercado pago" class="imagen-rapi-pago">
+        <img src="/public/images/mercado-pago.jpg" alt="imagen mercado pago" class="imagen-mercado-pago">
+     <div class="datos-generar-links">
+        <input class="button-p" type="submit" name="" value="generar link">
+        <input class="button-r" type="submit" name="" value="generar link">
+        <input class="button-m" type="submit" name="" value="escanear QR">
+    </div>
+    </div>
+
+
 </div>
 
 

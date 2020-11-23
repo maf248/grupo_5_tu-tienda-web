@@ -1,37 +1,123 @@
 .contenedor{
-    width: 80%;
+    width: 98%;
     height: 300px;
     background-color: red;
     margin: 20px;
-    justify-self: center;
-    align-self: center;
     display: flex;
 }
 
 .contenedor-producto{
     width: 60%;
     height: 300px;
-    border: 3px solid blue;
+    border: 5px solid rgb(100, 197, 149);
     flex-direction: row;
+    background-color:palevioletred;
+    
      }
 .contenedor-precios{
     width: 40%;
     height: 300px;
-    border: 3px solid crimson;
-    
+    border: 5px solid gray;
+    background-color:royalblue;
+    text-decoration: silver;
+    text-align: center;
 }
 .pago{
-    width: 80%;
-    height: 100px;
-    background-color:green;
-
+    width: 98%;
+    height: 200px;
+    background-color: rgb(100, 197, 149);
     margin: 20px;
     align-self: center;
+    display: flex;
+    flex-direction: row;
+    padding: 4PX;
 }
+    .medios-de-pago{
+        height: 190px;
+        width: 700px;
+    }
+    .pago-descripcion{
+        width: 400PX;
+        height: 200PX;
+        position: absolute;
+        right: 32px;
+        
+    }
+    
+    
+
 .datos{
-    width: 80%;
-    height: 300px;
-    background-color:blueviolet;
+    width: 800px;
+    height: 400px;
+    background-color:gray;
     margin: 30px;
     align-self: center;
+    display: flex;
+    flex-direction: row;
 }
+    .datos-generar{
+        width: 650%;
+        height: 400px;
+        background-color: rgb(100, 197, 149) ;
+        flex-direction: column ;
+        position: relative;
+        left: 50px;
+       
+        
+
+    }
+    .imagen-pago-facil{
+        width: 300px;
+        height: 120px;
+        display: flex;
+        padding: 10px;
+        position: relative;
+        top: 15px;
+
+        }
+    .imagen-rapi-pago{
+        width: 300px;
+        height: 120px;
+        display: flex;
+        padding: 10px;
+        position: relative;
+        top: 15px;
+
+    }
+    .imagen-mercado-pago{
+        width: 300px;
+        height: 120px;
+        display: flex;
+        padding: 10px;
+        position: relative;
+        top: 15px;
+    }
+    .datos-generar-links{
+        width: 100px;
+        height: 600;
+        flex-direction: row;
+        position: relative;
+       left: 450px;
+       bottom: 20px;
+    
+    }
+    .button-p{
+       flex-direction: column;
+       position: relative;
+       bottom:290px ;
+       padding: 15px;
+    }
+    .button-r{
+        flex-direction: column;
+        position: relative;
+        bottom:220px ;
+        padding: 15px;
+        
+       
+    }
+    .button-m{
+        flex-direction: column;
+        position: relative;
+        bottom:140px ;
+        padding: 15px;
+    }
