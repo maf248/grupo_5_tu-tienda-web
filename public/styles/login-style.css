@@ -7,14 +7,15 @@
 .form-login{
     font-family: Arial;
     width: 400px;
-    height: 350px;
+    height: 400px;
     background: white;
     margin: auto;
-    margin-top: 180px;
+    margin-top: 150px;
     box-shadow: 7px 13px 37px #000;
     padding: 20px 30px;
     border-top: 4px solid white;
     color: green;
+    margin-bottom: 150px;
 }
 .form-login h5 {
     margin: 0;
@@ -53,4 +54,22 @@ border-bottom: 1px solid;
 }
 .form-login a:hover {
     text-decoration: underline;
+}
+
+.form-login-oauth-iconos {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.form-login-oauth-titulo { 
+    text-align: center;
+    color:greenyellow;
+    text-decoration: none;
+    font-size: 14px;
+    margin-top: 20px;
+}
+.form-login-oauth-iconos img {
+    margin: 10px;
+    width: 25px;
 }
