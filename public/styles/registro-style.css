@@ -42,4 +42,23 @@ border-radius: 10px;
     font-size: 16px;
     position: absolute;
     left: 5px;
+    top: 2px;
+    transition: 0.5s;
+}
+.grupo input:focus~label,
+.grupo input:valid~label {
+    top: -14px;
+    color: green;
+}
+button {
+    font-family:arial;
+    background: green;
+    border: none;
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    color: white;
+    height: 40px;
+    font-size: 16px;
+    cursor: pointer;
 }
