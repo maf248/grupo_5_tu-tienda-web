@@ -2,7 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 /*BANNER RESPONSIVE DESIGN*/
@@ -19,12 +19,12 @@
 .spin-1 { 
     animation-name: remolino;
     animation-direction: linear;
-    animation-duration: 2s;
+    animation-duration: 1s;
 }
 .spin-2 { 
     animation-name: remolino2;
     animation-direction: linear;
-    animation-duration: 2s;
+    animation-duration: 1s;
 }
 @keyframes remolino {
     0% {width: 40%;}
@@ -50,7 +50,7 @@
     right: 12%;
 }
 .banner-versiones strong h3 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Kaushan Script', Arial, Helvetica, sans-serif;
     text-align: center;
     color: rgb(38, 146, 235);
     text-decoration: underline;
@@ -154,11 +154,10 @@
     position: relative;
 }
 .productos h2 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Kaushan Script', Arial, Helvetica, sans-serif;
     position: absolute;
     bottom: 108%;
     text-align: center;
-    text-decoration: underline;
     text-transform: uppercase;
 }
 .contenedor-productos {
@@ -215,7 +214,7 @@
 }
 .productos-articulo h3 {
     text-align: center;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Kaushan Script', Arial, Helvetica, sans-serif;
     font-weight: 300;
     margin-bottom: 10%;
     color: black;
