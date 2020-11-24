@@ -8,6 +8,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 7px 13px 37px #000;
+    padding: 20px 30px;
+    border-top: 4px solid white;
+    color: green;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    align-self: center; 
 }
 .form-registro h1 {
     text-align: center;
