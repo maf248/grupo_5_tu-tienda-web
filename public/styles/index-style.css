@@ -101,7 +101,6 @@ body {
 .banner {
     display: flex;
     flex-direction: row;
-    background-color: white;
     justify-content: center;
     width: 100%;
     max-height: 250px;
@@ -124,21 +123,22 @@ body {
     flex-direction: row;
     justify-content: center;
     margin-top: 20px;
-    margin-bottom: 15px;
-    border: 1px solid red;
+    margin-bottom: 20px;
 }
 .productosContenedor-producto-1, .productosContenedor-producto-2 {
+    display: flex;
+    flex-direction: column;
     text-align: center;
     margin: 20px;
     width: 40%;
     padding: 20px;
-    border: 5px solid rgb(100, 197, 149);
+    border: 5px dotted rgb(40, 172, 106); 
     border-radius: 30px 0px 30px 0px;
     background-color: rgb(38, 146, 235);
     box-shadow: 7px 13px 37px #000;
 }
 .productosContenedor-producto-1:hover, .productosContenedor-producto-2:hover {
-    border: 5px dotted rgb(40, 172, 106);
+    border: 5px solid rgb(100, 197, 149);
 }
 .productosContenedor img {
     justify-self: center;
@@ -168,7 +168,7 @@ body {
 }
 .productosContenedor h2 {
     font-family: 'Kaushan Script', Arial, Helvetica, sans-serif;
-    margin: 20px;
+    margin: 20px 0px;
 }
 .productosContenedor a {
     text-decoration: none;
@@ -177,10 +177,13 @@ body {
 .productosContenedor-verMas {
     margin: 10px;
     font-size: 18px;
+
     background-color: rgb(38, 146, 235);
     border: none;
     cursor: pointer;
-    
+    align-self: flex-end;
+    position: relative;
+    top: 10px;
 
 }
 .productosContenedor em {
@@ -193,7 +196,7 @@ body {
 
 /*Quienes somos*/
 .nosotrosContenedor {
-    background: linear-gradient(90deg, rgba(100,197,121,0.7) 5%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(90deg, rgba(100,197,121,0.4) 10%, rgba(255,255,255,1) 100%);
     border: 5px solid rgb(100, 197, 149);
     border-radius: 20px;
     display: flex;
@@ -201,7 +204,7 @@ body {
     width: 100%;
     box-sizing: border-box;
     padding: 50px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 .nosotrosContenedor h2 {
     font-family: 'Kaushan Script', Arial, Helvetica, sans-serif;
@@ -309,12 +312,17 @@ body {
     .barraSuperior-navExtra {
         background-color: white;
     }
+    .productosContenedor {
+        flex-direction: column;
+
+    }
     .productosContenedor img {
         max-width: 100%;
     }
     .productosContenedor-producto-1, .productosContenedor-producto-2 {
-        width: 50%;
-        margin: 5px;
+        width: 80%;
+        margin: 20px 0px;
+        align-self: center;
     }
     .nosotrosContenedor button {
         width: 35%;
