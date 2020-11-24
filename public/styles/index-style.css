@@ -126,8 +126,6 @@ body {
     margin-bottom: 20px;
 }
 .productosContenedor-producto-1, .productosContenedor-producto-2 {
-    display: flex;
-    flex-direction: column;
     text-align: center;
     margin: 20px;
     width: 40%;
@@ -136,6 +134,10 @@ body {
     border-radius: 30px 0px 30px 0px;
     background-color: rgb(38, 146, 235);
     box-shadow: 7px 13px 37px #000;
+}
+.productosContenedor-producto-1 form, .productosContenedor-producto-2 form {
+    display: flex;
+    flex-direction: column;
 }
 .productosContenedor-producto-1:hover, .productosContenedor-producto-2:hover {
     border: 5px solid rgb(100, 197, 149);
@@ -214,11 +216,14 @@ body {
 }
 .nosotrosContenedor h3 {
     margin-bottom: 10px;
+    text-decoration: underline;
 }
 .nosotrosContenedor-mision-vision {
-    margin: 10px;
     line-height: 25px;
     text-align: center;
+}
+.nosotrosContenedor-mision-vision p {
+    margin: 20px;
 }
 .nosotrosContenedor-historia {
     margin: 10px;
@@ -228,6 +233,10 @@ body {
 }
 .nosotrosContenedor-descripcion {
     margin: 10px;
+}
+.nosotrosContenedor form {
+    display: flex;
+    flex-direction: column;
 }
 .nosotrosContenedor button {
     width: 25%;
