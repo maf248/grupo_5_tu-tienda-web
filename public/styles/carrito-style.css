@@ -11,14 +11,23 @@
     height: 300px;
     border: 5px solid rgb(100, 197, 149);
     flex-direction: row;
-    background-color:palevioletred;
+    background-color:rgb(38, 146, 235);
+    display: flex;
     
+     }
+     .contenedor-producto-elegido{
+         width: 400px; 
+         height: 200px;
+         background-color: rgb(100, 197, 149) ;
+         position: relative;
+         height: 100px;
+         top: 90px;
      }
 .contenedor-precios{
     width: 40%;
     height: 300px;
     border: 5px solid gray;
-    background-color:royalblue;
+    background-color:rgb(38, 146, 235);
     text-decoration: silver;
     text-align: center;
 }

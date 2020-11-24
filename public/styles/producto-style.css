@@ -60,7 +60,7 @@
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 }
-  @keyframes parpadeo {  
+@keyframes parpadeo {  
     0% { opacity: 1.0;}
     50% { opacity: 0.5; }
     100% { opacity: 1.0;}

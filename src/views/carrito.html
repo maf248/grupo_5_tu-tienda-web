@@ -43,10 +43,20 @@
 
 <div class="contenedor">
     <div class="contenedor-producto">
-        <h1>cracteristicas del producto</h1>
+        <h1>tu producto</h1>
+        <div class="contenedor-producto-elegido">
+            <h2 class="elegido-titulo"> lo sentimos! no has elegido ningun prpducto</h2>
+        </div>
     </div>
 
     <div class="contenedor-precios"> 
+     
+    <h1 class="precios-titulo">detalles del precio</h1>
+    <h3 class="titulo-suscripcion"> suscripcion</h3>
+    <h3 class="titulo-precio">precio</h3>
+    <h3 class="titulo-descuento">descuento</h3>
+    <h3 class="titulo-total">total</h3>
+
         
         
     </div>
@@ -54,12 +64,13 @@
 </div>
 
 <div class="pago">
-    <img src="/public/images/logo-tarjetas.jpg" alt="imagen de pagos" class="medios-de-pago"> 
-    </div>
+    <img src="/public/images/logo-tarjetas.png" alt="imagen de pagos" class="medios-de-pago"> 
+</div>
+
 
 
 <div class="datos">
-    <div class="pago-descripcion">
+<div class="pago-descripcion">
         <h1>Formas y medios de pago</h1>
       <form action="carrito.html" method="GET">
         <p><label for="">Elige el medio de pago que prefieras</label></p>
@@ -68,6 +79,7 @@
         <p><input type="radio" name="pago" value="p">Pago facil</p>
         <p><input type="radio" name="pago" value="r">Rapi pado</p>
         <p><input type="radio" name="pago" value="m">Mercado pago</p>
+
     </form>
     </div>
 
@@ -100,12 +112,19 @@
         
         <p><label for="numero tarjeta">numero tarjeta </label></p>
         <p><input type="numero tarjeta" id="numero tarjeta" name="numero tarjeta"></p>
-        <p><label for="cuotas">cuotas </label></p> 
-        <p><input type="cuotas" id="cuotas" name="cuotas"></p>
-        <p><label for="cupón de descuento">cupón de descuento </label></p> 
-        <p><input type="cupón de descuento" id="cupón de descuento" name="cupón de descuento"></p>
         <p><label for="codigo de seguridad"> codigo de seguridad</label></p>
         <p><input type="codigo de seguridad" id="codigo de seguridad" name="codigo de seguridad"></p>
+        <p><label for="cuotas"> cantidad de cuotas: </label></p> 
+        <select name="cuotas" id="">
+        <option value="">1</option>
+        <option value="">3</option>
+        <option value="">6</option>
+        <option value="">9</option>
+        <option value="">12</option>
+    </select>
+        <p><label for="cupón de descuento">cupón de descuento </label></p> 
+        <p><input type="cupón de descuento" id="cupón de descuento" name="cupón de descuento"></p>
+        
         <button>pagar</button> 
     </form>
 </div>
