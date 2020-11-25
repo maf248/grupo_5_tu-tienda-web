@@ -139,16 +139,22 @@ body {
     display: flex;
     flex-direction: column;
 }
+.productosContenedor-producto-1-planes img, .productosContenedor-producto-2-planes img {
+    max-height: 35px;
+    margin-bottom: 10px;
+}
 .productosContenedor-producto-1:hover, .productosContenedor-producto-2:hover {
     border: 5px solid rgb(100, 197, 149);
 }
-.productosContenedor img {
+.productosContenedor-producto-1-imagen img, .productosContenedor-producto-2-imagen img {
     justify-self: center;
     max-height: 150px;
     
 }
-.productosContenedor img:hover {
+.productosContenedor-producto-1-imagen img:hover, .productosContenedor-producto-2-imagen img:hover {
     cursor: pointer;
+}
+.productosContenedor img:hover {
     transform: scale(1.05);
     animation-name: anime;
     animation-duration: 0.5s;
@@ -175,6 +181,10 @@ body {
 .productosContenedor a {
     text-decoration: none;
     color: black;
+}
+.productosContenedor-producto-1-descripcion p, .productosContenedor-producto-2-descripcion p {
+    margin-bottom: 15px;
+    text-align: center;
 }
 .productosContenedor-verMas {
     margin: 10px;
