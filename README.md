@@ -56,7 +56,7 @@ Tengo 29 años, estudiante de marketing. Me interesé últimamente por la progra
 
 ○ [Detalle de producto Desktop](https://wireframe.cc/dQMXjd)
 
-○ [Detalle de producto Moile] https://wireframe.cc/8WRkUI
+○ [Detalle de producto Mobile](https://wireframe.cc/8WRkUI)
 
 ○ [Carrito de compras](https://wireframe.cc/FjKUBs)
 
