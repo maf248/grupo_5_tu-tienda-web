@@ -50,15 +50,17 @@ Tengo 29 años, estudiante de marketing. Me interesé últimamente por la progra
 
 ## ★ Wireframe de las siguientes páginas
 
-○ [Home Desktop](https://wireframe.cc/eTJ5Tl)
+○ [Home - Desktop](https://wireframe.cc/eTJ5Tl)
 
-○ [Home Mobile](https://wireframe.cc/rsghUU)
+○ [Home - Mobile](https://wireframe.cc/rsghUU)
 
-○ [Detalle de producto Desktop](https://wireframe.cc/dQMXjd)
+○ [Detalle de producto - Desktop](https://wireframe.cc/dQMXjd)
 
-○ [Detalle de producto Mobile](https://wireframe.cc/8WRkUI)
+○ [Detalle de producto - Mobile](https://wireframe.cc/8WRkUI)
 
-○ [Carrito de compras](https://wireframe.cc/FjKUBs)
+○ [Carrito de compras - Desktop](https://wireframe.cc/FjKUBs)
+
+○ [Carrito de compras - Mobile](https://wireframe.cc/FCzBP6)
 
 ○ [Formulario de registro](https://wireframe.cc/iI57vq)
 
