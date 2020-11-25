@@ -7,6 +7,7 @@
     flex-direction: row;
     align-self: center;
     border-radius: 20px;
+    box-shadow: 7px 13px 37px #000;
 
 }
 
@@ -95,6 +96,9 @@
     align-self: center;
     display: flex;
     flex-direction: row;
+    box-shadow: 7px 13px 37px rgb(100, 197, 149);;
+    border-radius: 20px;
+    border: 5px solid rgb(38, 146, 235);
     
 }
 .pago-descripcion{
@@ -120,15 +124,18 @@
     justify-items: center;
     align-items: center;
 
+}
 
-
-    
-    
+input:hover{
+    background-color: rgb(38, 146, 235);
+}
+input:focus{
+background-color: rgb(100, 197, 149);
 }
 
 .datos-tarjeta button{
     padding: 10px;
-    background-color: rgb(100, 197, 149);
+    background-color:  rgb(38, 146, 235);
     border: 1px solid rgb(100, 197, 149);
     font-family: 'Kaushan Script', Arial, Helvetica, sans-serif;
     font-size: 18px;
