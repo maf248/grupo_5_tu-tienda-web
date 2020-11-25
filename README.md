@@ -50,7 +50,9 @@ Tengo 29 años, estudiante de marketing. Me interesé últimamente por la progra
 
 ## ★ Wireframe de las siguientes páginas
 
-○ [Home](https://wireframe.cc/eTJ5Tl)
+○ [Home Desktop](https://wireframe.cc/eTJ5Tl)
+
+○ [Home Mobile](https://wireframe.cc/rsghUU)
 
 ○ [Detalle de producto](https://wireframe.cc/dQMXjd)
 
