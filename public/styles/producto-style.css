@@ -16,6 +16,21 @@
     position: relative;
     margin-top: 5%;
 }
+.banner-versiones-contenedorImagenResponsive {
+    position: relative;
+}
+.imagen-escritorio {
+    max-width: 100%;
+    align-self: center;   
+}
+.imagen-mobile {
+    max-width: 20%;
+    z-index: 1;
+    align-self: flex-end;
+    position: absolute;
+    right: 0%;
+    bottom: 0%;
+}
 .spin-1 { 
     animation-name: remolino;
     animation-direction: linear;
@@ -36,19 +51,6 @@
     100% {width: 80%;
         transform: rotate(360deg)}
 }
-.imagen-escritorio {
-    max-width: 80%;
-    align-self: center;
-    
-}
-.imagen-mobile {
-    max-width: 20%;
-    z-index: 1;
-    align-self: flex-end;
-    position: absolute;
-    top: 21%;
-    right: 12%;
-}
 .banner-versiones strong h3 {
     font-family: 'Kaushan Script', Arial, Helvetica, sans-serif;
     text-align: center;
@@ -66,24 +68,13 @@
     100% { opacity: 1.0;}
   }
 @media (max-width: 768px) {
-    .imagen-mobile {
-        top: 16%;
-    }
     .banner-versiones strong h3 {
         font-size: small;
     }
 }
 @media (max-width: 500px) {
-    .imagen-mobile {
-        top: 18%;
-    }
     .banner-versiones strong h3 {
         font-size: small;
-    }
-}
-@media (max-width: 400px) {
-    .imagen-mobile {
-        top: 14%;
     }
 }
 @media (max-width: 325px) {
@@ -91,7 +82,6 @@
         font-size: x-small;
     }
 }
-
 /*END BANNER RESPONSIVE DESIGN*/
 
 /*BANNER DE DESCUENTO*/
