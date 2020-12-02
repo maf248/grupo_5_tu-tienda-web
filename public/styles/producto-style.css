@@ -263,6 +263,9 @@
     font-style: italic;
 }
 @media (min-width: 570px) {
+    .presenciaOnline-articlePrincipal {
+        width: 100%;
+    }
     .presenciaOnline-articlePrincipal h2 {
         font-size: 2.5em;
     }
