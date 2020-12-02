@@ -301,6 +301,10 @@
     flex-direction: column;
     position: relative;
     margin: 20% auto;
+    transition: 1s;
+}
+.banner-versiones:hover {
+    transform: rotate(360deg);
 }
 .banner-versiones-contenedorImagenResponsive {
     position: relative;
@@ -316,26 +320,6 @@
     position: absolute;
     right: 0%;
     bottom: 0%;
-}
-.spin-1 { 
-    animation-name: remolino;
-    animation-direction: linear;
-    animation-duration: 1s;
-}
-.spin-2 { 
-    animation-name: remolino2;
-    animation-direction: linear;
-    animation-duration: 1s;
-}
-@keyframes remolino {
-    0% {width: 40%;}
-    100% {width: 80%;
-        transform: rotate(360deg)}
-}
-@keyframes remolino2 {
-    0% {width: 10%;}
-    100% {width: 80%;
-        transform: rotate(360deg)}
 }
 .banner-versiones strong h3 {
     font-family: 'Kaushan Script', Arial, Helvetica, sans-serif;
