@@ -4,6 +4,9 @@
     padding: 0;
     font-family: 'Montserrat', sans-serif;
 }
+body {
+    z-index: -2;
+}
 
 /*BANNER EMPEZÁ*/
 
@@ -301,13 +304,13 @@
     flex-direction: column;
     position: relative;
     margin: 20% auto;
-    transition: 1s;
-}
-.banner-versiones:hover {
-    transform: rotate(360deg);
 }
 .banner-versiones-contenedorImagenResponsive {
     position: relative;
+    transition: 1s;
+}
+.banner-versiones-contenedorImagenResponsive:hover {
+    transform: rotate(360deg);
 }
 .imagen-escritorio {
     max-width: 100%;
