@@ -511,7 +511,6 @@ body {
 @media (min-width: 650px) {
     .productos {
         flex-direction: row;
-        flex-wrap: wrap;
     }
     .productos-img {
         justify-content: center;
