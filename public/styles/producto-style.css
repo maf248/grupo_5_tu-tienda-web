@@ -21,7 +21,6 @@ body {
     flex-direction: column;
     margin: 10% auto;
     width: 85%;
-    background-color: rgb(38, 146, 235);
     z-index: 1;
     box-shadow: 10px 10px 37px #000;
 }
@@ -37,18 +36,18 @@ body {
 
 .bannerEmpezá-article form{
     margin: 5% auto;
-    width: 100%;
+    background-color: none;
+    margin: 5% auto;
 }
 
 .bannerEmpezá-article button {
     cursor: pointer;
-    background-color: rgb(38, 146, 235);
+    background: none;
     color: white;
     text-transform: uppercase;
     text-decoration: underline;
     text-shadow: 10px 10px 15px #000;
     border: none;
-    width: 100%;
 }
 
 .bannerEmpezá-article button:hover {
@@ -91,7 +90,8 @@ body {
 /*DISEÑO FONDO BLANCO*/
 
 .disenoBlanco {
-    margin: 5% auto;
+    margin: auto;
+    padding: 2%;
 }
 .disenoBlanco-titulo {
     font-family: 'Kaushan Script', Arial, Helvetica, sans-serif;
@@ -135,9 +135,6 @@ body {
     .disenoBlanco-parrafo {
         width: 50%;
     }
-    .disenoBlanco-form {
-        margin: 0% 0% 2% 0%;
-    }
     .disenoBlanco-form button {
         background-color: white;
         color: black;
@@ -150,6 +147,7 @@ body {
 
 .disenoAzul {
     background-color: rgb(38, 146, 235);
+    padding: 2%;
 }
 .disenoAzul-titulo {
     font-family: 'Kaushan Script', Arial, Helvetica, sans-serif;
@@ -198,9 +196,6 @@ body {
         width: 50%;
         padding: 2%;
     }
-    .disenoAzul-form {
-        margin: 0% 0% 2% 0%;
-    }
     .disenoAzul-form button {
         color: white;
     }
@@ -216,11 +211,12 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding: 2%;
 }
 .presenciaOnline-articlePrincipal {
     width: 90%;
     border-bottom: 1px solid white;
-    padding: 10% 0%;
+    padding-bottom: 2%;
 }
 .presenciaOnline-articlePrincipal h2 {
     color: white;
@@ -298,13 +294,14 @@ body {
 /*BANNER RESPONSIVE DESIGN*/
 
 .banner-versiones {
-    background-color: white;
-    width: 80%;
+    background-color: rgb(100, 197, 149);
+    width: 100%;
     align-self: center;
     display: flex;
     flex-direction: column;
     position: relative;
-    margin: 20% auto;
+    margin: auto;
+    padding: 2%;
 }
 .banner-versiones-contenedorImagenResponsive {
     position: relative;
@@ -329,7 +326,7 @@ body {
     font-family: 'Kaushan Script', Arial, Helvetica, sans-serif;
     font-size: 1em;
     text-align: center;
-    color: rgb(38, 146, 235);
+    color: white;
     margin-top: 3%;
     text-decoration: underline;
     text-transform: uppercase;
@@ -345,16 +342,19 @@ body {
   }
   @media (min-width: 1179px) {
       .banner-versiones {
-          margin: 5% auto;
-          width: 65%;
+          margin: auto;
+          width: 100%;
       }
+      .banner-versiones-contenedorImagenResponsive {
+        width: 65%;
+        margin: auto;
+    }
   }
 /*END BANNER RESPONSIVE DESIGN*/
 
 /*BANNER DE DESCUENTO*/
 
 .banner-descuento {
-    margin: 10% 0% 0% 0%;
     background-image: url("/public/images/fondo-banner-descuento-4.jpg");
     background-size: 100%;
 }
@@ -400,12 +400,13 @@ body {
 /*PRODUCTOS*/
 
 .productos {
+    background-color: rgb(100, 197, 149);
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-around;
-    margin: 10% 0;
     position: relative;
+    padding-top: 2%;
 }
 .productos h2 {
     font-family: 'Kaushan Script', Arial, Helvetica, sans-serif;
@@ -491,7 +492,6 @@ body {
 }
 .productos-articulo ul {
     list-style: none;
-    font-family: 'Montserrat', sans-serif;
     text-align: center;
     padding: 1%;
     margin-bottom: 10%;
@@ -500,13 +500,20 @@ body {
     text-align: center;
     border-top: green solid 1px;
     margin: 1% 0;
-    font-family: 'Montserrat', sans-serif;
 }
 .productos-articulo span {
     color: white;
-    font-family: 'Montserrat', sans-serif;
     text-align: center;
     color: black;
+    padding: 2%;
+}
+@media (min-width: 767px) {
+    .contenedor-productos {
+        width: 50%;
+    }
+    .productos-articulo {
+        height: max-content;
+    }
 }
 @media (min-width: 650px) {
     .productos {
@@ -522,7 +529,6 @@ body {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-        height: 80vh;
     }
 }
 /*END PRODUCTOS*/
