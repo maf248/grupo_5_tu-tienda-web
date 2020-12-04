@@ -17,14 +17,13 @@ body {
     flex-direction: row;
     border: 2px solid black;
     border-radius: 0 0 20px 20px;
-    height: 100px;
     align-items: center;
     align-content: flex-end;
     justify-content: center;
 }
 .barraSuperior a {
     font-family: 'Kaushan Script', Arial, Helvetica, sans-serif;
-    font-size: 20px;
+    font-size: 1.2em;
     color: black;
 }
 .barraSuperior-logo {
@@ -35,7 +34,7 @@ body {
 .barraSuperior-logo:hover {
     transform: scale(1.1);
     position: relative;
-    top: 5px;
+    top: 0.3em;
 }
 .barraSuperior-navbar {
     display: flex;
@@ -61,7 +60,7 @@ body {
     padding: 10px;
 }
 .barraSuperior-navExtra-carrito:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
 .barraSuperior-navExtra {
     display: flex;
@@ -176,6 +175,7 @@ body {
 }
 .productosContenedor h2 {
     font-family: 'Kaushan Script', Arial, Helvetica, sans-serif;
+    font-size: 1.6em;
     margin: 20px 0px;
 }
 .productosContenedor a {
@@ -188,8 +188,7 @@ body {
 }
 .productosContenedor-verMas {
     margin: 10px;
-    font-size: 18px;
-
+    font-size: 1.3em;
     background-color: rgb(38, 146, 235);
     border: none;
     cursor: pointer;
@@ -220,7 +219,7 @@ body {
 }
 .nosotrosContenedor h2 {
     font-family: 'Kaushan Script', Arial, Helvetica, sans-serif;
-    font-size: 30px;
+    font-size: 2em;
     align-self: center;
     margin-bottom: 15px;
 }
@@ -229,7 +228,7 @@ body {
     text-decoration: underline;
 }
 .nosotrosContenedor-mision-vision {
-    line-height: 25px;
+    line-height: 2em;
     text-align: center;
 }
 .nosotrosContenedor-mision-vision p {
@@ -254,13 +253,13 @@ body {
     background-color: rgb(100, 197, 149);
     border: 1px solid rgb(100, 197, 149);
     font-family: 'Kaushan Script', Arial, Helvetica, sans-serif;
-    font-size: 18px;
+    font-size: 1.2em;
     font-weight: bold;
     border-radius: 20px;
     align-self: flex-end;
     position: relative;
-    top: 30px;
-    left: 30px;
+    top: 1.8em;
+    left: 1.8em;
 
 }
 .nosotrosContenedor button:hover {
@@ -274,7 +273,6 @@ body {
     background-color: rgb(100, 197, 149);
     display: flex;
     flex-direction: column;
-    height: 170px;
 
 }
 .piePagina-redesSociales {
@@ -297,18 +295,19 @@ body {
 }
 .piePagina-contacto a {
     text-align: center;
-    line-height: 30px;
+    line-height: 2.5em;
     text-decoration: none;
+    align-self: center;
 }
 .piePagina-copyright {
-    font-size: 16px;
+    font-size: 0.8em;
     align-self: center;
 }
 .piePagina-copyright em {
     font-family: 'Kaushan Script', Arial, Helvetica, sans-serif;
-    font-size: 18px;
+    font-size: 1.4em;
     font-style: normal;
-    margin: 0px 5px;
+    margin: 0 0.3em;
 
 }
 
@@ -349,6 +348,6 @@ body {
     }
     
     .piePagina-contacto {
-        font-size: 10px;
+        font-size: 0.7em;
     }
 }
