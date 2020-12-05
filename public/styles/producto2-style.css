@@ -4,8 +4,22 @@
     padding: 0;
     font-family: 'Montserrat', sans-serif;
 }
-h1, h2, h3, h4, h5, h6, button {
+h1, h2, h3, h4, h5, h6, button, th {
     font-family: 'Raleway', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+i {
+    margin: 2% auto 5% auto;
+    color:  rgb(40, 172, 106);
+    font-size: 2em;
+    transition: 600ms;
+}
+.disenoBlanco article:hover i, .disenoAzul article:hover i {
+    transform: rotate(-90deg);
 }
 
 /*BANNER 1*/
@@ -101,15 +115,11 @@ h1, h2, h3, h4, h5, h6, button {
 /*BANNER CAMPERA*/
 .bannerCampera {
     margin-top: 2%;
-    display: none;
 }
 .bannerCampera-img {
     width: 100%;
 }
 @media (min-width: 700px) {
-    .bannerCampera {
-        display: block;
-    }
 }
 /*END BANNER CAMPERA*/
 
@@ -313,41 +323,50 @@ h1, h2, h3, h4, h5, h6, button {
 
 /*BANNER PRODUCTO*/
 
-
-.botonCarrito form button {
-    width: 100%;
-    background-image: url(/public/images/El-sol.jpg);
-    background-size: cover;
-    border: none;
-    border-bottom: 2px solid white;
-}
-.botonCarrito article {
+.contenedorProductos {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 15% auto;
+    background-color:  rgb(38, 146, 235);
 }
-.botonCarrito-titulo {
-    width: 50%;
-    padding: 2%;
+.contenedorProductos h2 {
+    text-align: center;
     color: white;
-}
-.botonCarrito-parrafo {
-    width: 50%;
-    padding: 2%;
-    color: white;
-}
-.botonCarrito-precio {
     width: 100%;
+    margin-top: 2%;
+    padding: 1%;
+}
+.productos-img {
+    width: 25%;
+    margin: 2% auto;
+}
+.medalla {
+    width: 50%;
+}
+table {
+    width: 80%;
+    margin: 2% auto;
+}
+th, td {
+    border-bottom: 1px solid white;
+    border-collapse: collapse;
     padding: 2%;
+    text-align: center;
     color: white;
 }
-@media (min-width: 1179px) {
-    .botonCarrito-titulo {
-        font-size: 1.5em;
-    }
-    .botonCarrito-parrafo {
-        font-size: 1.2em;
+th {
+    letter-spacing: 2px;
+}
+td button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    color: white;
+}
+@media (max-width: 425px) {
+    td, th {
+        font-size: 0.8em;
     }
 }
 
