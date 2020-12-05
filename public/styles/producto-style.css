@@ -23,14 +23,26 @@ h1, h2, h3, h4, h5, h6, button {
     width: 85%;
     color: white;
     text-shadow: 10px 10px 15px #000;
+    animation-name: aparece;
+    animation-duration: 4s;
+    animation-timing-function: linear;
 }
-
 .bannerEmpeza form {
     background-color: none;
     margin: 5% auto;
     width: max-content;
+    animation-name: aparece;
+    animation-duration: 4s;
+    animation-timing-function: linear;
 }
-
+@keyframes aparece {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 .bannerEmpeza button {
     cursor: pointer;
     background: none;
@@ -516,6 +528,7 @@ h1, h2, h3, h4, h5, h6, button {
     .productos {
         flex-direction: row;
         flex-wrap: wrap;
+
     }
     .contenedorMedalla {
         width: 100%;

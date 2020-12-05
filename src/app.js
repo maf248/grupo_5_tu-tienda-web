@@ -16,6 +16,9 @@ app.get('/carrito', function (req, res) {
 app.get('/producto', function (req, res) {
     res.sendFile(__dirname + '/views/producto.html')
 });
+app.get('/producto2', function (req, res) {
+    res.sendFile(__dirname + '/views/producto2.html')
+});
 
 app.listen(3000, function () {
     console.log('Para ver el sitio ingresa a http://localhost:3000')

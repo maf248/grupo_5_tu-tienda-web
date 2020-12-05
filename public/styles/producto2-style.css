@@ -1,0 +1,355 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+h1, h2, h3, h4, h5, h6, button {
+    font-family: 'Raleway', sans-serif;
+}
+
+/*BANNER 1*/
+    .banner1 {
+        padding: 2%;
+        background-image: url(/public/images/El-sol.jpg);
+        background-size: cover;
+        margin-top: 2%;
+    }
+    .banner1 h2 {
+        text-align: center;
+        color: white;
+        font-size: 1.2em;
+        animation-name: aparece;
+        animation-duration: 4s;
+        animation-timing-function: linear;
+        margin-top: 15%;
+    }
+    .banner1 p {
+        text-align: center;
+        color: white;
+        font-size: 0.75em;
+        margin-top: 1%;
+        animation-name: aparece;
+        animation-duration: 4s;
+        animation-timing-function: linear;
+        margin-bottom: 15%;
+    }
+
+    .banner1 form {
+        margin: 0 auto;
+        margin-top: 2%;
+        width: max-content;
+        animation-name: aparece;
+        animation-duration: 4s;
+        animation-timing-function: linear;
+    }
+    @keyframes aparece {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    .banner1 button {
+        font-size: 0.75em;
+        color: white;
+        background: none;
+        cursor: pointer;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-decoration: underline;
+        border: none;
+    }
+    .banner1 button:hover {
+        font-style: italic;
+    }
+    @media (min-width:565px) {
+        .banner1 h2 {
+            font-size: 1.7em;
+        }
+        .banner1 p {
+            font-size: 1.2em;
+        }
+        .banner1 button {
+            font-size: 1.2em;
+        }
+    }
+    @media (min-width: 731px) {
+        .banner1 h2 {
+            font-size: 2.2em;
+        }
+        .banner1 p {
+            font-size: 1.7em;
+        }
+    }
+    @media (min-width: 920px) {
+        .bannerEmpeza-titulo {
+            font-size: 2.7em;
+        }
+    }
+    @media (min-width: 1129px) {
+        .banner1 h2 {
+            font-size: 2.7em;
+        }
+        .banner1 p {
+            font-size: 2.2em;
+        }
+    }
+/*END BANNER 1*/
+
+/*BANNER CAMPERA*/
+.bannerCampera {
+    margin-top: 2%;
+    display: none;
+}
+.bannerCampera-img {
+    width: 100%;
+}
+@media (min-width: 700px) {
+    .bannerCampera {
+        display: block;
+    }
+}
+/*END BANNER CAMPERA*/
+
+/*DISENO FONDO AZUL*/
+
+.disenoAzul {
+    background-color: rgb(38, 146, 235);
+}
+.disenoAzul-articleImg {
+    display: none;
+}
+.disenoAzul-article1 {
+    border-bottom: 1px solid white;
+}
+.disenoAzul-article1-tituloPrincipal {
+    padding: 5%;
+    text-align: center;
+    color: white;
+}
+.disenoAzul-article2 {
+    border-bottom: 1px solid white;
+}
+.disenoAzul-article2-titulo {
+    padding: 2%;
+    color: white;
+    text-align: center;
+}
+.disenoAzul-article2-parrafo {
+    padding: 2%;
+    color: white;
+    text-align: center;
+}
+.disenoAzul-form {
+    margin: 1% auto;
+    width: max-content;
+}
+.disenoAzul-form button {
+    font-size: 0.75em;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: underline;
+    border: none;
+    background-color: rgb(38, 146, 235);
+    color: white;
+}
+.disenoAzul-form button:hover {
+    font-style: italic;
+}
+
+@media (min-width: 570px) {
+    .disenoAzul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .disenoAzul-article1 {
+        width: 100%;
+    }
+    .disenoAzul-articleImg {
+        display: inline-block;
+        width: 50%;
+        border-bottom: 1px solid white;
+    }
+    .disenoAzul-articleImg img {
+        width: 100%;
+        padding: 2%;
+    }
+    .disenoAzul-containerArticle2 {
+        width: 50%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .disenoAzul-article2 {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .disenoAzul-article2-titulo {
+        align-self: flex-end;
+        width: 100%;
+    }
+    .disenoAzul-form button {
+        font-size: 1em;
+    }
+}
+@media (min-width: 1024px) {
+    .disenoAzul-article1-tituloPrincipal {
+        font-size: 3em;
+    }
+    .disenoAzul-article2-titulo {
+        font-size: 2em;
+    }
+    .disenoAzul-article2-parrafo {
+        font-size: 1.5em;
+    }
+}
+
+/*END DISEÑO FONDO AZUL*/
+
+/*DISEÑO FONDO BLANCO*/
+
+.disenoBlanco {
+    background-color: white;
+}
+.disenoBlanco-articleImg {
+    display: none;
+}
+.disenoBlanco-article1 {
+    border-bottom: 1px solid black;
+}
+.disenoBlanco-article1-tituloPrincipal {
+    padding: 5%;
+    text-align: center;
+    color: black;
+}
+.disenoBlanco-article2 {
+    border-bottom: 1px solid black;
+}
+.disenoBlanco-article2-titulo {
+    padding: 2%;
+    color: black;
+    text-align: center;
+}
+.disenoBlanco-article2-parrafo {
+    padding: 2%;
+    color: black;
+    text-align: center;
+}
+.disenoBlanco-form {
+    margin: 1% auto;
+    width: max-content;
+}
+.disenoBlanco-form button {
+    font-size: 0.75em;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: underline;
+    border: none;
+    background-color: white;
+    color: black;
+}
+.disenoBlanco-form button:hover {
+    font-style: italic;
+}
+
+@media (min-width: 570px) {
+    .disenoBlanco {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .disenoBlanco-article1 {
+        width: 100%;
+    }
+    .disenoBlanco-articleImg {
+        display: inline-block;
+        width: 50%;
+        border-bottom: 1px solid black;
+    }
+    .disenoBlanco-articleImg img {
+        width: 100%;
+        padding: 2%;
+    }
+    .disenoBlanco-containerArticle2 {
+        width: 50%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .disenoBlanco-article2 {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .disenoBlanco-article2-titulo {
+        align-self: flex-end;
+        width: 100%;
+    }
+    .disenoBlanco-form button {
+        font-size: 1em;
+    }
+}
+@media (min-width: 1024px) {
+    .disenoBlanco-article1-tituloPrincipal {
+        font-size: 3em;
+    }
+    .disenoBlanco-article2-titulo {
+        font-size: 2em;
+    }
+    .disenoBlanco-article2-parrafo {
+        font-size: 1.5em;
+    }
+}
+
+/*END DISEÑO FONDO BLANCO*/
+
+/*BANNER PRODUCTO*/
+
+
+.botonCarrito form button {
+    width: 100%;
+    background-image: url(/public/images/El-sol.jpg);
+    background-size: cover;
+    border: none;
+    border-bottom: 2px solid white;
+}
+.botonCarrito article {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 15% auto;
+}
+.botonCarrito-titulo {
+    width: 50%;
+    padding: 2%;
+    color: white;
+}
+.botonCarrito-parrafo {
+    width: 50%;
+    padding: 2%;
+    color: white;
+}
+.botonCarrito-precio {
+    width: 100%;
+    padding: 2%;
+    color: white;
+}
+@media (min-width: 1179px) {
+    .botonCarrito-titulo {
+        font-size: 1.5em;
+    }
+    .botonCarrito-parrafo {
+        font-size: 1.2em;
+    }
+}
+
+/*END BANNER PRODUCTO*/
+
