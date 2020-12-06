@@ -8,6 +8,16 @@ h1, h2, h3, h4, h5, h6, button {
     font-family: 'Raleway', sans-serif;
 }
 
+i {
+    margin: 2% auto;
+    color:  rgb(40, 172, 106);
+    font-size: 2em;
+    transition: 600ms;
+}
+.disenoBlanco:hover i, .disenoAzul:hover i, .presenciaOnline-article:hover i, .presenciaOnline-articlePrincipal:hover i {
+    transform: rotate(-90deg);
+}
+
 /*BANNER EMPEZÁ*/
 
 .bannerEmpeza {
@@ -121,6 +131,9 @@ h1, h2, h3, h4, h5, h6, button {
         display: flex;
         flex-wrap: wrap;
     }
+    .disenoBlanco i {
+        display: none;
+    }
     .disenoBlanco-titulo {
         width: 50%;
         border-right: 1px solid black;
@@ -192,6 +205,9 @@ h1, h2, h3, h4, h5, h6, button {
         padding: 2%;
         font-size: 2em;
     }
+    .disenoAzul i {
+        display: none;
+    }
     .disenoAzul-parrafo {
         width: 50%;
         padding: 2%;
@@ -216,8 +232,11 @@ h1, h2, h3, h4, h5, h6, button {
     padding: 2%;
 }
 .presenciaOnline-articlePrincipal {
-    width: 90%;
+    width: 100%;
     padding-bottom: 2%;
+}
+.presenciaOnline-articlePrincipal i {
+    margin-left: 46%;
 }
 .presenciaOnline-articlePrincipal h2 {
     color: white;
@@ -228,11 +247,18 @@ h1, h2, h3, h4, h5, h6, button {
     color: white;
     text-align: center;
 }
+.presenciaOnline-articleImg {
+    display: none;
+}
+.presenciaOnline-containerArticle {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
 .presenciaOnline-article {
     width: 90%;
     padding: 10% 0%;
 }
-
 .presenciaOnline-article h3 {
     color: white;
     font-weight:  900;
@@ -277,14 +303,31 @@ h1, h2, h3, h4, h5, h6, button {
     .presenciaOnline-articlePrincipal {
         width: 100%;
     }
+    .presenciaOnline-articlePrincipal i {
+        display: none;
+    }
     .presenciaOnline-articlePrincipal h2 {
         font-size: 2.5em;
     }
     .presenciaOnline-articlePrincipal p {
         font-size: 1.5em;
     }
-    .presenciaOnline-article {
+    .presenciaOnline-articleImg {
+        display: flex;
+        justify-content: space-around;
+        width: 48%;
+        border-bottom: 1px solid white;
+        border-top: 1px solid white;
+    }
+    .presenciaOnline-articleImg img {
+        width: 100%;
+        margin: 2% auto;
+    }
+    .presenciaOnline-containerArticle {
         width: 50%;
+    }
+    .presenciaOnline-article {
+        width: 100%;
         padding: 3%;
     }
     .articleBorder3 {
@@ -298,8 +341,13 @@ h1, h2, h3, h4, h5, h6, button {
     .presenciaOnline-articlePrincipal p {
         font-size: 2.5em;
     }
+    .presenciaOnline-containerArticle {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
     .presenciaOnline-article {
-        width: 25%;
+        width: 100%;
         padding: 3%;
     }
     .articleBorder1 {

@@ -33,6 +33,7 @@ i {
         text-align: center;
         color: white;
         font-size: 1.2em;
+        text-transform: uppercase;
         animation-name: aparece;
         animation-duration: 4s;
         animation-timing-function: linear;
@@ -365,6 +366,9 @@ td button {
     color: white;
 }
 @media (max-width: 425px) {
+    table  {
+        width: 95%;
+    }
     td, th {
         font-size: 0.8em;
     }
