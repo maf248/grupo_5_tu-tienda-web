@@ -332,15 +332,18 @@ i {
     text-align: center;
     margin-bottom: 3%;
     width: 100%;
+    color: rgb(40, 172, 106);
 }
 .disenoBlanco-parrafo {
     font-size: 0.75em;
     text-align: justify;
     padding: 0% 2%;
+    color: rgb(40, 172, 106);
 }
 .disenoBlanco-form {
     margin: 0 auto;
     margin-top: 2%;
+    color: rgb(40, 172, 106);
 }
 .disenoBlanco-form button {
     font-size: 0.75em;
@@ -350,6 +353,7 @@ i {
     text-decoration: underline;
     background-color: white;
     border: none;
+    color: rgb(40, 172, 106);
 }
 .disenoBlanco-parrafo form button:hover {
     font-style: italic;
@@ -374,7 +378,6 @@ i {
     }
     .disenoBlanco-form button {
         background-color: white;
-        color: black;
         font-size: 1em;
     }
     .disenoBlanco-form {
@@ -512,6 +515,7 @@ i {
     width: 95%;
     margin-bottom: 5%;
     align-self: center;
+    color: rgb(40, 172, 106);
 }
 .contenedor-productos {
     display: flex;
