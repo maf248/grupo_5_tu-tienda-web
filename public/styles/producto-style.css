@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
+    outline: none;
 }
 h1, h2, h3, h4, h5, h6, button {
     font-family: 'Raleway', sans-serif;
@@ -90,6 +91,233 @@ i {
     }
 }
 /*END BANNER EMPEZÁ*/
+
+/*SECCION PRESENCIA ONLINE*/
+
+.presenciaOnline {
+    background-color: rgb(38, 146, 235);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2%;
+}
+.presenciaOnline-articlePrincipal {
+    width: 100%;
+    padding-bottom: 2%;
+}
+.presenciaOnline-articlePrincipal i {
+    margin-left: 46%;
+}
+.presenciaOnline-articlePrincipal h2 {
+    color: black;
+    margin-bottom: 5%;
+    text-align: center;
+}
+.presenciaOnline-articlePrincipal p {
+    color: black;
+    text-align: center;
+}
+.presenciaOnline-articleImg {
+    display: none;
+}
+.presenciaOnline-containerArticle {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    z-index: 1;
+}
+.presenciaOnline-article {
+    width: 90%;
+    padding: 10% 0%;
+}
+.presenciaOnline-article h3 {
+    color: black;
+    font-weight:  900;
+    margin-bottom: 5%;
+    text-align: center;
+}
+
+.presenciaOnline-article p {
+    color: black;
+    text-align: center;
+    font-weight: 900;
+}
+.articleBorder1 {
+    border-top: 1px solid black;
+}
+.articleBorder2 {
+    border-top: 1px solid black;
+}
+.articleBorder3 {
+    border-top: 1px solid black;
+}
+.articleBorder4 {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+.presenciaOnline-form {
+    margin: 2%;
+} 
+
+.presenciaOnline-form button {
+    background-color: rgb(38, 146, 235);
+    color: black;
+    font-weight: bold;
+    text-decoration: underline;
+    text-transform: uppercase;
+    border: none;
+}
+
+.presenciaOnline-form button:hover {
+    font-style: italic;
+}
+@media (min-width: 570px) {
+    .presenciaOnline-articlePrincipal {
+        width: 100%;
+    }
+    .presenciaOnline-articlePrincipal h2 {
+        font-size: 2.5em;
+    }
+    .presenciaOnline-articlePrincipal p {
+        font-size: 1.5em;
+    }
+    .presenciaOnline-containerArticle {
+        width: 100%; 
+    }
+    .presenciaOnline-article {
+        width: 50%;
+        padding: 3%;
+    }
+    .articleBorder3 {
+        border-bottom: 1px solid black;
+    }
+}
+@media (min-width: 1024px) {
+    .presenciaOnline-articlePrincipal i {
+        display: none;
+    }
+    .presenciaOnline-articlePrincipal h2 {
+        font-size: 3.5em;
+    }
+    .presenciaOnline-articlePrincipal p {
+        font-size: 2.5em;
+    }
+    .presenciaOnline-articleImg {
+        display: flex;
+        justify-content: flex-end;
+        width: 40%;
+        border-bottom: 1px solid black;
+        border-top: 1px solid black;
+    }
+    .presenciaOnline-articleImg img {
+        width: fit-content;
+        margin: 2% auto;
+        opacity: 0.3;
+    }
+    .presenciaOnline-containerArticle {
+        width: 60%; 
+    }
+    .presenciaOnline-article {
+        width: 100%;
+        padding: 3%;
+    }
+    .presenciaOnline-containerArticle {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .presenciaOnline-article {
+        width: 100%;
+        padding: 3%;
+    }
+    .articleBorder1 {
+        border-bottom: none;
+    }
+    .articleBorder2 {
+        border-bottom: none;
+    }
+    .articleBorder3 {
+        border-bottom: none;
+    }
+}
+@media (min-width: 1380px) {
+    .presenciaOnline-articleImg img {
+        opacity: 1;
+    }
+    .articleBorder1 {
+        border-bottom: none;
+    }
+    .articleBorder2 {
+        border-bottom: none;
+    }
+    .articleBorder3 {
+        border-bottom: none;
+    }
+}
+/*END SECCION PRESENCIA ONLINE*/
+
+/*BANNER RESPONSIVE DESIGN*/
+
+.banner-versiones {
+    width: 100%;
+    background-color: rgb(38, 146, 235);;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: auto;
+    padding: 2%;
+}
+.banner-versiones-contenedorImagenResponsive {
+    position: relative;
+    transition: 500ms;
+}
+.banner-versiones-contenedorImagenResponsive:hover { 
+    -webkit-transform: rotateY(180deg);
+    -webkit-transform-style: preserve-3d;
+    transform: rotateY(180deg);
+    transform-style: preserve-3d;
+}
+.imagen-escritorio {
+    max-width: 100%;
+    align-self: center;   
+}
+.imagen-mobile {
+    max-width: 20%;
+    z-index: 1;
+    align-self: flex-end;
+    position: absolute;
+    right: 0%;
+    bottom: 0%;
+}
+.banner-versiones strong h3 {
+    font-size: 1em;
+    text-align: center;
+    color: white;
+    margin-top: 3%;
+    text-decoration: underline;
+    text-transform: uppercase;
+    animation-name: parpadeo;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+@keyframes parpadeo {  
+    0% { opacity: 1.0;}
+    50% { opacity: 0.5; }
+    100% { opacity: 1.0;}
+  }
+  @media (min-width: 1179px) {
+      .banner-versiones {
+          margin: auto;
+          width: 100%;
+      }
+      .banner-versiones-contenedorImagenResponsive {
+        width: 65%;
+        margin: auto;
+    }
+  }
+/*END BANNER RESPONSIVE DESIGN*/
 
 /*DISEÑO FONDO BLANCO*/
 
@@ -221,203 +449,6 @@ i {
 
 /*END DISEÑO FONDO AZUL*/
 
-
-/*SECCION PRESENCIA ONLINE*/
-
-.presenciaOnline {
-    background-color: rgb(38, 146, 235);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 2%;
-}
-.presenciaOnline-articlePrincipal {
-    width: 100%;
-    padding-bottom: 2%;
-}
-.presenciaOnline-articlePrincipal i {
-    margin-left: 46%;
-}
-.presenciaOnline-articlePrincipal h2 {
-    color: white;
-    margin-bottom: 5%;
-    text-align: center;
-}
-.presenciaOnline-articlePrincipal p {
-    color: white;
-    text-align: center;
-}
-.presenciaOnline-articleImg {
-    display: none;
-}
-.presenciaOnline-containerArticle {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-.presenciaOnline-article {
-    width: 90%;
-    padding: 10% 0%;
-}
-.presenciaOnline-article h3 {
-    color: white;
-    font-weight:  900;
-    margin-bottom: 5%;
-    text-align: center;
-}
-
-.presenciaOnline-article p {
-    color: white;
-    text-align: center;
-}
-.articleBorder1 {
-    border-top: 1px solid white;
-}
-.articleBorder2 {
-    border-top: 1px solid white;
-}
-.articleBorder3 {
-    border-top: 1px solid white;
-}
-.articleBorder4 {
-    border-top: 1px solid white;
-    border-bottom: 1px solid white;
-}
-.presenciaOnline-form {
-    margin: 2%;
-} 
-
-.presenciaOnline-form button {
-    background-color: rgb(38, 146, 235);
-    color: white;
-    font-weight: bold;
-    text-decoration: underline;
-    text-transform: uppercase;
-    border: none;
-}
-
-.presenciaOnline-form button:hover {
-    font-style: italic;
-}
-@media (min-width: 570px) {
-    .presenciaOnline-articlePrincipal {
-        width: 100%;
-    }
-    .presenciaOnline-articlePrincipal i {
-        display: none;
-    }
-    .presenciaOnline-articlePrincipal h2 {
-        font-size: 2.5em;
-    }
-    .presenciaOnline-articlePrincipal p {
-        font-size: 1.5em;
-    }
-    .presenciaOnline-articleImg {
-        display: flex;
-        justify-content: space-around;
-        width: 48%;
-        border-bottom: 1px solid white;
-        border-top: 1px solid white;
-    }
-    .presenciaOnline-articleImg img {
-        width: 100%;
-        margin: 2% auto;
-    }
-    .presenciaOnline-containerArticle {
-        width: 50%;
-    }
-    .presenciaOnline-article {
-        width: 100%;
-        padding: 3%;
-    }
-    .articleBorder3 {
-        border-bottom: 1px solid white;
-    }
-}
-@media (min-width: 1179px) {
-    .presenciaOnline-articlePrincipal h2 {
-        font-size: 3.5em;
-    }
-    .presenciaOnline-articlePrincipal p {
-        font-size: 2.5em;
-    }
-    .presenciaOnline-containerArticle {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }
-    .presenciaOnline-article {
-        width: 100%;
-        padding: 3%;
-    }
-    .articleBorder1 {
-        border-bottom: 1px solid white;
-    }
-    .articleBorder2 {
-        border-bottom: 1px solid white;
-    }
-}
-/*END SECCION PRESENCIA ONLINE*/
-
-/*BANNER RESPONSIVE DESIGN*/
-
-.banner-versiones {
-    width: 100%;
-    align-self: center;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    margin: auto;
-    padding: 2%;
-}
-.banner-versiones-contenedorImagenResponsive {
-    position: relative;
-    transition: 1s;
-}
-.banner-versiones-contenedorImagenResponsive:hover {
-    transform: rotate(360deg);
-}
-.imagen-escritorio {
-    max-width: 100%;
-    align-self: center;   
-}
-.imagen-mobile {
-    max-width: 20%;
-    z-index: 1;
-    align-self: flex-end;
-    position: absolute;
-    right: 0%;
-    bottom: 0%;
-}
-.banner-versiones strong h3 {
-    font-size: 1em;
-    text-align: center;
-    color: rgb(38, 146, 235);
-    margin-top: 3%;
-    text-decoration: underline;
-    text-transform: uppercase;
-    animation-name: parpadeo;
-    animation-duration: 1s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-}
-@keyframes parpadeo {  
-    0% { opacity: 1.0;}
-    50% { opacity: 0.5; }
-    100% { opacity: 1.0;}
-  }
-  @media (min-width: 1179px) {
-      .banner-versiones {
-          margin: auto;
-          width: 100%;
-      }
-      .banner-versiones-contenedorImagenResponsive {
-        width: 65%;
-        margin: auto;
-    }
-  }
-/*END BANNER RESPONSIVE DESIGN*/
-
 /*BANNER DE DESCUENTO*/
 
 .banner-descuento {
@@ -496,11 +527,7 @@ i {
     border-radius: 10px;
     align-self: flex-end;
     box-shadow: 7px 13px 37px #000;
-}
-.contratar:hover {
-    border: 5px solid black;
     cursor: pointer;
-    box-shadow: 10px 16px 37px #000;
 }
 .productos-articulo {
     align-self: center;
@@ -576,16 +603,13 @@ i {
     .productos {
         flex-direction: row;
         flex-wrap: wrap;
-
     }
     .contenedorMedalla {
         width: 100%;
     }
-    .productos-img {
-        justify-content: center;
-    }
     .contenedor-productos {
         width: 25%;
+        align-self: flex-end;
     }
     .productos-articulo {
         flex-direction: row;

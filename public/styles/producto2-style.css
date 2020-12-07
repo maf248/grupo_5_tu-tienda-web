@@ -3,11 +3,11 @@
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
+    outline: none;
 }
 h1, h2, h3, h4, h5, h6, button, th {
     font-family: 'Raleway', sans-serif;
 }
-
 a {
     text-decoration: none;
     cursor: pointer;
@@ -21,7 +21,6 @@ i {
 .disenoBlanco article:hover i, .disenoAzul article:hover i {
     transform: rotate(-90deg);
 }
-
 /*BANNER 1*/
     .banner1 {
         padding: 2%;
@@ -340,9 +339,47 @@ i {
     width: 25%;
     margin: 2% auto;
 }
+.productos-img:hover { 
+animation-name: anime;
+animation-duration: 0.5s;
+animation-fill-mode: forwards;
+animation-iteration-count: 1;
+animation-timing-function: ease-out;
+-moz-animation-timing-function: ease-out;
+}
+@keyframes anime {
+25% {
+   transform: skew(10deg);
+}
+50% {
+    transform: skew(-10deg);
+}
+75% {
+    transform: skew(10deg);
+}
+}
 .medalla {
     width: 50%;
 }
+.medalla:hover { 
+    animation-name: anime;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    -moz-animation-timing-function: ease-out;
+    }
+    @keyframes anime {
+    25% {
+       transform: skew(10deg);
+    }
+    50% {
+        transform: skew(-10deg);
+    }
+    75% {
+        transform: skew(10deg);
+    }
+    }
 table {
     width: 80%;
     margin: 2% auto;
@@ -353,9 +390,14 @@ th, td {
     padding: 2%;
     text-align: center;
     color: white;
+    transition: 500ms;
 }
 th {
     letter-spacing: 2px;
+}
+.beneficio:hover {
+    transform: scale(1.5);
+    border: none;
 }
 td button {
     background: none;
@@ -364,7 +406,12 @@ td button {
     text-align: center;
     width: 100%;
     color: white;
+    transition: 500ms;
 }
+td button:hover {
+    transform: scale(2);
+}
+
 @media (max-width: 425px) {
     table  {
         width: 95%;

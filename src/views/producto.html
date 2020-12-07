@@ -16,29 +16,37 @@
 </head>
 <body>
 <main class="principal">
-<div class="barraSuperior">
-    <a href="/">
-        <img class="barraSuperior-logo" src="/public/logo/logo2d.png">
-    </a>
-    <nav class="barraSuperior-navbar">
-        <div class="barraSuperior-navbar-desplegable">
-            <a><i class="fa fa-bars"></i></a>
+    <div class="barraSuperior">
+        <a href="/">
+            <img class="barraSuperior-logo" src="/public/logo/logo2d.png">
+        </a>
+        <nav class="barraSuperior-navbar">
+            <ul class="barraSuperior-navbar-desplegable">
+                <button><i class="fa fa-bars"></i></button>
+                <li>
+                    <ul class="barraSuperior-navlist">
+                        <li class="barraSuperior-navlist-links">Productos
+                            <ul class="barraSuperior-navlist-links-submenu">
+                                <li><a href="/producto">Tu página web</a></li>
+                                <li class="linkTienda"><a href="/producto2">Tu tienda web</a></li>
+                            </ul>
+                        </li>
+                        <li class="barraSuperior-navlist-links"><a href="#nosotros">Sobre nosotros</a></li>
+                        <li class="barraSuperior-navlist-links"><a href="#contacto">Contacto</a></li>
+                        <li class="barraSuperior-navlist-links"><a href="#">FAQ's</a></li>
+                    </ul>    
+                </li>
+                
+            </ul>  
+        </nav>
+        <div class="barraSuperior-navExtra">
+            <div class="barraSuperior-navExtra-usuario">
+                <a class="barraSuperior-navExtra-usuario-registro" href="/registro">Registrarse</a>
+                <a class="barraSuperior-navExtra-usuario-login" href="/login">Iniciar Sesión</a>
+            </div>
+            <a href="/carrito"><img class="barraSuperior-navExtra-carrito" src="/public/icons/logo-color-borde.svg"></a>
         </div>
-        <ul class="barraSuperior-navlist">
-            <li class="barraSuperior-navlist-links"><a href="/producto">Productos</a></li>
-            <li class="barraSuperior-navlist-links"><a href="/#nosotros">Sobre nosotros</a></li>
-            <li class="barraSuperior-navlist-links"><a href="#contacto">Contacto</a></li>
-            <li class="barraSuperior-navlist-links"><a href="#">FAQ's</a></li>
-        </ul>      
-    </nav>
-    <div class="barraSuperior-navExtra">
-        <div class="barraSuperior-navExtra-usuario">
-            <a class="barraSuperior-navExtra-usuario-registro" href="/registro">Registrarse</a>
-            <a class="barraSuperior-navExtra-usuario-login" href="/login">Iniciar Sesión</a>
-        </div>
-        <a href="/carrito"><img class="barraSuperior-navExtra-carrito" src="/public/icons/logo-color-borde.svg"></a>
     </div>
-</div>
 
 <!--Acá termina la barra superior de navegación común a todas las paginas-->
 
@@ -59,28 +67,6 @@
     </form>
 
 </section>
-
-<article class="disenoBlanco">
-    
-        <i class="fas fa-plus"></i>
-
-        <h2 class="disenoBlanco-titulo">
-            La libertad de crear la página web que quieras
-        </h2>
-
-        <p class="disenoBlanco-parrafo">
-            Disena y creá tu propia página web con calidad profesional. Ya sea que estés mostrando tu trabajo o comenzando un blog, puedes hacerlo todo con el editor de páginas web de Tu Tienda Web.
-        </p>
-
-       <form action="#productos" method="GET" class="disenoBlanco-form">
-
-            <button>
-                Empezá Ya >
-            </button>
-
-        </form>
-
-</article>
 
 <section class="presenciaOnline">
 
@@ -134,7 +120,7 @@
 
     <article class="presenciaOnline-articleImg">
 
-        <img src="/public/images/web-design.jpg" alt="">
+        <img src="/public/images/2.png" alt="">
 
     </article>
 
@@ -158,6 +144,28 @@
 
 
 </section>
+
+<article class="disenoBlanco">
+    
+    <i class="fas fa-plus"></i>
+
+    <h2 class="disenoBlanco-titulo">
+        La libertad de crear la página web que quieras
+    </h2>
+
+    <p class="disenoBlanco-parrafo">
+        Disena y creá tu propia página web con calidad profesional. Ya sea que estés mostrando tu trabajo o comenzando un blog, puedes hacerlo todo con el editor de páginas web de Tu Tienda Web.
+    </p>
+
+   <form action="#productos" method="GET" class="disenoBlanco-form">
+
+        <button>
+            Empezá Ya >
+        </button>
+
+    </form>
+
+</article>
 
 <article class="disenoAzul">
 
@@ -269,8 +277,8 @@
                 <h3 class="tituloSuscripcionOro">Suscripción oro</h3>
                 <ul>Incluye:
                     <li>Servicio de hosting</li>
-                    <li>Servicio web Corvid para aplicaciones web profesionales</li>
-                    <li>Creador de logos profesional</li>
+                    <li>Servicio web Corvid para aplicaciones web</li>
+                    <li>Plan SEO para posicionarte mejor en Google</li>
                     <li>Todo lo que incluyen los planes anteriores</li>
                 </ul>
                 <span>Precio final por mes: $1200</span><br>
@@ -288,7 +296,8 @@
                 <h3 class="tituloSuscripcionPlata">Suscripción plata</h3>
                 <ul>Incluye:
                     <li>Servicio de Inteligencia de diseño artificial (IDA)</li>
-                    <li>Atención personalizada de nuestro equipo de marketing y comercialización</li>
+                    <li>Atención de nuestro equipo de marketing</li>
+                    <li>Creador de logos profesional</li>
                     <li>Todo lo que incluyen las suscripciones anteriores</li>
                 </ul>
                 <span>Precio final por mes: $600</span><br>
@@ -307,9 +316,8 @@
                 <ul>Incluye:
                     <li>Acceso a todas nuestras plantillas y accesorios de diseño web</li>
                     <li>Herramientas para diseño adaptativo</li>
-                    <li>Plan SEO para posicionarte mejor en Google</li>
                 </ul>
-                <span>Precio final por mes: $300</span><br>
+                <span>Precio final por mes: GRATIS</span><br>
                 <span class="span1">Clickeá en la imagen para contratar el servicio</span>
             </article>
         </button>
