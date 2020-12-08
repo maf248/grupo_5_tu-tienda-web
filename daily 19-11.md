@@ -1,4 +1,0 @@
-En la daily de hoy mejoramos los wireframes, definiendo más detalles de los componentes y seguiremos mejorandolos.
-Establecimos ciertos patrones generales de diseño que aun no estaban definidos, por ejemplo el estilo de la barra de navegacion, del footer y los colores de la marca. Además la tipografia de la marca y la tipografia del sitio web en general.
-Creamos los archivos HTML necesarios para las distintas secciones de la página. Estableciendo un HTML básico, con algunos elementos que se repiten en las distintas páginas.
-Completamos las rutas necesarias en el archivo app.js para los HTML creados.

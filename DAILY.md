@@ -1,0 +1,5 @@
+##08/12/2020
+Nos reunimos para seguir el avance del proyecto, haciendo una puesta en común sobre los trabajos a realizar. Por ejemplo, terminar de completar flex-box y media querys ya utilizadas para el sprint-2, para mejorar el sitio y que sea mas responsive. Luego pautamos ciertas mejoras del sitio, cuestiones de unificar ciertos patrones de diseño para darle más unicidad entre las distintas páginas, y agregar contenido en ciertas partes como Inicio por ejemplo. Además pautamos coordinar para los dias siguientes una videollamada en donde podriamos realizar la implementación de los motores de vista EJS todos juntos, al ser algo que se realiza una sola vez, para que todos pudieramos participar de la implementación y realizarlo de forma más coordinada.
+
+##04/12/2020
+Nos pusimos al tanto respecto a las tareas que debíamos realizar para el sprint-3, charlando sobre lo que leimos en el instructivo PDF de éste mismo. Además definimos a grandes razgos el orden en que iríamos implementando lo requerido y como podíamos dividirnos las tareas y organizarnos. Quedamos en realizar una nueva reunion la semana próxima para continuar definiendo estas cuestiones.

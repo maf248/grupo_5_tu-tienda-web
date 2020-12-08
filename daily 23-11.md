@@ -1,3 +1,0 @@
-Nos juntamos para repasar el estado actual de las distintas páginas, realizando ciertas correcciones o ayudandonos mutuamente.
-Pusimos en común ciertos estilos visuales para que queden consonante entre las distintas páginas. Por ejemplo, fuente Montserrat para el contenido, fuente Kaushan Script para los titulos o elementos destacados. Algo similar con los colores a utilizar y ciertos patrones de diseño sean más unificados a lo largo de todas las páginas.
-Definimos así que faltaba realizar, además de dichas puestas en común del diseño.
