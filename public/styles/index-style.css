@@ -6,6 +6,9 @@
 body {
     font-family: 'Montserrat', sans-serif;
 }
+h1, h2, h3, h4, h5, h6, button {
+    font-family: 'Raleway', sans-serif;
+}
 .principal {
     display: flex;
     flex-direction: column;
@@ -22,7 +25,6 @@ body {
     justify-content: center;
 }
 .barraSuperior a {
-    font-family: 'Kaushan Script', Arial, Helvetica, sans-serif;
     color: black;
 }
 .barraSuperior-logo {
@@ -54,7 +56,6 @@ body {
     text-decoration: none;
 }
 .barraSuperior-navlist-links{ 
-    font-family: 'Kaushan Script', Arial, Helvetica, sans-serif;
     font-size: 1.5em;
     color: black;
     cursor: pointer;
@@ -137,6 +138,73 @@ body {
     max-height: 200px;
     align-self: center;
     justify-self: center;
+}
+
+/*ELEGINOS*/
+
+.eleginos   {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.eleginos h2 {
+    width: 50%;
+    align-self: center;
+    padding: 10%;
+    border-right: 1px solid black;
+}
+.eleginos article {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    padding: 10%;
+}
+.eleginos p {
+    width: 100%;
+}
+.eleginos form {
+    margin-top: 2%;
+}
+.eleginos button {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/*NEGOCIOS*/
+
+.negocios   {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background: linear-gradient(90deg, rgba(100,197,121,0.4) 10%, rgba(255,255,255,1) 100%);
+}
+.negocios h2 {
+    width: 50%;
+    align-self: center;
+    padding: 10%;
+    border-right: 1px solid black;
+}
+.negocios article {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    padding: 10%;
+}
+.negocios p {
+    width: 100%;
+}
+.negocios form {
+    margin-top: 2%;
+}
+.negocios button {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 /*Productos*/
@@ -241,7 +309,6 @@ body {
     margin-bottom: 30px;
 }
 .nosotrosContenedor h2 {
-    font-family: 'Kaushan Script', Arial, Helvetica, sans-serif;
     font-size: 2em;
     align-self: center;
     margin-bottom: 15px;
@@ -275,7 +342,6 @@ body {
     padding: 10px;
     background-color: rgb(100, 197, 149);
     border: 1px solid rgb(100, 197, 149);
-    font-family: 'Kaushan Script', Arial, Helvetica, sans-serif;
     font-size: 1.2em;
     font-weight: bold;
     border-radius: 20px;
@@ -290,6 +356,37 @@ body {
     cursor: pointer;
 }
 
+/*FAQS*/
+
+.faqs {
+    display: flex;
+    flex-wrap: wrap;
+}
+.faqs-titulo {
+    width: 100%;
+    text-decoration: underline;
+}
+.faqs-titulo h2 {
+    text-align: left;
+    margin: 2% 0% 2% 1%;
+    font-size: 2em;
+}
+.faqs-article {
+    width: 50%;
+    padding: 1%;
+    cursor: pointer;
+}
+.faqs-article h4 {
+    margin: 2% 0%;
+}
+.faqs-article p {
+    display: none;
+    text-align: justify;
+    padding: 0% 1%;
+}
+.faqs-article:hover p {
+    display: block;
+}
 /*Footer*/
 
 .piePagina {
@@ -327,7 +424,6 @@ body {
     align-self: center;
 }
 .piePagina-copyright em {
-    font-family: 'Kaushan Script', Arial, Helvetica, sans-serif;
     font-size: 1.4em;
     font-style: normal;
     margin: 0 0.3em;
@@ -385,9 +481,38 @@ body {
     .barraSuperior-navExtra {
         background-color: white;
     }
+    .eleginos h2 {
+        width: 100%;
+        padding: 3%;
+        margin: 1.5%;
+        text-align: center;
+        border-bottom: 1px solid black;
+        border-right: none;
+    }
+    .eleginos article {
+        width: 100%;
+    }
+    .eleginos article p {
+        padding: 0%;
+        text-align: justify;
+    }
+    .negocios h2 {
+        width: 100%;
+        padding: 3%;
+        margin: 1.5%;
+        text-align: center;
+        border-bottom: 1px solid black;
+        border-right: none;
+    }
+    .negocios article {
+        width: 100%;
+    }
+    .negocios article p {
+        padding: 0%;
+        text-align: justify;
+    }
     .productosContenedor {
         flex-direction: column;
-
     }
     .productosContenedor img {
         max-width: 100%;
@@ -396,6 +521,9 @@ body {
         width: 80%;
         margin: 20px 0px;
         align-self: center;
+    }
+    .faqs-article {
+        width: 100%;
     }
     .nosotrosContenedor button {
         width: 35%;
