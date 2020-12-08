@@ -207,6 +207,28 @@ h1, h2, h3, h4, h5, h6, button {
     text-decoration: underline;
 }
 
+/*COMO HACER TU PAGINA WEB*/
+
+.comoHacerTuPaginaWeb {
+    padding: 5%;
+}
+.comoHacerTuPaginaWeb-titulo {
+    margin: 2% auto;
+}
+.comoHacerTuPaginaWeb-titulo h2 {
+    margin-bottom: 1%;
+    font-size: 3em;
+}
+.comoHacerTuPaginaWeb li {
+    margin-bottom: 1%;
+}
+.comoHacerTuPaginaWeb button {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-decoration: underline;
+}
 /*Productos*/
 .productosContenedor {
     display: flex;
@@ -511,6 +533,19 @@ h1, h2, h3, h4, h5, h6, button {
         padding: 0%;
         text-align: justify;
     }
+    .comoHacerTuPaginaWeb-titulo {
+        margin-bottom: 5%;
+    }
+    .comoHacerTuPaginaWeb-titulo h2 {
+        font-size: 2em;
+    }
+    .comoHacerTuPaginaWeb ol {
+        padding: 5%;
+    }
+    .comoHacerTuPaginaWeb li {
+        margin-bottom: 3%;
+    }
+
     .productosContenedor {
         flex-direction: column;
     }
