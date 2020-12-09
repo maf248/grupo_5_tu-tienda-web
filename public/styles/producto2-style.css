@@ -21,6 +21,11 @@ i {
 .disenoBlanco article:hover i, .disenoAzul article:hover i {
     transform: rotate(-90deg);
 }
+button:hover {
+    transition: 300ms;
+    transform: scale(1.1);
+    cursor: pointer;
+}
 /*BANNER 1*/
     .banner1 {
         padding: 2%;
@@ -69,14 +74,10 @@ i {
         font-size: 0.75em;
         color: white;
         background: none;
-        cursor: pointer;
         font-weight: bold;
         text-transform: uppercase;
         text-decoration: underline;
         border: none;
-    }
-    .banner1 button:hover {
-        font-style: italic;
     }
     @media (min-width:565px) {
         .banner1 h2 {
@@ -158,16 +159,12 @@ i {
 }
 .disenoAzul-form button {
     font-size: 0.75em;
-    cursor: pointer;
     font-weight: bold;
     text-transform: uppercase;
     text-decoration: underline;
     border: none;
     background-color: rgb(38, 146, 235);
     color: white;
-}
-.disenoAzul-form button:hover {
-    font-style: italic;
 }
 
 @media (min-width: 570px) {
@@ -257,16 +254,12 @@ i {
 }
 .disenoBlanco-form button {
     font-size: 0.75em;
-    cursor: pointer;
     font-weight: bold;
     text-transform: uppercase;
     text-decoration: underline;
     border: none;
     background-color: white;
     color: black;
-}
-.disenoBlanco-form button:hover {
-    font-style: italic;
 }
 
 @media (min-width: 570px) {
@@ -412,9 +405,9 @@ td button {
     text-align: center;
     width: 100%;
     color: white;
-    transition: 500ms;
 }
 td button:hover {
+    transition: 500ms;
     transform: scale(2);
 }
 
