@@ -484,12 +484,7 @@ h1, h2, h3, h4, h5, h6, button {
         box-shadow: 5px 5px 20px 5px rgba(100, 197, 149, 0.7);
         border-radius: 20px;
     }
-    /*.barraSuperior-navbar-desplegable li ul li ul li {
-        display: none;
-    }
-    .barraSuperior-navbar-desplegable li ul li ul:hover li {
-        display: block;
-    }*/
+
     .barraSuperior-navbar-desplegable ul li {
         font-size: 1em;
         width: max-content;
