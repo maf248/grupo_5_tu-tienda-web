@@ -1,24 +1,16 @@
 {
-  "name": "grupo_5_tu-tienda-web",
-  "version": "1.0.0",
-  "description": "Tu Tienda Web es un sitio que te permite armar tu propia tienda online para vender productos físicos o digitales. También podes armar tu propia página web.",
-  "main": "app.js",
+  "name": "grupo5-express-generator",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon src/app.js"
+    "start": "nodemon ./bin/www"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/maf248/grupo_5_tu-tienda-web.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/maf248/grupo_5_tu-tienda-web/issues"
-  },
-  "homepage": "https://github.com/maf248/grupo_5_tu-tienda-web#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1"
   }
 }

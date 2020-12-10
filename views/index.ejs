@@ -1,49 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/public/styles/index-style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
-    <link href="/public/icons/logo-color.svg" rel="icon">
-    <title>Tu Tienda Web</title>
+    <%- include('./partials/head') %>
 </head>
-<body>
-<main class="principal">
-<div class="barraSuperior">
-    <a href="/">
-        <img class="barraSuperior-logo" src="/public/logo/logo2d.png">
-    </a>
-    <nav class="barraSuperior-navbar">
-            <button><i class="fa fa-bars"></i></button>
-                <ul class="barraSuperior-navlist">
-                    <li class="barraSuperior-navlist-links">Productos
-                        <ul class="barraSuperior-navlist-links-submenu">
-                            <li><a href="/producto">Tu página web</a></li>
-                            <li class="linkTienda"><a href="/producto2">Tu tienda web</a></li>
-                        </ul>
-                    </li>
-                    <li class="barraSuperior-navlist-links"><a href="#nosotros">Sobre nosotros</a></li>
-                    <li class="barraSuperior-navlist-links"><a href="#contacto">Contacto</a></li>
-                    <li class="barraSuperior-navlist-links"><a href="#faqs">FAQ's</a></li>
-                </ul>                
-    </nav>
-    <div class="barraSuperior-navExtra">
-        <div class="barraSuperior-navExtra-usuario">
-            <a class="barraSuperior-navExtra-usuario-registro" href="/registro">Registrarse</a>
-            <a class="barraSuperior-navExtra-usuario-login" href="/login">Iniciar Sesión</a>
-        </div>
-        <a href="/carrito"><img class="barraSuperior-navExtra-carrito" src="/public/icons/logo-color-borde.svg"></a>
-    </div>
-</div>
 
-<!--Acá termina la barra superior de navegación común a todas las paginas-->
+<%- include('./partials/navbar') %>
+
 
 <section class="banner">
-    <a href="/producto"><img src="/public/images/tutiendaweb-banner-sd.gif"></a>
+    <a href="/producto"><img src="/images/tutiendaweb-banner-sd.gif"></a>
 </section>
 
 <section class="eleginos">
@@ -132,13 +97,13 @@
 <section class="productosContenedor">
     <article class="productosContenedor-producto-1">
         <div class="productosContenedor-producto-1-imagen">
-            <a href="/producto2"><img src="/public/icons/store-color-borde.png"></a>
+            <a href="/producto2"><img src="/icons/store-color-borde.png"></a>
         </div>
         <a href="/producto2"><h2>Tu <em>Tienda Web</em></h2></a>
         <div class="productosContenedor-producto-1-planes">
-            <img src="/public/images/plan-oro.png" alt="Plan Oro">
-            <img src="/public/images/plan-plata.png" alt="Plan Plata">
-            <img src="/public/images/plan-bronce.png" alt="Plan Bronce">
+            <img src="/images/plan-oro.png" alt="Plan Oro">
+            <img src="/images/plan-plata.png" alt="Plan Plata">
+            <img src="/images/plan-bronce.png" alt="Plan Bronce">
         </div>
         <div class="productosContenedor-producto-1-descripcion">
             <p>‣ Suscripción Oro, Plata o Bronce acorde a tus preferencias. Teniendo acceso a varias plantillas, modelos y accesorios de diseño personalizados. Todos nuestros diseños son responsive, es decir, ¡se adaptan a cualquier dispositivo!</p>
@@ -155,9 +120,9 @@
         </div>
         <a href="/producto"><h2>Tu <em>Página Web</em></h2></a>
         <div class="productosContenedor-producto-2-planes">
-            <img src="/public/images/plan-oro.png" alt="Plan Oro">
-            <img src="/public/images/plan-plata.png" alt="Plan Plata">
-            <img src="/public/images/plan-bronce.png" alt="Plan Bronce">
+            <img src="/images/plan-oro.png" alt="Plan Oro">
+            <img src="/images/plan-plata.png" alt="Plan Plata">
+            <img src="/images/plan-bronce.png" alt="Plan Bronce">
         </div>
         <div class="productosContenedor-producto-2-descripcion">
             <p>‣ Suscripción Oro, Plata o Bronce acorde a tus preferencias. Teniendo acceso a varias plantillas, modelos y accesorios de diseño personalizados. Todos nuestros diseños son responsive, es decir, ¡se adaptan a cualquier dispositivo!</p>
@@ -278,26 +243,4 @@
 </section>
 
 
-<!--Acá empieza el footer común a todas las páginas-->
-
-<footer class="piePagina">
-    <a name="contacto">
-    <div class = "piePagina-redesSociales">
-    <a href="https://www.facebook.com"> <img src="/public/icons/social-media/facebook.svg" alt="seguinos en facebook"></a>
-    <a href="https://www.instgram.com"> <img src="/public/icons/social-media/instagram.svg" alt="seguinos en instagram"></a>
-    <a href="https://www.whatsapp.com"> <img src="/public/icons/social-media/whatsapp.svg" alt="escribinos al whatsapp"></a>
-    </div>
-    <div class = "piePagina-contacto">
-        <a href="mailto:tutienda@web.com">tutienda@web.com</a>
-        <a target="_blank" href="https://www.google.com.ar/maps/place/Av.+Corrientes+1538,+C1042AAO+CABA/@-34.6043326,-58.3909866,17z/data=!3m1!4b1!4m5!3m4!1s0x95bccac6ac9bdc79:0x269f5e7751aefbea!8m2!3d-34.604332!4d-58.388797">Av. Corrientes 1538 - CABA, Argentina.</a>
-        <a href="tel:+54 0800-888-4363">Llamanos a nuestro 0800!</a>
-    </div>
-    <br>
-    <div class="piePagina-copyright"><p>Copyright © 2020 <em>Tu Tienda Web</em> S.R.L.</p></div>
-    </a>
- </footer>
-</main>
-
-    
-</body>
-</html>
+<%- include('./partials/footer') %>

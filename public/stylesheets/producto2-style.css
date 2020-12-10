@@ -29,7 +29,7 @@ button:hover {
 /*BANNER 1*/
     .banner1 {
         padding: 2%;
-        background-image: url(/public/images/El-sol.jpg);
+        background-image: url(/images/El-sol.jpg);
         background-size: cover;
         margin-top: 2%;
     }
