@@ -107,6 +107,7 @@ button:hover {
 }
 .presenciaOnline-articlePrincipal i {
     margin-left: 46%;
+    color: black;
 }
 .presenciaOnline-articlePrincipal h2 {
     color: black;
@@ -399,6 +400,9 @@ button:hover {
     text-align: justify;
     padding: 0% 2%;
     margin-bottom: 3%;
+    color: white;
+}
+.disenoAzul i {
     color: white;
 }
 .disenoAzul-form {
