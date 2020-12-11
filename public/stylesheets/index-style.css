@@ -121,7 +121,8 @@ h1, h2, h3, h4, h5, h6, button {
 
 /* Acá termina la barra superior de navegacion */
 
-/* Banner */
+/* BANNER */
+
 .banner {
     display: flex;
     flex-direction: row;
@@ -143,7 +144,7 @@ h1, h2, h3, h4, h5, h6, button {
 
 /*ELEGINOS*/
 
-.eleginos   {
+.eleginos {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -158,7 +159,7 @@ h1, h2, h3, h4, h5, h6, button {
     display: flex;
     flex-wrap: wrap;
     width: 50%;
-    padding: 10%;
+    padding: 5%;
 }
 .eleginos p {
     width: 100%;
