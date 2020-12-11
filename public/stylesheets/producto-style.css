@@ -443,7 +443,7 @@ button:hover {
 /*BANNER DE DESCUENTO*/
 
 .banner-descuento {
-    background-image: url("/public/images/fondo-banner-descuento-4.jpg");
+    background-image: url("/images/fondo-banner-descuento-4.jpg");
     background-size: 100%;
 }
 .banner-descuento a {
