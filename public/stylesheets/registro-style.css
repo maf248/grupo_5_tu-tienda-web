@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 .form-registro {
-    height: 650px;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,10 +21,10 @@
     font-weight: 700;
 }
 .form{
-background: white;
-padding: 40px 0;
-box-shadow: 0 0 6 rgba(255, 255, 255, 0.8);
-border-radius: 10px;
+    background: white;
+    padding: 10px 0 0 0;
+    box-shadow: 0 0 6 rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
 }
 .grupo {
     position: relative;
@@ -68,4 +68,24 @@ button {
     height: 40px;
     font-size: 16px;
     cursor: pointer;
+}
+
+.form-login-oauth-iconos {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.form-login-oauth-titulo { 
+    text-align: center;
+    color:green;
+    text-decoration: none;
+    font-size: 14px;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 2px solid green;
+}
+.form-login-oauth-iconos img {
+    margin: 10px;
+    width: 25px;
 }
