@@ -239,6 +239,11 @@ h1, h2, h3, h4, h5, h6, button {
     margin-top: 20px;
     margin-bottom: 20px;
 }
+.productosContenedor-producto-1:hover, .productosContenedor-producto-2:hover {
+    transition: 300ms;
+    transform: scale(1.05);
+    cursor: pointer;
+}
 .productosContenedor-producto-1, .productosContenedor-producto-2 {
     text-align: center;
     margin: 20px;
