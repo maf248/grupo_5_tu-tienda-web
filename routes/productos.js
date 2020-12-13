@@ -3,10 +3,8 @@ var router = express.Router();
 var productosController = require("../controllers/productosController");
 
 /* Rutas a Productos */
-router.get('/', function(req, res, next) {
-  res.render('producto'/*, { title: 'Express' }*/);
-});
-
+router.get('/listado', productosController.listado);
 router.get('/:id', productosController.detalle);
+
 
 module.exports = router;

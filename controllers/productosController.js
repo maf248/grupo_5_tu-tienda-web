@@ -8,6 +8,8 @@ const productosController = {
           res.send('No tenemos un producto con ese ID');
             }
         },
-}
-
-module.exports = productosController
+    listado: function(req, res, next) {
+          res.render('listado-productos'/*, { title: 'Express' }*/);   
+        },
+      }
+module.exports = productosController;
