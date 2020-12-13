@@ -32,12 +32,14 @@
             <h3 class="titulo-total">--</h3>
         </div>
     </div>
+    </div> 
+</div>
 
         
         
-    </div>
+   
         
-</div>
+
 
 <div class="banner-pago">
     <img src="/images/logo-tarjetas.png" alt="imagen de pagos" class="banner-imagen"> 
@@ -49,6 +51,7 @@
 <div class="pago-descripcion">
         <h2>Formas y medios de pago</h2>
       <form action="carrito.html" method="GET">
+
         <p><label for="">Elige el medio de pago que prefieras</label></p>
         <p><input type="radio" name="pago" value="d">Debito</p>
         <p><input type="radio" name="pago" value="c">Credito</p>
@@ -65,16 +68,16 @@
     <div class="datos-tarjeta">
     <form action="carrito.html" method="GET">
         <p><label for="pais"> Pais</label></p> 
-        <p><input type="pais" id="pais" name="pais"></p>
+        <p><input type="text" id="pais" name="pais"></p>
         <p><label for="ciudad"> Ciudad</label></p>
-        <p><input type="ciudad" id="ciudad" name="ciudad"></p>
+        <p><input type="text" id="ciudad" name="ciudad"></p>
         <p><label for="">Seleccione tarjeta: </label></p>
             <select name="tarjeta" id="">
                 <option value="vi">Visa</option>
                 <option value="mc">Master card</option>
                 <option value="am">American express</option>
                 <option value="ts">Tarjeta shopping</option>
-                <option value="ac">argencard</option>
+                <option value="ac">Argencard</option>
                 <option value="ca">Cabal</option>
                 <option value="na">Nativa</option>
                 <option value="pn">Provincia net</option>
@@ -87,9 +90,11 @@
 
         
         <p><label for="numero tarjeta">Numero tarjeta </label></p>
-        <p><input type="numero tarjeta" id="numero tarjeta" name="numero tarjeta"></p>
+        <p><input type="number" id="numero tarjeta" name="numero tarjeta"></p>
         <p><label for="codigo de seguridad"> Codigo de seguridad</label></p>
-        <p><input type="codigo de seguridad" id="codigo de seguridad" name="codigo de seguridad"></p>
+        <p><input type="password" id="codigo de seguridad" name="codigo de seguridad"></p>
+        <P><label for="fecha de vencimiento">Fecha de vencimineto</label></P>
+        <p><input tipe="number" id="fecha de nacimiento" placeholder="dia/mes/año"></p>
         <p><label for="cuotas"> Cantidad de cuotas: </label></p> 
         <select name="cuotas" id="">
         <option value="">1</option>
@@ -105,6 +110,7 @@
     </form>
 </div>
     </div>
+
         
 <%- include('./partials/footer') %>
     
