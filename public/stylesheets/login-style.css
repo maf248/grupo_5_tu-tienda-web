@@ -41,11 +41,11 @@
     border: none;
     color: greenyellow;
     margin-bottom: 16px;
+    cursor: pointer;
 }
 .form-login p {
-height: 40px;
-text-align: center;
-border-bottom: 1px solid;
+    height: auto;
+    text-align: center;
 }
 .form-login a {
     color:green;
@@ -67,7 +67,9 @@ border-bottom: 1px solid;
     color:green;
     text-decoration: none;
     font-size: 14px;
-    margin-top: 20px;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 2px solid green;
 }
 .form-login-oauth-iconos img {
     margin: 10px;

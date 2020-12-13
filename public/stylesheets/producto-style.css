@@ -107,6 +107,7 @@ button:hover {
 }
 .presenciaOnline-articlePrincipal i {
     margin-left: 46%;
+    color: black;
 }
 .presenciaOnline-articlePrincipal h2 {
     color: black;
@@ -401,6 +402,9 @@ button:hover {
     margin-bottom: 3%;
     color: white;
 }
+.disenoAzul i {
+    color: white;
+}
 .disenoAzul-form {
     margin: 0 auto;
 }
@@ -443,7 +447,7 @@ button:hover {
 /*BANNER DE DESCUENTO*/
 
 .banner-descuento {
-    background-image: url("/public/images/fondo-banner-descuento-4.jpg");
+    background-image: url("/images/fondo-banner-descuento-4.jpg");
     background-size: 100%;
 }
 .banner-descuento a {

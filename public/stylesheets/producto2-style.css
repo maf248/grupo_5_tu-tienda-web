@@ -157,6 +157,9 @@ button:hover {
     margin: 1% auto;
     width: max-content;
 }
+.disenoAzul i {
+    color: white;
+}
 .disenoAzul-form button {
     font-size: 0.75em;
     font-weight: bold;
@@ -228,24 +231,24 @@ button:hover {
     display: none;
 }
 .disenoBlanco-article1 {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid rgb(40, 172, 106);
 }
 .disenoBlanco-article1-tituloPrincipal {
     padding: 5%;
     text-align: center;
-    color: black;
+    color:rgb(40, 172, 106);
 }
 .disenoBlanco-article2 {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid rgb(40, 172, 106);
 }
 .disenoBlanco-article2-titulo {
     padding: 2%;
-    color: black;
+    color: rgb(40, 172, 106);
     text-align: center;
 }
 .disenoBlanco-article2-parrafo {
     padding: 2%;
-    color: black;
+    color: rgb(40, 172, 106);
     text-align: center;
 }
 .disenoBlanco-form {
@@ -259,7 +262,7 @@ button:hover {
     text-decoration: underline;
     border: none;
     background-color: white;
-    color: black;
+    color: rgb(40, 172, 106);
 }
 
 @media (min-width: 570px) {
@@ -274,7 +277,7 @@ button:hover {
     .disenoBlanco-articleImg {
         display: inline-block;
         width: 50%;
-        border-bottom: 1px solid black;
+        border-bottom: 1px solid rgb(40, 172, 106);
     }
     .disenoBlanco-articleImg img {
         width: 100%;
