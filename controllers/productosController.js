@@ -11,5 +11,8 @@ const productosController = {
     listado: function(req, res, next) {
           res.render('listado-productos'/*, { title: 'Express' }*/);   
         },
+    edicion: function(req, res, next ) {
+          res.render('edicion-creacion-productos'/*, { title: 'Express' }*/); 
+        },
       }
 module.exports = productosController;
