@@ -17,16 +17,20 @@
     border: 5px solid  rgb(38, 146, 235);
     border-radius: 20px 0px 0px 20px ;
     flex-direction: column;
-    background-image: url(/images/imagen-luna.jpg) ;
+    background-image: url(/images/imagen-luna.jpg);
     background-position:center ;
     background-size: cover ;
     background-repeat: no-repeat ;
     align-self: center;
     display: flex;
+}
+.contenedor-producto::before{
+    content: "";
+    background: #000;
+    opacity: 0,5;
+}
     
-    
-    
-     }
+
      
 
      
