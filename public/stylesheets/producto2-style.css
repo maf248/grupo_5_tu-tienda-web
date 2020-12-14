@@ -38,6 +38,7 @@ button:hover {
         color: white;
         font-size: 1.2em;
         text-transform: uppercase;
+        text-shadow: 10px 10px 15px #000;
         animation-name: aparece;
         animation-duration: 4s;
         animation-timing-function: linear;
@@ -48,6 +49,7 @@ button:hover {
         color: white;
         font-size: 0.75em;
         margin-top: 1%;
+        text-shadow: 10px 10px 15px #000;
         animation-name: aparece;
         animation-duration: 4s;
         animation-timing-function: linear;
@@ -78,6 +80,7 @@ button:hover {
         text-transform: uppercase;
         text-decoration: underline;
         border: none;
+        text-shadow: 10px 10px 15px #000;
     }
     @media (min-width:565px) {
         .banner1 h2 {
