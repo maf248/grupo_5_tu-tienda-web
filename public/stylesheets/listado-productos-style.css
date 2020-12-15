@@ -25,12 +25,61 @@ h1, h2, h3, h4, h5, h6, button {
 .tabla-productos-cuerpo {
     background-color: rgba(38, 146, 235, 0.7);
     border: 1px solid white;
+
 }
+.tabla-productos-cuerpo li{
+    font-size: 0.7em;
+    line-height: 1.2em;
+    margin-bottom: 5px;
+    list-style-type: "» " ;
+    font-weight: bolder;
+    padding-left: 5px;
+}
+
+
+
+.tabla-productos-cuerpo ul{
+    margin: 10px 10px 10px 20px;
+    text-align: left;
+}
+
 .tabla-productos h1 {
     padding: 10px;
-    font-size: 1.6em;
+    font-size: 1.2em;
     text-decoration: underline;
 }
+
 .medalla {
     width: 10%;
+}
+@media(max-width:500px){
+    .tabla-productos-titulos h2{
+        font-size: 1.2em;
+    }
+    .tabla-productos-titulos h1{
+        font-size: 0.8em;
+        padding: 5px;
+
+    }
+    .tabla-productos-titulos h3{
+        font-size: 1em;
+        flex-wrap: wrap ;
+        
+    }
+    .medalla{
+        width: 40%;
+        margin-top: 20px ;
+    }
+    .tabla-productos{
+        padding: 10px;
+    }
+
+}
+@media(max-width:350px){
+    .tabla-productos{
+        border: none;
+    }
+
+    
+
 }
