@@ -36,8 +36,6 @@ h1, h2, h3, h4, h5, h6, button {
     padding-left: 5px;
 }
 
-
-
 .tabla-productos-cuerpo ul{
     margin: 10px 10px 10px 20px;
     text-align: left;
@@ -48,9 +46,25 @@ h1, h2, h3, h4, h5, h6, button {
     font-size: 1.2em;
     text-decoration: underline;
 }
-
+.tabla-productos h2 {
+    font-family: 'Kaushan Script', Arial, Helvetica, sans-serif;
+    font-size: 1.6em;
+}
+.tabla-productos a {
+    color: black;
+    text-decoration: none;
+}
 .medalla {
-    width: 10%;
+    max-width: 50px;
+    margin-top: 10px ;
+}
+
+/* Media Queries */
+
+@media(max-width:800px){
+    .tabla-productos-titulos h2{
+        font-size: 1.4em;
+    }
 }
 @media(max-width:500px){
     .tabla-productos-titulos h2{
@@ -59,15 +73,13 @@ h1, h2, h3, h4, h5, h6, button {
     .tabla-productos-titulos h1{
         font-size: 0.8em;
         padding: 5px;
-
     }
     .tabla-productos-titulos h3{
         font-size: 1em;
         flex-wrap: wrap ;
-        
     }
     .medalla{
-        width: 40%;
+        width: 70%;
         margin-top: 20px ;
     }
     .tabla-productos{
@@ -79,7 +91,5 @@ h1, h2, h3, h4, h5, h6, button {
     .tabla-productos{
         border: none;
     }
-
-    
 
 }
