@@ -1,3 +1,7 @@
+## Daily 14/12/2020
+Nos reunimos por Zoom a ponernos de acuerdo con que contenido agregarle al listado de productos, como organizarlo, y lo mismo con la pagina de edicion/creacion de productos.
+Dividimos el trabajo restante de este sprint-3 entre los miembros del grupo, basandonos en nuestras fortalezas individuales. Recordamos en conjunto los requisitos del sprint que nos faltan terminar, como anteriormente detalle, y además que correcciones podriamos hacer, quienes las harían y como.
+En los siguientes días llenaremos el contenido de listado de productos, de edicion/creacion de productos, asegurandonos que coincida con el diseño de la página, y que sean responsive como el resto de la página. Ajustaremos el diseño de registro para que coincida con el de login, y haremos retoques de contenido y responsive en las demás paginas con el tiempo restante.
 ## Daily 11/12/2020
 Nos reunimos por Zoom para implementar todos juntos los motores de vistas, el modelo MVC con Express-generator. Creamos la estructura de carpetas y archivos de Express-generator y fuimos migrando los archivos del repositorio. Luego adaptamos los HTML a EJS, completamos APP.JS como entry point, creando las rutas y luego los Routers de las distintas secciones de la web. Finalmente, luego de algunos errores de rutas lo resolvimos y quedó todo funcionando perfectamente como antes, con la nueva estructura integrada.
 ## Daily 08/12/2020
