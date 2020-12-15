@@ -299,7 +299,7 @@ h1, h2, h3, h4, h5, h6, button {
 .productosContenedor-producto-1-imagen img:hover, .productosContenedor-producto-2-imagen img:hover {
     cursor: pointer;
 }
-.productosContenedor img:hover {
+.medalla:hover {
     transform: scale(1.05);
     animation-name: anime;
     animation-duration: 0.5s;
