@@ -240,24 +240,42 @@ h1, h2, h3, h4, h5, h6, button {
 
 .comoHacerTuPaginaWeb {
     padding: 5%;
+    display: flex;
+    flex-direction: column;
 }
 .comoHacerTuPaginaWeb-titulo {
     margin: 2% auto;
 }
 .comoHacerTuPaginaWeb-titulo h2 {
-    margin-bottom: 1%;
+    margin-bottom: 10px;
     font-size: 3em;
 }
 .comoHacerTuPaginaWeb li {
-    margin-bottom: 1%;
+    margin-bottom: 15px;
 }
-.comoHacerTuPaginaWeb button {
+.comoHacerTuPaginaWeb form {
+    display: flex;
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+}
+.comoHacerTuPaginaWeb button, .comoHacerTuPaginaWeb i {
     background: none;
     border: none;
     outline: none;
     cursor: pointer;
+    
+    font-size: 1.4em;
+    margin-top: 10px;
+}
+.comoHacerTuPaginaWeb button {
     text-decoration: underline;
 }
+.comoHacerTuPaginaWeb i {
+    padding: 0px 10px;
+    color: rgb(38, 146, 235);
+}
+
 /*Productos*/
 .productosContenedor {
     display: flex;
