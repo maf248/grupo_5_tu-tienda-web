@@ -2,55 +2,104 @@
 <html lang="es">
 <head>
     <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/stylesheets/productos-crear-o-editar.css">
 </head>
 
 <%- include('../partials/navbar') %>
 
-<h1>Creación y edición de productos</h1>
-<br>
-<br>
 
 
-<h3>6. Página: creación y edición de productos</h3>
-<br>
-    <p>Formulario al que accede el usuario administrador para cargar nuevos productos y editar los existentes.</p>
-    <p>Un buen punto de partida para los campos de estos formularios puede ser el siguiente:</p>
-    <ul>
-        <li>Crear o editar?</li> <!--Menu desplegable-->
-        <li>Nombre del producto (name)</li> <!--Texto-->
-        <li>Descripción (description)</li> <!--Texto-->
-        <li>Imagen (image)</li> <!--File-->
-        <li>Categoría (category)</li> <!--Menu desplegable-->
-        <li>Precio (price)</li> <!--number-->
-        <li>Beneficios (benefits)
-            <ul>
-                <li>Plan SEO para posicionarte mejor en Google</li> <!--Checkbox-->
-                <li>Dominio Web con el nombre de tu marca</li> <!--Checkbox-->
-                <li>Carrito de compras</li> <!--Checkbox-->
-                <li>Servicio de Inteligencia de diseño artificial (IDA)</li> <!--Checkbox-->
-                <li>Atención personalizada de nuestro equipo de marketing</li> <!--Checkbox-->
-                <li>Creador de logos profesional</li> <!--Checkbox-->
-                <li>Servicio web Corvid para aplicaciones web</li> <!--Checkbox-->
-                <li>Acceso a todas nuestras plantillas y accesorios de diseño web</li> <!--Checkbox-->
-                <li>Herramientas para diseño adaptativo</li> <!--Checkbox-->
-                <li>Hosting gratuito</li> <!--Checkbox-->
-                <li>Cantidad de secciones de la página (sections)</li> <!--Menu desplegable-->
-                <li>Beneficio extra: </li> <!--Texto-->
-            </ul>
-        </li>
-    </ul>
-
-    <h4>Historias de usuario</h4>
-    <ul>
-        <li> ★ Como administrador quiero poder crear nuevos productos para agregarlos a los listados del sitio.</li>
-        <li> ★ Cómo administrador quiero poder modificar los productos existentes para corregir información o actualizar precios.
-            Entregable: páginas de creación y edición de productos en formato ejs junto con todos los recursos necesarios, estilos de css e imágenes.</li>
-
-    </ul>
-    <br>
-    <br>
-<h5 style="color: red;">Esto es lo que dice la guia del Sprint-3. La puse acá solo para dar contenido y tener la consigna a mano. Habria que ajustar ciertos items por otros que se apliquen mas a nuestro caso. Ej: color, no tienen nuestros productos, podria ser, cantidad de secciones en la pagina web o tienda web que se está adquiriendo.</h5>
-
-
+<div class="creadorContainer">
+    <h1>Creador de productos</h1>
+    <form action="/" method="get">
+        <label for="crearEditar">¿Qué vas a hacer con el producto?</label>
+        <select name="crearEditar" id="">
+            <option value="crear">Crear</option>
+            <option value="editar">Editar</option>
+        </select>
+        <p>Elegí el nombre para tu producto:</p>
+        <input type="text" value="Escribí aquí el nombre">
+        <p>Breve descripción del producto:</p>
+        <textarea name="descripcionProducto" id="" cols="30" rows="10"></textarea>
+        <p>Subí la imágen que describe el producto.</p>
+        <input type="file" >
+        <label for="categoriaProducto">Elegí la categoría del producto:</label>
+        <select name="categoriaProducto" id="">
+            <option value="tiendaWeb">Tienda Web</option>
+            <option value="paginaWeb">Página Web</option>
+        </select>
+        <p>¿Qué precio tiene el producto?</p>
+        <input type="number" class="precio">
+        <ul>
+            <h2>¿Qué beneficios incluye el producto?</h2>
+            <li>
+                <label for="SEO">¿Incluye Plan SEO?</label>
+                <input type="radio" name="SEO" value="SeoSi"> Si
+                <input type="radio" name="SEO" value="SeoNo"> No
+            </li>
+            <li>
+                <label for="dominioWeb">¿Incluye dominio web personalizado?</label>
+                <input type="radio" name="dominio" value="dominioPersonalSi"> Si
+                <input type="radio" name="dominio" value="dominioPersonalNo"> No
+            </li>
+            <li>
+                <label for="carrito">¿Incluye carrito para compras?</label>
+                <input type="radio" name="carrito" value="productoNuevoConCarrito"> Si
+                <input type="radio" name="carrito" value="productoNuevoSinCarrito"> No
+            </li>
+            <li>
+                <label for="IDA">¿Incluye servicio IDA?</label>
+                <input type="radio" name="IDA" value="IDAsi"> Si
+                <input type="radio" name="IDA" value="IDAsi"> No
+            </li>
+            <li>
+                <label for="atencionPersonalizada">¿Incluye atención personalizada?</label>
+                <input type="radio" name="atencionPersonalizada" value="atencionPersonalizadaSi"> Si
+                <input type="radio" name="atencionPersonalizada" value="atencionPersonalizadaNo"> No
+            </li>
+            <li>
+                <label for="logos">¿Incluye Creador de Logos?</label>
+                <input type="radio" name="logos" value="logosSi"> Si
+                <input type="radio" name="logos" value="logosSi"> No
+            </li>
+            <li>
+                <label for="corvid">¿Incluye Corvid para aplicaciones profesionales?</label>
+                <input type="radio" name="corvid" value="corvidSi"> Si
+                <input type="radio" name="corvid" value="corvidNo"> No
+            </li>
+            <li>
+                <label for="plantillas">¿Incluye acceso a las plantillas de diseño?</label>
+                <input type="radio" name="plantillas" value="plantillasSi"> Si
+                <input type="radio" name="plantillas" value="plantillasNo"> No
+            </li>
+            <li>
+                <label for="responsive">¿Incluye herramientas para Web Responsive Design?</label>
+                <input type="radio" name="responsive" value="responsiveSi"> Si
+                <input type="radio" name="responsive" value="responsiveNo"> No
+            </li>
+            <li>
+                <label for="hosting">¿Incluye servicio de hosting?</label>
+                <input type="radio" name="hosting" value="hostingSi"> Si
+                <input type="radio" name="hosting" value="hostingNo"> No
+            </li>
+            <li>
+                <p>¿Cuantas secciones de página incluye el producto?</p>
+                <select name="secciones" id="">
+                    <option value="1sec">1 a 5 secciones</option>
+                    <option value="2sec">6 a 10 secciones</option>
+                    <option value="3sec">11 a 15 secciones</option>
+                    <option value="4sec">16 a 20 secciones</option>
+                    <option value="5sec">Más de 20 secciones</option>
+                </select>
+            </li>
+            <li>
+                <label for="beneficiosExtra">Nombra los beneficios extra que quieras agregarle a tu producto:</label>
+                <textarea name="beneficiosExtra" id="" cols="30" rows="10"></textarea>
+            </li>
+        </ul>
+        <button type="submit" class="submit">Enviar</button>
+        <button type="reset" class="reset">Borrar campos</button>
+    </form>
+</div>
 
 <%- include('../partials/footer') %>
