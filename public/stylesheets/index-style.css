@@ -150,6 +150,7 @@ h1, h2, h3, h4, h5, h6, button {
     flex-wrap: wrap;
     justify-content: space-around;
     background-color: rgba(38,146,235,1);
+    margin-top: 15px;
 }
 .eleginos:hover {
     transition: 300ms;
