@@ -17,7 +17,7 @@
 
     <div class="contenedor-precios"> 
         
-        <h2>Detalles del precio</h2>
+     <h2>Detalles del precio</h2>
         <div class="contenedor-precios-total">
             <div class="contenedor-precios-texto">
                 <h3 class="titulo-suscripcion"> Suscripción:</h3>
@@ -47,26 +47,26 @@
 
 
 <div class="datos">
-<div class="pago-descripcion">
+    <div class="pago-descripcion">
         <h2>Formas y medios de pago</h2>
-      <form action="carrito.html" method="GET">
+     <form action="carrito.html" method="GET">
         <p><label for="">Elige el medio de pago que prefieras</label></p>
         <p><input type="radio" name="pago" value="d">Debito</p>
         <p><input type="radio" name="pago" value="c">Credito</p>
         <p><input type="radio" name="pago" value="p">Pago facil</p>
         <p><input type="radio" name="pago" value="r">Rapi pago</p>
         <p><input type="radio" name="pago" value="m">Mercado pago</p>
-    </form>
+     </form>
     </div>
 
 
     <div class="datos-tarjeta">
-    <form action="carrito.html" method="GET">
-        <p><label for="pais"> Pais</label></p> 
-        <p><input type="text" id="pais" name="pais"></p>
-        <p><label for="ciudad"> Ciudad</label></p>
-        <p><input type="text" id="ciudad" name="ciudad"></p>
-        <p><label for="">Seleccione tarjeta: </label></p>
+        <form action="carrito.html" method="GET">
+                <p><label for="pais"> Pais</label></p> 
+                <p><input type="text" id="pais" name="pais"></p>
+                <p><label for="ciudad"> Ciudad</label></p>
+                <p><input type="text" id="ciudad" name="ciudad"></p>
+                <p><label for="">Seleccione tarjeta: </label></p>
             <select name="tarjeta" id="">
                 <option value="vi">Visa</option>
                 <option value="mc">Master card</option>
@@ -82,28 +82,26 @@
             </select>
             
         
-        <p><label for="numero tarjeta">Numero tarjeta </label></p>
-        <p><input type="number" id="numero tarjeta" name="numero tarjeta"></p>
-        <p><label for="codigo de seguridad"> Codigo de seguridad</label></p>
-        <p><input type="password" id="codigo de seguridad" name="codigo de seguridad"></p>
-        <P><label for="fecha de vencimiento">Fecha de vencimineto</label></P>
-        <p><input tipe="number" id="fecha de nacimiento" placeholder="dia/mes/año"></p>
-
-        <p><label for="cuotas"> Cantidad de cuotas: </label></p> 
-        <select name="cuotas" id="">
-        <option value="">1</option>
-        <option value="">3</option>
-        <option value="">6</option>
-        <option value="">9</option>
-        <option value="">12</option>
-    </select>
-        <p><label for="cupón de descuento">Cupón de descuento </label></p> 
-        <p><input type="cupón de descuento" id="cupón de descuento" name="cupón de descuento"></p>
-        
-        <button>Pagar</button> 
-    </form>
-</div>
+                <p><label for="numero tarjeta">Numero tarjeta </label></p>
+                <p><input type="number" id="numero tarjeta" name="numero tarjeta"></p>
+                <p><label for="codigo de seguridad"> Codigo de seguridad</label></p>
+                <p><input type="password" id="codigo de seguridad" name="codigo de seguridad"></p>
+                <P><label for="fecha de vencimiento">Fecha de vencimineto</label></P>
+                <p><input tipe="number" id="fecha de nacimiento" placeholder="dia/mes/año"></p>
+                <p><label for="cuotas"> Cantidad de cuotas: </label></p> 
+            <select name="cuotas" id="">
+                <option value="">1</option>
+                <option value="">3</option>
+                <option value="">6</option>
+                <option value="">9</option>
+                <option value="">12</option>
+            </select>
+                <p><label for="cupón de descuento">Cupón de descuento </label></p> 
+                <p><input type="cupón de descuento" id="cupón de descuento" name="cupón de descuento"></p>
+                <button>Pagar</button> 
+        </form>
     </div>
+</div>
 
         
 <%- include('./partials/footer') %>
