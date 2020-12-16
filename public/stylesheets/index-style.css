@@ -149,7 +149,7 @@ h1, h2, h3, h4, h5, h6, button {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    background-color: rgba(38,146,235,1);
+    background: linear-gradient(270deg,rgba(38,146,235,0.5) 40%,rgba(255,255,255,1) 100%);
     margin-top: 15px;
 }
 .eleginos:hover {
@@ -158,9 +158,8 @@ h1, h2, h3, h4, h5, h6, button {
     animation-duration: 3s;
     animation-fill-mode: both;
     animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-    -moz-animation-timing-function: ease-in-out;
-    border-radius: 60px;
+    animation-timing-function: ease-out;
+    -moz-animation-timing-function: ease-out;
     }
 @keyframes elegir {
     25% {
@@ -208,7 +207,30 @@ h1, h2, h3, h4, h5, h6, button {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    background: linear-gradient(90deg, rgba(100,197,121,0.4) 10%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(90deg, rgba(100,197,121,0.6) 40%, rgba(255,255,255,1) 100%);
+}
+.negocios:hover {
+    transition: 300ms;
+    animation-name: negocios;
+    animation-duration: 3s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+    -moz-animation-timing-function: ease-out;
+    }
+@keyframes negocios {
+    25% {
+        background-color: rgba(100, 197, 121, 0.8);
+    }
+    50% {
+        background-color: rgba(100, 197, 121, 0.5);
+    }
+    75% {
+        background-color: rgba(100, 197, 121, 0.1);
+    }
+    100% {
+        background-color: rgba(100, 197, 121, 0.5);
+    }
 }
 .negocios h2 {
     width: 50%;
@@ -220,7 +242,7 @@ h1, h2, h3, h4, h5, h6, button {
     display: flex;
     flex-wrap: wrap;
     width: 50%;
-    padding: 10%;
+    padding: 10% 10%;
 }
 .negocios p {
     width: 100%;
