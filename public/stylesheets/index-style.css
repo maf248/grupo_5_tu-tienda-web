@@ -342,14 +342,12 @@ h1, h2, h3, h4, h5, h6, button {
     align-self: flex-end;
     position: relative;
     top: 10px;
-
 }
 .productosContenedor em {
     font-style: normal;
     font-weight: bolder;
     color: red;
 }
-
 
 
 /*Quienes somos*/
@@ -418,6 +416,7 @@ h1, h2, h3, h4, h5, h6, button {
 .faqs {
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 20px;
 }
 .faqs-titulo {
     display: flex;
@@ -430,19 +429,63 @@ h1, h2, h3, h4, h5, h6, button {
     display: none;
     align-self: center;
     font-size: 1em;
-    opacity: 80%;
+    opacity: 0.5;
     width: 40%;
-    text-align: center;    
+    text-align: center;
+    background: radial-gradient(rgba(38, 146, 235,1) 5%, rgba(38,146,235,0.1) 100%);
+    box-shadow: 0px 0px 10px 0px rgba(38, 146, 235, 0.5);
+    border-radius: 20px;    
 }
 .faqs-titulo h2 {
     text-decoration: underline;
     text-align: center;
     font-size: 2em;
     width: 20%;
+    background: radial-gradient(ellipse,rgba(38, 146, 235,1) 5%, rgba(38,146,235,0.1) 75%, rgb(255,255,255) 95%);
 }
 .faqs-titulo:hover h3{
     display: inline-block;
 }
+.faqs-titulo:hover h2 {
+    animation-name: faqs;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    -moz-animation-timing-function: ease-out;
+    }
+@keyframes faqs {
+    10% {
+        transform: rotateY(36deg);
+    }
+    20% {
+        transform: rotateY(72deg);
+    }
+    30% {
+        transform: rotateY(108deg);
+    }
+    40% {
+        transform: rotateY(144deg);
+    }
+    50% {
+        transform: rotateY(180deg);
+    }
+    60% {
+        transform: rotateY(216deg);
+    }
+    70% {
+        transform: rotateY(252deg);
+    }
+    80% {
+        transform: rotateY(288deg);
+    }
+    90% {
+        transform: rotateY(324deg);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}   
 
 .faqs-article {
     width: 50%;
@@ -462,7 +505,7 @@ h1, h2, h3, h4, h5, h6, button {
 }
 .faqs-article:hover h4 {
     transform: scale(1.1);
-    transition: 200ms;
+    transition: 250ms;
 }
 
 /*Footer*/
