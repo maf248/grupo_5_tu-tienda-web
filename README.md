@@ -2,7 +2,6 @@
 #### grupo_5_tu-tienda-web
 
 
-
 ## ● Descripción
 
 Tu Tienda Web es un sitio que te permite armar tu propia tienda online para vender productos físicos o digitales. También podes armar tu propia página web.
@@ -27,6 +26,7 @@ Un listado de al menos 5 sitios de referencia indicando brevemente por qué fuer
 
 [- Webnode](https://www.webnode.es/#top)
 
+
 ## ● Información del grupo:
 ### Grupo #5 - Digital House, Full Stack Web Developer - 2020
 
@@ -47,6 +47,10 @@ Dentro de mis hobbies se destacan juntarme con amigos y viajar.
 Tengo 29 años, estudiante de marketing. Me interesé últimamente por la programación y decidí  dar mis primeros pasos con el curso de DH. Mi propósito es obtener los suficientes conocimientos para empezar a trabajar en este mundo de la programación. Soy padre de Gabriella con quien me encanta pasar tiempo.
 
 
+## ★ Trello:
+
+○ [Tablero del proyecto integrador](https://trello.com/b/sT9rfvf7/proyecto-integrador)
+
 
 ## ★ Wireframe de las siguientes páginas
 
@@ -66,6 +70,13 @@ Tengo 29 años, estudiante de marketing. Me interesé últimamente por la progra
 
 ○ [Formulario de login](https://wireframe.cc/1MSEsi)
 
-### ★ Trello:
+## ★ Aplicación Node + Express + EJS con:
 
-○ [Tablero del proyecto integrador](https://trello.com/b/sT9rfvf7/proyecto-integrador)
+○ Archivos parciales (head, header, footer, etc)
+○ Home (/)
+○ Listado de productos (/producto/listado
+○ Detalle del producto (/producto/1 y /producto/2)
+○ Carrito de compras (/carrito)
+○ Formulario de registro y login (/users/registro y /users/login)
+○ Formulario de carga y edición de productos (/producto/edicion) -ATENCION: ES LA UNICA URL QUE NO POSEE LINK DIRECTO EN LA PÁGINA-
+
