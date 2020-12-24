@@ -5,7 +5,7 @@ const usersController = {
             } else if (req.params.id == 'registro') {
                 res.render('./users/registro');
             } else {
-          res.send('No tenemos un producto con ese ID');
+          res.send('¡Ruta Incorrecta!');
             }
         } 
 }

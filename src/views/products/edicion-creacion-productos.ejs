@@ -17,12 +17,12 @@
             <option value="crear">Crear</option>
             <option value="editar">Editar</option>
         </select>
-        <p>Elegí el nombre para tu producto:</p>
-        <input type="text" value="Escribí aquí el nombre">
-        <p>Breve descripción del producto:</p>
+        <label for="nombre">Elegí el nombre para tu producto:</label>
+        <input type="text" name="nombre" value="Escribí aquí el nombre">
+        <label for="descripcionProducto">Breve descripción del producto:</label>
         <textarea name="descripcionProducto" id="" cols="30" rows="10"></textarea>
-        <p>Subí la imágen que describe el producto.</p>
-        <input type="file" >
+        <label for="imagen">Subí la imágen que describe el producto.</label>
+        <input type="file" name="imagen">
         <label for="categoriaProducto">Elegí la categoría del producto:</label>
         <select name="categoriaProducto" id="">
             <option value="tiendaWeb">Tienda Web</option>
@@ -34,8 +34,8 @@
             <option value="subCatPlatino">Platino</option>
             <option value="subCatBasic">Basic</option>
         </select>
-        <p>¿Qué precio tiene el producto?</p>
-        <input type="number" class="precio">
+        <label for="precio">¿Qué precio tiene el producto?</label>
+        <input type="number" name="precio" class="precio">
         <ul>
             <h2>¿Qué beneficios incluye el producto?</h2>
             <li>
@@ -80,7 +80,7 @@
                 <label for="hosting">Incluye servicio de hosting</label>
             </li>
             <li>
-                <p>¿Cuantas secciones de página incluye el producto?</p>
+                <label for="secciones">¿Cuantas secciones de página incluye el producto?</label>
                 <select name="secciones" id="">
                     <option value="1sec">1 a 5 secciones</option>
                     <option value="2sec">6 a 10 secciones</option>
