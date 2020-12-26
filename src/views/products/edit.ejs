@@ -93,6 +93,9 @@
         <button type="submit" class="submit">Enviar</button>
         <button type="reset" class="reset">Borrar campos</button>
     </form>
+    <form action="/products/<%= productToEdit.id %>?_method=DELETE" method="POST">
+        <button type="submit" class="delete">Eliminar producto</button>
+    </form>
 </div>
 
 <%- include('../partials/footer') %>

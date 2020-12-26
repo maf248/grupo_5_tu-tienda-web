@@ -48,7 +48,19 @@ const productosController = {
     products[req.params.id -1].description = req.body.description;
     
     /*----Guardando imagen nueva y cambios en productos data base----*/
-		//products[req.params.id -1].image = req.file.filename;
+		products[req.params.id -1].image = req.file.filename;
+		const productsJSON = JSON.stringify(products);
+		fs.writeFileSync(productsDir, productsJSON);
+		res.redirect('/products');
+    },
+    borrado: function(req, res, next) {
+      /*----Borrando indice del producto en variable----*/
+		products.splice(req.params.id -1, 1);
+		/*----Corrigiendo id en array productos----*/
+		for (let i = 0; i < products.length; i++){
+			products[i].id = i + 1;
+		}
+		/*----Guardando cambios en productos data base----*/
 		const productsJSON = JSON.stringify(products);
 		fs.writeFileSync(productsDir, productsJSON);
 		res.redirect('/products');

@@ -36,3 +36,6 @@ button {
 .reset {
     background-color: rgb(38, 146, 235);
 }
+.delete {
+    background-color: rgb(235, 38, 38);
+}
