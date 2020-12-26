@@ -1,0 +1,23 @@
+[{
+    "id": 1,
+    "name": "Página Web",
+    "description": "descripcion del producto",
+    "image": "url imagen producto",
+    "category": "tienda web",
+    "subcategory": "diamante",
+    "price": "precio",
+    "benefits": "??",
+    "sections": "1 a 5 secciones",
+    "extraBenefits": "Mensaje opcional referente a los beneficios del producto"
+}, {
+    "id": 2,
+    "name": "Tienda Web",
+    "description": "descripcion del producto",
+    "image": "url imagen producto",
+    "category": "tienda web",
+    "subcategory": "diamante",
+    "price": "precio",
+    "benefits": "??",
+    "sections": "1 a 5 secciones",
+    "extraBenefits": "Mensaje opcional referente a los beneficios del producto"
+}]

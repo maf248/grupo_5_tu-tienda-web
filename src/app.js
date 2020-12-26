@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 
 app.use('/', indexRouter);
-app.use('/producto', productoRouter);
+app.use('/products', productoRouter);
 app.use('/carrito', carritoRouter);
 app.use('/users', usersRouter);
 

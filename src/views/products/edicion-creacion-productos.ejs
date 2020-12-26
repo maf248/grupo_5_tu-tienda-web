@@ -11,31 +11,31 @@
 
 <div class="creadorContainer">
     <h1>Creador de productos</h1>
-    <form action="/" method="get">
+    <form action="/products" method="POST" enctype="multipart/form-data">
         <label for="crearEditar">¿Qué vas a hacer con el producto?</label>
         <select name="crearEditar" id="">
             <option value="crear">Crear</option>
             <option value="editar">Editar</option>
         </select>
-        <label for="nombre">Elegí el nombre para tu producto:</label>
-        <input type="text" name="nombre" value="Escribí aquí el nombre">
-        <label for="descripcionProducto">Breve descripción del producto:</label>
-        <textarea name="descripcionProducto" id="" cols="30" rows="10"></textarea>
-        <label for="imagen">Subí la imágen que describe el producto.</label>
-        <input type="file" name="imagen">
-        <label for="categoriaProducto">Elegí la categoría del producto:</label>
-        <select name="categoriaProducto" id="">
+        <label for="name">Elegí el nombre para tu producto:</label>
+        <input type="text" name="name" value="Escribí aquí el nombre">
+        <label for="description">Breve descripción del producto:</label>
+        <textarea name="description" id="" cols="30" rows="10"></textarea>
+        <label for="image">Subí la imágen que describe el producto.</label>
+        <input type="file" name="image">
+        <label for="category">Elegí la categoría del producto:</label>
+        <select name="category" id="">
             <option value="tiendaWeb">Tienda Web</option>
             <option value="paginaWeb">Página Web</option>
         </select>
-        <label for="subCategoriaProducto">Elegí la sub-categoría del producto:</label>
-        <select name="subCategoriaProducto" id="">
+        <label for="subCategory">Elegí la sub-categoría del producto:</label>
+        <select name="subCategory" id="">
             <option value="subCatDiamante">Diamante</option>
             <option value="subCatPlatino">Platino</option>
             <option value="subCatBasic">Basic</option>
         </select>
-        <label for="precio">¿Qué precio tiene el producto?</label>
-        <input type="number" name="precio" class="precio">
+        <label for="price">¿Qué precio tiene el producto?</label>
+        <input type="number" name="price" class="precio">
         <ul>
             <h2>¿Qué beneficios incluye el producto?</h2>
             <li>
@@ -80,8 +80,8 @@
                 <label for="hosting">Incluye servicio de hosting</label>
             </li>
             <li>
-                <label for="secciones">¿Cuantas secciones de página incluye el producto?</label>
-                <select name="secciones" id="">
+                <label for="sections">¿Cuantas secciones de página incluye el producto?</label>
+                <select name="sections" id="">
                     <option value="1sec">1 a 5 secciones</option>
                     <option value="2sec">6 a 10 secciones</option>
                     <option value="3sec">11 a 15 secciones</option>
@@ -90,8 +90,8 @@
                 </select>
             </li>
             <li>
-                <label for="beneficiosExtra">Nombra los beneficios extra que quieras agregarle a tu producto:</label>
-                <textarea name="beneficiosExtra" id="" cols="30" rows="10"></textarea>
+                <label for="extraBenefits">Nombra los beneficios extra que quieras agregarle a tu producto:</label>
+                <textarea name="extraBenefits" id="" cols="30" rows="10"></textarea>
             </li>
         </ul>
         <button type="submit" class="submit">Enviar</button>
