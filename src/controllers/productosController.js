@@ -4,21 +4,22 @@ const productsFilePath = path.join(__dirname, '..', 'data', 'products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const productsDir = path.join(__dirname, '..', 'data', 'products.json');
 
+
 const productosController = {
     detalle: function(req, res, next) {
         if (req.params.id == 1) {
-          res.render('./products/producto'/*, { title: 'Express' }*/);
+          res.render('./products/producto', {product: products[req.params.id -1]});
             } else if (req.params.id == 2) {
-          res.render('./products/producto2'/*, { title: 'Express' }*/);
+          res.render('./products/producto2', {product: products[req.params.id -1]});
             } else {
           res.send('No tenemos un producto con ese ID');
             }
         },
     listado: function(req, res, next) {
-          res.render('./products/listado-productos'/*, { title: 'Express' }*/);   
+          res.render('./products/listado-productos', {products: products});
         },
     creacion: function(req, res, next) {
-          res.render('./products/create'/*, { title: 'Express' }*/); 
+          res.render('./products/create'); 
         },
     creador: function(req, res, next) {
       products.push({
@@ -43,13 +44,14 @@ const productosController = {
     },
     editor: function(req, res, next) {
     /*----Actualizando los datos de formularios, en la variable products----*/
+    console.log(req.body);
     products[req.params.id -1].name = req.body.name;
 		products[req.params.id -1].price = req.body.price;
 		products[req.params.id -1].category = req.body.category;
     products[req.params.id -1].description = req.body.description;
     
     /*----Guardando imagen nueva y cambios en productos data base----*/
-		products[req.params.id -1].image = req.file.filename;
+		//products[req.params.id -1].image = req.file.filename;
 		const productsJSON = JSON.stringify(products);
 		fs.writeFileSync(productsDir, productsJSON);
 		res.redirect('/products');

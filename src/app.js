@@ -9,7 +9,7 @@ const methodOverride =  require('method-override');
 var indexRouter = require('./routes/index');
 var carritoRouter = require('./routes/carrito');
 var usersRouter = require('./routes/users');
-var productoRouter = require('./routes/productos');
+var productsRouter = require('./routes/productos');
 
 var app = express();
 
@@ -26,7 +26,7 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.use(methodOverride('_method'));
 
 app.use('/', indexRouter);
-app.use('/products', productoRouter);
+app.use('/products', productsRouter);
 app.use('/carrito', carritoRouter);
 app.use('/users', usersRouter);
 

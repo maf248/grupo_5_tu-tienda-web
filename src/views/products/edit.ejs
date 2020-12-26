@@ -12,7 +12,7 @@
     <h1>Editor de productos</h1>
     <h2>Estás editando: <i><%= productToEdit.name %></i></h2>
 
-    <form action="/products/<%= productToEdit.id %>?_method=PUT" method="PUT" enctype="multipart/form-data">
+    <form action="/products/<%= productToEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
 
         <label for="name">Elegí el nombre para tu producto:</label>
         <input type="text" name="name" value="Escribí aquí el nombre">
