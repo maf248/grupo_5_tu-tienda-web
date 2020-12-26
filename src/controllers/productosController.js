@@ -29,22 +29,19 @@ const productosController = {
         "discount": req.body.discount,
         "category": req.body.category,
         "description": req.body.description,
-        //"image": req.file.filename,
+        "image": req.file.filename,
          });
-         console.log(req.body);
+      
          const productsJSON = JSON.stringify(products);
          fs.writeFileSync(productsDir, productsJSON);
 
-
-        res.send('Gracias por crear el producto');
-        //res.redirect('/products');
+        res.redirect('/products');
         },
     edicion: function(req, res, next) {
       res.render('./products/edit', {productToEdit: products[req.params.id -1]});
     },
     editor: function(req, res, next) {
     /*----Actualizando los datos de formularios, en la variable products----*/
-    console.log(req.body);
     products[req.params.id -1].name = req.body.name;
 		products[req.params.id -1].price = req.body.price;
 		products[req.params.id -1].category = req.body.category;
