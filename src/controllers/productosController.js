@@ -8,14 +8,14 @@ const products = JSON.parse(fs.readFileSync(productsDir, 'utf-8'));
 const productosController = {
     detalle: function(req, res, next) {
         /*----- Acá filtramos el JSON en las diferentes categorías de producto -----*/
-        const tiendaWeb = products.filter( item => item.name === 'Tienda Web' );
-        const paginaWeb = products.filter( item => item.name === 'Página Web' );
+        const tiendaWeb = products.filter( item => item.type === 'tiendaWeb' );
+        const paginaWeb = products.filter( item => item.type === 'paginaWeb' );
 
 
         /*-----Acá pasamos la vista de producto según  el id -----*/
         /*-----Agregamos también las funcionalidades a la vista de ejs-----*/
         if ( req.params.id - 1 < products.length ) {
-          res.render('./products/producto', { product: products[req.params.id -1], tiendaWeb, paginaWeb });   
+          res.render('./products/producto', { product: products[req.params.id -1] });   
         } else {
           res.send('No tenemos un producto con ese ID');
       }

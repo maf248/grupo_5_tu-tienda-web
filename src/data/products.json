@@ -1,6 +1,7 @@
 [{
     "id": 1,
     "name": "Tienda Web",
+    "type": "tiendaWeb",
     "titleBanner1": "UN CATÁLOGO TODOS LOS CANALES DE VENTA",
     "subtitleBaner1": "Conectá tu catálogo con Tu Tienda Web y no te pierdas ni una venta",
     "seccion1": {
@@ -95,6 +96,7 @@
 }, {
     "id": 2,
     "name": "Página Web",
+    "type": "paginaWeb",
     "titleBanner1": "EL LUGAR PERFECTO PARA CREAR TU PÁGINA WEB PROFESIONAL",
     "subtitleBaner1": "",
     "seccion1": {
