@@ -12,13 +12,12 @@ a {
     text-decoration: none;
     cursor: pointer;
 }
-i {
-    margin: 2% auto 5% auto;
-    color:  rgb(40, 172, 106);
-    font-size: 2em;
+.icon {
+    width: 7%;
+    margin-bottom: 2%;
     transition: 600ms;
 }
-.disenoBlanco article:hover i, .disenoAzul article:hover i {
+.disenoBlanco article:hover .icon, .disenoAzul article:hover .icon {
     transform: rotate(-90deg);
 }
 button:hover {

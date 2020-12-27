@@ -27,13 +27,15 @@
 
         
             <section class="disenoBlanco">
-                <h2 class="disenoBlanco-article1-tituloPrincipal">
-                    <%= product.seccion1.title %>
-                </h2>
+                <article class="disenoBlanco-article1">
+                    <h2 class="disenoBlanco-article1-tituloPrincipal">
+                        <%= product.seccion1.title %>
+                    </h2>
+                </article>
                 <div class="disenoBlanco-containerArticle2">
                     <article class="disenoBlanco-article2">
                         <h3 class="disenoBlanco-article2-titulo">
-                            <i class="fas fa-tasks"></i> <br>
+                            <img src="/icons/<%= product.seccion1.icon1 %>" class="icon" alt=""> <br>
                             <%= product.seccion1.subtitle1 %>
                         </h3>
                         <p  class="disenoBlanco-article2-parrafo">
@@ -42,7 +44,7 @@
                     </article>
                     <article class="disenoBlanco-article2">
                         <h3 class="disenoBlanco-article2-titulo">
-                            <i class='fas fa-robot'></i> <br>
+                            <img src="/icons/<%= product.seccion1.icon2 %>" class="icon" alt=""> <br>
                             <%= product.seccion1.subtitle2 %>
                         </h3>
                         <p  class="disenoBlanco-article2-parrafo">
@@ -51,7 +53,7 @@
                     </article>
                     <article class="disenoBlanco-article2">
                         <h3 class="disenoBlanco-article2-titulo">
-                            <i class='fas fa-truck'></i> <br>
+                            <img src="/icons/<%= product.seccion1.icon3 %>" class="icon" alt=""> <br>
                             <%= product.seccion1.subtitle3 %>
                         </h3>
                         <p  class="disenoBlanco-article2-parrafo">
@@ -60,7 +62,7 @@
                     </article>
                     <article class="disenoBlanco-article2">
                         <h3 class="disenoBlanco-article2-titulo">
-                            <i class='fas fa-money-bill-wave'></i> <br>
+                            <img src="/icons/<%= product.seccion1.icon4 %>" class="icon" alt=""> <br>
                             <%= product.seccion1.subtitle4 %>
                         </h3>
                         <p  class="disenoBlanco-article2-parrafo">
@@ -91,7 +93,7 @@
             <div class="disenoAzul-containerArticle2">
                 <article class="disenoAzul-article2">
                     <h3 class="disenoAzul-article2-titulo">
-                        <i class="fas fa-palette"></i> <br>
+                        <img src="/icons/<%= product.seccion2.icon1 %>" class="icon" alt=""> <br>
                         <%= product.seccion2.subtitle1 %>
                     </h3>
                     <p  class="disenoAzul-article2-parrafo">
@@ -100,7 +102,7 @@
                 </article>
                 <article class="disenoAzul-article2">
                     <h3 class="disenoAzul-article2-titulo">
-                        <i class="fas fa-network-wired"></i> <br>
+                        <img src="/icons/<%= product.seccion2.icon2 %>" class="icon" alt=""> <br>
                         <%= product.seccion2.subtitle2 %>
                     </h3>
                     <p  class="disenoAzul-article2-parrafo">
@@ -109,7 +111,7 @@
                 </article>
                 <article class="disenoAzul-article2">
                     <h3 class="disenoAzul-article2-titulo">
-                        <i class="fas fa-truck"></i> <br>
+                        <img src="/icons/<%= product.seccion2.icon3 %>" class="icon" alt=""> <br>
                         <%= product.seccion2.subtitle3 %>
                     </h3>
                     <p  class="disenoAzul-article2-parrafo">
@@ -133,7 +135,7 @@
             <div class="disenoBlanco-containerArticle2">
                 <article class="disenoBlanco-article2">
                     <h3 class="disenoBlanco-article2-titulo">
-                        <i class="fas fa-align-center"></i> <br>
+                        <img src="/icons/<%= product.seccion3.icon1 %>" class="icon" alt=""> <br>
                         <%= product.seccion3.subtitle1 %>
                     </h3>
                     <p  class="disenoBlanco-article2-parrafo">
@@ -163,7 +165,7 @@
             <div class="disenoAzul-containerArticle2">
                 <article class="disenoAzul-article2">
                     <h3 class="disenoAzul-article2-titulo">
-                        <i class="fab fa-google"></i> <br>
+                        <img src="/icons/<%= product.seccion4.icon1 %>" class="icon" alt=""> <br>
                         <%= product.seccion4.subtitle1 %>
                     </h3>
                     <p  class="disenoAzul-article2-parrafo">
@@ -172,7 +174,7 @@
                 </article>
                 <article class="disenoAzul-article2">
                     <h3 class="disenoAzul-article2-titulo">
-                        <i class="fab fa-amazon"></i> <br>
+                        <img src="/icons/<%= product.seccion4.icon2 %>" class="icon" alt=""> <br>
                         <%= product.seccion4.subtitle2 %>
                     </h3>
                     <p  class="disenoAzul-article2-parrafo">
@@ -196,7 +198,7 @@
             <div class="disenoBlanco-containerArticle2">
                 <article class="disenoBlanco-article2">
                     <h3 class="disenoBlanco-article2-titulo">
-                        <i class="fab fa-instagram"></i> <br>
+                        <img src="/icons/<%= product.seccion5.icon1 %>" class="icon" alt=""> <br>
                         <%= product.seccion5.subtitle1 %>
                     </h3>
                     <p  class="disenoBlanco-article2-parrafo">
@@ -205,7 +207,7 @@
                 </article>
                 <article class="disenoBlanco-article2">
                     <h3 class="disenoBlanco-article2-titulo">
-                        <i class="fab fa-whatsapp"></i> <br>
+                        <img src="/icons/<%= product.seccion5.icon2 %>" class="icon" alt=""> <br>
                         <%= product.seccion5.subtitle2 %>
                     </h3>
                     <p  class="disenoBlanco-article2-parrafo">
@@ -214,7 +216,7 @@
                 </article>
                 <article class="disenoBlanco-article2">
                     <h3 class="disenoBlanco-article2-titulo">
-                        <i class="fab fa-facebook"></i> <br>
+                        <img src="/icons/<%= product.seccion5.icon3 %>" class="icon" alt=""> <br>
                         <%= product.seccion5.subtitle3 %>
                     </h3>
                     <p  class="disenoBlanco-article2-parrafo">
