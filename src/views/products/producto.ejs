@@ -260,13 +260,27 @@
                                     Costo por transacción
                                 </td>
                                 <td>
-                                    0,5%
+                                    <%= product.benefits.costoTransaccion[0] %>%
                                 </td>
                                 <td>
-                                    1%
+                                    <%= product.benefits.costoTransaccion[1] %>%
                                 </td>
                                 <td>
-                                    2%
+                                    <%= product.benefits.costoTransaccion[2] %>%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="beneficio">
+                                    Cantidad de secciones
+                                </td>
+                                <td>
+                                    <%= product.benefits.cantidadSecciones[0] %>
+                                </td>
+                                <td>
+                                    <%= product.benefits.cantidadSecciones[1] %>
+                                </td>
+                                <td>
+                                    <%= product.benefits.cantidadSecciones[2] %>
                                 </td>
                             </tr>
                             <tr>
@@ -274,13 +288,25 @@
                                     Productos, visitas y ventas ilimitados
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.ventasIlimitadas[0] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.ventasIlimitadas[0] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.ventasIlimitadas[1] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.ventasIlimitadas[1] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.ventasIlimitadas[2] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.ventasIlimitadas[2] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                             </tr>
                             <tr>
@@ -288,13 +314,25 @@
                                     Diseños personalizables
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.disenoPersonalizables[0] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.disenoPersonalizables[0] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.disenoPersonalizables[1] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.disenoPersonalizables[1] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.disenoPersonalizables[2] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.disenoPersonalizables[2] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                             </tr>
                             <tr>
@@ -302,13 +340,25 @@
                                     Integración con medios de pago
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.mediosDePago[0] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.mediosDePago[0] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.mediosDePago[1] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.mediosDePago[1] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.mediosDePago[2] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.mediosDePago[2] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                             </tr>
                             <tr>
@@ -316,13 +366,25 @@
                                     Integración con medios de envío
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.mediosDeEnvio[0] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.mediosDeEnvio[0] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.mediosDeEnvio[1] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.mediosDeEnvio[1] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.mediosDeEnvio[2] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.mediosDeEnvio[2] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                             </tr>
                             <tr>
@@ -330,13 +392,25 @@
                                     Gestión de productos y manejo de stock
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.gestionStock[0] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.gestionStock[0] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.gestionStock[1] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.gestionStock[1] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.gestionStock[2] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.gestionStock[2] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                             </tr>
                             <tr>
@@ -344,13 +418,25 @@
                                     Configuración de dominio propio
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.dominioPropio[0] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.dominioPropio[0] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.dominioPropio[1] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.dominioPropio[1] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.dominioPropio[2] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.dominioPropio[2] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                             </tr>
                             <tr>
@@ -358,13 +444,25 @@
                                     Seguimiento de estadísticas con Google Analytics
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.estadisticasGoogle[0] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.estadisticasGoogle[0] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.estadisticasGoogle[1] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.estadisticasGoogle[1] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.estadisticasGoogle[2] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.estadisticasGoogle[2] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                             </tr>
                             <tr>
@@ -372,13 +470,25 @@
                                     Configuración de códigos de tracking y conversión
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.trackingConversion[0] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.trackingConversion[0] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.trackingConversion[1] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.trackingConversion[1] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.trackingConversion[2] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.trackingConversion[2] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                             </tr>
                             <tr>
@@ -386,13 +496,25 @@
                                     Hosting y certificado SSL incluido
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.hostingSSL[0] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.hostingSSL[0] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.hostingSSL[1] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.hostingSSL[1] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.hostingSSL[2] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.hostingSSL[2] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                             </tr>
                             <tr>
@@ -400,13 +522,25 @@
                                     Aplicación de <em>Tu Tienda Web</em> para Android e iOS
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.appAndroidIOS[0] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.appAndroidIOS[0] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.appAndroidIOS[1] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.appAndroidIOS[1] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.appAndroidIOS[2] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.appAndroidIOS[2] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                             </tr>
                             <tr>
@@ -414,13 +548,25 @@
                                     Carritos abandonados
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.carritosAbandonados[0] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.carritosAbandonados[0] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.carritosAbandonados[1] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.carritosAbandonados[1] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.carritosAbandonados[2] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.carritosAbandonados[2] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                             </tr>
                             <tr>
@@ -428,13 +574,25 @@
                                     Configuración de puntos de entrega
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.textosMasivos[0] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.textosMasivos[0] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.textosMasivos[1] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.textosMasivos[1] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.textosMasivos[2] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.textosMasivos[2] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                             </tr>
                             <tr>
@@ -442,13 +600,25 @@
                                     Carga y actualización masiva de los textos de productos
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.textosMasivos[0] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.textosMasivos[0] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.textosMasivos[1] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.textosMasivos[1] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.textosMasivos[2] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.textosMasivos[2] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                             </tr>
                             <tr>
@@ -456,13 +626,25 @@
                                     Teclado Tu Tienda Web
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.tecladoWeb[0] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.tecladoWeb[0] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.tecladoWeb[1] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.tecladoWeb[1] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.tecladoWeb[2] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.tecladoWeb[2] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                             </tr>
                             <tr>
@@ -470,13 +652,25 @@
                                     Soporte via email
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.soporteMail[0] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.soporteMail[0] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.soporteMail[1] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.soporteMail[1] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.soporteMail[2] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.soporteMail[2] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                             </tr>
                             <tr>
@@ -484,13 +678,25 @@
                                     Promociones 2x1 y 3x2
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.promociones[0] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.promociones[0] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.promociones[1] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.promociones[1] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.promociones[2] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.promociones[2] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                             </tr>
                             <tr>
@@ -498,13 +704,25 @@
                                     Cupones de descuento
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.cuponesDescuento[0] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.cuponesDescuento[0] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.cuponesDescuento[1] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.cuponesDescuento[1] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.cuponesDescuento[2] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.cuponesDescuento[2] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                             </tr>
                             <tr>
@@ -512,13 +730,25 @@
                                     Personalización del SEO
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.personalizacionSEO[0] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.personalizacionSEO[0] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.personalizacionSEO[1] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.personalizacionSEO[1] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.personalizacionSEO[2] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.personalizacionSEO[2] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                             </tr>
                             <tr>
@@ -526,13 +756,25 @@
                                     Estadísticas avanzadas de tu negocio
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.estadisticasNegocio[0] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.estadisticasNegocio[0] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.estadisticasNegocio[1] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.estadisticasNegocio[1] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.estadisticasNegocio[2] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.estadisticasNegocio[2] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                             </tr>
                             <tr>
@@ -540,13 +782,25 @@
                                     Instagram shopping, Facebook Store y Google Shopping
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.redesSocialesStores[0] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.redesSocialesStores[0] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.redesSocialesStores[1] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.redesSocialesStores[1] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.redesSocialesStores[2] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.redesSocialesStores[2] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                             </tr>
                             <tr>
@@ -554,13 +808,25 @@
                                     Diseño 100% flexible (via HTML, CSS y JavaScript)
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.disenioFlexible[0] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.disenioFlexible[0] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.disenioFlexible[1] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.disenioFlexible[1] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                                 <td>
-                                    <i class="fas fa-times"></i>
+                                    <% if (product.benefits.disenioFlexible[2] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.disenioFlexible[2] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                             </tr>
                             <tr>
@@ -568,13 +834,25 @@
                                     Soporte vía Whatsapp a partir del primer pago
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.soporteWhatsapp[0] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.soporteWhatsapp[0] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.soporteWhatsapp[1] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.soporteWhatsapp[1] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                                 <td>
-                                    <i class="fas fa-times"></i>
+                                    <% if (product.benefits.soporteWhatsapp[2] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.soporteWhatsapp[2] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                             </tr>
                             <tr>
@@ -582,13 +860,25 @@
                                     Múltiples idiomas y monedas
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.multiplesIdiomasYMonedas[0] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.multiplesIdiomasYMonedas[0] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                                 <td>
-                                    <i class="fas fa-times"></i>
+                                    <% if (product.benefits.multiplesIdiomasYMonedas[1] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.multiplesIdiomasYMonedas[1] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                                 <td>
-                                    <i class="fas fa-times"></i>
+                                    <% if (product.benefits.multiplesIdiomasYMonedas[2] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.multiplesIdiomasYMonedas[2] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                             </tr>
                             <tr>
@@ -596,13 +886,25 @@
                                     Integración con MercadoLibre y Amazon
                                 </td>
                                 <td>
-                                    <i class="fas fa-check"></i>
+                                    <% if (product.benefits.integracionMLAmazon[0] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.integracionMLAmazon[0] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                                 <td>
-                                    <i class="fas fa-times"></i>
+                                    <% if (product.benefits.integracionMLAmazon[1] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.integracionMLAmazon[1] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                                 <td>
-                                    <i class="fas fa-times"></i>
+                                    <% if (product.benefits.integracionMLAmazon[2] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.integracionMLAmazon[2] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
                                 </td>
                             </tr>
                             <tr>

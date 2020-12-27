@@ -66,7 +66,7 @@
     "category": ["Oro", "Plata", "Bronce"],
     "categoryImage": ["plan-oro.png","plan-plata.png","plan-bronce.png"],
     "price": ["6999", "1999", "799"],
-    "benefits": {"constoTransaccion": [0.5, 1, 2],
+    "benefits": {"costoTransaccion": [0.5, 1, 2],
         "ventasIlimitadas": [true, true, true],
          "disenoPersonalizables":[true, true, true],
          "mediosDePago": [true, true, true],
