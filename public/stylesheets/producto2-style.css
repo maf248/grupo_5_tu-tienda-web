@@ -116,17 +116,6 @@ button:hover {
     }
 /*END BANNER 1*/
 
-/*BANNER CAMPERA*/
-.bannerCampera {
-    margin-top: 2%;
-}
-.bannerCampera-img {
-    width: 100%;
-}
-@media (min-width: 700px) {
-}
-/*END BANNER CAMPERA*/
-
 /*DISENO FONDO AZUL*/
 
 .disenoAzul {
