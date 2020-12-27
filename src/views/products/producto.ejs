@@ -259,13 +259,13 @@
                                 Costo por transacción
                             </td>
                             <td>
-                                <%= product.benefits.costoTransaccion[0] %>%
+                                <%= product.benefits.costoTransaccion[0] %>
                             </td>
                             <td>
-                                <%= product.benefits.costoTransaccion[1] %>%
+                                <%= product.benefits.costoTransaccion[1] %>
                             </td>
                             <td>
-                                <%= product.benefits.costoTransaccion[2] %>%
+                                <%= product.benefits.costoTransaccion[2] %>
                             </td>
                         </tr>
                         <tr>
@@ -909,6 +909,268 @@
                                 <% } %>
                             </td>
                         </tr>
+                        <% } %>
+                        <% if (product.type == 'paginaWeb') { %>                     
+                            <tr>
+                                <td class="beneficio">
+                                    Plantillas Ilimitadas
+                                </td>
+                                <td>
+                                    <% if (product.benefits.todasPlantillas[0] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.todasPlantillas[0] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
+                                </td>
+                                <td>
+                                    <% if (product.benefits.todasPlantillas[1] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.todasPlantillas[1] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
+                                </td>
+                                <td>
+                                    <% if (product.benefits.todasPlantillas[2] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.todasPlantillas[2] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="beneficio">
+                                    Diseños responsive
+                                </td>
+                                <td>
+                                    <% if (product.benefits.responsiveDesign[0] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.responsiveDesign[0] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
+                                </td>
+                                <td>
+                                    <% if (product.benefits.responsiveDesign[1] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.responsiveDesign[1] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
+                                </td>
+                                <td>
+                                    <% if (product.benefits.responsiveDesign[2] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.responsiveDesign[2] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="beneficio">
+                                    Hosting gratuito
+                                </td>
+                                <td>
+                                    <% if (product.benefits.hostinGratuito[0] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.hostinGratuito[0] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
+                                </td>
+                                <td>
+                                    <% if (product.benefits.hostinGratuito[1] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.hostinGratuito[1] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
+                                </td>
+                                <td>
+                                    <% if (product.benefits.hostinGratuito[2] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.hostinGratuito[2] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="beneficio">
+                                    Inteligencia de diseño artificial (IDA)
+                                </td>
+                                <td>
+                                    <% if (product.benefits.ida[0] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.ida[0] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
+                                </td>
+                                <td>
+                                    <% if (product.benefits.ida[1] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.ida[1] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
+                                </td>
+                                <td>
+                                    <% if (product.benefits.ida[2] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.ida[2] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="beneficio">
+                                    Corvid de aplicaciones profesionales
+                                </td>
+                                <td>
+                                    <% if (product.benefits.corvid[0] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.corvid[0] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
+                                </td>
+                                <td>
+                                    <% if (product.benefits.corvid[1] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.corvid[1] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
+                                </td>
+                                <td>
+                                    <% if (product.benefits.corvid[2] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.corvid[2] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="beneficio">
+                                    Creador de logos
+                                </td>
+                                <td>
+                                    <% if (product.benefits.creadorLogos[0] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.creadorLogos[0] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
+                                </td>
+                                <td>
+                                    <% if (product.benefits.creadorLogos[1] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.creadorLogos[1] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
+                                </td>
+                                <td>
+                                    <% if (product.benefits.creadorLogos[2] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.creadorLogos[2] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="beneficio">
+                                    Dominio con tu marca personalizada
+                                </td>
+                                <td>
+                                    <% if (product.benefits.dominioPropio[0] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.dominioPropio[0] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
+                                </td>
+                                <td>
+                                    <% if (product.benefits.dominioPropio[1] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.dominioPropio[1] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
+                                </td>
+                                <td>
+                                    <% if (product.benefits.dominioPropio[2] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.dominioPropio[2] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="beneficio">
+                                    Atención personalizada de nuestro equipo de marketing
+                                </td>
+                                <td>
+                                    <% if (product.benefits.atencionMarketing[0] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.atencionMarketing[0] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
+                                </td>
+                                <td>
+                                    <% if (product.benefits.atencionMarketing[1] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.atencionMarketing[1] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
+                                </td>
+                                <td>
+                                    <% if (product.benefits.atencionMarketing[2] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.atencionMarketing[2] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="beneficio">
+                                    Plan SEO de Google
+                                </td>
+                                <td>
+                                    <% if (product.benefits.planSeoGoogle[0] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.planSeoGoogle[0] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
+                                </td>
+                                <td>
+                                    <% if (product.benefits.planSeoGoogle[1] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.planSeoGoogle[1] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
+                                </td>
+                                <td>
+                                    <% if (product.benefits.planSeoGoogle[2] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.planSeoGoogle[2] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="beneficio">
+                                    Carrito de compras
+                                </td>
+                                <td>
+                                    <% if (product.benefits.carritoDeCompras[0] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.carritoDeCompras[0] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
+                                </td>
+                                <td>
+                                    <% if (product.benefits.carritoDeCompras[1] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.carritoDeCompras[1] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
+                                </td>
+                                <td>
+                                    <% if (product.benefits.carritoDeCompras[2] == true) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } %> <% if (product.benefits.carritoDeCompras[2] == false) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
+                                </td>
+                            </tr>
                         <% } %>
                         <tr>
                             <td class="beneficio">

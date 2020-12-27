@@ -67,7 +67,8 @@
     "category": ["Oro", "Plata", "Bronce"],
     "categoryImage": ["plan-oro.png","plan-plata.png","plan-bronce.png"],
     "price": ["6999", "1999", "799"],
-    "benefits": {"costoTransaccion": [0.5, 1, 2],
+    "benefits": {
+        "costoTransaccion": ["0.5%", "1%", "2%"],
         "ventasIlimitadas": [true, true, true],
          "disenoPersonalizables":[true, true, true],
          "mediosDePago": [true, true, true],
@@ -92,7 +93,8 @@
          "multiplesIdiomasYMonedas": [true, false, false],
          "integracionMLAmazon": [true, false, false],
          "cantidadSecciones": [20, 10, 5],
-         "Suscribirse": [6999, 1999, 799]}
+         "Suscribirse": [6999, 1999, 799]
+        }
 }, {
     "id": 2,
     "name": "Página Web",
@@ -147,7 +149,8 @@
     "category": ["Oro", "Plata", "Bronce"],
     "categoryImage": ["plan-oro.png","plan-plata.png","plan-bronce.png"],
     "price": ["1200", "600", "GRATIS"],
-    "benefits": {"costoTransaccion": [0.5, 1, 2],
+    "benefits": {
+        "costoTransaccion": ["0.2%", "No aplica", "No aplica"],
         "todasPlantillas": [true, true, true],
          "responsiveDesign":[true, true, true],
          "hostinGratuito": [true, true, true],
@@ -156,8 +159,9 @@
          "creadorLogos": [true, true, false],
          "dominioPropio": [true, false, false],
          "atencionMarketing": [true, false, false],
-         "planSegoGoogle": [true, false, false],
+         "planSeoGoogle": [true, false, false],
          "carritoDeCompras": [true, false, false],
          "cantidadSecciones": [20, 10, 5],
-         "Suscribirse": [1200, 600, "GRATIS"]}
+         "Suscribirse": [1200, 600, "GRATIS"]
+        }
 }]
