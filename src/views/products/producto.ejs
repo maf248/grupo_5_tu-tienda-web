@@ -86,38 +86,38 @@
         <section class="disenoAzul">
             <article class="disenoAzul-article1">
                 <h2 class="disenoAzul-article1-tituloPrincipal">
-                    Tu marca. Tu tienda.
+                    <%= product.seccion2.title %>
                 </h2>
             </article>
             <article class="disenoAzul-articleImg">
-                <img src="/images/tumarca-tutienda.jpg" alt="">
+                <img src="/images/<%= product.seccion2.image %>" alt="">
             </article>
             <div class="disenoAzul-containerArticle2">
                 <article class="disenoAzul-article2">
                     <h3 class="disenoAzul-article2-titulo">
                         <i class="fas fa-palette"></i> <br>
-                        Tienda de diseños
+                        <%= product.seccion2.subtitle1 %>
                     </h3>
                     <p  class="disenoAzul-article2-parrafo">
-                        Tu marca es única, tu tienda también. Elegí un diseño y customizalo para que tus productos se luzcan.
+                        <%= product.seccion2.description1 %>
                     </p>
                 </article>
                 <article class="disenoAzul-article2">
                     <h3 class="disenoAzul-article2-titulo">
                         <i class="fas fa-network-wired"></i> <br>
-                        Tu tienda. Tu dominio.
+                        <%= product.seccion2.subtitle2 %>
                     </h3>
                     <p  class="disenoAzul-article2-parrafo">
-                        Conectá tus propios dominios a tu tienda.
+                        <%= product.seccion2.description2 %>
                     </p>
                 </article>
                 <article class="disenoAzul-article2">
                     <h3 class="disenoAzul-article2-titulo">
                         <i class="fas fa-truck"></i> <br>
-                        Gestión de envíos y pagos simplificada
+                        <%= product.seccion2.subtitle3 %>
                     </h3>
                     <p  class="disenoAzul-article2-parrafo">
-                        Cobrá por tus ventas y enviá tus pedidos de forma rápida y práctica.
+                        <%= product.seccion2.description3 %>
                     </p>
                 </article>
             </div>
@@ -131,22 +131,22 @@
         <section class="disenoBlanco">
             <article class="disenoBlanco-article1">
                 <h2 class="disenoBlanco-article1-tituloPrincipal">
-                    Tus locales, conectados.
+                    <%= product.seccion3.title %>
                 </h2>
             </article>
             <div class="disenoBlanco-containerArticle2">
                 <article class="disenoBlanco-article2">
                     <h3 class="disenoBlanco-article2-titulo">
                         <i class="fas fa-align-center"></i> <br>
-                        Centralizá todas tus ventas
+                        <%= product.seccion3.subtitle1 %>
                     </h3>
                     <p  class="disenoBlanco-article2-parrafo">
-                        Cargá, cobrá y enviá tus pedidos sin importar donde vendas.
+                        <%= product.seccion3.description1 %>
                     </p>
                 </article>
             </div>
             <article class="disenoBlanco-articleImg">
-                <img src="/images/tus-locales-conectados.jpg" alt="">
+                <img src="/images/<%= product.seccion3.image %>" alt="">
             </article>
             <form action="#contenedorProductos" method="GET"   class="disenoBlanco-form">
                 <button>
@@ -158,29 +158,29 @@
         <section class="disenoAzul">
             <article class="disenoAzul-article1">
                 <h2 class="disenoAzul-article1-tituloPrincipal">
-                    Integración con los mayores marketplaces
+                    <%= product.seccion4.title %>
                 </h2>
             </article>
             <article class="disenoAzul-articleImg">
-                <img src="/images/integracion-con-los-mayores-marketplaces.jpg" alt="">
+                <img src="/images/<%= product.seccion4.image %>" alt="">
             </article>
             <div class="disenoAzul-containerArticle2">
                 <article class="disenoAzul-article2">
                     <h3 class="disenoAzul-article2-titulo">
                         <i class="fab fa-google"></i> <br>
-                        Google Shopping
+                        <%= product.seccion4.subtitle1 %>
                     </h3>
                     <p  class="disenoAzul-article2-parrafo">
-                        Con el comparador de precios de Google vas a poder mostrar todos tus productos en los resultados de google.
+                        <%= product.seccion4.description1 %>
                     </p>
                 </article>
                 <article class="disenoAzul-article2">
                     <h3 class="disenoAzul-article2-titulo">
                         <i class="fab fa-amazon"></i> <br>
-                        MercadoLibre y Amazon
+                        <%= product.seccion4.subtitle2 %>
                     </h3>
                     <p  class="disenoAzul-article2-parrafo">
-                        Integración con los 2 marketplaces más grandes de la región. Lo que mostrás en Tu Tienda Web lo mostrás también en MercadoLibre y Amazon.
+                        <%= product.seccion4.description2 %>
                     </p>
                 </article>
             </div>
@@ -194,36 +194,35 @@
         <section class="disenoBlanco" id="vendeEnMasCanales">
             <article class="disenoBlanco-article1">
                 <h2 class="disenoBlanco-article1-tituloPrincipal">
-                    Tus seguidores.
-                    Tus clientes.
+                    <%= product.seccion5.title %>
                 </h2>
             </article>
             <div class="disenoBlanco-containerArticle2">
                 <article class="disenoBlanco-article2">
                     <h3 class="disenoBlanco-article2-titulo">
                         <i class="fab fa-instagram"></i> <br>
-                        Instagram Shop
+                        <%= product.seccion5.subtitle1 %>
                     </h3>
                     <p  class="disenoBlanco-article2-parrafo">
-                        Conectá tus productos con Instagram y aumentá el tráfico de tu tienda online.
+                        <%= product.seccion5.description1 %>
                     </p>
                 </article>
                 <article class="disenoBlanco-article2">
                     <h3 class="disenoBlanco-article2-titulo">
                         <i class="fab fa-whatsapp"></i> <br>
-                        Whatsapp
+                        <%= product.seccion5.subtitle2 %>
                     </h3>
                     <p  class="disenoBlanco-article2-parrafo">
-                        Compartí tus productos directamente dentro de whatsapp con el teclado TuTiendaWeb.
+                        <%= product.seccion5.description2 %>
                     </p>
                 </article>
                 <article class="disenoBlanco-article2">
                     <h3 class="disenoBlanco-article2-titulo">
                         <i class="fab fa-facebook"></i> <br>
-                        Facebook Store
+                        <%= product.seccion5.subtitle3 %>
                     </h3>
                     <p  class="disenoBlanco-article2-parrafo">
-                        Aumenta tus ventas sincronizando tus productos con tu página de Facebook.
+                        <%= product.seccion5.description2 %>
                     </p>
                 </article>
             </div>
@@ -239,23 +238,23 @@
 
         <section class="contenedorProductos" id="contenedorProductos">
                 <h2>¡Elegí una de nuestras suscripciones y potenciá tu negocio digitalmente!</h2>
-                <img class="productos-img" src="/icons/store-color.png" alt="imagen de una tienda">
+                <img class="productos-img" src="/icons/<%= product.image %>" alt="imagen de una tienda">
                         <table>
                             <tr>
                                 <th>Beneficio</th>
                                 <th> 
                                     <div class="contenedorMedalla">
-                                        <img class="medalla" src="/images/plan-oro.png" alt="imagen de una medalla de oro">
+                                        <img class="medalla" src="/images/<%= product.categoryImage[0] %>" alt="imagen de una medalla de oro">
                                     </div>
                                 </th>
                                 <th>
                                     <div>
-                                        <img class="medalla" src="/images/plan-plata.png" alt="imagen de una medalla de plata">
+                                        <img class="medalla" src="/images/<%= product.categoryImage[1] %>" alt="imagen de una medalla de plata">
                                     </div>
                                 </th>
                                 <th>
                                     <div>
-                                        <img class="medalla" src="/images/plan-bronce.png" alt="imagen de una medalla de bronce">
+                                        <img class="medalla" src="/images/<%= product.categoryImage[2] %>" alt="imagen de una medalla de bronce">
                                     </div>
                                 </th>
                             </tr>
@@ -616,21 +615,21 @@
                                 <td>
                                     <form action="/carrito" method="get">
                                         <button>
-                                            $6,999 p/mes
+                                            $<%= product.price[0] %>
                                         </button>
                                     </form>
                                 </td>
                                 <td>
                                     <form action="/carrito" method="get">
                                         <button>
-                                            $1,999 p/mes
+                                            $<%= product.price[1] %>
                                         </button>
                                     </form>
                                 </td>
                                 <td>
                                     <form action="/carrito" method="get">
                                         <button>
-                                            $799 p/mes
+                                            $<%= product.price[2] %>
                                         </button>
                                     </form>
                                 </td>
