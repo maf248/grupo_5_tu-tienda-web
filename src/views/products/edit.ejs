@@ -14,82 +14,8 @@
 
     <form action="/products/<%= productToEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
 
-        <label for="name">Elegí el nombre para tu producto:</label>
-        <input type="text" name="name" value="Escribí aquí el nombre">
-        <label for="description">Breve descripción del producto:</label>
-        <textarea name="description" id="" cols="30" rows="10"></textarea>
-        <label for="image">Subí la imágen que describe el producto.</label>
-        <input type="file" name="image">
-        <label for="category">Elegí la categoría del producto:</label>
-        <select name="category" id="">
-            <option value="tiendaWeb">Tienda Web</option>
-            <option value="paginaWeb">Página Web</option>
-        </select>
-        <label for="subCategory">Elegí la sub-categoría del producto:</label>
-        <select name="subCategory" id="">
-            <option value="subCatDiamante">Diamante</option>
-            <option value="subCatPlatino">Platino</option>
-            <option value="subCatBasic">Basic</option>
-        </select>
-        <label for="price">¿Qué precio tiene el producto?</label>
-        <input type="number" name="price">
-        <ul>
-            <h2>¿Qué beneficios incluye el producto?</h2>
-            <li>
-                <input type="checkbox" name="SEO" value="seo">
-                <label for="SEO">Incluye Plan SEO</label>
-            </li>
-            <li>
-                <input type="checkbox" name="dominio" value="dominioPersonal">
-                <label for="dominioWeb">Incluye dominio web personalizado</label>
-            </li>
-            <li>
-                <input type="checkbox" name="carrito" value="carritoCompras">
-                <label for="carrito">Incluye carrito para compras</label>
-            </li>
-            <li>
-                <input type="checkbox" name="IDA" value="IDA">
-                <label for="IDA">Incluye servicio IDA</label>
-            </li>
-            <li>
-                <input type="checkbox" name="atencionPersonalizada" value="atencionPersonalizada">
-                <label for="atencionPersonalizada">Incluye atención personalizada</label>
-            </li>
-            <li>
-                <input type="checkbox" name="logos" value="logos">
-                <label for="logos">Incluye Creador de Logos</label>
-            </li>
-            <li>
-                <input type="checkbox" name="corvid" value="corvid">
-                <label for="corvid">Incluye Corvid para aplicaciones profesionales</label>
-            </li>
-            <li>
-                <input type="checkbox" name="plantillas" value="plantillas">
-                <label for="plantillas">Incluye acceso a las plantillas de diseño</label>
-            </li>
-            <li>
-                <input type="checkbox" name="responsive" value="responsiveSi">
-                <label for="responsive">Incluye herramientas para Web Responsive Design</label>
-            </li>
-            <li>
-                <input type="checkbox" name="hosting" value="hosting">
-                <label for="hosting">Incluye servicio de hosting</label>
-            </li>
-            <li>
-                <label for="sections">¿Cuantas secciones de página incluye el producto?</label>
-                <select name="sections" id="">
-                    <option value="1sec">1 a 5 secciones</option>
-                    <option value="2sec">6 a 10 secciones</option>
-                    <option value="3sec">11 a 15 secciones</option>
-                    <option value="4sec">16 a 20 secciones</option>
-                    <option value="5sec">Más de 20 secciones</option>
-                </select>
-            </li>
-            <li>
-                <label for="extraBenefits">Nombra los beneficios extra que quieras agregarle a tu producto:</label>
-                <textarea name="extraBenefits" id="" cols="30" rows="10"></textarea>
-            </li>
-        </ul>
+        <%- include('../partials/product-form') %>
+
         <button type="submit" class="submit">Enviar</button>
         <button type="reset" class="reset">Borrar campos</button>
     </form>
