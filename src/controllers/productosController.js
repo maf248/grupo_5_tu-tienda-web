@@ -7,14 +7,12 @@ const productsDir = path.join(__dirname, '..', 'data', 'products.json');
 
 const productosController = {
     detalle: function(req, res, next) {
-        if (req.params.id == 1) {
-          res.render('./products/producto', {product: products[req.params.id -1]});
-            } else if (req.params.id == 2) {
-          res.render('./products/producto2', {product: products[req.params.id -1]});
-            } else {
+        if ( req.params.id - 1 < products.length ) {
+          res.render('./products/producto', {product: products[req.params.id -1]});   
+        } else {
           res.send('No tenemos un producto con ese ID');
-            }
-        },
+      }
+    },
     listado: function(req, res, next) {
           res.render('./products/listado-productos', {products: products});
         },

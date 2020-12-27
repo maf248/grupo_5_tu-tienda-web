@@ -1,286 +1,641 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <link rel="stylesheet" href="/stylesheets/producto-style.css">
+    <link rel="stylesheet" href="/stylesheets/producto2-style.css">
     <%- include('../partials/head') %>
 </head>
 
 <%- include('../partials/navbar') %>
 
-<section class="banner">
-    <a href="/"><img src="/images/tutiendaweb-banner-sd.gif"></a>
-</section>
-
-<section class="bannerEmpeza">
-
-    <strong><h2 class="bannerEmpeza-titulo">El lugar perfecto para crear tu página web profesional</h2></strong>
-
-    <form action="#productos" method="GET">
-
-        <button>
-            Empezá Ya
-        </button>
-
-    </form>
-
-</section>
-
-<section class="presenciaOnline">
-
-    <article class="presenciaOnline-articlePrincipal">
-
-        <i class="fas fa-hammer"></i>
-
-        <h2>
-            Construye una presencia online única
-        </h2>
-
-        <p>Para hacer tu propia página web sigue estos pasos</p>
-
-    </article>
-
-    <div class="presenciaOnline-containerArticle">
-
-        <article class="presenciaOnline-article articleBorder1">
-
-            <h3>Personalizá tu sitio web</h3>
-
-            <p>Elegí una plantilla y personalizala como quieras, o responde algunas preguntas y obtené una página web gratis y exclusiva de forma automática</p>
-
-        </article>
-
-        <article class="presenciaOnline-article articleBorder2">
-
-            <h3>Agregá funciones avanzadas</h3>
-
-            <p>Creá un blog, hacé una página de noticias o armá tu presentación personal web para potenciar tu trabajo. Siempre podés agregar más funcionalidad a medida que crecés. No hay límites para tu creatividad ni tu crecimiento</p>
-
-        </article>
-
-        <article class="presenciaOnline-article articleBorder3">
-
-            <h3>Web Responsive Design</h3>
-
-            <p>Te dejamos todas las herramientas necesarias para que crees una página web que responda de manera automática y que se vea bien en los diferentes tipos de pantalla.</p>
-
-        </article>
-
-        <article class="presenciaOnline-article articleBorder4">
-
-            <h3>Optimizá para los buscadores</h3>
-
-            <p>Te ayudamos en tu plan de SEO para que todo el mundo te encuentre en Google. Respondé algunas preguntas sobre tu sitio web, ubicación y palabras clave, y recibí un plan de SEO personalizado para destarcarte online.</p>
-
-        </article>
-
-    </div>
-
-    <article class="presenciaOnline-articleImg">
-
-        <img src="/images/2.png" alt="">
-
-    </article>
-
-    <form action="#productos" method="GET" class="presenciaOnline-form">
-
-        <button>
-            Empezá Ya >
-        </button>
-
-    </form>
-
-</section>
-
-<section class="banner-versiones">
-
-    <div class="banner-versiones-contenedorImagenResponsive">
-        <img src="/images/web-pc2.png" alt="imagen de un monitor de pc con una foto adentro" class="imagen-escritorio spin-1">
-        <img src="/images/web-mobile.png" alt="imagen de una pantalla de celular con una foto adentro" class="imagen-mobile spin-2">
-    </div>
-    <strong><h3>Te dejamos todas las herramientas para que tu pantalla se vea correctamente en <br>todos tus dispositivos!</h3></strong>
-
-
-</section>
-
-<article class="disenoBlanco">
+        <section class="banner">
+            <a href="/"><img src="/images/tutiendaweb-banner-sd.gif"></a>
+        </section>
     
-    <i class="fas fa-plus"></i>
+        <section class="banner1">
+            <h2>
+                <%= product.titleBanner1 %>
+            </h2>
 
-    <h2 class="disenoBlanco-titulo">
-        La libertad de crear la página web que quieras
-    </h2>
+            <p>
+                <%= product.subtitleBaner1 %>
+            </p>
+            <form action="#contenedorProductos" method="GET">
+                <button>
+                    Empezá ya
+                </button>
+            </form>
+        </section>
 
-    <p class="disenoBlanco-parrafo">
-        Disena y creá tu propia página web con calidad profesional. Ya sea que estés mostrando tu trabajo o comenzando un blog, puedes hacerlo todo con el editor de páginas web de Tu Tienda Web.
-    </p>
-
-   <form action="#productos" method="GET" class="disenoBlanco-form">
-
-        <button>
-            Empezá Ya >
-        </button>
-
-    </form>
-
-</article>
-
-<article class="disenoAzul">
-
-    <i class="fas fa-user-edit"></i>
-
-    <h2 class="disenoAzul-titulo">
-        Editor simple y profesional de Tu Tienda Web: <br> <em style="font-size: 0.8em;"> Libertad total de diseño fácil de aplicar</em>
-    </h2>
-
-    <p class="disenoAzul-parrafo">
-        Comenzá desde cero o elegí entre una de nuestras plantillas hechas por diseñadores profesionales para crear tu propio sitio. Con el sistema de arrastrar y soltar más innovador del mercado, podés personalizar o cambiar cualquier cosa. Hacé que tu sitio web cobre vida con fondos de video, efectos de desplazamiento y animaciones. Con el editor de <em>Tu Tienda Web</em> podés crear una hermosa página web profesional sin ayuda de nadie y sin pagar a terceros.
-    </p>
-
-    <form action="#productos" method="GET" class="disenoAzul-form">
-
-        <button>
-            Empezá Ya >
-        </button>
-
-    </form>
-
-</article>
-
-<article class="disenoBlanco">
-
-    <i class="fas fa-brain"></i>
-
-    <h2 class="disenoBlanco-titulo">
-        Tu Tienda Web IDA:
-        tu página web en minutos
-    </h2>
-
-    <p class="disenoBlanco-parrafo">
-        Respondé algunas preguntas simples y nuestra inteligencia de diseño artificial (IDA) construirá instantáneamente una página web a tu medida, con textos e imágenes personalizados. Elegí tu estilo, cambiá el diseño y agregá las funciones que necesites. Cuando estés listo, ¡estarás <em>"live"</em> con un solo click!
-    </p>
-
-    <form action="#productos" method="GET" class="disenoBlanco-form">
-
-        <button>
-            Empezá Ya >
-        </button>
-
-    </form>
-
-</article>
-
-<section class="banner-descuento">
-
-    <a href="http://localhost:3000/registro">
-        <img class="imagen-descuento" src="/icons/descuento-blanco-negro.png"    alt="imagen de descuento">
-        <p class="texto-descuento">Registrate antes del 31 de diciembre del 2020 y obtené un  25% de descuento durante 3 meses.</p>
-    </a>
-
-</section>
-
-<article class="disenoBlanco">
-
-    <i class="fas fa-hammer"></i>
-    
-    <h2 class="disenoBlanco-titulo">
-        Creador de logos
-    </h2>
-
-    <p class="disenoBlanco-parrafo">
-        Diseñá y creá un logo profesional y construye la presencia online de tu marca
-    </p>
-
-    <form action="#productos" method="GET" class="disenoBlanco-form">
-
-        <button>
-            Empezá Ya >
-        </button>
-
-    </form>
-
-</article>
-
-<article class="disenoAzul">
-
-    <i class="fas fa-home"></i>
-
-    <h2 class="disenoAzul-titulo">
-        Corvid de Tu Tienda Web: Plataforma de desarrollo abierto
-    </h2>
-
-    <p class="disenoAzul-parrafo">
-        Creá aplicaciones web profesionales con serverless computing (arquitectura sin servidor) y codificación sin complicaciones. Administrá todo tu contenido desde base de datos integradas, agregá tu propio codigo IDE incorporado o trabajá en tu propio entorno y conectate a cientos de API. Además, obtené total libertad de diseño con el editor de <em>Tu Tienda Web</em> y las aplicaciones empresariales optimizadas.
-    </p>
-
-    <form action="#productos" method="GET" class="disenoAzul-form">
-
-        <button>
-            Empezá Ya >
-        </button>
-
-    </form>
-
-</article>
-
-<section class="productos" id="productos">
-    <h2>¡Elegí una de nuestras 3 suscripciones y empezá a crear la página de tus sueños!</h2>
-    <form action="http://localhost:3000/carrito" method="GET" class="contenedor-productos">
-        <button class="contratar">
-            <article class="productos-articulo">      
-                <img class="productos-img" src="/icons/web-color-borde.png" alt="imagen de una tienda"><br>
-                <div class="contenedorMedalla">
-                    <img class="medalla" src="/images/plan-oro.png" alt="imagen de una medalla de oro">
+        
+            <section class="disenoBlanco">
+            <article class="disenoBlanco-article1">
+                <h2 class="disenoBlanco-article1-tituloPrincipal">
+                    <%= product.seccion1.title %>
+                </h2>
+                <div class="disenoBlanco-containerArticle2">
+                    <article class="disenoBlanco-article2">
+                        <h3 class="disenoBlanco-article2-titulo">
+                            <i class="fas fa-tasks"></i> <br>
+                            <%= product.seccion1.subtitle1 %>
+                        </h3>
+                        <p  class="disenoBlanco-article2-parrafo">
+                            <%= product.seccion1.description1 %>
+                        </p>
+                    </article>
+                    <article class="disenoBlanco-article2">
+                        <h3 class="disenoBlanco-article2-titulo">
+                            <i class='fas fa-robot'></i> <br>
+                            <%= product.seccion1.subtitle2 %>
+                        </h3>
+                        <p  class="disenoBlanco-article2-parrafo">
+                            <%= product.seccion1.description2 %>
+                        </p>
+                    </article>
+                    <article class="disenoBlanco-article2">
+                        <h3 class="disenoBlanco-article2-titulo">
+                            <i class='fas fa-truck'></i> <br>
+                            <%= product.seccion1.subtitle3 %>
+                        </h3>
+                        <p  class="disenoBlanco-article2-parrafo">
+                            <%= product.seccion1.description3 %>
+                        </p>
+                    </article>
+                    <article class="disenoBlanco-article2">
+                        <h3 class="disenoBlanco-article2-titulo">
+                            <i class='fas fa-money-bill-wave'></i> <br>
+                            <%= product.seccion1.subtitle4 %>
+                        </h3>
+                        <p  class="disenoBlanco-article2-parrafo">
+                            <%= product.seccion1.description4 %>
+                        </p>
+                    </article>
                 </div>
-                <h3 class="tituloSuscripcionOro">Suscripción oro</h3>
-                <ul>Incluye:
-                    <li>Dominio Web con el nombre de tu marca</li>
-                    <li>Atención personalizada de nuestro equipo de marketing</li>
-                    <li>Plan SEO para posicionarte mejor en Google</li>
-                    <li>Carrito de compras</li>
-                    <li>Todo lo que incluyen los planes anteriores</li>
-                </ul>
-                <span>Precio final por mes: $1200</span><br>
-                <span class="span1">Clickeá en la imagen para contratar el servicio</span>
+                <article class="disenoBlanco-articleImg">
+                    <img src="/images/<%= product.seccion1.image %>" alt="">
+                </article>
+                <form action="#contenedorProductos" method="GET"   class="disenoBlanco-form">
+                    <button>
+                        Empezá ya
+                    </button>
+                </form>
             </article>
-        </button>
-    </form>
-    <form action="http://localhost:3000/carrito" method="GET" class="contenedor-productos">
-        <button class="contratar">
-            <article class="productos-articulo">
-                <img class="productos-img" src="/icons/web-color-borde.png" alt="imagen de una tienda"><br>
-                <div>
-                    <img class="medalla" src="/images/plan-plata.png" alt="imagen de una medalla de plata">
-                </div>
-                <h3 class="tituloSuscripcionPlata">Suscripción plata</h3>
-                <ul>Incluye:
-                    <li>Servicio de Inteligencia de diseño artificial (IDA)</li>
-                    <li>Servicio web Corvid para aplicaciones web</li>
-                    <li>Creador de logos profesional</li>
-                    <li>Todo lo que incluyen las suscripciones anteriores</li>
-                </ul>
-                <span>Precio final por mes: $600</span><br>
-                <span class="span1">Clickeá en la imagen para contratar el servicio</span>
+
+        </section>
+         
+
+        <section class="disenoAzul">
+            <article class="disenoAzul-article1">
+                <h2 class="disenoAzul-article1-tituloPrincipal">
+                    Tu marca. Tu tienda.
+                </h2>
             </article>
-        </button>
-    </form>
-    <form action="http://localhost:3000/carrito" method="GET" class="contenedor-productos">
-        <button class="contratar">
-            <article class="productos-articulo">
-                <img class="productos-img" src="/icons/web-color-borde.png" alt="imagen de una tienda"><br>
-                <div>
-                    <img class="medalla" src="/images/plan-bronce.png" alt="imagen de una medalla de bronce">
-                </div>
-                <h3 class="tituloSuscripcionBronce">Suscripción bronce</h3>
-                <ul>Incluye:
-                    <li>Acceso a todas nuestras plantillas y accesorios de diseño web</li>
-                    <li>Herramientas para diseño adaptativo</li>
-                    <li>Hosting gratuito</li>
-                </ul>
-                <span>Precio final por mes: GRATIS</span><br>
-                <span class="span1">Clickeá en la imagen para contratar el servicio</span>
+            <article class="disenoAzul-articleImg">
+                <img src="/images/tumarca-tutienda.jpg" alt="">
             </article>
-        </button>
-    </form>
-</section>
+            <div class="disenoAzul-containerArticle2">
+                <article class="disenoAzul-article2">
+                    <h3 class="disenoAzul-article2-titulo">
+                        <i class="fas fa-palette"></i> <br>
+                        Tienda de diseños
+                    </h3>
+                    <p  class="disenoAzul-article2-parrafo">
+                        Tu marca es única, tu tienda también. Elegí un diseño y customizalo para que tus productos se luzcan.
+                    </p>
+                </article>
+                <article class="disenoAzul-article2">
+                    <h3 class="disenoAzul-article2-titulo">
+                        <i class="fas fa-network-wired"></i> <br>
+                        Tu tienda. Tu dominio.
+                    </h3>
+                    <p  class="disenoAzul-article2-parrafo">
+                        Conectá tus propios dominios a tu tienda.
+                    </p>
+                </article>
+                <article class="disenoAzul-article2">
+                    <h3 class="disenoAzul-article2-titulo">
+                        <i class="fas fa-truck"></i> <br>
+                        Gestión de envíos y pagos simplificada
+                    </h3>
+                    <p  class="disenoAzul-article2-parrafo">
+                        Cobrá por tus ventas y enviá tus pedidos de forma rápida y práctica.
+                    </p>
+                </article>
+            </div>
+            <form action="#contenedorProductos" method="GET"   class="disenoAzul-form">
+                <button>
+                    Empezá ya
+                </button>
+            </form>
+        </section>
+
+        <section class="disenoBlanco">
+            <article class="disenoBlanco-article1">
+                <h2 class="disenoBlanco-article1-tituloPrincipal">
+                    Tus locales, conectados.
+                </h2>
+            </article>
+            <div class="disenoBlanco-containerArticle2">
+                <article class="disenoBlanco-article2">
+                    <h3 class="disenoBlanco-article2-titulo">
+                        <i class="fas fa-align-center"></i> <br>
+                        Centralizá todas tus ventas
+                    </h3>
+                    <p  class="disenoBlanco-article2-parrafo">
+                        Cargá, cobrá y enviá tus pedidos sin importar donde vendas.
+                    </p>
+                </article>
+            </div>
+            <article class="disenoBlanco-articleImg">
+                <img src="/images/tus-locales-conectados.jpg" alt="">
+            </article>
+            <form action="#contenedorProductos" method="GET"   class="disenoBlanco-form">
+                <button>
+                    Empezá ya
+                </button>
+            </form>
+        </section>
+
+        <section class="disenoAzul">
+            <article class="disenoAzul-article1">
+                <h2 class="disenoAzul-article1-tituloPrincipal">
+                    Integración con los mayores marketplaces
+                </h2>
+            </article>
+            <article class="disenoAzul-articleImg">
+                <img src="/images/integracion-con-los-mayores-marketplaces.jpg" alt="">
+            </article>
+            <div class="disenoAzul-containerArticle2">
+                <article class="disenoAzul-article2">
+                    <h3 class="disenoAzul-article2-titulo">
+                        <i class="fab fa-google"></i> <br>
+                        Google Shopping
+                    </h3>
+                    <p  class="disenoAzul-article2-parrafo">
+                        Con el comparador de precios de Google vas a poder mostrar todos tus productos en los resultados de google.
+                    </p>
+                </article>
+                <article class="disenoAzul-article2">
+                    <h3 class="disenoAzul-article2-titulo">
+                        <i class="fab fa-amazon"></i> <br>
+                        MercadoLibre y Amazon
+                    </h3>
+                    <p  class="disenoAzul-article2-parrafo">
+                        Integración con los 2 marketplaces más grandes de la región. Lo que mostrás en Tu Tienda Web lo mostrás también en MercadoLibre y Amazon.
+                    </p>
+                </article>
+            </div>
+            <form action="#contenedorProductos" method="GET"   class="disenoAzul-form">
+                <button>
+                    Empezá ya
+                </button>
+            </form>
+        </section>
+
+        <section class="disenoBlanco" id="vendeEnMasCanales">
+            <article class="disenoBlanco-article1">
+                <h2 class="disenoBlanco-article1-tituloPrincipal">
+                    Tus seguidores.
+                    Tus clientes.
+                </h2>
+            </article>
+            <div class="disenoBlanco-containerArticle2">
+                <article class="disenoBlanco-article2">
+                    <h3 class="disenoBlanco-article2-titulo">
+                        <i class="fab fa-instagram"></i> <br>
+                        Instagram Shop
+                    </h3>
+                    <p  class="disenoBlanco-article2-parrafo">
+                        Conectá tus productos con Instagram y aumentá el tráfico de tu tienda online.
+                    </p>
+                </article>
+                <article class="disenoBlanco-article2">
+                    <h3 class="disenoBlanco-article2-titulo">
+                        <i class="fab fa-whatsapp"></i> <br>
+                        Whatsapp
+                    </h3>
+                    <p  class="disenoBlanco-article2-parrafo">
+                        Compartí tus productos directamente dentro de whatsapp con el teclado TuTiendaWeb.
+                    </p>
+                </article>
+                <article class="disenoBlanco-article2">
+                    <h3 class="disenoBlanco-article2-titulo">
+                        <i class="fab fa-facebook"></i> <br>
+                        Facebook Store
+                    </h3>
+                    <p  class="disenoBlanco-article2-parrafo">
+                        Aumenta tus ventas sincronizando tus productos con tu página de Facebook.
+                    </p>
+                </article>
+            </div>
+            <article class="disenoBlanco-articleImg">
+                <img src="/images/tus-seguidores-tus-clientes.jpg" alt="">
+            </article>
+            <form action="#contenedorProductos" method="GET"   class="disenoBlanco-form">
+                <button>
+                    Empezá ya
+                </button>
+            </form>
+        </section>
+
+        <section class="contenedorProductos" id="contenedorProductos">
+                <h2>¡Elegí una de nuestras suscripciones y potenciá tu negocio digitalmente!</h2>
+                <img class="productos-img" src="/icons/store-color.png" alt="imagen de una tienda">
+                        <table>
+                            <tr>
+                                <th>Beneficio</th>
+                                <th> 
+                                    <div class="contenedorMedalla">
+                                        <img class="medalla" src="/images/plan-oro.png" alt="imagen de una medalla de oro">
+                                    </div>
+                                </th>
+                                <th>
+                                    <div>
+                                        <img class="medalla" src="/images/plan-plata.png" alt="imagen de una medalla de plata">
+                                    </div>
+                                </th>
+                                <th>
+                                    <div>
+                                        <img class="medalla" src="/images/plan-bronce.png" alt="imagen de una medalla de bronce">
+                                    </div>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td class="beneficio">
+                                    Costo por transacción
+                                </td>
+                                <td>
+                                    0,5%
+                                </td>
+                                <td>
+                                    1%
+                                </td>
+                                <td>
+                                    2%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="beneficio">
+                                    Productos, visitas y ventas ilimitados
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="beneficio">
+                                    Diseños personalizables
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="beneficio">
+                                    Integración con medios de pago
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="beneficio">
+                                    Integración con medios de envío
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="beneficio">
+                                    Gestión de productos y manejo de stock
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="beneficio">
+                                    Configuración de dominio propio
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="beneficio">
+                                    Seguimiento de estadísticas con Google Analytics
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="beneficio">
+                                    Configuración de códigos de tracking y conversión
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="beneficio">
+                                    Hosting y certificado SSL incluido
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="beneficio">
+                                    Aplicación de <em>Tu Tienda Web</em> para Android e iOS
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="beneficio">
+                                    Carritos abandonados
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="beneficio">
+                                    Configuración de puntos de entrega
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="beneficio">
+                                    Carga y actualización masiva de los textos de productos
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="beneficio">
+                                    Teclado Tu Tienda Web
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="beneficio">
+                                    Soporte via email
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="beneficio">
+                                    Promociones 2x1 y 3x2
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="beneficio">
+                                    Cupones de descuento
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="beneficio">
+                                    Personalización del SEO
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="beneficio">
+                                    Estadísticas avanzadas de tu negocio
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="beneficio">
+                                    Instagram shopping, Facebook Store y Google Shopping
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="beneficio">
+                                    Diseño 100% flexible (via HTML, CSS y JavaScript)
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                                <td>
+                                    <i class="fas fa-times"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="beneficio">
+                                    Soporte vía Whatsapp a partir del primer pago
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                                <td>
+                                    <i class="fas fa-times"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="beneficio">
+                                    Múltiples idiomas y monedas
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                                <td>
+                                    <i class="fas fa-times"></i>
+                                </td>
+                                <td>
+                                    <i class="fas fa-times"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="beneficio">
+                                    Integración con MercadoLibre y Amazon
+                                </td>
+                                <td>
+                                    <i class="fas fa-check"></i>
+                                </td>
+                                <td>
+                                    <i class="fas fa-times"></i>
+                                </td>
+                                <td>
+                                    <i class="fas fa-times"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="beneficio">
+                                    Subscribirse
+                                </td>
+                                <td>
+                                    <form action="/carrito" method="get">
+                                        <button>
+                                            $6,999 p/mes
+                                        </button>
+                                    </form>
+                                </td>
+                                <td>
+                                    <form action="/carrito" method="get">
+                                        <button>
+                                            $1,999 p/mes
+                                        </button>
+                                    </form>
+                                </td>
+                                <td>
+                                    <form action="/carrito" method="get">
+                                        <button>
+                                            $799 p/mes
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                        </table>
+        </section>
 
 <%- include('../partials/footer') %>
