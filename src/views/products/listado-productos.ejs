@@ -7,6 +7,8 @@
 
 <%- include('../partials/navbar') %>
 
+<h1>Listado de productos:</h1>
+
 <% products.forEach(producto => { %>
   <div class="producto">
   <h2><%=producto.name%></h2>
@@ -15,7 +17,7 @@
 <table class="tabla-productos">
     <thead class=tabla-productos-titulos>
         <tr>
-            <td><h2>Lista de planes</h2></td>
+            <td><h2>Planes disponibles</h2></td>
             <% for(let i=0; i<producto.category.length; i++){ %>
               <td><img class="medalla" src="/images/<%= producto.categoryImage[i] %>" alt="imagen de una medalla"><h3> <%= producto.category[i] %> </h3></td>
               <% }; %>
@@ -24,16 +26,16 @@
     </thead>
     <tbody class=tabla-productos-cuerpo>
       <tr>
-        <td><h4>cantidad de secciones</h4></td>
+        <td><h4>Cantidad de secciones web:</h4></td>
         <% producto.benefits.cantidadSecciones.forEach(cantidad=> { %>
 
           <td>
-            <p> <%= cantidad%></p>
+            <p> <%= cantidad %></p>
           </td>
               <%})%>
       </tr>
       <tr>
-        <td><h4>costo por transaccion</h4></td>
+        <td><h4>Costo por transacción:</h4></td>
         <% producto.benefits.costoTransaccion.forEach(costo=> { %>
 
           <td>
@@ -42,7 +44,7 @@
               <%})%>
       </tr>
       <tr>
-        <td><h4>Precio</h4></td>
+        <td><h4>Precio:</h4></td>
             <% producto.price.forEach(precio=> { %>
 
         <td>

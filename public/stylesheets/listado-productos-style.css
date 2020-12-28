@@ -8,14 +8,48 @@
 h1, h2, h3, h4, h5, h6, button {
     font-family: 'Raleway', sans-serif;
 }
+h1 {
+    margin-top: 15px;
+    font-size: 1.8em;
+    text-align: center;
+    text-decoration: underline overline;
+}
+.producto {
+    border: 5px solid rgb(100, 197, 149);
+    border-radius: 30px;
+    width: 80%;
+    align-self: center;
+    margin: 15px 0px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.producto h2 {
+    font-size: 2.2em;
+    font-family: 'Kaushan Script', Arial, Helvetica, sans-serif;
+}
+.producto h3 {
+    margin-top: 10px;
+    font-style: italic;
+}
+.logoProducto {
+    width: 15%;
+    align-self: center;
+    margin: 20px 10px;
+}
+
+.medalla {
+    max-width: 50px;
+    margin-top: 10px ;
+}
 .tabla-productos {
     align-self: center;
     justify-self: center;
     width: 80%;
     text-align: center;
-    margin: 5%;
+    margin: 3%;
     padding: 20px;
-
 }
 .tabla-productos-titulos {
     background-color: rgba(38, 146, 235, 1);
@@ -24,13 +58,10 @@ h1, h2, h3, h4, h5, h6, button {
 .tabla-productos-cuerpo {
     background-color: rgba(38, 146, 235, 0.7);
     border: 1px solid white;
-
 }
 .tabla-productos-cuerpo td{
     padding: 10px;
 }
-
-
 .tabla-productos h2 {
     padding: 10px;
     font-size: 1.2em;
@@ -44,26 +75,7 @@ h1, h2, h3, h4, h5, h6, button {
     color: black;
     text-decoration: none;
 }
-.medalla {
-    max-width: 50px;
-    margin-top: 10px ;
-}
-.logoProducto{
-    width: 15%;
-    align-self: center;
 
-}
-.producto{
-    border: 5px solid rgb(100, 197, 149);
-    border-radius: 30px;
-    width: 80%;
-    align-self: center;
-    margin: 15px 0px;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
 
 
 /* Media Queries */
