@@ -13,7 +13,7 @@ const productosController = {
         /*-----Acá pasamos la vista de producto según  el id -----*/
         /*-----Agregamos también las funcionalidades a la vista de ejs-----*/
         if ( req.params.id - 1 < products.length ) {
-          res.render('./products/producto', { product: products[req.params.id -1], tiendaWeb, paginaWeb, req });   
+          res.render('./products/producto', { product: products[req.params.id -1], tiendaWeb, paginaWeb });   
         } else {
           res.send('No tenemos un producto con ese ID');
       }

@@ -100,7 +100,7 @@
     "name": "Página Web",
     "type": "paginaWeb",
     "titleBanner1": "EL LUGAR PERFECTO PARA CREAR TU PÁGINA WEB PROFESIONAL",
-    "subtitleBaner1": "",
+    "subtitleBaner1": "Empezá a crear tu página web ya totalmente gratis",
     "seccion1": {
         "title": "Construye una presencia online única", 
         "icon1":"user-friends-solid.svg", 
@@ -115,35 +115,35 @@
         "subtitle4":"Optimizá para los buscadores", 
         "icon4": "google-brands-2.svg", 
         "description4": "Te ayudamos en tu plan de SEO para que todo el mundo te encuentre en Google. Respondé algunas preguntas sobre tu sitio web, ubicación y palabras clave, y recibí un plan de SEO personalizado para destarcarte online.", 
-        "image":"2.png"
+        "image":"pointing-left3.png"
     }, 
     "seccion2": {
         "title": "Libertad plena.", 
         "icon1":"tree-solid.svg", 
         "subtitle1":"La libertad de crear la página web que quieras", 
         "description1":"Disena y creá tu propia página web con calidad profesional. Ya sea que estés mostrando tu trabajo o comenzando un blog, puedes hacerlo todo con el editor de páginas web de Tu Tienda Web.", 
-        "image": "2.png"
+        "image": "apuntando-derecha.png"
     }, 
     "seccion3": {
         "title": "Editor simple y profesional de Tu Tienda Web:", 
         "icon1":"palette-solid-2.svg", 
         "subtitle1":"Libertad total de diseño fácil de aplicar", 
-        "description1":"Comenzá desde cero o elegí entre una de nuestras plantillas hechas por diseñadores profesionales para crear tu propio sitio. Con el sistema de arrastrar y soltar más innovador del mercado, podés personalizar o cambiar cualquier cosa. Hacé que tu sitio web cobre vida con fondos de video, efectos de desplazamiento y animaciones. Con el editor de <em>Tu Tienda Web</em> podés crear una hermosa página web profesional sin ayuda de nadie y sin pagar a terceros.",
+        "description1":"Comenzá desde cero o elegí entre una de nuestras plantillas hechas por diseñadores profesionales para crear tu propio sitio. Con el sistema de arrastrar y soltar más innovador del mercado, podés personalizar o cambiar cualquier cosa. Hacé que tu sitio web cobre vida con fondos de video, efectos de desplazamiento y animaciones. Con el editor de Tu Tienda Web podés crear una hermosa página web profesional sin ayuda de nadie y sin pagar a terceros.",
         "image":"2.png" 
     },
     "seccion4": {
         "title": "Tu Tienda Web IDA:", 
         "icon1":"brain-solid.svg", 
         "subtitle1":" tu página web en minutos", 
-        "description1":"Respondé algunas preguntas simples y nuestra inteligencia de diseño artificial (IDA) construirá instantáneamente una página web a tu medida, con textos e imágenes personalizados. Elegí tu estilo, cambiá el diseño y agregá las funciones que necesites. Cuando estés listo, ¡estarás <em>live</em> con un solo click!", 
-        "image": "2.png"
+        "description1":"Respondé algunas preguntas simples y nuestra inteligencia de diseño artificial (IDA) construirá instantáneamente una página web a tu medida, con textos e imágenes personalizados. Elegí tu estilo, cambiá el diseño y agregá las funciones que necesites. Cuando estés listo, ¡estarás live con un solo click!", 
+        "image": "pointing-right1.png"
     },
     "seccion5": {
         "title": "Corvid de Tu Tienda Web", 
         "icon1":"server-solid.svg", 
         "subtitle1":"Plataforma de desarrollo abierto", 
-        "description1":"Creá aplicaciones web profesionales con serverless computing (arquitectura sin servidor) y codificación sin complicaciones. Administrá todo tu contenido desde base de datos integradas, agregá tu propio codigo IDE incorporado o trabajá en tu propio entorno y conectate a cientos de API. Además, obtené total libertad de diseño con el editor de <em>Tu Tienda Web</em> y las aplicaciones empresariales optimizadas.", 
-        "image": "2.png"
+        "description1":"Creá aplicaciones web profesionales con serverless computing (arquitectura sin servidor) y codificación sin complicaciones. Administrá todo tu contenido desde base de datos integradas, agregá tu propio codigo IDE incorporado o trabajá en tu propio entorno y conectate a cientos de API. Además, obtené total libertad de diseño con el editor de Tu Tienda Web y las aplicaciones empresariales optimizadas.", 
+        "image": "pointing-left2.png"
     },
     "image": "web-color.png",
     "category": ["Oro", "Plata", "Bronce"],
