@@ -28,7 +28,7 @@ const productosController = {
     creador: function(req, res, next) {
       products.push(
          {
-          "id": products.length-1,
+          "id": products.length,
           "name": req.body.name,
           "type": req.body.type,
           "titleBanner1": req.body.titleBanner1,
@@ -119,7 +119,6 @@ const productosController = {
           "price": ["6999", "1999", "799"],
           "benefits": {
               "costoTransaccion": ["0.5%", "1%", "2%"],
-              "ventasIlimitadas": [true, true, true],
                "a":[true, true, true],
                "b": [true, true, true],
                "c":[true, true, true],
@@ -139,10 +138,11 @@ const productosController = {
                "q": [true, true, true],
                "r": [true, true, true],
                "s": [true, true, true],
-               "t": [true, true, false],
+               "t": [true, true, true],
                "u": [true, true, false],
-               "v": [true, false, false],
+               "v": [true, true, false],
                "w": [true, false, false],
+               "x": [true, false, false],
                "cantidadSecciones": [20, 10, 5],
                "Suscribirse": [6999, 1999, 799]
               }
