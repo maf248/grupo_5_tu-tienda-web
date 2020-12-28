@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <%- include('../partials/head') %>
-    <link rel="stylesheet" href="/stylesheets/productos-crear-o-editar.css">
+    <link rel="stylesheet" href="/stylesheets/producto2-style.css">
 </head>
 
 <%- include('../partials/navbar') %>
@@ -11,9 +11,10 @@
 
 <div class="creadorContainer">
     <h1>Creador de productos</h1>
+
     <form action="/products" method="POST" enctype="multipart/form-data">
-       
-        <%- include('../partials/product-form') %>
+        
+        <%- include('../partials/product-form2') %>
 
         <button type="submit" class="submit">Enviar</button>
         <button type="reset" class="reset">Borrar campos</button>
