@@ -347,18 +347,12 @@
                                 <%= product.benefits.cantidadSecciones[2] %>
                             </td>
                         </tr>
-
-                        <% if (product.type == 'tiendaWeb') { %>
-                        
-                            <tr>
+                        <tr>
                             <td class="beneficio">
-                                Productos, visitas y ventas ilimitados
-                            </td>
-                            <td>
-                                <% if (product.benefits.a[0] == true) { %>
-                                    <i class="fas fa-check"></i>
-                                <% } %> <% if (product.benefits.a[0] == false) { %>
-                                    <i class="fas fa-times"></i>
+                                <% if (product.type == tiendaWeb[0].type) { %>
+                                    <%= product.benefits.a[0] %>
+                                <% } %> <% if (product.type == paginaWeb[0].type) { %> 
+                                    <%= product.benefits.a[0] %>
                                 <% } %>
                             </td>
                             <td>
@@ -366,25 +360,35 @@
                                     <i class="fas fa-check"></i>
                                 <% } %> <% if (product.benefits.a[1] == false) { %>
                                     <i class="fas fa-times"></i>
-                                <% } %>
+                                <% } else {%>
+
+                                    <% } %>
                             </td>
                             <td>
                                 <% if (product.benefits.a[2] == true) { %>
                                     <i class="fas fa-check"></i>
                                 <% } %> <% if (product.benefits.a[2] == false) { %>
                                     <i class="fas fa-times"></i>
-                                <% } %>
+                                <% } else {%>
+                                    
+                                    <% } %>
+                            </td>
+                            <td>
+                                <% if (product.benefits.a[3] == true) { %>
+                                    <i class="fas fa-check"></i>
+                                <% } %> <% if (product.benefits.a[3] == false) { %>
+                                    <i class="fas fa-times"></i>
+                                <% } else {%>
+
+                                    <% } %>
                             </td>
                         </tr>
                         <tr>
                             <td class="beneficio">
-                                Diseños personalizables
-                            </td>
-                            <td>
-                                <% if (product.benefits.b[0] == true) { %>
-                                    <i class="fas fa-check"></i>
-                                <% } %> <% if (product.benefits.b[0] == false) { %>
-                                    <i class="fas fa-times"></i>
+                                <% if (product.type == tiendaWeb[0].type) { %>
+                                    <%= product.benefits.b[0] %>
+                                <% } %> <% if (product.type == paginaWeb[0].type) { %> 
+                                    <%= product.benefits.b[0] %>
                                 <% } %>
                             </td>
                             <td>
@@ -392,25 +396,35 @@
                                     <i class="fas fa-check"></i>
                                 <% } %> <% if (product.benefits.b[1] == false) { %>
                                     <i class="fas fa-times"></i>
-                                <% } %>
+                                <% } else {%>
+
+                                    <% } %>
                             </td>
                             <td>
                                 <% if (product.benefits.b[2] == true) { %>
                                     <i class="fas fa-check"></i>
                                 <% } %> <% if (product.benefits.b[2] == false) { %>
                                     <i class="fas fa-times"></i>
-                                <% } %>
+                                <% } else {%>
+
+                                    <% } %>
+                            </td>
+                            <td>
+                                <% if (product.benefits.b[3] == true) { %>
+                                    <i class="fas fa-check"></i>
+                                <% } %> <% if (product.benefits.b[3] == false) { %>
+                                    <i class="fas fa-times"></i>
+                                <% } else {%>
+
+                                    <% } %>
                             </td>
                         </tr>
                         <tr>
                             <td class="beneficio">
-                                Integración con medios de pago
-                            </td>
-                            <td>
-                                <% if (product.benefits.c[0] == true) { %>
-                                    <i class="fas fa-check"></i>
-                                <% } %> <% if (product.benefits.c[0] == false) { %>
-                                    <i class="fas fa-times"></i>
+                                <% if (product.type == tiendaWeb[0].type) { %>
+                                    <%= product.benefits.c[0] %>
+                                <% } %> <% if (product.type == paginaWeb[0].type) { %> 
+                                    <%= product.benefits.c[0] %>
                                 <% } %>
                             </td>
                             <td>
@@ -418,25 +432,35 @@
                                     <i class="fas fa-check"></i>
                                 <% } %> <% if (product.benefits.c[1] == false) { %>
                                     <i class="fas fa-times"></i>
-                                <% } %>
+                                <% } else {%>
+
+                                    <% } %>
                             </td>
                             <td>
                                 <% if (product.benefits.c[2] == true) { %>
                                     <i class="fas fa-check"></i>
                                 <% } %> <% if (product.benefits.c[2] == false) { %>
                                     <i class="fas fa-times"></i>
-                                <% } %>
+                                <% } else {%>
+
+                                    <% } %>
+                            </td>
+                            <td>
+                                <% if (product.benefits.c[3] == true) { %>
+                                    <i class="fas fa-check"></i>
+                                <% } %> <% if (product.benefits.c[3] == false) { %>
+                                    <i class="fas fa-times"></i>
+                                <% } else {%>
+
+                                    <% } %>
                             </td>
                         </tr>
                         <tr>
                             <td class="beneficio">
-                                Integración con medios de envío
-                            </td>
-                            <td>
-                                <% if (product.benefits.d[0] == true) { %>
-                                    <i class="fas fa-check"></i>
-                                <% } %> <% if (product.benefits.d[0] == false) { %>
-                                    <i class="fas fa-times"></i>
+                                <% if (product.type == tiendaWeb[0].type) { %>
+                                    <%= product.benefits.d[0] %>
+                                <% } %> <% if (product.type == paginaWeb[0].type) { %> 
+                                    <%= product.benefits.d[0] %>
                                 <% } %>
                             </td>
                             <td>
@@ -444,25 +468,35 @@
                                     <i class="fas fa-check"></i>
                                 <% } %> <% if (product.benefits.d[1] == false) { %>
                                     <i class="fas fa-times"></i>
-                                <% } %>
+                                <% } else {%>
+
+                                    <% } %>
                             </td>
                             <td>
                                 <% if (product.benefits.d[2] == true) { %>
                                     <i class="fas fa-check"></i>
                                 <% } %> <% if (product.benefits.d[2] == false) { %>
                                     <i class="fas fa-times"></i>
-                                <% } %>
+                                <% } else {%>
+
+                                    <% } %>
+                            </td>
+                            <td>
+                                <% if (product.benefits.d[3] == true) { %>
+                                    <i class="fas fa-check"></i>
+                                <% } %> <% if (product.benefits.d[3] == false) { %>
+                                    <i class="fas fa-times"></i>
+                                <% } else {%>
+
+                                    <% } %>
                             </td>
                         </tr>
                         <tr>
                             <td class="beneficio">
-                                Gestión de productos y manejo de stock
-                            </td>
-                            <td>
-                                <% if (product.benefits.e[0] == true) { %>
-                                    <i class="fas fa-check"></i>
-                                <% } %> <% if (product.benefits.e[0] == false) { %>
-                                    <i class="fas fa-times"></i>
+                                <% if (product.type == tiendaWeb[0].type) { %>
+                                    <%= product.benefits.e[0] %>
+                                <% } %> <% if (product.type == paginaWeb[0].type) { %> 
+                                    <%= product.benefits.e[0] %>
                                 <% } %>
                             </td>
                             <td>
@@ -470,25 +504,35 @@
                                     <i class="fas fa-check"></i>
                                 <% } %> <% if (product.benefits.e[1] == false) { %>
                                     <i class="fas fa-times"></i>
-                                <% } %>
+                                <% } else {%>
+
+                                    <% } %>
                             </td>
                             <td>
                                 <% if (product.benefits.e[2] == true) { %>
                                     <i class="fas fa-check"></i>
                                 <% } %> <% if (product.benefits.e[2] == false) { %>
                                     <i class="fas fa-times"></i>
-                                <% } %>
+                                <% } else {%>
+
+                                    <% } %>
+                            </td>
+                            <td>
+                                <% if (product.benefits.e[3] == true) { %>
+                                    <i class="fas fa-check"></i>
+                                <% } %> <% if (product.benefits.e[3] == false) { %>
+                                    <i class="fas fa-times"></i>
+                                <% } else {%>
+
+                                    <% } %>
                             </td>
                         </tr>
                         <tr>
                             <td class="beneficio">
-                                Configuración de dominio propio
-                            </td>
-                            <td>
-                                <% if (product.benefits.f[0] == true) { %>
-                                    <i class="fas fa-check"></i>
-                                <% } %> <% if (product.benefits.f[0] == false) { %>
-                                    <i class="fas fa-times"></i>
+                                <% if (product.type == tiendaWeb[0].type) { %>
+                                    <%= product.benefits.f[0] %>
+                                <% } %> <% if (product.type == paginaWeb[0].type) { %> 
+                                    <%= product.benefits.f[0] %>
                                 <% } %>
                             </td>
                             <td>
@@ -496,25 +540,35 @@
                                     <i class="fas fa-check"></i>
                                 <% } %> <% if (product.benefits.f[1] == false) { %>
                                     <i class="fas fa-times"></i>
-                                <% } %>
+                                <% } else {%>
+
+                                    <% } %>
                             </td>
                             <td>
                                 <% if (product.benefits.f[2] == true) { %>
                                     <i class="fas fa-check"></i>
                                 <% } %> <% if (product.benefits.f[2] == false) { %>
                                     <i class="fas fa-times"></i>
-                                <% } %>
+                                <% } else {%>
+
+                                    <% } %>
+                            </td>
+                            <td>
+                                <% if (product.benefits.f[3] == true) { %>
+                                    <i class="fas fa-check"></i>
+                                <% } %> <% if (product.benefits.f[3] == false) { %>
+                                    <i class="fas fa-times"></i>
+                                <% } else {%>
+
+                                    <% } %>
                             </td>
                         </tr>
                         <tr>
                             <td class="beneficio">
-                                Seguimiento de estadísticas con Google Analytics
-                            </td>
-                            <td>
-                                <% if (product.benefits.g[0] == true) { %>
-                                    <i class="fas fa-check"></i>
-                                <% } %> <% if (product.benefits.g[0] == false) { %>
-                                    <i class="fas fa-times"></i>
+                                <% if (product.type == tiendaWeb[0].type) { %>
+                                    <%= product.benefits.g[0] %>
+                                <% } %> <% if (product.type == paginaWeb[0].type) { %> 
+                                    <%= product.benefits.g[0] %>
                                 <% } %>
                             </td>
                             <td>
@@ -522,25 +576,35 @@
                                     <i class="fas fa-check"></i>
                                 <% } %> <% if (product.benefits.g[1] == false) { %>
                                     <i class="fas fa-times"></i>
-                                <% } %>
+                                <% } else {%>
+
+                                    <% } %>
                             </td>
                             <td>
                                 <% if (product.benefits.g[2] == true) { %>
                                     <i class="fas fa-check"></i>
                                 <% } %> <% if (product.benefits.g[2] == false) { %>
                                     <i class="fas fa-times"></i>
-                                <% } %>
+                                <% } else {%>
+
+                                    <% } %>
+                            </td>
+                            <td>
+                                <% if (product.benefits.g[3] == true) { %>
+                                    <i class="fas fa-check"></i>
+                                <% } %> <% if (product.benefits.g[3] == false) { %>
+                                    <i class="fas fa-times"></i>
+                                <% } else {%>
+
+                                    <% } %>
                             </td>
                         </tr>
                         <tr>
                             <td class="beneficio">
-                                Configuración de códigos de tracking y conversión
-                            </td>
-                            <td>
-                                <% if (product.benefits.h[0] == true) { %>
-                                    <i class="fas fa-check"></i>
-                                <% } %> <% if (product.benefits.h[0] == false) { %>
-                                    <i class="fas fa-times"></i>
+                                <% if (product.type == tiendaWeb[0].type) { %>
+                                    <%= product.benefits.h[0] %>
+                                <% } %> <% if (product.type == paginaWeb[0].type) { %> 
+                                    <%= product.benefits.h[0] %>
                                 <% } %>
                             </td>
                             <td>
@@ -548,25 +612,35 @@
                                     <i class="fas fa-check"></i>
                                 <% } %> <% if (product.benefits.h[1] == false) { %>
                                     <i class="fas fa-times"></i>
-                                <% } %>
+                                <% } else {%>
+
+                                    <% } %>
                             </td>
                             <td>
                                 <% if (product.benefits.h[2] == true) { %>
                                     <i class="fas fa-check"></i>
                                 <% } %> <% if (product.benefits.h[2] == false) { %>
                                     <i class="fas fa-times"></i>
-                                <% } %>
+                                <% } else {%>
+
+                                    <% } %>
+                            </td>
+                            <td>
+                                <% if (product.benefits.h[3] == true) { %>
+                                    <i class="fas fa-check"></i>
+                                <% } %> <% if (product.benefits.h[3] == false) { %>
+                                    <i class="fas fa-times"></i>
+                                <% } else {%>
+
+                                    <% } %>
                             </td>
                         </tr>
                         <tr>
                             <td class="beneficio">
-                                Hosting y certificado SSL incluido
-                            </td>
-                            <td>
-                                <% if (product.benefits.i[0] == true) { %>
-                                    <i class="fas fa-check"></i>
-                                <% } %> <% if (product.benefits.i[0] == false) { %>
-                                    <i class="fas fa-times"></i>
+                                <% if (product.type == tiendaWeb[0].type) { %>
+                                    <%= product.benefits.i[0] %>
+                                <% } %> <% if (product.type == paginaWeb[0].type) { %> 
+                                    <%= product.benefits.i[0] %>
                                 <% } %>
                             </td>
                             <td>
@@ -574,25 +648,35 @@
                                     <i class="fas fa-check"></i>
                                 <% } %> <% if (product.benefits.i[1] == false) { %>
                                     <i class="fas fa-times"></i>
-                                <% } %>
+                                <% } else {%>
+
+                                    <% } %>
                             </td>
                             <td>
                                 <% if (product.benefits.i[2] == true) { %>
                                     <i class="fas fa-check"></i>
                                 <% } %> <% if (product.benefits.i[2] == false) { %>
                                     <i class="fas fa-times"></i>
-                                <% } %>
+                                <% } else {%>
+
+                                    <% } %>
+                            </td>
+                            <td>
+                                <% if (product.benefits.i[3] == true) { %>
+                                    <i class="fas fa-check"></i>
+                                <% } %> <% if (product.benefits.i[3] == false) { %>
+                                    <i class="fas fa-times"></i>
+                                <% } else {%>
+
+                                    <% } %>
                             </td>
                         </tr>
                         <tr>
                             <td class="beneficio">
-                                Aplicación de <em>Tu Tienda Web</em> para Android e iOS
-                            </td>
-                            <td>
-                                <% if (product.benefits.j[0] == true) { %>
-                                    <i class="fas fa-check"></i>
-                                <% } %> <% if (product.benefits.j[0] == false) { %>
-                                    <i class="fas fa-times"></i>
+                                <% if (product.type == tiendaWeb[0].type) { %>
+                                    <%= product.benefits.j[0] %>
+                                <% } %> <% if (product.type == paginaWeb[0].type) { %> 
+                                    <%= product.benefits.j[0] %>
                                 <% } %>
                             </td>
                             <td>
@@ -600,25 +684,35 @@
                                     <i class="fas fa-check"></i>
                                 <% } %> <% if (product.benefits.j[1] == false) { %>
                                     <i class="fas fa-times"></i>
-                                <% } %>
+                                <% } else {%>
+
+                                    <% } %>
                             </td>
                             <td>
                                 <% if (product.benefits.j[2] == true) { %>
                                     <i class="fas fa-check"></i>
                                 <% } %> <% if (product.benefits.j[2] == false) { %>
                                     <i class="fas fa-times"></i>
-                                <% } %>
+                                <% } else {%>
+
+                                    <% } %>
+                            </td>
+                            <td>
+                                <% if (product.benefits.j[3] == true) { %>
+                                    <i class="fas fa-check"></i>
+                                <% } %> <% if (product.benefits.j[3] == false) { %>
+                                    <i class="fas fa-times"></i>
+                                <% } else {%>
+
+                                    <% } %>
                             </td>
                         </tr>
                         <tr>
                             <td class="beneficio">
-                                Carritos abandonados
-                            </td>
-                            <td>
-                                <% if (product.benefits.k[0] == true) { %>
-                                    <i class="fas fa-check"></i>
-                                <% } %> <% if (product.benefits.k[0] == false) { %>
-                                    <i class="fas fa-times"></i>
+                                <% if (product.type == tiendaWeb[0].type) { %>
+                                    <%= product.benefits.k[0] %>
+                                <% } %> <% if (product.type == paginaWeb[0].type) { %> 
+                                    <%= product.benefits.k[0] %>
                                 <% } %>
                             </td>
                             <td>
@@ -626,25 +720,35 @@
                                     <i class="fas fa-check"></i>
                                 <% } %> <% if (product.benefits.k[1] == false) { %>
                                     <i class="fas fa-times"></i>
-                                <% } %>
+                                <% } else {%>
+
+                                    <% } %>
                             </td>
                             <td>
                                 <% if (product.benefits.k[2] == true) { %>
                                     <i class="fas fa-check"></i>
                                 <% } %> <% if (product.benefits.k[2] == false) { %>
                                     <i class="fas fa-times"></i>
-                                <% } %>
+                                <% } else {%>
+
+                                    <% } %>
+                            </td>
+                            <td>
+                                <% if (product.benefits.k[3] == true) { %>
+                                    <i class="fas fa-check"></i>
+                                <% } %> <% if (product.benefits.k[3] == false) { %>
+                                    <i class="fas fa-times"></i>
+                                <% } else {%>
+
+                                    <% } %>
                             </td>
                         </tr>
                         <tr>
                             <td class="beneficio">
-                                Configuración de puntos de entrega
-                            </td>
-                            <td>
-                                <% if (product.benefits.l[0] == true) { %>
-                                    <i class="fas fa-check"></i>
-                                <% } %> <% if (product.benefits.l[0] == false) { %>
-                                    <i class="fas fa-times"></i>
+                                <% if (product.type == tiendaWeb[0].type) { %>
+                                    <%= product.benefits.l[0] %>
+                                <% } %> <% if (product.type == paginaWeb[0].type) { %> 
+                                    <%= product.benefits.l[0] %>
                                 <% } %>
                             </td>
                             <td>
@@ -652,25 +756,35 @@
                                     <i class="fas fa-check"></i>
                                 <% } %> <% if (product.benefits.l[1] == false) { %>
                                     <i class="fas fa-times"></i>
-                                <% } %>
+                                <% } else {%>
+
+                                    <% } %>
                             </td>
                             <td>
                                 <% if (product.benefits.l[2] == true) { %>
                                     <i class="fas fa-check"></i>
                                 <% } %> <% if (product.benefits.l[2] == false) { %>
                                     <i class="fas fa-times"></i>
-                                <% } %>
+                                <% } else {%>
+
+                                    <% } %>
+                            </td>
+                            <td>
+                                <% if (product.benefits.l[3] == true) { %>
+                                    <i class="fas fa-check"></i>
+                                <% } %> <% if (product.benefits.l[3] == false) { %>
+                                    <i class="fas fa-times"></i>
+                                <% } else {%>
+
+                                    <% } %>
                             </td>
                         </tr>
                         <tr>
                             <td class="beneficio">
-                                Carga y actualización masiva de los textos de productos
-                            </td>
-                            <td>
-                                <% if (product.benefits.m[0] == true) { %>
-                                    <i class="fas fa-check"></i>
-                                <% } %> <% if (product.benefits.m[0] == false) { %>
-                                    <i class="fas fa-times"></i>
+                                <% if (product.type == tiendaWeb[0].type) { %>
+                                    <%= product.benefits.m[0] %>
+                                <% } %> <% if (product.type == paginaWeb[0].type) { %> 
+                                    <%= product.benefits.m[0] %>
                                 <% } %>
                             </td>
                             <td>
@@ -678,25 +792,35 @@
                                     <i class="fas fa-check"></i>
                                 <% } %> <% if (product.benefits.m[1] == false) { %>
                                     <i class="fas fa-times"></i>
-                                <% } %>
+                                <% } else {%>
+
+                                    <% } %>
                             </td>
                             <td>
                                 <% if (product.benefits.m[2] == true) { %>
                                     <i class="fas fa-check"></i>
                                 <% } %> <% if (product.benefits.m[2] == false) { %>
                                     <i class="fas fa-times"></i>
-                                <% } %>
+                                <% } else {%>
+
+                                    <% } %>
+                            </td>
+                            <td>
+                                <% if (product.benefits.m[3] == true) { %>
+                                    <i class="fas fa-check"></i>
+                                <% } %> <% if (product.benefits.m[3] == false) { %>
+                                    <i class="fas fa-times"></i>
+                                <% } else {%>
+
+                                    <% } %>
                             </td>
                         </tr>
                         <tr>
                             <td class="beneficio">
-                                Teclado Tu Tienda Web
-                            </td>
-                            <td>
-                                <% if (product.benefits.n[0] == true) { %>
-                                    <i class="fas fa-check"></i>
-                                <% } %> <% if (product.benefits.n[0] == false) { %>
-                                    <i class="fas fa-times"></i>
+                                <% if (product.type == tiendaWeb[0].type) { %>
+                                    <%= product.benefits.n[0] %>
+                                <% } %> <% if (product.type == paginaWeb[0].type) { %> 
+                                    <%= product.benefits.n[0] %>
                                 <% } %>
                             </td>
                             <td>
@@ -704,25 +828,35 @@
                                     <i class="fas fa-check"></i>
                                 <% } %> <% if (product.benefits.n[1] == false) { %>
                                     <i class="fas fa-times"></i>
-                                <% } %>
+                                <% } else {%>
+
+                                    <% } %>
                             </td>
                             <td>
                                 <% if (product.benefits.n[2] == true) { %>
                                     <i class="fas fa-check"></i>
                                 <% } %> <% if (product.benefits.n[2] == false) { %>
                                     <i class="fas fa-times"></i>
-                                <% } %>
+                                <% } else {%>
+
+                                    <% } %>
+                            </td>
+                            <td>
+                                <% if (product.benefits.n[3] == true) { %>
+                                    <i class="fas fa-check"></i>
+                                <% } %> <% if (product.benefits.n[3] == false) { %>
+                                    <i class="fas fa-times"></i>
+                                <% } else {%>
+
+                                    <% } %>
                             </td>
                         </tr>
                         <tr>
                             <td class="beneficio">
-                                Soporte via email
-                            </td>
-                            <td>
-                                <% if (product.benefits.o[0] == true) { %>
-                                    <i class="fas fa-check"></i>
-                                <% } %> <% if (product.benefits.o[0] == false) { %>
-                                    <i class="fas fa-times"></i>
+                                <% if (product.type == tiendaWeb[0].type) { %>
+                                    <%= product.benefits.o[0] %>
+                                <% } %> <% if (product.type == paginaWeb[0].type) { %> 
+                                    <%= product.benefits.o[0] %>
                                 <% } %>
                             </td>
                             <td>
@@ -730,25 +864,35 @@
                                     <i class="fas fa-check"></i>
                                 <% } %> <% if (product.benefits.o[1] == false) { %>
                                     <i class="fas fa-times"></i>
-                                <% } %>
+                                <% } else {%>
+
+                                    <% } %>
                             </td>
                             <td>
                                 <% if (product.benefits.o[2] == true) { %>
                                     <i class="fas fa-check"></i>
                                 <% } %> <% if (product.benefits.o[2] == false) { %>
                                     <i class="fas fa-times"></i>
-                                <% } %>
+                                <% } else {%>
+
+                                    <% } %>
+                            </td>
+                            <td>
+                                <% if (product.benefits.o[3] == true) { %>
+                                    <i class="fas fa-check"></i>
+                                <% } %> <% if (product.benefits.o[3] == false) { %>
+                                    <i class="fas fa-times"></i>
+                                <% } else {%>
+
+                                    <% } %>
                             </td>
                         </tr>
                         <tr>
                             <td class="beneficio">
-                                Promociones 2x1 y 3x2
-                            </td>
-                            <td>
-                                <% if (product.benefits.p[0] == true) { %>
-                                    <i class="fas fa-check"></i>
-                                <% } %> <% if (product.benefits.p[0] == false) { %>
-                                    <i class="fas fa-times"></i>
+                                <% if (product.type == tiendaWeb[0].type) { %>
+                                    <%= product.benefits.p[0] %>
+                                <% } %> <% if (product.type == paginaWeb[0].type) { %> 
+                                    <%= product.benefits.p[0] %>
                                 <% } %>
                             </td>
                             <td>
@@ -756,25 +900,35 @@
                                     <i class="fas fa-check"></i>
                                 <% } %> <% if (product.benefits.p[1] == false) { %>
                                     <i class="fas fa-times"></i>
-                                <% } %>
+                                <% } else {%>
+
+                                    <% } %>
                             </td>
                             <td>
                                 <% if (product.benefits.p[2] == true) { %>
                                     <i class="fas fa-check"></i>
                                 <% } %> <% if (product.benefits.p[2] == false) { %>
                                     <i class="fas fa-times"></i>
-                                <% } %>
+                                <% } else {%>
+
+                                    <% } %>
+                            </td>
+                            <td>
+                                <% if (product.benefits.p[3] == true) { %>
+                                    <i class="fas fa-check"></i>
+                                <% } %> <% if (product.benefits.p[3] == false) { %>
+                                    <i class="fas fa-times"></i>
+                                <% } else {%>
+
+                                    <% } %>
                             </td>
                         </tr>
                         <tr>
                             <td class="beneficio">
-                                Cupones de descuento
-                            </td>
-                            <td>
-                                <% if (product.benefits.q[0] == true) { %>
-                                    <i class="fas fa-check"></i>
-                                <% } %> <% if (product.benefits.q[0] == false) { %>
-                                    <i class="fas fa-times"></i>
+                                <% if (product.type == tiendaWeb[0].type) { %>
+                                    <%= product.benefits.q[0] %>
+                                <% } %> <% if (product.type == paginaWeb[0].type) { %> 
+                                    <%= product.benefits.q[0] %>
                                 <% } %>
                             </td>
                             <td>
@@ -782,25 +936,35 @@
                                     <i class="fas fa-check"></i>
                                 <% } %> <% if (product.benefits.q[1] == false) { %>
                                     <i class="fas fa-times"></i>
-                                <% } %>
+                                <% } else {%>
+
+                                    <% } %>
                             </td>
                             <td>
                                 <% if (product.benefits.q[2] == true) { %>
                                     <i class="fas fa-check"></i>
                                 <% } %> <% if (product.benefits.q[2] == false) { %>
                                     <i class="fas fa-times"></i>
-                                <% } %>
+                                <% } else {%>
+
+                                    <% } %>
+                            </td>
+                            <td>
+                                <% if (product.benefits.q[3] == true) { %>
+                                    <i class="fas fa-check"></i>
+                                <% } %> <% if (product.benefits.q[3] == false) { %>
+                                    <i class="fas fa-times"></i>
+                                <% } else {%>
+
+                                    <% } %>
                             </td>
                         </tr>
                         <tr>
                             <td class="beneficio">
-                                Personalización del SEO
-                            </td>
-                            <td>
-                                <% if (product.benefits.r[0] == true) { %>
-                                    <i class="fas fa-check"></i>
-                                <% } %> <% if (product.benefits.r[0] == false) { %>
-                                    <i class="fas fa-times"></i>
+                                <% if (product.type == tiendaWeb[0].type) { %>
+                                    <%= product.benefits.r[0] %>
+                                <% } %> <% if (product.type == paginaWeb[0].type) { %> 
+                                    <%= product.benefits.r[0] %>
                                 <% } %>
                             </td>
                             <td>
@@ -808,25 +972,35 @@
                                     <i class="fas fa-check"></i>
                                 <% } %> <% if (product.benefits.r[1] == false) { %>
                                     <i class="fas fa-times"></i>
-                                <% } %>
+                                <% } else {%>
+
+                                    <% } %>
                             </td>
                             <td>
                                 <% if (product.benefits.r[2] == true) { %>
                                     <i class="fas fa-check"></i>
                                 <% } %> <% if (product.benefits.r[2] == false) { %>
                                     <i class="fas fa-times"></i>
-                                <% } %>
+                                <% } else {%>
+
+                                    <% } %>
+                            </td>
+                            <td>
+                                <% if (product.benefits.r[3] == true) { %>
+                                    <i class="fas fa-check"></i>
+                                <% } %> <% if (product.benefits.r[3] == false) { %>
+                                    <i class="fas fa-times"></i>
+                                <% } else {%>
+
+                                    <% } %>
                             </td>
                         </tr>
                         <tr>
                             <td class="beneficio">
-                                Estadísticas avanzadas de tu negocio
-                            </td>
-                            <td>
-                                <% if (product.benefits.s[0] == true) { %>
-                                    <i class="fas fa-check"></i>
-                                <% } %> <% if (product.benefits.s[0] == false) { %>
-                                    <i class="fas fa-times"></i>
+                                <% if (product.type == tiendaWeb[0].type) { %>
+                                    <%= product.benefits.s[0] %>
+                                <% } %> <% if (product.type == paginaWeb[0].type) { %> 
+                                    <%= product.benefits.s[0] %>
                                 <% } %>
                             </td>
                             <td>
@@ -834,25 +1008,35 @@
                                     <i class="fas fa-check"></i>
                                 <% } %> <% if (product.benefits.s[1] == false) { %>
                                     <i class="fas fa-times"></i>
-                                <% } %>
+                                <% } else {%>
+
+                                    <% } %>
                             </td>
                             <td>
                                 <% if (product.benefits.s[2] == true) { %>
                                     <i class="fas fa-check"></i>
                                 <% } %> <% if (product.benefits.s[2] == false) { %>
                                     <i class="fas fa-times"></i>
-                                <% } %>
+                                <% } else {%>
+
+                                    <% } %>
+                            </td>
+                            <td>
+                                <% if (product.benefits.s[3] == true) { %>
+                                    <i class="fas fa-check"></i>
+                                <% } %> <% if (product.benefits.s[3] == false) { %>
+                                    <i class="fas fa-times"></i>
+                                <% } else {%>
+
+                                    <% } %>
                             </td>
                         </tr>
                         <tr>
                             <td class="beneficio">
-                                Instagram shopping, Facebook Store, Mailchimp y Google Shopping
-                            </td>
-                            <td>
-                                <% if (product.benefits.t[0] == true) { %>
-                                    <i class="fas fa-check"></i>
-                                <% } %> <% if (product.benefits.t[0] == false) { %>
-                                    <i class="fas fa-times"></i>
+                                <% if (product.type == tiendaWeb[0].type) { %>
+                                    <%= product.benefits.t[0] %>
+                                <% } %> <% if (product.type == paginaWeb[0].type) { %> 
+                                    <%= product.benefits.t[0] %>
                                 <% } %>
                             </td>
                             <td>
@@ -860,25 +1044,35 @@
                                     <i class="fas fa-check"></i>
                                 <% } %> <% if (product.benefits.t[1] == false) { %>
                                     <i class="fas fa-times"></i>
-                                <% } %>
+                                <% } else {%>
+
+                                    <% } %>
                             </td>
                             <td>
                                 <% if (product.benefits.t[2] == true) { %>
                                     <i class="fas fa-check"></i>
                                 <% } %> <% if (product.benefits.t[2] == false) { %>
                                     <i class="fas fa-times"></i>
-                                <% } %>
+                                <% } else {%>
+
+                                    <% } %>
+                            </td>
+                            <td>
+                                <% if (product.benefits.t[3] == true) { %>
+                                    <i class="fas fa-check"></i>
+                                <% } %> <% if (product.benefits.t[3] == false) { %>
+                                    <i class="fas fa-times"></i>
+                                <% } else {%>
+
+                                    <% } %>
                             </td>
                         </tr>
                         <tr>
                             <td class="beneficio">
-                                Diseño 100% flexible (via HTML, CSS y JavaScript)
-                            </td>
-                            <td>
-                                <% if (product.benefits.u[0] == true) { %>
-                                    <i class="fas fa-check"></i>
-                                <% } %> <% if (product.benefits.u[0] == false) { %>
-                                    <i class="fas fa-times"></i>
+                                <% if (product.type == tiendaWeb[0].type) { %>
+                                    <%= product.benefits.u[0] %>
+                                <% } %> <% if (product.type == paginaWeb[0].type) { %> 
+                                    <%= product.benefits.u[0] %>
                                 <% } %>
                             </td>
                             <td>
@@ -886,51 +1080,71 @@
                                     <i class="fas fa-check"></i>
                                 <% } %> <% if (product.benefits.u[1] == false) { %>
                                     <i class="fas fa-times"></i>
-                                <% } %>
+                                <% } else {%>
+
+                                    <% } %>
                             </td>
                             <td>
                                 <% if (product.benefits.u[2] == true) { %>
                                     <i class="fas fa-check"></i>
                                 <% } %> <% if (product.benefits.u[2] == false) { %>
                                     <i class="fas fa-times"></i>
-                                <% } %>
+                                <% } else {%>
+
+                                    <% } %>
+                            </td>
+                            <td>
+                                <% if (product.benefits.u[3] == true) { %>
+                                    <i class="fas fa-check"></i>
+                                <% } %> <% if (product.benefits.u[3] == false) { %>
+                                    <i class="fas fa-times"></i>
+                                <% } else {%>
+
+                                    <% } %>
                             </td>
                         </tr>
                         <tr>
                             <td class="beneficio">
-                                Soporte vía Whatsapp a partir del primer pago
-                            </td>
-                            <td>
-                                <% if (product.benefits.u[0] == true) { %>
-                                    <i class="fas fa-check"></i>
-                                <% } %> <% if (product.benefits.u[0] == false) { %>
-                                    <i class="fas fa-times"></i>
+                                <% if (product.type == tiendaWeb[0].type) { %>
+                                    <%= product.benefits.v[0] %>
+                                <% } %> <% if (product.type == paginaWeb[0].type) { %> 
+                                    <%= product.benefits.v[0] %>
                                 <% } %>
                             </td>
                             <td>
-                                <% if (product.benefits.u[1] == true) { %>
+                                <% if (product.benefits.v[1] == true) { %>
                                     <i class="fas fa-check"></i>
-                                <% } %> <% if (product.benefits.u[1] == false) { %>
+                                <% } %> <% if (product.benefits.v[1] == false) { %>
                                     <i class="fas fa-times"></i>
-                                <% } %>
+                                <% } else {%>
+
+                                    <% } %>
                             </td>
                             <td>
-                                <% if (product.benefits.u[2] == true) { %>
+                                <% if (product.benefits.v[2] == true) { %>
                                     <i class="fas fa-check"></i>
-                                <% } %> <% if (product.benefits.u[2] == false) { %>
+                                <% } %> <% if (product.benefits.v[2] == false) { %>
                                     <i class="fas fa-times"></i>
-                                <% } %>
+                                <% } else {%>
+
+                                    <% } %>
+                            </td>
+                            <td>
+                                <% if (product.benefits.v[3] == true) { %>
+                                    <i class="fas fa-check"></i>
+                                <% } %> <% if (product.benefits.v[3] == false) { %>
+                                    <i class="fas fa-times"></i>
+                                <% } else {%>
+
+                                    <% } %>
                             </td>
                         </tr>
                         <tr>
                             <td class="beneficio">
-                                Múltiples idiomas y monedas
-                            </td>
-                            <td>
-                                <% if (product.benefits.w[0] == true) { %>
-                                    <i class="fas fa-check"></i>
-                                <% } %> <% if (product.benefits.w[0] == false) { %>
-                                    <i class="fas fa-times"></i>
+                                <% if (product.type == tiendaWeb[0].type) { %>
+                                    <%= product.benefits.w[0] %>
+                                <% } %> <% if (product.type == paginaWeb[0].type) { %> 
+                                    <%= product.benefits.w[0] %>
                                 <% } %>
                             </td>
                             <td>
@@ -938,305 +1152,65 @@
                                     <i class="fas fa-check"></i>
                                 <% } %> <% if (product.benefits.w[1] == false) { %>
                                     <i class="fas fa-times"></i>
-                                <% } %>
+                                <% } else {%>
+
+                                    <% } %>
                             </td>
                             <td>
                                 <% if (product.benefits.w[2] == true) { %>
                                     <i class="fas fa-check"></i>
                                 <% } %> <% if (product.benefits.w[2] == false) { %>
                                     <i class="fas fa-times"></i>
-                                <% } %>
+                                <% } else {%>
+
+                                    <% } %>
+                            </td>
+                            <td>
+                                <% if (product.benefits.w[3] == true) { %>
+                                    <i class="fas fa-check"></i>
+                                <% } %> <% if (product.benefits.w[3] == false) { %>
+                                    <i class="fas fa-times"></i>
+                                <% } else {%>
+
+                                    <% } %>
                             </td>
                         </tr>
                         <tr>
                             <td class="beneficio">
-                                Integración con Marketplaces.
-                            </td>
-                            <td>
-                                <% if (product.benefits.w[0] == true) { %>
-                                    <i class="fas fa-check"></i>
-                                <% } %> <% if (product.benefits.w[0] == false) { %>
-                                    <i class="fas fa-times"></i>
+                                <% if (product.type == tiendaWeb[0].type) { %>
+                                    <%= product.benefits.x[0] %>
+                                <% } %> <% if (product.type == paginaWeb[0].type) { %> 
+                                    <%= product.benefits.x[0] %>
                                 <% } %>
                             </td>
                             <td>
-                                <% if (product.benefits.w[1] == true) { %>
+                                <% if (product.benefits.x[1] == true) { %>
                                     <i class="fas fa-check"></i>
-                                <% } %> <% if (product.benefits.w[1] == false) { %>
+                                <% } %> <% if (product.benefits.x[1] == false) { %>
                                     <i class="fas fa-times"></i>
-                                <% } %>
+                                <% } else {%>
+
+                                    <% } %>
                             </td>
                             <td>
-                                <% if (product.benefits.w[2] == true) { %>
+                                <% if (product.benefits.x[2] == true) { %>
                                     <i class="fas fa-check"></i>
-                                <% } %> <% if (product.benefits.w[2] == false) { %>
+                                <% } %> <% if (product.benefits.x[2] == false) { %>
                                     <i class="fas fa-times"></i>
-                                <% } %>
+                                <% } else {%>
+
+                                    <% } %>
+                            </td>
+                            <td>
+                                <% if (product.benefits.x[3] == true) { %>
+                                    <i class="fas fa-check"></i>
+                                <% } %> <% if (product.benefits.x[3] == false) { %>
+                                    <i class="fas fa-times"></i>
+                                <% } else {%>
+
+                                    <% } %>
                             </td>
                         </tr>
-                        <% } %>
-                        <% if (product.type == 'paginaWeb') { %>                     
-                            <tr>
-                                <td class="beneficio">
-                                    Plantillas Ilimitadas
-                                </td>
-                                <td>
-                                    <% if (product.benefits.a[0] == true) { %>
-                                        <i class="fas fa-check"></i>
-                                    <% } %> <% if (product.benefits.a[0] == false) { %>
-                                        <i class="fas fa-times"></i>
-                                    <% } %>
-                                </td>
-                                <td>
-                                    <% if (product.benefits.a[1] == true) { %>
-                                        <i class="fas fa-check"></i>
-                                    <% } %> <% if (product.benefits.a[1] == false) { %>
-                                        <i class="fas fa-times"></i>
-                                    <% } %>
-                                </td>
-                                <td>
-                                    <% if (product.benefits.a[2] == true) { %>
-                                        <i class="fas fa-check"></i>
-                                    <% } %> <% if (product.benefits.a[2] == false) { %>
-                                        <i class="fas fa-times"></i>
-                                    <% } %>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="beneficio">
-                                    Diseños responsive
-                                </td>
-                                <td>
-                                    <% if (product.benefits.b[0] == true) { %>
-                                        <i class="fas fa-check"></i>
-                                    <% } %> <% if (product.benefits.b[0] == false) { %>
-                                        <i class="fas fa-times"></i>
-                                    <% } %>
-                                </td>
-                                <td>
-                                    <% if (product.benefits.b[1] == true) { %>
-                                        <i class="fas fa-check"></i>
-                                    <% } %> <% if (product.benefits.b[1] == false) { %>
-                                        <i class="fas fa-times"></i>
-                                    <% } %>
-                                </td>
-                                <td>
-                                    <% if (product.benefits.b[2] == true) { %>
-                                        <i class="fas fa-check"></i>
-                                    <% } %> <% if (product.benefits.b[2] == false) { %>
-                                        <i class="fas fa-times"></i>
-                                    <% } %>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="beneficio">
-                                    Hosting gratuito
-                                </td>
-                                <td>
-                                    <% if (product.benefits.c[0] == true) { %>
-                                        <i class="fas fa-check"></i>
-                                    <% } %> <% if (product.benefits.c[0] == false) { %>
-                                        <i class="fas fa-times"></i>
-                                    <% } %>
-                                </td>
-                                <td>
-                                    <% if (product.benefits.c[1] == true) { %>
-                                        <i class="fas fa-check"></i>
-                                    <% } %> <% if (product.benefits.c[1] == false) { %>
-                                        <i class="fas fa-times"></i>
-                                    <% } %>
-                                </td>
-                                <td>
-                                    <% if (product.benefits.c[2] == true) { %>
-                                        <i class="fas fa-check"></i>
-                                    <% } %> <% if (product.benefits.c[2] == false) { %>
-                                        <i class="fas fa-times"></i>
-                                    <% } %>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="beneficio">
-                                    Inteligencia de diseño artificial (IDA)
-                                </td>
-                                <td>
-                                    <% if (product.benefits.d[0] == true) { %>
-                                        <i class="fas fa-check"></i>
-                                    <% } %> <% if (product.benefits.d[0] == false) { %>
-                                        <i class="fas fa-times"></i>
-                                    <% } %>
-                                </td>
-                                <td>
-                                    <% if (product.benefits.d[1] == true) { %>
-                                        <i class="fas fa-check"></i>
-                                    <% } %> <% if (product.benefits.d[1] == false) { %>
-                                        <i class="fas fa-times"></i>
-                                    <% } %>
-                                </td>
-                                <td>
-                                    <% if (product.benefits.d[2] == true) { %>
-                                        <i class="fas fa-check"></i>
-                                    <% } %> <% if (product.benefits.d[2] == false) { %>
-                                        <i class="fas fa-times"></i>
-                                    <% } %>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="beneficio">
-                                    Corvid de aplicaciones profesionales
-                                </td>
-                                <td>
-                                    <% if (product.benefits.e[0] == true) { %>
-                                        <i class="fas fa-check"></i>
-                                    <% } %> <% if (product.benefits.e[0] == false) { %>
-                                        <i class="fas fa-times"></i>
-                                    <% } %>
-                                </td>
-                                <td>
-                                    <% if (product.benefits.e[1] == true) { %>
-                                        <i class="fas fa-check"></i>
-                                    <% } %> <% if (product.benefits.e[1] == false) { %>
-                                        <i class="fas fa-times"></i>
-                                    <% } %>
-                                </td>
-                                <td>
-                                    <% if (product.benefits.e[2] == true) { %>
-                                        <i class="fas fa-check"></i>
-                                    <% } %> <% if (product.benefits.e[2] == false) { %>
-                                        <i class="fas fa-times"></i>
-                                    <% } %>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="beneficio">
-                                    Creador de logos
-                                </td>
-                                <td>
-                                    <% if (product.benefits.f[0] == true) { %>
-                                        <i class="fas fa-check"></i>
-                                    <% } %> <% if (product.benefits.f[0] == false) { %>
-                                        <i class="fas fa-times"></i>
-                                    <% } %>
-                                </td>
-                                <td>
-                                    <% if (product.benefits.f[1] == true) { %>
-                                        <i class="fas fa-check"></i>
-                                    <% } %> <% if (product.benefits.f[1] == false) { %>
-                                        <i class="fas fa-times"></i>
-                                    <% } %>
-                                </td>
-                                <td>
-                                    <% if (product.benefits.f[2] == true) { %>
-                                        <i class="fas fa-check"></i>
-                                    <% } %> <% if (product.benefits.f[2] == false) { %>
-                                        <i class="fas fa-times"></i>
-                                    <% } %>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="beneficio">
-                                    Dominio con tu marca personalizada
-                                </td>
-                                <td>
-                                    <% if (product.benefits.g[0] == true) { %>
-                                        <i class="fas fa-check"></i>
-                                    <% } %> <% if (product.benefits.g[0] == false) { %>
-                                        <i class="fas fa-times"></i>
-                                    <% } %>
-                                </td>
-                                <td>
-                                    <% if (product.benefits.g[1] == true) { %>
-                                        <i class="fas fa-check"></i>
-                                    <% } %> <% if (product.benefits.g[1] == false) { %>
-                                        <i class="fas fa-times"></i>
-                                    <% } %>
-                                </td>
-                                <td>
-                                    <% if (product.benefits.g[2] == true) { %>
-                                        <i class="fas fa-check"></i>
-                                    <% } %> <% if (product.benefits.g[2] == false) { %>
-                                        <i class="fas fa-times"></i>
-                                    <% } %>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="beneficio">
-                                    Atención personalizada de nuestro equipo de marketing
-                                </td>
-                                <td>
-                                    <% if (product.benefits.h[0] == true) { %>
-                                        <i class="fas fa-check"></i>
-                                    <% } %> <% if (product.benefits.h[0] == false) { %>
-                                        <i class="fas fa-times"></i>
-                                    <% } %>
-                                </td>
-                                <td>
-                                    <% if (product.benefits.h[1] == true) { %>
-                                        <i class="fas fa-check"></i>
-                                    <% } %> <% if (product.benefits.h[1] == false) { %>
-                                        <i class="fas fa-times"></i>
-                                    <% } %>
-                                </td>
-                                <td>
-                                    <% if (product.benefits.h[2] == true) { %>
-                                        <i class="fas fa-check"></i>
-                                    <% } %> <% if (product.benefits.h[2] == false) { %>
-                                        <i class="fas fa-times"></i>
-                                    <% } %>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="beneficio">
-                                    Plan SEO de Google
-                                </td>
-                                <td>
-                                    <% if (product.benefits.i[0] == true) { %>
-                                        <i class="fas fa-check"></i>
-                                    <% } %> <% if (product.benefits.i[0] == false) { %>
-                                        <i class="fas fa-times"></i>
-                                    <% } %>
-                                </td>
-                                <td>
-                                    <% if (product.benefits.i[1] == true) { %>
-                                        <i class="fas fa-check"></i>
-                                    <% } %> <% if (product.benefits.i[1] == false) { %>
-                                        <i class="fas fa-times"></i>
-                                    <% } %>
-                                </td>
-                                <td>
-                                    <% if (product.benefits.i[2] == true) { %>
-                                        <i class="fas fa-check"></i>
-                                    <% } %> <% if (product.benefits.i[2] == false) { %>
-                                        <i class="fas fa-times"></i>
-                                    <% } %>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="beneficio">
-                                    Carrito de compras
-                                </td>
-                                <td>
-                                    <% if (product.benefits.j[0] == true) { %>
-                                        <i class="fas fa-check"></i>
-                                    <% } %> <% if (product.benefits.j[0] == false) { %>
-                                        <i class="fas fa-times"></i>
-                                    <% } %>
-                                </td>
-                                <td>
-                                    <% if (product.benefits.j[1] == true) { %>
-                                        <i class="fas fa-check"></i>
-                                    <% } %> <% if (product.benefits.j[1] == false) { %>
-                                        <i class="fas fa-times"></i>
-                                    <% } %>
-                                </td>
-                                <td>
-                                    <% if (product.benefits.j[2] == true) { %>
-                                        <i class="fas fa-check"></i>
-                                    <% } %> <% if (product.benefits.j[2] == false) { %>
-                                        <i class="fas fa-times"></i>
-                                    <% } %>
-                                </td>
-                            </tr>
-                        <% } %>
                         <tr>
                             <td class="beneficio">
                                 Subscribirse
