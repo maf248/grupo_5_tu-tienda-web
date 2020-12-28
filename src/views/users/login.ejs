@@ -7,7 +7,7 @@
 
 <%- include('../partials/navbar') %>
 
-<section class="form-login">
+<form class="form-login" action="/users/login" method="POST">
     <h5>¡Hola! Completa tus datos</h5>
     <input class="usuario" type="text" name="usuario" value="" placeholder="Usuario">
     <input class="usuario" type="password" name="contraseña" value="" placeholder="Contraseña">
@@ -21,7 +21,7 @@
             <a href="#"><img src="/icons/social-media/facebook.png"></a>
         </div>
     </div>
-</section>
+</form>
 
 
 <%- include('../partials/footer') %>

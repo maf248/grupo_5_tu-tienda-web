@@ -7,21 +7,23 @@
 
 <%- include('../partials/navbar') %>
 
-<section class="form-registro">
+<form class="form-registro" action="/users/create" method="POST" enctype="multipart/form-data">
 <h5> Registrate </h5>
-<input class="controls" type="text" name="Nombre" value="" placeholder="Nombre">
-<input class="controls" type="text" name="Apellido" value="" placeholder="Apellido">
-<input class="controls" type="email" name="Email" value="" placeholder="Email">
-<input class="controls" type="password" name="Contraseña" value="" placeholder="Contraseña">
-<input class="controls" type="password" name="Confirmar Contraseña" value="" placeholder="Repetir Contraseña">
-<input class="buttons" type="submit"  value="Ingresar" >
+<input class="controls" type="text" name="firstName" value="" placeholder="Nombre">
+<input class="controls" type="text" name="lastName" value="" placeholder="Apellido">
+<input class="controls" type="email" name="email" value="" placeholder="Email">
+<input class="controls" type="password" name="password" value="" placeholder="Contraseña">
+<input class="controls" type="password" name="password" value="" placeholder="Repetir Contraseña">
+<label for="image">¡Sube tu foto de perfíl o avatar!</label>
+<input class="controls" type="file" name="image">
+<input class="buttons" type="submit"  value="Registrarse" >
 <div class="form-registro-oauth">
-    <div class="form-registro-oauth-titulo">Acceso rápido con:</div>
+    <div class="form-registro-oauth-titulo">Registro rápido con:</div>
     <div class="form-registro-oauth-iconos">
         <a href="#"><img src="/icons/social-media/google.png"></a>
         <a href="#"><img src="/icons/social-media/facebook.png"></a>
     </div>
     </div>
-</section>
+</form>
 
 <%- include('../partials/footer') %>
