@@ -1,13 +1,10 @@
 const usersController = {
-    main: function(req, res, next) {
-            if (req.params.id == 'login') {
+    login: function(req, res, next) {
                 res.render('./users/login');
-            } else if (req.params.id == 'registro') {
-                res.render('./users/registro');
-            } else {
-          res.send('¡Ruta Incorrecta!');
-            }
-        } 
+            },
+    register: function(req, res, next) {
+        res.render('./users/register');
+    }
 }
 
 module.exports = usersController;
