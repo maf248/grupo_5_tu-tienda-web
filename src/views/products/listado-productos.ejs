@@ -10,9 +10,9 @@
 <h1>Listado de productos:</h1>
 
 <% products.forEach(producto => { %>
-  <div class="producto">
+  <a href="/products/<%= producto.id %>"><div class="producto">
   <h2><%=producto.name%></h2>
-  <img src="/icons/<%= producto.image%>" alt="logo del producto" class="logoProducto">
+  <img src="/icons/<%= producto.image %>" alt="logo del producto" class="logoProducto">
   <h3><%= producto.titleBanner1 %></h3>
 <table class="tabla-productos">
     <thead class=tabla-productos-titulos>
@@ -26,37 +26,37 @@
     </thead>
     <tbody class=tabla-productos-cuerpo>
       <tr>
-        <td><h4>Cantidad de secciones web:</h4></td>
-        <% producto.benefits.cantidadSecciones.forEach(cantidad=> { %>
+        <td><h4><%= producto.benefits.cantidadSecciones[0] %></h4></td>
+        <% for (let i= 1; i < producto.benefits.cantidadSecciones.length; i++) { %>
 
           <td>
-            <p> <%= cantidad %></p>
+            <p> <%= producto.benefits.cantidadSecciones[i] %></p>
           </td>
-              <%})%>
+        <% } %>
       </tr>
       <tr>
-        <td><h4>Costo por transacción:</h4></td>
-        <% producto.benefits.costoTransaccion.forEach(costo=> { %>
+        <td><h4><%= producto.benefits.costoTransaccion[0] %></h4></td>
+        <% for (let i= 1; i < producto.benefits.costoTransaccion.length; i++) { %>
 
           <td>
-            <p><%= costo %></p>
+            <p><%= producto.benefits.costoTransaccion[i] %></p>
           </td>
-              <%})%>
+        <% } %>
       </tr>
       <tr>
-        <td><h4>Precio:</h4></td>
-            <% producto.price.forEach(precio=> { %>
+        <td><h4>Precio</h4></td>
+        <% producto.price.forEach(precio=> { %>
 
         <td>
           <p>$ <%= precio %></p>
         </td>
-            <%})%>
+        <%})%>
         
       </tr>
             
     </tbody>
 </table>
-</div>
+</div></a>
 <% }); %>
 
 
