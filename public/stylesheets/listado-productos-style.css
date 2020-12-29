@@ -14,11 +14,16 @@ h1 {
     text-align: center;
     text-decoration: underline overline;
 }
+a {
+    text-decoration: none;
+    color: black;
+    width: 70%;
+    align-self: center;
+}
 .producto {
     border: 5px solid rgb(100, 197, 149);
     border-radius: 30px;
-    width: 70%;
-    align-self: center;
+    width: 100%;
     margin: 15px 0px;
     padding: 30px;
     display: flex;
