@@ -89,7 +89,7 @@
     "categoryImage": ["plan-oro.png", "plan-plata.png", "plan-bronce.png"],
     "price": ["6999", "1999", "799"],
     "benefits": {
-        "costoTransaccion": ["0.5%", "1%", "2%"],
+        "costoTransaccion": ["Costo por transacción", "0.5%", "1%", "2%"],
         "a": ["Productos, visitas y ventas ilimitados", true, true, true],
         "b": ["Diseños personalizables", true, true, true],
         "c": ["Integración con medios de pago", true, true, true],
@@ -114,8 +114,7 @@
         "v": ["Soporte vía Whatsapp a partir del primer pago", true, false, false],
         "w": ["Múltiples idiomas y monedas", true, false, false],
         "x": ["Integración con Marketplaces", true, false, false],
-        "cantidadSecciones": [20, 10, 5],
-        "Suscribirse": [6999, 1999, 799]
+        "cantidadSecciones": ["Cantidad de secciones", 20, 10, 5]
     }
 }, {
     "id": 2,
@@ -208,7 +207,7 @@
     "categoryImage": ["plan-oro.png", "plan-plata.png", "plan-bronce.png"],
     "price": ["1200", "600", "GRATIS"],
     "benefits": {
-        "costoTransaccion": ["0.2%", "No aplica", "No aplica"],
+        "costoTransaccion": ["Costo por transacción", "0.2%", "No aplica", "No aplica"],
         "a": ["Plantillas ilimitadas", true, true, true],
         "b": ["Diseño responsive", true, true, true],
         "c": ["Hosting gratuito", true, true, true],
@@ -219,22 +218,7 @@
         "h": ["Atención personalizada de nuestro equipo de marketing", true, false, false],
         "i": ["Plan SEO de Google", true, false, false],
         "j": ["Carrito de compras", true, false, false],
-        "k": [null, null, null, null],
-        "l": [null, null, null, null],
-        "m": [null, null, null, null],
-        "n": [null, null, null, null],
-        "o": [null, null, null, null],
-        "p": [null, null, null, null],
-        "q": [null, null, null, null],
-        "r": [null, null, null, null],
-        "s": [null, null, null, null],
-        "t": [null, null, null, null],
-        "u": [null, null, null, null],
-        "v": [null, null, null, null],
-        "w": [null, null, null, null],
-        "x": [null, null, null, null],
-        "cantidadSecciones": [20, 10, 5],
-        "Suscribirse": [1200, 600, "GRATIS"]
+        "cantidadSecciones": ["Cantidad de secciones", 20, 10, 5]
     }
 }
 ]
