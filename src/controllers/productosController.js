@@ -126,10 +126,14 @@ const productosController = {
               }
               
       });
-      if (req.body.a[0] != "") {
-        products[products.length -1].benefits.a = [req.body.a[0], req.body.a[1], req.body.a[2], req.body.a[3]];
+      for (let i = 0; i < indexBenefits.length; i++) {
+
+      if (req.body[indexBenefits[i]][0] != "") {
+        products[products.length -1].benefits[indexBenefits[i]] = [req.body[indexBenefits[i]][0], req.body[indexBenefits[i]][1], req.body[indexBenefits[i]][2], req.body[indexBenefits[i]][3]];
         } else {
         }
+      
+      }
       
       console.log(req.body)
          const productsJSON = JSON.stringify(products);

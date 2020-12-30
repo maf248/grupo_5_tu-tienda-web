@@ -315,9 +315,9 @@
                         <tr>  
                           <% for (let i = 0; i < product.benefits[clave].length; i++) { %>
                             <td class="beneficio">
-                                <% if (product.benefits[clave][i] == true) { %>
+                                <% if (product.benefits[clave][i] == "true") { %>
                                     <i class="fas fa-check"></i>
-                                <% } else if (product.benefits[clave][i] == false) { %>
+                                <% } else if (product.benefits[clave][i] == null) { %>
                                     <i class="fas fa-times"></i>
                                 <% } else {%>
                                     <%= product.benefits[clave][i] %>
