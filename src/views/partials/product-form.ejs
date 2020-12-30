@@ -476,23 +476,22 @@
                     <input type="number" name="cantidadSecciones3" id="cantidadSecciones3">
                 </td>
             </tr>
-            <% const string = "abcdefghijklmnopqrstuvwx" 
-            for (let i= 0; i < string.length; i++) {
+            <% for (let i= 0; i < indexBenefits.length; i++) {
             %>           
             <tr>
                 <td class="beneficio">
                     <!--Elegir titulo beneficio 1-->
-                    <label for="<%= string[i] %>[0]">Beneficio:</label>
-                    <input type="text" name="<%= string[i] %>[0]" placeholder="Escribí el título aquí">
+                    <label for="<%= indexBenefits[i] %>[0]">Beneficio:</label>
+                    <input type="text" name="<%= indexBenefits[i] %>[0]" placeholder="Escribí el título aquí">
                 </td>
                 <td>
-                    <input type="checkbox" name="<%= string[i] %>[1]" value="true">
+                    <input type="checkbox" name="<%= indexBenefits[i] %>[1]" value="true">
                 </td>
                 <td>
-                    <input type="checkbox" name="<%= string[i] %>[2]" value="true">
+                    <input type="checkbox" name="<%= indexBenefits[i] %>[2]" value="true">
                 </td>
                 <td>
-                    <input type="checkbox" name="<%= string[i] %>[3]" value="true">
+                    <input type="checkbox" name="<%= indexBenefits[i] %>[3]" value="true">
                 </td>
             </tr>
             <% } %>
@@ -502,25 +501,13 @@
                     Subscribirse
                 </td>
                 <td>
-                    <form action="/carrito" method="get">
-                        <button>
-                            $ <input type="number" name="price1">
-                        </button>
-                    </form>
+                    <input type="number" name="price[0]" placeholder="$">
                 </td>
                 <td>
-                    <form action="/carrito" method="get">
-                        <button>
-                            $ <input type="number" name="price2">
-                        </button>
-                    </form>
+                    <input type="number" name="price[1]" placeholder="$">
                 </td>
                 <td>
-                    <form action="/carrito" method="get">
-                        <button>
-                            $ <input type="number" name="price3">
-                        </button>
-                    </form>
+                    <input type="number" name="price[2]" placeholder="$">
                 </td>
             </tr>
         </table>

@@ -8,6 +8,8 @@ const products = JSON.parse(fs.readFileSync(productsDir, 'utf-8'));
 const tiendaWeb = products.filter( item => item.type == 'tiendaWeb' );
 const paginaWeb = products.filter( item => item.type == 'paginaWeb' );
 
+const indexBenefits = "abcdefghijklmnopqrstuvwx";
+
 const productosController = {
     detalle: function(req, res, next) {
 
@@ -23,12 +25,12 @@ const productosController = {
           res.render('./products/listado-productos', {products: products});
         },
     creacion: function(req, res, next) {
-          res.render('./products/create'); 
+          res.render('./products/create', {indexBenefits: indexBenefits}); 
         },
     creador: function(req, res, next) {
       products.push(
          {
-          "id": products.length,
+          "id": products.length + 1,
           "name": req.body.name,
           "type": req.body.type,
           "titleBanner1": req.body.titleBanner1,
@@ -116,9 +118,10 @@ const productosController = {
           "image": req.body.image,
           "category": [req.body.category1, req.body.category2, req.body.category3],
           "categoryImage": [req.body.categoryImage1,req.body.categoryImage2,req.body.categoryImage3],
-          "price": [req.body.price1, req.body.price2, req.price3],
+          "price": [req.body.price[0], req.body.price[1], req.body.price[2]],
           "benefits": {
               "costoTransaccion": ["Costo por transacción", req.body.costoTransaccion[1], req.body.costoTransaccion[2], req.body.costoTransaccion[3]],
+
                "a":[req.body.a[0], req.body.a[1], req.body.a[2], req.body.a[3]],
                "b": [req.body.b[0], req.body.b[1], req.body.b[2], req.body.b[3]],
                "c":[req.body.c[0], req.body.c[1], req.body.c[2], req.body.c[3]],
@@ -143,8 +146,7 @@ const productosController = {
                "v": [req.body.v[0], req.body.v[1], req.body.v[2], req.body.v[3]],
                "w": [req.body.w[0], req.body.w[1], req.body.w[2], req.body.w[3]],
                "x": [req.body.x[0], req.body.x[1], req.body.x[2], req.body.x[3]],
-               "cantidadSecciones": ["Cantidad de secciones", req.body.cantidadSecciones1 , req.body.cantidadSecciones2, req.body.cantidadSecciones3],
-               "Suscribirse": [req.body.categoty1Price, req.body.category2Price, req.body.category3Price]
+               "cantidadSecciones": ["Cantidad de secciones", req.body.cantidadSecciones1 , req.body.cantidadSecciones2, req.body.cantidadSecciones3]
               }
               
       });
@@ -155,7 +157,7 @@ const productosController = {
         res.redirect('/products');
         },
     edicion: function(req, res, next) {
-      res.render('./products/edit', {productToEdit: products[req.params.id -1]});
+      res.render('./products/edit', {productToEdit: products[req.params.id -1], indexBenefits: indexBenefits});
     },
     editor: function(req, res, next) {
     /*----Actualizando los datos de formularios, en la variable products----*/
