@@ -10,10 +10,13 @@
 <h1>Listado de productos:</h1>
 
 <% products.forEach(producto => { %>
+<section class="listaContenedor">
+
+  <div class="productoListado">
   <a href="/products/<%= producto.id %>">
-  <div class="producto">
-  <h2><%=producto.name%></h2>
-  <img src="/icons/<%= producto.image %>" alt="logo del producto" class="logoProducto">
+    <h2><%=producto.name%></h2>
+    <img src="/icons/<%= producto.image %>" alt="logo del producto" class="logoProducto">
+  </a>
   <h3><%= producto.titleBanner1 %></h3>
 <table class="tabla-productos">
     <thead class=tabla-productos-titulos>
@@ -22,7 +25,6 @@
             <% for(let i=0; i<producto.category.length; i++){ %>
               <td><img class="medalla" src="/images/<%= producto.categoryImage[i] %>" alt="imagen de una medalla"><h3> <%= producto.category[i] %> </h3></td>
               <% }; %>
-
         </tr>
     </thead>
     <tbody class=tabla-productos-cuerpo>
@@ -53,14 +55,16 @@
         </td>
         <%})%>
         
-      </tr>
-            
+      </tr> 
     </tbody>
 </table>
+<form action="/products/<%= producto.id %>">
+  <button type="submit" class="producto-verMas">Ver más...</button>
+</form>
 </div>
-</a>
 <% }); %>
 
+</section>
 
 
 

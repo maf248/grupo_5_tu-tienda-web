@@ -307,6 +307,7 @@ h1, h2, h3, h4, h5, h6, button {
     margin-bottom: 20px;
 }
 .productosContenedor-producto-1:hover, .productosContenedor-producto-2:hover {
+    border: 5px solid rgb(100, 197, 149);
     transition: 300ms;
     transform: scale(1.05);
     cursor: pointer;
@@ -328,9 +329,6 @@ h1, h2, h3, h4, h5, h6, button {
 .productosContenedor-producto-1-planes img, .productosContenedor-producto-2-planes img {
     max-height: 35px;
     margin-bottom: 10px;
-}
-.productosContenedor-producto-1:hover, .productosContenedor-producto-2:hover {
-    border: 5px solid rgb(100, 197, 149);
 }
 .productosContenedor-producto-1-imagen img, .productosContenedor-producto-2-imagen img {
     justify-self: center;
