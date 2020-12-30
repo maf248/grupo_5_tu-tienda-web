@@ -5,408 +5,151 @@
     font-family: 'Montserrat', sans-serif;
     outline: none;
 }
-h1, h2, h3, h4, h5, h6, button {
+h1, h2, h3, h4, h5, h6, button, th {
     font-family: 'Raleway', sans-serif;
 }
-
-i {
-    margin: 2% auto;
-    color:  rgb(40, 172, 106);
-    font-size: 2em;
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+.icon {
+    width: 7%;
+    margin-bottom: 2%;
     transition: 600ms;
 }
-.disenoBlanco:hover i, .disenoAzul:hover i, .presenciaOnline-article:hover i, .presenciaOnline-articlePrincipal:hover i {
+.disenoBlanco article:hover .icon, .disenoAzul article:hover .icon {
     transform: rotate(-90deg);
 }
-
 button:hover {
     transition: 300ms;
     transform: scale(1.1);
     cursor: pointer;
 }
-/*BANNER EMPEZÁ*/
-
-.bannerEmpeza {
-    background-image: url(/images/El-sol.jpg);
-    background-size: cover;
-    margin-top: 2%;
-}
-
-.bannerEmpeza-titulo {
-    font-size: 1.2em;
-    text-align: center;
-    margin: 15% auto;
-    width: 85%;
-    color: white;
-    text-shadow: 10px 10px 15px #000;
-    animation-name: aparece;
-    animation-duration: 4s;
-    animation-timing-function: linear;
-}
-.bannerEmpeza form {
-    background-color: none;
-    margin: 5% auto;
-    width: max-content;
-    animation-name: aparece;
-    animation-duration: 4s;
-    animation-timing-function: linear;
-}
-@keyframes aparece {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-.bannerEmpeza button {
-    background: none;
-    color: white;
-    text-transform: uppercase;
-    text-decoration: underline;
-    text-shadow: 10px 10px 15px #000;
-    border: none;
-}
-@media (min-width:501px) {
-    .bannerEmpeza-titulo {
-        font-size: 1.7em;
-    }
-    .bannerEmpeza button {
-        font-size: 1.2em;
-    }
-}
-@media (min-width: 710px) {
-    .bannerEmpezá-article-titulo {
-        font-size: 2.2em;
-    }
-}
-@media (min-width: 920px) {
-    .bannerEmpeza-titulo {
-        font-size: 2.7em;
-    }
-}
-@media (min-width: 1129px) {
-    .bannerEmpeza-titulo {
-        font-size: 3.2em;
-    }
-}
-/*END BANNER EMPEZÁ*/
-
-/*SECCION PRESENCIA ONLINE*/
-
-.presenciaOnline {
-    background-color: rgb(38, 146, 235);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 2%;
-}
-.presenciaOnline-articlePrincipal {
-    width: 100%;
-    padding-bottom: 2%;
-}
-.presenciaOnline-articlePrincipal i {
-    margin-left: 46%;
-    color: black;
-}
-.presenciaOnline-articlePrincipal h2 {
-    color: black;
-    margin-bottom: 5%;
-    text-align: center;
-}
-.presenciaOnline-articlePrincipal p {
-    color: black;
-    text-align: center;
-}
-.presenciaOnline-articleImg {
-    display: none;
-}
-.presenciaOnline-containerArticle {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    z-index: 1;
-}
-.presenciaOnline-article {
-    width: 90%;
-    padding: 10% 0%;
-}
-.presenciaOnline-article h3 {
-    color: black;
-    font-weight:  900;
-    margin-bottom: 5%;
-    text-align: center;
-}
-
-.presenciaOnline-article p {
-    color: black;
-    text-align: center;
-    font-weight: 900;
-}
-.articleBorder1 {
-    border-top: 1px solid black;
-}
-.articleBorder2 {
-    border-top: 1px solid black;
-}
-.articleBorder3 {
-    border-top: 1px solid black;
-}
-.articleBorder4 {
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-}
-.presenciaOnline-form {
-    margin: 2%;
-} 
-
-.presenciaOnline-form button {
-    background-color: rgb(38, 146, 235);
-    color: black;
-    font-weight: bold;
-    text-decoration: underline;
-    text-transform: uppercase;
-    border: none;
-}
-@media (min-width: 570px) {
-    .presenciaOnline-articlePrincipal {
-        width: 100%;
-    }
-    .presenciaOnline-articlePrincipal h2 {
-        font-size: 2.5em;
-    }
-    .presenciaOnline-articlePrincipal p {
-        font-size: 1.5em;
-    }
-    .presenciaOnline-containerArticle {
-        width: 100%; 
-    }
-    .presenciaOnline-article {
-        width: 50%;
-        padding: 3%;
-    }
-    .articleBorder3 {
-        border-bottom: 1px solid black;
-    }
-}
-@media (min-width: 1024px) {
-    .presenciaOnline-articlePrincipal i {
-        display: none;
-    }
-    .presenciaOnline-articlePrincipal h2 {
-        font-size: 3.5em;
-    }
-    .presenciaOnline-articlePrincipal p {
-        font-size: 2.5em;
-    }
-    .presenciaOnline-articleImg {
-        display: flex;
-        justify-content: flex-end;
-        width: 40%;
-        border-bottom: 1px solid black;
-        border-top: 1px solid black;
-    }
-    .presenciaOnline-articleImg img {
-        width: fit-content;
-        margin: 2% auto;
-        opacity: 0.3;
-    }
-    .presenciaOnline-containerArticle {
-        width: 60%; 
-    }
-    .presenciaOnline-article {
-        width: 100%;
-        padding: 3%;
-    }
-    .presenciaOnline-containerArticle {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }
-    .presenciaOnline-article {
-        width: 100%;
-        padding: 3%;
-    }
-    .articleBorder1 {
-        border-bottom: none;
-    }
-    .articleBorder2 {
-        border-bottom: none;
-    }
-    .articleBorder3 {
-        border-bottom: none;
-    }
-}
-@media (min-width: 1380px) {
-    .presenciaOnline-articleImg img {
-        opacity: 1;
-    }
-    .articleBorder1 {
-        border-bottom: none;
-    }
-    .articleBorder2 {
-        border-bottom: none;
-    }
-    .articleBorder3 {
-        border-bottom: none;
-    }
-}
-/*END SECCION PRESENCIA ONLINE*/
-
-/*BANNER RESPONSIVE DESIGN*/
-
-.banner-versiones {
-    width: 100%;
-    background-color: rgb(38, 146, 235);;
-    align-self: center;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    margin: auto;
-    padding: 2%;
-}
-.banner-versiones-contenedorImagenResponsive {
-    position: relative;
-    transition: 500ms;
-}
-.banner-versiones-contenedorImagenResponsive:hover { 
-    -webkit-transform: rotateY(180deg);
-    -webkit-transform-style: preserve-3d;
-    transform: rotateY(180deg);
-    transform-style: preserve-3d;
-}
-.imagen-escritorio {
-    max-width: 100%;
-    align-self: center;   
-}
-.imagen-mobile {
-    max-width: 20%;
-    z-index: 1;
-    align-self: flex-end;
-    position: absolute;
-    right: 0%;
-    bottom: 0%;
-}
-.banner-versiones strong h3 {
-    font-size: 1em;
-    text-align: center;
-    color: white;
-    margin-top: 3%;
-    text-decoration: underline;
-    text-transform: uppercase;
-    animation-name: parpadeo;
-    animation-duration: 1s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-}
-@keyframes parpadeo {  
-    0% { opacity: 1.0;}
-    50% { opacity: 0.5; }
-    100% { opacity: 1.0;}
-  }
-  @media (min-width: 1179px) {
-      .banner-versiones {
-          margin: auto;
-          width: 100%;
-      }
-      .banner-versiones-contenedorImagenResponsive {
-        width: 65%;
-        margin: auto;
-    }
-  }
-/*END BANNER RESPONSIVE DESIGN*/
-
-/*DISEÑO FONDO BLANCO*/
-
-.disenoBlanco {
-    display: flex;
-    flex-wrap: wrap;
-    margin: auto;
-    padding: 2%;
-}
-.disenoBlanco-titulo {
-    font-size: 1em;
-    text-align: center;
-    margin-bottom: 3%;
-    width: 100%;
-    color: rgb(40, 172, 106);
-}
-.disenoBlanco-parrafo {
-    font-size: 0.75em;
-    text-align: justify;
-    padding: 0% 2%;
-    color: rgb(40, 172, 106);
-}
-.disenoBlanco-form {
-    margin: 0 auto;
-    margin-top: 2%;
-    color: rgb(40, 172, 106);
-}
-.disenoBlanco-form button {
-    font-size: 0.75em;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-decoration: underline;
-    background-color: white;
-    border: none;
-    color: rgb(40, 172, 106);
-}
-@media (min-width: 570px) {
-    .disenoBlanco {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .disenoBlanco i {
-        display: none;
-    }
-    .disenoBlanco-titulo {
-        width: 50%;
-        border-right: 1px solid black;
-        padding: 0% 5%;
-        font-size: 2em;
-    }
-    .disenoBlanco-parrafo {
-        width: 50%;
-        font-size: 1em;
-    }
-    .disenoBlanco-form button {
-        background-color: white;
-        font-size: 1em;
-    }
-    .disenoBlanco-form {
+/*BANNER 1*/
+    .banner1 {
+        padding: 2%;
+        background-image: url(/images/El-sol.jpg);
+        background-size: cover;
         margin-top: 2%;
     }
-}
+    .banner1 h2 {
+        text-align: center;
+        color: white;
+        font-size: 1.2em;
+        text-transform: uppercase;
+        text-shadow: 10px 10px 15px #000;
+        animation-name: aparece;
+        animation-duration: 4s;
+        animation-timing-function: linear;
+        margin-top: 15%;
+    }
+    .banner1 p {
+        text-align: center;
+        color: white;
+        font-size: 0.75em;
+        margin-top: 1%;
+        text-shadow: 10px 10px 15px #000;
+        animation-name: aparece;
+        animation-duration: 4s;
+        animation-timing-function: linear;
+        margin-bottom: 15%;
+    }
 
-/*END DISEÑOIFONDO BLANCO*/
+    .banner1 form {
+        margin: 0 auto;
+        margin-top: 2%;
+        width: max-content;
+        animation-name: aparece;
+        animation-duration: 4s;
+        animation-timing-function: linear;
+    }
+    @keyframes aparece {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    .banner1 button {
+        font-size: 0.75em;
+        color: white;
+        background: none;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-decoration: underline;
+        border: none;
+        text-shadow: 10px 10px 15px #000;
+    }
+    @media (min-width:565px) {
+        .banner1 h2 {
+            font-size: 1.7em;
+        }
+        .banner1 p {
+            font-size: 1.2em;
+        }
+        .banner1 button {
+            font-size: 1.2em;
+        }
+    }
+    @media (min-width: 731px) {
+        .banner1 h2 {
+            font-size: 2.2em;
+        }
+        .banner1 p {
+            font-size: 1.7em;
+        }
+    }
+    @media (min-width: 920px) {
+        .bannerEmpeza-titulo {
+            font-size: 2.7em;
+        }
+    }
+    @media (min-width: 1129px) {
+        .banner1 h2 {
+            font-size: 2.7em;
+        }
+        .banner1 p {
+            font-size: 2.2em;
+        }
+    }
+/*END BANNER 1*/
 
-/*DISEÑO FONDO AZUL*/
+/*DISENO FONDO AZUL*/
 
 .disenoAzul {
-    display: flex;
-    flex-wrap: wrap;
     background-color: rgb(38, 146, 235);
-    padding: 2%;
 }
-.disenoAzul-titulo {
-    font-size: 1em;
+.disenoAzul-articleImg {
+    display: none;
+}
+.disenoAzul-article1 {
+    border-bottom: 1px solid white;
+}
+.disenoAzul-article1-tituloPrincipal {
+    padding: 5%;
     text-align: center;
-    margin-bottom: 5%;
     color: white;
-    width: 100%;
 }
-.disenoAzul-parrafo {
-    font-size: 0.75em;
-    text-align: justify;
-    padding: 0% 2%;
-    margin-bottom: 3%;
+.disenoAzul-article2 {
+    border-bottom: 1px solid white;
+}
+.disenoAzul-article2-titulo {
+    padding: 2%;
     color: white;
+    text-align: center;
+}
+.disenoAzul-article2-parrafo {
+    padding: 2%;
+    color: white;
+    text-align: center;
+}
+.disenoAzul-form {
+    margin: 1% auto;
+    width: max-content;
 }
 .disenoAzul i {
     color: white;
-}
-.disenoAzul-form {
-    margin: 0 auto;
 }
 .disenoAzul-form button {
     font-size: 0.75em;
@@ -417,200 +160,261 @@ button:hover {
     background-color: rgb(38, 146, 235);
     color: white;
 }
+
 @media (min-width: 570px) {
     .disenoAzul {
         display: flex;
         flex-wrap: wrap;
+        justify-content: space-around;
     }
-    .disenoAzul-titulo {
+    .disenoAzul-article1 {
+        width: 100%;
+    }
+    .disenoAzul-articleImg {
+        display: inline-block;
         width: 50%;
-        border-right: 1px solid white;
+        border-bottom: 1px solid white;
+    }
+    .disenoAzul-articleImg img {
+        width: 100%;
         padding: 2%;
-        font-size: 2em;
+        height: 100%;
     }
-    .disenoAzul i {
-        display: none;
-    }
-    .disenoAzul-parrafo {
+    .disenoAzul-containerArticle2 {
         width: 50%;
-        padding: 2%;
-        font-size: 1em;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .disenoAzul-article2 {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .disenoAzul-article2-titulo {
+        align-self: flex-end;
+        width: 100%;
     }
     .disenoAzul-form button {
-        color: white;
         font-size: 1em;
+    }
+}
+@media (min-width: 1024px) {
+    .disenoAzul-article1-tituloPrincipal {
+        font-size: 3em;
+    }
+    .disenoAzul-article2-titulo {
+        font-size: 2em;
+    }
+    .disenoAzul-article2-parrafo {
+        font-size: 1.5em;
     }
 }
 
 /*END DISEÑO FONDO AZUL*/
 
-/*BANNER DE DESCUENTO*/
+/*DISEÑO FONDO BLANCO*/
 
-.banner-descuento {
-    background-image: url("/images/fondo-banner-descuento-4.jpg");
-    background-size: 100%;
+.disenoBlanco {
+    background-color: white;
 }
-.banner-descuento a {
-    text-decoration: none;
-    color: black;
-    display: flex;
-    text-align: left;
+.disenoBlanco-articleImg {
+    display: none;
 }
-.banner-descuento a:hover {
-    border: 3px solid black;
-    text-shadow: 2px 2px 3px black; 
+.disenoBlanco-article1 {
+    border-bottom: 1px solid rgb(40, 172, 106);
 }
-.imagen-descuento {
-    width: 5%;
-    height: 5%;
-    margin: auto;
-    margin-left: 1%;
-}
-.texto-descuento {
-    padding: 0% 5%;
-    align-self: center;
-    font-size: 1em;
-    color: white;
-    padding: 2%;
-}
-@media (min-width: 570px) {
-    .texto-descuento {
-        font-size: 1.5em;
-    }
-    .banner-descuento {
-        margin: 0%;
-    }
-}
-@media (min-width: 1179px) {
-    .texto-descuento {
-        font-size: 2em;
-    }
-    .banner-descuento {
-        margin: 0%;
-    }
-}
-/*END BANNER DESCUENTO*/
-
-/*PRODUCTOS*/
-
-.productos {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: space-around;
-    position: relative;
-    padding-top: 2%;
-}
-.productos h2 {
+.disenoBlanco-article1-tituloPrincipal {
+    padding: 5%;
     text-align: center;
+    color:rgb(40, 172, 106);
+}
+.disenoBlanco-article2 {
+    border-bottom: 1px solid rgb(40, 172, 106);
+}
+.disenoBlanco-article2-titulo {
+    padding: 2%;
+    color: rgb(40, 172, 106);
+    text-align: center;
+}
+.disenoBlanco-article2-parrafo {
+    padding: 2%;
+    color: rgb(40, 172, 106);
+    text-align: center;
+}
+.disenoBlanco-form {
+    margin: 1% auto;
+    width: max-content;
+}
+.disenoBlanco-form button {
+    font-size: 0.75em;
+    font-weight: bold;
     text-transform: uppercase;
-    width: 95%;
-    margin-bottom: 5%;
-    align-self: center;
+    text-decoration: underline;
+    border: none;
+    background-color: white;
     color: rgb(40, 172, 106);
 }
-.contenedor-productos {
-    display: flex;
-    width: 80%;
-    justify-content: space-around;
-    align-self: center;
-    margin: 5% 0;
+
+@media (min-width: 570px) {
+    .disenoBlanco {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .disenoBlanco-article1 {
+        width: 100%;
+    }
+    .disenoBlanco-articleImg {
+        display: inline-block;
+        width: 50%;
+        border-bottom: 1px solid rgb(40, 172, 106);
+    }
+    .disenoBlanco-articleImg img {
+        width: 100%;
+        height: 100%;
+        padding: 2%;
+    }
+    .disenoBlanco-containerArticle2 {
+        width: 50%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .disenoBlanco-article2 {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .disenoBlanco-article2-titulo {
+        align-self: flex-end;
+        width: 100%;
+    }
+    .disenoBlanco-form button {
+        font-size: 1em;
+    }
 }
-.contratar {
-    background-color: rgb(38, 146, 235);
+@media (min-width: 1024px) {
+    .disenoBlanco-article1-tituloPrincipal {
+        font-size: 3em;
+    }
+    .disenoBlanco-article2-titulo {
+        font-size: 2em;
+    }
+    .disenoBlanco-article2-parrafo {
+        font-size: 1.5em;
+    }
+}
+
+/*END DISEÑO FONDO BLANCO*/
+
+/*BANNER PRODUCTO*/
+
+.contenedorProductos {
+    display: flex;
+    flex-wrap: wrap;
+    background-color:  rgb(38, 146, 235);
+}
+.contenedorProductos h2 {
+    text-align: center;
     color: white;
-    border: 3px solid black;
-    border-radius: 10px;
-    align-self: flex-end;
-    box-shadow: 7px 13px 37px #000;
-    cursor: pointer;
-}
-.productos-articulo {
-    align-self: center;
-    display: flex;
-    flex-direction: column;
+    width: 100%;
+    margin-top: 2%;
+    padding: 1%;
 }
 .productos-img {
-    width: 50%;
-    align-self: center;
-    margin-top: 10%;
+    width: 25%;
+    margin: 2% auto;
 }
 .productos-img:hover { 
-    transform: scale(1.05);
+animation-name: anime;
+animation-duration: 0.5s;
+animation-fill-mode: forwards;
+animation-iteration-count: 1;
+animation-timing-function: ease-out;
+-moz-animation-timing-function: ease-out;
+}
+@keyframes anime {
+25% {
+   transform: skew(10deg);
+}
+50% {
+    transform: skew(-10deg);
+}
+75% {
+    transform: skew(10deg);
+}
+}
+.medalla {
+    width: 50%;
+}
+.medalla:hover { 
     animation-name: anime;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
     animation-timing-function: ease-out;
     -moz-animation-timing-function: ease-out;
-}
-@keyframes anime {
-25% {
-        transform: skew(10deg);
     }
-50% {
+    @keyframes anime {
+    25% {
+       transform: skew(10deg);
+    }
+    50% {
         transform: skew(-10deg);
     }
-75% {
+    75% {
         transform: skew(10deg);
     }
+    }
+table {
+    width: 80%;
+    margin: 2% auto;
 }
-.medalla {
-    width: 15%;
-    align-self: center;
-    margin-bottom: 3%;
-}
-.productos-articulo h3 {
-    text-align: center;
-    font-weight: 300;
-    margin-bottom: 10%;
-    color: black;
-}
-.tituloSuscripcionOro {
-    background-color: gold;
-    width: 100%;
-}
-.tituloSuscripcionPlata {
-    background-color: silver;
-    width: 100%;
-}
-.tituloSuscripcionBronce {
-    background-color: rgb(155, 108, 65);
-    width: 100%;
-}
-.productos-articulo ul {
-    list-style: none;
-    text-align: center;
-    padding: 1%;
-    margin-bottom: 10%;
-}
-.productos-articulo ul li {
-    text-align: center;
-    border-top: green solid 1px;
-    margin: 1% 0;
-}
-.productos-articulo span {
-    color: white;
-    text-align: center;
-    color: black;
+th, td {
+    border-bottom: 1px solid white;
+    border-collapse: collapse;
     padding: 2%;
+    text-align: center;
+    color: white;
+    transition: 500ms;
 }
-@media (min-width: 650px) {
-    .productos {
-        flex-direction: row;
-        flex-wrap: wrap;
+th {
+    letter-spacing: 2px;
+}
+.beneficio:hover {
+    transform: scale(1.5);
+    border: none;
+}
+.fa-check {
+    color: white;
+}
+.fa-times {
+    color: black;
+}
+td button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    color: white;
+}
+td button:hover {
+    transition: 500ms;
+    transform: scale(2);
+}
+
+@media (max-width: 425px) {
+    table  {
+        width: 95%;
     }
-    .contenedorMedalla {
-        width: 100%;
-    }
-    .contenedor-productos {
-        width: 25%;
-        align-self: flex-end;
-    }
-    .productos-articulo {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
+    td, th {
+        font-size: 0.8em;
     }
 }
-/*END PRODUCTOS*/
+
+/*END BANNER PRODUCTO*/
+
