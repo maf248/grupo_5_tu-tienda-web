@@ -38,7 +38,6 @@ h1 {
     border: 5px solid rgb(100, 197, 149);
     transition: 300ms;
     transform: scale(1.05);
-    cursor: pointer;
 }
 .productoListado h2 {
     font-size: 2.2em;
@@ -97,12 +96,20 @@ h1 {
     color: black;
     text-decoration: none;
 }
-.producto form {
-    display: flex;
+.productoListado form {
     width: 100%;
+    display: flex;
 }
-.producto-verMas button {
-    text-align: right;
+.producto-verMas {
+    margin-right: 5%;
+    margin-left: auto;
+    border: 1px solid rgb(38, 146, 235);
+    background-color: rgb(38, 146, 235);
+    font-size: 1.3em;
+    cursor: pointer;
+}
+.producto-verMas:hover {
+    text-decoration: underline;
 }
 
 
@@ -161,8 +168,15 @@ footer {
     .productoListado {
         width: 95%;
     }
+    .tabla-productos {
+        margin-left: auto;
+        margint-right: auto;
+    }
     .tabla-productos-titulos h2{
         font-size: 1em;
+    }
+    .producto-verMas {
+        font-size: 1.2em;
     }
 
 }
