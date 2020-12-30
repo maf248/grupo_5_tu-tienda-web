@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+}
+h1, h2, h3, h4, h5, h6, button, th {
+    font-family: 'Raleway', sans-serif;
+}
+.titulo {
+    margin: 20px 0px 10px 0px;
+    font-size: 1.8em;
+    text-align: center;
+    text-decoration: underline overline;
+}
+.subtituloContenedor {
+    width: fit-content;
+    margin-right: auto;
+    margin-left: auto;
+}
+.subtitulo {
+    margin-top: 20px;
+    font-size: 1.6em;
+    text-align: center;
+    text-decoration: underline;
+    display: inline;
+}
+.subtitulo-producto {
+    font-family: 'Raleway', sans-serif;
+    width: fit-content;
+    display: inline;
+    font-size: 1.6em;
+
+}

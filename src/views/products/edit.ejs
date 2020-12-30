@@ -3,15 +3,17 @@
 <head>
     <%- include('../partials/head') %>
     <link rel="stylesheet" href="/stylesheets/producto-style.css">
+    <link rel="stylesheet" href="/stylesheets/crear-editar-style.css">
 </head>
 
 <%- include('../partials/navbar') %>
 
 
 <div class="creadorContainer">
-    <h1>Editor de productos</h1>
-    <h2>Estás editando: <i><%= productToEdit.name %></i></h2>
-
+    <h1 class="titulo">Editor de productos</h1>
+    <div class="subtituloContenedor">
+     <h2 class="subtitulo">Estás editando:</h2> <p class="subtitulo-producto"><%= productToEdit.name %></p>
+    </div>
     <form action="/products/<%= productToEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
 
         <%- include('../partials/product-form') %>
