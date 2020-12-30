@@ -116,7 +116,7 @@ const productosController = {
           "image": req.body.image,
           "category": [req.body.category1, req.body.category2, req.body.category3],
           "categoryImage": [req.body.categoryImage1,req.body.categoryImage2,req.body.categoryImage3],
-          "price": [req.body.category1Price, req.body.category2Price, req.body.category3Price],
+          "price": [req.body.price1, req.body.price2, req.price3],
           "benefits": {
               "costoTransaccion": ["Costo por transacción", req.body.costoTransaccion[1], req.body.costoTransaccion[2], req.body.costoTransaccion[3]],
                "a":[req.body.a[0], req.body.a[1], req.body.a[2], req.body.a[3]],
@@ -146,8 +146,9 @@ const productosController = {
                "cantidadSecciones": ["Cantidad de secciones", req.body.cantidadSecciones1 , req.body.cantidadSecciones2, req.body.cantidadSecciones3],
                "Suscribirse": [req.body.categoty1Price, req.body.category2Price, req.body.category3Price]
               }
+              
       });
-      
+      console.log(req.body)
          const productsJSON = JSON.stringify(products);
          fs.writeFileSync(productsDir, productsJSON);
 

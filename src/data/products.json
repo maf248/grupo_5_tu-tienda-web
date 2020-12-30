@@ -220,5 +220,4 @@
         "j": ["Carrito de compras", true, false, false],
         "cantidadSecciones": ["Cantidad de secciones", 20, 10, 5]
     }
-}
-]
+}]

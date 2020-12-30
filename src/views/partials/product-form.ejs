@@ -475,462 +475,28 @@
                     <label for="cantidadSecciones3">Elegí la cantidad de secciones de la categoría 3:</label>
                     <input type="number" name="cantidadSecciones3" id="cantidadSecciones3">
                 </td>
-            </tr>           
-                <tr>
-                <td class="beneficio">
-                    <!--Elegir titulo beneficio 1-->
-                    <label for="a[0]">Beneficio:</label>
-                    <input type="text" name="b[0]" placeholder="Escribí el título aquí">
-                </td>
-                <td>
-                    <input type="checkbox" name="b[1]" value="true">
-                </td>
-                <td>
-                    <input type="checkbox" name="b[2]" value="true">
-                </td>
-                <td>
-                    <input type="checkbox" name="b[3]" value="true">
-                </td>
             </tr>
+            <% const string = "abcdefghijklmnopqrstuvwx" 
+            for (let i= 0; i < string.length; i++) {
+            %>           
             <tr>
                 <td class="beneficio">
                     <!--Elegir titulo beneficio 1-->
-                    <label for="a[0]">Beneficio 1:</label>
-                    <input type="text" name="c[0]" placeholder="Escribí el título aquí">
+                    <label for="<%= string[i] %>[0]">Beneficio:</label>
+                    <input type="text" name="<%= string[i] %>[0]" placeholder="Escribí el título aquí">
                 </td>
                 <td>
-                    <input type="checkbox" name="c[1]" value="true">
+                    <input type="checkbox" name="<%= string[i] %>[1]" value="true">
                 </td>
                 <td>
-                    <input type="checkbox" name="c[2]" value="true">
+                    <input type="checkbox" name="<%= string[i] %>[2]" value="true">
                 </td>
                 <td>
-                    <input type="checkbox" name="c[3]" value="true">
+                    <input type="checkbox" name="<%= string[i] %>[3]" value="true">
                 </td>
             </tr>
-
-            <tr>
-                <td class="beneficio">
-                    <!--Elegir titulo beneficio 1-->
-                    <label for="a[0]">Beneficio 1:</label>
-                    <input type="text" name="d[0]" placeholder="Escribí el título aquí">
-                </td>
-                <td>
-                    <input type="checkbox" name="d[1]" value="true">
-                </td>
-                <td>
-                    <input type="checkbox" name="d[2]" value="true">
-                </td>
-                <td>
-                    <input type="checkbox" name="d[3]" value="true">
-                </td>
-            </tr>
-            <tr>
-                <td class="beneficio">
-                    <!--Elegir titulo beneficio 1-->
-                    <label for="a[0]">Beneficio 1:</label>
-                    <input type="text" name="e[0]" placeholder="Escribí el título aquí">
-                </td>
-                <td>
-                    <input type="checkbox" name="e[1]" value="true">
-                </td>
-                <td>
-                    <input type="checkbox" name="e[2]" value="true">
-                </td>
-                <td>
-                    <input type="checkbox" name="e[3]" value="true">
-                </td>
-            </tr>
-            <tr>
-                <td class="beneficio">
-                    <!--Elegir titulo beneficio 1-->
-                    <label for="a[0]">Beneficio 1:</label>
-                    <input type="text" name="f[0]" placeholder="Escribí el título aquí">
-                </td>
-                <td>
-                    <input type="checkbox" name="f[1]" value="true">
-                </td>
-                <td>
-                    <input type="checkbox" name="f[2]" value="true">
-                </td>
-                <td>
-                    <input type="checkbox" name="f[3]" value="true">
-                </td>
-            </tr>
-            <tr>
-                <td class="beneficio">
-                    <!--Elegir titulo beneficio 1-->
-                    <label for="a[0]">Beneficio 1:</label>
-                    <input type="text" name="g[0]" placeholder="Escribí el título aquí">
-                </td>
-                <td>
-                    <input type="checkbox" name="g[1]" value="true">
-                </td>
-                <td>
-                    <input type="checkbox" name="g[2]" value="true">
-                </td>
-                <td>
-                    <input type="checkbox" name="g[3]" value="true">
-                </td>
-            </tr>
-            <tr>
-                <td class="beneficio">
-                    <!--Elegir titulo beneficio 1-->
-                    <label for="a[0]">Beneficio 1:</label>
-                    <input type="text" name="h[0]" placeholder="Escribí el título aquí">
-                </td>
-                <td>
-                    <input type="checkbox" name="h[1]" value="true">
-                </td>
-                <td>
-                    <input type="checkbox" name="h[2]" value="true">
-                </td>
-                <td>
-                    <input type="checkbox" name="h[3]" value="true">
-                </td>
-            </tr>
-            <tr>
-                <td class="beneficio">
-                    <!--Elegir titulo beneficio 1-->
-                    <label for="a[0]">Beneficio 1:</label>
-                    <input type="text" name="i[0]" placeholder="Escribí el título aquí">
-                </td>
-                <td>
-                    <input type="checkbox" name="i[1]" value="true">
-                </td>
-                <td>
-                    <input type="checkbox" name="i[2]" value="true">
-                </td>
-                <td>
-                    <input type="checkbox" name="i[3]" value="true">
-                </td>
-            </tr>
+            <% } %>
             
-            
-            
-
-            <tr>
-                <td class="beneficio">
-                    <!--Elegir titulo beneficio 2-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 2 categoria 1-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 2 categoria 2-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 2 categoria 3-->
-                </td>
-            </tr>
-            <tr>
-                <td class="beneficio">
-                    <!--Elegir titulo beneficio 3-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 3 categoria 1-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 3 categoria 2-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 3 categoria 3-->
-                </td>
-            </tr>
-            <tr>
-                <td class="beneficio">
-                    <!--Elegir titulo beneficio 4-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 4 categoria 1-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 4 categoria 2-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 4 categoria 3-->
-                </td>
-            </tr>
-            <tr>
-                <td class="beneficio">
-                    <!--Elegir titulo beneficio 5-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 5 categoria 1-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 5 categoria 2-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 5 categoria 3-->
-                </td>
-            </tr>
-            <tr>
-                <td class="beneficio">
-                    <!--Elegir titulo beneficio 6-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 6 categoria 1-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 6 categoria 2-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 6 categoria 3-->
-                </td>
-            </tr>
-            <tr>
-                <td class="beneficio">
-                    <!--Elegir titulo beneficio 7-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 7 categoria 1-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 7 categoria 2-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 7 categoria 3-->
-                </td>
-            </tr>
-            <tr>
-                <td class="beneficio">
-                    <!--Elegir titulo beneficio 8-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 8 categoria 1-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 8 categoria 2-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 8 categoria 3-->
-                </td>
-            </tr>
-            <tr>
-                <td class="beneficio">
-                    <!--Elegir titulo beneficio 9-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 9 categoria 1-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 9 categoria 2-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 9 categoria 3-->
-                </td>
-            </tr>
-            <tr>
-                <td class="beneficio">
-                    <!--Elegir titulo beneficio 10-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 10 categoria 1-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 10 categoria 2-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 10 categoria 3-->
-                </td>
-            </tr>
-            <tr>
-                <td class="beneficio">
-                    <!--Elegir titulo beneficio 11-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 11 categoria 1-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 11 categoria 2-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 11 categoria 3-->
-                </td>
-            </tr>
-            <tr>
-                <td class="beneficio">
-                    <!--Elegir titulo beneficio 12-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 12 categoria 1-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 12 categoria 2-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 12 categoria 3-->
-                </td>
-            </tr>
-            <tr>
-                <td class="beneficio">
-                    <!--Elegir titulo beneficio 13-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 13 categoria 1-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 13 categoria 2-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 13 categoria 3-->
-                </td>
-            </tr>
-            <tr>
-                <td class="beneficio">
-                    <!--Elegir titulo beneficio 14-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 14 categoria 1-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 14 categoria 2-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 14 categoria 3-->
-                </td>
-            </tr>
-            <tr>
-                <td class="beneficio">
-                    <!--Elegir titulo beneficio 15-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 15 categoria 1-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 15 categoria 2-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 15 categoria 3-->
-                </td>
-            </tr>
-            <tr>
-                <td class="beneficio">
-                    <!--Elegir titulo beneficio 16-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 16 categoria 1-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 16 categoria 2-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 16 categoria 3-->
-                </td>
-            </tr>
-            <tr>
-                <td class="beneficio">
-                    <!--Elegir titulo beneficio 17-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 17 categoria 1-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 17 categoria 2-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 17 categoria 3-->
-                </td>
-            </tr>
-            <tr>
-                <td class="beneficio">
-                    <!--Elegir titulo beneficio 18-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 18 categoria 1-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 18 categoria 2-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 18 categoria 3-->
-                </td>
-            </tr>
-            <tr>
-                <td class="beneficio">
-                    <!--Elegir titulo beneficio 19-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 19 categoria 1-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 19 categoria 2-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 19 categoria 3-->
-                </td>
-            </tr>
-            <tr>
-                <td class="beneficio">
-                    <!--Elegir titulo beneficio 20-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 20 categoria 1-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 20 categoria 2-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 20 categoria 3-->
-                </td>
-            </tr>
-            <tr>
-                <td class="beneficio">
-                    <!--Elegir titulo beneficio 21-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 21 categoria 1-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 21 categoria 2-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 21 categoria 3-->
-                </td>
-            </tr>
-            <tr>
-                <td class="beneficio">
-                    <!--Elegir titulo beneficio 22-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 22 categoria 1-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 22 categoria 2-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 22 categoria 3-->
-                </td>
-            </tr>
-            <tr>
-                <td class="beneficio">
-                    <!--Elegir titulo beneficio 23-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 23 categoria 1-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 23 categoria 2-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 23 categoria 3-->
-                </td>
-            </tr>
-            <tr>
-                <td class="beneficio">
-                    <!--Elegir titulo beneficio 24-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 24 categoria 1-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 24 categoria 2-->
-                </td>
-                <td>
-                    <!--Elegir SI O NO para beneficio 24 categoria 3-->
-                </td>
-            </tr>
             <tr>
                 <td class="beneficio">
                     Subscribirse
@@ -938,21 +504,21 @@
                 <td>
                     <form action="/carrito" method="get">
                         <button>
-                            $<!--Elegir precio suscripción categoria 1-->
+                            $ <input type="number" name="price1">
                         </button>
                     </form>
                 </td>
                 <td>
                     <form action="/carrito" method="get">
                         <button>
-                            $<!--Elegir precio suscripción categoria 2-->
+                            $ <input type="number" name="price2">
                         </button>
                     </form>
                 </td>
                 <td>
                     <form action="/carrito" method="get">
                         <button>
-                            $<!--Elegir precio suscripción categoria 3-->
+                            $ <input type="number" name="price3">
                         </button>
                     </form>
                 </td>
