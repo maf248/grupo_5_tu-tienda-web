@@ -121,35 +121,16 @@ const productosController = {
           "price": [req.body.price[0], req.body.price[1], req.body.price[2]],
           "benefits": {
               "costoTransaccion": ["Costo por transacción", req.body.costoTransaccion[1], req.body.costoTransaccion[2], req.body.costoTransaccion[3]],
-
-               "a":[req.body.a[0], req.body.a[1], req.body.a[2], req.body.a[3]],
-               "b": [req.body.b[0], req.body.b[1], req.body.b[2], req.body.b[3]],
-               "c":[req.body.c[0], req.body.c[1], req.body.c[2], req.body.c[3]],
-               "d": [req.body.d[0], req.body.d[1], req.body.d[2], req.body.d[3]],
-               "e": [req.body.e[0], req.body.e[1], req.body.e[2], req.body.e[3]],
-               "f": [req.body.f[0], req.body.f[1], req.body.f[2], req.body.f[3]],
-               "g": [req.body.g[0], req.body.g[1], req.body.g[2], req.body.g[3]],
-               "h": [req.body.h[0], req.body.h[1], req.body.h[2], req.body.h[3]],
-               "i": [req.body.i[0], req.body.i[1], req.body.i[2], req.body.i[3]],
-               "j": [req.body.j[0], req.body.j[1], req.body.j[2], req.body.j[3]],
-               "k": [req.body.k[0], req.body.k[1], req.body.k[2], req.body.k[3]],
-               "l": [req.body.l[0], req.body.l[1], req.body.l[2], req.body.l[3]],
-               "m": [req.body.m[0], req.body.m[1], req.body.m[2], req.body.m[3]],
-               "n": [req.body.n[0], req.body.n[1], req.body.n[2], req.body.n[3]],
-               "o": [req.body.o[0], req.body.o[1], req.body.o[2], req.body.o[3]],
-               "p": [req.body.p[0], req.body.p[1], req.body.p[2], req.body.p[3]],
-               "q": [req.body.q[0], req.body.q[1], req.body.q[2], req.body.q[3]],
-               "r": [req.body.r[0], req.body.r[1], req.body.r[2], req.body.r[3]],
-               "s": [req.body.s[0], req.body.s[1], req.body.s[2], req.body.s[3]],
-               "t": [req.body.t[0], req.body.t[1], req.body.t[2], req.body.t[3]],
-               "u": [req.body.u[0], req.body.u[1], req.body.u[2], req.body.u[3]],
-               "v": [req.body.v[0], req.body.v[1], req.body.v[2], req.body.v[3]],
-               "w": [req.body.w[0], req.body.w[1], req.body.w[2], req.body.w[3]],
-               "x": [req.body.x[0], req.body.x[1], req.body.x[2], req.body.x[3]],
+              
                "cantidadSecciones": ["Cantidad de secciones", req.body.cantidadSecciones1 , req.body.cantidadSecciones2, req.body.cantidadSecciones3]
               }
               
       });
+      if (req.body.a[0] != "") {
+        products[products.length -1].benefits.a = [req.body.a[0], req.body.a[1], req.body.a[2], req.body.a[3]];
+        } else {
+        }
+      
       console.log(req.body)
          const productsJSON = JSON.stringify(products);
          fs.writeFileSync(productsDir, productsJSON);
