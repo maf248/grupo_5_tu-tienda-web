@@ -21,7 +21,7 @@
 <table class="tabla-productos">
     <thead class=tabla-productos-titulos>
         <tr>
-            <td><h2>Planes disponibles</h2></td>
+            <th><h2>Planes disponibles</h2></th>
             <% for(let i=0; i<producto.category.length; i++){ %>
               <td><img class="medalla" src="/images/<%= producto.categoryImage[i] %>" alt="imagen de una medalla"><h3> <%= producto.category[i] %> </h3></td>
               <% }; %>
