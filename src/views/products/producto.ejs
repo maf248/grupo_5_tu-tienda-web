@@ -302,11 +302,15 @@
             <img class="productos-img" src="/icons/<%= product.image %>" alt="imagen de una tienda">
                     <table>
                         <tr>
-                            <th>Beneficio</th>
+                            <th>
+                                <div class="tdDiv">
+                                    Beneficio
+                                </div>
+                            </th>
                         <% product.categoryImage.forEach (category => { %>
                             <th> 
-                                <div class="contenedorMedalla">
-                                    <img class="medalla" src="/images/<%= category %>" alt="imagen de medalla">
+                                <div class="contenedorMedalla tdDiv">
+                                    <img class="medalla" src="/images/<%= category %>" alt="imagen de medalla" style="align-self: center;">
                                 </div>
                             </th>
                         <% }) %>
@@ -315,13 +319,15 @@
                         <tr>  
                           <% for (let i = 0; i < product.benefits[clave].length; i++) { %>
                             <td class="beneficio">
-                                <% if (product.benefits[clave][i] == "true") { %>
-                                    <i class="fas fa-check"></i>
-                                <% } else if (product.benefits[clave][i] == null) { %>
-                                    <i class="fas fa-times"></i>
-                                <% } else {%>
-                                    <%= product.benefits[clave][i] %>
-                                <% } %>  
+                                <div class="tdDiv">
+                                    <% if (product.benefits[clave][i] == "true") { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } else if (product.benefits[clave][i] == null) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } else {%>
+                                        <%= product.benefits[clave][i] %>
+                                    <% } %>  
+                                </div>
                             </td>
                          <% } %>
                         </tr>
@@ -329,28 +335,36 @@
 
                         <tr>
                             <td class="beneficio">
-                                Subscribirse
+                                <div class="tdDiv">
+                                    Subscribirse
+                                </div>
                             </td>
                             <td>
-                                <form action="/carrito" method="get">
-                                    <button>
-                                        $<%= product.price[0] %>
-                                    </button>
-                                </form>
+                                <div class="tdDiv">
+                                    <form action="/carrito" method="get">
+                                        <button>
+                                            $<%= product.price[0] %>
+                                        </button>
+                                    </form>
+                                </div>
                             </td>
                             <td>
+                                <div class="tdDiv">
                                 <form action="/carrito" method="get">
                                     <button>
                                         $<%= product.price[1] %>
                                     </button>
                                 </form>
+                            </div>
                             </td>
                             <td>
-                                <form action="/carrito" method="get">
-                                    <button>
-                                        $<%= product.price[2] %>
-                                    </button>
-                                </form>
+                                <div class="tdDiv">
+                                    <form action="/carrito" method="get">
+                                        <button>
+                                            $<%= product.price[2] %>
+                                        </button>
+                                    </form>
+                                </div>
                             </td>
                         </tr>
                     </table>

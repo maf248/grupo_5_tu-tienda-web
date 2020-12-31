@@ -348,7 +348,7 @@ animation-timing-function: ease-out;
 }
 }
 .medalla {
-    width: 50%;
+    width: 20%;
 }
 .medalla:hover { 
     animation-name: anime;
@@ -368,25 +368,35 @@ animation-timing-function: ease-out;
     75% {
         transform: skew(10deg);
     }
-    }
+}
 table {
-    width: 80%;
+    width: 100%;
     margin: 2% auto;
 }
+table input {
+    max-width: 100%;
+}
+
 th, td {
     border-bottom: 1px solid white;
     border-collapse: collapse;
-    padding: 2%;
     text-align: center;
     color: white;
     transition: 500ms;
+    display: inline-block;
+    width: 25%;
+    height: 100px;
+    
 }
 th {
     letter-spacing: 2px;
 }
-.beneficio:hover {
-    transform: scale(1.5);
-    border: none;
+.tdDiv {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
 }
 .fa-check {
     color: white;
@@ -407,7 +417,7 @@ td button:hover {
     transform: scale(2);
 }
 
-@media (max-width: 425px) {
+@media (max-width: 467px) {
     table  {
         width: 95%;
     }

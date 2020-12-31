@@ -33,3 +33,19 @@ h1, h2, h3, h4, h5, h6, button, th {
     font-size: 1.6em;
 
 }
+.inputNone {
+  display: none;  
+}
+.labelPointer {
+    cursor: pointer;
+}
+.block {
+    display: block;
+    width: 90%;
+    text-align: center;
+    margin: 0.5% auto;
+}
+.fa-file-image {
+    font-size: 20em;
+    margin: auto;
+}
