@@ -126,6 +126,7 @@ const productosController = {
               }
               
       });
+      /*-----Acá nos aseguramos que no genere las propiedades de Benefits, en caso de no tener nombre el beneficio (campo input vacio)-----*/
       for (let i = 0; i < indexBenefits.length; i++) {
 
       if (req.body[indexBenefits[i]][0] != "") {
@@ -135,7 +136,6 @@ const productosController = {
       
       }
       
-      console.log(req.body)
          const productsJSON = JSON.stringify(products);
          fs.writeFileSync(productsDir, productsJSON);
 
