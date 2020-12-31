@@ -25,7 +25,7 @@ const productosController = {
           res.render('./products/listado-productos', {products: products});
         },
     creacion: function(req, res, next) {
-          res.render('./products/create', {indexBenefits: indexBenefits}); 
+          res.render('./products/create', {indexBenefits: indexBenefits, productToEdit: null}); 
         },
     creador: function(req, res, next) {
       products.push(

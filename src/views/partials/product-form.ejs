@@ -1,9 +1,10 @@
 
 <label for="name"style="padding: 5px; margin: 2% auto; border-radius: 3px;">Elegí el nombre del producto:</label> <br>
-<input type="text" style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="name" placeholder="Escribí el texto aquí"> <br>
+<input type="text" style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="name" <% if ( productToEdit != null ) { %> value="<%= productToEdit.name %>" <% } else { %> placeholder="Escribí aquí el nombre del producto" <% } %> > <br>
+ 
 
 <label for="type" style="padding: 5px; margin: 2% auto; border-radius: 3px;">Elegí el tipo de producto:</label> <br>
-<input type="text" style="padding: 5px; margin: 2% auto; border-radius: 3px; width: 100%;" name="type" placeholder="Escribí aquí el nombre del producto sin mayúsculas ni espacios">
+<input type="text" style="padding: 5px; margin: 2% auto; border-radius: 3px; width: 100%;" name="type" placeholder="Escribí aquí el tipo del producto sin mayúsculas ni espacios">
 
 <section class="banner1">
     <h2>
