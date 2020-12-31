@@ -128,14 +128,11 @@ const productosController = {
       });
       /*-----Acá nos aseguramos que no genere las propiedades de Benefits, en caso de no tener nombre el beneficio (campo input vacio)-----*/
       for (let i = 0; i < indexBenefits.length; i++) {
-
-      if (req.body[indexBenefits[i]][0] != "") {
-        products[products.length -1].benefits[indexBenefits[i]] = [req.body[indexBenefits[i]][0], req.body[indexBenefits[i]][1], req.body[indexBenefits[i]][2], req.body[indexBenefits[i]][3]];
-        } else {
+        if (req.body[indexBenefits[i]][0] != "") {
+          products[products.length -1].benefits[indexBenefits[i]] = [req.body[indexBenefits[i]][0], req.body[indexBenefits[i]][1], req.body[indexBenefits[i]][2], req.body[indexBenefits[i]][3]];
+          }
+        
         }
-      
-      }
-      
          const productsJSON = JSON.stringify(products);
          fs.writeFileSync(productsDir, productsJSON);
 
