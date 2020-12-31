@@ -115,7 +115,7 @@ const productosController = {
               "edescription4": req.body.edescription4, 
               "eimage": req.body.eimage
           },
-          "image": req.body.image,
+          "image": req.files.filename,
           "category": [req.body.category1, req.body.category2, req.body.category3],
           "categoryImage": [req.body.categoryImage1,req.body.categoryImage2,req.body.categoryImage3],
           "price": [req.body.price[0], req.body.price[1], req.body.price[2]],
