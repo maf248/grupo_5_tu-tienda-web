@@ -1,10 +1,14 @@
-
+<!--Elegir nombre del producto-->
 <label for="name"style="padding: 5px; margin: 2% auto; border-radius: 3px;">Elegí el nombre del producto:</label> <br>
 <input type="text" style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="name" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.name %>" <% } else { %> placeholder="Escribí aquí el nombre del producto" <% } %> > <br>
  
-
+<!--Elegir tipo de producto-->
 <label for="type" style="padding: 5px; margin: 2% auto; border-radius: 3px;">Elegí el tipo de producto:</label> <br>
 <input type="text" style="padding: 5px; margin: 2% auto; border-radius: 3px; width: 100%;" name="type" placeholder="Escribí aquí el tipo del producto sin mayúsculas ni espacios">
+
+<!--Elegir imagen del producto-->
+<label style="display: block; padding: 5px;" for="image">Elegí una imagen que describa el producto:</label>
+<input style="margin: 1% auto" type="file" name="image" id="image">
 
 <section class="banner1">
     <h2>
@@ -402,9 +406,6 @@
 
 <section class="contenedorProductos" id="contenedorProductos">
 <h2>¡Elegí una de nuestras suscripciones y potenciá tu negocio digitalmente!</h2>
-<!--Elegir imagen del producto-->
-<label class="block labelPointer" for="image">Elegí una imagen que describa el producto</label>
-<input class="block labelPointer" type="file" name="image" id="image">
 <!--Definir las 3 categorías que tendrá el producto-->
 <label class="block" for="category1">Definí la categoría 1 que tendrá el producto:</label>
 <input class="block" type="text" name="category1" placeholder="Escribí acá el nombre de la categoría 1">
