@@ -303,16 +303,15 @@ h1, h2, h3, h4, h5, h6, button {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 20px 0px;
 }
-.productosContenedor-producto-1:hover, .productosContenedor-producto-2:hover {
+.productosContenedor-producto:hover {
     border: 5px solid rgb(100, 197, 149);
     transition: 300ms;
     transform: scale(1.05);
     cursor: pointer;
 }
-.productosContenedor-producto-1, .productosContenedor-producto-2 {
+.productosContenedor-producto {
     text-align: center;
     margin: 20px;
     width: 40%;
@@ -322,20 +321,20 @@ h1, h2, h3, h4, h5, h6, button {
     background-color: rgb(38, 146, 235);
     box-shadow: 7px 13px 37px #000;
 }
-.productosContenedor-producto-1 form, .productosContenedor-producto-2 form {
+.productosContenedor-producto form {
     display: flex;
     flex-direction: column;
 }
-.productosContenedor-producto-1-planes img, .productosContenedor-producto-2-planes img {
+.productosContenedor-producto-planes img {
     max-height: 35px;
     margin-bottom: 10px;
 }
-.productosContenedor-producto-1-imagen img, .productosContenedor-producto-2-imagen img {
+.productosContenedor-producto-imagen img {
     justify-self: center;
     max-height: 150px;
     
 }
-.productosContenedor-producto-1-imagen img:hover, .productosContenedor-producto-2-imagen img:hover {
+.productosContenedor-producto-imagen img:hover {
     cursor: pointer;
 }
 .medalla:hover {
@@ -367,7 +366,7 @@ h1, h2, h3, h4, h5, h6, button {
     text-decoration: none;
     color: black;
 }
-.productosContenedor-producto-1-descripcion p, .productosContenedor-producto-2-descripcion p {
+.productosContenedor-producto-descripcion p {
     margin-bottom: 15px;
     text-align: center;
 }
@@ -725,7 +724,7 @@ h1, h2, h3, h4, h5, h6, button {
     .productosContenedor img {
         max-width: 100%;
     }
-    .productosContenedor-producto-1, .productosContenedor-producto-2 {
+    .productosContenedor-producto {
         width: 80%;
         margin: 20px 0px;
         align-self: center;
