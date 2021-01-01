@@ -18,11 +18,15 @@
 
         <%- include('../partials/product-form') %>
 
-        <button type="submit" class="submit">Enviar</button>
-        <button type="reset" class="reset">Borrar campos</button>
+        <div class="buttons-form">
+            <button type="reset" class="reset">Borrar campos</button>
+            <button type="submit" class="submit">Enviar</button>
+        </div>
     </form>
     <form action="/products/<%= productToEdit.id %>?_method=DELETE" method="POST">
-        <button type="submit" class="delete">Eliminar producto</button>
+        <div class="buttons-form">
+            <button type="submit" class="delete">Eliminar producto</button>
+        </div>
     </form>
 </div>
 
