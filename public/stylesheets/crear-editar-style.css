@@ -58,3 +58,40 @@ h1, h2, h3, h4, h5, h6, button, th {
     width: fit-content;
     align-self: center;
 }
+.buttons-form {
+    display: flex;
+    align-content: center;
+}
+.submit {
+    width: 25%;
+    min-width: fit-content;
+    padding: 10px;
+    background-color: rgb(100, 197, 149);
+    border: 1px solid rgb(100, 197, 149);
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 20px;
+    margin: 15px auto;
+}
+.reset {
+    width: 25%;
+    min-width: fit-content;
+    padding: 10px;
+    background-color: rgb(255, 77, 29);
+    border: 1px solid rgb(255, 77, 29);
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 20px;
+    margin: 15px auto;
+}
+.delete {
+    width: 25%;
+    min-width: fit-content;
+    padding: 10px;
+    background-color: rgb(255, 0, 0);
+    border: 1px solid rgb(255, 0, 0);
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 20px;
+    margin: 15px auto;
+}
