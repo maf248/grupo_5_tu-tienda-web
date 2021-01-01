@@ -231,6 +231,10 @@ const productosController = {
     products[req.params.id -1].benefits.costoTransaccion = ["Costo por transacción", req.body.costoTransaccion[1], req.body.costoTransaccion[2], req.body.costoTransaccion[3]]
     products[req.params.id -1].benefits.cantidadSecciones = ["Cantidad de secciones", req.body.cantidadSecciones1 , req.body.cantidadSecciones2, req.body.cantidadSecciones3]
 
+    for (let i=0; i < indexBenefits.length; i++) {
+      products[req.params.id -1].benefits.indexBenefits[i] = [req.body.indexBenefits[i][0], req.body.indexBenefits[i][1], req.body.indexBenefits[i][2], req.body.indexBenefits[i][3]];
+    };
+
 
     /*----Acá termina la actualización de datos de formularios, en la variable products----*/
 
