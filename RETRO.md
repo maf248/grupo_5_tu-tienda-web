@@ -1,21 +1,20 @@
 # RETRO SPRINT-3
 ### 1) Comenzar a hacer:
-modificar el estilo para que sea mas minimalista. 
 
-
+Modificar el estilo para que sea más minimalista. 
 
 ### 2) Hacer más:
 
-mas codigo ordenado; comentandolo y mantenerlo prolijo para su facil entendimiento a futuro.
+Más codigo ordenado, comentandolo y manteniendolo prolijo para su facil entendimiento a futuro.
 
 ### 3) Continuar haciendo:
 
-las reuniones de zoom
+Reuniones de zoom para ayudarnos mutuamente en las implementaciones y organización frente a cada sprint.
 
 ### 4) Hacer menos:
 
-tratar de no modificar los sprints anteriores, a menos que sea necesario.
+Tratar de no modificar los sprints anteriores, a menos que sea necesario.
 
 ### 5) Dejar de hacer:
 
-que uno solo suba codigo en las reunionesde zoom. que los commits sean de todos en las reuniones.
+Que uno solo suba código en las reuniones de zoom. Es decir, durante las reuniones turnarse y que todos realicen commits.
