@@ -339,33 +339,21 @@
                                     Subscribirse
                                 </div>
                             </td>
+                            <% for (let i=0; i < product.price.length; i++) { %>
                             <td>
                                 <div class="tdDiv">
                                     <form action="/carrito" method="get">
                                         <button>
-                                            $<%= product.price[0] %>
+                                            <% if (typeof product.price[i] == 'number') { %>
+                                                <%= '$ ' + product.price[i] %>
+                                            <% } else { %>
+                                                <%= product.price[i] %>
+                                            <% } %>
                                         </button>
                                     </form>
                                 </div>
                             </td>
-                            <td>
-                                <div class="tdDiv">
-                                <form action="/carrito" method="get">
-                                    <button>
-                                        $<%= product.price[1] %>
-                                    </button>
-                                </form>
-                            </div>
-                            </td>
-                            <td>
-                                <div class="tdDiv">
-                                    <form action="/carrito" method="get">
-                                        <button>
-                                            $<%= product.price[2] %>
-                                        </button>
-                                    </form>
-                                </div>
-                            </td>
+                            <% } %>
                         </tr>
                     </table>
     </section>
