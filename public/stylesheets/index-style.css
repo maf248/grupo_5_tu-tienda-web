@@ -74,6 +74,7 @@ h1, h2, h3, h4, h5, h6, button {
     width: max-content;
     background-color: rgba(100, 197, 149, 0.7);
     box-shadow: 5px 5px 20px 5px rgba(100, 197, 149, 0.7);
+    padding: 3px;
     border-radius: 20px;
 }
 .linkTienda {
@@ -117,6 +118,8 @@ h1, h2, h3, h4, h5, h6, button {
 .barraSuperior-navlist-links:hover {
     background-color: rgba(100, 197, 149, 0.7);
     box-shadow: 5px 5px 20px 5px rgba(100, 197, 149, 0.7);
+    padding: 3px;
+    box-sizing: border-box;
     border-radius: 20px;
 }
 
@@ -644,6 +647,12 @@ h1, h2, h3, h4, h5, h6, button {
         align-self: center;
         position: relative;
         top: 50px;
+        padding: 3px;
+    }
+    .barraSuperior-navlist a {
+        align-self: center;
+        padding: 3px 18px;
+        min-width: 100px;
     }
     .barraSuperior-navlist-links:hover .barraSuperior-navlist{
         display: block;
@@ -660,12 +669,14 @@ h1, h2, h3, h4, h5, h6, button {
     .barraSuperior-navbar ul li {
         font-size: 1em;
         width: max-content;
-        padding: 15px 0px;
+        padding: 10px 0px;
         left: 120px;
     }
     .barraSuperior-navlist-links-submenu {
         width: max-content;
         font-size: 0.9em;
+        position: relative;
+        bottom: 25px;
     }
     .barraSuperior-navExtra {
         background-color: white;
