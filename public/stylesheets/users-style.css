@@ -1,7 +1,30 @@
+/* Estilos en común */
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+.form-oauth-iconos {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.form-oauth-titulo { 
+    text-align: center;
+    color:green;
+    text-decoration: none;
+    font-size: 14px;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 2px solid green;
+}
+.form-oauth-iconos img {
+    margin: 10px;
+    width: 25px;
 }
 
 
@@ -60,26 +83,6 @@
     text-decoration: underline;
 }
 
-.form-login-oauth-iconos {
-    margin-top: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-.form-login-oauth-titulo { 
-    text-align: center;
-    color:green;
-    text-decoration: none;
-    font-size: 14px;
-    margin-top: 15px;
-    padding-top: 15px;
-    border-top: 2px solid green;
-}
-.form-login-oauth-iconos img {
-    margin: 10px;
-    width: 25px;
-}
-
 
 /* Estilo de Registro */
 
@@ -134,24 +137,4 @@
    }
    .form-registro a:hover {
        text-decoration: underline;
-   }
-   
-   .form-registro-oauth-iconos {
-       margin-top: 10px;
-       display: flex;
-       flex-direction: row;
-       justify-content: center;
-   }
-   .form-registro-oauth-titulo { 
-       text-align: center;
-       color:green;
-       text-decoration: none;
-       font-size: 14px;
-       margin-top: 15px;
-       padding-top: 15px;
-       border-top: 2px solid green;
-   }
-   .form-registro-oauth-iconos img {
-       margin: 10px;
-       width: 25px;
    }
