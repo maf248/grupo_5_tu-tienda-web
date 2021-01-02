@@ -71,19 +71,17 @@ Tengo 29 años, estudiante de marketing. Me interesé últimamente por la progra
 ○ [Formulario de login](https://wireframe.cc/1MSEsi)
 
 
-## ★ Aplicación Node + Express + EJS con:
-
-○ Archivos parciales (head, header, footer, etc en /partials/)
+## ★ Secciones de la página:
 
 ○ Home (/)
 
-○ Listado de productos (/producto/listado
+○ Listado de productos (/products/
 
-○ Detalle del producto (/producto/1 y /producto/2)
+○ Detalle del producto (/products/1 y /products/2)
 
 ○ Carrito de compras (/carrito)
 
 ○ Formulario de registro y login (/users/registro y /users/login)
 
-○ Formulario de carga y edición de productos (/producto/edicion) -ATENCION: ES LA UNICA URL QUE NO POSEE LINK DIRECTO EN LA PÁGINA-
+○ Formulario de carga y edición de productos ( /products/create y /products/1/edicion) -ATENCION: NO POSEEN LINKS DIRECTOS EN LA PÁGINA-
 
