@@ -121,7 +121,7 @@
     "name": "Página Web",
     "type": "paginaWeb",
     "titleBanner1": "EL LUGAR PERFECTO PARA CREAR TU PÁGINA WEB PROFESIONAL",
-    "subtitleBaner1": "Empezá a crear tu página web ya totalmente gratis",
+    "subtitleBanner1": "Empezá a crear tu página web ya totalmente gratis",
     "seccion1": {
         "atitle": "Construye una presencia online única",
         "aicon1": "user-friends-solid.svg",
@@ -202,7 +202,7 @@
         "edescription4": "Agregá a tu página scrolls de foto y video, menúes desplegables y ¡mucho mas!",
         "eimage": "pointing-left2.png"
     },
-    "image": "web-color.png",
+    "image": "web-color-borde.png",
     "category": ["Oro", "Plata", "Bronce"],
     "categoryImage": ["plan-oro.png", "plan-plata.png", "plan-bronce.png"],
     "price": [1200, 600, "GRATIS"],

@@ -86,44 +86,29 @@
 </section>
 
 <section class="productosContenedor">
+    <% products.forEach (producto => { %>
     <article class="productosContenedor-producto">
         <div class="productosContenedor-producto-imagen">
-            <a href="/products/1"><img src="/icons/store-color-borde.png"></a>
+            <a href="/products/<%=producto.id%>"><img src="/icons/<%= producto.image %>"></a>
         </div>
-        <a href="/products/1"><h2>Tu <em>Tienda Web</em></h2></a>
+        <a href="/products/<%=producto.id%>"><h2>Tu <em><%=producto.name%></em></h2></a>
         <div class="productosContenedor-producto-planes">
-            <img class="medalla" src="/images/plan-oro.png" alt="Plan Oro">
-            <img class="medalla" src="/images/plan-plata.png" alt="Plan Plata">
-            <img class="medalla" src="/images/plan-bronce.png" alt="Plan Bronce">
+            <img class="medalla" src="/images/<%= producto.categoryImage[0] %>" alt="Plan Oro">
+            <img class="medalla" src="/images/<%= producto.categoryImage[1] %>" alt="Plan Plata">
+            <img class="medalla" src="/images/<%= producto.categoryImage[2] %>" alt="Plan Bronce">
         </div>
         <div class="productosContenedor-producto-descripcion">
-            <p>‣ Suscripción Oro, Plata o Bronce acorde a tus preferencias. Teniendo acceso a varias plantillas, modelos y accesorios de diseño personalizados. Todos nuestros diseños son responsive, es decir, ¡se adaptan a cualquier dispositivo!</p>
-            <p>‣ Hosting opcional. Tambien podes tener acceso a atención personalizada de nuestro equipo de marketing!</p>
-            <p>‣ Integración de sistema de cobro online y sistema de envios!</p>
+            <p>‣ Suscripción <%= producto.category[0] %>, <%= producto.category[1] %> o <%= producto.category[2] %> acorde a tus preferencias.</p>
+            <p>‣ Tendrás acceso a varias plantillas, modelos y accesorios de diseño personalizados.</p>
+            <p>‣ Todos nuestros diseños son responsive, es decir, ¡se adaptan a cualquier dispositivo!</p>
+            <p>‣ <%= producto.subtitleBanner1 %></p>
+            <p>‣ <%= producto.seccion1.atitle %></p>
         </div>
-        <form method="get" action="/products/1">
+        <form method="get" action="/products/<%=producto.id%>">
             <button class="productosContenedor-verMas" type="submit">Ver más...</button>
         </form>
     </article>
-    <article class="productosContenedor-producto">
-        <div class="productosContenedor-producto-imagen">
-            <a href="/products/2"><img src="/icons/web-color-borde.png"></a>
-        </div>
-        <a href="/products/2"><h2>Tu <em>Página Web</em></h2></a>
-        <div class="productosContenedor-producto-planes">
-            <img class="medalla" src="/images/plan-oro.png" alt="Plan Oro">
-            <img class="medalla" src="/images/plan-plata.png" alt="Plan Plata">
-            <img class="medalla" src="/images/plan-bronce.png" alt="Plan Bronce">
-        </div>
-        <div class="productosContenedor-producto-descripcion">
-            <p>‣ Suscripción Oro, Plata o Bronce acorde a tus preferencias. Teniendo acceso a varias plantillas, modelos y accesorios de diseño personalizados. Todos nuestros diseños son responsive, es decir, ¡se adaptan a cualquier dispositivo!</p>
-            <p>‣ Hosting opcional. Tambien podes tener acceso a atención personalizada de nuestro equipo de marketing!</p>
-            <p>‣ Registro de dominio opcional y posicionamiento SEO acorde a la suscripción elegida, ¡y muchas opciones más!</p>
-        </div>
-        <form method="get" action="/products/2">
-            <button class="productosContenedor-verMas" type="submit">Ver más...</button>
-        </form>
-    </article>
+    <% }); %>
 </section>
 
 <a name="nosotros">
