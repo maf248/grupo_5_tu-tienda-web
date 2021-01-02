@@ -308,6 +308,7 @@ h1, h2, h3, h4, h5, h6, button {
     flex-direction: row;
     justify-content: center;
     margin: 20px 0px;
+    flex-wrap: wrap;
 }
 .productosContenedor-producto:hover {
     border: 5px solid rgb(100, 197, 149);
