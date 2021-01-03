@@ -11,7 +11,6 @@ const productosController = {
     detalle: function(req, res, next) {
 
         /*-----Acá pasamos la vista de producto según  el id -----*/
-        /*-----Agregamos también las funcionalidades a la vista de ejs-----*/
         if ( req.params.id - 1 < products.length ) {
           res.render('./products/producto', { product: products[req.params.id -1] });   
         } else {
@@ -25,6 +24,74 @@ const productosController = {
           res.render('./products/create', {indexBenefits: indexBenefits}); 
         },
     creador: function(req, res, next) {
+      /*----Acá creamos un objeto que guardará el nombre de archivo subico, correspondiente a cada input----*/
+      var imageDir = {
+
+      };
+      /*----Acá filtramos para que cada nombre de archivo se guarde en donde corresponde----*/
+      req.files.forEach (file => {
+        switch (file.fieldname) {
+          case 'image': imageDir.image = file.filename
+          break
+          case 'aicon1': imageDir.aicon1 = file.filename
+          break
+          case 'aicon2': imageDir.aicon2 = file.filename
+          break
+          case 'aicon3': imageDir.aicon3 = file.filename
+          break
+          case 'aicon4': imageDir.aicon4 = file.filename
+          break
+          case 'aimage': imageDir.aimage = file.filename
+          break
+          case 'bimage': imageDir.bimage = file.filename
+          break
+          case 'bicon1': imageDir.bicon1 = file.filename
+          break
+          case 'bicon2': imageDir.bicon2 = file.filename
+          break
+          case 'bicon3': imageDir.bicon3 = file.filename
+          break
+          case 'bicon4': imageDir.bicon4 = file.filename
+          break
+          case 'cicon1': imageDir.cicon1 = file.filename
+          break
+          case 'cicon2': imageDir.cicon2 = file.filename
+          break
+          case 'cicon3': imageDir.cicon3 = file.filename
+          break
+          case 'cicon4': imageDir.cicon4 = file.filename
+          break
+          case 'cimage': imageDir.cimage = file.filename
+          break
+          case 'dimage': imageDir.dimage = file.filename
+          break
+          case 'dicon1': imageDir.dicon1 = file.filename
+          break
+          case 'dicon2': imageDir.dicon2 = file.filename
+          break
+          case 'dicon3': imageDir.dicon3 = file.filename
+          break
+          case 'dicon4': imageDir.dicon4 = file.filename
+          break
+          case 'eicon1': imageDir.eicon1 = file.filename
+          break
+          case 'eicon2': imageDir.eicon2 = file.filename
+          break
+          case 'eicon3': imageDir.eicon3 = file.filename
+          break
+          case 'eicon4': imageDir.eicon4 = file.filename
+          break
+          case 'eimage': imageDir.eimage = file.filename
+          break
+          case 'categoryImage1': imageDir.categoryImage1 = file.filename
+          break
+          case 'categoryImage2': imageDir.categoryImage2 = file.filename
+          break
+          case 'categoryImage3': imageDir.categoryImage3 = file.filename
+          break
+        }
+      });
+       /*----Acá guardamos toda la información del producto nuevo----*/
       products.push(
          {
           "id": products.length + 1,
@@ -34,87 +101,87 @@ const productosController = {
           "subtitleBaner1": req.body.subtitleBanner1,
           "seccion1": {
               "atitle": req.body.atitle, 
-              "aicon1": req.files[1].filename, 
+              "aicon1": imageDir.aicon1, 
               "asubtitle1":req.body.asubtitle1, 
               "adescription1":req.body.adescription1,
               "asubtitle2":req.body.asubtitle2, 
-              "aicon2": req.files[2].filename, 
+              "aicon2": imageDir.aicon2, 
               "adescription2": req.body.adescription2, 
               "asubtitle3":req.body.asubtitle3, 
-              "aicon3": req.files[3].filename, 
+              "aicon3": imageDir.aicon3, 
               "adescription3": req.body.adescription3, 
               "asubtitle4":req.body.asubtitle4, 
-              "aicon4": req.files[4].filename, 
+              "aicon4": imageDir.aicon4, 
               "adescription4": req.body.adescription4, 
-              "aimage":req.body.aimage
+              "aimage": imageDir.aimage
           }, 
           "seccion2": {
               "btitle": req.body.btitle, 
-              "bicon1":req.files[5].filename, 
+              "bicon1": imageDir.bicon1, 
               "bsubtitle1":req.body.bsubtitle1, 
               "bdescription1":req.body.bdescription1, 
               "bsubtitle2":req.body.bsubtitle2, 
-              "bicon2": req.body.bicon2, 
+              "bicon2": imageDir.bicon2,  
               "bdescription2": req.body.bdescription2, 
               "bsubtitle3":req.body.bsubtitle3, 
-              "bicon3": req.body.bicon3, 
+              "bicon3": imageDir.bicon3, 
               "bdescription3": req.body.bdescription3,
               "bsubtitle4":req.body.bsubtitle4, 
-              "bicon4": req.body.bicon4, 
+              "bicon4": imageDir.bicon4, 
               "bdescription4": req.body.bdescription4, 
-              "bimage": req.body.bimage
+              "bimage": imageDir.bimage
           }, 
           "seccion3": {
               "ctitle": req.body.ctitle, 
-              "cicon1":req.body.cicon1, 
+              "cicon1": imageDir.cicon1, 
               "csubtitle1":req.body.csubtitle1, 
               "cdescription1":req.body.cdescription1,
               "csubtitle2":req.body.csubtitle2, 
-              "cicon2": req.body.cicon2, 
+              "cicon2": imageDir.cicon2, 
               "cdescription2": req.body.cdescription2, 
               "csubtitle3":req.body.csubtitle3, 
-              "cicon3": req.body.cicon3, 
+              "cicon3": imageDir.cicon3, 
               "cdescription3": req.body.cdescription3, 
               "csubtitle4":req.body.csubtitle4, 
-              "cicon4": req.body.cicon4, 
+              "cicon4": imageDir.cicon4, 
               "cdescription4": req.body.cdescription4, 
-              "cimage":req.body.cimage 
+              "cimage": imageDir.cimage 
           },
           "seccion4": {
               "dtitle": req.body.dtitle, 
-              "dicon1":req.body.dicon1, 
+              "dicon1": imageDir.dicon1, 
               "dsubtitle1":req.body.dsubtitle1, 
               "ddescription1":req.body.ddescription1, 
               "dsubtitle2":req.body.dsubtitle2, 
-              "dicon2": req.body.dicon2, 
+              "dicon2": imageDir.dicon2, 
               "ddescription2": req.body.ddescription2, 
               "dsubtitle3":req.body.dsubtitle3, 
-              "dicon3": req.body.dicon3, 
+              "dicon3": imageDir.dicon3, 
               "ddescription3": req.body.ddescription3, 
               "dsubtitle4":req.body.dsubtitle4, 
-              "dicon4": req.body.dicon4, 
+              "dicon4": imageDir.dicon4, 
               "ddescription4": req.body.ddescription4, 
-              "dimage": req.body.dimage
+              "dimage": imageDir.dimage
           },
           "seccion5": {
               "etitle": req.body.etitle, 
-              "eicon1":req.body.eicon1, 
+              "eicon1": imageDir.eicon1, 
               "esubtitle1":req.body.esubtitle1, 
               "edescription1":req.body.edescription1, 
               "esubtitle2":req.body.esubtitle2, 
-              "eicon2": req.body.eicon2,
+              "eicon2": imageDir.eicon2,
               "edescription2": req.body.edescription2, 
               "esubtitle3":req.body.esubtitle3, 
-              "eicon3": req.body.eicon3, 
+              "eicon3": imageDir.eicon3, 
               "edescription3": req.body.edescription3,
               "esubtitle4":req.body.esubtitle4, 
-              "eicon4": req.body.eicon4, 
+              "eicon4": imageDir.eicon4, 
               "edescription4": req.body.edescription4, 
-              "eimage": req.body.eimage
+              "eimage": imageDir.eimage
           },
-          "image": req.files[0].filename,
+          "image": imageDir.image,
           "category": [req.body.category1, req.body.category2, req.body.category3],
-          "categoryImage": [req.body.categoryImage1,req.body.categoryImage2,req.body.categoryImage3],
+          "categoryImage": [imageDir.categoryImage1,imageDir.categoryImage2,imageDir.categoryImage3],
           "price": [req.body.price[0], req.body.price[1], req.body.price[2]],
           "benefits": {
               "costoTransaccion": ["Costo por transacción", req.body.costoTransaccion[1], req.body.costoTransaccion[2], req.body.costoTransaccion[3]],
