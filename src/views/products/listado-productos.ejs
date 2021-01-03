@@ -15,7 +15,7 @@
   <div class="productoListado">
   <a href="/products/<%= producto.id %>">
     <h2><%=producto.name%></h2>
-    <img src="/icons/<%= producto.image %>" alt="logo del producto" class="logoProducto">
+    <img src="/images/Producto-<%= producto.id %>/<%= producto.image %>" alt="logo del producto" class="logoProducto">
   </a>
   <h3><%= producto.titleBanner1 %></h3>
 <table class="tabla-productos">
@@ -23,7 +23,7 @@
         <tr>
             <th><h2>Planes disponibles</h2></th>
             <% for(let i=0; i < producto.category.length; i++){ %>
-              <td><img class="medalla" src="/images/<%= producto.categoryImage[i] %>" alt="imagen de una medalla"><h3> <%= producto.category[i] %> </h3></td>
+              <td><img class="medalla" src="/images/Producto-<%= producto.id %>/<%= producto.categoryImage[i] %>" alt="imagen de una medalla"><h3> <%= producto.category[i] %> </h3></td>
               <% }; %>
         </tr>
     </thead>

@@ -12,7 +12,6 @@ const products = JSON.parse(fs.readFileSync(productsDir, 'utf-8'));
 const productosController = require("../controllers/productosController");
 
 
-
 // ************ Multer ************
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {

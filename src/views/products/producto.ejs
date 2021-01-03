@@ -71,7 +71,7 @@
                     </article>
                 </div>
                 <article class="disenoBlanco-articleImg">
-                    <img src="/images/<%= product.seccion1.aimage %>" alt="">
+                    <img src="/images/Producto-<%= product.id %>/<%= product.seccion1.aimage %>" alt="">
                 </article>
                 <form action="#contenedorProductos" method="GET"   class="disenoBlanco-form">
                     <button>
@@ -88,7 +88,7 @@
                 </h2>
             </article>
             <article class="disenoAzul-articleImg">
-                <img src="/images/<%= product.seccion2.bimage %>" alt="">
+                <img src="/images/Producto-<%= product.id %>/<%= product.seccion2.bimage %>" alt="">
             </article>
             <div class="disenoAzul-containerArticle2">
                 <article class="disenoAzul-article2">
@@ -180,7 +180,7 @@
                 </article>
             </div>
             <article class="disenoBlanco-articleImg">
-                <img src="/images/<%= product.seccion3.cimage %>" alt="">
+                <img src="/images/Producto-<%= product.id %>/<%= product.seccion3.cimage %>" alt="">
             </article>
             <form action="#contenedorProductos" method="GET"   class="disenoBlanco-form">
                 <button>
@@ -196,7 +196,7 @@
                 </h2>
             </article>
             <article class="disenoAzul-articleImg">
-                <img src="/images/<%= product.seccion4.dimage %>" alt="">
+                <img src="/images/Producto-<%= product.id %>/<%= product.seccion4.dimage %>" alt="">
             </article>
             <div class="disenoAzul-containerArticle2">
                 <article class="disenoAzul-article2">
@@ -288,7 +288,7 @@
                 </article>
             </div>
             <article class="disenoBlanco-articleImg">
-                <img src="/images/<%= product.seccion5.eimage %>" alt="">
+                <img src="/images/Producto-<%= product.id %>/<%= product.seccion5.eimage %>" alt="">
             </article>
             <form action="#contenedorProductos" method="GET"   class="disenoBlanco-form">
                 <button>
@@ -299,7 +299,7 @@
 
         <section class="contenedorProductos" id="contenedorProductos">
             <h2>¡Elegí una de nuestras suscripciones y potenciá tu negocio digitalmente!</h2>
-            <img class="productos-img" src="/icons/<%= product.image %>" alt="imagen de una tienda">
+            <img class="productos-img" src="/images/Producto-<%= product.id %>/<%= product.image %>" alt="imagen de una tienda">
                     <table>
                         <tr>
                             <th>
@@ -310,7 +310,7 @@
                         <% product.categoryImage.forEach (category => { %>
                             <th> 
                                 <div class="contenedorMedalla tdDiv">
-                                    <img class="medalla" src="/images/<%= category %>" alt="imagen de medalla" style="align-self: center;">
+                                    <img class="medalla" src="/images/Producto-<%= product.id %>/<%= category %>" alt="imagen de medalla" style="align-self: center;">
                                 </div>
                             </th>
                         <% }) %>
