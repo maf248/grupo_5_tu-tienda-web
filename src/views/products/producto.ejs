@@ -344,11 +344,11 @@
                                 <div class="tdDiv">
                                     <form action="/carrito" method="get">
                                         <button>
-                                            <% if (typeof product.price[i] == 'number') { %>
-                                                <%= '$ ' + product.price[i] %>
-                                            <% } else { %>
-                                                <%= product.price[i] %>
-                                            <% } %>
+                                            <% if (product.price[i] !== 0) { %>
+                                                <p>$ <%= product.price[i] %></p>
+                                                <% } else { %>
+                                                <p>GRATIS</p>
+                                                <% } %>
                                         </button>
                                     </form>
                                 </div>

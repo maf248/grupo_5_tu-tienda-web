@@ -205,7 +205,7 @@
     "image": "web-color-borde.png",
     "category": ["Oro", "Plata", "Bronce"],
     "categoryImage": ["plan-oro.png", "plan-plata.png", "plan-bronce.png"],
-    "price": [1200, 600, "GRATIS"],
+    "price": [1200, 600, 0],
     "benefits": {
         "costoTransaccion": ["Costo por transacción", "0.2%", "No aplica", "No aplica"],
         "a": ["Plantillas ilimitadas", "true", "true", "true"],

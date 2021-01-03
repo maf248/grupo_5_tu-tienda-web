@@ -7,9 +7,76 @@ const products = JSON.parse(fs.readFileSync(productsDir, 'utf-8'));
 /*----- Acá generamos un indice alfabetico de Benefits para luego utilizar al recorrer los beneficios A, B, C....etc -----*/
 const indexBenefits = "abcdefghijklmnopqrstuvwx";
 
+/*----Acá creamos un objeto que guardará el nombre de archivo subico, correspondiente a cada input----*/
+var imageDir = {}
+/*----Funcion que filtra archivos subidos, para que cada nombre de archivo se guarde en donde corresponde. Recibe como parametro req.files----*/
+function uploadFilesDir(files) {
+files.forEach (file => {
+  switch (file.fieldname) {
+    case 'image': imageDir.image = file.filename
+    break
+    case 'aicon1': imageDir.aicon1 = file.filename
+    break
+    case 'aicon2': imageDir.aicon2 = file.filename
+    break
+    case 'aicon3': imageDir.aicon3 = file.filename
+    break
+    case 'aicon4': imageDir.aicon4 = file.filename
+    break
+    case 'aimage': imageDir.aimage = file.filename
+    break
+    case 'bimage': imageDir.bimage = file.filename
+    break
+    case 'bicon1': imageDir.bicon1 = file.filename
+    break
+    case 'bicon2': imageDir.bicon2 = file.filename
+    break
+    case 'bicon3': imageDir.bicon3 = file.filename
+    break
+    case 'bicon4': imageDir.bicon4 = file.filename
+    break
+    case 'cicon1': imageDir.cicon1 = file.filename
+    break
+    case 'cicon2': imageDir.cicon2 = file.filename
+    break
+    case 'cicon3': imageDir.cicon3 = file.filename
+    break
+    case 'cicon4': imageDir.cicon4 = file.filename
+    break
+    case 'cimage': imageDir.cimage = file.filename
+    break
+    case 'dimage': imageDir.dimage = file.filename
+    break
+    case 'dicon1': imageDir.dicon1 = file.filename
+    break
+    case 'dicon2': imageDir.dicon2 = file.filename
+    break
+    case 'dicon3': imageDir.dicon3 = file.filename
+    break
+    case 'dicon4': imageDir.dicon4 = file.filename
+    break
+    case 'eicon1': imageDir.eicon1 = file.filename
+    break
+    case 'eicon2': imageDir.eicon2 = file.filename
+    break
+    case 'eicon3': imageDir.eicon3 = file.filename
+    break
+    case 'eicon4': imageDir.eicon4 = file.filename
+    break
+    case 'eimage': imageDir.eimage = file.filename
+    break
+    case 'categoryImage1': imageDir.categoryImage1 = file.filename
+    break
+    case 'categoryImage2': imageDir.categoryImage2 = file.filename
+    break
+    case 'categoryImage3': imageDir.categoryImage3 = file.filename
+    break
+  }
+});
+};
+
 const productosController = {
     detalle: function(req, res, next) {
-
         /*-----Acá pasamos la vista de producto según  el id -----*/
         if ( req.params.id - 1 < products.length ) {
           res.render('./products/producto', { product: products[req.params.id -1] });   
@@ -24,73 +91,7 @@ const productosController = {
           res.render('./products/create', {indexBenefits: indexBenefits}); 
         },
     creador: function(req, res, next) {
-      /*----Acá creamos un objeto que guardará el nombre de archivo subico, correspondiente a cada input----*/
-      var imageDir = {
-
-      };
-      /*----Acá filtramos para que cada nombre de archivo se guarde en donde corresponde----*/
-      req.files.forEach (file => {
-        switch (file.fieldname) {
-          case 'image': imageDir.image = file.filename
-          break
-          case 'aicon1': imageDir.aicon1 = file.filename
-          break
-          case 'aicon2': imageDir.aicon2 = file.filename
-          break
-          case 'aicon3': imageDir.aicon3 = file.filename
-          break
-          case 'aicon4': imageDir.aicon4 = file.filename
-          break
-          case 'aimage': imageDir.aimage = file.filename
-          break
-          case 'bimage': imageDir.bimage = file.filename
-          break
-          case 'bicon1': imageDir.bicon1 = file.filename
-          break
-          case 'bicon2': imageDir.bicon2 = file.filename
-          break
-          case 'bicon3': imageDir.bicon3 = file.filename
-          break
-          case 'bicon4': imageDir.bicon4 = file.filename
-          break
-          case 'cicon1': imageDir.cicon1 = file.filename
-          break
-          case 'cicon2': imageDir.cicon2 = file.filename
-          break
-          case 'cicon3': imageDir.cicon3 = file.filename
-          break
-          case 'cicon4': imageDir.cicon4 = file.filename
-          break
-          case 'cimage': imageDir.cimage = file.filename
-          break
-          case 'dimage': imageDir.dimage = file.filename
-          break
-          case 'dicon1': imageDir.dicon1 = file.filename
-          break
-          case 'dicon2': imageDir.dicon2 = file.filename
-          break
-          case 'dicon3': imageDir.dicon3 = file.filename
-          break
-          case 'dicon4': imageDir.dicon4 = file.filename
-          break
-          case 'eicon1': imageDir.eicon1 = file.filename
-          break
-          case 'eicon2': imageDir.eicon2 = file.filename
-          break
-          case 'eicon3': imageDir.eicon3 = file.filename
-          break
-          case 'eicon4': imageDir.eicon4 = file.filename
-          break
-          case 'eimage': imageDir.eimage = file.filename
-          break
-          case 'categoryImage1': imageDir.categoryImage1 = file.filename
-          break
-          case 'categoryImage2': imageDir.categoryImage2 = file.filename
-          break
-          case 'categoryImage3': imageDir.categoryImage3 = file.filename
-          break
-        }
-      });
+      uploadFilesDir(req.files);
        /*----Acá guardamos toda la información del producto nuevo----*/
       products.push(
          {
@@ -182,7 +183,7 @@ const productosController = {
           "image": imageDir.image,
           "category": [req.body.category1, req.body.category2, req.body.category3],
           "categoryImage": [imageDir.categoryImage1,imageDir.categoryImage2,imageDir.categoryImage3],
-          "price": [req.body.price[0], req.body.price[1], req.body.price[2]],
+          "price": [Number(req.body.price[0]), Number(req.body.price[1]), Number(req.body.price[2])],
           "benefits": {
               "costoTransaccion": ["Costo por transacción", req.body.costoTransaccion[1], req.body.costoTransaccion[2], req.body.costoTransaccion[3]],
               
@@ -213,7 +214,7 @@ const productosController = {
     products[req.params.id -1].type = req.body.type;
     products[req.params.id -1].titleBanner1 = req.body.titleBanner1;
     products[req.params.id -1].subtitleBaner1 = req.body.subtitleBaner1;
-    products[req.params.id -1].price = [req.body.price[0], req.body.price[1], req.body.price[2]];
+    products[req.params.id -1].price = [Number(req.body.price[0]), Number(req.body.price[1]), Number(req.body.price[2])];
     products[req.params.id -1].category = [req.body.category1, req.body.category2, req.body.category3];
     products[req.params.id -1].categoryImage = [req.body.categoryImage1,req.body.categoryImage2,req.body.categoryImage3];
     products[req.params.id -1].description = req.body.description;
