@@ -3,6 +3,11 @@ const router = express.Router();
 const path = require('path');
 const multer = require('multer');
 
+const fs = require('fs');
+
+const productsDir = path.join(__dirname, '..', 'data', 'products.json');
+const products = JSON.parse(fs.readFileSync(productsDir, 'utf-8'));
+
 // ************ Controller Require ************
 const productosController = require("../controllers/productosController");
 
@@ -12,7 +17,16 @@ const storage = multer.diskStorage({
      return cb(null, 'public/images');
     },
     filename: function(req, file, cb) {
-     return cb(null, 'product' + '-' + Date.now() + path.extname(file.originalname));
+        console.log(products[req.params.id -1]);
+        function productID (products, id) {
+            if(typeof products[req.params.id -1] != 'undefined') { 
+                return products[req.params.id -1].id
+             } else {
+                return products.length +1;
+             }
+        } 
+        
+     return cb(null, 'Product'+ '-id-' + productID(products, req.params.id) + '_' + Date.now() + path.extname(file.originalname));
     },
 });
 
