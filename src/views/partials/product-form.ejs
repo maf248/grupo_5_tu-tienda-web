@@ -1,10 +1,10 @@
 <!--Elegir nombre del producto-->
 <label for="name"style="padding: 5px; margin: 2% auto; border-radius: 3px;">Elegí el nombre del producto:</label> <br>
-<input type="text" style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="name" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.name %>" <% } else { %> placeholder="Escribí aquí el nombre del producto" <% } %> > <br>
+<input type="text" style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 40%;" name="name" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.name %>" <% } else { %> placeholder="Escribí aquí el nombre del producto" <% } %> > <br>
  
 <!--Elegir tipo de producto-->
 <label for="type" style="padding: 5px; margin: 2% auto; border-radius: 3px;">Elegí el tipo de producto:</label> <br>
-<input type="text" style="padding: 5px; margin: 2% auto; border-radius: 3px; width: 100%;" name="type" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.type %>" <% } else { %> placeholder="Escribí aquí el tipo del producto sin mayúsculas ni espacios" <% } %>>
+<input type="text" style="padding: 5px; margin: 2% auto; border-radius: 3px; width: 40%;" name="type" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.type %>" <% } else { %> placeholder="Escribí aquí el tipo del producto sin mayúsculas ni espacios" <% } %>>
 
 <!--Elegir imagen del producto-->
 <label style="display: block; padding: 5px;" for="image">Elegí una imagen que describa el producto:</label>
@@ -14,12 +14,12 @@
     <h2>
         <!--elegí el título del Banner 1-->
         <label for="titleBanner1">Titulo principal:</label>
-        <input type="text" style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="titleBanner1" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.titleBanner1 %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %>>
+        <input type="text" style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 50%;" name="titleBanner1" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.titleBanner1 %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %>>
     </h2>
     <p>
         <!--elegí el título del Banner 1-->
         <label for="subtitleBanner1">Subtítulo principal:</label>
-        <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="subtitleBanner1" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.subtitleBanner1 %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %>>
+        <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 40%;" name="subtitleBanner1" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.subtitleBanner1 %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %>>
     </p>
 </section>
 
@@ -28,7 +28,7 @@
         <h2 class="disenoBlanco-article1-tituloPrincipal">
             <!--Elegir titulo seccion 1-->
             <label for="atitle">Titulo seccion 1:</label> <br>
-            <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="atitle" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion1.atitle %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %> >
+            <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 60%;" name="atitle" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion1.atitle %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %> >
         </h2>
     </article>
     <div class="disenoBlanco-containerArticle2">
@@ -113,7 +113,7 @@
     <h2 class="disenoAzul-article1-tituloPrincipal">
         <!--Elegir titulo seccion 2-->
         <label for="btitle">Titulo 2:</label> <br>
-        <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="btitle" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion2.btitle %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %>>
+        <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 60%;" name="btitle" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion2.btitle %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %>>
     </h2>
 </article>
 <article class="disenoAzul-articleImg">
@@ -197,7 +197,7 @@
     <article class="disenoBlanco-article1">
         <h2 class="disenoBlanco-article1-tituloPrincipal">
             <label for="ctitle">Titulo 3:</label> <br>
-            <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="ctitle" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion3.ctitle %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %>>
+            <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 60%;" name="ctitle" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion3.ctitle %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %>>
         </h2>
     </article>
     <div class="disenoBlanco-containerArticle2">
@@ -281,7 +281,7 @@
         <h2 class="disenoAzul-article1-tituloPrincipal">
             <!--Elegir titulo seccion 4-->
             <label for="dtitle" >Titulo 4:</label> <br>
-            <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="dtitle" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion4.dtitle %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %>>
+            <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 60%;" name="dtitle" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion4.dtitle %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %>>
         </h2>
     </article>
     <article class="disenoAzul-articleImg">
@@ -365,7 +365,7 @@
         <article class="disenoBlanco-article1">
             <h2 class="disenoBlanco-article1-tituloPrincipal">
                 <label for="etitle">Titulo 5:</label> <br>
-                <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="etitle" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion5.etitle %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %>>
+                <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 60%;" name="etitle" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion5.etitle %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %>>
             </h2>
         </article>
         <div class="disenoBlanco-containerArticle2">
@@ -571,17 +571,17 @@
                     </div>
                 </td>
                 <td>
-                    <div class="tdDiv">
+                    <div class="tdDivP">
                         <input type="number" name="price[0]" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.price[0] %>" <% } else { %> placeholder="$" <% } %>>
                     </div>
                 </td>
                 <td>
-                    <div class="tdDiv">
+                    <div class="tdDivP">
                         <input type="number" name="price[1]" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.price[1] %>" <% } else { %> placeholder="$" <% } %>>
                     </div>
                 </td>
                 <td>
-                    <div class="tdDiv">
+                    <div class="tdDivP">
                         <input type="number" name="price[2]" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.price[2] %>" <% } else { %> placeholder="$" <% } %>>
                     </div>
                 </td>

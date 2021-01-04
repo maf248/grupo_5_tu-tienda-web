@@ -40,9 +40,10 @@ h1, h2, h3, h4, h5, h6, button, th {
 }
 .block {
     display: block;
-    width: 90%;
+    width: 80%;
     text-align: center;
-    margin: 0.5% auto;
+    margin: 0,7% auto;
+    padding: 2px,;
 }
 .fa-file-image {
     font-size: 25em;
@@ -94,4 +95,8 @@ h1, h2, h3, h4, h5, h6, button, th {
     font-weight: bold;
     border-radius: 20px;
     margin: 15px auto;
+}
+.tdDivP{
+    width: 40%;
+    margin: 5px;
 }
