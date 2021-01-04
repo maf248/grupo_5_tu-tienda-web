@@ -32,17 +32,37 @@ h1, h2, h3, h4, h5, h6, button, th {
     display: inline;
     font-size: 1.6em;
 }
+input {
+    border-color: rgba(0, 0, 0, 0);
+    padding: 5px;
+    border-radius: 3px;
+}
+td input {
+    width: 50%;
+    margin: auto;
+}
+.disenoBlanco input {
+    border-color: rgba(0, 0, 0, 1);
+    border-width: 0.1px;
+}
+.beneficio input {
+    width: 80%;
+}
 .inputNone {
   display: none;  
 }
 .labelPointer {
     cursor: pointer;
 }
+.center {
+    width: 80%;
+    margin: auto;
+}
 .block {
     display: block;
-    width: 80%;
+    width: 100%;
     text-align: center;
-    margin: 0,7% auto;
+    margin: 1% auto;
     padding: 2px,;
 }
 .fa-file-image {
@@ -95,8 +115,4 @@ h1, h2, h3, h4, h5, h6, button, th {
     font-weight: bold;
     border-radius: 20px;
     margin: 15px auto;
-}
-.tdDivP{
-    width: 40%;
-    margin: 5px;
 }

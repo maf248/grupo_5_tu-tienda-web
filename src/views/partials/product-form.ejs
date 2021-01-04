@@ -1,14 +1,18 @@
+<div class="center tdDiv">
+    
 <!--Elegir nombre del producto-->
-<label for="name"style="padding: 5px; margin: 2% auto; border-radius: 3px;">Elegí el nombre del producto:</label> <br>
-<input type="text" style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 40%;" name="name" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.name %>" <% } else { %> placeholder="Escribí aquí el nombre del producto" <% } %> > <br>
+<label for="name"style="padding: 5px; width: 100%; text-align:center;">Elegí el nombre del producto:</label> <br>
+<input type="text" style="padding: 5px; width: 50%; text-align:center; border-color: rgba(0, 0, 0, 1); border-width: 0.1px; margin: auto;" name="name" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.name %>" <% } else { %> placeholder="Escribí aquí el nombre del producto" <% } %> > <br>
  
 <!--Elegir tipo de producto-->
-<label for="type" style="padding: 5px; margin: 2% auto; border-radius: 3px;">Elegí el tipo de producto:</label> <br>
-<input type="text" style="padding: 5px; margin: 2% auto; border-radius: 3px; width: 40%;" name="type" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.type %>" <% } else { %> placeholder="Escribí aquí el tipo del producto sin mayúsculas ni espacios" <% } %>>
+<label for="type" style="padding: 5px; width: 100%; text-align:center;">Elegí el tipo de producto:</label> <br>
+<input type="text" style="padding: 5px; width: 50%; text-align:center; border-color: rgba(0, 0, 0, 1); border-width: 0.1px; margin: auto;" name="type" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.type %>" <% } else { %> placeholder="Escribí aquí el nombre del producto sin mayúsculas ni espacios" <% } %>>
 
 <!--Elegir imagen del producto-->
-<label style="display: block; padding: 5px;" for="image">Elegí una imagen que describa el producto:</label>
+<label style="display: block; padding: 5px; width: 100%; text-align:center;margin-top: 1%;" for="image">Elegí una imagen que describa el producto:</label>
 <input style="margin: 1% auto" type="file" name="image" id="image">
+
+</div>
 
 <section class="banner1">
     <h2>
@@ -446,13 +450,18 @@
 
 <section class="contenedorProductos" id="contenedorProductos">
 <h2>¡Elegí una de nuestras suscripciones y potenciá tu negocio digitalmente!</h2>
+
 <!--Definir las 3 categorías que tendrá el producto-->
+<div class="center">
+
 <label class="block" for="category1">Definí la categoría 1 que tendrá el producto:</label>
 <input class="block" type="text" name="category1" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.category[0] %>" <% } else { %> placeholder="Escribí acá el nombre de la categoría 1" <% } %>>
 <label class="block" for="category2">Definí la categoría 2 que tendrá el producto:</label>
 <input class="block" type="text" name="category2" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.category[1] %>" <% } else { %> placeholder="Escribí acá el nombre de la categoría 2" <% } %>">
 <label class="block" for="category3">Definí la categoría 3 que tendrá el producto:</label>
 <input class="block" type="text" name="category3" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.category[2] %>" <% } else { %> placeholder="Escribí acá el nombre de la categoría 3" <% } %>">
+
+</div>
         <table>
             <tr>
                 <th class="fontSize">
@@ -571,17 +580,17 @@
                     </div>
                 </td>
                 <td>
-                    <div class="tdDivP">
+                    <div class="tdDiv">
                         <input type="number" name="price[0]" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.price[0] %>" <% } else { %> placeholder="$" <% } %>>
                     </div>
                 </td>
                 <td>
-                    <div class="tdDivP">
+                    <div class="tdDiv">
                         <input type="number" name="price[1]" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.price[1] %>" <% } else { %> placeholder="$" <% } %>>
                     </div>
                 </td>
                 <td>
-                    <div class="tdDivP">
+                    <div class="tdDiv">
                         <input type="number" name="price[2]" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.price[2] %>" <% } else { %> placeholder="$" <% } %>>
                     </div>
                 </td>

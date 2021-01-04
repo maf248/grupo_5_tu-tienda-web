@@ -324,7 +324,7 @@ const productosController = {
 		/*----Guardando cambios en productos data base----*/
 		const productsJSON = JSON.stringify(products);
 		fs.writeFileSync(productsDir, productsJSON);
-		res.redirect('/products');
-    }
-      }
+    res.redirect('/products');
+    }    
+}
 module.exports = productosController;
