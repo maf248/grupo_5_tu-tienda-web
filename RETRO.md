@@ -3,21 +3,20 @@
 ## COMPLETAR ANTES DE FECHA DE ENTREGA 04/01/2021
 
 ### 1) Comenzar a hacer:
+comenzar con el sprint  con mas anticipacion.
 
-Lorem ipsum
 
 ### 2) Hacer más:
-
-Lorem ipsum
+mas participacion y apoyo entre todos
+mas reuniones de zoom.
 
 ### 3) Continuar haciendo:
-
-Lorem ipsum
-
+continuar con el proposito de entregar siempre completo el sprint
+con la comunicacion
 ### 4) Hacer menos:
+que se nos pase el tiempo, asi lo tenemos  hecho antes de la fecha por si queremos hacer mejoras.
 
-Lorem ipsum
 
 ### 5) Dejar de hacer:
+codigo  extenso,tratar de reutilizarlo
 
-Lorem ipsum
