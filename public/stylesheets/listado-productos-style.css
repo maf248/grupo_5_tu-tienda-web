@@ -79,6 +79,7 @@ h1 {
 }
 .tabla-productos p {
     font-size: 1em;
+    white-space: nowrap;
 }
 .tabla-productos h2 {
     font-family: 'Raleway', sans-serif;
@@ -100,18 +101,45 @@ h1 {
     width: 100%;
     display: flex;
 }
-.producto-verMas {
-    margin-right: 5%;
-    margin-left: auto;
+.botonesContenedor {
+    display: flex;
+    justify-content: space-between;
+}
+.botonesContenedor form {
+    width: fit-content;
+}
+.botones {
+    justify-self: flex-end;
     border: 1px solid rgb(38, 146, 235);
     background-color: rgb(38, 146, 235);
     font-size: 1.3em;
     cursor: pointer;
 }
-.producto-verMas:hover {
+.botones:hover {
     text-decoration: underline;
 }
-
+.crear-contenedor {
+    width: 100%;
+    align-self: center;
+    display: flex;
+}
+.boton-crear {
+    width: 25%;
+    min-width: fit-content;
+    white-space: nowrap;
+    padding: 10px;
+    background-color: rgb(100, 197, 149);
+    border: 1px solid rgb(100, 197, 149);
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 20px;
+    margin: 15px auto;
+    justify-self: center;
+}
+.boton-crear:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
 
 footer {
     margin-top: 20px;
@@ -144,6 +172,9 @@ footer {
     .tabla-productos p {
         font-size: 0.8em;
     }
+    .tabla-productos td {
+        padding: 5px;
+    }
     .tabla-productos-titulos h2{
         font-size: 1.2em;
     }
@@ -160,6 +191,8 @@ footer {
         margin-top: 20px ;
     }
     .tabla-productos {
+        padding: 0px;
+        align-self: center;
         transform: scale(0.9);
     }
 
@@ -177,6 +210,9 @@ footer {
     }
     .producto-verMas {
         font-size: 1.2em;
+    }
+    .tabla-productos {
+        transform: scale(0.9);
     }
 
 }

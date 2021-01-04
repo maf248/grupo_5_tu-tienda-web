@@ -62,12 +62,19 @@
       </tr> 
     </tbody>
 </table>
-<form action="/products/<%= producto.id %>">
-  <button type="submit" class="producto-verMas">Ver más...</button>
-</form>
+  <div class="botonesContenedor">
+    <form action="/products/<%= producto.id %>/edit">
+      <button type="submit" class="botones">Editar</button>
+    </form>
+    <form action="/products/<%= producto.id %>">
+      <button type="submit" class="botones">Ver más...</button>
+    </form>
+  </div>
 </div>
 <% }); %>
-
+<form class="crear-contenedor" action="/products/create">
+  <button type="submit" class="boton-crear">Crear producto nuevo</button>
+</form>
 </section>
 
 
