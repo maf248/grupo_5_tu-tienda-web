@@ -83,5 +83,5 @@ Tengo 29 años, estudiante de marketing. Me interesé últimamente por la progra
 
 ○ Formulario de registro y login (/users/registro y /users/login)
 
-○ Formulario de carga y edición de productos ( /products/create y /products/1/edicion) -ATENCION: NO POSEEN LINKS DIRECTOS EN LA PÁGINA-
+○ Formulario de carga y edición de productos ( /products/create y /products/1/edicion)
 
