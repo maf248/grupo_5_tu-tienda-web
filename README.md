@@ -77,7 +77,7 @@ Tengo 29 años, estudiante de marketing. Me interesé últimamente por la progra
 
 ○ Listado de productos (/products)
 
-○ Detalle del producto (/products/1 y /products/2)
+○ Detalle de productos (/products/1 y /products/2)
 
 ○ Carrito de compras (/carrito)
 

@@ -1,10 +1,2 @@
-## Daily 30/12/2020
-Nos reunimos via Zoom para editar codigo juntos y organizarnos respecto a los cambios faltantes. Mejoramos turnandonos, el codigo del formulario de edicion y creación de productos. Completamos los inputs de dicha vista, y luego mejoramos el controlador para que no crease propiedades Benefits en el JSON de campos que no habian sido completados (inputs en blanco).
-Además mejoramos el estilo visual de algunas páginas, retocando, y borramos archivos antiguos que habian quedado en desuso tras algunos cambios, ordenando así el codigo.
-
-## Daily 28/12/2020
-Realizamos una reunión via Zoom para ponernos al tanto de los cambios realizados hasta el momento en el proyecto. Además, hablamos sobre los cambios restantes y las distintas ideas o posibilidades de implementaciones para cumplir con los requisitos de este sprint-4.
-
-## Daily 26/12/2020
-Nos pusimos al tanto respecto a las tareas que debíamos realizar para el sprint-4, charlando sobre lo que leimos en el instructivo PDF de éste mismo. Hablamos sobre distintas posibilidades para lograr que las páginas sean dinamicas y tomaran la informacion de los archivos JSON. Tambien mejoramos la estructura que habiamos estipulado para los archivos JSON, siendo mas grandes y complejos, para poder ajustarse mejor a nuestros productos y nuestras páginas, siendo aun mas dinamicos que lo que habiamos planeado previamente.
-Quedamos en juntarnos en los días siguientes para avanzar con el proyecto, dividirnos las tareas o incluso evaluamos la posibilidad de juntarnos a programar via Zoom (turnandonos y pusheando cambios todos a repositorio en GitHub).
+## Daily xx/xx/2021
+Lorem ipsum
