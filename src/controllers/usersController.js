@@ -26,16 +26,19 @@ const usersController = {
                     return res.send('Este mail ya está registrado')
                 }
             });
-            users.push( 
-                {
-                "id": users.length +1,
-                "firstName": req.body.firstName,
-                "lastName": req.body.lastName,
-                "email": req.body.email,
-                "password": bcryptjs.hashSync( req.body.password, 10)
+        users.push( 
+            {
+            "id": users.length +1,
+            "firstName": req.body.firstName,
+            "lastName": req.body.lastName,
+            "email": req.body.email,
+            "password":  bcryptjs.hashSync(req.body.password, 10)
             }
-            )
-            res.send('Te registraste correctamente');
+        )
+        const usersJSON = JSON.stringify(users);
+        fs.writeFileSync(usersDir, usersJSON);
+
+        res.send('Te registraste correctamente');
         }
     }
 }

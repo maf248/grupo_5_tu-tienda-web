@@ -7,7 +7,7 @@
 
 <%- include('../partials/navbar') %>
 
-<form class="form-registro" action="/users/register" method="POST" enctype="multipart/form-data">
+<form class="form-registro" action="/users/register" method="POST">
 <h5> Registrate </h5>
 <input class="controls" type="text" name="firstName" placeholder="Nombre">
 <% if ( typeof errors != "undefined") {
@@ -41,14 +41,7 @@ errors.forEach ( error => {
     <% }
     })
     } %>
-<input class="controls" type="password" name="password" placeholder="Repetir Contraseña">
-<% if ( typeof errors != "undefined") {
-    errors.forEach ( error => { 
-        if (error.param == "password") { %>
-            <p><%= error.msg %></p>
-    <% }
-    })
-    } %>
+<input class="controls" type="password" name="repeatPassword" placeholder="Repetir Contraseña">
 <input class="buttons" type="submit"  value="Registrarse" >
 
 <div class="form-oauth">
