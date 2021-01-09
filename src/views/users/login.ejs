@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="/stylesheets/users-style.css">
+    <%- include('../partials/head') %>
+</head>
+
+<%- include('../partials/navbar') %>
+
+<form class="form-login" action="/users/login" method="POST">
+    <h5>¡Hola! Completa tus datos</h5>
+    <input class="usuario" type="text" name="usuario" value="" placeholder="Usuario">
+    <input class="usuario" type="password" name="contraseña" value="" placeholder="Contraseña">
+    <input class="button" type="submit" name="" value="Ingresar">
+    <p><a href="#">¿Olvidaste tu Contraseña?</a></p>
+   
+    <div class="form-oauth">
+        <div class="form-oauth-titulo">Acceso rápido con:</div>
+        <div class="form-oauth-iconos">
+            <a href="#"><img src="/icons/social-media/google.png"></a>
+            <a href="#"><img src="/icons/social-media/facebook.png"></a>
+        </div>
+    </div>
+</form>
+
+
+<%- include('../partials/footer') %>

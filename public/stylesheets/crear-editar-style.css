@@ -1,0 +1,118 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+}
+h1, h2, h3, h4, h5, h6, button, th {
+    font-family: 'Raleway', sans-serif;
+}
+.titulo {
+    margin: 20px 0px 10px 0px;
+    font-size: 1.8em;
+    text-align: center;
+    text-decoration: underline overline;
+}
+.subtituloContenedor {
+    width: fit-content;
+    margin-right: auto;
+    margin-left: auto;
+}
+.subtitulo {
+    margin-top: 20px;
+    font-size: 1.6em;
+    text-align: center;
+    text-decoration: underline;
+    display: inline;
+}
+.subtitulo-producto {
+    font-family: 'Raleway', sans-serif;
+    width: fit-content;
+    display: inline;
+    font-size: 1.6em;
+}
+input {
+    border-color: rgba(0, 0, 0, 0);
+    padding: 5px;
+    border-radius: 3px;
+}
+td input {
+    width: 50%;
+    margin: auto;
+}
+.disenoBlanco input {
+    border-color: rgba(0, 0, 0, 1);
+    border-width: 0.1px;
+}
+.beneficio input {
+    width: 80%;
+}
+.inputNone {
+  display: none;  
+}
+.labelPointer {
+    cursor: pointer;
+}
+.center {
+    width: 80%;
+    margin: auto;
+}
+.block {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 1% auto;
+    padding: 2px,;
+}
+.fa-file-image {
+    font-size: 25em;
+    margin: 0.5em auto;
+}
+.disenoAzul-articleImg, .disenoBlanco-articleImg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+.disenoAzul-articleImg input, .disenoBlanco-articleImg input {
+    width: fit-content;
+    align-self: center;
+}
+.buttons-form {
+    display: flex;
+    align-content: center;
+}
+.submit {
+    width: 25%;
+    min-width: fit-content;
+    padding: 10px;
+    background-color: rgb(100, 197, 149);
+    border: 1px solid rgb(100, 197, 149);
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 20px;
+    margin: 15px auto;
+}
+.reset {
+    width: 25%;
+    min-width: fit-content;
+    padding: 10px;
+    background-color: rgb(255, 77, 29);
+    border: 1px solid rgb(255, 77, 29);
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 20px;
+    margin: 15px auto;
+}
+.delete {
+    width: 25%;
+    min-width: fit-content;
+    padding: 10px;
+    background-color: rgb(255, 0, 0);
+    border: 1px solid rgb(255, 0, 0);
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 20px;
+    margin: 15px auto;
+}

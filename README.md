@@ -2,7 +2,6 @@
 #### grupo_5_tu-tienda-web
 
 
-
 ## ● Descripción
 
 Tu Tienda Web es un sitio que te permite armar tu propia tienda online para vender productos físicos o digitales. También podes armar tu propia página web.
@@ -27,6 +26,7 @@ Un listado de al menos 5 sitios de referencia indicando brevemente por qué fuer
 
 [- Webnode](https://www.webnode.es/#top)
 
+
 ## ● Información del grupo:
 ### Grupo #5 - Digital House, Full Stack Web Developer - 2020
 
@@ -35,7 +35,7 @@ Tengo 30 años, soy recaudador de fondos en una ONG y vendedor de seguros patrim
 
 
 #### Marcelo Fanego:
-Tengo 29 años, soy técnico electrico, psicólgo y amante de la computación desde chico. Dentro de mis hobbies se destacan la música, la lectura, el parkour, la comedia, entre otros...
+Tengo 29 años, soy técnico electrico, psicólogo y amante de la computación desde chico. Dentro de mis hobbies se destacan la música, la lectura, el parkour, la comedia, entre otros...
 Hoy en día estoy profundizando mis conocimientos en informatica y programación para, a futuro, poder aprovechar mi potencial en el mercado laboral.
 
 
@@ -47,19 +47,30 @@ Dentro de mis hobbies se destacan juntarme con amigos y viajar.
 Tengo 29 años, estudiante de marketing. Me interesé últimamente por la programación y decidí  dar mis primeros pasos con el curso de DH. Mi propósito es obtener los suficientes conocimientos para empezar a trabajar en este mundo de la programación. Soy padre de Gabriella con quien me encanta pasar tiempo.
 
 
+## ★ Trello:
+
+○ [Tablero del proyecto integrador](https://trello.com/b/sT9rfvf7/proyecto-integrador)
+
 
 ## ★ Wireframe de las siguientes páginas
 
-○ [Home](https://wireframe.cc/eTJ5Tl)
+○ [Home - Desktop](https://wireframe.cc/eTJ5Tl)
 
-○ [Detalle de producto](https://wireframe.cc/dQMXjd)
+○ [Home - Mobile](https://wireframe.cc/rsghUU)
 
-○ [Carrito de compras](https://wireframe.cc/FjKUBs)
+○ [Detalle de producto - Desktop](https://wireframe.cc/dQMXjd)
+
+○ [Detalle de producto - Mobile](https://wireframe.cc/8WRkUI)
+
+○ [Carrito de compras - Desktop](https://wireframe.cc/FjKUBs)
+
+○ [Carrito de compras - Mobile](https://wireframe.cc/FCzBP6)
 
 ○ [Formulario de registro](https://wireframe.cc/iI57vq)
 
 ○ [Formulario de login](https://wireframe.cc/1MSEsi)
 
+<<<<<<< HEAD
 ### ★ Opcional: Identidad visual del sitio
 
 Carpeta design creada. Incluye fuente, iconos, imagenes, logos.
@@ -71,3 +82,20 @@ Referencias:
 ○ [Iconos flat icon](https://www.flaticon.com/free-icon/shopping-cart_2611076)
 
 ○ [Imagen diseño de referencia](https://buenosaireswebs.com/productos/tienda-online/)
+=======
+
+## ★ Secciones de la página:
+
+○ Home (/)
+
+○ Listado de productos (/products)
+
+○ Detalle de productos (/products/1 y /products/2)
+
+○ Carrito de compras (/carrito)
+
+○ Formulario de registro y login (/users/registro y /users/login)
+
+○ Formulario de carga y edición de productos ( /products/create y /products/1/edicion)
+
+>>>>>>> a5b5cf8239e88dd3f4b33df07a2ef61a0879afd2

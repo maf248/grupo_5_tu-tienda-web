@@ -1,0 +1,760 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+h1, h2, h3, h4, h5, h6, button {
+    font-family: 'Raleway', sans-serif;
+}
+.principal {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    justify-content: space-between;
+}
+.barraSuperior {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid black;
+    border-radius: 0 0 20px 20px;
+    align-items: center;
+    align-content: flex-end;
+    justify-content: center;
+    white-space: nowrap;
+}
+.barraSuperior a {
+    color: black;
+}
+.barraSuperior-logo {
+    box-sizing: border-box;
+    height: 100px;
+    padding: 5px;
+}
+.barraSuperior-logo:hover {
+    transform: scale(1.1);
+    position: relative;
+    top: 0.3em;
+}
+.barraSuperior-navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 70%;
+}
+.barraSuperior-navbar button{
+    display: none;
+}
+.barraSuperior-navlist {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style-type: none;
+    text-decoration: none;
+}
+.barraSuperior-navlist-links{ 
+    font-size: 1.5em;
+    color: black;
+    cursor: pointer;
+}
+.barraSuperior-navlist-links-submenu {
+    list-style: none;
+    display: none;
+    position: relative;
+}
+.barraSuperior-navlist-links:hover ul{
+    display: block;
+}
+.barraSuperior-navlist-links-submenu li {
+    position: absolute;
+    width: max-content;
+    background-color: rgba(100, 197, 149, 0.7);
+    box-shadow: 5px 5px 20px 5px rgba(100, 197, 149, 0.7);
+    padding: 3px;
+    border-radius: 20px;
+}
+.linkTienda {
+    top: 35px;
+}
+.barraSuperior-navExtra-carrito {
+    height: 40px;
+    box-sizing: content-box;
+    padding: 10px;
+}
+.barraSuperior-navExtra-carrito:hover {
+    transform: scale(1.2);
+}
+.barraSuperior-navExtra {
+    display: flex;
+    flex-direction: row;
+    width: 20%;
+    min-width: fit-content;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(100, 197, 149);
+    border-radius: 0px 0px 20px 0px;
+}
+.barraSuperior-navExtra-usuario {
+    display: flex;
+    flex-direction: column;
+}
+.barraSuperior-navExtra-usuario-login, .barraSuperior-navExtra-usuario-registro {
+    align-self: flex-start;
+    align-self: center;
+    padding: 5px;
+}
+.barraSuperior-navExtra-usuario-login:hover, .barraSuperior-navExtra-usuario-registro:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 5px 5px 50px 5px white;
+    border-radius: 20px;
+}
+.barraSuperior-navlist-links a {
+    text-decoration: none;
+}
+.barraSuperior-navlist-links:hover {
+    background-color: rgba(100, 197, 149, 0.7);
+    box-shadow: 5px 5px 20px 5px rgba(100, 197, 149, 0.7);
+    padding: 3px;
+    box-sizing: border-box;
+    border-radius: 20px;
+}
+
+/* Acá termina la barra superior de navegacion */
+
+/* BANNER */
+
+.banner {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    max-height: 250px;
+    margin-top: 20px;
+    
+}
+.banner img {
+    cursor: pointer; 
+    outline: 2px solid white;
+    outline-offset: -2px;
+    border-radius: 10px;
+    max-width: 100%;
+    max-height: 200px;
+    align-self: center;
+    justify-self: center;
+}
+
+/*ELEGINOS*/
+
+.eleginos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background: linear-gradient(270deg,rgba(38,146,235,0.5) 40%,rgba(255,255,255,1) 100%);
+    margin-top: 15px;
+}
+.eleginos:hover {
+    transition: 300ms;
+    animation-name: elegir;
+    animation-duration: 3s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+    -moz-animation-timing-function: ease-out;
+    }
+@keyframes elegir {
+    25% {
+        background-color: rgba(38, 146, 235, 0.8);
+    }
+    50% {
+        background-color: rgba(38,146,235, 0.5);
+    }
+    75% {
+        background-color: rgba(38,146,235, 0.1);
+    }
+    100% {
+        background-color: rgba(38,146,235, 0.5);
+    }
+}
+.eleginos h2 {
+    width: 50%;
+    align-self: center;
+    padding: 10%;
+    border-right: 1px solid black;
+}
+.eleginos article {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    padding: 5%;
+}
+.eleginos p {
+    width: 100%;
+}
+.eleginos form {
+    margin-top: 2%;
+}
+.eleginos button {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/*NEGOCIOS*/
+
+.negocios   {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background: linear-gradient(90deg, rgba(100,197,121,0.6) 40%, rgba(255,255,255,1) 100%);
+}
+.negocios:hover {
+    transition: 300ms;
+    animation-name: negocios;
+    animation-duration: 3s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+    -moz-animation-timing-function: ease-out;
+    }
+@keyframes negocios {
+    25% {
+        background-color: rgba(100, 197, 121, 0.8);
+    }
+    50% {
+        background-color: rgba(100, 197, 121, 0.5);
+    }
+    75% {
+        background-color: rgba(100, 197, 121, 0.1);
+    }
+    100% {
+        background-color: rgba(100, 197, 121, 0.5);
+    }
+}
+.negocios h2 {
+    width: 50%;
+    align-self: center;
+    padding: 10%;
+    border-right: 1px solid black;
+}
+.negocios article {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    padding: 8%;
+}
+.negocios p {
+    width: 100%;
+}
+.negocios form {
+    margin-top: 2%;
+}
+.negocios button {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/*COMO HACER TU PAGINA WEB*/
+
+.comoHacerTuPaginaWeb {
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+}
+.comoHacerTuPaginaWeb-titulo {
+    margin: 2% auto;
+}
+.comoHacerTuPaginaWeb-titulo h2 {
+    margin-bottom: 10px;
+    font-size: 3em;
+}
+.comoHacerTuPaginaWeb li {
+    margin-bottom: 15px;
+}
+.comoHacerTuPaginaWeb form {
+    display: flex;
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+}
+.comoHacerTuPaginaWeb button, .comoHacerTuPaginaWeb i {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    
+    font-size: 1.4em;
+    margin-top: 10px;
+}
+.comoHacerTuPaginaWeb button {
+    text-decoration: underline;
+}
+.comoHacerTuPaginaWeb i {
+    padding: 0px 10px;
+    color: rgb(38, 146, 235);
+}
+
+/*Productos*/
+.productosContenedor {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px 0px;
+    flex-wrap: wrap;
+}
+.productosContenedor-producto:hover {
+    border: 5px solid rgb(100, 197, 149);
+    transition: 300ms;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+.productosContenedor-producto {
+    text-align: center;
+    margin: 20px;
+    width: 40%;
+    padding: 20px;
+    border: 5px dotted rgb(40, 172, 106); 
+    border-radius: 30px 0px 30px 0px;
+    background-color: rgb(38, 146, 235);
+    box-shadow: 7px 13px 37px #000;
+}
+.productosContenedor-producto form {
+    display: flex;
+    flex-direction: column;
+}
+.productosContenedor-producto-planes img {
+    max-height: 35px;
+    margin-bottom: 10px;
+}
+.productosContenedor-producto-imagen img {
+    justify-self: center;
+    max-height: 150px;
+    
+}
+.productosContenedor-producto-imagen img:hover {
+    cursor: pointer;
+}
+.medalla:hover {
+    transform: scale(1.05);
+    animation-name: anime;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    -moz-animation-timing-function: ease-out;
+    }
+@keyframes anime {
+    25% {
+       transform: skew(10deg);
+    }
+    50% {
+        transform: skew(-10deg);
+    }
+    75% {
+        transform: skew(10deg);
+    }
+}
+.productosContenedor h2 {
+    font-family: 'Kaushan Script', Arial, Helvetica, sans-serif;
+    font-size: 1.6em;
+    margin: 20px 0px;
+}
+.productosContenedor a {
+    text-decoration: none;
+    color: black;
+}
+.productosContenedor-producto-descripcion p {
+    margin-bottom: 15px;
+    text-align: center;
+}
+.productosContenedor-verMas {
+    margin: 10px;
+    font-size: 1.3em;
+    background-color: rgb(38, 146, 235);
+    border: none;
+    cursor: pointer;
+    align-self: flex-end;
+    position: relative;
+    top: 10px;
+}
+.productosContenedor em {
+    font-style: normal;
+    font-weight: bolder;
+    color: red;
+}
+
+
+/*Quienes somos*/
+.nosotrosContenedor {
+    background: linear-gradient(90deg, rgba(100,197,121,0.4) 10%, rgba(255,255,255,1) 100%);
+    border: 5px solid rgb(100, 197, 149);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 50px;
+    margin-bottom: 30px;
+}
+.nosotrosContenedor h2 {
+    font-size: 2em;
+    align-self: center;
+    margin-bottom: 15px;
+}
+.nosotrosContenedor h3 {
+    margin-bottom: 10px;
+    text-decoration: underline;
+}
+.nosotrosContenedor-mision-vision {
+    line-height: 2em;
+    text-align: center;
+}
+.nosotrosContenedor-mision-vision p {
+    margin: 20px;
+}
+.nosotrosContenedor-historia {
+    margin: 10px;
+}
+.nosotrosContenedor-apuntamos {
+    margin: 10px;
+}
+.nosotrosContenedor-descripcion {
+    margin: 10px;
+}
+.nosotrosContenedor form {
+    display: flex;
+    flex-direction: column;
+}
+.nosotrosContenedor button {
+    width: 25%;
+    min-width: fit-content;
+    padding: 10px;
+    background-color: rgb(100, 197, 149);
+    border: 1px solid rgb(100, 197, 149);
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 20px;
+    align-self: flex-end;
+    position: relative;
+    top: 1.8em;
+    left: 1.8em;
+
+}
+.nosotrosContenedor button:hover {
+    background-color: rgb(40, 172, 106);
+    cursor: pointer;
+}
+
+/*FAQS*/
+
+.faqs {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+.faqs-titulo {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    padding: 10px;
+    align-content: center;
+}
+.faqs-titulo h3 {
+    display: none;
+    align-self: center;
+    font-size: 1em;
+    opacity: 0.5;
+    width: 40%;
+    text-align: center;
+    background: radial-gradient(rgba(38, 146, 235,1) 5%, rgba(38,146,235,0.1) 100%);
+    box-shadow: 0px 0px 10px 0px rgba(38, 146, 235, 0.5);
+    border-radius: 20px;    
+}
+.faqs-titulo h2 {
+    text-decoration: underline;
+    text-align: center;
+    font-size: 2em;
+    width: 20%;
+    background: radial-gradient(ellipse,rgba(38, 146, 235,1) 5%, rgba(38,146,235,0.1) 75%, rgb(255,255,255) 95%);
+}
+.faqs-titulo:hover h3{
+    display: inline-block;
+}
+.faqs-titulo:hover h2 {
+    animation-name: faqs;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    -moz-animation-timing-function: ease-out;
+    }
+@keyframes faqs {
+    10% {
+        transform: rotateY(36deg);
+    }
+    20% {
+        transform: rotateY(72deg);
+    }
+    30% {
+        transform: rotateY(108deg);
+    }
+    40% {
+        transform: rotateY(144deg);
+    }
+    50% {
+        transform: rotateY(180deg);
+    }
+    60% {
+        transform: rotateY(216deg);
+    }
+    70% {
+        transform: rotateY(252deg);
+    }
+    80% {
+        transform: rotateY(288deg);
+    }
+    90% {
+        transform: rotateY(324deg);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}   
+
+.faqs-article {
+    width: 50%;
+    padding: 1%;
+    cursor: pointer;
+}
+.faqs-article h4 {
+    margin: 15px 25px;
+}
+.faqs-article p {
+    display: none;
+    text-align: justify;
+    padding: 0% 1%;
+}
+.faqs-article:hover p {
+    display: inline-block;
+}
+.faqs-article:hover h4 {
+    transform: scale(1.1);
+    transition: 250ms;
+}
+
+/*Footer*/
+
+.piePagina {
+    background-color: rgb(100, 197, 149);
+    display: flex;
+    flex-direction: column;
+
+}
+.piePagina-redesSociales {
+    align-self: center;
+    display: block;
+}
+.piePagina-redesSociales img {
+    justify-content: center;
+    padding: 20px;
+    width: 70px;
+}
+.piePagina-contacto {
+    width: 100%;
+    background-color: white;
+    border-radius: 35%;
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.piePagina-contacto a {
+    text-align: center;
+    line-height: 2.5em;
+    text-decoration: none;
+    align-self: center;
+}
+.piePagina-copyright {
+    font-size: 0.8em;
+    align-self: center;
+}
+.piePagina-copyright em {
+    font-size: 1.4em;
+    font-style: normal;
+    margin: 0 0.3em;
+
+}
+
+/*Media queries - completar */
+
+@media (max-width: 800px) {
+    .barraSuperior-navlist-links{ 
+        font-size: 1em;
+        font-weight: bolder;
+    }
+    .barraSuperior-navExtra-usuario {
+        font-size: 0.8em;
+        text-align: left;
+    }
+}
+@media (max-width: 650px) {
+    .barraSuperior-navlist-links{ 
+        font-size: 0.8em;
+        font-weight: bolder;
+    }
+}
+@media (max-width: 575px) {
+    .barraSuperior-navlist-links{ 
+        font-size: 1em;
+        font-weight: bolder;
+        padding: 10px 1%;
+        text-align: left;
+    }
+    .barraSuperior-navlist {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+@media (max-width: 500px) {
+    .barraSuperior-navExtra-usuario {
+        display: none;
+    }
+    .barraSuperior-navbar {
+        display: flex;
+        height: 100px;
+        }
+        
+    .barraSuperior-navbar button {
+        display: inline-block;
+        background: none;
+        outline: none;
+        border: none;
+        align-self: center;
+        padding: 10px 13px;
+        background-color: rgb(100, 197, 149);
+        border-radius: 50px;
+        box-shadow: 0px 0px 20px 0px rgba(100, 197, 149, 0.7);
+    }
+    .barraSuperior-navlist {
+        display: none;
+        align-self: center;
+        position: relative;
+        top: 50px;
+        padding: 3px;
+    }
+    .barraSuperior-navlist a {
+        align-self: center;
+        padding: 3px 18px;
+        min-width: 100px;
+    }
+    .barraSuperior-navlist-links:hover .barraSuperior-navlist{
+        display: block;
+    }
+    .barraSuperior-navbar:hover .barraSuperior-navlist{
+        display: block; 
+        background-color: rgba(100, 197, 149, 0.7);
+        box-shadow: 5px 5px 20px 5px rgba(100, 197, 149, 0.7);
+        border-radius: 20px;
+        width: max-content;
+        position: relative;
+    }
+
+    .barraSuperior-navbar ul li {
+        font-size: 1em;
+        width: max-content;
+        padding: 10px 0px;
+        left: 120px;
+    }
+    .barraSuperior-navlist-links-submenu {
+        width: max-content;
+        font-size: 0.9em;
+        position: relative;
+        bottom: 25px;
+    }
+    .barraSuperior-navExtra {
+        background-color: white;
+    }
+    .eleginos {
+        background: linear-gradient(180deg,rgba(38,146,235,0.5) 25%,rgba(255,255,255,1) 100%);   
+    }
+    .eleginos h2 {
+        width: 100%;
+        padding: 3%;
+        margin: 1.5%;
+        text-align: center;
+        border-bottom: 1px solid black;
+        border-right: none;
+    }
+    .eleginos article {
+        width: 100%;
+    }
+    .eleginos article p {
+        padding: 0%;
+        text-align: justify;
+    }
+    .negocios h2 {
+        width: 100%;
+        padding: 3%;
+        margin: 1.5%;
+        text-align: center;
+        border-bottom: 1px solid black;
+        border-right: none;
+    }
+    .negocios {
+        background: linear-gradient(180deg, rgba(100,197,121,0.6) 25%, rgba(255,255,255,1) 100%);
+    }
+    .negocios article {
+        width: 100%;
+    }
+    .negocios article p {
+        padding: 0%;
+        text-align: justify;
+    }
+    .comoHacerTuPaginaWeb-titulo {
+        margin-bottom: 5%;
+    }
+    .comoHacerTuPaginaWeb-titulo h2 {
+        font-size: 2em;
+    }
+    .comoHacerTuPaginaWeb ol {
+        padding: 5%;
+    }
+    .comoHacerTuPaginaWeb li {
+        margin-bottom: 3%;
+    }
+
+    .productosContenedor {
+        flex-direction: column;
+    }
+    .productosContenedor img {
+        max-width: 100%;
+    }
+    .productosContenedor-producto {
+        width: 80%;
+        margin: 20px 0px;
+        align-self: center;
+    }
+    .faqs-article {
+        width: 100%;
+    }
+    .faqs-titulo h2 {
+        font-size: 1.5em;
+    }
+    .faqs-titulo h3 {
+        font-size: 0.75em;
+    }
+    .nosotrosContenedor button {
+        width: 35%;
+    }
+    .piePagina-contacto {
+        font-size: 0.7em;
+    }
+}

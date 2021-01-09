@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="/stylesheets/producto-style.css">
+    <%- include('../partials/head') %>
+</head>
+
+<%- include('../partials/navbar') %>
+
+        <section class="banner">
+            <a href="/products"><img src="/images/tutiendaweb-banner-sd.gif"></a>
+        </section>
+    
+        <section class="banner1">
+            <h2>
+                 <%= product.titleBanner1 %>
+            </h2>
+            <p>
+                <%= product.subtitleBanner1 %>
+            </p>
+            <form action="#contenedorProductos" method="GET">
+                <button>
+                    Empezá ya
+                </button>
+            </form>
+        </section>
+
+        
+            <section class="disenoBlanco">
+                <article class="disenoBlanco-article1">
+                    <h2 class="disenoBlanco-article1-tituloPrincipal">
+                        <%= product.seccion1.atitle %>
+                    </h2>
+                </article>
+                <div class="disenoBlanco-containerArticle2">
+                    <article class="disenoBlanco-article2">
+                        <h3 class="disenoBlanco-article2-titulo">
+                            <img src="/images/Producto-<%= product.id %>/<%= product.seccion1.aicon1 %>" class="icon" alt=""> <br>
+                            <%= product.seccion1.asubtitle1 %>
+                        </h3>
+                        <p  class="disenoBlanco-article2-parrafo">
+                            <%= product.seccion1.adescription1 %>
+                        </p>
+                    </article>
+                    <article class="disenoBlanco-article2">
+                        <h3 class="disenoBlanco-article2-titulo">
+                            <img src="/images/Producto-<%= product.id %>/<%= product.seccion1.aicon2 %>" class="icon" alt=""> <br>
+                            <%= product.seccion1.asubtitle2 %>
+                        </h3>
+                        <p  class="disenoBlanco-article2-parrafo">
+                            <%= product.seccion1.adescription2 %>
+                        </p>
+                    </article>
+                    <article class="disenoBlanco-article2">
+                        <h3 class="disenoBlanco-article2-titulo">
+                            <img src="/images/Producto-<%= product.id %>/<%= product.seccion1.aicon3 %>" class="icon" alt=""> <br>
+                            <%= product.seccion1.asubtitle3 %>
+                        </h3>
+                        <p  class="disenoBlanco-article2-parrafo">
+                            <%= product.seccion1.adescription3 %>
+                        </p>
+                    </article>
+                    <article class="disenoBlanco-article2">
+                        <h3 class="disenoBlanco-article2-titulo">
+                            <img src="/images/Producto-<%= product.id %>/<%= product.seccion1.aicon4 %>" class="icon" alt=""> <br>
+                            <%= product.seccion1.asubtitle4 %>
+                        </h3>
+                        <p  class="disenoBlanco-article2-parrafo">
+                            <%= product.seccion1.adescription4 %>
+                        </p>
+                    </article>
+                </div>
+                <article class="disenoBlanco-articleImg">
+                    <img src="/images/Producto-<%= product.id %>/<%= product.seccion1.aimage %>" alt="">
+                </article>
+                <form action="#contenedorProductos" method="GET"   class="disenoBlanco-form">
+                    <button>
+                        Empezá ya
+                    </button>
+                </form>
+        </section>
+         
+
+        <section class="disenoAzul">
+            <article class="disenoAzul-article1">
+                <h2 class="disenoAzul-article1-tituloPrincipal">
+                    <%= product.seccion2.btitle %>
+                </h2>
+            </article>
+            <article class="disenoAzul-articleImg">
+                <img src="/images/Producto-<%= product.id %>/<%= product.seccion2.bimage %>" alt="">
+            </article>
+            <div class="disenoAzul-containerArticle2">
+                <article class="disenoAzul-article2">
+                    <h3 class="disenoAzul-article2-titulo">
+                        <img src="/images/Producto-<%= product.id %>/<%= product.seccion2.bicon1 %>" class="icon" alt=""> <br>
+                        <%= product.seccion2.bsubtitle1 %>
+                    </h3>
+                    <p  class="disenoAzul-article2-parrafo">
+                        <%= product.seccion2.bdescription1 %>
+                    </p>
+                </article>
+                <article class="disenoAzul-article2">
+                    <h3 class="disenoAzul-article2-titulo">
+                        <img src="/images/Producto-<%= product.id %>/<%= product.seccion2.bicon2 %>" class="icon" alt=""> <br>
+                        <%= product.seccion2.bsubtitle2 %>
+                    </h3>
+                    <p  class="disenoAzul-article2-parrafo">
+                        <%= product.seccion2.bdescription2 %>
+                    </p>
+                </article>
+                <article class="disenoAzul-article2">
+                    <h3 class="disenoAzul-article2-titulo">
+                        <img src="/images/Producto-<%= product.id %>/<%= product.seccion2.bicon3 %>" class="icon" alt=""> <br>
+                        <%= product.seccion2.bsubtitle3 %>
+                    </h3>
+                    <p  class="disenoAzul-article2-parrafo">
+                        <%= product.seccion2.bdescription3 %>
+                    </p>
+                </article>
+                <article class="disenoAzul-article2">
+                    <h3 class="disenoAzul-article2-titulo">
+                        <img src="/images/Producto-<%= product.id %>/<%= product.seccion2.bicon4 %>" class="icon" alt=""> <br>
+                        <%= product.seccion2.bsubtitle4 %>
+                    </h3>
+                    <p  class="disenoAzul-article2-parrafo">
+                        <%= product.seccion2.bdescription4 %>
+                    </p>
+                </article>
+            </div>
+            <form action="#contenedorProductos" method="GET"   class="disenoAzul-form">
+                <button>
+                    Empezá ya
+                </button>
+            </form>
+        </section>
+
+        <section class="disenoBlanco">
+            <article class="disenoBlanco-article1">
+                <h2 class="disenoBlanco-article1-tituloPrincipal">
+                    <%= product.seccion3.ctitle %>
+                </h2>
+            </article>
+            <div class="disenoBlanco-containerArticle2">
+                <article class="disenoBlanco-article2">
+                    <h3 class="disenoBlanco-article2-titulo">
+                        <img src="/images/Producto-<%= product.id %>/<%= product.seccion3.cicon1 %>" class="icon" alt=""> <br>
+                        <%= product.seccion3.csubtitle1 %>
+                    </h3>
+                    <p  class="disenoBlanco-article2-parrafo">
+                        <%= product.seccion3.cdescription1 %>
+                    </p>
+                </article>
+                <article class="disenoBlanco-article2">
+                    <h3 class="disenoBlanco-article2-titulo">
+                        <img src="/images/Producto-<%= product.id %>/<%= product.seccion3.cicon2 %>" class="icon" alt=""> <br>
+                        <%= product.seccion3.csubtitle2 %>
+                    </h3>
+                    <p  class="disenoBlanco-article2-parrafo">
+                        <%= product.seccion3.cdescription2 %>
+                    </p>
+                </article>
+                <article class="disenoBlanco-article2">
+                    <h3 class="disenoBlanco-article2-titulo">
+                        <img src="/images/Producto-<%= product.id %>/<%= product.seccion3.cicon3 %>" class="icon" alt=""> <br>
+                        <%= product.seccion3.csubtitle3 %>
+                    </h3>
+                    <p  class="disenoBlanco-article2-parrafo">
+                        <%= product.seccion3.cdescription3 %>
+                    </p>
+                </article>
+                <article class="disenoBlanco-article2">
+                    <h3 class="disenoBlanco-article2-titulo">
+                        <img src="/images/Producto-<%= product.id %>/<%= product.seccion3.cicon4 %>" class="icon" alt=""> <br>
+                        <%= product.seccion3.csubtitle4 %>
+                    </h3>
+                    <p  class="disenoBlanco-article2-parrafo">
+                        <%= product.seccion3.cdescription4 %>
+                    </p>
+                </article>
+            </div>
+            <article class="disenoBlanco-articleImg">
+                <img src="/images/Producto-<%= product.id %>/<%= product.seccion3.cimage %>" alt="">
+            </article>
+            <form action="#contenedorProductos" method="GET"   class="disenoBlanco-form">
+                <button>
+                    Empezá ya
+                </button>
+            </form>
+        </section>
+
+        <section class="disenoAzul">
+            <article class="disenoAzul-article1">
+                <h2 class="disenoAzul-article1-tituloPrincipal">
+                    <%= product.seccion4.dtitle %>
+                </h2>
+            </article>
+            <article class="disenoAzul-articleImg">
+                <img src="/images/Producto-<%= product.id %>/<%= product.seccion4.dimage %>" alt="">
+            </article>
+            <div class="disenoAzul-containerArticle2">
+                <article class="disenoAzul-article2">
+                    <h3 class="disenoAzul-article2-titulo">
+                        <img src="/images/Producto-<%= product.id %>/<%= product.seccion4.dicon1 %>" class="icon" alt=""> <br>
+                        <%= product.seccion4.dsubtitle1 %>
+                    </h3>
+                    <p  class="disenoAzul-article2-parrafo">
+                        <%= product.seccion4.ddescription1 %>
+                    </p>
+                </article>
+                <article class="disenoAzul-article2">
+                    <h3 class="disenoAzul-article2-titulo">
+                        <img src="/images/Producto-<%= product.id %>/<%= product.seccion4.dicon2 %>" class="icon" alt=""> <br>
+                        <%= product.seccion4.dsubtitle2 %>
+                    </h3>
+                    <p  class="disenoAzul-article2-parrafo">
+                        <%= product.seccion4.ddescription2 %>
+                    </p>
+                </article>
+                <article class="disenoAzul-article2">
+                    <h3 class="disenoAzul-article2-titulo">
+                        <img src="/images/Producto-<%= product.id %>/<%= product.seccion4.dicon3 %>" class="icon" alt=""> <br>
+                        <%= product.seccion4.dsubtitle3 %>
+                    </h3>
+                    <p  class="disenoAzul-article2-parrafo">
+                        <%= product.seccion4.ddescription3 %>
+                    </p>
+                </article>
+                <article class="disenoAzul-article2">
+                    <h3 class="disenoAzul-article2-titulo">
+                        <img src="/images/Producto-<%= product.id %>/<%= product.seccion4.dicon4 %>" class="icon" alt=""> <br>
+                        <%= product.seccion4.dsubtitle4 %>
+                    </h3>
+                    <p  class="disenoAzul-article2-parrafo">
+                        <%= product.seccion4.ddescription4 %>
+                    </p>
+                </article>
+            </div>
+            <form action="#contenedorProductos" method="GET"   class="disenoAzul-form">
+                <button>
+                    Empezá ya
+                </button>
+            </form>
+        </section>
+
+        <section class="disenoBlanco" id="vendeEnMasCanales">
+            <article class="disenoBlanco-article1">
+                <h2 class="disenoBlanco-article1-tituloPrincipal">
+                    <%= product.seccion5.etitle %>
+                </h2>
+            </article>
+            <div class="disenoBlanco-containerArticle2">
+                <article class="disenoBlanco-article2">
+                    <h3 class="disenoBlanco-article2-titulo">
+                        <img src="/images/Producto-<%= product.id %>/<%= product.seccion5.eicon1 %>" class="icon" alt=""> <br>
+                        <%= product.seccion5.esubtitle1 %>
+                    </h3>
+                    <p  class="disenoBlanco-article2-parrafo">
+                        <%= product.seccion5.edescription1 %>
+                    </p>
+                </article>
+                <article class="disenoBlanco-article2">
+                    <h3 class="disenoBlanco-article2-titulo">
+                        <img src="/images/Producto-<%= product.id %>/<%= product.seccion5.eicon2 %>" class="icon" alt=""> <br>
+                        <%= product.seccion5.esubtitle2 %>
+                    </h3>
+                    <p  class="disenoBlanco-article2-parrafo">
+                        <%= product.seccion5.edescription2 %>
+                    </p>
+                </article>
+                <article class="disenoBlanco-article2">
+                    <h3 class="disenoBlanco-article2-titulo">
+                        <img src="/images/Producto-<%= product.id %>/<%= product.seccion5.eicon3 %>" class="icon" alt=""> <br>
+                        <%= product.seccion5.esubtitle3 %>
+                    </h3>
+                    <p  class="disenoBlanco-article2-parrafo">
+                        <%= product.seccion5.edescription2 %>
+                    </p>
+                </article>
+                <article class="disenoBlanco-article2">
+                    <h3 class="disenoBlanco-article2-titulo">
+                        <img src="/images/Producto-<%= product.id %>/<%= product.seccion5.eicon4 %>" class="icon" alt=""> <br>
+                        <%= product.seccion5.esubtitle4 %>
+                    </h3>
+                    <p  class="disenoBlanco-article2-parrafo">
+                        <%= product.seccion5.edescription4 %>
+                    </p>
+                </article>
+            </div>
+            <article class="disenoBlanco-articleImg">
+                <img src="/images/Producto-<%= product.id %>/<%= product.seccion5.eimage %>" alt="">
+            </article>
+            <form action="#contenedorProductos" method="GET"   class="disenoBlanco-form">
+                <button>
+                    Empezá ya
+                </button>
+            </form>
+        </section>
+
+        <section class="contenedorProductos" id="contenedorProductos">
+            <h2>¡Elegí una de nuestras suscripciones y potenciá tu negocio digitalmente!</h2>
+            <img class="productos-img" src="/images/Producto-<%= product.id %>/<%= product.image %>" alt="imagen de una tienda">
+                    <table>
+                        <tr>
+                            <th>
+                                <div class="tdDiv">
+                                    Beneficio
+                                </div>
+                            </th>
+                        <% product.categoryImage.forEach (category => { %>
+                            <th> 
+                                <div class="contenedorMedalla tdDiv">
+                                    <img class="medalla" src="/images/Producto-<%= product.id %>/<%= category %>" alt="imagen de medalla" style="align-self: center;">
+                                </div>
+                            </th>
+                        <% }) %>
+                        </tr>
+                        <% for (let clave in product.benefits) { %>
+                        <tr>  
+                          <% for (let i = 0; i < product.benefits[clave].length; i++) { %>
+                            <td class="beneficio">
+                                <div class="tdDiv">
+                                    <% if (product.benefits[clave][i] == "true") { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } else if (product.benefits[clave][i] == null) { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } else {%>
+                                        <%= product.benefits[clave][i] %>
+                                    <% } %>  
+                                </div>
+                            </td>
+                         <% } %>
+                        </tr>
+                        <% } %>
+
+                        <tr>
+                            <td class="beneficio">
+                                <div class="tdDiv">
+                                    Subscribirse
+                                </div>
+                            </td>
+                            <% for (let i=0; i < product.price.length; i++) { %>
+                            <td>
+                                <div class="tdDiv">
+                                    <form action="/carrito" method="get">
+                                        <button>
+                                            <% if (product.price[i] !== 0) { %>
+                                                <p>$ <%= product.price[i] %></p>
+                                                <% } else { %>
+                                                <p>GRATIS</p>
+                                                <% } %>
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                            <% } %>
+                        </tr>
+                    </table>
+    </section>
+
+<%- include('../partials/footer') %>

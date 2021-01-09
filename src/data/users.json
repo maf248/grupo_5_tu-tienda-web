@@ -1,0 +1,37 @@
+[{
+    "id": 1,
+    "firstName": "Tobias",
+    "lastName": "Blaksley",
+    "email": "tobi@dh.com",
+    "password": "hash contraseña",
+    "image": "url avatar usuario",
+    "category": "plan oro"
+},
+{
+    "id": 2,
+    "firstName": "Marcelo",
+    "lastName": "Fanego",
+    "email": "marce@dh.com",
+    "password": "hash contraseña",
+    "image": "url avatar usuario",
+    "category": "plan oro"
+},
+{
+    "id": 3,
+    "firstName": "Gonzalo",
+    "lastName": "Molina",
+    "email": "gonza@dh.com",
+    "password": "hash contraseña",
+    "image": "url avatar usuario",
+    "category": "plan oro"
+},
+{
+    "id": 4,
+    "firstName": "Sergio",
+    "lastName": "Casas",
+    "email": "sergio@dh.com",
+    "password": "hash contraseña",
+    "image": "url avatar usuario",
+    "category": "plan oro"
+}
+]

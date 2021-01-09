@@ -1,0 +1,429 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+}
+h1, h2, h3, h4, h5, h6, button, th {
+    font-family: 'Raleway', sans-serif;
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+.icon {
+    width: 7%;
+    margin-bottom: 2%;
+    transition: 600ms;
+}
+.disenoBlanco article:hover .icon, .disenoAzul article:hover .icon {
+    transform: rotate(-90deg);
+}
+button:hover {
+    transition: 300ms;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+/*BANNER 1*/
+    .banner1 {
+        padding: 2%;
+        background-image: url(/images/El-sol.jpg);
+        background-size: cover;
+        margin-top: 2%;
+    }
+    .banner1 h2 {
+        text-align: center;
+        color: white;
+        font-size: 1.2em;
+        text-transform: uppercase;
+        text-shadow: 10px 10px 15px #000;
+        animation-name: aparece;
+        animation-duration: 4s;
+        animation-timing-function: linear;
+        margin-top: 15%;
+    }
+    .banner1 p {
+        text-align: center;
+        color: white;
+        font-size: 0.75em;
+        margin-top: 1%;
+        text-shadow: 10px 10px 15px #000;
+        animation-name: aparece;
+        animation-duration: 4s;
+        animation-timing-function: linear;
+        margin-bottom: 15%;
+    }
+
+    .banner1 form {
+        margin: 0 auto;
+        margin-top: 2%;
+        width: max-content;
+        animation-name: aparece;
+        animation-duration: 4s;
+        animation-timing-function: linear;
+    }
+    @keyframes aparece {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    .banner1 button {
+        font-size: 0.75em;
+        color: white;
+        background: none;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-decoration: underline;
+        border: none;
+        text-shadow: 10px 10px 15px #000;
+    }
+    @media (min-width:565px) {
+        .banner1 h2 {
+            font-size: 1.7em;
+        }
+        .banner1 p {
+            font-size: 1.2em;
+        }
+        .banner1 button {
+            font-size: 1.2em;
+        }
+    }
+    @media (min-width: 731px) {
+        .banner1 h2 {
+            font-size: 2.2em;
+        }
+        .banner1 p {
+            font-size: 1.7em;
+        }
+    }
+    @media (min-width: 920px) {
+        .bannerEmpeza-titulo {
+            font-size: 2.7em;
+        }
+    }
+    @media (min-width: 1129px) {
+        .banner1 h2 {
+            font-size: 2.7em;
+        }
+        .banner1 p {
+            font-size: 2.2em;
+        }
+    }
+/*END BANNER 1*/
+
+/*DISENO FONDO AZUL*/
+
+.disenoAzul {
+    background-color: rgb(38, 146, 235);
+}
+.disenoAzul-articleImg {
+    display: none;
+}
+.disenoAzul-article1 {
+    border-bottom: 1px solid white;
+}
+.disenoAzul-article1-tituloPrincipal {
+    padding: 5%;
+    text-align: center;
+    color: white;
+}
+.disenoAzul-article2 {
+    border-bottom: 1px solid white;
+}
+.disenoAzul-article2-titulo {
+    padding: 2%;
+    color: white;
+    text-align: center;
+}
+.disenoAzul-article2-parrafo {
+    padding: 2%;
+    color: white;
+    text-align: center;
+}
+.disenoAzul-form {
+    margin: 1% auto;
+    width: max-content;
+}
+.disenoAzul i {
+    color: white;
+}
+.disenoAzul-form button {
+    font-size: 0.75em;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: underline;
+    border: none;
+    background-color: rgb(38, 146, 235);
+    color: white;
+}
+
+@media (min-width: 570px) {
+    .disenoAzul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .disenoAzul-article1 {
+        width: 100%;
+    }
+    .disenoAzul-articleImg {
+        display: inline-block;
+        width: 50%;
+        margin: auto;
+    }
+    .disenoAzul-articleImg img {
+        width: 100%;
+        padding: 2%;
+
+    }
+    .disenoAzul-containerArticle2 {
+        width: 50%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .disenoAzul-article2 {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .disenoAzul-article2-titulo {
+        align-self: flex-end;
+        width: 100%;
+    }
+    .disenoAzul-form button {
+        font-size: 1em;
+    }
+}
+@media (min-width: 1024px) {
+    .disenoAzul-article1-tituloPrincipal {
+        font-size: 3em;
+    }
+    .disenoAzul-article2-titulo {
+        font-size: 2em;
+    }
+    .disenoAzul-article2-parrafo {
+        font-size: 1.5em;
+    }
+}
+
+/*END DISEÑO FONDO AZUL*/
+
+/*DISEÑO FONDO BLANCO*/
+
+.disenoBlanco {
+    background-color: white;
+}
+.disenoBlanco-articleImg {
+    display: none;
+}
+.disenoBlanco-article1 {
+    border-bottom: 1px solid rgb(40, 172, 106);
+}
+.disenoBlanco-article1-tituloPrincipal {
+    padding: 5%;
+    text-align: center;
+    color:rgb(40, 172, 106);
+}
+.disenoBlanco-article2 {
+    border-bottom: 1px solid rgb(40, 172, 106);
+}
+.disenoBlanco-article2-titulo {
+    padding: 2%;
+    color: rgb(40, 172, 106);
+    text-align: center;
+}
+.disenoBlanco-article2-parrafo {
+    padding: 2%;
+    color: rgb(40, 172, 106);
+    text-align: center;
+}
+.disenoBlanco-form {
+    margin: 1% auto;
+    width: max-content;
+}
+.disenoBlanco-form button {
+    font-size: 0.75em;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: underline;
+    border: none;
+    background-color: white;
+    color: rgb(40, 172, 106);
+}
+
+@media (min-width: 570px) {
+    .disenoBlanco {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .disenoBlanco-article1 {
+        width: 100%;
+    }
+    .disenoBlanco-articleImg {
+        display: inline-block;
+        width: 50%;
+        margin: auto;
+    }
+    .disenoBlanco-articleImg img {
+        width: 100%;
+        padding: 2%
+    }
+    .disenoBlanco-containerArticle2 {
+        width: 50%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .disenoBlanco-article2 {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .disenoBlanco-article2-titulo {
+        align-self: flex-end;
+        width: 100%;
+    }
+    .disenoBlanco-form button {
+        font-size: 1em;
+    }
+}
+@media (min-width: 1024px) {
+    .disenoBlanco-article1-tituloPrincipal {
+        font-size: 3em;
+    }
+    .disenoBlanco-article2-titulo {
+        font-size: 2em;
+    }
+    .disenoBlanco-article2-parrafo {
+        font-size: 1.5em;
+    }
+}
+
+/*END DISEÑO FONDO BLANCO*/
+
+/*BANNER PRODUCTO*/
+
+.contenedorProductos {
+    display: flex;
+    flex-wrap: wrap;
+    background-color:  rgb(38, 146, 235);
+}
+.contenedorProductos h2 {
+    text-align: center;
+    color: white;
+    width: 100%;
+    margin-top: 2%;
+    padding: 1%;
+}
+.productos-img {
+    width: 25%;
+    margin: 2% auto;
+}
+.productos-img:hover { 
+animation-name: anime;
+animation-duration: 0.5s;
+animation-fill-mode: forwards;
+animation-iteration-count: 1;
+animation-timing-function: ease-out;
+-moz-animation-timing-function: ease-out;
+}
+@keyframes anime {
+25% {
+   transform: skew(10deg);
+}
+50% {
+    transform: skew(-10deg);
+}
+75% {
+    transform: skew(10deg);
+}
+}
+.medalla {
+    width: 35%;
+}
+.medalla:hover { 
+    animation-name: anime;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    -moz-animation-timing-function: ease-out;
+    }
+    @keyframes anime {
+    25% {
+       transform: skew(10deg);
+    }
+    50% {
+        transform: skew(-10deg);
+    }
+    75% {
+        transform: skew(10deg);
+    }
+}
+table {
+    width: 100%;
+    margin: 2% auto;
+}
+table input {
+    max-width: 100%;
+}
+
+th, td {
+    border-bottom: 1px solid white;
+    border-collapse: collapse;
+    text-align: center;
+    color: white;
+    transition: 500ms;
+    display: inline-block;
+    width: 25%;
+    height: 100px;
+    
+}
+th {
+    letter-spacing: 2px;
+}
+.tdDiv {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+}
+.fa-check {
+    color: white;
+}
+.fa-times {
+    color: black;
+}
+td button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    color: white;
+}
+td button:hover {
+    transition: 500ms;
+    transform: scale(2);
+}
+
+@media (max-width: 467px) {
+    table  {
+        width: 95%;
+    }
+    td, th {
+        font-size: 0.8em;
+    }
+}
+
+/*END BANNER PRODUCTO*/
+

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/stylesheets/producto-style.css">
+    <link rel="stylesheet" href="/stylesheets/crear-editar-style.css">
+</head>
+
+<%- include('../partials/navbar') %>
+
+
+
+<div class="creadorContainer">
+    <h1 class="titulo">Creador de productos</h1>
+
+    <form action="/products" method="POST" enctype="multipart/form-data">
+        
+        <%- include('../partials/product-form') %>
+
+        <div class="buttons-form">
+            <button type="reset" class="reset">Borrar campos</button>
+            <button type="submit" class="submit">Enviar</button>
+        </div>
+        
+    </form>
+</div>
+
+<%- include('../partials/footer') %>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('./partials/head') %>
+</head>
+
+<%- include('./partials/navbar') %>
+
+
+<section class="banner">
+    <a href="/products"><img src="/images/tutiendaweb-banner-sd.gif"></a>
+</section>
+
+<section class="eleginos">
+    <h2>
+        ¿Por qué elegir <em>Tu Tienda Web</em> para crear una página web profesional?
+    </h2>
+    <article>
+        <p>
+            Aquí puedes crear una página web profesional gratis por tu cuenta. Con <em>Tu Tienda Web</em>, puedes comenzar con una bonita plantilla y personalizarla a tu gusto. Cuando nos eliges, no solo obtienes un editor intuitivo único, sino que recibes el paquete completo: alojamiento web gratuito y confiable, máxima seguridad, el mejor SEO y un equipo de soporte dedicado para ayudarte en todo el camino. <br>
+            Muchas personas en todo el mundo ya eligen Tu Tienda Web para crear su sitio web gratuito. Y tú también lo puedes hacer.
+            <form action="#productos" method="get">
+                <button>
+                    Empezá Ya >
+                </button>
+            </form>
+        </p>
+    </article>
+</section>
+
+<section class="negocios">
+    <h2>
+        Para negocios de todos los tamaños.
+    </h2>
+    <article>
+        <p>
+            Emprendedores, pymes y grandes marcas. Tenemos un plan para cada uno, sin inversión inicial ni contrato de permanencia.
+            <form action="#productos" method="get">
+                <button>
+                    Empezá Ya >
+                </button>
+            </form>
+        </p>
+    </article>
+</section>
+
+<section class="comoHacerTuPaginaWeb">
+    <div class="comoHacerTuPaginaWeb-titulo">
+        <h2>
+            Cómo hacer una página web gratis
+        </h2>
+        <p>
+            Sigue estos 6 sencillos pasos para crear tu página web hoy mismo.
+        </p>
+    </div>
+
+    <article>
+        <ol> 
+            <li>
+                <strong>Regístrate gratis.</strong> Elige qué tipo de web deseas en el creador de páginas web.
+            </li>
+            <li>
+                <strong>Personaliza tu plantilla.</strong> Adáptala a tu gusto o recibe una página web a tu medida. Tú eliges.
+            </li>
+            <li>
+                <strong>Arrastra, suelta y juega.</strong> Tienes cientos de elementos de diseño. Agrega textos, galerías, videos, arte vectorial y mucho más.
+            </li>
+            <li>
+                <strong>Publica tu sitio web.</strong> Luego, compártelo con el mundo y empieza a construir tu presencia profesional hoy mismo.
+            </li>
+            <li>
+                <strong>Dirige tráfico a tu página web.</strong> Tenemos herramientas avanzadas de SEO y soluciones de marketing integradas.
+            </li>
+            <li> 
+                <strong>Prepárate para hacer negocios.</strong> Haz crecer a tus emprendimientos con nuestro servicio de tienda web: tienda online, sistema de reservas, áreas de miembros, blogs, sistema de envíos, integración con los mayores marketplaces, etc <em>(se contrata a parte)</em>.
+            </li>
+        </ol>
+        <form action="#productos" method="get">
+            <i class="fas fa-caret-right"></i>
+            <button>
+                ¡Empezá Ya!
+            </button>
+            <i class="fas fa-caret-left"></i>
+        </form>
+    </article>
+</section>
+
+<section class="productosContenedor">
+    <% products.forEach (producto => { %>
+    <article class="productosContenedor-producto">
+        <div class="productosContenedor-producto-imagen">
+            <a href="/products/<%=producto.id%>"><img src="/images/Producto-<%= producto.id %>/<%= producto.image %>"></a>
+        </div>
+        <a href="/products/<%=producto.id%>"><h2>Tu <em><%=producto.name%></em></h2></a>
+        <div class="productosContenedor-producto-planes">
+            <img class="medalla" src="/images/Producto-<%= producto.id %>/<%= producto.categoryImage[0] %>" alt="Plan Oro">
+            <img class="medalla" src="/images/Producto-<%= producto.id %>/<%= producto.categoryImage[1] %>" alt="Plan Plata">
+            <img class="medalla" src="/images/Producto-<%= producto.id %>/<%= producto.categoryImage[2] %>" alt="Plan Bronce">
+        </div>
+        <div class="productosContenedor-producto-descripcion">
+            <p>‣ Suscripción <%= producto.category[0] %>, <%= producto.category[1] %> o <%= producto.category[2] %> acorde a tus preferencias.</p>
+            <p>‣ Tendrás acceso a varias plantillas, modelos y accesorios de diseño personalizados.</p>
+            <p>‣ Todos nuestros diseños son responsive, es decir, ¡se adaptan a cualquier dispositivo!</p>
+            <p>‣ <%= producto.subtitleBanner1 %></p>
+            <p>‣ <%= producto.seccion1.atitle %></p>
+        </div>
+        <form method="get" action="/products/<%=producto.id%>">
+            <button class="productosContenedor-verMas" type="submit">Ver más...</button>
+        </form>
+    </article>
+    <% }); %>
+</section>
+
+<a name="nosotros">
+<section class="nosotrosContenedor">
+    <h2>Quienes somos...</h2>
+    <article class="nosotrosContenedor-mision-vision">
+        <p><em><b>Visión:</b></em> El mundo digital está en crecimiento y desarrollo constante. Aquí y ahora, es donde el marketing digital está a un click de distancia.</p>
+        <p><em><b>Misión:</b></em> Facilitar a nuestros usuarios herramientas digitales de avanzada, ser su aliado digital, para que puedan desarrollarse con todo el potencial de la tecnología.</p>
+    </article>
+    <article class="nosotrosContenedor-historia">
+        <h3>Historia de la empresa:</h3>
+        <p>Tu Tienda Web es una start-up creada en 2020 por un grupo de alumnos de programación web en Digital House.</p>
+        <p>¿Que mejor tarea para un grupo de programadores, que ser un puente digital entre los usuarios comúnes y todo el potencial de el mundo virtual?</p>
+    </article>
+    <article class="nosotrosContenedor-apuntamos">
+        <h3>A que apuntamos:</h3>
+        <p>Nuestra aspiración es que cualquier persona que desee tener su propia tienda online o su propia pagina web, pueda llevarlo a cabo con facilidad.</p>
+        <p>Seas un emprendedor con un proyecto, queriendo vender tus productos (físicos o virtuales). Seas un músico, artista o marca que quiera darse a conocer, mediante una página web...queremos que puedas hacerlo de forma simple y con resultados de pri</p>
+    </article>
+    <article class="nosotrosContenedor-descripcion">
+        <h3>Descripción de la empresa:</h3>
+        <p>Somos cuatro estudiantes de programación, que conjugando nuestros estudios particulares de marketing, psicología, contabilidad, experiencia en ventas y nuestro gusto por la informática...queremos ofrecer una solución digital para quienes deseen explotar todo el potencial de internet, con su tienda digital o su página web.</p>
+    </article>
+    <form method="get" action="/conocenos">
+        <button class="nosotrosContenedor-conocenos-boton" type="submit">Conocenos</button>
+    </form>
+</section>
+</a>
+
+<section class="faqs" id="faqs">
+    <article class="faqs-titulo">
+        <h3> - Preguntas Frecuentes - </h3> <h2>FAQ's</h2> <h3> - Frequently Asked Questions - </h3>
+    </article>
+    <article class="faqs-article">
+        <h4>
+            ¿Es fácil crear una página web?
+        </h4>
+        <p>
+            Sí. <em>Tu Tienda Web</em> ofrece diferentes caminos para crear tu página web gratis, para que puedas elegir el proceso de creación que te resulte más confortable. ¿Necesitas estar online rápidamente? Responde algunas preguntas simples y Tu Tienda Web IDA (Inteligencia de Diseño Artificial) te hará una página web profesional a medida en menos de 10 minutos. Si deseas trabajar con total libertad de diseño, comienza desde cero con nuestro editor intuitivo y arrastra y suelta los elementos por la pantalla. Te va a encantar.
+        </p>
+    </article>
+    <article class="faqs-article">
+        <h4>
+            ¿Puedo crear una página web sin saber código?
+        </h4>
+        <p>
+            Por supuesto. <em>Tu Tienda Web</em> está pensada exactamente para eso. Es fácil de usar, y permite que cualquiera pueda crear una página web profesional sin saber programar. En el Editor de Tu Tienda Web, puedes arrastrar y soltar los elementos y personalizar todo lo que quieras, para que coincidan el aspecto de tu página web y el de tu negocio; si sabes programar, puedes agregar funciones avanzadas con Corvid. No hay límites para tu creatividad. Después de abrir una página web, ¡el cielo es el límite!
+        </p>
+    </article>
+    <article class="faqs-article">
+        <h4>
+            ¿Cuánto cuesta crear una página web?
+        </h4>
+        <p>
+            En <em>Tu Tienda Web</em> , puedes elegir cualquiera de nuestras plantillas para crear una hermosa página web, por el tiempo que quieras, gratis. Sin embargo, a medida que quieras agregar funcionalidad, mantenimiento o más desarrollo, y tu proyecto crezca, necesitarás <a href="#productos" style="color: black;">hacer un upgrade</a> y obtener las funciones Premium imprescindibles para profesionalizar tu web.
+        </p>
+    </article>
+    <article class="faqs-article">
+        <h4>
+            ¿Qué necesito para crear una página web?
+        </h4>
+        <p>
+            ¡Simplemente empezar! Puedes crear cualquier tipo de página web con <em>Tu Tienda Web</em>. Descubre nuestras hermosas plantillas, para comenzar la tuya hoy mismo. Tener una presencia online sólida es fundamental para el éxito de cualquier proyecto o negocio.
+        </p>
+    </article>
+    <article class="faqs-article">
+        <h4>
+            ¿Qué es el diseño de una página web?
+        </h4>
+        <p>
+            El diseño es lo que le da vida y espíritu propio a cada página web, y marca el estilo, la personalidad y las características de cualquier página web y, por ende, de tu negocio. Con el creador de páginas web gratuito de <em>Tu Tienda Web</em>, el proceso de diseño es ameno e intuitivo.
+        </p>
+    </article>
+    <article class="faqs-article">
+        <h4>
+            ¿Cómo creo una página web gratis con un dominio personalizado?
+        </h4>
+        <p>
+            Puedes crear gratis una página web y adquirir un dominio con Tu Tienda Web. Para lucir instantáneamente más profesional, obtén un nombre de dominio personalizado, que le dará credibilidad a tu marca y ayudará a los visitantes a encontrarte online. Puedes comenzar a construir tu marca utilizando tu dominio en una dirección de correo electrónico personalizada (info@minegocio.com) y compartiéndolo en tus canales sociales, campañas de email marketing y más.
+        </p>
+    </article>
+    <article class="faqs-article">
+        <h4>
+            ¿Qué es el hosting?
+        </h4>
+        <p>
+            Es un servicio online que te permite publicar y mantener una página o app en la web. Cuando creas una página web en <em>Tu Tienda Web</em>, obtienes un confiable hosting web gratis, escalable y gratuito. Todo tu contenido web se almacenará en servidores seguros ubicados en todo el mundo. Así que no importa de dónde vengan tus visitantes: tu sitio web se cargará siempre rápido.
+        </p>
+    </article>
+    <article class="faqs-article">
+        <h4>
+            ¿Cómo hago para que me encuentren en Google?
+        </h4>
+        <p>
+            <em>Tu Tienda Web</em> simplifica la búsqueda de tu sitio web en Google. Con <strong>TuTiendaWeb SEO Wiz</strong>, solo debes responder algunas preguntas y agregar las palabras claves para obtener un plan de SEO personalizado que te ayude a promover tu web.
+        </p>
+    </article>
+</section>
+
+
+<%- include('./partials/footer') %>

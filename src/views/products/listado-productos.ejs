@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="/stylesheets/listado-productos-style.css">
+    <%- include('../partials/head') %>
+</head>
+
+<%- include('../partials/navbar') %>
+
+<h1>Listado de productos:</h1>
+
+<% products.forEach(producto => { %>
+<section class="listaContenedor">
+
+  <div class="productoListado">
+  <a href="/products/<%= producto.id %>">
+    <h2><%=producto.name%></h2>
+    <img src="/images/Producto-<%= producto.id %>/<%= producto.image %>" alt="logo del producto" class="logoProducto">
+  </a>
+  <h3><%= producto.titleBanner1 %></h3>
+<table class="tabla-productos">
+    <thead class=tabla-productos-titulos>
+        <tr>
+            <th><h2>Planes disponibles</h2></th>
+            <% for(let i=0; i < producto.category.length; i++){ %>
+              <td><img class="medalla" src="/images/Producto-<%= producto.id %>/<%= producto.categoryImage[i] %>" alt="imagen de una medalla"><h3> <%= producto.category[i] %> </h3></td>
+              <% }; %>
+        </tr>
+    </thead>
+    <tbody class=tabla-productos-cuerpo>
+      <tr>
+        <td><h4><%= producto.benefits.cantidadSecciones[0] %></h4></td>
+        <% for (let i= 1; i < producto.benefits.cantidadSecciones.length; i++) { %>
+
+          <td>
+            <p> <%= producto.benefits.cantidadSecciones[i] %></p>
+          </td>
+        <% } %>
+      </tr>
+      <tr>
+        <td><h4><%= producto.benefits.costoTransaccion[0] %></h4></td>
+        <% for (let i= 1; i < producto.benefits.costoTransaccion.length; i++) { %>
+
+          <td>
+            <p><%= producto.benefits.costoTransaccion[i] %></p>
+          </td>
+        <% } %>
+      </tr>
+      <tr>
+        <td><h4>Precio</h4></td>
+        <% producto.price.forEach(precio=> { %>
+
+        <td>
+          <% if (precio !== 0) { %>
+          <p>$ <%= precio %></p>
+          <% } else { %>
+          <p>GRATIS</p>
+          <% } %>
+        </td>
+        <% }) %>
+        
+      </tr> 
+    </tbody>
+</table>
+  <div class="botonesContenedor">
+    <form action="/products/<%= producto.id %>/edit">
+      <button type="submit" class="botones">Editar</button>
+    </form>
+    <form action="/products/<%= producto.id %>">
+      <button type="submit" class="botones">Ver más...</button>
+    </form>
+  </div>
+</div>
+<% }); %>
+<form class="crear-contenedor" action="/products/create">
+  <button type="submit" class="boton-crear">Crear producto nuevo</button>
+</form>
+</section>
+
+
+
+<%- include('../partials/footer') %>

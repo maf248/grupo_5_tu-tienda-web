@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="/stylesheets/users-style.css">
+    <%- include('../partials/head') %>
+</head>
+
+<%- include('../partials/navbar') %>
+
+<form class="form-registro" action="/users/register" method="POST" enctype="multipart/form-data">
+<h5> Registrate </h5>
+<input class="controls" type="text" name="firstName" placeholder="Nombre">
+<% if ( typeof errors != "undefined") {
+errors.forEach ( error => { 
+    if (error.param == "firstName") { %>
+        <p><%= error.msg %></p>
+<% }
+})
+} %>
+<input class="controls" type="text" name="lastName" placeholder="Apellido">
+<% if ( typeof errors != "undefined") {
+    errors.forEach ( error => { 
+        if (error.param == "lastName") { %>
+            <p><%= error.msg %></p>
+    <% }
+    })
+    } %>
+<input class="controls" type="email" name="email" placeholder="Email">
+<% if ( typeof errors != "undefined") {
+    errors.forEach ( error => { 
+        if (error.param == "email") { %>
+            <p><%= error.msg %></p>
+    <% }
+    })
+    } %>
+<input class="controls" type="password" name="password" placeholder="Contraseña">
+<% if ( typeof errors != "undefined") {
+    errors.forEach ( error => { 
+        if (error.param == "password") { %>
+            <p><%= error.msg %></p>
+    <% }
+    })
+    } %>
+<input class="controls" type="password" name="password" placeholder="Repetir Contraseña">
+<% if ( typeof errors != "undefined") {
+    errors.forEach ( error => { 
+        if (error.param == "password") { %>
+            <p><%= error.msg %></p>
+    <% }
+    })
+    } %>
+<input class="buttons" type="submit"  value="Registrarse" >
+
+<div class="form-oauth">
+    <div class="form-oauth-titulo">Registro rápido con:</div>
+    <div class="form-oauth-iconos">
+        <a href="#"><img src="/icons/social-media/google.png"></a>
+        <a href="#"><img src="/icons/social-media/facebook.png"></a>
+    </div>
+    </div>
+</form>
+
+<%- include('../partials/footer') %>
