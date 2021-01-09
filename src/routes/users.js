@@ -21,7 +21,7 @@ const upload = multer({storage: storage});
 
 /* Ruta a Usuarios */
 router.get('/login', usersController.login);
-//router.post('/login', usersController.validate);
+router.post('/login', usersController.validate);
 router.get('/register', usersController.register);
 router.post('/register', registrationValidate , usersController.createUser);
 

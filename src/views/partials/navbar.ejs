@@ -20,8 +20,12 @@
         </nav>
         <div class="barraSuperior-navExtra">
             <div class="barraSuperior-navExtra-usuario">
+                <% if (typeof locals.user != 'undefined') { %>
+                    <p> <%= locals.user %> </p>
+                <% } else { %>
                 <a class="barraSuperior-navExtra-usuario-registro" href="/users/register">Registrarse</a>
                 <a class="barraSuperior-navExtra-usuario-login" href="/users/login">Iniciar Sesión</a>
+                <% } %>
             </div>
             <a href="/carrito"><img class="barraSuperior-navExtra-carrito" src="/icons/carrito-color-borde.svg"></a>
         </div>

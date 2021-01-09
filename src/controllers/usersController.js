@@ -2,6 +2,7 @@ const {validationResult} = require('express-validator');
 const bcryptjs = require('bcryptjs');
 const path = require('path');
 const fs = require('fs');
+const { localsName } = require('ejs');
 
 const usersDir = path.join(__dirname, '..', 'data', 'users.json');
 const users = JSON.parse(fs.readFileSync(usersDir, 'utf-8'));
@@ -10,6 +11,25 @@ const usersController = {
     login: function(req, res, next) {
                 res.render('./users/login');
             },
+    validate: function(req, res, next) {
+        users.forEach(user => {
+            if (req.body.user == user.email) {
+            var check = bcryptjs.compareSync(req.body.password, user.password);
+            if (check) {
+                
+                req.session.user = user;
+                res.locals.user = req.session.user;
+
+                res.send("Bienvenido, " + user.firstName + " iniciaste sesión!");
+               
+               
+            } else {
+                res.send ("Hubo un problema para iniciar sesión.")
+             }
+            }
+        })
+        
+    },
     register: function(req, res, next) {
         res.render('./users/register');
     },
