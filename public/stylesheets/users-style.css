@@ -1,6 +1,4 @@
 /* Estilos en común */
-
-
 * {
     margin: 0;
     padding: 0;
@@ -29,12 +27,10 @@
 
 
 /* Estilo de Login */
-
-
 .form-login {
     font-family: Arial;
     width: 400px;
-    height: 400px;
+    height: fit-content;
     background: white;
     box-shadow: 7px 13px 37px #000;
     padding: 20px 30px;
@@ -67,14 +63,14 @@
     background: #017bab;
     border: none;
     color: greenyellow;
-    margin-bottom: 16px;
+    margin: 15px 0px;
     cursor: pointer;
 }
 .form-login p {
     height: auto;
     text-align: center;
 }
-.form-login a {
+.form-login a, .form-login label {
     color:green;
     text-decoration: none;
     font-size: 14px;
@@ -82,7 +78,14 @@
 .form-login a:hover {
     text-decoration: underline;
 }
-
+.rememberMe {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.rememberMe input {
+    margin: 0px 5px;
+}
 
 /* Estilo de Registro */
 
