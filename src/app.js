@@ -12,7 +12,7 @@ var indexRouter = require('./routes/index');
 var carritoRouter = require('./routes/carrito');
 var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
-var rememberMiddleware = require('./middlewares/rememberMiddleware')
+var loginMiddleware = require('./middlewares/loginMiddleware');
 
 var app = express();
 
@@ -27,8 +27,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(methodOverride('_method'));
 app.use(session({secret: "Mensaje secreto grupo 5", resave: false, saveUninitialized: true}));
-app.use(rememberMiddleware);
-app.use(function (req, res, next) { res.locals.user = req.session.user; next()});
+app.use(loginMiddleware);
 
 app.use('/', indexRouter);
 app.use('/products', productsRouter);
