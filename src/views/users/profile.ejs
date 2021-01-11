@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="/stylesheets/users-style.css">
+    <%- include('../partials/head') %>
+</head>
+
+<%- include('../partials/navbar') %>
+
+<form action="/" method="GET" class="profileForm">
+
+    <label for="imagenPerfilInput" class="imagenPerfilInput">  
+
+        <i class="far fa-file-image" style="width: 100%; text-align: center;"></i>
+
+    </label>
+
+    <input type="file" name="imagenPerfilInput" class="imagenPerfilInput">
+
+    <h1 class="NombreYApellido">Nombre y apellido</h1>
+
+    <p class="TipoPlan">Plan contratado</p>
+
+</form>
+
+<%- include('../partials/footer') %>

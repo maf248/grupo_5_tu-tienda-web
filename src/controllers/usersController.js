@@ -3,6 +3,7 @@ const bcryptjs = require('bcryptjs');
 const path = require('path');
 const fs = require('fs');
 const { localsName } = require('ejs');
+const session = require('express-session');
 
 const usersDir = path.join(__dirname, '..', 'data', 'users.json');
 const users = JSON.parse(fs.readFileSync(usersDir, 'utf-8'));
@@ -18,12 +19,12 @@ const usersController = {
             if (check) {
                 
                 req.session.user = user;
-                res.locals.user = req.session.user;
+
                 if(req.body.remember != undefined ) {
                     res.cookie('recordame', user.email, {maxAge: 240000})
                 }
 
-                res.send("Bienvenido, " + user.firstName + " iniciaste sesión!");
+                res.redirect('./profile');
                
                
             } else {
@@ -63,6 +64,9 @@ const usersController = {
 
         res.send('Te registraste correctamente');
         }
+    },
+    profile: function (req, res, next) {
+        res.render('./users/profile', { session: req.session.user });
     }
 }
 

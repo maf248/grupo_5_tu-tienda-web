@@ -141,3 +141,23 @@
    .form-registro a:hover {
        text-decoration: underline;
    }
+   .profileForm {
+       width: 100%;
+       padding: 5%;
+       display: flex;
+       flex-direction: column;
+   }
+   .imagenPerfilInput {
+       width: fit-content;
+       align-self: center;
+   }
+   .fa-file-image {
+       font-size: 5em;
+       margin-bottom: 10%;
+   }
+   .nombreYApellido {
+        align-self: center;
+   }
+   .tipoPlan {
+        align-self: center;
+   }

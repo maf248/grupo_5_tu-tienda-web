@@ -1,5 +1,6 @@
 const path = require('path');
 const fs = require('fs');
+const { localsName } = require('ejs');
 
 const usersDir = path.join(__dirname, '..', 'data', 'users.json');
 const users = JSON.parse(fs.readFileSync(usersDir, 'utf-8'));
@@ -12,7 +13,8 @@ function rememberMiddleware(req, res, next) {
                req.session.user = user;
             }
         })
-}
+  }
+
 next ();
 }
 module.exports = rememberMiddleware;
