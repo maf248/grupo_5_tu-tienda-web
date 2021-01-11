@@ -21,7 +21,7 @@
         <div class="barraSuperior-navExtra">
             <div class="barraSuperior-navExtra-usuario">
                 <% if (typeof locals.user != 'undefined') { %>
-                    <p> <%= locals.user %> </p>
+                    <p> <%= locals.user.firstName %> </p>
                 <% } else { %>
                 <a class="barraSuperior-navExtra-usuario-registro" href="/users/register">Registrarse</a>
                 <a class="barraSuperior-navExtra-usuario-login" href="/users/login">Iniciar Sesión</a>

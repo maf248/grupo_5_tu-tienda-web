@@ -7,19 +7,36 @@
 
 <%- include('../partials/navbar') %>
 
-<form action="/" method="GET" class="profileForm">
+<form action="/" method="GET" class="imageForm">
 
     <label for="imagenPerfilInput" class="imagenPerfilInput">  
 
-        <i class="far fa-file-image" style="width: 100%; text-align: center;"></i>
+        <i class="far fa-file-image"></i>
 
     </label>
 
-    <input type="file" name="imagenPerfilInput" class="imagenPerfilInput" id="imagenPerfilInput">
+    <input type="file" name="imagenPerfilInput" class="imagenPerfilInputb" id="imagenPerfilInput">
 
-    <h1 class="NombreYApellido">Nombre y apellido</h1>
+</form>
 
-    <p class="TipoPlan">Plan contratado</p>
+<form action="/" method="POST" class="datosPersonales">
+    
+        <input type="text" name="nombreYApellido" placeholder="Nombre">
+
+
+        <input type="text" name="nombreYApellido" placeholder="Apellido">
+
+        <input type="email" name="nombreYApellido" placeholder="Email">
+
+
+        <input type="password" name="nombreYApellido" placeholder="Actualizar contraseña">
+
+
+        <input type="text" name="planContratado" placeholder="Plan Contratado">
+
+
+    <button type="submit">Guardar Cambios</button>
+
 
 </form>
 
