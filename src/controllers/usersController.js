@@ -19,6 +19,9 @@ const usersController = {
                 
                 req.session.user = user;
                 res.locals.user = req.session.user;
+                if(req.body.remember != undefined ) {
+                    res.cookie('recordame', user.email, {maxAge: 240000})
+                }
 
                 res.send("Bienvenido, " + user.firstName + " iniciaste sesión!");
                
