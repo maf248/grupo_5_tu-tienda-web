@@ -22,7 +22,7 @@ const usersController = {
                 req.session.user = user;
 
                 if(req.body.remember != undefined ) {
-                    res.cookie('recordame', user.email, {maxAge: 240000})
+                    res.cookie('recordame', user.email, {maxAge: 1000*60*60*24})
                 }
 
                 res.redirect('./profile/' + user.id);
@@ -40,34 +40,42 @@ const usersController = {
     createUser: function(req, res) {
         
         let errors = validationResult(req);
-        console.log(errors)
-
+        let mailDuplicated = false;
+        
         if (!errors.isEmpty()) {
             return res.render('./users/register', {errors: errors.errors} );
         } else {
             users.forEach( user => {
                 if (user.email == req.body.email) {
-                    return res.send('Este mail ya está registrado')
+                    mailDuplicated = true;
+                    return res.send('Este mail ya está registrado');
                 }
             });
-        users.push( 
-            {
-            "id": users.length +1,
-            "firstName": req.body.firstName,
-            "lastName": req.body.lastName,
-            "email": req.body.email,
-            "password":  bcryptjs.hashSync(req.body.password, 10)
-            }
-        )
-        const usersJSON = JSON.stringify(users);
-        fs.writeFileSync(usersDir, usersJSON);
+            
+            if (!mailDuplicated) {       
+            users.push( 
+                {
+                "id": users.length +1,
+                "firstName": req.body.firstName,
+                "lastName": req.body.lastName,
+                "email": req.body.email,
+                "password":  bcryptjs.hashSync(req.body.password, 10)
+                }
+            )
+            const usersJSON = JSON.stringify(users);
+            fs.writeFileSync(usersDir, usersJSON);
 
-        res.send('Te registraste correctamente');
+            res.redirect('/users/login');
+            }
         }
     },
     profile: function (req, res, next) {
+        if (req.session.user != undefined) {
+            res.render('./users/profile');
+        } else {
+            res.redirect('/users/login')
+        }
 
-        res.render('./users/profile');
     },
     editProfile: function (req, res, next) {
         /*-----Acá editamos la info del usuario-----*/
@@ -77,7 +85,10 @@ const usersController = {
         users[req.params.id -1].email = req.body.email
 
         if (req.body.password != "") {
-            users[req.params.id -1].password = bcryptjs.hashSync(req.body.password, 10);
+            if (req.body.passwordRepeat == req.body.password) {
+                users[req.params.id -1].password = bcryptjs.hashSync(req.body.password, 10);
+            }
+            
         }
         if (req.body.plan != "") {
             users[req.params.id -1].plan = req.body.plan;
@@ -104,6 +115,14 @@ const usersController = {
 		fs.writeFileSync(usersDir, usersJSON);
 
         res.redirect('/users/profile/'+ req.params.id)
+    },
+    logout: function (req, res, next) {
+
+        
+        res.cookie('recordame', '', {maxAge: 0});
+        delete req.session.user;
+
+        res.redirect('/');
     }
 }
 

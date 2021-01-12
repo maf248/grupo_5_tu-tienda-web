@@ -13,4 +13,5 @@ module.exports = [
     check('password')
         .isStrongPassword()
         .withMessage('La contraseña debe tener un mínimo de 8 caracteres, incluyendo una minúscula, una mayúscula, un número y un símbolo'),
+
 ]

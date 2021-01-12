@@ -10,9 +10,11 @@
 <form action="/users/profile/<%= locals.user.id %>/avatar" method="POST" class="imageForm" enctype="multipart/form-data">
 
     <label for="imagenPerfilInput" class="imagenPerfilInput">  
-        
-        <i class="far fa-file-image"></i>
-
+        <% if (locals.user.image != undefined) { %>
+        <img class="imagenPerfil" src="/images/users/<%= locals.user.image %>" alt="Avatar o imagen de perfil">
+       <% } else { %>
+        <img class="imagenPerfil" src="/images/users/default-avatar.svg" alt="Avatar o imagen de perfil">
+        <% } %>
     </label>
 
     <input type="file" name="imagenPerfilInput" class="imagenPerfilInputb" id="imagenPerfilInput" required>
@@ -31,9 +33,13 @@
 
     <input type="password" name="password" placeholder="Actualizar contraseña">
 
-    <input type="text" name="plan" placeholder="Acá va tu plan">
+    <input type="password" name="passwordRepeat" placeholder="Repetí tu nueva contraseña">
 
-    <input type="text" name="category" placeholder="Acá va tu categoría">
+    
+
+    <h4>Tu plan: </h4> <p> <% if(locals.user.plan != undefined) { %> <%= locals.user.plan %> <% } else { %> Todavia no seleccionaste ningun plan <% } %></p>
+    
+    <h4>Tu categoría: </h4> <p> <% if(locals.user.category != undefined) { %> <%= locals.user.category %> <% } else { %> Todavia no seleccionaste ninguna categoría <% } %></p>
 
 
     <button type="submit">Guardar Cambios</button>

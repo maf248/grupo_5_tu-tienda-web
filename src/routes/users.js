@@ -28,9 +28,10 @@ const upload = multer({storage: storage});
 router.get('/login', usersController.login);
 router.post('/login', usersController.validate);
 router.get('/register', usersController.register);
-router.post('/register', registrationValidate , usersController.createUser);
+router.post('/register', registrationValidate, usersController.createUser);
 router.get('/profile/:id', usersController.profile);
-router.patch('/profile/:id', usersController.editProfile);
+router.patch('/profile/:id', registrationValidate, usersController.editProfile);
 router.post('/profile/:id/avatar', upload.any(), usersController.photoUpdate);
+router.post('/logout', usersController.logout);
 module.exports = router;
 

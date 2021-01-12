@@ -170,10 +170,9 @@
    .imagenPerfilInputb {
        display: none;
    }
-   .fa-file-image {
-       font-size: 5em;
-       width: 100%; 
-       text-align: center
+   .imagenPerfil {
+        width: 100%;
+        max-width: 150px;
    }
    .datosPersonales {
        display: flex;
