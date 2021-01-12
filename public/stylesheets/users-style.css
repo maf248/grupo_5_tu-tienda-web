@@ -145,8 +145,27 @@
    /* A partir de acá comienza el estilo de la página de profile */
 
    .imageForm {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
        width: 100%;
-       padding: 5%;
+       padding: 3%;
+   }
+   .imageForm button {
+    align-self: center;
+    width: fit-content;
+    margin-top: 10px;
+    border: none;
+    font-size: 0.7em;
+    text-align: center;
+    padding: 10px;
+    outline: none;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 3px;
+    background-color: rgb(38, 146, 235); 
+   }
+   .imageForm button:hover {
+       cursor: pointer;
    }
    .imagenPerfilInputb {
        display: none;
@@ -182,4 +201,7 @@
     font-family: 'Montserrat', sans-serif;
     border-radius: 3px;
     background-color: rgb(38, 146, 235);
+   }
+   .datosPersonales button:hover {
+       cursor: pointer;
    }

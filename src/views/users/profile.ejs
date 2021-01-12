@@ -7,15 +7,17 @@
 
 <%- include('../partials/navbar') %>
 
-<form action="/" method="GET" class="imageForm">
+<form action="/avatar" method="POST" class="imageForm" enctype="multipart/form-data">
 
     <label for="imagenPerfilInput" class="imagenPerfilInput">  
-
+        
         <i class="far fa-file-image"></i>
 
     </label>
 
     <input type="file" name="imagenPerfilInput" class="imagenPerfilInputb" id="imagenPerfilInput">
+    
+    <button type="submit">Actualizar avatar</button>
 
 </form>
 
