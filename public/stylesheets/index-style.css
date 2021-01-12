@@ -436,46 +436,6 @@ h1, h2, h3, h4, h5, h6, button {
 .faqs-titulo:hover h3{
     display: inline-block;
 }
-.faqs-titulo:hover h2 {
-    animation-name: faqs;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-    animation-iteration-count: 1;
-    animation-timing-function: ease-out;
-    -moz-animation-timing-function: ease-out;
-    }
-@keyframes faqs {
-    10% {
-        transform: rotateY(36deg);
-    }
-    20% {
-        transform: rotateY(72deg);
-    }
-    30% {
-        transform: rotateY(108deg);
-    }
-    40% {
-        transform: rotateY(144deg);
-    }
-    50% {
-        transform: rotateY(180deg);
-    }
-    60% {
-        transform: rotateY(216deg);
-    }
-    70% {
-        transform: rotateY(252deg);
-    }
-    80% {
-        transform: rotateY(288deg);
-    }
-    90% {
-        transform: rotateY(324deg);
-    }
-    100% {
-        transform: rotateY(360deg);
-    }
-}   
 
 .faqs-article {
     width: 50%;
