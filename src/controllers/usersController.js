@@ -71,16 +71,29 @@ const usersController = {
     },
     editProfile: function (req, res, next) {
         /*-----Acá editamos la info del usuario-----*/
-        users[req.session.id -1].firstName = req.body.firstName
-        users[req.session.id -1].lastName = req.body.lastName
-        users[req.session.id -1].email = req.body.email
-        users[req.session.id -1].password = req.body.password
+        
+        users[req.params.id -1].firstName = req.body.firstName
+        users[req.params.id -1].lastName = req.body.lastName
+        users[req.params.id -1].email = req.body.email
+
+        if (req.body.password != "") {
+            users[req.params.id -1].password = bcryptjs.hashSync(req.body.password, 10);
+        }
+        if (req.body.plan != "") {
+            users[req.params.id -1].plan = req.body.plan;
+        }
+
+        if (req.body.category != "") {
+            users[req.params.id -1].category = req.body.category;
+        }
+
+        
 
         /*-----Guardamos datos en el users.json-----*/
 
         const usersJSON = JSON.stringify(users);
 		fs.writeFileSync(usersDir, usersJSON);
-		res.redirect('/profile/:id');
+		res.redirect("/users/profile");
 
     }
 }

@@ -15,25 +15,25 @@
 
     </label>
 
-    <input type="file" name="imagenPerfilInput" class="imagenPerfilInputb" id="imagenPerfilInput">
+    <input type="file" name="imagenPerfilInput" class="imagenPerfilInputb" id="imagenPerfilInput" required>
     
     <button type="submit">Actualizar avatar</button>
 
 </form>
 
-<form action="/users/profile/<%= locals.user.id %>" method="POST" class="datosPersonales">
+<form action="/users/profile/<%= locals.user.id %>?_method=PATCH" method="POST" class="datosPersonales">
     
-    <input type="text" name="nombreYApellido" value="<%=locals.user.firstName%>">
+    <input type="text" name="firstName" value="<%=locals.user.firstName%>">
 
-    <input type="text" name="nombreYApellido" value="<%=locals.user.lastName%>">
+    <input type="text" name="lastName" value="<%=locals.user.lastName%>">
 
-    <input type="email" name="nombreYApellido" value="<%=locals.user.email%>">
+    <input type="email" name="email" value="<%=locals.user.email%>">
 
-    <input type="password" name="nombreYApellido" placeholder="Actualizar contraseña">
+    <input type="password" name="password" placeholder="Actualizar contraseña">
 
-    <input type="text" name="planContratado" placeholder="Acá va tu plan">
+    <input type="text" name="plan" placeholder="Acá va tu plan">
 
-    <input type="text" name="categoriaContratada" placeholder="Acá va tu categoría">
+    <input type="text" name="category" placeholder="Acá va tu categoría">
 
 
     <button type="submit">Guardar Cambios</button>
