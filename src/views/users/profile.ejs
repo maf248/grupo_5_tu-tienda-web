@@ -21,18 +21,18 @@
 
 <form action="/" method="POST" class="datosPersonales">
     
-        <input type="text" name="nombreYApellido" placeholder="Nombre">
+        <input type="text" name="nombreYApellido" value="<%=locals.user.firstName%>">
 
 
-        <input type="text" name="nombreYApellido" placeholder="Apellido">
+        <input type="text" name="nombreYApellido" value="<%=locals.user.lastName%>">
 
-        <input type="email" name="nombreYApellido" placeholder="Email">
-
-
-        <input type="password" name="nombreYApellido" placeholder="Actualizar contraseña">
+        <input type="email" name="nombreYApellido" value="<%=locals.user.email%>">
 
 
-        <input type="text" name="planContratado" placeholder="Plan Contratado">
+        <input type="password" name="nombreYApellido" value="<%=locals.user.password%>">
+
+
+        <input type="text" name="planContratado" value="<%=locals.user.text%>">
 
 
     <button type="submit">Guardar Cambios</button>

@@ -20,15 +20,6 @@ const storage = multer.diskStorage({
 const upload = multer({storage: storage});
 
 
-/*Ruta CHECK de prueba */
-router.get('/check', function(req, res){
-    if(req.session.user == undefined) {
-        res.send('No estas logueado');
-    } else {
-        res.send('El usuario logueado es ' + req.session.user.email);
-    }
-})
-
 /* Rutas a Usuarios */
 router.get('/login', usersController.login);
 router.post('/login', usersController.validate);
