@@ -118,7 +118,7 @@ button:hover {
 /*DISENO FONDO AZUL*/
 
 .disenoAzul {
-    background-color: rgb(38, 146, 235);
+    background-color: rgb(100, 197, 149);
 }
 .disenoAzul-articleImg {
     display: none;
@@ -157,7 +157,7 @@ button:hover {
     text-transform: uppercase;
     text-decoration: underline;
     border: none;
-    background-color: rgb(38, 146, 235);
+    background-color: rgb(100, 197, 149);
     color: white;
 }
 
@@ -314,7 +314,7 @@ button:hover {
 .contenedorProductos {
     display: flex;
     flex-wrap: wrap;
-    background-color:  rgb(38, 146, 235);
+    background-color:  rgb(100, 197, 149);
 }
 .contenedorProductos h2 {
     text-align: center;

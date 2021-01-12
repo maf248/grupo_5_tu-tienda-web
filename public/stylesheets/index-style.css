@@ -2,8 +2,6 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-}
-body {
     font-family: 'Montserrat', sans-serif;
 }
 h1, h2, h3, h4, h5, h6, button {
@@ -18,8 +16,6 @@ h1, h2, h3, h4, h5, h6, button {
 .barraSuperior {
     display: flex;
     flex-direction: row;
-    border: 1px solid black;
-    border-radius: 0 0 20px 20px;
     align-items: center;
     align-content: flex-end;
     justify-content: center;
@@ -95,8 +91,6 @@ h1, h2, h3, h4, h5, h6, button {
     min-width: fit-content;
     align-items: center;
     justify-content: space-around;
-    background-color: rgb(100, 197, 149);
-    border-radius: 0px 0px 20px 0px;
 }
 .barraSuperior-navExtra-usuario {
     display: flex;
@@ -108,8 +102,10 @@ h1, h2, h3, h4, h5, h6, button {
     padding: 5px;
 }
 .barraSuperior-navExtra-usuario-login:hover, .barraSuperior-navExtra-usuario-registro:hover {
-    background-color: rgba(255, 255, 255, 0.6);
-    box-shadow: 5px 5px 50px 5px white;
+    background-color: rgba(100, 197, 149, 0.7);
+    box-shadow: 5px 5px 20px 5px rgba(100, 197, 149, 0.7);
+    padding: 3px;
+    box-sizing: border-box;
     border-radius: 20px;
 }
 .barraSuperior-navlist-links a {
@@ -153,31 +149,8 @@ h1, h2, h3, h4, h5, h6, button {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    background: linear-gradient(270deg,rgba(38,146,235,0.5) 40%,rgba(255,255,255,1) 100%);
     margin-top: 15px;
-}
-.eleginos:hover {
-    transition: 300ms;
-    animation-name: elegir;
-    animation-duration: 3s;
-    animation-fill-mode: both;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-out;
-    -moz-animation-timing-function: ease-out;
-    }
-@keyframes elegir {
-    25% {
-        background-color: rgba(38, 146, 235, 0.8);
-    }
-    50% {
-        background-color: rgba(38,146,235, 0.5);
-    }
-    75% {
-        background-color: rgba(38,146,235, 0.1);
-    }
-    100% {
-        background-color: rgba(38,146,235, 0.5);
-    }
+    margin-bottom: 5%;
 }
 .eleginos h2 {
     width: 50%;
@@ -211,30 +184,6 @@ h1, h2, h3, h4, h5, h6, button {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    background: linear-gradient(90deg, rgba(100,197,121,0.6) 40%, rgba(255,255,255,1) 100%);
-}
-.negocios:hover {
-    transition: 300ms;
-    animation-name: negocios;
-    animation-duration: 3s;
-    animation-fill-mode: both;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-out;
-    -moz-animation-timing-function: ease-out;
-    }
-@keyframes negocios {
-    25% {
-        background-color: rgba(100, 197, 121, 0.8);
-    }
-    50% {
-        background-color: rgba(100, 197, 121, 0.5);
-    }
-    75% {
-        background-color: rgba(100, 197, 121, 0.1);
-    }
-    100% {
-        background-color: rgba(100, 197, 121, 0.5);
-    }
 }
 .negocios h2 {
     width: 50%;
@@ -299,7 +248,7 @@ h1, h2, h3, h4, h5, h6, button {
 }
 .comoHacerTuPaginaWeb i {
     padding: 0px 10px;
-    color: rgb(38, 146, 235);
+    color: rgb(100, 197, 149);
 }
 
 /*Productos*/
@@ -321,9 +270,9 @@ h1, h2, h3, h4, h5, h6, button {
     margin: 20px;
     width: 40%;
     padding: 20px;
-    border: 5px dotted rgb(40, 172, 106); 
+    border: 5px dotted rgb(100, 197, 149);
     border-radius: 30px 0px 30px 0px;
-    background-color: rgb(38, 146, 235);
+    background-color: rgb(100, 197, 149);
     box-shadow: 7px 13px 37px #000;
 }
 .productosContenedor-producto form {
@@ -378,7 +327,7 @@ h1, h2, h3, h4, h5, h6, button {
 .productosContenedor-verMas {
     margin: 10px;
     font-size: 1.3em;
-    background-color: rgb(38, 146, 235);
+    background-color: rgb(100, 197, 149);
     border: none;
     cursor: pointer;
     align-self: flex-end;
@@ -394,7 +343,6 @@ h1, h2, h3, h4, h5, h6, button {
 
 /*Quienes somos*/
 .nosotrosContenedor {
-    background: linear-gradient(90deg, rgba(100,197,121,0.4) 10%, rgba(255,255,255,1) 100%);
     border: 5px solid rgb(100, 197, 149);
     border-radius: 20px;
     display: flex;
@@ -474,8 +422,8 @@ h1, h2, h3, h4, h5, h6, button {
     opacity: 0.5;
     width: 40%;
     text-align: center;
-    background: radial-gradient(rgba(38, 146, 235,1) 5%, rgba(38,146,235,0.1) 100%);
-    box-shadow: 0px 0px 10px 0px rgba(38, 146, 235, 0.5);
+    background: rgb(100, 197, 149);
+    box-shadow: 0px 0px 10px 0px rgba(100, 197, 149, 0.5);
     border-radius: 20px;    
 }
 .faqs-titulo h2 {
@@ -483,7 +431,7 @@ h1, h2, h3, h4, h5, h6, button {
     text-align: center;
     font-size: 2em;
     width: 20%;
-    background: radial-gradient(ellipse,rgba(38, 146, 235,1) 5%, rgba(38,146,235,0.1) 75%, rgb(255,255,255) 95%);
+    background: radial-gradient(ellipse,rgba(39, 126, 82, 1) 5%, rgba(38,146,235,0.1) 75%, rgb(255,255,255) 95%);
 }
 .faqs-titulo:hover h3{
     display: inline-block;
@@ -569,8 +517,6 @@ h1, h2, h3, h4, h5, h6, button {
 }
 .piePagina-contacto {
     width: 100%;
-    background-color: white;
-    border-radius: 35%;
     align-self: center;
     display: flex;
     flex-direction: row;
