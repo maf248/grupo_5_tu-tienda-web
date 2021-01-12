@@ -25,7 +25,7 @@ const usersController = {
                     res.cookie('recordame', user.email, {maxAge: 240000})
                 }
 
-                res.redirect('./profile/' + req.session.user.id );
+                res.redirect('./profile/' + user.id);
                
             } else {
                 res.send ("Hubo un problema para iniciar sesión.")
@@ -93,8 +93,17 @@ const usersController = {
 
         const usersJSON = JSON.stringify(users);
 		fs.writeFileSync(usersDir, usersJSON);
-		res.redirect("/users/profile");
+		res.redirect('/users/profile/'+ req.params.id);
 
+    },
+    photoUpdate: function (req, res, next) {
+        
+        users[req.params.id -1].image = req.files[0].filename;
+
+        const usersJSON = JSON.stringify(users);
+		fs.writeFileSync(usersDir, usersJSON);
+
+        res.redirect('/users/profile/'+ req.params.id)
     }
 }
 
