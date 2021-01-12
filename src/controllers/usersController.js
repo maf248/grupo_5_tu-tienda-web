@@ -8,6 +8,7 @@ const session = require('express-session');
 const usersDir = path.join(__dirname, '..', 'data', 'users.json');
 const users = JSON.parse(fs.readFileSync(usersDir, 'utf-8'));
 
+
 const usersController = {
     login: function(req, res, next) {
                 res.render('./users/login');
@@ -24,8 +25,7 @@ const usersController = {
                     res.cookie('recordame', user.email, {maxAge: 240000})
                 }
 
-                res.redirect('./profile');
-               
+                res.redirect('./profile/' + req.session.user.id );
                
             } else {
                 res.send ("Hubo un problema para iniciar sesión.")
@@ -66,7 +66,22 @@ const usersController = {
         }
     },
     profile: function (req, res, next) {
-        res.render('./users/profile', { session: req.session.user });
+
+        res.render('./users/profile');
+    },
+    editProfile: function (req, res, next) {
+        /*-----Acá editamos la info del usuario-----*/
+        users[req.session.id -1].firstName = req.body.firstName
+        users[req.session.id -1].lastName = req.body.lastName
+        users[req.session.id -1].email = req.body.email
+        users[req.session.id -1].password = req.body.password
+
+        /*-----Guardamos datos en el users.json-----*/
+
+        const usersJSON = JSON.stringify(users);
+		fs.writeFileSync(usersDir, usersJSON);
+		res.redirect('/profile/:id');
+
     }
 }
 
