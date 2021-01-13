@@ -553,7 +553,7 @@
                     <div class="tdDiv">
                         <!--Elegir titulo beneficio 1-->
                         <label for="<%= indexBenefits[i] %>[0]">Beneficio:</label> <br>
-                        <input class="inputBeneficio" type="text" name="<%= indexBenefits[i] %>[0]" placeholder="Escribí el título aquí">
+                        <input class="inputBeneficio" type="text" name="<%= indexBenefits[i] %>[0]" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.benefits[indexBenefits[i]][0] %>" <% } else { %> placeholder="Escribí aquí el beneficio" <% } %>>
                     </div>
                 </td>
                 <td>
