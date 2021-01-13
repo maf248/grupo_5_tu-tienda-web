@@ -21,10 +21,19 @@
         <div class="barraSuperior-navExtra">
             <div class="barraSuperior-navExtra-usuario">
                 <% if (typeof locals.user != 'undefined') { %>
-                    <a href="/users/profile/<%= locals.user.id %>"><p> <%= locals.user.firstName %> </p></a>
+                    <a href="/users/profile/<%= locals.user.id %>">
+                        <% if (locals.user.image != undefined) { %>
+                            <img src="/images/users/<%= locals.user.image %>" alt="Imagen de perfil de usuario" class="imagenPerfilNavbar">
+                        <% } else { %>
+                            
+                        <% } %>
+                        <div class="nombreYLogout">
+                        <p class="nombreUsuario"> <%= locals.user.firstName %> </p>
+                    </a>
                     <form action="/users/logout" method="POST">
-                        <button> X </button>
+                        <button class="logout"> X </button>
                     </form>
+                </div>
                 <% } else { %>
                 <a class="barraSuperior-navExtra-usuario-registro" href="/users/register">Registrarse</a>
                 <a class="barraSuperior-navExtra-usuario-login" href="/users/login">Iniciar Sesión</a>

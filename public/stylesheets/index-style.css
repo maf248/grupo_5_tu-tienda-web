@@ -118,7 +118,27 @@ h1, h2, h3, h4, h5, h6, button {
     box-sizing: border-box;
     border-radius: 20px;
 }
-
+.barraSuperior-navExtra-usuario a {
+    display: flex;
+    justify-content: center;
+}
+.imagenPerfilNavbar {
+    width: 100%;
+    max-width: 50px;
+    align-self: center;
+    border-radius: 5px;
+}
+.nombreYLogout {
+    display: flex;
+}
+.nombreUsuario {
+    margin-right: 4px;
+}
+.logout {
+    border: none;
+    background-color: none;
+    cursor: pointer;
+}
 /* Acá termina la barra superior de navegacion */
 
 /* BANNER */
