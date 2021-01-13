@@ -5,7 +5,7 @@
     font-family: 'Montserrat', sans-serif;
     outline: none;
 }
-h1, h2, h3, h4, h5, h6, button {
+h1, h2, h3, h4, h5, h6 {
     font-family: 'Raleway', sans-serif;
 }
 h1 {
@@ -100,12 +100,12 @@ h1 {
 .botonesContenedor form {
     width: fit-content;
 }
+.botonesContenedor a {
+    font-family: 'Raleway', sans-serif;
+}
 .botones {
     justify-self: flex-end;
-    border: 1px solid rgb(100, 197, 149);
-    background-color: rgb(100, 197, 149);
     font-size: 1.3em;
-    cursor: pointer;
 }
 .botones:hover {
     text-decoration: underline;
@@ -116,12 +116,16 @@ h1 {
     display: flex;
 }
 .boton-crear {
+    font-family: 'Raleway', sans-serif;
+    text-decoration: none;
+    color: black;
+    text-align: center;
     width: 25%;
     min-width: fit-content;
     white-space: nowrap;
     padding: 10px;
     background-color: rgb(100, 197, 149);
-    font-size: 1.2em;
+    font-size: 1.3em;
     font-weight: bold;
     border-radius: 20px;
     margin: 15px auto;
