@@ -558,17 +558,17 @@
                 </td>
                 <td>
                     <div class="tdDiv">
-                        <input class="inputBeneficio" type="checkbox" name="<%= indexBenefits[i] %>[1]" value="true" style="align-self: center;">
+                        <input class="inputBeneficio" type="checkbox" name="<%= indexBenefits[i] %>[1]" value="true" style="align-self: center;" <% if (productToEdit.benefits[indexBenefits[i]][1] == 'true' ) { %> checked %>" <% } else { %>  <% } %>>
                     </div>
                 </td>
                 <td>
                     <div class="tdDiv">
-                        <input class="inputBeneficio" type="checkbox" name="<%= indexBenefits[i] %>[2]" value="true" style="align-self: center;">
+                        <input class="inputBeneficio" type="checkbox" name="<%= indexBenefits[i] %>[2]" value="true" style="align-self: center;" <% if (productToEdit.benefits[indexBenefits[i]][2] == 'true' ) { %> checked %>" <% } else { %>  <% } %>>
                     </div>
                 </td>
                 <td>
                     <div class="tdDiv">
-                        <input type="checkbox" name="<%= indexBenefits[i] %>[3]" value="true" style="align-self: center;">
+                        <input type="checkbox" name="<%= indexBenefits[i] %>[3]" value="true" style="align-self: center;" <% if (productToEdit.benefits[indexBenefits[i]][3] == 'true' ) { %> checked %>" <% } else { %>  <% } %>>
                     </div>
                 </td>
             </tr>
