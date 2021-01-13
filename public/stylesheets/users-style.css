@@ -204,3 +204,18 @@
    .datosPersonales button:hover {
        cursor: pointer;
    }
+   .productosContratados,
+   .categoriaContratada {
+       display: flex;
+       justify-content: center;
+   }
+   .productosContratados h4,
+   .categoriaContratada h4 {
+       font-size: 1.5em;
+       margin: 2% 1% 2% 0;
+   }
+   .productosContratados p,
+   .categoriaContratada p {
+       font-size: 1.5em;
+        margin: 2% 0;
+   }

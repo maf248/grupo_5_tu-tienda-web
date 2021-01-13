@@ -36,11 +36,12 @@
     <input type="password" name="passwordRepeat" placeholder="Repetí tu nueva contraseña">
 
     
-
-    <h4>Tu plan: </h4> <p> <% if(locals.user.plan != undefined) { %> <%= locals.user.plan %> <% } else { %> Todavia no seleccionaste ningun plan <% } %></p>
-    
-    <h4>Tu categoría: </h4> <p> <% if(locals.user.category != undefined) { %> <%= locals.user.category %> <% } else { %> Todavia no seleccionaste ninguna categoría <% } %></p>
-
+    <div class="productosContratados">
+        <h4>Tu plan: </h4> <p> <% if(locals.user.plan != undefined) { %> <%= locals.user.plan %> <% } else { %> Todavia no seleccionaste ningun plan <% } %></p>
+    </div>
+    <div class="categoriaContratada">
+        <h4>Tu categoría: </h4> <p> <% if(locals.user.category != undefined) { %> <%= locals.user.category %> <% } else { %> Todavia no seleccionaste ninguna categoría <% } %></p>
+    </div>
 
     <button type="submit">Guardar Cambios</button>
 

@@ -1,1 +1,25 @@
-[{"id":1,"firstName":"Tobias","lastName":"Blaksley","email":"tobias.blaksley@hotmail.com","password":"$2a$10$5MTZOmjHIvVz/rZldPQ7G.H3j93G9mDbBn.hks8R4mtAiQ1fEw45e","plan":"Tu Tienda Web","category":"Oro","image":"Usuario-1_1610562779647.jfif"},{"id":2,"firstName":"Marcelo","lastName":"Fanego","email":"maf_248@hotmail.com","password":"$2a$10$DrbyufnJ8hNqNRPUHxqhLeq5Xwykj0RHMqD/wN/2YeCrMv4THRNAm","image":"Usuario-6_1610481280904.png","plan":"Tu Página Web","category":"Oro"},{"id":3,"firstName":"Sergio","lastName":"Casas","email":"sergio.casasr@utadeo.edu.co","password":"$2a$10$ErqNXoEJIdECETGwr1bQBeWmo.XPv2endOwKwDBaivHo.kLlujIhO"},{"id":4,"firstName":"lakdsaksjd","lastName":"alkdjskjsadsak","email":"tobi@dh.com","password":"$2a$10$/qAnhT.HOCeVp8PwrAnkSOZWVPHeixqIo/WgRCJzWnOLMlcqHgX2K","image":"Usuario-4_1610565426865.jfif"},{"id":5,"firstName":"Tobias","lastName":"asdasdasd","email":"aaaa@aaaa.com","password":"$2a$10$DKwnprvBVUsN6kp50MEEd.JyBGBqoHha.iiLajcX7Pg7578Wfvq7q","image":"Usuario-5_1610565594793.jfif"}]
+[{
+    "id": 1,
+    "firstName": "Tobias",
+    "lastName": "Blaksley",
+    "email": "tobias.blaksley@hotmail.com",
+    "password": "$2a$10$5MTZOmjHIvVz/rZldPQ7G.H3j93G9mDbBn.hks8R4mtAiQ1fEw45e",
+    "plan": "Tu Tienda Web",
+    "category": "Oro",
+    "image": "Usuario-1_1610562779647.jfif"
+}, {
+    "id": 2,
+    "firstName": "Marcelo",
+    "lastName": "Fanego",
+    "email": "maf_248@hotmail.com",
+    "password": "$2a$10$DrbyufnJ8hNqNRPUHxqhLeq5Xwykj0RHMqD/wN/2YeCrMv4THRNAm",
+    "image": "Usuario-6_1610481280904.png",
+    "plan": "Tu Página Web",
+    "category": "Oro"
+}, {
+    "id": 3,
+    "firstName": "Sergio",
+    "lastName": "Casas",
+    "email": "sergio.casasr@utadeo.edu.co",
+    "password": "$2a$10$ErqNXoEJIdECETGwr1bQBeWmo.XPv2endOwKwDBaivHo.kLlujIhO"
+}]
