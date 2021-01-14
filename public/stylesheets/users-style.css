@@ -86,6 +86,9 @@
 .rememberMe input {
     margin: 0px 5px;
 }
+form p {
+    margin-bottom: 2.5%;
+}
 
 /* Estilo de Registro */
 

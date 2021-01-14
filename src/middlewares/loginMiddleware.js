@@ -1,6 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 const { localsName } = require('ejs');
+const {check, body} = require('express-validator');
 
 const usersDir = path.join(__dirname, '..', 'data', 'users.json');
 const users = JSON.parse(fs.readFileSync(usersDir, 'utf-8'));
@@ -22,4 +23,5 @@ function rememberMiddleware(req, res, next) {
 
 next ();
 }
+
 module.exports = rememberMiddleware;

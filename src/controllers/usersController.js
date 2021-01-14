@@ -7,6 +7,8 @@ const session = require('express-session');
 
 const usersDir = path.join(__dirname, '..', 'data', 'users.json');
 const users = JSON.parse(fs.readFileSync(usersDir, 'utf-8'));
+var loginMailValue = true;
+var loginPassValue = true;
 
 
 const usersController = {
@@ -14,14 +16,16 @@ const usersController = {
         if (req.session.user != undefined) {
             res.redirect('/users/profile/'+ req.session.user.id);
          } else {
-            res.render('./users/login');
+             loginMailValue = true;
+             loginPassValue = true
+            res.render('./users/login', {loginMailValue: loginMailValue, loginPassValue: loginPassValue});
             }
         },
     validate: function(req, res, next) {
         users.forEach(user => {
             if (req.body.user == user.email) {
             var check = bcryptjs.compareSync(req.body.password, user.password);
-            if (check) {
+            if (check ) {
                 
                 req.session.user = user;
 
@@ -32,8 +36,15 @@ const usersController = {
                 res.redirect('./profile/' + user.id);
                
             } else {
-                res.send ("Hubo un problema para iniciar sesión.")
+                loginPassValue = false;
+                res.render('./users/login', {loginPassValue : loginPassValue, loginMailValue : loginMailValue});
              }
+            }
+            if (req.body.email == user.email) {
+                res.redirect('./profile/' + user.id);
+            } else {
+                loginMailValue = false
+                res.render('./users/login', {loginMailValue : loginMailValue, loginPassValue: loginPassValue});
             }
         })
         
