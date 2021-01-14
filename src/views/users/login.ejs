@@ -9,17 +9,13 @@
 
 <form class="form-login" action="/users/login" method="POST">
     <h5>¡Hola! Completa tus datos</h5>
-    <% if (loginMailValue != false) {%>
         <input class="usuario" type="email" name="user" value="" placeholder="Correo del usuario">
-    <% } else { %>
-        <input class="usuario" type="email" name="user" value="" placeholder="Correo del usuario">
-        <p>El email ingresado no se encuentra registrado</p>
+    <% if (loginMailValue == false && loginMailValue != null) {%>
+        <p>El email ingresado no se encuentra registrado</p>     
     <% } %>
-    <% if (loginPassValue != false || loginPassValue == undefined) {%>
         <input class="usuario" type="password" name="password" value="" placeholder="Contraseña">
-    <% } else { %>
-        <input class="usuario" type="password" name="password" value="" placeholder="Contraseña">
-        <p>La contraseña ingresada es incorrecta</p>
+    <% if (loginPassValue == false && loginPassValue != null) {%>
+        <p>La contraseña ingresada es incorrecta</p>      
     <% } %>
     <div class="rememberMe">
         <input type="checkbox" name="remember" id="">

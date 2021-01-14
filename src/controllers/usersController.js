@@ -7,8 +7,8 @@ const session = require('express-session');
 
 const usersDir = path.join(__dirname, '..', 'data', 'users.json');
 const users = JSON.parse(fs.readFileSync(usersDir, 'utf-8'));
-var loginMailValue = true;
-var loginPassValue = true;
+var loginMailValue = null;
+var loginPassValue = null;
 
 
 const usersController = {
@@ -20,31 +20,36 @@ const usersController = {
             }
         },
     validate: function(req, res, next) {
+        var userFound = null;
         users.forEach(user => {
             if (req.body.user == user.email) {
-            var check = bcryptjs.compareSync(req.body.password, user.password);
-            if (check ) {
-                
-                req.session.user = user;
-
-                if(req.body.remember != undefined ) {
-                    res.cookie('recordame', user.email, {maxAge: 1000*60*60*24})
-                }
-
-                res.redirect('./profile/' + user.id);
-               
-            } else {
-                loginPassValue = false;
-                res.redirect('./login');
-             }
-            }
-            if (req.body.email == user.email) {
-                res.redirect('./profile/' + user.id);
-            } else {
-                loginMailValue = false
-                res.redirect('./login');
+            userFound = user;
             }
         })
+        if (userFound != null) {
+            var check = bcryptjs.compareSync(req.body.password, userFound.password);
+                if (check) {
+                    req.session.user = userFound;
+                    
+                    if(req.body.remember != undefined ) {
+                        res.cookie('recordame', userFound.email, {maxAge: 1000*60*60*24})
+                    }
+
+                    return res.redirect('/users/profile/' + userFound.id);
+
+                } else if (!check) {
+                    loginMailValue = null;
+                    loginPassValue = false;
+                    console.log('Login PASS value :' + loginPassValue);
+                    return res.redirect('/users/login');
+                }
+
+        } else {
+            loginPassValue = null;
+            loginMailValue = false;
+            console.log('Login MAIL value :' + loginMailValue);
+            return res.redirect('/users/login');
+        }
         
     },
     register: function(req, res, next) {
