@@ -140,8 +140,11 @@ const usersController = {
     },
     logout: function (req, res, next) {
 
-        
+        loginMailValue = null;
+        loginPassValue = null;
+
         res.cookie('recordame', '', {maxAge: 0});
+
         delete req.session.user;
 
         res.redirect('/');
