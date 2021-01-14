@@ -16,8 +16,6 @@ const usersController = {
         if (req.session.user != undefined) {
             res.redirect('/users/profile/'+ req.session.user.id);
          } else {
-             loginMailValue = true;
-             loginPassValue = true
             res.render('./users/login', {loginMailValue: loginMailValue, loginPassValue: loginPassValue});
             }
         },
@@ -37,14 +35,14 @@ const usersController = {
                
             } else {
                 loginPassValue = false;
-                res.render('./users/login', {loginPassValue : loginPassValue, loginMailValue : loginMailValue});
+                res.redirect('./login');
              }
             }
             if (req.body.email == user.email) {
                 res.redirect('./profile/' + user.id);
             } else {
                 loginMailValue = false
-                res.render('./users/login', {loginMailValue : loginMailValue, loginPassValue: loginPassValue});
+                res.redirect('./login');
             }
         })
         
