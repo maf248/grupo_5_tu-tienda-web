@@ -11,8 +11,12 @@ const users = JSON.parse(fs.readFileSync(usersDir, 'utf-8'));
 
 const usersController = {
     login: function(req, res, next) {
-                res.render('./users/login');
-            },
+        if (req.session.user != undefined) {
+            res.redirect('/users/profile/'+ req.session.user.id);
+         } else {
+            res.render('./users/login');
+            }
+        },
     validate: function(req, res, next) {
         users.forEach(user => {
             if (req.body.user == user.email) {
@@ -35,7 +39,11 @@ const usersController = {
         
     },
     register: function(req, res, next) {
+        if (req.session.user != undefined) {
+            res.redirect('/users/profile/'+ req.session.user.id);
+         } else {
         res.render('./users/register');
+        }
     },
     createUser: function(req, res) {
         
