@@ -24,7 +24,7 @@
             <th><h2>Planes disponibles</h2></th>
             <% for(let i=0; i < producto.category.length; i++){ %>
               <td><img class="medalla" src="/images/Producto-<%= producto.id %>/<%= producto.categoryImage[i] %>" alt="imagen de una medalla"><h3> <%= producto.category[i] %> </h3></td>
-              <% }; %>
+            <% }; %>
         </tr>
     </thead>
     <tbody class=tabla-productos-cuerpo>
@@ -63,15 +63,24 @@
     </tbody>
 </table>
   <div class="botonesContenedor">
+    <% if (locals.user != undefined) { %>
+    <% if ( locals.user.adminCode ) { %>
+
     <a href="/products/<%= producto.id %>/edit" class="botones">Editar</a>
 
+    <% }}  %>
+
+    <a href="/products/<%= producto.id %>/edit" class="botones" style="opacity: 0; cursor: none;">Editar</a>
     <a href="/products/<%= producto.id %>" class="botones">Ver más...</a>
   </div>
 </div>
 <% }); %>
-<div class="crear-contenedor">
-  <a href="/products/create" class="boton-crear">Crear producto nuevo</a>
-</div>
+<% if (locals.user != undefined) { %>
+  <% if ( locals.user.adminCode ) { %>
+  <div class="crear-contenedor">
+    <a href="/products/create" class="boton-crear">Crear producto nuevo</a>
+  </div>
+  <% }}  %>
 </section>
 
 

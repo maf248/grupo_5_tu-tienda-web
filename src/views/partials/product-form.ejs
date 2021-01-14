@@ -558,17 +558,17 @@
                 </td>
                 <td>
                     <div class="tdDiv">
-                        <input class="inputBeneficio" type="checkbox" name="<%= indexBenefits[i] %>[1]" value="true" style="align-self: center;" <% if (productToEdit.benefits[indexBenefits[i]] != undefined) { %> <% if (productToEdit.benefits[indexBenefits[i]][1] == 'true' ) { %> checked <% } } else { %>  <% } %>>
+                        <input class="inputBeneficio" type="checkbox" name="<%= indexBenefits[i] %>[1]" value="true" style="align-self: center;" <% if (typeof productToEdit != 'undefined' && productToEdit.benefits[indexBenefits[i]] != undefined) { %> <% if (productToEdit.benefits[indexBenefits[i]][1] == 'true' ) { %> checked <% } } %>>
                     </div>
                 </td>
                 <td>
                     <div class="tdDiv">
-                        <input class="inputBeneficio" type="checkbox" name="<%= indexBenefits[i] %>[2]" value="true" style="align-self: center;" <% if (productToEdit.benefits[indexBenefits[i]] != undefined) { %> <% if (productToEdit.benefits[indexBenefits[i]][2] == 'true' ) { %> checked <% } } else { %>  <% } %>>
+                        <input class="inputBeneficio" type="checkbox" name="<%= indexBenefits[i] %>[2]" value="true" style="align-self: center;" <% if (typeof productToEdit != 'undefined' && productToEdit.benefits[indexBenefits[i]] != undefined) { %> <% if (productToEdit.benefits[indexBenefits[i]][2] == 'true' ) { %> checked <% } } %>>
                     </div>
                 </td>
                 <td>
                     <div class="tdDiv">
-                        <input type="checkbox" name="<%= indexBenefits[i] %>[3]" value="true" style="align-self: center;" <% if (productToEdit.benefits[indexBenefits[i]] != undefined) { %> <% if (productToEdit.benefits[indexBenefits[i]][3] == 'true' ) { %> checked <% } } else { %>  <% } %>>
+                        <input type="checkbox" name="<%= indexBenefits[i] %>[3]" value="true" style="align-self: center;" <% if (typeof productToEdit != 'undefined' && productToEdit.benefits[indexBenefits[i]] != undefined) { %> <% if (productToEdit.benefits[indexBenefits[i]][3] == 'true' ) { %> checked <% } } %>>
                     </div>
                 </td>
             </tr>

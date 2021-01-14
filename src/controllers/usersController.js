@@ -33,37 +33,38 @@ const usersController = {
                     
                     if(req.body.remember != undefined ) {
                         res.cookie('recordame', userFound.email, {maxAge: 1000*60*60*24})
+                    } 
+                    if ( userFound.adminCode == "sarasa.20") {
+                        userFound.adminCode = true;
+                        return res.redirect('/users/profile/' + userFound.firstName);
                     }
+                    
 
                     return res.redirect('/users/profile/' + userFound.id);
 
                 } else if (!check) {
                     loginMailValue = null;
                     loginPassValue = false;
-                    console.log('Login PASS value :' + loginPassValue);
                     return res.redirect('/users/login');
-                }
+                } 
 
         } else {
             loginPassValue = null;
             loginMailValue = false;
-            console.log('Login MAIL value :' + loginMailValue);
             return res.redirect('/users/login');
         }
         
     },
     register: function(req, res, next) {
-        if (req.session.user != undefined) {
-            res.redirect('/users/profile/'+ req.session.user.id);
-         } else {
+
         res.render('./users/register');
-        }
+
     },
     createUser: function(req, res) {
         
         let errors = validationResult(req);
         let mailDuplicated = false;
-        
+        console.log(errors);
         if (!errors.isEmpty()) {
             return res.render('./users/register', {errors: errors.errors} );
         } else {
@@ -81,7 +82,8 @@ const usersController = {
                 "firstName": req.body.firstName,
                 "lastName": req.body.lastName,
                 "email": req.body.email,
-                "password":  bcryptjs.hashSync(req.body.password, 10)
+                "password":  bcryptjs.hashSync(req.body.password, 10),
+                "adminCode": req.body.adminCode
                 }
             )
             const usersJSON = JSON.stringify(users);

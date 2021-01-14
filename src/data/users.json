@@ -1,23 +1,50 @@
-[{
-    "id": 1,
-    "firstName": "Tobias",
-    "lastName": "Blaksley",
-    "email": "tobias.blaksley@hotmail.com",
-    "password": "$2a$10$0Rc4j6gQdyT1o742CFEwcO8tOP/AHNxnb4/sgLFhHMbJO0BVis/J.",
-    "image": "Usuario-1_1610562779647.jfif"
-}, {
-    "id": 2,
-    "firstName": "Marcelo",
-    "lastName": "Fanego",
-    "email": "maf_248@hotmail.com",
-    "password": "$2a$10$DrbyufnJ8hNqNRPUHxqhLeq5Xwykj0RHMqD/wN/2YeCrMv4THRNAm",
-    "image": "Usuario-6_1610481280904.png",
-    "plan": "Tu Página Web",
-    "category": "Oro"
-}, {
-    "id": 3,
-    "firstName": "Sergio",
-    "lastName": "Casas",
-    "email": "sergio.casasr@utadeo.edu.co",
-    "password": "$2a$10$ErqNXoEJIdECETGwr1bQBeWmo.XPv2endOwKwDBaivHo.kLlujIhO"
-}]
+[
+    {
+        "id": 1,
+        "firstName": "Tobias",
+        "lastName": "Blaksley",
+        "email": "tobias.blaksley@hotmail.com",
+        "password": "$2a$10$0Rc4j6gQdyT1o742CFEwcO8tOP/AHNxnb4/sgLFhHMbJO0BVis/J.",
+        "image": "Usuario-1_1610562779647.jfif"
+    },
+    {
+        "id": 2,
+        "firstName": "Marcelo",
+        "lastName": "Fanego",
+        "email": "maf_248@hotmail.com",
+        "password": "$2a$10$DrbyufnJ8hNqNRPUHxqhLeq5Xwykj0RHMqD/wN/2YeCrMv4THRNAm",
+        "image": "Usuario-6_1610481280904.png",
+        "plan": "Tu Página Web",
+        "category": "Oro"
+    },
+    {
+        "id": 3,
+        "firstName": "Sergio",
+        "lastName": "Casas",
+        "email": "sergio.casasr@utadeo.edu.co",
+        "password": "$2a$10$ErqNXoEJIdECETGwr1bQBeWmo.XPv2endOwKwDBaivHo.kLlujIhO"
+    },
+    {
+        "id": 4,
+        "firstName": "aaaaaaa",
+        "lastName": "aaaaaaaa",
+        "email": "aaaa@aaaaaa.com",
+        "password": "$2a$10$fHRQC2t7LOxE7ZCIa/eJW.ZTzhiSt5NEbxMj4HA.k1mEWxDTwvy3u"
+    },
+    {
+        "id": 5,
+        "firstName": "aaaaaaa",
+        "lastName": "aaaaaaaaaa",
+        "email": "vvvvvvv@vvvvv.com",
+        "password": "$2a$10$rwuHSaH2yR57SGv7lA4g.uAAz.JzF2j189WQCm3cFChOzDeRQeF2.",
+        "adminCode": ""
+    },
+    {
+        "id": 6,
+        "firstName": "Tobias",
+        "lastName": "Blaksley Iraola",
+        "email": "tblaksleyiraola@gmail.com",
+        "password": "$2a$10$UQspS.PceP4hgJp9KLIGn.CU9ZC44cIa5kM2e1elZS2QLhsTpd5ou",
+        "adminCode": "sarasa.20"
+    }
+]

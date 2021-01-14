@@ -88,7 +88,11 @@ const productosController = {
           res.render('./products/listado-productos', {products: products});
         },
     creacion: function(req, res, next) {
-          res.render('./products/create', {indexBenefits: indexBenefits}); 
+          if (req.session.user != undefined) {
+            res.render('./products/create', {indexBenefits: indexBenefits} ); 
+          } else {
+            res.redirect('/users/login')
+          }
         },
     creador: function(req, res, next) {
       /*----Acá llamamos a la funcion creada, para que al recibir los archivos subidos, guarde sus nombres en imageDir----*/
@@ -204,7 +208,11 @@ const productosController = {
         res.redirect('/products');
         },
     edicion: function(req, res, next) {
-      res.render('./products/edit', {productToEdit: products[req.params.id -1], indexBenefits: indexBenefits});
+      if (req.session.user != undefined) {
+        res.render('./products/edit', {productToEdit: products[req.params.id -1], indexBenefits: indexBenefits});
+      } else {
+        res.redirect('/users/login')
+      }      
     },
     editor: function(req, res, next) {
     /*----Acá llamamos a la funcion creada, para que al recibir los archivos subidos, guarde sus nombres en imageDir----*/
