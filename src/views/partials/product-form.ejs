@@ -547,28 +547,28 @@
                     </div>
                 </td>
             </tr>
-            <% for (let i= 0; i < indexBenefits.length; i++) { %>           
+            <% for (let i= 0; i < indexBenefits.length; i++) { %>          
             <tr>
                 <td class="beneficio fontSize">
                     <div class="tdDiv">
                         <!--Elegir titulo beneficio 1-->
                         <label for="<%= indexBenefits[i] %>[0]">Beneficio:</label> <br>
-                        <input class="inputBeneficio" type="text" name="<%= indexBenefits[i] %>[0]" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.benefits[indexBenefits[i]][0] %>" <% } else { %> placeholder="Escribí aquí el beneficio" <% } %>>
+                        <input class="inputBeneficio" type="text" name="<%= indexBenefits[i] %>[0]" <% if (typeof productToEdit != 'undefined' ) { %> <% if (productToEdit.benefits[indexBenefits[i]] != undefined) { %> value="<%= productToEdit.benefits[indexBenefits[i]][0] %>" <% } } else { %> placeholder="Escribí aquí el beneficio" <% } %>>
                     </div>
                 </td>
                 <td>
                     <div class="tdDiv">
-                        <input class="inputBeneficio" type="checkbox" name="<%= indexBenefits[i] %>[1]" value="true" style="align-self: center;" <% if (productToEdit.benefits[indexBenefits[i]][1] == 'true' ) { %> checked %>" <% } else { %>  <% } %>>
+                        <input class="inputBeneficio" type="checkbox" name="<%= indexBenefits[i] %>[1]" value="true" style="align-self: center;" <% if (productToEdit.benefits[indexBenefits[i]] != undefined) { %> <% if (productToEdit.benefits[indexBenefits[i]][1] == 'true' ) { %> checked <% } } else { %>  <% } %>>
                     </div>
                 </td>
                 <td>
                     <div class="tdDiv">
-                        <input class="inputBeneficio" type="checkbox" name="<%= indexBenefits[i] %>[2]" value="true" style="align-self: center;" <% if (productToEdit.benefits[indexBenefits[i]][2] == 'true' ) { %> checked %>" <% } else { %>  <% } %>>
+                        <input class="inputBeneficio" type="checkbox" name="<%= indexBenefits[i] %>[2]" value="true" style="align-self: center;" <% if (productToEdit.benefits[indexBenefits[i]] != undefined) { %> <% if (productToEdit.benefits[indexBenefits[i]][2] == 'true' ) { %> checked <% } } else { %>  <% } %>>
                     </div>
                 </td>
                 <td>
                     <div class="tdDiv">
-                        <input type="checkbox" name="<%= indexBenefits[i] %>[3]" value="true" style="align-self: center;" <% if (productToEdit.benefits[indexBenefits[i]][3] == 'true' ) { %> checked %>" <% } else { %>  <% } %>>
+                        <input type="checkbox" name="<%= indexBenefits[i] %>[3]" value="true" style="align-self: center;" <% if (productToEdit.benefits[indexBenefits[i]] != undefined) { %> <% if (productToEdit.benefits[indexBenefits[i]][3] == 'true' ) { %> checked <% } } else { %>  <% } %>>
                     </div>
                 </td>
             </tr>
