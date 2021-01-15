@@ -33,5 +33,6 @@ router.get('/profile/:id', usersController.profile);
 router.patch('/profile/:id', registrationValidate, usersController.editProfile);
 router.post('/profile/:id/avatar', upload.any(), usersController.photoUpdate);
 router.post('/logout', usersController.logout);
+router.delete('/delete/:id', usersController.delete);
 module.exports = router;
 

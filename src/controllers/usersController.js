@@ -150,6 +150,25 @@ const usersController = {
         delete req.session.user;
 
         res.redirect('/');
+    },
+    delete: function(req, res, next){
+        users.splice(req.params.id-1, 1)
+        for(let i=0; i <users.length; i++){
+           
+            users[i].id = i+1 
+
+           
+        }
+        const usersJSON = JSON.stringify(users);
+        fs.writeFileSync(usersDir, usersJSON);
+        loginMailValue = null;
+        loginPassValue = null;
+
+        res.cookie('recordame', '', {maxAge: 0});
+
+        delete req.session.user;
+
+        res.redirect('/');
     }
 }
 
