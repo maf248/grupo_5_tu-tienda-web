@@ -88,7 +88,7 @@ const productosController = {
           res.render('./products/listado-productos', {products: products});
         },
     creacion: function(req, res, next) {
-          if (req.session.user != undefined) {
+      if (req.session.user != undefined && req.session.user.adminCode === true) {
             res.render('./products/create', {indexBenefits: indexBenefits} ); 
           } else {
             res.redirect('/users/login')
@@ -208,10 +208,10 @@ const productosController = {
         res.redirect('/products');
         },
     edicion: function(req, res, next) {
-      if (req.session.user != undefined) {
+      if (req.session.user != undefined && req.session.user.adminCode === true) {
         res.render('./products/edit', {productToEdit: products[req.params.id -1], indexBenefits: indexBenefits});
       } else {
-        res.redirect('/users/login')
+        res.redirect('/users/login')  
       }      
     },
     editor: function(req, res, next) {
