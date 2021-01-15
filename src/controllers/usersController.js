@@ -34,12 +34,9 @@ const usersController = {
                     if(req.body.remember != undefined ) {
                         res.cookie('recordame', userFound.email, {maxAge: 1000*60*60*24})
                     } 
-                    if ( userFound.adminCode == true) {
-                        return res.redirect('/users/profile/' + userFound.firstName);
-                    }else{
-                        return res.redirect('/users/profile/' + userFound.id);
-                    }
-                    
+
+                    return res.redirect('/users/profile/' + userFound.id);
+                                        
                 } else if (!check) {
                     loginMailValue = null;
                     loginPassValue = false;
@@ -54,9 +51,12 @@ const usersController = {
         
     },
     register: function(req, res, next) {
-
-        res.render('./users/register');
-
+        if (req.session.user == undefined) {
+            res.render('./users/register');
+         } else {
+            res.redirect('/users/profile/' + req.session.user.id);
+            }
+        
     },
     createUser: function(req, res) {
         
@@ -98,17 +98,12 @@ const usersController = {
     profile: function (req, res, next) {
         if (req.session.user != undefined) {
             
-            if  (req.params.id == req.session.user.id && req.session.user.adminCode != true){
+            if  (req.params.id == req.session.user.id){
                 return res.render('./users/profile');
-            }
-             else if  ( req.params.id == req.session.id.firstName && req.sesion.user.adminCode == true){
-                return res.render('./users/profile');
-            }else{
-              return  res.redirect('/users/login');
+            } else {
+                res.redirect('/users/profile/' + req.session.user.id);
             }
         
-    
-           
         } else {
             res.redirect('/users/login')
         }
