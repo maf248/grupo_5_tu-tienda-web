@@ -1,1 +1,38 @@
-[{"id":1,"firstName":"Tobias","lastName":"Blaksley","email":"tobias.blaksley@hotmail.com","password":"$2a$10$0Rc4j6gQdyT1o742CFEwcO8tOP/AHNxnb4/sgLFhHMbJO0BVis/J.","image":"Usuario-1_1610562779647.jfif","adminCode":"sarasa.20"},{"id":2,"firstName":"Marcelo","lastName":"Fanego","email":"maf_248@hotmail.com","password":"$2a$10$DrbyufnJ8hNqNRPUHxqhLeq5Xwykj0RHMqD/wN/2YeCrMv4THRNAm","image":"Usuario-6_1610481280904.png","plan":"Tu Página Web","category":"Oro","adminCode":"sarasa.20"},{"id":3,"firstName":"sergio","lastName":"casas","email":"sergio.casasr@utadeo.edu.co","password":"$2a$10$A4iqY8lnKfLXCcH38AM/MeOcVkDzG1mxcRf/VllprSbUlFYNwvcg2","adminCode":"sarasa.20"}]
+[
+    {
+        "id": 1,
+        "firstName": "Tobias",
+        "lastName": "Blaksley",
+        "email": "tobias.blaksley@hotmail.com",
+        "password": "$2a$10$0Rc4j6gQdyT1o742CFEwcO8tOP/AHNxnb4/sgLFhHMbJO0BVis/J.",
+        "image": "Usuario-1_1610562779647.jfif",
+        "adminCode": true
+    },
+    {
+        "id": 2,
+        "firstName": "Marcelo",
+        "lastName": "Fanego",
+        "email": "maf_248@hotmail.com",
+        "password": "$2a$10$DrbyufnJ8hNqNRPUHxqhLeq5Xwykj0RHMqD/wN/2YeCrMv4THRNAm",
+        "image": "Usuario-6_1610481280904.png",
+        "plan": "Tu Página Web",
+        "category": "Oro",
+        "adminCode": true
+    },
+    {
+        "id": 3,
+        "firstName": "sergio",
+        "lastName": "casas",
+        "email": "sergio.casasr@utadeo.edu.co",
+        "password": "$2a$10$A4iqY8lnKfLXCcH38AM/MeOcVkDzG1mxcRf/VllprSbUlFYNwvcg2",
+        "adminCode": true
+    },
+    {
+        "id": 4,
+        "firstName": "sergio",
+        "lastName": "casasghs",
+        "email": "sergio.casas.ro@gmail.com",
+        "password": "$2a$10$xXaWBZVG9DNcdZ0Vc94nUOkS71gqzUKnkifDPk7zfg/gDKKOuKwqG",
+        "adminCode": true
+    }
+]

@@ -34,14 +34,12 @@ const usersController = {
                     if(req.body.remember != undefined ) {
                         res.cookie('recordame', userFound.email, {maxAge: 1000*60*60*24})
                     } 
-                    if ( userFound.adminCode == "sarasa.20") {
-                        userFound.adminCode = true;
+                    if ( userFound.adminCode == true) {
                         return res.redirect('/users/profile/' + userFound.firstName);
+                    }else{
+                        return res.redirect('/users/profile/' + userFound.id);
                     }
                     
-
-                    return res.redirect('/users/profile/' + userFound.id);
-
                 } else if (!check) {
                     loginMailValue = null;
                     loginPassValue = false;
@@ -64,7 +62,6 @@ const usersController = {
         
         let errors = validationResult(req);
         let mailDuplicated = false;
-        console.log(errors);
         if (!errors.isEmpty()) {
             return res.render('./users/register', {errors: errors.errors} );
         } else {
@@ -82,10 +79,15 @@ const usersController = {
                 "firstName": req.body.firstName,
                 "lastName": req.body.lastName,
                 "email": req.body.email,
-                "password":  bcryptjs.hashSync(req.body.password, 10),
-                "adminCode": req.body.adminCode
+                "password":  bcryptjs.hashSync(req.body.password, 10)
                 }
             )
+            if ( req.body.adminCode == "sarasa.20") {
+                users[users.length -1].adminCode = true;
+            }else{
+                users[users.length -1].adminCode = false;
+            }
+
             const usersJSON = JSON.stringify(users);
             fs.writeFileSync(usersDir, usersJSON);
 
@@ -95,7 +97,18 @@ const usersController = {
     },
     profile: function (req, res, next) {
         if (req.session.user != undefined) {
-            res.render('./users/profile');
+            
+            if  (req.params.id == req.session.user.id && req.session.user.adminCode != true){
+                return res.render('./users/profile');
+            }
+             else if  ( req.params.id == req.session.id.firstName && req.sesion.user.adminCode == true){
+                return res.render('./users/profile');
+            }else{
+              return  res.redirect('/users/login');
+            }
+        
+    
+           
         } else {
             res.redirect('/users/login')
         }
