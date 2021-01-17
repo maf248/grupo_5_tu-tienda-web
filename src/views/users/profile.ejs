@@ -46,8 +46,9 @@
 
 
 </form>
+
 <form action="/users/delete/<%= locals.user.id %>?_method=DELETE" method="POST" class="">
-    <button type="submit">Eliminar cuenta</button>
+    <button onclick="return confirm('¿Estas seguro que querés borrar tu cuenta de usuario?');" type="submit">Eliminar cuenta</button>
 </form>
 
 <%- include('../partials/footer') %>
