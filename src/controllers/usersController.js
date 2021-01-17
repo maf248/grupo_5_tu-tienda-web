@@ -37,15 +37,13 @@ const usersController = {
                     return res.redirect('/users/profile/' + userFound.id);
                                         
                 } else if (!check) {
-                    loginMailValue = null;
-                    loginPassValue = false;
-                    return res.redirect('/users/login');
+
+                    return res.render('./users/login', {loginPassValue: false, loginMailValue: null});
                 } 
 
         } else {
-            loginPassValue = null;
-            loginMailValue = false;
-            return res.redirect('/users/login');
+
+            return res.render('./users/login', {loginPassValue: null, loginMailValue: false});
         }
         
     },
@@ -66,8 +64,10 @@ const usersController = {
         } else {
             users.forEach( user => {
                 if (user.email == req.body.email) {
+                    
                     mailDuplicated = true;
-                    return res.send('Este mail ya está registrado');
+                    console.log("Lllega aca ek duplkicadio   " + mailDuplicated)
+                    return res.render('./users/register', {mailDuplicated: mailDuplicated});
                 }
             });
             
