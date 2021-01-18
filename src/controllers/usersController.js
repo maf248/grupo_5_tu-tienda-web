@@ -64,14 +64,15 @@ const usersController = {
         } else {
             users.forEach( user => {
                 if (user.email == req.body.email) {
-                    
-                    mailDuplicated = true;
-                    console.log("Lllega aca ek duplkicadio   " + mailDuplicated)
-                    return res.render('./users/register', {mailDuplicated: mailDuplicated});
+
+                    return res.render('./users/register', {mailDuplicated: true});
                 }
             });
-            
-            if (!mailDuplicated) {       
+            if (req.body.password !== req.body.passwordRepeat) {
+
+                return res.render('./users/register', {passwordsNotMatch: true});
+
+            } else if (!mailDuplicated) {       
             users.push( 
                 {
                 "id": users.length +1,

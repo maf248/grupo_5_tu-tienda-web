@@ -45,6 +45,9 @@ errors.forEach ( error => {
     })
     } %>
 <input class="controls" type="password" name="passwordRepeat" placeholder="Repetir Contraseña">
+<% if (typeof passwordsNotMatch != 'undefined' && passwordsNotMatch == true) { %>
+    <p>Las contraseñas no coinciden. Por favor, intenta nuevamente.</p>
+<% } %>
 <input class="controls" type="text" name="adminCode" placeholder="Código administrador">
 <input class="buttons" type="submit"  value="Registrarse" >
 
