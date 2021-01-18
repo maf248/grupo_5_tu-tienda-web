@@ -10,40 +10,32 @@
 <form class="form-registro" action="/users/register" method="POST">
 <h5> Registrate </h5>
 <input class="controls" type="text" name="firstName" placeholder="Nombre">
-<% if ( typeof errors != "undefined") {
+<% if (typeof errors != "undefined") {
 errors.forEach ( error => { 
     if (error.param == "firstName") { %>
         <p><%= error.msg %></p>
-<% }
-})
-} %>
+<% } }) } %>
 <input class="controls" type="text" name="lastName" placeholder="Apellido">
-<% if ( typeof errors != "undefined") {
+<% if (typeof errors != "undefined") {
     errors.forEach ( error => { 
         if (error.param == "lastName") { %>
             <p><%= error.msg %></p>
-    <% }
-    })
-    } %>
+    <% } }) } %>
 <input class="controls" type="email" name="email" placeholder="Email">
 <% if (typeof mailDuplicated != 'undefined' && mailDuplicated == true) { %>
             <p>Éste correo electronico ya está registrado</p>
     <% } %>
-<% if ( typeof errors != "undefined") {
+<% if (typeof errors != "undefined") {
     errors.forEach ( error => { 
         if (error.param == "email") { %>
             <p><%= error.msg %></p>
-    <% }
-    })
-    } %>
+    <% } }) } %>
 <input class="controls" type="password" name="password" placeholder="Contraseña">
-<% if ( typeof errors != "undefined") {
+<% if (typeof errors != "undefined") {
     errors.forEach ( error => { 
         if (error.param == "password") { %>
             <p><%= error.msg %></p>
-    <% }
-    })
-    } %>
+    <% } }) } %>
 <input class="controls" type="password" name="passwordRepeat" placeholder="Repetir Contraseña">
 <% if (typeof passwordsNotMatch != 'undefined' && passwordsNotMatch == true) { %>
     <p>Las contraseñas no coinciden. Por favor, intenta nuevamente.</p>
