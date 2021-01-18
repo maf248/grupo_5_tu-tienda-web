@@ -25,15 +25,36 @@
 <form action="/users/profile/<%= locals.user.id %>?_method=PATCH" method="POST" class="datosPersonales">
     
     <input type="text" name="firstName" value="<%=locals.user.firstName%>">
-
+    <% if (typeof errors != "undefined") {
+        errors.forEach ( error => { 
+            if (error.param == "firstName") { %>
+                <p><%= error.msg %></p>
+        <% } }) } %>
     <input type="text" name="lastName" value="<%=locals.user.lastName%>">
-
+    <% if (typeof errors != "undefined") {
+        errors.forEach ( error => { 
+            if (error.param == "lastName") { %>
+                <p><%= error.msg %></p>
+        <% } }) } %>
     <input type="email" name="email" value="<%=locals.user.email%>">
-
+    <% if (typeof mailDuplicated != 'undefined' && mailDuplicated == true) { %>
+        <p>Éste correo electronico ya está registrado</p>
+    <% } %>
+    <% if (typeof errors != "undefined") {
+    errors.forEach ( error => { 
+    if (error.param == "email") { %>
+        <p><%= error.msg %></p>
+<% } }) } %>
     <input type="password" name="password" placeholder="Actualizar contraseña">
-
+    <% if (typeof errors != "undefined") {
+        errors.forEach ( error => { 
+            if (error.param == "password") { %>
+                <p><%= error.msg %></p>
+        <% } }) } %>
     <input type="password" name="passwordRepeat" placeholder="Repetí tu nueva contraseña">
-
+    <% if (typeof passwordsNotMatch != 'undefined' && passwordsNotMatch == true) { %>
+        <p>Las contraseñas no coinciden. Por favor, intenta nuevamente.</p>
+    <% } %>
     
     <div class="productosContratados">
         <h4>Tu plan: </h4> <p> <% if(locals.user.plan != undefined) { %> <%= locals.user.plan %> <% } else { %> Todavia no seleccionaste ningun plan <% } %></p>
