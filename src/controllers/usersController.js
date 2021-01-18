@@ -111,32 +111,66 @@ const usersController = {
 
     },
     editProfile: function (req, res, next) {
-        /*-----Acá editamos la info del usuario-----*/
-        
-        users[req.params.id -1].firstName = req.body.firstName
-        users[req.params.id -1].lastName = req.body.lastName
-        users[req.params.id -1].email = req.body.email
+        let errors = validationResult(req);
+        let mailDuplicated = false;
+                
+        /*---Se chequean los inputs. Si no hay errores los guarda---*/
 
-        if (req.body.password != "") {
-            if (req.body.passwordRepeat == req.body.password) {
+        if (errors.isEmpty()) {
+            /*---Si las contraseñas coinciden se guarda, sino se avisa del error---*/
+            if (req.body.password !== req.body.passwordRepeat) {
+                return res.render('./users/profile', {passwordsNotMatch: true});
+            } else {
+                users[req.params.id -1].firstName = req.body.firstName
+                users[req.params.id -1].lastName = req.body.lastName
                 users[req.params.id -1].password = bcryptjs.hashSync(req.body.password, 10);
+                /*---Chequea el email, que no esté en uso por otro usuario---*/
+                users.forEach(user => {
+                    if (user.email == req.body.email) {
+                        if (user.id != req.session.user.id) {
+                            mailDuplicated = true;
+                            return res.render('./users/profile', {mailDuplicated: true});
+                        }
+                    }
+                });
+                console.log(mailDuplicated);
+                if (!mailDuplicated) {
+                    users[req.params.id -1].email = req.body.email 
+                }
+                /*-----Guardamos datos en el users.json-----*/
+                const usersJSON = JSON.stringify(users);
+                fs.writeFileSync(usersDir, usersJSON);
+                res.redirect('/users/profile/'+ req.params.id);
             }
-            
-        }
-        if (req.body.plan != "") {
-            users[req.params.id -1].plan = req.body.plan;
-        }
 
-        if (req.body.category != "") {
-            users[req.params.id -1].category = req.body.category;
+
+        } else if (!errors.isEmpty()) { 
+                    /*---Si el UNICO error es de la contraseña vacia, guarda los demás datos---*/
+                    if (req.body.password == '' && errors.errors.length == 1) {
+                        users[req.params.id -1].firstName = req.body.firstName
+                        users[req.params.id -1].lastName = req.body.lastName
+                    /*---Chequea el email, que no esté en uso por otro usuario---*/
+                    mailDuplicated = false;
+                    users.forEach(user => {
+                        if (user.email == req.body.email) {
+                            if (user.id != req.session.user.id) {
+                                mailDuplicated = true;
+                                return res.render('./users/profile', {mailDuplicated: true});
+                            }
+                        }
+                    });
+                    if (!mailDuplicated) {
+                        users[req.params.id -1].email = req.body.email 
+                    }
+                    /*-----Guardamos datos en el users.json-----*/
+                    const usersJSON = JSON.stringify(users);
+                    fs.writeFileSync(usersDir, usersJSON);
+                    
+                    res.redirect('/users/profile/'+ req.params.id);
+                } else {
+                    return res.render('./users/profile', {errors: errors.errors});
+                }
         }
-        
-
-        /*-----Guardamos datos en el users.json-----*/
-        const usersJSON = JSON.stringify(users);
-		fs.writeFileSync(usersDir, usersJSON);
-		res.redirect('/users/profile/'+ req.params.id);
-
     },
     photoUpdate: function (req, res, next) {
         /*---Aqui se guarda el nombre del archivo del nuevo avatar---*/
