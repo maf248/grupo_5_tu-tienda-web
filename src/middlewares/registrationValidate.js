@@ -3,10 +3,10 @@ const {check} = require('express-validator');
 module.exports = [
     check('firstName')
     .isLength({min:3})
-    .withMessage('Este campo debe contener al menos 1 carater'),
+    .withMessage('Este campo debe contener al menos 3 carateres'),
     check('lastName')
     .isLength({min:3})
-    .withMessage('Este campo debe contener al menos 1 carater'),
+    .withMessage('Este campo debe contener al menos 3 carateres'),
     check('email')
         .isEmail()
         .withMessage('Tiene que tener un formato de email válido'),
