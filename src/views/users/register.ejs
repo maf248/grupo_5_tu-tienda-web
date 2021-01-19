@@ -9,19 +9,19 @@
 
 <form class="form-registro" action="/users/register" method="POST">
 <h5> Registrate </h5>
-<input class="controls" type="text" name="firstName" placeholder="Nombre">
+<input class="controls" type="text" name="firstName" placeholder="Nombre" <% if (typeof firstName != 'undefined') { %> value="<%= firstName %>"<% } %>>
 <% if (typeof errors != "undefined") {
 errors.forEach ( error => { 
     if (error.param == "firstName") { %>
         <p><%= error.msg %></p>
 <% } }) } %>
-<input class="controls" type="text" name="lastName" placeholder="Apellido">
+<input class="controls" type="text" name="lastName" placeholder="Apellido" <% if (typeof lastName != 'undefined') { %> value="<%= lastName %>"<% } %>>
 <% if (typeof errors != "undefined") {
     errors.forEach ( error => { 
         if (error.param == "lastName") { %>
             <p><%= error.msg %></p>
     <% } }) } %>
-<input class="controls" type="email" name="email" placeholder="Email">
+<input class="controls" type="email" name="email" placeholder="Email" <% if (typeof email != 'undefined') { %> value="<%= email %>"<% } %>>
 <% if (typeof mailDuplicated != 'undefined' && mailDuplicated == true) { %>
             <p>Éste correo electronico ya está registrado</p>
     <% } %>

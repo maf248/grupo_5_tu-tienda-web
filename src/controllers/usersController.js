@@ -61,17 +61,17 @@ const usersController = {
         let errors = validationResult(req);
         let mailDuplicated = false;
         if (!errors.isEmpty()) {
-            return res.render('./users/register', {errors: errors.errors} );
+            return res.render('./users/register', {errors: errors.errors, firstName: req.body.firstName, lastName: req.body.lastName, email: req.body.email} );
         } else {
             users.forEach( user => {
                 if (user.email == req.body.email) {
                     
-                    return res.render('./users/register', {mailDuplicated: true});
+                    return res.render('./users/register', {mailDuplicated: true, firstName: req.body.firstName, lastName: req.body.lastName, email: req.body.email});
                 }
             });
             if (req.body.password !== req.body.passwordRepeat) {
 
-                return res.render('./users/register', {passwordsNotMatch: true});
+                return res.render('./users/register', {passwordsNotMatch: true, firstName: req.body.firstName, lastName: req.body.lastName, email: req.body.email});
 
             } else if (!mailDuplicated) {       
             users.push( 
