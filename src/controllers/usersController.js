@@ -10,6 +10,7 @@ const users = JSON.parse(fs.readFileSync(usersDir, 'utf-8'));
 var loginMailValue = null;
 var loginPassValue = null;
 
+
 const usersController = {
     login: function(req, res, next) {
         if (req.session.user != undefined) {
@@ -31,7 +32,7 @@ const usersController = {
                     req.session.user = userFound;
                     
                     if(req.body.remember != undefined ) {
-                        res.cookie('recordame', userFound.email, {maxAge: 1000*60*60*24})
+                        res.cookie('recordame', userFound.hashId, {maxAge: 1000*60*60*24})
                     } 
 
                     return res.redirect('/users/profile/' + userFound.id);
@@ -76,6 +77,7 @@ const usersController = {
             users.push( 
                 {
                 "id": users.length +1,
+                "hashId": bcryptjs.hashSync("user number " + users.length +1, 10),
                 "firstName": req.body.firstName,
                 "lastName": req.body.lastName,
                 "email": req.body.email,
