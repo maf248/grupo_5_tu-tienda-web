@@ -135,7 +135,7 @@ const usersController = {
                         }
                     }
                 });
-                console.log(mailDuplicated);
+                
                 if (!mailDuplicated) {
                     users[req.params.id -1].email = req.body.email 
                 }
