@@ -227,3 +227,12 @@ form p {
        font-size: 1.5em;
         margin: 2% 0;
    }
+   .button-profile{
+       padding: 2px;
+       background-color: red;
+       border: none;
+       border-radius: 2px;
+       
+   }
+   
+   
