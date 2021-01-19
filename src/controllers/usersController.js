@@ -108,7 +108,7 @@ const usersController = {
         let mailDuplicated = false;
                 
         /*---Se chequean los inputs. Si no hay errores los guarda---*/
-
+        console.log("el adminCode llega así :" + req.body.adminCode);
         if (errors.isEmpty()) {
             /*---Si las contraseñas coinciden se guarda, sino se avisa del error---*/
             if (req.body.password !== req.body.passwordRepeat) {
@@ -130,10 +130,11 @@ const usersController = {
                 if (!mailDuplicated) {
                     users[req.session.user.id -1].email = req.body.email 
                 }
+                
                 /*---Chequea si el Admin Code es correcto, para hacer a ese usuario administrador del sitio---*/
                 if (req.body.adminCode == "sarasa.20") {
                     users[req.session.user.id -1].adminCode = true;
-                } else if (req.body.adminCode != '') {
+                } else if (req.body.adminCode != "") {
                     users[req.session.user.id -1].adminCode = false;
                 }
                 /*-----Guardamos datos en el users.json-----*/
@@ -162,9 +163,9 @@ const usersController = {
                         users[req.session.user.id -1].email = req.body.email 
                     }
                     /*---Chequea si el Admin Code es correcto, para hacer a ese usuario administrador del sitio---*/
-                    if ( req.body.adminCode == "sarasa.20") {
+                    if (req.body.adminCode == "sarasa.20") {
                         users[req.session.user.id -1].adminCode = true;
-                    }else{
+                    } else if (req.body.adminCode != "") {
                         users[req.session.user.id -1].adminCode = false;
                     }
                     /*-----Guardamos datos en el users.json-----*/
