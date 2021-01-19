@@ -81,14 +81,10 @@ const usersController = {
                 "firstName": req.body.firstName,
                 "lastName": req.body.lastName,
                 "email": req.body.email,
-                "password":  bcryptjs.hashSync(req.body.password, 10)
+                "password":  bcryptjs.hashSync(req.body.password, 10),
+                "adminCode": false
                 }
             )
-            if ( req.body.adminCode == "sarasa.20") {
-                users[users.length -1].adminCode = true;
-            }else{
-                users[users.length -1].adminCode = false;
-            }
 
             const usersJSON = JSON.stringify(users);
             fs.writeFileSync(usersDir, usersJSON);
@@ -134,6 +130,12 @@ const usersController = {
                 if (!mailDuplicated) {
                     users[req.session.user.id -1].email = req.body.email 
                 }
+                /*---Chequea si el Admin Code es correcto, para hacer a ese usuario administrador del sitio---*/
+                if (req.body.adminCode == "sarasa.20") {
+                    users[req.session.user.id -1].adminCode = true;
+                } else if (req.body.adminCode != '') {
+                    users[req.session.user.id -1].adminCode = false;
+                }
                 /*-----Guardamos datos en el users.json-----*/
                 const usersJSON = JSON.stringify(users);
                 fs.writeFileSync(usersDir, usersJSON);
@@ -158,6 +160,12 @@ const usersController = {
                     });
                     if (!mailDuplicated) {
                         users[req.session.user.id -1].email = req.body.email 
+                    }
+                    /*---Chequea si el Admin Code es correcto, para hacer a ese usuario administrador del sitio---*/
+                    if ( req.body.adminCode == "sarasa.20") {
+                        users[req.session.user.id -1].adminCode = true;
+                    }else{
+                        users[req.session.user.id -1].adminCode = false;
                     }
                     /*-----Guardamos datos en el users.json-----*/
                     const usersJSON = JSON.stringify(users);
