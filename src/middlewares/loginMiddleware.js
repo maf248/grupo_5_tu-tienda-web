@@ -12,7 +12,7 @@ function rememberMiddleware(req, res, next) {
   /*--Primero se setea una session, en caso de no tenerla pero SI tener una cookie----*/
   if(req.cookies.recordame != undefined && req.session.user == undefined) {
         users.forEach(user => {
-          /*---Se usa un hashId para que nunca cambie, y sea mas seguro---*/
+          /*---Se usa un hashId para que nunca cambie, y sea mas segura la cookie---*/
             if (req.cookies.recordame == user.hashId) {
                req.session.user = user;
             }

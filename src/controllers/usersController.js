@@ -38,13 +38,13 @@ const usersController = {
                     return res.redirect('/users/profile/' + userFound.id);
                                         
                 } else if (!check) {
-
-                    return res.render('./users/login', {loginPassValue: false, loginMailValue: null});
+                    
+                    return res.render('./users/login', {loginPassValue: false, loginMailValue: null, email: req.body.user});
                 } 
 
         } else {
 
-            return res.render('./users/login', {loginPassValue: null, loginMailValue: false});
+            return res.render('./users/login', {loginPassValue: null, loginMailValue: false, email: req.body.user});
         }
         
     },
@@ -65,7 +65,7 @@ const usersController = {
         } else {
             users.forEach( user => {
                 if (user.email == req.body.email) {
-
+                    
                     return res.render('./users/register', {mailDuplicated: true});
                 }
             });
