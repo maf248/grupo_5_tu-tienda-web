@@ -14,7 +14,7 @@ var loginPassValue = null;
 const usersController = {
     login: function(req, res, next) {
         if (req.session.user != undefined) {
-            res.redirect('/users/profile/'+ req.session.user.id);
+            res.redirect('/users/profile');
          } else {
             res.render('./users/login', {loginMailValue: loginMailValue, loginPassValue: loginPassValue});
             }
@@ -35,7 +35,7 @@ const usersController = {
                         res.cookie('recordame', userFound.hashId, {maxAge: 1000*60*60*24})
                     } 
 
-                    return res.redirect('/users/profile/' + userFound.id);
+                    return res.redirect('/users/profile');
                                         
                 } else if (!check) {
                     
@@ -52,7 +52,7 @@ const usersController = {
         if (req.session.user == undefined) {
             res.render('./users/register');
          } else {
-            res.redirect('/users/profile/' + req.session.user.id);
+            res.redirect('/users/profile');
             }
         
     },
@@ -99,15 +99,10 @@ const usersController = {
     },
     profile: function (req, res, next) {
         if (req.session.user != undefined) {
-            
-            if  (req.params.id == req.session.user.id){
-                
+
                 return res.render('./users/profile');
+          
             } else {
-                res.redirect('/users/profile/' + req.session.user.id);
-            }
-        
-        } else {
             res.redirect('/users/login')
         }
 
@@ -123,9 +118,9 @@ const usersController = {
             if (req.body.password !== req.body.passwordRepeat) {
                 return res.render('./users/profile', {passwordsNotMatch: true});
             } else {
-                users[req.params.id -1].firstName = req.body.firstName
-                users[req.params.id -1].lastName = req.body.lastName
-                users[req.params.id -1].password = bcryptjs.hashSync(req.body.password, 10);
+                users[req.session.user.id -1].firstName = req.body.firstName
+                users[req.session.user.id -1].lastName = req.body.lastName
+                users[req.session.user.id -1].password = bcryptjs.hashSync(req.body.password, 10);
                 /*---Chequea el email, que no esté en uso por otro usuario---*/
                 users.forEach(user => {
                     if (user.email == req.body.email) {
@@ -137,20 +132,20 @@ const usersController = {
                 });
                 
                 if (!mailDuplicated) {
-                    users[req.params.id -1].email = req.body.email 
+                    users[req.session.user.id -1].email = req.body.email 
                 }
                 /*-----Guardamos datos en el users.json-----*/
                 const usersJSON = JSON.stringify(users);
                 fs.writeFileSync(usersDir, usersJSON);
-                res.redirect('/users/profile/'+ req.params.id);
+                res.redirect('/users/profile/');
             }
 
 
         } else if (!errors.isEmpty()) { 
                     /*---Si el UNICO error es de la contraseña vacia, guarda los demás datos---*/
                     if (req.body.password == '' && errors.errors.length == 1) {
-                        users[req.params.id -1].firstName = req.body.firstName
-                        users[req.params.id -1].lastName = req.body.lastName
+                        users[req.session.user.id -1].firstName = req.body.firstName
+                        users[req.session.user.id -1].lastName = req.body.lastName
                     /*---Chequea el email, que no esté en uso por otro usuario---*/
                     mailDuplicated = false;
                     users.forEach(user => {
@@ -162,13 +157,13 @@ const usersController = {
                         }
                     });
                     if (!mailDuplicated) {
-                        users[req.params.id -1].email = req.body.email 
+                        users[req.session.user.id -1].email = req.body.email 
                     }
                     /*-----Guardamos datos en el users.json-----*/
                     const usersJSON = JSON.stringify(users);
                     fs.writeFileSync(usersDir, usersJSON);
                     
-                    res.redirect('/users/profile/'+ req.params.id);
+                    res.redirect('/users/profile/');
                 } else {
                     return res.render('./users/profile', {errors: errors.errors});
                 }
@@ -176,12 +171,12 @@ const usersController = {
     },
     photoUpdate: function (req, res, next) {
         /*---Aqui se guarda el nombre del archivo del nuevo avatar---*/
-        users[req.params.id -1].image = req.files[0].filename;
+        users[req.session.user.id -1].image = req.files[0].filename;
 
         const usersJSON = JSON.stringify(users);
 		fs.writeFileSync(usersDir, usersJSON);
 
-        res.redirect('/users/profile/'+ req.params.id)
+        res.redirect('/users/profile/')
     },
     logout: function (req, res, next) {
         /*---Aqui se resetean valores de mensajes de error----*/
@@ -196,9 +191,9 @@ const usersController = {
     },
     delete: function(req, res, next){
         /*---Aquí se borra el usuario del array dentro de la variable users----*/
-        users.splice(req.params.id-1, 1)
+        users.splice(req.session.user.id -1, 1)
          /*---Aquí se corrigen los ID de los usuarios restantes para evitar errores----*/
-        for(let i=0; i <users.length; i++){
+        for(let i=0; i < users.length; i++){
             users[i].id = i+1 
         }
         /*---Aquí se guardan los cambios en el JSON----*/

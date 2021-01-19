@@ -7,7 +7,7 @@
 
 <%- include('../partials/navbar') %>
 
-<form action="/users/profile/<%= locals.user.id %>/avatar" method="POST" class="imageForm" enctype="multipart/form-data">
+<form action="/users/profile/avatar" method="POST" class="imageForm" enctype="multipart/form-data">
 
     <label for="imagenPerfilInput" class="imagenPerfilInput">  
         <% if (locals.user.image != undefined) { %>
@@ -22,7 +22,7 @@
 
 </form>
 
-<form action="/users/profile/<%= locals.user.id %>?_method=PATCH" method="POST" class="datosPersonales">
+<form action="/users/profile/edit?_method=PATCH" method="POST" class="datosPersonales">
     
     <input type="text" name="firstName" value="<%=locals.user.firstName%>">
     <% if (typeof errors != "undefined") {
@@ -68,7 +68,7 @@
 
 </form>
 
-<form action="/users/delete/<%= locals.user.id %>?_method=DELETE" method="POST" class="">
+<form action="/users/profile/delete/?_method=DELETE" method="POST" class="">
     <button onclick="return confirm('¿Estas seguro que querés borrar tu cuenta de usuario?');" type="submit" class="button-profile">Eliminar cuenta ⚠</button>
 </form>
 

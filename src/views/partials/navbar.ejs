@@ -21,7 +21,7 @@
         <div class="barraSuperior-navExtra">
             <div class="barraSuperior-navExtra-usuario">
                 <% if (typeof locals.user != 'undefined') { %>
-                    <a href="/users/profile/<%= locals.user.id %>">
+                    <a href="/users/profile">
                         <% if (locals.user.image != undefined) { %>
                             <img src="/images/users/<%= locals.user.image %>" alt="Imagen de perfil de usuario" class="imagenPerfilNavbar">
                         <% } else { %>
