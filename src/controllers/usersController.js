@@ -108,7 +108,7 @@ const usersController = {
         let mailDuplicated = false;
                 
         /*---Se chequean los inputs. Si no hay errores los guarda---*/
-        console.log("el adminCode llega así :" + req.body.adminCode);
+        
         if (errors.isEmpty()) {
             /*---Si las contraseñas coinciden se guarda, sino se avisa del error---*/
             if (req.body.password !== req.body.passwordRepeat) {
