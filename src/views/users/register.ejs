@@ -37,10 +37,11 @@ errors.forEach ( error => {
             <p><%= error.msg %></p>
     <% } }) } %>
 <input class="controls" type="password" name="passwordRepeat" placeholder="Repetir Contraseña">
-<% if (typeof passwordsNotMatch != 'undefined' && passwordsNotMatch == true) { %>
-    <p>Las contraseñas no coinciden. Por favor, intenta nuevamente.</p>
-<% } %>
-
+<% if (typeof errors != "undefined") {
+    errors.forEach (error => { 
+        if (error.param == "passwordRepeat") { %>
+            <p><%= error.msg %></p>
+    <% } }) } %>    
 <input class="buttons" type="submit"  value="Registrarse" >
 
 <div class="form-oauth">

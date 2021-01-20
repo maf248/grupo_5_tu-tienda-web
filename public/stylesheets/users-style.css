@@ -275,6 +275,9 @@ form p {
            width: 60%;
            padding: 20px;
        }
+       .datosPersonales p {
+           text-align: left;
+       }
        .datosPersonales input {
            text-align: left;
        }

@@ -1,4 +1,4 @@
-const {check} = require('express-validator');
+const {check, body} = require('express-validator');
 
 module.exports = [
     check('firstName')
@@ -13,5 +13,13 @@ module.exports = [
     check('password')
         .isStrongPassword()
         .withMessage('La contraseña debe tener un mínimo de 8 caracteres, incluyendo una minúscula, una mayúscula, un número y un símbolo'),
+    body('passwordRepeat')
+        .custom(function(value, {req}) {
+            if (value == req.body.password) {
+                return true;
+            }
+            return false;
+        })
+        .withMessage('Las contraseñas no coinciden, intentá nuevamente')
 
 ]

@@ -59,6 +59,7 @@ const usersController = {
     createUser: function(req, res) {
         
         let errors = validationResult(req);
+        console.log(errors.errors);
         let mailDuplicated = false;
         if (!errors.isEmpty()) {
             return res.render('./users/register', {errors: errors.errors, firstName: req.body.firstName, lastName: req.body.lastName, email: req.body.email} );
@@ -69,11 +70,7 @@ const usersController = {
                     return res.render('./users/register', {mailDuplicated: true, firstName: req.body.firstName, lastName: req.body.lastName, email: req.body.email});
                 }
             });
-            if (req.body.password !== req.body.passwordRepeat) {
-
-                return res.render('./users/register', {passwordsNotMatch: true, firstName: req.body.firstName, lastName: req.body.lastName, email: req.body.email});
-
-            } else if (!mailDuplicated) {       
+         if (!mailDuplicated) {       
             users.push( 
                 {
                 "id": users.length +1,
@@ -110,10 +107,7 @@ const usersController = {
         /*---Se chequean los inputs. Si no hay errores los guarda---*/
         
         if (errors.isEmpty()) {
-            /*---Si las contraseñas coinciden se guarda, sino se avisa del error---*/
-            if (req.body.password !== req.body.passwordRepeat) {
-                return res.render('./users/profile', {passwordsNotMatch: true});
-            } else {
+            /*---Si no hay errores en los campos, guarda todo---*/
                 users[req.session.user.id -1].firstName = req.body.firstName
                 users[req.session.user.id -1].lastName = req.body.lastName
                 users[req.session.user.id -1].password = bcryptjs.hashSync(req.body.password, 10);
@@ -141,12 +135,11 @@ const usersController = {
                 const usersJSON = JSON.stringify(users);
                 fs.writeFileSync(usersDir, usersJSON);
                 res.redirect('/users/profile/');
-            }
 
 
-        } else if (!errors.isEmpty()) { 
-                    /*---Si el UNICO error es de la contraseña vacia, guarda los demás datos---*/
-                    if (req.body.password == '' && errors.errors.length == 1) {
+            } else if (!errors.isEmpty()) { 
+                    /*---Si el UNICO error es de la contraseña vacia, guarda los demás datos, pero NO actualiza password---*/
+                    if (req.body.passwordRepeat == '' && errors.errors.length == 1) {
                         users[req.session.user.id -1].firstName = req.body.firstName
                         users[req.session.user.id -1].lastName = req.body.lastName
                     /*---Chequea el email, que no esté en uso por otro usuario---*/
@@ -174,6 +167,7 @@ const usersController = {
                     
                     res.redirect('/users/profile/');
                 } else {
+                /*---Si hay errores redirige mostrandolos---*/
                     return res.render('./users/profile', {errors: errors.errors});
                 }
         }
