@@ -43,9 +43,6 @@
                     <p><%= error.msg %></p>
             <% } }) } %>
         <input type="email" name="email" value="<%=locals.user.email%>">
-        <% if (typeof mailDuplicated != 'undefined' && mailDuplicated == true) { %>
-            <p>Éste correo electronico ya está registrado</p>
-        <% } %>
         <% if (typeof errors != "undefined") {
         errors.forEach (error => { 
         if (error.param == "email") { %>

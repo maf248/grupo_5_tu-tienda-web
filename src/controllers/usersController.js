@@ -59,18 +59,10 @@ const usersController = {
     createUser: function(req, res) {
         
         let errors = validationResult(req);
-        console.log(errors.errors);
-        let mailDuplicated = false;
+        
         if (!errors.isEmpty()) {
             return res.render('./users/register', {errors: errors.errors, firstName: req.body.firstName, lastName: req.body.lastName, email: req.body.email} );
-        } else {
-            users.forEach( user => {
-                if (user.email == req.body.email) {
-                    
-                    return res.render('./users/register', {mailDuplicated: true, firstName: req.body.firstName, lastName: req.body.lastName, email: req.body.email});
-                }
-            });
-         if (!mailDuplicated) {       
+        } else {      
             users.push( 
                 {
                 "id": users.length +1,
@@ -87,7 +79,6 @@ const usersController = {
             fs.writeFileSync(usersDir, usersJSON);
 
             res.redirect('/users/login');
-            }
         }
     },
     profile: function (req, res, next) {
@@ -102,28 +93,14 @@ const usersController = {
     },
     editProfile: function (req, res, next) {
         let errors = validationResult(req);
-        let mailDuplicated = false;
                 
         /*---Se chequean los inputs. Si no hay errores los guarda---*/
-        
         if (errors.isEmpty()) {
-            /*---Si no hay errores en los campos, guarda todo---*/
+            /*---Si NO hay errores en los campos, guarda todo---*/
                 users[req.session.user.id -1].firstName = req.body.firstName
                 users[req.session.user.id -1].lastName = req.body.lastName
                 users[req.session.user.id -1].password = bcryptjs.hashSync(req.body.password, 10);
-                /*---Chequea el email, que no esté en uso por otro usuario---*/
-                users.forEach(user => {
-                    if (user.email == req.body.email) {
-                        if (user.id != req.session.user.id) {
-                            mailDuplicated = true;
-                            return res.render('./users/profile', {mailDuplicated: true});
-                        }
-                    }
-                });
-                
-                if (!mailDuplicated) {
-                    users[req.session.user.id -1].email = req.body.email 
-                }
+                users[req.session.user.id -1].email = req.body.email 
                 
                 /*---Chequea si el Admin Code es correcto, para hacer a ese usuario administrador del sitio---*/
                 if (req.body.adminCode == "sarasa.20") {
@@ -134,43 +111,35 @@ const usersController = {
                 /*-----Guardamos datos en el users.json-----*/
                 const usersJSON = JSON.stringify(users);
                 fs.writeFileSync(usersDir, usersJSON);
-                res.redirect('/users/profile/');
 
+                res.redirect('/users/profile/');
 
             } else if (!errors.isEmpty()) { 
                     /*---Si el UNICO error es de la contraseña vacia, guarda los demás datos, pero NO actualiza password---*/
                     if (req.body.passwordRepeat == '' && errors.errors.length == 1) {
                         users[req.session.user.id -1].firstName = req.body.firstName
                         users[req.session.user.id -1].lastName = req.body.lastName
-                    /*---Chequea el email, que no esté en uso por otro usuario---*/
-                    mailDuplicated = false;
-                    users.forEach(user => {
-                        if (user.email == req.body.email) {
-                            if (user.id != req.session.user.id) {
-                                mailDuplicated = true;
-                                return res.render('./users/profile', {mailDuplicated: true});
-                            }
-                        }
-                    });
-                    if (!mailDuplicated) {
                         users[req.session.user.id -1].email = req.body.email 
-                    }
-                    /*---Chequea si el Admin Code es correcto, para hacer a ese usuario administrador del sitio---*/
-                    if (req.body.adminCode == "sarasa.20") {
+
+                        /*---Chequea si el Admin Code es correcto, para hacer a ese usuario administrador del sitio---*/
+                        if (req.body.adminCode == "sarasa.20") {
                         users[req.session.user.id -1].adminCode = true;
-                    } else if (req.body.adminCode != "") {
+                        } else if (req.body.adminCode != "") {
                         users[req.session.user.id -1].adminCode = false;
-                    }
-                    /*-----Guardamos datos en el users.json-----*/
-                    const usersJSON = JSON.stringify(users);
-                    fs.writeFileSync(usersDir, usersJSON);
+                        }
+                        /*-----Guardamos datos en el users.json-----*/
+                        const usersJSON = JSON.stringify(users);
+                        fs.writeFileSync(usersDir, usersJSON);
+                        
+                        res.redirect('/users/profile/');
+
+                    /*---Si hay varios errores redirige mostrandolos---*/
+                    } else {
+                        return res.render('./users/profile', {errors: errors.errors});
+                        }
                     
-                    res.redirect('/users/profile/');
-                } else {
-                /*---Si hay errores redirige mostrandolos---*/
-                    return res.render('./users/profile', {errors: errors.errors});
-                }
-        }
+                } 
+                    
     },
     photoUpdate: function (req, res, next) {
         /*---Aqui se guarda el nombre del archivo del nuevo avatar---*/
