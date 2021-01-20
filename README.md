@@ -70,10 +70,7 @@ Tengo 29 años, estudiante de marketing. Me interesé últimamente por la progra
 
 ○ [Formulario de login](https://wireframe.cc/1MSEsi)
 
-<<<<<<< HEAD
 ### ★ Opcional: Identidad visual del sitio
-
-Carpeta design creada. Incluye fuente, iconos, imagenes, logos.
 
 Referencias:
 
@@ -82,7 +79,6 @@ Referencias:
 ○ [Iconos flat icon](https://www.flaticon.com/free-icon/shopping-cart_2611076)
 
 ○ [Imagen diseño de referencia](https://buenosaireswebs.com/productos/tienda-online/)
-=======
 
 ## ★ Secciones de la página:
 
@@ -98,4 +94,8 @@ Referencias:
 
 ○ Formulario de carga y edición de productos ( /products/create y /products/1/edicion)
 
->>>>>>> a5b5cf8239e88dd3f4b33df07a2ef61a0879afd2
+○ Perfil de usuario (/users/profile)
+
+## ★ Código de administrador:
+
+○ Al introducir en /users/profile el codigo "sarasa.20", como codigo de administrador, dicha cuenta adquiere más privilegios (editar y crear productos).
