@@ -31,8 +31,7 @@ module.exports = [
     body('email')
         .custom(function(value, {req}) {
             for (let i = 0; i < users.length; i++) {
-                console.log(users[i].email);
-                console.log(value);
+
                 /*---Si coinciden los mails, pero NO los ID, significa que otro usuario tiene ese mail---*/
                 if(users[i].email == value) {
                     if (req.session.user != undefined) {
