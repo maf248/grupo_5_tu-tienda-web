@@ -51,7 +51,7 @@
         <input type="password" name="password" placeholder="Actualizar contraseña">
         <% if (typeof errors != "undefined") {
             errors.forEach (error => { 
-                if (error.param == "password") { %>
+                if (error.param == "password" && error.value != '') { %>
                     <p><%= error.msg %></p>
             <% } }) } %>
         <input type="password" name="passwordRepeat" placeholder="Repetí tu nueva contraseña">
