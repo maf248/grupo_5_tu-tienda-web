@@ -145,8 +145,12 @@ form p {
        text-decoration: underline;
    }
 
-   /* A partir de acá comienza el estilo de la página de profile */
+   /* Estilo de la página de profile */
 
+   .profile {
+       display: flex;
+       flex-direction: column;
+   }
    .imageForm {
        display: flex;
        flex-direction: column;
@@ -222,6 +226,7 @@ form p {
    .categoriaContratada h4 {
        font-size: 1.5em;
        margin: 2% 1% 2% 0;
+       white-space: nowrap;
    }
    .productosContratados p,
    .categoriaContratada p {
@@ -236,10 +241,47 @@ form p {
    .button-delete {
        cursor: pointer;
        padding: 2px;
-       background-color: red;
+       background-color: rgba(255, 0, 0, 0.8);
        border: none;
        border-radius: 2px;
-       
+       padding: 5px;
+   }
+   .button-delete:hover {
+    background-color: rgb(255, 0, 0);
+    
+   }
+   @media (min-width: 800px){
+       .profile {
+        flex-direction: row;
+        flex-wrap: wrap;
+       }
+       .imageForm {
+           width: 40%;
+           height: auto;
+       }
+       .datosPersonales {
+           width: 60%;
+           padding: 20px;
+       }
+       .datosPersonales input {
+           text-align: left;
+       }
+       .productosContratados, .categoriaContratada {
+           justify-content: flex-start;
+       }
+       .container-delete {
+           width: 100%;
+           min-width: fit-content;
+           box-sizing: content-box;
+           margin: 5px;
+           height: fit-content;
+       }
+       .container-delete button {
+           margin-left: 15%;
+           margin-right: auto;
+           margin-bottom: 10px;
+       }
+
    }
    @media (max-width: 500px){
     .productosContratados{

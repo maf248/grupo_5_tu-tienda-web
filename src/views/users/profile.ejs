@@ -6,71 +6,71 @@
 </head>
 
 <%- include('../partials/navbar') %>
+<div class="profile">
+    <form action="/users/profile/avatar" method="POST" class="imageForm" enctype="multipart/form-data">
 
-<form action="/users/profile/avatar" method="POST" class="imageForm" enctype="multipart/form-data">
+        <label for="imagenPerfilInput" class="imagenPerfilInput">  
+            <% if (locals.user.image != undefined) { %>
+            <img class="imagenPerfil" src="/images/users/<%= locals.user.image %>" alt="Avatar o imagen de perfil">
+        <% } else { %>
+            <img class="imagenPerfil" src="/images/users/default-avatar.svg" alt="Avatar o imagen de perfil">
+            <% } %>
+        </label>
 
-    <label for="imagenPerfilInput" class="imagenPerfilInput">  
-        <% if (locals.user.image != undefined) { %>
-        <img class="imagenPerfil" src="/images/users/<%= locals.user.image %>" alt="Avatar o imagen de perfil">
-       <% } else { %>
-        <img class="imagenPerfil" src="/images/users/default-avatar.svg" alt="Avatar o imagen de perfil">
+        <input type="file" name="imagenPerfilInput" class="imagenPerfilInputb" id="imagenPerfilInput" required>
+        <button type="submit">Actualizar avatar</button>
+
+    </form>
+
+    <form action="/users/profile/edit?_method=PATCH" method="POST" class="datosPersonales">
+        
+        <input type="text" name="firstName" value="<%=locals.user.firstName%>">
+        <% if (typeof errors != "undefined") {
+            errors.forEach ( error => { 
+                if (error.param == "firstName") { %>
+                    <p><%= error.msg %></p>
+            <% } }) } %>
+        <input type="text" name="lastName" value="<%=locals.user.lastName%>">
+        <% if (typeof errors != "undefined") {
+            errors.forEach ( error => { 
+                if (error.param == "lastName") { %>
+                    <p><%= error.msg %></p>
+            <% } }) } %>
+        <input type="email" name="email" value="<%=locals.user.email%>">
+        <% if (typeof mailDuplicated != 'undefined' && mailDuplicated == true) { %>
+            <p>Éste correo electronico ya está registrado</p>
         <% } %>
-    </label>
-
-    <input type="file" name="imagenPerfilInput" class="imagenPerfilInputb" id="imagenPerfilInput" required>
-    <button type="submit">Actualizar avatar</button>
-
-</form>
-
-<form action="/users/profile/edit?_method=PATCH" method="POST" class="datosPersonales">
-    
-    <input type="text" name="firstName" value="<%=locals.user.firstName%>">
-    <% if (typeof errors != "undefined") {
+        <% if (typeof errors != "undefined") {
         errors.forEach ( error => { 
-            if (error.param == "firstName") { %>
-                <p><%= error.msg %></p>
-        <% } }) } %>
-    <input type="text" name="lastName" value="<%=locals.user.lastName%>">
-    <% if (typeof errors != "undefined") {
-        errors.forEach ( error => { 
-            if (error.param == "lastName") { %>
-                <p><%= error.msg %></p>
-        <% } }) } %>
-    <input type="email" name="email" value="<%=locals.user.email%>">
-    <% if (typeof mailDuplicated != 'undefined' && mailDuplicated == true) { %>
-        <p>Éste correo electronico ya está registrado</p>
-    <% } %>
-    <% if (typeof errors != "undefined") {
-    errors.forEach ( error => { 
-    if (error.param == "email") { %>
-        <p><%= error.msg %></p>
-<% } }) } %>
-    <input type="password" name="password" placeholder="Actualizar contraseña">
-    <% if (typeof errors != "undefined") {
-        errors.forEach ( error => { 
-            if (error.param == "password") { %>
-                <p><%= error.msg %></p>
-        <% } }) } %>
-    <input type="password" name="passwordRepeat" placeholder="Repetí tu nueva contraseña">
-    <% if (typeof passwordsNotMatch != 'undefined' && passwordsNotMatch == true) { %>
-        <p>Las contraseñas no coinciden. Por favor, intenta nuevamente.</p>
-    <% } %>
-    
-    <div class="productosContratados">
-        <h4>Tu plan: </h4> <p> <% if(locals.user.plan != undefined) { %> <%= locals.user.plan %> <% } else { %> Todavia no seleccionaste ningun plan <% } %></p>
-    </div>
-    <div class="categoriaContratada">
-        <h4>Tu categoría: </h4> <p> <% if(locals.user.category != undefined) { %> <%= locals.user.category %> <% } else { %> Todavia no seleccionaste ninguna categoría <% } %></p>
-    </div>
-    <input type="password" name="adminCode" value="" placeholder="¿Código de administrador?" class="input-código">
-    
-    <button type="submit">Guardar Cambios</button>
+        if (error.param == "email") { %>
+            <p><%= error.msg %></p>
+    <% } }) } %>
+        <input type="password" name="password" placeholder="Actualizar contraseña">
+        <% if (typeof errors != "undefined") {
+            errors.forEach ( error => { 
+                if (error.param == "password") { %>
+                    <p><%= error.msg %></p>
+            <% } }) } %>
+        <input type="password" name="passwordRepeat" placeholder="Repetí tu nueva contraseña">
+        <% if (typeof passwordsNotMatch != 'undefined' && passwordsNotMatch == true) { %>
+            <p>Las contraseñas no coinciden. Por favor, intenta nuevamente.</p>
+        <% } %>
+        
+        <div class="productosContratados">
+            <h4>Tu plan: </h4> <p> <% if(locals.user.plan != undefined) { %> <%= locals.user.plan %> <% } else { %> Todavia no seleccionaste ningun plan <% } %></p>
+        </div>
+        <div class="categoriaContratada">
+            <h4>Tu categoría: </h4> <p> <% if(locals.user.category != undefined) { %> <%= locals.user.category %> <% } else { %> Todavia no seleccionaste ninguna categoría <% } %></p>
+        </div>
+        <input type="password" name="adminCode" value="" placeholder="¿Código de administrador?" class="input-código">
+        
+        <button type="submit">Guardar Cambios</button>
 
 
-</form>
+    </form>
 
-<form action="/users/profile/delete/?_method=DELETE" method="POST" class="container-delete">
-    <button onclick="return confirm('¿Estas seguro que querés borrar tu cuenta de usuario?');" type="submit" class="button-delete">Eliminar cuenta ⚠</button>
-</form>
-
+    <form action="/users/profile/delete/?_method=DELETE" method="POST" class="container-delete">
+        <button onclick="return confirm('¿Estas seguro que querés borrar tu cuenta de usuario?');" type="submit" class="button-delete">Eliminar cuenta ⚠</button>
+    </form>
+</div>
 <%- include('../partials/footer') %>
