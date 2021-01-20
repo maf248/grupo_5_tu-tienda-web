@@ -158,6 +158,12 @@ form p {
        width: 100%;
        padding: 3%;
    }
+   .imageForm h2 {
+       font-family: 'Montserrat', sans-serif;
+       font-size: 1.3em;
+       text-decoration: underline;
+       padding: 20px 0px 30px 0px;
+   }
    .imageForm button {
     align-self: center;
     width: fit-content;
@@ -259,6 +265,12 @@ form p {
            width: 40%;
            height: auto;
        }
+       .imageForm h2 {
+        padding: 0px 0px 40px 0px;
+        }
+        .imagenPerfil {
+            margin: 10px;
+        }
        .datosPersonales {
            width: 60%;
            padding: 20px;
@@ -268,6 +280,10 @@ form p {
        }
        .productosContratados, .categoriaContratada {
            justify-content: flex-start;
+       }
+       .datosPersonales button {
+           margin: 10px;
+           justify-self: flex-start;
        }
        .container-delete {
            width: 100%;
