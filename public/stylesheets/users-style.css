@@ -241,5 +241,18 @@ form p {
        border-radius: 2px;
        
    }
+   @media (max-width: 500px){
+    .productosContratados{
+        flex-direction: column;
+       margin: 10px;
+       
+    }
+    .categoriaContratada{
+        flex-direction: column;
+        margin: 10px;
+       
+    }
+    
+    }
    
    
