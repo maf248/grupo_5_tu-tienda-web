@@ -2,7 +2,6 @@ const {check, body} = require('express-validator');
 
 const path = require('path');
 const fs = require('fs');
-const { nextTick } = require('process');
 
 const usersDir = path.join(__dirname, '..', 'data', 'users.json');
 const users = JSON.parse(fs.readFileSync(usersDir, 'utf-8'));
