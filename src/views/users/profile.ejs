@@ -60,6 +60,9 @@
                 if (error.param == "passwordRepeat") { %>
                     <p><%= error.msg %></p>
             <% } }) } %>
+            <% if (typeof passwordConfirmation != 'undefined' && passwordConfirmation == true) { %> 
+                <p>La contrasena ha sido modificada con éxito</p>
+            <% } %>
         <div class="productosContratados">
             <h4>Tu plan: </h4> <p> <% if(locals.user.plan != undefined) { %> <%= locals.user.plan %> <% } else { %> Todavia no seleccionaste ningun plan <% } %></p>
         </div>

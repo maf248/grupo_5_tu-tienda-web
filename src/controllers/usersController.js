@@ -95,6 +95,8 @@ const usersController = {
     },
     editProfile: function (req, res, next) {
         let errors = validationResult(req);
+        let passwordConfirmation = false;
+        console.log(passwordConfirmation);
                 
         /*---Se chequean los inputs. Si no hay errores los guarda---*/
         if (errors.isEmpty()) {
@@ -103,7 +105,10 @@ const usersController = {
                 users[req.session.user.id -1].lastName = req.body.lastName
                 users[req.session.user.id -1].password = bcryptjs.hashSync(req.body.password, 10);
                 users[req.session.user.id -1].email = req.body.email 
-                
+
+                passwordConfirmation = true;
+                console.log(passwordConfirmation);
+
                 /*---Chequea si el Admin Code es correcto, para hacer a ese usuario administrador del sitio---*/
                 if (req.body.adminCode == "sarasa.20") {
                     users[req.session.user.id -1].adminCode = true;
@@ -114,7 +119,7 @@ const usersController = {
                 const usersJSON = JSON.stringify(users);
                 fs.writeFileSync(usersDir, usersJSON);
 
-                res.redirect('/users/profile/');
+                res.render('./users/profile', {passwordConfirmation : passwordConfirmation});
 
             } else if (!errors.isEmpty()) { 
                     /*---Si el UNICO error es de la contraseña vacia, guarda los demás datos, pero NO actualiza password---*/
