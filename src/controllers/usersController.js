@@ -80,8 +80,6 @@ const usersController = {
 
             req.session.user = users[users.length -1];
 
-            res.cookie('recordame', req.session.user.hashId, {maxAge: 1000*60*60*24})
-
             res.redirect('/users/profile');
         }
     },
