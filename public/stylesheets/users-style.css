@@ -29,7 +29,7 @@
 /* Estilo de Login */
 .form-login {
     font-family: Arial;
-    width: 400px;
+    max-width: 400px;
     height: fit-content;
     background: white;
     box-shadow: 7px 13px 37px #000;
@@ -94,7 +94,7 @@ form p {
 
 
 .form-registro {
-    width: 500px;
+    max-width: 500px;
     height: auto;
     background: white;
     box-shadow: 7px 13px 37px #000;
@@ -302,15 +302,20 @@ form p {
 
    }
    @media (max-width: 500px){
+    .form-login {
+        transform: scale(0.9);
+    }
+    .form-registro {
+        transform: scale(0.9);
+    }
     .productosContratados{
         flex-direction: column;
-       margin: 10px;
+        margin: 10px;
        
     }
     .categoriaContratada{
         flex-direction: column;
         margin: 10px;
-       
     }
     
     }
