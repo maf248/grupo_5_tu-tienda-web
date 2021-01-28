@@ -15,11 +15,19 @@
     display: inline-block;
 }
 .error-messages-info {
-    font-size: 1.4em;
     display: inline-block;
-    width: 80%;
+    width: 70%;
     min-width: fit-content;
     text-align: center;
+}
+.error-messages-info h3 {
+    line-height: 2em;
+    font-size: 1.5em;
+}
+.error-messages-info p {
+    line-height: 1.5em;
+    font-size: 0.9em;
+    font-style: italic;
 }
 .error-image {
     width: 60%;
@@ -31,6 +39,7 @@
     width: 100%;
 }
 .error-nav a {
+    width: fit-content;
     font-size: 1em;
     text-decoration: none;
     color: white;
@@ -48,8 +57,41 @@
     width: 100%;
 }
 .error-developers h3{
-    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 15px;
 }
 .error-developers pre {
     flex-wrap: wrap;
+}
+@media (max-width: 800px){
+    .error-messages-status h1 {
+        font-size: 1.5em;
+    }
+    .error-messages-info h3 {
+        font-size: 1.3em;
+    }
+    .error-image {
+        width: 80%;
+    }
+}
+@media (max-width: 500px){
+    .error-image {
+        width: 90%;
+        justify-self: center;
+    }
+    .error-developers {
+        display: none;
+    }
+    .error-messages-info {
+        margin-top: 20px;
+        width: 100%;
+        text-align: center;
+    }
+    .error-nav {
+        flex-direction: column;
+    }
+    .error-nav a {
+        margin: 10px;
+        align-self: center;
+    }
 }
