@@ -96,7 +96,6 @@ const usersController = {
     editProfile: function (req, res, next) {
         let errors = validationResult(req);
         let passwordConfirmation = false;
-        console.log(passwordConfirmation);
                 
         /*---Se chequean los inputs. Si no hay errores los guarda---*/
         if (errors.isEmpty()) {
@@ -107,7 +106,6 @@ const usersController = {
                 users[req.session.user.id -1].email = req.body.email 
 
                 passwordConfirmation = true;
-                console.log(passwordConfirmation);
 
                 /*---Chequea si el Admin Code es correcto, para hacer a ese usuario administrador del sitio---*/
                 if (req.body.adminCode == "sarasa.20") {
