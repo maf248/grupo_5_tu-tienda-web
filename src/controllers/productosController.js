@@ -81,7 +81,7 @@ const productosController = {
         if ( req.params.id - 1 < products.length ) {
           res.render('./products/producto', { product: products[req.params.id -1] });   
         } else {
-          res.send('No tenemos un producto con ese ID');
+          res.redirect(req.url);
       }
     },
     listado: function(req, res, next) {
