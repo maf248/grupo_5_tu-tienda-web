@@ -69,4 +69,5 @@ return User;
 
 }
 
-// Porque sibarita es tan rica??
+// ¿Como se crea el script para poblar de datos la estructura ya armada?
+// Default value como ponerlo. Lineas 33 y 37 por ejemplo.
