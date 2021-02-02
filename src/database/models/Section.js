@@ -41,16 +41,16 @@ module.exports = (sequelize, DataTypes) => {
         updatedAt: 'updated_at'
     }
     
-    const User = sequelize.define("User", cols, config);
+    const User = sequelize.define("Section", cols, config);
     
     Section.associate = function() {
-        User.belongsTo(models.Product, {
+        Section.belongsTo(models.Product, {
             as: "Products",
             foreignKey: "product_id"
         })
     }
     Section.associate = function() {
-        User.belongsTo(models.Contens, {
+        Section.belongsTo(models.Contens, {
             as: "contens",
             foreignKey: "contens_id"
         })
