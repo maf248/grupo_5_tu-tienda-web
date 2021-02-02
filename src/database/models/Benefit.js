@@ -36,7 +36,9 @@ module.exports = (sequelize, DataTypes) => {
         createdAt: 'created_at',
         updatedAt: 'updated_at'
     }
-    Category.associate = function() {
+    const Benefit = sequelize.define("Benefit", cols, config);
+    
+    Benefit.associate = function() {
         Category.belongsToMany(models.Category, {
             as: "categories",
             through: "benefit_category",

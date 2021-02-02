@@ -41,7 +41,7 @@ module.exports = (sequelize, DataTypes) => {
         updatedAt: 'updated_at'
     }
     
-    const User = sequelize.define("Section", cols, config);
+    const Section = sequelize.define("Section", cols, config);
     
     Section.associate = function() {
         Section.belongsTo(models.Product, {
