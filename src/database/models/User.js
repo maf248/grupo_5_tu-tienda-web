@@ -63,6 +63,26 @@ const config = {
 
 const User = sequelize.define("User", cols, config);
 
+User.associate = function() {
+    User.belongsTo(models.Product, {
+        as: "Products",
+        foreignKey: "product_id"
+    })
+}
+User.associate = function() {
+    User.belongsTo(models.Category, {
+        as: "Categories",
+        foreignKey: "category_id"
+    })
+}
+User.associate = function() {
+    User.hasMany(models.Cart, {
+        as: "Carts",
+        foreignKey: "user_id"
+    })
+}
+
+
 return User;
 
 }
