@@ -34,7 +34,7 @@ const cols = {
     },
     role: {
         type: DataTypes.ENUM('admin', 'user'),
-        defaultValue: sequelize.literal('user')
+        defaultValue: 'user'
     },
     product_id: {
         type: DataTypes.INTEGER.UNSIGNED,
@@ -46,13 +46,11 @@ const cols = {
     },
     created_at: {
         type: DataTypes.DATE,
-        allowNull: false,
-        defaultValue: sequelize.literal('NOW()')
+        allowNull: false
     },
     updated_at: {
         type: DataTypes.DATE,
-        allowNull: false,
-        defaultValue: sequelize.literal('NOW()')
+        allowNull: false
     }
 }
 
@@ -68,6 +66,3 @@ const User = sequelize.define("User", cols, config);
 return User;
 
 }
-
-// ¿Como se crea el script para poblar de datos la estructura ya armada?
-// Default value como ponerlo. Lineas 33 y 37 por ejemplo.
