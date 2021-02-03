@@ -68,14 +68,10 @@ User.associate = function() {
         as: "Products",
         foreignKey: "product_id"
     })
-}
-User.associate = function() {
     User.belongsTo(models.Category, {
         as: "Categories",
         foreignKey: "category_id"
     })
-}
-User.associate = function() {
     User.hasMany(models.Cart, {
         as: "Carts",
         foreignKey: "user_id"

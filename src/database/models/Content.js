@@ -7,17 +7,17 @@ module.exports = (sequelize, DataTypes) => {
             autoIncrement: true,
             allowNull: false
         },
-        user_id: {
+        section_id: {
             type: DataTypes.INTEGER.UNSIGNED,
             allowNull: false
         },
-        product_id: {
-            type: DataTypes.INTEGER.UNSIGNED,
+        type: {
+            type: DataTypes.STRING,
             allowNull: false
         },
-        category_id: {
-            type: DataTypes.INTEGER.UNSIGNED,
-            allowNull: false
+        text: {
+            type: DataTypes.STRING,
+            defaultValue: null
         },
         created_at: {
             type: DataTypes.DATE,
@@ -30,31 +30,21 @@ module.exports = (sequelize, DataTypes) => {
     }
     
     const config = {
-        tableName: 'carts',
         timestamps: true,
         createdAt: 'created_at',
         updatedAt: 'updated_at'
     }
     
-    const Cart = sequelize.define("Cart", cols, config);
+    const Content = sequelize.define("Content", cols, config);
     
-    Cart.associate = function() {
-        Cart.belongsTo(models.User, {
-            as: "Users",
-            foreignKey: "user_id"
-        })
-        Cart.belongsTo(models.Category, {
-            as: "Categories",
-            foreignKey: "category_id"
-        })
-        Cart.belongsTo(models.Product, {
-            as: "Products",
-            foreignKey: "product_id"
+    Content.associate = function() {
+        Content.belongsTo(models.Section, {
+            as: "Sections",
+            foreignKey: "section_id"
         })
     }
     
     
-    return Cart;
+    return Content;
     
     }
-    

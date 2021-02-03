@@ -48,14 +48,10 @@ module.exports = (sequelize, DataTypes) => {
             as: "Products",
             foreignKey: "product_id"
         })
-    }
-    Section.associate = function() {
         Section.hasMany(models.Contens, {
             as: "contens",
             foreignKey: "contens_id"
         })
-    
-
     }
     
     
