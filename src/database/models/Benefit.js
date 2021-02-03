@@ -3,15 +3,14 @@ module.exports = (sequelize, DataTypes) => {
     const cols = {
         id: {
             type: DataTypes.INTEGER.UNSIGNED,
-        primaryKey: true,
-        autoIncrement: true,
-        allowNull: false
+            primaryKey: true,
+            autoIncrement: true,
+            allowNull: false
 
         },
         name: {
             type: DataTypes.STRING,
-            allowNull: false,
-            unique: true
+            allowNull: false
 
         },
         description: {
@@ -31,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
         }
     }
     const config = {
-        tableName: 'Benefit',
+        tableName: 'benefits',
         timestamps: true,
         createdAt: 'created_at',
         updatedAt: 'updated_at'

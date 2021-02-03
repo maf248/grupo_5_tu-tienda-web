@@ -15,12 +15,12 @@ module.exports = (sequelize, DataTypes) => {
         },
         title: {
             type: DataTypes.STRING,
-        allowNull: false
+            allowNull: false
 
         },
         image: {
             type: DataTypes.STRING,
-        allowNull: false
+            allowNull: false
 
         },
         crated_at: {
@@ -35,7 +35,7 @@ module.exports = (sequelize, DataTypes) => {
         }
     }
     const config = {
-        tableName: 'section',
+        tableName: 'sections',
         timestamps: true,
         createdAt: 'created_at',
         updatedAt: 'updated_at'
@@ -50,7 +50,7 @@ module.exports = (sequelize, DataTypes) => {
         })
     }
     Section.associate = function() {
-        Section.belongsTo(models.Contens, {
+        Section.hasMany(models.Contens, {
             as: "contens",
             foreignKey: "contens_id"
         })
