@@ -9,24 +9,22 @@
 
 <div class="contenedor">
     <div class="contenedor-producto">
-        <h2>Tu producto</h2>
+        <h2>Tu producto:</h2>
         <div class="contenedor-producto-elegido">
-            <h3 class="elegido-titulo"> Lo sentimos! No has elegido ningún producto.</h3>
+            <h3 class="elegido-titulo">¡Lo sentimos!...No has elegido ningún producto.</h3>
         </div>
     </div>
 
     <div class="contenedor-precios"> 
         
-     <h2>Detalles del precio</h2>
+     <h2>Detalles del precio:</h2>
         <div class="contenedor-precios-total">
             <div class="contenedor-precios-texto">
-                <h3> Suscripción:</h3>
                 <h3>Precio:</h3>
                 <h3>Descuento:</h3>
                 <h3>Total:</h3>
             </div>
             <div class="contenedor-precios-contenido">
-                <h3>--</h3>
                 <h3>--</h3>
                 <h3>--</h3>
                 <h3>--</h3>
@@ -42,7 +40,7 @@
 <div class="datos">
     <div class="pago-descripcion">
         <h2>Formas y medios de pago:</h2>
-     <form action="carrito.html" method="GET">
+     <form action="#" method="POST">
         <p>Elige el medio de pago que prefieras:</p>
         <input type="radio" name="pago" id="pago-debito" value="d">
         <label for="pago-debito">Débito</label>
@@ -58,13 +56,13 @@
     </div>
 
     <div class="datos-tarjeta">
-        <form action="carrito.html" method="GET">
+        <form action="#" method="POST">
             <label for="pais">País:</label>
             <input type="text" id="pais" name="pais">
             <label for="ciudad">Ciudad:</label>
             <input type="text" id="ciudad" name="ciudad">
-            <label for="">Seleccione tarjeta: </label>
-            <select name="tarjeta" id="">
+            <label for="tarjeta">Seleccione tarjeta: </label>
+            <select name="tarjeta" id="tarjeta">
                 <option value="vi">Visa</option>
                 <option value="mc">Mastercard</option>
                 <option value="am">American Express</option>
@@ -80,12 +78,12 @@
             
                 <label for="numero tarjeta">Numero de tarjeta:</label>
                 <input type="number" id="numero tarjeta" name="numero tarjeta">
-                <label for="codigo de seguridad"> Codigo de seguridad</label>
-                <input type="password" id="codigo de seguridad" name="codigo de seguridad">
-                <label for="fecha de vencimiento">Fecha de vencimineto</label>
-                <input tipe="number" id="fecha de nacimiento" placeholder="Día / Mes / Año">
+                <label for="codigoSeguridad"> Codigo de seguridad:</label>
+                <input type="password" id="codigoSeguridad" name="codigo de seguridad">
+                <label for="vencimiento">Fecha de vencimiento:</label>
+                <input type="number" id="vencimiento" placeholder="Mes / Año">
                 <label for="cuotas">Cantidad de cuotas:</label>
-            <select name="cuotas" id="">
+            <select name="cuotas" id="cuotas">
                 <option value="">1</option>
                 <option value="">3</option>
                 <option value="">6</option>

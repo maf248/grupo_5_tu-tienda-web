@@ -55,7 +55,7 @@ h1, h2, h3, h4, h5, h6, button {
 
 }
 .contenedor h2 {
-    font-size: 28px;
+    font-size: 1.6em;
     text-decoration: underline;
     text-align: center;
     margin: 15px 0px;
@@ -93,7 +93,7 @@ h1, h2, h3, h4, h5, h6, button {
     align-self: center;
 }
 .datos {
-    width: 70%;
+    width: 80%;
     background-color:white;
     margin: 50px 0px;
     padding: 30px;
@@ -157,7 +157,7 @@ h1, h2, h3, h4, h5, h6, button {
     padding: 5px;
     margin: 5px 0px;
     background: white;
-    font-size: 14px;
+    font-size: 0.85em;
     font-weight: bold;
     width: 40%;
 }
@@ -189,61 +189,105 @@ input[type=number] {
     border-radius: 20px;
     border: none;
     position: relative;
-    left: 90px ;
+    left: 90px;
     top: 10px;
 }
 @media (max-width: 500px) {
     .contenedor{
-        font-size: 10px;
+        font-size: 0.9em;
+        flex-direction: column;
+        width: 85%;
+        margin: 5%;
     }
     .contenedor h2{
-        font-size: 18px;
+        font-size: 1.6em;
     }
-    .datos{
+    .datos {
         flex-direction: column;
         width: 80%;
     }
-    .pago-descripcion{
+    .datos h2 {
+        font-size: 1.4em;
+    }
+    .pago-descripcion {
         width: 100%;
         margin-bottom: 15px;
         border-bottom: 1px solid black;
         padding-bottom: 15px;
+    }
+    .pago-descripcion p {
+        margin-top: 20px;
+    }
+    .pago-descripcion input {
+        margin-left: 30%;
+        margin-bottom: 10px;
+        margin-top: 3px;
+        margin-right: 5px;
+        width: 5%;
+        display: inline-block;
+    }
+    .pago-descripcion label {
+        width: 55%;
+        margin-bottom: 10px;
     }
     .datos-tarjeta{
         width: 100%;
     }
     .contenedor-producto{
         width: 100%;
-    }
-    .datos-tarjeta button{
-        position: relative;
-        left: 60%;
-    }
-}
-@media(max-width: 500px) {
-    .contenedor{
-        flex-direction: column;
-        width: 80%;
-        margin: 5%;
-       height: 600px;   
-    }
-    .contenedor-producto{
-         width: 100%;
-         border-radius: 20px 20px 0px 0px
+        border-radius: 20px 20px 0px 0px
     }
     .contenedor-precios{
         width: 100%;
         border-radius: 0px 0px 20px 20px;
+    }
+    .datos-tarjeta button {
+        font-size: 1.1em;
+        position: relative;
+        left: 90px;
+        top: 10px; 
+    }
+    .datos-tarjeta label {
+        width: 40%;
+        font-size: 0.85em;
+    }
+    .datos-tarjeta input, .datos-tarjeta select {
+        width: 60%;
     }
     
 }
     
 @media(max-width: 650px){
     .contenedor-precios-total h2{
-        font-size: 1,2em;
+        font-size: 1.2em;
     }
     .contenedor-precios-total h3{
         line-height: 1em;
+    }
+    .pago-descripcion input {
+        margin-left: 5%;
+    }
+    .pago-descripcion label {
+        width: 80%;
+    }
+
+}
+@media(max-width: 800px){
+    .datos {
+        width: 90%;
+    }
+    .datos h2 {
+        white-space: normal;
+    }
+    .datos p {
+        text-align: left;
+        margin-top: 15px;
+    }
+    .pago-descripcion input {
+        margin-left: 10%;
+    }
+    .pago-descripcion label {
+        width: 75%;
     }
 }
 
