@@ -1,0 +1,61 @@
+[{
+    "id": 1,
+    "section_id": 1,
+    "type": "icon",
+    "text": "tasks-solid.svg"
+},{
+    "id": 2,
+    "section_id": 1,
+    "type": "subtitle",
+    "text": "Gestioná tus productos"
+},{
+    "id": 3,
+    "section_id": 1,
+    "type": "description",
+    "text": "Subí tus productos y actualizá el stock de forma simple"
+},{
+    "id": 4,
+    "section_id": 2,
+    "type": "icon",
+    "text": "robot-solid.svg"
+},{
+    "id": 5,
+    "section_id": 2,
+    "type": "subtitle",
+    "text": "Automatizá tus ventas"
+},{
+    "id": 6,
+    "section_id": 2,
+    "type": "description",
+    "text": "Activá medios de pago para cobrar de forma segura."
+},{
+    "id": 7,
+    "section_id": 3,
+    "type": "icon",
+    "text": "truck-solid.svg"
+},{
+    "id": 8,
+    "section_id": 3,
+    "type": "subtitle",
+    "text": "Enviá tus pedidos"
+},{
+    "id": 9,
+    "section_id": 3,
+    "type": "description",
+    "text": "Tu tienda conectada con los medios de envío que necesitas."
+},{
+    "id": 10,
+    "section_id": 4,
+    "type": "icon",
+    "text": "money-bill-wave-solid.svg"
+},{
+    "id": 11,
+    "section_id": 4,
+    "type": "subtitle",
+    "text": "Vendé en más canales"
+},{
+    "id": 12,
+    "section_id": 4,
+    "type": "description",
+    "text": "Integrá tus productos con instagram, Facebook o con tu local."
+}]

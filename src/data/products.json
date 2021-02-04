@@ -66,7 +66,7 @@
         "dsubtitle4": "Falabella",
         "dicon4": "store-alt-solid.svg",
         "ddescription4": "Integración con Falabella. Lo que mostrás en Tu Tienda Web lo mostrás también en Falabella.",
-        "dimage": "/integracion-con-los-mayores-marketplaces.jpg"
+        "dimage": "integracion-con-los-mayores-marketplaces.jpg"
     },
     "seccion5": {
         "etitle": "Tus seguidores. Tus clientes.",
@@ -82,7 +82,7 @@
         "esubtitle4": "Mailchimp News",
         "eicon4": "mailchimp-brands.svg",
         "edescription4": "Creá un newsletter y enviá a tus clientes los últimos lanzamientos y promociones",
-        "eimage": "/tus-seguidores-tus-clientes.jpg"
+        "eimage": "tus-seguidores-tus-clientes.jpg"
     },
     "image": "store-color-borde.png",
     "category": ["Oro", "Plata", "Bronce"],

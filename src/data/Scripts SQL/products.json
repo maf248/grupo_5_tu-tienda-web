@@ -1,0 +1,15 @@
+[{
+    "id": 1,
+    "name": "Tienda Web",
+    "type": "tiendaWeb",
+    "titleBanner1": "UN CATÁLOGO, TODOS LOS CANALES DE VENTA",
+    "subtitleBanner1": "Conectá tu catálogo con Tu Tienda Web y no te pierdas ni una venta",
+    "image": "store-color-borde.png"
+}, {
+    "id": 2,
+    "name": "Página Web",
+    "type": "paginaWeb",
+    "titleBanner1": "EL LUGAR PERFECTO PARA CREAR TU PÁGINA WEB PROFESIONAL",
+    "subtitleBanner1": "Empezá a crear tu página web ya totalmente gratis",
+    "image": "web-color-borde.png"
+}]
