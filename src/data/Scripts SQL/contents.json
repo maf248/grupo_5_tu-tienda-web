@@ -15,47 +15,349 @@
     "text": "Subí tus productos y actualizá el stock de forma simple"
 },{
     "id": 4,
-    "section_id": 2,
+    "section_id": 1,
     "type": "icon",
     "text": "robot-solid.svg"
 },{
     "id": 5,
-    "section_id": 2,
+    "section_id": 1,
     "type": "subtitle",
     "text": "Automatizá tus ventas"
 },{
     "id": 6,
-    "section_id": 2,
+    "section_id": 1,
     "type": "description",
     "text": "Activá medios de pago para cobrar de forma segura."
 },{
     "id": 7,
-    "section_id": 3,
+    "section_id": 1,
     "type": "icon",
     "text": "truck-solid.svg"
 },{
     "id": 8,
-    "section_id": 3,
+    "section_id": 1,
     "type": "subtitle",
     "text": "Enviá tus pedidos"
 },{
     "id": 9,
-    "section_id": 3,
+    "section_id": 1,
     "type": "description",
     "text": "Tu tienda conectada con los medios de envío que necesitas."
 },{
     "id": 10,
-    "section_id": 4,
+    "section_id": 1,
     "type": "icon",
     "text": "money-bill-wave-solid.svg"
 },{
     "id": 11,
-    "section_id": 4,
+    "section_id": 1,
     "type": "subtitle",
     "text": "Vendé en más canales"
 },{
     "id": 12,
-    "section_id": 4,
+    "section_id": 1,
     "type": "description",
     "text": "Integrá tus productos con instagram, Facebook o con tu local."
+},{
+    "id": 13,
+    "section_id": 2,
+    "type": "icon",
+    "text": "palette-solid.svg"
+},{
+    "id": 14,
+    "section_id": 2,
+    "type": "subtitle",
+    "text": "Tienda de diseños"
+},{
+    "id": 15,
+    "section_id": 2,
+    "type": "description",
+    "text": "Tu marca es única, tu tienda también. Elegí un diseño y customizalo para que tus productos se luzcan."
+},{
+    "id": 16,
+    "section_id": 2,
+    "type": "icon",
+    "text": "network-wired-solid.svg"
+},{
+    "id": 17,
+    "section_id": 2,
+    "type": "subtitle",
+    "text": "Tu tienda. Tu dominio."
+},{
+    "id": 18,
+    "section_id": 2,
+    "type": "description",
+    "text": "Conectá tus propios dominios a tu tienda."
+},{
+    "id": 19,
+    "section_id": 2,
+    "type": "icon",
+    "text": "envelope-solid.svg"
+},{
+    "id": 20,
+    "section_id": 2,
+    "type": "subtitle",
+    "text": "Gestión de envíos y pagos simplificada"
+},{
+    "id": 21,
+    "section_id": 2,
+    "type": "description",
+    "text": "Cobrá por tus ventas y enviá tus pedidos de forma rápida y práctica."
+},{
+    "id": 22,
+    "section_id": 2,
+    "type": "icon",
+    "text": "pencil-ruler-solid.svg"
+},{
+    "id": 23,
+    "section_id": 2,
+    "type": "subtitle",
+    "text": "Creador de logos profesional"
+},{
+    "id": 24,
+    "section_id": 2,
+    "type": "description",
+    "text": "Creá el logo perfecto para tu marca con nuestra herramienta."
+},{
+    "id": 25,
+    "section_id": 3,
+    "type": "icon",
+    "text": "align-center-solid.svg"
+},{
+    "id": 26,
+    "section_id": 3,
+    "type": "subtitle",
+    "text": "Centralizá todas tus ventas"
+},{
+    "id": 27,
+    "section_id": 3,
+    "type": "description",
+    "text": "Cargá, cobrá y enviá tus pedidos sin importar donde vendas."
+},{
+    "id": 28,
+    "section_id": 3,
+    "type": "icon",
+    "text": "credit-card-solid.svg"
+},{
+    "id": 29,
+    "section_id": 3,
+    "type": "subtitle",
+    "text": "Medios de pago"
+},{
+    "id": 30,
+    "section_id": 3,
+    "type": "description",
+    "text": "Utilizá todos los medios de pago disponibles para todos tus locales."
+},{
+    "id": 31,
+    "section_id": 3,
+    "type": "icon",
+    "text": "store-solid.svg"
+},{
+    "id": 32,
+    "section_id": 3,
+    "type": "subtitle",
+    "text": "Stock unificado"
+},{
+    "id": 33,
+    "section_id": 3,
+    "type": "description",
+    "text": "Unificá el stock de todos los locales en un mismo lugar."
+},{
+    "id": 34,
+    "section_id": 3,
+    "type": "icon",
+    "text": "shipping-fast-solid.svg"
+},{
+    "id": 35,
+    "section_id": 3,
+    "type": "subtitle",
+    "text": "Servicio Fast! Tu Tienda Web"
+},{
+    "id": 36,
+    "section_id": 3,
+    "type": "description",
+    "text": "Utilizá nuestro sistema de correo y nuestros depósitos para enviar más rápido y barato"
+},{
+    "id": 37,
+    "section_id": 4,
+    "type": "icon",
+    "text": "google-brands.svg"
+},{
+    "id": 38,
+    "section_id": 4,
+    "type": "subtitle",
+    "text": "Google Shopping"
+},{
+    "id": 39,
+    "section_id": 4,
+    "type": "description",
+    "text": "Con el comparador de precios de Google vas a poder mostrar todos tus productos en los resultados de google."
+},{
+    "id": 40,
+    "section_id": 4,
+    "type": "icon",
+    "text": "amazon-brands.svg"
+},{
+    "id": 41,
+    "section_id": 4,
+    "type": "subtitle",
+    "text": "Amazon"
+},{
+    "id": 42,
+    "section_id": 4,
+    "type": "description",
+    "text": "Integración con Amazon. Lo que mostrás en Tu Tienda Web lo mostrás también en Amazon."
+},{
+    "id": 43,
+    "section_id": 4,
+    "type": "icon",
+    "text": "carrot-solid.svg"
+},{
+    "id": 44,
+    "section_id": 4,
+    "type": "subtitle",
+    "text": "MercadoLiebre"
+},{
+    "id": 45,
+    "section_id": 4,
+    "type": "description",
+    "text": "Integración con MercadoLiebre. Lo que mostrás en Tu Tienda Web lo mostrás también en MercadoLiebre."
+},{
+    "id": 46,
+    "section_id": 1,
+    "type": "icon",
+    "text": "store-alt-solid.svg"
+},{
+    "id": 47,
+    "section_id": 4,
+    "type": "subtitle",
+    "text": "Falabella"
+},{
+    "id": 48,
+    "section_id": 4,
+    "type": "description",
+    "text": "Integración con Falabella. Lo que mostrás en Tu Tienda Web lo mostrás también en Falabella."
+},{
+    "id": 49,
+    "section_id": 5,
+    "type": "icon",
+    "text": "instagram-brands.svg"
+},{
+    "id": 50,
+    "section_id": 5,
+    "type": "subtitle",
+    "text": "Instagram Shop"
+},{
+    "id": 51,
+    "section_id": 5,
+    "type": "description",
+    "text": "Conectá tus productos con Instagram y aumentá el tráfico de tu tienda online."
+},{
+    "id": 52,
+    "section_id": 5,
+    "type": "icon",
+    "text": "whatsapp-brands.svg"
+},{
+    "id": 53,
+    "section_id": 5,
+    "type": "subtitle",
+    "text": "Whatsapp"
+},{
+    "id": 54,
+    "section_id": 5,
+    "type": "description",
+    "text": "Compartí tus productos directamente dentro de whatsapp con el teclado TuTiendaWeb."
+},{
+    "id": 55,
+    "section_id": 5,
+    "type": "icon",
+    "text": "facebook-brands.svg"
+},{
+    "id": 56,
+    "section_id": 5,
+    "type": "subtitle",
+    "text": "Facebook Store"
+},{
+    "id": 57,
+    "section_id": 5,
+    "type": "description",
+    "text": "Aumenta tus ventas sincronizando tus productos con tu página de Facebook."
+},{
+    "id": 58,
+    "section_id": 5,
+    "type": "icon",
+    "text": "mailchimp-brands.svg"
+},{
+    "id": 59,
+    "section_id": 5,
+    "type": "subtitle",
+    "text": "Mailchimp News"
+},{
+    "id": 60,
+    "section_id": 5,
+    "type": "description",
+    "text": "Creá un newsletter y enviá a tus clientes los últimos lanzamientos y promociones"
+},{
+    "id": 61,
+    "section_id": 6,
+    "type": "icon",
+    "text": "user-friends-solid.svg"
+},{
+    "id": 62,
+    "section_id": 6,
+    "type": "subtitle",
+    "text": "Personalizá tu sitio web"
+},{
+    "id": 63,
+    "section_id": 6,
+    "type": "description",
+    "text": "Elegí una plantilla y personalizala como quieras, o responde algunas preguntas y obtené una página web gratis y exclusiva de forma automática"
+},{
+    "id": 64,
+    "section_id": 6,
+    "type": "icon",
+    "text": "rocket-solid.svg"
+},{
+    "id": 65,
+    "section_id": 6,
+    "type": "subtitle",
+    "text": "Agregá funciones avanzadas"
+},{
+    "id": 66,
+    "section_id": 6,
+    "type": "description",
+    "text": "Creá un blog, hacé una página de noticias o armá tu presentación personal web para potenciar tu trabajo. Siempre podés agregar más funcionalidad a medida que crecés. No hay límites para tu creatividad ni tu crecimiento."
+},{
+    "id": 67,
+    "section_id": 6,
+    "type": "icon",
+    "text": "magic-solid.svg"
+},{
+    "id": 68,
+    "section_id": 6,
+    "type": "subtitle",
+    "text": "Web Responsive Design"
+},{
+    "id": 69,
+    "section_id": 6,
+    "type": "description",
+    "text": "Te dejamos todas las herramientas necesarias para que crees una página web que responda de manera automática y que se vea bien en los diferentes tipos de pantalla."
+},{
+    "id": 70,
+    "section_id": 6,
+    "type": "icon",
+    "text": "google-brands-2.svg"
+},{
+    "id": 71,
+    "section_id": 6,
+    "type": "subtitle",
+    "text": "Optimizá para los buscadores"
+},{
+    "id": 72,
+    "section_id": 6,
+    "type": "description",
+    "text": "Te ayudamos en tu plan de SEO para que todo el mundo te encuentre en Google. Respondé algunas preguntas sobre tu sitio web, ubicación y palabras clave, y recibí un plan de SEO personalizado para destarcarte online."
+},{
+    seguir en seccion 2 del producto 2
 }]
