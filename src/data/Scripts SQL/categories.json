@@ -1,0 +1,49 @@
+[{
+    "id": 1,
+    "name": "Oro",
+    "image": "plan-oro.png",
+    "price": 6999,
+    "transaction_cost_percent": 0.5,
+    "web_sections": 20
+    
+},{
+    "id": 2,
+    "name": "Plata",
+    "image": "plan-plata.png",
+    "price": 1999,
+    "transaction_cost_percent": 1,
+    "web_sections": 10
+    
+},{
+    "id": 3,
+    "name": "Bronce",
+    "image": "plan-bronce.png",
+    "price": 799,
+    "transaction_cost_percent": 2,
+    "web_sections": 5
+    
+},{
+    "id": 4,
+    "name": "Oro",
+    "image": "plan-oro.png",
+    "price": 1200,
+    "transaction_cost_percent": 0.2,
+    "web_sections": 20
+    
+},{
+    "id": 5,
+    "name": "Plata",
+    "image": "plan-plata.png",
+    "price": 600,
+    "transaction_cost_percent": NULL,
+    "web_sections": 10
+    
+},{
+    "id": 6,
+    "name": "Bronce",
+    "image": "plan-bronce.png",
+    "price": 0,
+    "transaction_cost_percent": NULL,
+    "web_sections": 5
+    
+}]
