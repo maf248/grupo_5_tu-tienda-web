@@ -1,171 +1,125 @@
 [{
     "id": 1,
-    "name": "Productos, visitas y ventas ilimitados",
-    "description": ,
+    "name": "Hosting gratuito",
 
 },{
     "id": 2,
-    "name": "Diseños personalizables",
-    "description": ,
+    "name": "Diseño responsive",
 
 },{
     "id": 3,
-    "name": "Integración con medios de pago",
-    "description": ,
+    "name": "Plantillas ilimitadas",
 
 },{
     "id": 4,
-    "name": "Integración con medios de envío",
-    "description": ,
+    "name": "Integración con medios de pago",
 
 },{
     "id": 5,
-    "name": "Gestión de productos y manejo de stock",
-    "description": ,
+    "name": "Integración con medios de envío",
 
 },{
     "id": 6,
-    "name": "Configuración de dominio propio",
-    "description": ,
+    "name": "Gestión de productos y manejo de stock",
 
 },{
     "id": 7,
-    "name": "Seguimiento de estadísticas con Google Analytics",
-    "description": ,
+    "name": "Configuración de dominio propio",
 
 },{
     "id": 8,
-    "name": "Configuración de códigos de tracking y conversión",
-    "description": ,
+    "name": "Seguimiento de estadísticas con Google Analytics",
 
 },{
     "id": 9,
-    "name": "Hosting y certificado SSL incluido",
-    "description": ,
+    "name": "Configuración de códigos de tracking y conversión",
 
 },{
     "id": 10,
-    "name": "Aplicación de Tu Tienda Web para Android e iOS",
-    "description": ,
+    "name": "Hosting y certificado SSL incluido",
 
 },{
     "id": 11,
-    "name": "Carritos abandonados",
-    "description": ,
+    "name": "Aplicación de Tu Tienda Web para Android e iOS",
 
 },{
     "id": 12,
-    "name": "Configuración de puntos de entrega",
-    "description": ,
+    "name": "Carritos abandonados",
 
 },{
     "id": 13,
-    "name": "Carga y actualización masiva de los textos de productos",
-    "description": ,
+    "name": "Configuración de puntos de entrega",
 
 },{
     "id": 14,
-    "name": "Teclado Tu Tienda Web",
-    "description": ,
+    "name": "Carga y actualización masiva de los textos de productos",
 
 },{
     "id": 15,
-    "name": "Soporte via email",
-    "description": ,
+    "name": "Productos, visitas y ventas ilimitados",
 
 },{
     "id": 16,
-    "name": "Promociones 2x1 y 3x2",
-    "description": ,
+    "name": "Soporte via email",
 
 },{
     "id": 17,
-    "name": "Cupones de descuento",
-    "description": ,
+    "name": "Promociones 2x1 y 3x2",
 
 },{
     "id": 18,
-    "name": "Personalización del SEO",
-    "description": ,
+    "name": "Cupones de descuento",
 
 },{
     "id": 19,
-    "name": "Estadísticas avanzadas de tu negocio",
-    "description": ,
+    "name": "Personalización del SEO",
 
 },{
     "id": 20,
-    "name": "Instagram shopping, Facebook Store, Mailchimp y Google Shopping",
-    "description": ,
+    "name": "Estadísticas avanzadas de tu negocio",
 
 },{
     "id": 21,
-    "name": "Diseño 100% flexible (via HTML, CSS y JavaScript)",
-    "description": ,
+    "name": "Instagram shopping, Facebook Store, Mailchimp y Google Shopping",
 
 },{
     "id": 22,
     "name": "Soporte vía Whatsapp a partir del primer pago",
-    "description": ,
 
 },{
     "id": 23,
     "name": "Múltiples idiomas y monedas",
-    "description": ,
 
 },{
     "id": 24,
     "name": "Integración con Marketplaces",
-    "description": ,
 
 },{
     "id": 25,
-    "name": "Plantillas ilimitadas",
-    "description": ,
+    "name": "Inteligencia de diseño artificial (IDA)",
 
 },{
     "id": 26,
-    "name": "Diseño responsive",
-    "description": ,
+    "name": "Corvid de aplicaciones profesionales",
 
 },{
     "id": 27,
-    "name": "Hosting gratuito",
-    "description": ,
-
-},{
-    "id": 28,
-    "name": "Inteligencia de diseño artificial (IDA)",
-    "description": ,
-
-},{
-    "id": 29,
-    "name": "Corvid de aplicaciones profesionales",
-    "description": ,
-
-},{
-    "id": 28,
     "name": "Creador de logos",
-    "description": ,
+
+},{
+    "id": 28,
+    "name": "Dominio con tu marca personalizada",
 
 },{
     "id": 29,
-    "name": "Dominio con tu marca personalizada",
-    "description": ,
+    "name": "Atención personalizada de nuestro equipo de marketing",
 
 },{
     "id": 30,
-    "name": "Atención personalizada de nuestro equipo de marketing",
-    "description": ,
+    "name": "Plan SEO de Google",
 
 },{
     "id": 31,
-    "name": "Plan SEO de Google",
-    "description": ,
-
-},{
-    "id": 32,
     "name": "Carrito de compras",
-    "description": ,
 
 },]
