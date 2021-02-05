@@ -1,13 +1,12 @@
 INSERT INTO users (hash_id, first_name, last_name, email, password, image, role, product_id, category_id) VALUES 
 ('$2a$10$1EHxHf5rQ.gyJ2xnJ55sFeHVnMlxbXReGoaFC1ID/dhumC8mGG8Ii','Tobias','Blaksley','tobias.blaksley@hotmail.com','$2a$10$nY9qIx.MJ4cXVG5csGpFFeQzQl4J2h0zhT.VndbdlnZOGzYjdbcmW','Usuario-1_1610562779647.jfif','admin',NULL,NULL),
 ('$2a$10$qpbUssE9j0VlJYCAlUeDweZLwvsKpHYOM9aJ7TjAAGyBLH.5xmmbu','Marcelo','Fanego','maf_248@hotmail.com','$2a$10$/hWEc7y3EoCeSEhnVgkMPOKQJvccgJUlx5xTwMbQquUgEQwEvPw0y','Usuario-2_1611071885248.png','admin',NULL,NULL),
-('$2a$10$sXa4gEy5HjWWl/BokcMd1e0wgNAXzl3sfyRmGLfa.PfFqhmN5jBpO','sergio','casas','sergio.casasr@utadeo.edu.co','$2a$10$A4iqY8lnKfLXCcH38AM/MeOcVkDzG1mxcRf/VllprSbUlFYNwvcg2','Usuario-3_1611147303044.jpeg','admin',NULL,NULL),
+('$2a$10$sXa4gEy5HjWWl/BokcMd1e0wgNAXzl3sfyRmGLfa.PfFqhmN5jBpO','Sergio','Casas','sergio.casasr@utadeo.edu.co','$2a$10$A4iqY8lnKfLXCcH38AM/MeOcVkDzG1mxcRf/VllprSbUlFYNwvcg2','Usuario-3_1611147303044.jpeg','admin',NULL,NULL),
 ('$2a$10$y4PFWqy9lA0agnmPmeOrOOgTt6M8f2m1461QT4edtwWMmz3ZHnfte','Marcelo','Fanego','mafmaggot@gmail.com','$2a$10$MHA8vyzxjf4h8rg.WVSPEeXvh9ZX5Uv/a9s58zz70WrnOQdkNLMhW','Usuario-4_1611071905072.png','user',NULL,NULL); 
 
 INSERT INTO products (name, type, tittle_banner, subtittle_banner, image) VALUES
 ('Tienda Web','tienda_web','UN CATÁLOGO\, TODOS LOS CANALES DE VENTA','Conectá tu catálogo con Tu Tienda Web y no te pierdas ni una venta','store-color-borde.png'),
 ('Página Web','pagina_web','EL LUGAR PERFECTO PARA CREAR TU PÁGINA WEB PROFESIONAL','Empezá a crear tu página web ya totalmente gratis','web-color-borde.png');
-
 
 INSERT INTO sections (products_id, tittle, image) VALUES
 (1,'Todo lo que tu negocio necesita para vender','My-Support-Team-63-Shopper.png'),
@@ -180,3 +179,98 @@ INSERT INTO benefits (name) VALUES
 ('Atención personalizada de nuestro equipo de marketing'),
 ('Plan SEO de Google'),
 ('Carrito de compras');
+
+INSERT INTO carts (user_id, product_id, category_id) VALUES
+(1, 1, 1),
+(2, 1, 2),
+(3, 1, 3);
+
+INSERT INTO category_product (product_id, category_id) VALUES
+(1,1),
+(1,2),
+(1,3),
+(2,1),
+(2,2),
+(2,3);
+
+INSERT INTO benefit_category (category_id, benefit_id) VALUES
+(1,1),
+(1,2),
+(1,3),
+(1,4),
+(1,5),
+(1,6),
+(1,7),
+(1,8),
+(1,9),
+(1,10),
+(1,11),
+(1,12),
+(1,13),
+(1,14),
+(1,15),
+(1,16),
+(1,17),
+(1,18),
+(1,19),
+(1,20),
+(1,21),
+(1,22),
+(1,23),
+(1,24),
+(1,25),
+(1,26),
+(1,27),
+(1,28),
+(1,29),
+(1,30),
+(1,31),
+(2,1),
+(2,2),
+(2,3),
+(2,4),
+(2,5),
+(2,6),
+(2,7),
+(2,8),
+(2,9),
+(2,10),
+(2,11),
+(2,12),
+(2,13),
+(2,14),
+(2,15),
+(2,16),
+(2,17),
+(2,18),
+(2,19),
+(2,20),
+(2,21),
+(2,22),
+(2,23),
+(2,24),
+(2,25),
+(2,26),
+(2,27),
+
+
+(3,1),
+(3,2),
+(3,3),
+(3,4),
+(3,5),
+(3,6),
+(3,7),
+(3,8),
+(3,9),
+(3,10),
+(3,11),
+(3,12),
+(3,13),
+(3,14),
+(3,15),
+(3,16),
+(3,17),
+(3,18),
+(3,19),
+(3,20);
