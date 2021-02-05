@@ -37,7 +37,7 @@ module.exports = (sequelize, DataTypes) => {
     
     const Content = sequelize.define("Content", cols, config);
     
-    Content.associate = function() {
+    Content.associate = function(models) {
         Content.belongsTo(models.Section, {
             as: "Sections",
             foreignKey: "section_id"

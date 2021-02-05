@@ -37,8 +37,8 @@ module.exports = (sequelize, DataTypes) => {
     }
     const Benefit = sequelize.define("Benefit", cols, config);
     
-    Benefit.associate = function() {
-        Category.belongsToMany(models.Category, {
+    Benefit.associate = function(models) {
+        Benefit.belongsToMany(models.Category, {
             as: "categories",
             through: "benefit_category",
             foreignKey: "benefit_id",
@@ -46,7 +46,7 @@ module.exports = (sequelize, DataTypes) => {
             timestamps: true
         })
     }
-    
+
     
     return Benefit;
 }

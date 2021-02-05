@@ -43,12 +43,12 @@ module.exports = (sequelize, DataTypes) => {
     
     const Section = sequelize.define("Section", cols, config);
     
-    Section.associate = function() {
+    Section.associate = function(models) {
         Section.belongsTo(models.Product, {
             as: "Products",
             foreignKey: "product_id"
         })
-        Section.hasMany(models.Contens, {
+        Section.hasMany(models.Content, {
             as: "contens",
             foreignKey: "contens_id"
         })

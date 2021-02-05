@@ -30,7 +30,7 @@ const cols = {
     },
     image: {
         type: DataTypes.STRING,
-        defaultValue: NULL
+        defaultValue: null
     },
     role: {
         type: DataTypes.ENUM('admin', 'user'),
@@ -63,7 +63,7 @@ const config = {
 
 const User = sequelize.define("User", cols, config);
 
-User.associate = function() {
+User.associate = function(models) {
     User.belongsTo(models.Product, {
         as: "Products",
         foreignKey: "product_id"
