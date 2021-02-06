@@ -84,15 +84,15 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `tu_tienda_web`.`sections` (
   `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `products_id` BIGINT UNSIGNED NOT NULL,
+  `product_id` BIGINT UNSIGNED NOT NULL,
   `title` VARCHAR(100) NOT NULL,
   `image` VARCHAR(100) NOT NULL,
   `created_at` TIMESTAMP NOT NULL DEFAULT NOW(),
   `updated_at` TIMESTAMP NOT NULL DEFAULT NOW(),
   PRIMARY KEY (`id`),
-  INDEX `products_section_1_idx` (`products_id` ASC),
+  INDEX `products_section_1_idx` (`product_id` ASC),
   CONSTRAINT `products_sections`
-    FOREIGN KEY (`products_id`)
+    FOREIGN KEY (`product_id`)
     REFERENCES `tu_tienda_web`.`products` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)

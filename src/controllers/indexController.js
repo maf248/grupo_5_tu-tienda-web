@@ -8,7 +8,23 @@ const db = require('../database/models');
 
 const indexController = {
     home: function(req, res, next) {
-        res.render('index', {products: products});
+      db.Product.findAll({
+        include: [
+          {association: "Sections"},
+          {association: "Categories",
+        include: [
+          {association: "Benefits"}
+        ]
+      }
+        ]
+      })
+      .then((products) => {
+        res.send(products)
+      })
+      .catch(err => {
+        res.send(err)
+      })
+        
       },
     test: function(req, res, next) {
       db.Product.findAll({

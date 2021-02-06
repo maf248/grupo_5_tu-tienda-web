@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
 
         },
-        products_id: {
+        product_id: {
             type: DataTypes.INTEGER.UNSIGNED,
             allowNull: false
 
@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
 
         },
-        crated_at: {
+        created_at: {
             type: DataTypes.DATE,
             allowNull: false
 

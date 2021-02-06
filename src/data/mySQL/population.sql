@@ -13,7 +13,7 @@ INSERT INTO users (hash_id, first_name, last_name, email, password, image, role,
 ('$2a$10$sXa4gEy5HjWWl/BokcMd1e0wgNAXzl3sfyRmGLfa.PfFqhmN5jBpO','Sergio','Casas','sergio.casasr@utadeo.edu.co','$2a$10$A4iqY8lnKfLXCcH38AM/MeOcVkDzG1mxcRf/VllprSbUlFYNwvcg2','Usuario-3_1611147303044.jpeg','admin',2,1),
 ('$2a$10$y4PFWqy9lA0agnmPmeOrOOgTt6M8f2m1461QT4edtwWMmz3ZHnfte','Marcelo','Fanego','mafmaggot@gmail.com','$2a$10$MHA8vyzxjf4h8rg.WVSPEeXvh9ZX5Uv/a9s58zz70WrnOQdkNLMhW','Usuario-4_1611071905072.png','user',NULL,NULL); 
 
-INSERT INTO sections (products_id, title, image) VALUES
+INSERT INTO sections (product_id, title, image) VALUES
 (1,'Todo lo que tu negocio necesita para vender','My-Support-Team-63-Shopper.png'),
 (1,'Tu marca. Tu tienda.','tumarca-tutienda.jpg'),
 (1,'Tus locales\, conectados.','tus-locales-conectados.jpg'),
