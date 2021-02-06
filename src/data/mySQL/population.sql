@@ -1,12 +1,17 @@
-INSERT INTO users (hash_id, first_name, last_name, email, password, image, role, product_id, category_id) VALUES 
-('$2a$10$1EHxHf5rQ.gyJ2xnJ55sFeHVnMlxbXReGoaFC1ID/dhumC8mGG8Ii','Tobias','Blaksley','tobias.blaksley@hotmail.com','$2a$10$nY9qIx.MJ4cXVG5csGpFFeQzQl4J2h0zhT.VndbdlnZOGzYjdbcmW','Usuario-1_1610562779647.jfif','admin',NULL,NULL),
-('$2a$10$qpbUssE9j0VlJYCAlUeDweZLwvsKpHYOM9aJ7TjAAGyBLH.5xmmbu','Marcelo','Fanego','maf_248@hotmail.com','$2a$10$/hWEc7y3EoCeSEhnVgkMPOKQJvccgJUlx5xTwMbQquUgEQwEvPw0y','Usuario-2_1611071885248.png','admin',NULL,NULL),
-('$2a$10$sXa4gEy5HjWWl/BokcMd1e0wgNAXzl3sfyRmGLfa.PfFqhmN5jBpO','Sergio','Casas','sergio.casasr@utadeo.edu.co','$2a$10$A4iqY8lnKfLXCcH38AM/MeOcVkDzG1mxcRf/VllprSbUlFYNwvcg2','Usuario-3_1611147303044.jpeg','admin',NULL,NULL),
-('$2a$10$y4PFWqy9lA0agnmPmeOrOOgTt6M8f2m1461QT4edtwWMmz3ZHnfte','Marcelo','Fanego','mafmaggot@gmail.com','$2a$10$MHA8vyzxjf4h8rg.WVSPEeXvh9ZX5Uv/a9s58zz70WrnOQdkNLMhW','Usuario-4_1611071905072.png','user',NULL,NULL); 
-
 INSERT INTO products (name, type, title_banner, subtitle_banner, image) VALUES
 ('Tienda Web','tienda_web','UN CATÁLOGO\, TODOS LOS CANALES DE VENTA','Conectá tu catálogo con Tu Tienda Web y no te pierdas ni una venta','store-color-borde.png'),
 ('Página Web','pagina_web','EL LUGAR PERFECTO PARA CREAR TU PÁGINA WEB PROFESIONAL','Empezá a crear tu página web ya totalmente gratis','web-color-borde.png');
+
+INSERT INTO categories (name, image, price, transaction_cost_percent, web_sections) VALUES
+('Oro','plan-oro.png',6999,0.5,20),
+('Plata','plan-plata.png',2999,1,10),
+('Bronce','plan-bronce.png',1799,2,5);
+
+INSERT INTO users (hash_id, first_name, last_name, email, password, image, role, product_id, category_id) VALUES 
+('$2a$10$1EHxHf5rQ.gyJ2xnJ55sFeHVnMlxbXReGoaFC1ID/dhumC8mGG8Ii','Tobias','Blaksley','tobias.blaksley@hotmail.com','$2a$10$nY9qIx.MJ4cXVG5csGpFFeQzQl4J2h0zhT.VndbdlnZOGzYjdbcmW','Usuario-1_1610562779647.jfif','admin',1,1),
+('$2a$10$qpbUssE9j0VlJYCAlUeDweZLwvsKpHYOM9aJ7TjAAGyBLH.5xmmbu','Marcelo','Fanego','maf_248@hotmail.com','$2a$10$/hWEc7y3EoCeSEhnVgkMPOKQJvccgJUlx5xTwMbQquUgEQwEvPw0y','Usuario-2_1611071885248.png','admin',2,1),
+('$2a$10$sXa4gEy5HjWWl/BokcMd1e0wgNAXzl3sfyRmGLfa.PfFqhmN5jBpO','Sergio','Casas','sergio.casasr@utadeo.edu.co','$2a$10$A4iqY8lnKfLXCcH38AM/MeOcVkDzG1mxcRf/VllprSbUlFYNwvcg2','Usuario-3_1611147303044.jpeg','admin',2,1),
+('$2a$10$y4PFWqy9lA0agnmPmeOrOOgTt6M8f2m1461QT4edtwWMmz3ZHnfte','Marcelo','Fanego','mafmaggot@gmail.com','$2a$10$MHA8vyzxjf4h8rg.WVSPEeXvh9ZX5Uv/a9s58zz70WrnOQdkNLMhW','Usuario-4_1611071905072.png','user',NULL,NULL); 
 
 INSERT INTO sections (products_id, title, image) VALUES
 (1,'Todo lo que tu negocio necesita para vender','My-Support-Team-63-Shopper.png'),
@@ -142,11 +147,6 @@ INSERT INTO contents (section_id, type, text) VALUES
 (10,'subtitle','Herramientas avanzadas de diseño'),
 (10,'description','Agregá a tu página scrolls de foto y video\, menúes desplegables y ¡mucho mas!');
 
-INSERT INTO categories (name, image, price, transaction_cost_percent, web_sections) VALUES
-('Oro','plan-oro.png',6999,0.5,20),
-('Plata','plan-plata.png',2999,1,10),
-('Bronce','plan-bronce.png',1799,2,5);
-
 INSERT INTO benefits (name) VALUES
 ('Hosting gratuito'),
 ('Diseño responsive'),
@@ -182,8 +182,8 @@ INSERT INTO benefits (name) VALUES
 
 INSERT INTO carts (user_id, product_id, category_id) VALUES
 (1, 1, 1),
-(2, 1, 2),
-(3, 1, 3);
+(2, 2, 1),
+(3, 2, 1);
 
 INSERT INTO category_product (product_id, category_id) VALUES
 (1,1),
@@ -252,8 +252,6 @@ INSERT INTO benefit_category (category_id, benefit_id) VALUES
 (2,25),
 (2,26),
 (2,27),
-
-
 (3,1),
 (3,2),
 (3,3),
