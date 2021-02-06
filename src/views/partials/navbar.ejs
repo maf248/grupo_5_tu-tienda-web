@@ -28,7 +28,7 @@
                             
                         <% } %>
                         <div class="nombreYLogout">
-                        <p class="nombreUsuario"> <%= locals.user.firstName %> </p>
+                        <p class="nombreUsuario"> <%= locals.user.first_name %> <%= locals.user.last_name %></p>
                     </a>
                     <form action="/users/logout" method="POST">
                         <button class="logout"> X </button>

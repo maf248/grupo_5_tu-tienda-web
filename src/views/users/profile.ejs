@@ -30,13 +30,13 @@
 
     <form action="/users/profile/edit?_method=PATCH" method="POST" class="datosPersonales">
         
-        <input type="text" name="firstName" value="<%=locals.user.firstName%>">
+        <input type="text" name="firstName" value="<%=locals.user.first_name%>">
         <% if (typeof errors != "undefined") {
             errors.forEach (error => { 
                 if (error.param == "firstName") { %>
                     <p><%= error.msg %></p>
             <% } }) } %>
-        <input type="text" name="lastName" value="<%=locals.user.lastName%>">
+        <input type="text" name="lastName" value="<%=locals.user.last_name%>">
         <% if (typeof errors != "undefined") {
             errors.forEach (error => { 
                 if (error.param == "lastName") { %>
