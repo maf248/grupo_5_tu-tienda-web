@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS `tu_tienda_web`.`categories` (
   `name` VARCHAR(100) NOT NULL,
   `image` VARCHAR(100) NULL,
   `price` MEDIUMINT UNSIGNED NOT NULL,
-  `transaction_cost_percent` SMALLINT UNSIGNED NOT NULL,
+  `transaction_cost_percent` DECIMAL(3,1) UNSIGNED NOT NULL,
   `web_sections` SMALLINT UNSIGNED NULL,
   `created_at` TIMESTAMP NOT NULL DEFAULT NOW(),
   `updated_at` TIMESTAMP NOT NULL DEFAULT NOW(),

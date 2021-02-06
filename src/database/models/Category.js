@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         transaction_cost_percent: {
-            type: DataTypes.INTEGER.UNSIGNED,
+            type: DataTypes.DECIMAL(3,1).UNSIGNED,
             allowNull: false
         },
         web_sections: {
