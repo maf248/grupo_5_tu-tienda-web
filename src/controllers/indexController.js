@@ -19,7 +19,7 @@ const indexController = {
         ]
       })
       .then((products) => {
-        res.send(products)
+        res.render('index', {products: products});
       })
       .catch(err => {
         res.send(err)

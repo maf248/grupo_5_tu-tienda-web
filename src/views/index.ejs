@@ -93,16 +93,17 @@
         </div>
         <a href="/products/<%=product.id%>"><h2>Tu <em><%=product.name%></em></h2></a>
         <div class="productosContenedor-producto-planes">
-            <img class="medalla" src="/images/Producto-<%= product.id %>/<%= product.categoryImage[0] %>" alt="Plan Oro">
-            <img class="medalla" src="/images/Producto-<%= product.id %>/<%= product.categoryImage[1] %>" alt="Plan Plata">
-            <img class="medalla" src="/images/Producto-<%= product.id %>/<%= product.categoryImage[2] %>" alt="Plan Bronce">
+            <% for(i=0; i < product.Categories.length; i++) { %>
+            <img class="medalla" src="/images/Producto-<%= product.id %>/<%= product.Categories[i].image %>" alt="Plan <% product.Categories[i].name %>">
+
+            <% } %>
         </div>
         <div class="productosContenedor-producto-descripcion">
-            <p>‣ Suscripción <%= product.category[0] %>, <%= product.category[1] %> o <%= product.category[2] %> acorde a tus preferencias.</p>
+            <p>‣ Suscripción <%= product.Categories[0].name %>, <%= product.Categories[1].name %> o <%= product.Categories[2].name %> acorde a tus preferencias.</p>
             <p>‣ Tendrás acceso a varias plantillas, modelos y accesorios de diseño personalizados.</p>
             <p>‣ Todos nuestros diseños son responsive, es decir, ¡se adaptan a cualquier dispositivo!</p>
-            <p>‣ <%= product.subtitleBanner1 %></p>
-            <p>‣ <%= product.seccion1.atitle %></p>
+            <p>‣ <%= product.subtitle_banner %></p>
+            <p>‣ <%= product.Sections[0].title %></p>
         </div>
             <a href="/products/<%=product.id%>"class="productosContenedor-verMas" type="submit">Ver más...</a>
     </article>
