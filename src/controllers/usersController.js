@@ -67,23 +67,18 @@ const usersController = {
         
         if (!errors.isEmpty()) {
             return res.render('./users/register', {errors: errors.errors, firstName: req.body.firstName, lastName: req.body.lastName, email: req.body.email} );
-        } else {      
-            users.push( 
-                {
-                "id": users.length +1,
-                "hashId": bcryptjs.hashSync("user number " + users.length +1, 10),
-                "firstName": req.body.firstName,
-                "lastName": req.body.lastName,
-                "email": req.body.email,
-                "password":  bcryptjs.hashSync(req.body.password, 10),
-                "adminCode": false
-                }
-            )
-
-            const usersJSON = JSON.stringify(users);
-            fs.writeFileSync(usersDir, usersJSON);
-
-            req.session.user = users[users.length -1];
+        } else {     
+            
+            db.User.create({
+                hash_id: bcryptjs.hashSync("user name " + req.body.firstName, 10),
+                first_name: req.body.firstName,
+                last_name: req.body.lastName,
+                email: req.body.email,
+                password:  bcryptjs.hashSync(req.body.password, 10),
+                adminCode: 'user'
+            }).then(result => {
+                req.session.user = result.id
+            })
 
             res.redirect('/users/profile');
         }

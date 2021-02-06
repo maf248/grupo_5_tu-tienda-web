@@ -27,10 +27,9 @@ module.exports = [
         })
         .withMessage('Las contraseñas no coinciden, intentá nuevamente'),
     body('email')
-        .custom(function(value, {req}) {
-            
+        .custom(function(value, {req}) {           
             db.User.findAll().then(user => {
-
+                console.log(user)
                 /*---Si coinciden los mails, pero NO los ID, significa que otro usuario tiene ese mail---*/
                 if(user.email == value) {
                     if (req.session.user != undefined) {
