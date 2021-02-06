@@ -28,18 +28,16 @@ module.exports = [
         .withMessage('Las contraseñas no coinciden, intentá nuevamente'),
     body('email')
         .custom(function(value, {req}) {           
-            db.User.findAll().then(user => {
+            db.User.findOne({
+                where: {email: value}
+            }).then(user => {
                 console.log(user)
-                /*---Si coinciden los mails, pero NO los ID, significa que otro usuario tiene ese mail---*/
-                if(user.email == value) {
-                    if (req.session.user != undefined) {
-                        if (user.id == req.session.user.id) {
-                            return true;
-                        }
-                        return false;
-                    }
+                /*---Se chequea si el mail ya está registrado---*/
+                if(user != null) {
+                    console.log("SE ENCONTRO DICHO MAIL, DEBERIA RETORNAR FALSE");
                     return false;
                 }
+                console.log("NO SE ENCONTRO DICHO MAIL, DEBERIA RETORNAR TRUE");
                 return true;          
             }).catch(err => {
                 let ErrorsJSON = JSON.stringify(err);
