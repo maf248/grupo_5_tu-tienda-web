@@ -9,7 +9,6 @@ const db = require('../database/models');
 const usersDir = path.join(__dirname, '..', 'data', 'users.json');
 const users = JSON.parse(fs.readFileSync(usersDir, 'utf-8'));
 const ErrorsDir = path.join(__dirname, '..', 'data', 'catchErrorsLog.json');
-const Errors = JSON.parse(fs.readFileSync(usersDir, 'utf-8'));
 var loginMailValue = null;
 var loginPassValue = null;
 
@@ -50,7 +49,8 @@ const usersController = {
                 }
             })
             .catch((err) => {
-                res.send(err)
+                let ErrorsJSON = JSON.stringify(err);
+                fs.appendFileSync(ErrorsDir, ErrorsJSON);
             })    
     },
     register: function(req, res, next) {
