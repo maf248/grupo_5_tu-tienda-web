@@ -20,8 +20,8 @@ const indexController = {
       }
         ]
       })
-      .then((usuarios) => {
-        res.send(usuarios)
+      .then((productos) => {
+        res.send(productos)
       })
       .catch(err => {
         res.send(err)
