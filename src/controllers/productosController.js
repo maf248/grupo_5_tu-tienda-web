@@ -4,6 +4,8 @@ const { Recoverable } = require('repl');
 const productsDir = path.join(__dirname, '..', 'data', 'products.json');
 const products = JSON.parse(fs.readFileSync(productsDir, 'utf-8'));
 
+const db = require('../database/models');
+
 /*----- Acá generamos un indice alfabetico de Benefits para luego utilizar al recorrer los beneficios A, B, C....etc -----*/
 const indexBenefits = "abcdefghijklmnopqrstuvwx";
 
@@ -85,7 +87,18 @@ const productosController = {
       }
     },
     listado: function(req, res, next) {
-          res.render('./products/listado-productos', {products: products});
+          db.Product.findAll({
+            include: [
+              {association: "Categories"}
+            ]
+          })
+          .then((products) => {
+            res.render('./products/listado-productos', {products: products});
+          })
+          .catch(err => {
+            res.send(err)
+          })
+          
         },
     creacion: function(req, res, next) {
       if (req.session.user != undefined && req.session.user.adminCode === true) {

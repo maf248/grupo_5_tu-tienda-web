@@ -11,7 +11,15 @@ const indexController = {
         res.render('index', {products: products});
       },
     test: function(req, res, next) {
-      db.User.findAll()
+      db.Product.findAll({
+        include: [
+          {association: "Categories",
+        include: [
+          {association: "Benefits"}
+        ]
+      }
+        ]
+      })
       .then((usuarios) => {
         res.send(usuarios)
       })

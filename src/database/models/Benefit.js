@@ -13,11 +13,6 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
 
         },
-        description: {
-            type: DataTypes.TEXT,
-            allowNull: true
-
-        },
         created_at: {
             type: DataTypes.DATE,
             allowNull: false
@@ -39,7 +34,7 @@ module.exports = (sequelize, DataTypes) => {
     
     Benefit.associate = function(models) {
         Benefit.belongsToMany(models.Category, {
-            as: "categories",
+            as: "Categories",
             through: "benefit_category",
             foreignKey: "benefit_id",
             otherKey: "category_id",

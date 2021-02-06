@@ -17,47 +17,47 @@
     <h2><%=producto.name%></h2>
     <img src="/images/Producto-<%= producto.id %>/<%= producto.image %>" alt="logo del producto" class="logoProducto">
   </a>
-  <h3><%= producto.titleBanner1 %></h3>
+  <h3><%= producto.title_banner %></h3>
 <table class="tabla-productos">
     <thead class=tabla-productos-titulos>
         <tr>
             <th><h2>Planes disponibles</h2></th>
-            <% for(let i=0; i < producto.category.length; i++){ %>
-              <td><img class="medalla" src="/images/Producto-<%= producto.id %>/<%= producto.categoryImage[i] %>" alt="imagen de una medalla"><h3> <%= producto.category[i] %> </h3></td>
+            <% for(let i=0; i < producto.Categories.length; i++){ %>
+              <td><img class="medalla" src="/images/Producto-<%= producto.id %>/<%= producto.Categories[i].image %>" alt="imagen de una medalla"><h3> <%= producto.Categories[i].name %> </h3></td>
             <% }; %>
         </tr>
     </thead>
     <tbody class=tabla-productos-cuerpo>
       <tr>
-        <td><h4><%= producto.benefits.cantidadSecciones[0] %></h4></td>
-        <% for (let i= 1; i < producto.benefits.cantidadSecciones.length; i++) { %>
+        <td><h4>Cantidad de secciones</h4></td>
+        <% for (let i= 0; i < producto.Categories.length; i++) { %>
 
           <td>
-            <p> <%= producto.benefits.cantidadSecciones[i] %></p>
+            <p> <%= producto.Categories[i].web_sections %></p>
           </td>
         <% } %>
       </tr>
       <tr>
-        <td><h4><%= producto.benefits.costoTransaccion[0] %></h4></td>
-        <% for (let i= 1; i < producto.benefits.costoTransaccion.length; i++) { %>
+        <td><h4>Costo por transacción</h4></td>
+        <% for (let i= 0; i < producto.Categories.length; i++) { %>
 
           <td>
-            <p><%= producto.benefits.costoTransaccion[i] %></p>
+            <p><%= producto.Categories[i].transaction_cost_percent %> %</p>
           </td>
         <% } %>
       </tr>
       <tr>
         <td><h4>Precio</h4></td>
-        <% producto.price.forEach(precio=> { %>
+        <% for (let i= 0; i < producto.Categories.length; i++) { %>
 
         <td>
-          <% if (precio !== 0) { %>
-          <p>$ <%= precio %></p>
+          <% if (producto.Categories[i].price !== 0) { %>
+          <p>$ <%= producto.Categories[i].price %></p>
           <% } else { %>
           <p>GRATIS</p>
           <% } %>
         </td>
-        <% }) %>
+        <% } %>
         
       </tr> 
     </tbody>
