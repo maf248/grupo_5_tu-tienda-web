@@ -4,9 +4,12 @@ const path = require('path');
 const fs = require('fs');
 const { localsName } = require('ejs');
 const session = require('express-session');
+const db = require('../database/models');
 
 const usersDir = path.join(__dirname, '..', 'data', 'users.json');
 const users = JSON.parse(fs.readFileSync(usersDir, 'utf-8'));
+const ErrorsDir = path.join(__dirname, '..', 'data', 'catchErrorsLog.json');
+const Errors = JSON.parse(fs.readFileSync(usersDir, 'utf-8'));
 var loginMailValue = null;
 var loginPassValue = null;
 
@@ -20,33 +23,35 @@ const usersController = {
             }
         },
     validate: function(req, res, next) {
-        var userFound = null;
-        users.forEach(user => {
-            if (req.body.user == user.email) {
-            userFound = user;
+        db.User.findOne({
+            where: {
+                email: req.body.user
             }
-        })
-        if (userFound != null) {
-            var check = bcryptjs.compareSync(req.body.password, userFound.password);
-                if (check) {
-                    req.session.user = userFound;
-                    
-                    if(req.body.remember != undefined ) {
-                        res.cookie('recordame', userFound.hashId, {maxAge: 1000*60*60*24})
-                    } 
+        }).then((user) => {
+                if (user != null) {
+                    var check = bcryptjs.compareSync(req.body.password, user.password);
+                        if (check) {
 
-                    return res.redirect('/users/profile');
-                                        
-                } else if (!check) {
-                    
-                    return res.render('./users/login', {loginPassValue: false, loginMailValue: null, email: req.body.user});
-                } 
-
-        } else {
-
-            return res.render('./users/login', {loginPassValue: null, loginMailValue: false, email: req.body.user});
-        }
+                            req.session.user = user;
+                            
+                            if(req.body.remember != undefined ) {
+                                res.cookie('recordame', user.hash_id, {maxAge: 1000*60*60*24})
+                            } 
         
+                            return res.redirect('/users/profile');
+                                                
+                        } else if (!check) {
+                            
+                            return res.render('./users/login', {loginPassValue: false, loginMailValue: null, email: user.email});
+                        }     
+                } else {
+        
+                    return res.render('./users/login', {loginPassValue: null, loginMailValue: false, email: req.body.user});
+                }
+            })
+            .catch((err) => {
+                res.send(err)
+            })    
     },
     register: function(req, res, next) {
         if (req.session.user == undefined) {

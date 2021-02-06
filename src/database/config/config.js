@@ -1,7 +1,7 @@
 module.exports = {
   "development": {
     "username": "root",
-    "password": null,
+    "password": process.env.PASSWORD_DB,
     "database": "tu_tienda_web",
     "host": "127.0.0.1",
     "dialect": "mysql"
