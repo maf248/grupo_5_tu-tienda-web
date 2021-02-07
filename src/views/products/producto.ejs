@@ -304,7 +304,7 @@
                         <tr>
                             <th>
                                 <div class="tdDiv">
-                                    Beneficio
+                                    <p>Beneficio</p>
                                 </div>
                             </th>
                         <% product.Categories.forEach (category => { %>
@@ -314,6 +314,20 @@
                                 </div>
                             </th>
                         <% }) %>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="tdDiv">
+                                    <p>Costo por transacción</p>
+                                </div>
+                            </td>
+                            <% for (i=0; i < product.Categories.length; i++) { %>
+                                <td class="beneficio">
+                                    <div class="tdDiv">
+                                        <p><%= parseFloat(product.Categories[i].transaction_cost_percent.toString()) %> %</p>
+                                    </div>
+                                </td>
+                            <% } %>
                         </tr>
                         <% for (let i = 0; i < product.Categories[0].Benefits.length; i++) { %>
                         <tr>  
@@ -335,7 +349,20 @@
                                 <% } %>
                          <% } %>
                         </tr>
-
+                        <tr>
+                            <td>
+                                <div class="tdDiv">
+                                    <p>Cantidad de secciones</p>
+                                </div>
+                            </td>
+                            <% for (i=0; i < product.Categories.length; i++) { %>
+                                <td class="beneficio">
+                                    <div class="tdDiv">
+                                        <p><%= product.Categories[i].web_sections %></p>
+                                    </div>
+                                </td>
+                            <% } %>
+                        </tr>
                         <tr>
                             <td class="beneficio">
                                 <div class="tdDiv">
