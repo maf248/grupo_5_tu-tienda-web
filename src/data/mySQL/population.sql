@@ -71,7 +71,7 @@ INSERT INTO contents (section_id, type, text) VALUES
 (4,'icon','carrot-solid.svg'),
 (4,'subtitle','MercadoLiebre'),
 (4,'description','Integración con MercadoLiebre. Lo que mostrás en Tu Tienda Web lo mostrás también en MercadoLiebre.'),
-(1,'icon','store-alt-solid.svg'),
+(4,'icon','store-alt-solid.svg'),
 (4,'subtitle','Falabella'),
 (4,'description','Integración con Falabella. Lo que mostrás en Tu Tienda Web lo mostrás también en Falabella.'),
 (5,'icon','instagram-brands.svg'),
