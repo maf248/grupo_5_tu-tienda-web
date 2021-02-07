@@ -68,16 +68,23 @@ const usersController = {
         if (!errors.isEmpty()) {
             return res.render('./users/register', {errors: errors.errors, firstName: req.body.firstName, lastName: req.body.lastName, email: req.body.email} );
         } else {                 
-            db.User.create({
+            let user = db.User.create({
                 hash_id: bcryptjs.hashSync("user name " + req.body.firstName, 10),
                 first_name: req.body.firstName,
                 last_name: req.body.lastName,
                 email: req.body.email,
                 password:  bcryptjs.hashSync(req.body.password, 10),
-                adminCode: 'user'
-            })
+                role: 'user'
+            }).then( value => {
 
-            res.redirect('/users/login');
+                req.session.user = value
+                console.log(value)
+    
+                res.redirect('/users/profile');
+            }
+            )
+
+
         }
     },
     profile: function (req, res, next) {
@@ -101,7 +108,7 @@ const usersController = {
                 first_name: req.body.firstName,
                 last_name: req.body.lastName,
                 email: req.body.email,
-                password:  req.body.password,
+                password:  bcryptjs.hashSync(req.body.password, 10),
             }, {
                 where: {
                 id: {[db.Sequelize.Op.like] : [req.session.user.id]}
@@ -165,12 +172,23 @@ const usersController = {
     },
     photoUpdate: function (req, res, next) {
         /*---Aqui se guarda el nombre del archivo del nuevo avatar---*/
-        users[req.session.user.id -1].image = req.files[0].filename;
 
-        const usersJSON = JSON.stringify(users);
-		fs.writeFileSync(usersDir, usersJSON);
+        let photoUpdate =  db.User.update({
+            image: req.files[0].filename
+        }, {
+            where: {
+                id: {[db.Sequelize.Op.like] : [req.session.user.id]}
+            }
+        })
+        let userSession = db.User.findByPk([req.session.user.id])
+        
+        .PromiseAll([photoUpdate, userSession])
+            .then( result => {
+                console.log(result)
+                req.session.user = result
+                res.redirect('/users/profile/')
+            })
 
-        res.redirect('/users/profile/')
     },
     logout: function (req, res, next) {
         /*---Aqui se resetean valores de mensajes de error----*/

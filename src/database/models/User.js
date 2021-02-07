@@ -37,12 +37,10 @@ const cols = {
         defaultValue: 'user'
     },
     product_id: {
-        type: DataTypes.INTEGER.UNSIGNED,
-        allowNull: false
+        type: DataTypes.INTEGER.UNSIGNED
     },
     category_id: {
-        type: DataTypes.INTEGER.UNSIGNED,
-        allowNull: false
+        type: DataTypes.INTEGER.UNSIGNED
     },
     created_at: {
         type: DataTypes.DATE,
