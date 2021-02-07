@@ -2,15 +2,15 @@
     
 <!--Elegir nombre del producto-->
 <label for="name"style="padding: 5px; width: 100%; text-align:center;">Elegí el nombre del producto:</label> <br>
-<input type="text" style="padding: 5px; width: 50%; text-align:center; border-color: rgba(0, 0, 0, 1); border-width: 0.1px; margin: auto;" name="name" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.name %>" <% } else { %> placeholder="Escribí aquí el nombre del producto" <% } %> required> <br>
+<input type="text" style="padding: 5px; width: 50%; text-align:center; border-color: rgba(0, 0, 0, 1); border-width: 0.1px; margin: auto;" name="name" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.name %>" <% } else { %> placeholder="Escribí aquí el nombre del producto" <% } %>> <br>
  
 <!--Elegir tipo de producto-->
 <label for="type" style="padding: 5px; width: 100%; text-align:center;">Elegí el tipo de producto:</label> <br>
-<input type="text" style="padding: 5px; width: 50%; text-align:center; border-color: rgba(0, 0, 0, 1); border-width: 0.1px; margin: auto;" name="type" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.type %>" <% } else { %> placeholder="Escribí aquí el nombre del producto sin mayúsculas ni espacios" <% } %> required>
+<input type="text" style="padding: 5px; width: 50%; text-align:center; border-color: rgba(0, 0, 0, 1); border-width: 0.1px; margin: auto;" name="type" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.type %>" <% } else { %> placeholder="Escribí aquí el nombre del producto sin mayúsculas ni espacios" <% } %>>
 
 <!--Elegir imagen del producto-->
 <label style="display: block; padding: 5px; width: 100%; text-align:center;margin-top: 1%;" for="image">Elegí una imagen que describa el producto:</label>
-<input style="margin: 1% auto" type="file" name="image" id="image" required>
+<input style="margin: 1% auto" type="file" name="image" id="image">
 
 </div>
 
@@ -18,12 +18,12 @@
     <h2>
         <!--elegí el título del Banner 1-->
         <label for="titleBanner1">Titulo principal:</label>
-        <input type="text" style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 50%;" name="titleBanner1" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.titleBanner1 %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %> required>
+        <input type="text" style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 50%;" name="titleBanner1" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.titleBanner1 %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %>>
     </h2>
     <p>
         <!--elegí el título del Banner 1-->
         <label for="subtitleBanner1">Subtítulo principal:</label>
-        <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 40%;" name="subtitleBanner1" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.subtitleBanner1 %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %> required>
+        <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 40%;" name="subtitleBanner1" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.subtitleBanner1 %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %>>
     </p>
 </section>
 
@@ -32,7 +32,7 @@
         <h2 class="disenoBlanco-article1-tituloPrincipal">
             <!--Elegir titulo seccion 1-->
             <label for="atitle">Titulo seccion 1:</label> <br>
-            <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 60%;" name="atitle" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion1.atitle %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %>  required>
+            <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 60%;" name="atitle" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion1.atitle %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %> >
         </h2>
     </article>
     <div class="disenoBlanco-containerArticle2">
@@ -43,7 +43,7 @@
                 <input type="file" name="aicon1" id="aicon1" accept="image/svg"> <br>
                 <!--Elegir subtitulo.1 seccion 1-->
                 <label for="asubtitle1">Subtítulo 1.1:</label> <br>
-                <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="asubtitle1" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion1.asubtitle1 %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %> required>
+                <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="asubtitle1" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion1.asubtitle1 %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %>>
             </h3>
             <p  class="disenoBlanco-article2-parrafo">
                 <!--Elegir descripcion.1 seccion 1-->
@@ -60,7 +60,7 @@
                 <input type="file" name="aicon2" id="aicon2" accept="image/svg"> <br>
                 <!--Elegir subtitulo.2 seccion 1-->
                 <label for="asubtitle2">Subtítulo 1.2:</label> <br>
-                <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="asubtitle2" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion1.asubtitle2 %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %> required>
+                <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="asubtitle2" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion1.asubtitle2 %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %>>
             </h3>
             <p  class="disenoBlanco-article2-parrafo">
                 <!--Elegir descripcion.2 seccion 1-->
@@ -77,7 +77,7 @@
                 <input type="file" name="aicon3" id="aicon3" accept="image/svg" > <br>
                 <!--Elegir subtitulo.3 seccion 1-->
                 <label for="asubtitle3">Subtítulo 1.3:</label> <br>
-                <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="asubtitle3" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion1.asubtitle3 %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %> required>
+                <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="asubtitle3" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion1.asubtitle3 %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %>>
             </h3>
             <p  class="disenoBlanco-article2-parrafo">
                 <!--Elegir descripcion.3 seccion 1-->
@@ -94,7 +94,7 @@
                 <input type="file" name="aicon4" id="aicon4" accept="image/svg"> <br>
                 <!--Elegir subtitulo.3 seccion 1-->
                 <label for="asubtitle4">Subtítulo 1.4:</label> <br>
-                <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="asubtitle4" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion1.asubtitle4 %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %> required>
+                <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="asubtitle4" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion1.asubtitle4 %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %>>
             </h3>
             <p  class="disenoBlanco-article2-parrafo">
                 <!--Elegir descripcion.3 seccion 1-->
@@ -107,7 +107,7 @@
     </div>
     <article class="disenoBlanco-articleImg">
         <label for="aimage" style="display: block; width: 100%"><i class="far fa-file-image" style="width: 100%; text-align: center;"></i></label><br>
-        <input type="file" name="aimage" id="aimage" accept="image/png" required> <br>
+        <input type="file" name="aimage" id="aimage" accept="image/png"> <br>
     </article>
 </section>
 
@@ -117,13 +117,13 @@
     <h2 class="disenoAzul-article1-tituloPrincipal">
         <!--Elegir titulo seccion 2-->
         <label for="btitle">Titulo 2:</label> <br>
-        <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 60%;" name="btitle" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion2.btitle %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %> required>
+        <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 60%;" name="btitle" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion2.btitle %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %>>
     </h2>
 </article>
 <article class="disenoAzul-articleImg">
     <!--Elegir imagen seccion 2-->
     <label for="bimage"style="display: block; width: 100%"><i class="far fa-file-image" style="width: 100%; text-align: center;"></i></label><br>
-    <input type="file" name="bimage" id="bimage" accept="image/png" required> <br>
+    <input type="file" name="bimage" id="bimage" accept="image/png"> <br>
 </article>
 <div class="disenoAzul-containerArticle2">
     <article class="disenoAzul-article2">
@@ -133,7 +133,7 @@
                 <input type="file" name="bicon1" id="bicon1" accept="image/svg"> <br>
                 <!--Elegir subtitulo.1 seccion 2-->
                 <label for="bsubtitle1">Subtítulo 2.1:</label> <br>
-                <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="bsubtitle1" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion2.bsubtitle1 %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %> required>
+                <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="bsubtitle1" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion2.bsubtitle1 %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %>>
         </h3>
         <p  class="disenoAzul-article2-parrafo">
             <!--Elegir descripcion.1 seccion 2-->
@@ -150,7 +150,7 @@
                 <input type="file" name="bicon2" id="bicon2" accept="image/svg"> <br>
                 <!--Elegir subtitulo.1 seccion 2-->
                 <label for="bsubtitle2">Subtítulo 2.2:</label> <br>
-                <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="absubtitle2" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion2.bsubtitle2 %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %> required>
+                <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="absubtitle2" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion2.bsubtitle2 %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %>>
         </h3>
         <p  class="disenoAzul-article2-parrafo">
             <!--Elegir descripcion.1 seccion 2-->
@@ -167,7 +167,7 @@
                 <input type="file" name="bicon3" id="bicon3" accept="image/svg"> <br>
                 <!--Elegir subtitulo.1 seccion 2-->
                 <label for="bsubtitle3">Subtítulo 2.3:</label> <br>
-                <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="bsubtitle3" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion2.bsubtitle3 %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %> required>
+                <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="bsubtitle3" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion2.bsubtitle3 %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %>>
         </h3>
         <p  class="disenoAzul-article2-parrafo">
             <!--Elegir descripcion.1 seccion 2-->
@@ -184,7 +184,7 @@
                 <input type="file" name="bicon4" id="bicon4" accept="image/svg"> <br>
                 <!--Elegir subtitulo.1 seccion 2-->
                 <label for="bsubtitle4">Subtítulo 2.4:</label> <br>
-                <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="absubtitle4" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion2.bsubtitle4 %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %> required>
+                <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="absubtitle4" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion2.bsubtitle4 %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %>>
         </h3>
         <p  class="disenoAzul-article2-parrafo">
             <!--Elegir descripcion.1 seccion 2-->
@@ -201,7 +201,7 @@
     <article class="disenoBlanco-article1">
         <h2 class="disenoBlanco-article1-tituloPrincipal">
             <label for="ctitle">Titulo 3:</label> <br>
-            <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 60%;" name="ctitle" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion3.ctitle %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %> required>
+            <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 60%;" name="ctitle" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion3.ctitle %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %>>
         </h2>
     </article>
     <div class="disenoBlanco-containerArticle2">
@@ -212,7 +212,7 @@
                 <input type="file" name="cicon1" id="cicon1" accept="image/svg"> <br>
                 <!--Elegir subtitulo.1 seccion 3-->
                 <label for="csubtitle1">Subtítulo3.1:</label> <br>
-                <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="csubtitle1" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion3.csubtitle1 %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %> required>
+                <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="csubtitle1" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion3.csubtitle1 %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %>>
             </h3>
             <p  class="disenoBlanco-article2-parrafo">
                 <!--Elegir descripcion.1 seccion 3-->
@@ -229,7 +229,7 @@
                 <input type="file" name="cicon2" id="cicon2" accept="image/svg"> <br>
                 <!--Elegir subtitulo.2 seccion 1-->
                 <label for="csubtitle2">Subtítulo 3.2</label> <br>
-                <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="csubtitle2" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion3.csubtitle2 %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %> required>
+                <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="csubtitle2" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion3.csubtitle2 %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %>>
             </h3>
             <p  class="disenoBlanco-article2-parrafo">
                 <!--Elegir descripcion.2 seccion 3-->
@@ -246,7 +246,7 @@
                 <input type="file" name="cicon3" id="cicon3" accept="image/svg"> <br>
                 <!--Elegir subtitulo.3 seccion 3-->
                 <label for="csubtitle3">Subtítulo 3.3:</label> <br>
-                <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="csubtitle3" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion3.csubtitle3 %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %> required>
+                <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="csubtitle3" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion3.csubtitle3 %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %>>
             </h3>
             <p  class="disenoBlanco-article2-parrafo">
                 <!--Elegir descripcion.3 seccion 3-->
@@ -263,7 +263,7 @@
                 <input type="file" name="cicon4" id="cicon4" accept="image/svg"> <br>
                 <!--Elegir subtitulo.3 seccion 3-->
                 <label for="csubtitle4">Subtítulo 3.4:</label> <br>
-                <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="csubtitle4" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion3.csubtitle4 %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %> required>
+                <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="csubtitle4" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion3.csubtitle4 %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %>>
             </h3>
             <p  class="disenoBlanco-article2-parrafo">
                 <!--Elegir descripcion.3 seccion 3-->
@@ -285,7 +285,7 @@
         <h2 class="disenoAzul-article1-tituloPrincipal">
             <!--Elegir titulo seccion 4-->
             <label for="dtitle" >Titulo 4:</label> <br>
-            <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 60%;" name="dtitle" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion4.dtitle %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %> required>
+            <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 60%;" name="dtitle" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion4.dtitle %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %>>
         </h2>
     </article>
     <article class="disenoAzul-articleImg">
@@ -301,7 +301,7 @@
                     <input type="file" name="dicon1" id="dicon1" accept="image/svg"> <br>
                     <!--Elegir subtitulo.1 seccion 4-->
                     <label for="dsubtitle1">Subtítulo 4.1:</label> <br>
-                    <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="dsubtitle1" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion4.dsubtitle1 %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %> required>
+                    <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="dsubtitle1" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion4.dsubtitle1 %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %>>
             </h3>
             <p  class="disenoAzul-article2-parrafo">
                 <!--Elegir descripcion.1 seccion 4-->
@@ -318,7 +318,7 @@
                     <input type="file" name="dicon2" id="dicon2" accept="image/svg"> <br>
                     <!--Elegir subtitulo.1 seccion 2-->
                     <label for="dsubtitle2">Subtítulo 4.2:</label> <br>
-                    <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="dbsubtitle2" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion4.dsubtitle2 %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %> required>
+                    <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="dbsubtitle2" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion4.dsubtitle2 %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %>>
             </h3>
             <p  class="disenoAzul-article2-parrafo">
                 <!--Elegir descripcion.1 seccion 4-->
@@ -335,7 +335,7 @@
                     <input type="file" name="dicon3" id="dicon3" accept="image/svg"> <br>
                     <!--Elegir subtitulo.1 seccion 2-->
                     <label for="dsubtitle3">Subtítulo 4.3:</label> <br>
-                    <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="dbsubtitle3" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion4.dsubtitle3 %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %> required>
+                    <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="dbsubtitle3" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion4.dsubtitle3 %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %>>
             </h3>
             <p  class="disenoAzul-article2-parrafo">
                 <!--Elegir descripcion.1 seccion 4-->
@@ -352,7 +352,7 @@
                     <input type="file" name="dicon4" id="dicon4" accept="image/svg"> <br>
                     <!--Elegir subtitulo.1 seccion 4-->
                     <label for="dsubtitle4">Subtítulo 4.4:</label> <br>
-                    <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="dsubtitle4" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion4.dsubtitle4 %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %> required>
+                    <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="dsubtitle4" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion4.dsubtitle4 %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %>>
             </h3>
             <p  class="disenoAzul-article2-parrafo">
                 <!--Elegir descripcion.1 seccion 4-->
@@ -369,7 +369,7 @@
         <article class="disenoBlanco-article1">
             <h2 class="disenoBlanco-article1-tituloPrincipal">
                 <label for="etitle">Titulo 5:</label> <br>
-                <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 60%;" name="etitle" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion5.etitle %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %> required>
+                <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 60%;" name="etitle" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion5.etitle %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %>>
             </h2>
         </article>
         <div class="disenoBlanco-containerArticle2">
@@ -380,7 +380,7 @@
                     <input type="file" name="eicon1" id="eicon1" accept="image/svg"> <br>
                     <!--Elegir subtitulo.1 seccion 5-->
                     <label for="esubtitle1">Subtítulo 5.1:</label> <br>
-                    <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="esubtitle1" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion5.esubtitle1 %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %> required>
+                    <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="esubtitle1" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion5.esubtitle1 %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %>>
                 </h3>
                 <p  class="disenoBlanco-article2-parrafo">
                     <!--Elegir descripcion.1 seccion 5-->
@@ -397,7 +397,7 @@
                     <input type="file" name="eicon2" id="eicon2" accept="image/svg"> <br>
                     <!--Elegir subtitulo.2 seccion 5-->
                     <label for="esubtitle2">Subtítulo 5.2:</label> <br>
-                    <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="esubtitle2" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion5.esubtitle2 %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %> required>
+                    <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="esubtitle2" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion5.esubtitle2 %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %>>
                 </h3>
                 <p  class="disenoBlanco-article2-parrafo">
                     <!--Elegir descripcion.2 seccion 5-->
@@ -414,11 +414,11 @@
                     <input type="file" name="eicon3" id="eicon3" accept="image/svg"> <br>
                     <!--Elegir subtitulo.3 seccion 5-->
                     <label for="esubtitle3">Subtítulo 5.3:</label> <br>
-                    <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="esubtitle3" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion5.esubtitle3 %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %> required>
+                    <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="esubtitle3" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion5.esubtitle3 %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %>>
                 </h3>
                 <p  class="disenoBlanco-article2-parrafo">
                     <!--Elegir descripcion.3 seccion 5-->
-                    <label for="edescription3" required>Descripcion 5.3:</label> <br>
+                    <label for="edescription3">Descripcion 5.3:</label> <br>
                     <textarea cols="30" rows="5" style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="edescription3">
                         <% if (typeof productToEdit != 'undefined' ) { %> <%= productToEdit.seccion5.edescription3 %> <% } else { %> Escribí el texto aquí <% } %>
                     </textarea>
@@ -431,7 +431,7 @@
                     <input type="file" name="eicon4" id="eicon4" accept="image/svg"> <br>
                     <!--Elegir subtitulo.3 seccion 5-->
                     <label for="esubtitle4">Subtítulo 5.4:</label> <br>
-                    <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="esubtitle4" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion5.esubtitle4 %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %> required>
+                    <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="esubtitle4" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.seccion5.esubtitle4 %>" <% } else { %> placeholder="Escribí el texto aquí" <% } %>>
                 </h3>
                 <p  class="disenoBlanco-article2-parrafo">
                     <!--Elegir descripcion.3 seccion 5-->
@@ -455,11 +455,11 @@
 <div class="center">
 
 <label class="block" for="category1">Definí la categoría 1 que tendrá el producto:</label>
-<input class="block" type="text" name="category1" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.category[0] %>" <% } else { %> placeholder="Escribí acá el nombre de la categoría 1" <% } %> required>
+<input class="block" type="text" name="category1" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.category[0] %>" <% } else { %> placeholder="Escribí acá el nombre de la categoría 1" <% } %>>
 <label class="block" for="category2">Definí la categoría 2 que tendrá el producto:</label>
-<input class="block" type="text" name="category2" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.category[1] %>" <% } else { %> placeholder="Escribí acá el nombre de la categoría 2" <% } %>" required>
+<input class="block" type="text" name="category2" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.category[1] %>" <% } else { %> placeholder="Escribí acá el nombre de la categoría 2" <% } %>">
 <label class="block" for="category3">Definí la categoría 3 que tendrá el producto:</label>
-<input class="block" type="text" name="category3" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.category[2] %>" <% } else { %> placeholder="Escribí acá el nombre de la categoría 3" <% } %>" required>
+<input class="block" type="text" name="category3" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.category[2] %>" <% } else { %> placeholder="Escribí acá el nombre de la categoría 3" <% } %>">
 
 </div>
         <table>
@@ -473,7 +473,7 @@
                     <div class="contenedorMedalla tdDiv">
                         <!--Elegir imagen de la categoria 1-->
                         <label class="labelPointer fontSize" for="categoryImage1">Beneficio imagen 1</label>
-                        <input class="inputNone" type="file" name="categoryImage1" id="categoryImage1" accept="image/png image/jpg"  required>
+                        <input class="inputNone" type="file" name="categoryImage1" id="categoryImage1" accept="image/png image/jpg" >
                     </div>
                 </th>
                 <th>
@@ -581,17 +581,17 @@
                 </td>
                 <td>
                     <div class="tdDiv">
-                        <input type="number" name="price[0]" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.price[0] %>" <% } else { %> placeholder="$" <% } %> required>
+                        <input type="number" name="price[0]" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.price[0] %>" <% } else { %> placeholder="$" <% } %>>
                     </div>
                 </td>
                 <td>
                     <div class="tdDiv">
-                        <input type="number" name="price[1]" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.price[1] %>" <% } else { %> placeholder="$" <% } %> required>
+                        <input type="number" name="price[1]" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.price[1] %>" <% } else { %> placeholder="$" <% } %>>
                     </div>
                 </td>
                 <td>
                     <div class="tdDiv">
-                        <input type="number" name="price[2]" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.price[2] %>" <% } else { %> placeholder="$" <% } %> required>
+                        <input type="number" name="price[2]" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.price[2] %>" <% } else { %> placeholder="$" <% } %>>
                     </div>
                 </td>
             </tr>

@@ -115,7 +115,7 @@ const productosController = {
           
         },
     creacion: function(req, res, next) {
-      if (req.session.user != undefined && req.session.user.adminCode === true) {
+      if (req.session.user != undefined && req.session.user.role == 'admin') {
             res.render('./products/create', {indexBenefits: indexBenefits} ); 
           } else {
             res.redirect('/users/login')
@@ -125,117 +125,238 @@ const productosController = {
       /*----Acá llamamos a la funcion creada, para que al recibir los archivos subidos, guarde sus nombres en imageDir----*/
       uploadFilesDir(req.files);
        /*----Acá guardamos toda la información del producto nuevo----*/
-      products.push(
-         {
-          "id": products.length + 1,
-          "name": req.body.name,
-          "type": req.body.type,
-          "titleBanner1": req.body.titleBanner1,
-          "subtitleBaner1": req.body.subtitleBanner1,
-          "seccion1": {
-              "atitle": req.body.atitle, 
-              "aicon1": imageDir.aicon1, 
-              "asubtitle1":req.body.asubtitle1, 
-              "adescription1":req.body.adescription1,
-              "asubtitle2":req.body.asubtitle2, 
-              "aicon2": imageDir.aicon2, 
-              "adescription2": req.body.adescription2, 
-              "asubtitle3":req.body.asubtitle3, 
-              "aicon3": imageDir.aicon3, 
-              "adescription3": req.body.adescription3, 
-              "asubtitle4":req.body.asubtitle4, 
-              "aicon4": imageDir.aicon4, 
-              "adescription4": req.body.adescription4, 
-              "aimage": imageDir.aimage
-          }, 
-          "seccion2": {
-              "btitle": req.body.btitle, 
-              "bicon1": imageDir.bicon1, 
-              "bsubtitle1":req.body.bsubtitle1, 
-              "bdescription1":req.body.bdescription1, 
-              "bsubtitle2":req.body.bsubtitle2, 
-              "bicon2": imageDir.bicon2,  
-              "bdescription2": req.body.bdescription2, 
-              "bsubtitle3":req.body.bsubtitle3, 
-              "bicon3": imageDir.bicon3, 
-              "bdescription3": req.body.bdescription3,
-              "bsubtitle4":req.body.bsubtitle4, 
-              "bicon4": imageDir.bicon4, 
-              "bdescription4": req.body.bdescription4, 
-              "bimage": imageDir.bimage
-          }, 
-          "seccion3": {
-              "ctitle": req.body.ctitle, 
-              "cicon1": imageDir.cicon1, 
-              "csubtitle1":req.body.csubtitle1, 
-              "cdescription1":req.body.cdescription1,
-              "csubtitle2":req.body.csubtitle2, 
-              "cicon2": imageDir.cicon2, 
-              "cdescription2": req.body.cdescription2, 
-              "csubtitle3":req.body.csubtitle3, 
-              "cicon3": imageDir.cicon3, 
-              "cdescription3": req.body.cdescription3, 
-              "csubtitle4":req.body.csubtitle4, 
-              "cicon4": imageDir.cicon4, 
-              "cdescription4": req.body.cdescription4, 
-              "cimage": imageDir.cimage 
-          },
-          "seccion4": {
-              "dtitle": req.body.dtitle, 
-              "dicon1": imageDir.dicon1, 
-              "dsubtitle1":req.body.dsubtitle1, 
-              "ddescription1":req.body.ddescription1, 
-              "dsubtitle2":req.body.dsubtitle2, 
-              "dicon2": imageDir.dicon2, 
-              "ddescription2": req.body.ddescription2, 
-              "dsubtitle3":req.body.dsubtitle3, 
-              "dicon3": imageDir.dicon3, 
-              "ddescription3": req.body.ddescription3, 
-              "dsubtitle4":req.body.dsubtitle4, 
-              "dicon4": imageDir.dicon4, 
-              "ddescription4": req.body.ddescription4, 
-              "dimage": imageDir.dimage
-          },
-          "seccion5": {
-              "etitle": req.body.etitle, 
-              "eicon1": imageDir.eicon1, 
-              "esubtitle1":req.body.esubtitle1, 
-              "edescription1":req.body.edescription1, 
-              "esubtitle2":req.body.esubtitle2, 
-              "eicon2": imageDir.eicon2,
-              "edescription2": req.body.edescription2, 
-              "esubtitle3":req.body.esubtitle3, 
-              "eicon3": imageDir.eicon3, 
-              "edescription3": req.body.edescription3,
-              "esubtitle4":req.body.esubtitle4, 
-              "eicon4": imageDir.eicon4, 
-              "edescription4": req.body.edescription4, 
-              "eimage": imageDir.eimage
-          },
-          "image": imageDir.image,
-          "category": [req.body.category1, req.body.category2, req.body.category3],
-          "categoryImage": [imageDir.categoryImage1,imageDir.categoryImage2,imageDir.categoryImage3],
-          "price": [Number(req.body.price[0]), Number(req.body.price[1]), Number(req.body.price[2])],
-          "benefits": {
-              "costoTransaccion": ["Costo por transacción", req.body.costoTransaccion[1], req.body.costoTransaccion[2], req.body.costoTransaccion[3]],
-              
-               "cantidadSecciones": ["Cantidad de secciones", req.body.cantidadSecciones1 , req.body.cantidadSecciones2, req.body.cantidadSecciones3]
-              }
-              
-      });
-      /*-----Acá nos aseguramos que no genere las propiedades de Benefits, en caso de no tener nombre el beneficio (campo input vacio)-----*/
-      for (let i = 0; i < indexBenefits.length; i++) {
-        if (req.body[indexBenefits[i]][0] != "") {
-          products[products.length -1].benefits[indexBenefits[i]] = [req.body[indexBenefits[i]][0], req.body[indexBenefits[i]][1], req.body[indexBenefits[i]][2], req.body[indexBenefits[i]][3]];
-          }
-        }
-         const productsJSON = JSON.stringify(products);
-         fs.writeFileSync(productsDir, productsJSON);
+       db.Product.create({
+          name: req.body.name,
+          type: req.body.type,
+          title_banner: req.body.titleBanner1,
+          subtitle_banner: req.body.subtitleBanner1,
+          image: imageDir.image
+        })
+
+       db.Category.bulkCreate([{
+        name: req.body.category1,
+        image: imageDir.categoryImage1,
+        price: Number(req.body.price[0]),
+        transaction_cost_percent: req.body.costoTransaccion[1],
+        web_sections: req.body.cantidadSecciones1
+        },{
+        name: req.body.category2,
+        image: imageDir.categoryImage2,
+        price: Number(req.body.price[1]),
+        transaction_cost_percent: req.body.costoTransaccion[2],
+        web_sections: req.body.cantidadSecciones2
+        },{
+        name: req.body.category3,
+        image: imageDir.categoryImage3,
+        price: Number(req.body.price[2]),
+        transaction_cost_percent: req.body.costoTransaccion[3],
+        web_sections: req.body.cantidadSecciones3
+        }])
+
+      db.Section.bulkCreate([{
+        title: req.body.atitle,
+        image: imageDir.aimage
+        },{
+        title: req.body.btitle,
+        image: imageDir.bimage
+        },{
+        title: req.body.ctitle,
+        image: imageDir.cimage
+        },{
+        title: req.body.dtitle,
+        image: imageDir.dimage
+        },{
+        title: req.body.etitle,
+        image: imageDir.eimage
+        }])
+
+      db.Content.bulkCreate([{
+        type: "icon",
+        text: imageDir.aicon1
+      },{
+        type: "subtitle",
+        text: req.body.bsubtitle1
+      },{
+        type: "description",
+        text: req.body.adescription1
+      },{
+        type: "icon",
+        text: imageDir.aicon2
+      },{
+        type: "subtitle",
+        text: req.body.asubtitle2
+      },{
+        type: "description",
+        text: req.body.adescription2
+      },{
+        type: "icon",
+        text: imageDir.aicon3
+      },{
+        type: "subtitle",
+        text: req.body.asubtitle3
+      },{
+        type: "description",
+        text: req.body.adescription3
+      },{
+        type: "icon",
+        text: imageDir.aicon4
+      },{
+        type: "subtitle",
+        text: req.body.asubtitle4
+      },{
+        type: "description",
+        text: req.body.adescription4
+      },{
+        type: "icon",
+        text: imageDir.bicon1
+      },{
+        type: "subtitle",
+        text: req.body.bsubtitle1
+      },{
+        type: "description",
+        text: req.body.bdescription1
+      },{
+        type: "icon",
+        text: imageDir.bicon2
+      },{
+        type: "subtitle",
+        text: req.body.bsubtitle2
+      },{
+        type: "description",
+        text: req.body.bdescription2
+      },{
+        type: "icon",
+        text: imageDir.bicon3
+      },{
+        type: "subtitle",
+        text: req.body.bsubtitle3
+      },{
+        type: "description",
+        text: req.body.bdescription3
+      },{
+        type: "icon",
+        text: imageDir.bicon4
+      },{
+        type: "subtitle",
+        text: req.body.bsubtitle4
+      },{
+        type: "description",
+        text: req.body.bdescription4
+      },{
+        type: "icon",
+        text: imageDir.cicon1
+      },{
+        type: "subtitle",
+        text: req.body.csubtitle1
+      },{
+        type: "description",
+        text: req.body.cdescription1
+      },{
+        type: "icon",
+        text: imageDir.cicon2
+      },{
+        type: "subtitle",
+        text: req.body.csubtitle2
+      },{
+        type: "description",
+        text: req.body.cdescription2
+      },{
+        type: "icon",
+        text: imageDir.cicon3
+      },{
+        type: "subtitle",
+        text: req.body.csubtitle3
+      },{
+        type: "description",
+        text: req.body.cdescription3
+      },{
+        type: "icon",
+        text: imageDir.cicon4
+      },{
+        type: "subtitle",
+        text: req.body.csubtitle4
+      },{
+        type: "description",
+        text: req.body.cdescription4
+      },{
+        type: "icon",
+        text: imageDir.dicon1
+      },{
+        type: "subtitle",
+        text: req.body.dsubtitle1
+      },{
+        type: "description",
+        text: req.body.ddescription1
+      },{
+        type: "icon",
+        text: imageDir.dicon2
+      },{
+        type: "subtitle",
+        text: req.body.dsubtitle2
+      },{
+        type: "description",
+        text: req.body.ddescription2
+      },{
+        type: "icon",
+        text: imageDir.dicon3
+      },{
+        type: "subtitle",
+        text: req.body.dsubtitle3
+      },{
+        type: "description",
+        text: req.body.ddescription3
+      },{
+        type: "icon",
+        text: imageDir.dicon4
+      },{
+        type: "subtitle",
+        text: req.body.dsubtitle4
+      },{
+        type: "description",
+        text: req.body.ddescription4
+      },{
+        type: "icon",
+        text: imageDir.eicon1
+      },{
+        type: "subtitle",
+        text: req.body.esubtitle1
+      },{
+        type: "description",
+        text: req.body.edescription1
+      },{
+        type: "icon",
+        text: imageDir.eicon2
+      },{
+        type: "subtitle",
+        text: req.body.esubtitle2
+      },{
+        type: "description",
+        text: req.body.edescription2
+      },{
+        type: "icon",
+        text: imageDir.eicon3
+      },{
+        type: "subtitle",
+        text: req.body.esubtitle3
+      },{
+        type: "description",
+        text: req.body.edescription3
+      },{
+        type: "icon",
+        text: imageDir.eicon4
+      },{
+        type: "subtitle",
+        text: req.body.esubtitle4
+      },{
+        type: "description",
+        text: req.body.edescription4
+      }])
 
         res.redirect('/products');
         },
     edicion: function(req, res, next) {
-      if (req.session.user != undefined && req.session.user.adminCode === true) {
+      if (req.session.user != undefined && req.session.user.role == 'admin') {
+        db.Product.findOne()
         res.render('./products/edit', {productToEdit: products[req.params.id -1], indexBenefits: indexBenefits});
       } else {
         res.redirect('/users/login')  
@@ -246,7 +367,10 @@ const productosController = {
     uploadFilesDir(req.files);
 
     /*----Actualizando los datos de formularios, en la variable products----*/
-
+      db.Product.update({
+        name: req.body.name,
+        type: req.body.type
+      }, {where: {id: req.params.id}})
                     /*----Generales----*/
     products[req.params.id -1].name = req.body.name;
     products[req.params.id -1].type = req.body.type;
