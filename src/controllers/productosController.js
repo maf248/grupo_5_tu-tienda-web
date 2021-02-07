@@ -80,11 +80,26 @@ files.forEach (file => {
 const productosController = {
     detalle: function(req, res, next) {
         /*-----Acá pasamos la vista de producto según  el id -----*/
-        if ( req.params.id - 1 < products.length ) {
-          res.render('./products/producto', { product: products[req.params.id -1] });   
-        } else {
-          res.redirect(req.url);
-      }
+          db.Product.findByPk(req.params.id, {
+            include: [
+              {association: "Sections", 
+            include: [{association: "Contents"}]},
+              {association: "Categories",
+            include: [
+              {association: "Benefits"}
+            ]
+          }
+            ]
+          })
+          .then((product) => {
+            console.log(product);
+            res.send(product)
+            //res.render('./products/producto', {product: product});
+          })
+          .catch(err => {
+            res.send(err)
+          })
+          
     },
     listado: function(req, res, next) {
           db.Product.findAll({

@@ -13,10 +13,10 @@
     
         <section class="banner1">
             <h2>
-                 <%= product.titleBanner1 %>
+                 <%= product.title_banner %>
             </h2>
             <p>
-                <%= product.subtitleBanner1 %>
+                <%= product.subtitle_banner %>
             </p>
             <form action="#contenedorProductos" method="GET">
                 <button>
@@ -29,13 +29,13 @@
             <section class="disenoBlanco">
                 <article class="disenoBlanco-article1">
                     <h2 class="disenoBlanco-article1-tituloPrincipal">
-                        <%= product.seccion1.atitle %>
+                        <%= product.Sections[1].title %>
                     </h2>
                 </article>
                 <div class="disenoBlanco-containerArticle2">
                     <article class="disenoBlanco-article2">
                         <h3 class="disenoBlanco-article2-titulo">
-                            <img src="/images/Producto-<%= product.id %>/<%= product.seccion1.aicon1 %>" class="icon" alt=""> <br>
+                            <img src="/images/Producto-<%= product.id %>/<%= product.Sections[1].aicon1 %>" class="icon" alt=""> <br>
                             <%= product.seccion1.asubtitle1 %>
                         </h3>
                         <p  class="disenoBlanco-article2-parrafo">

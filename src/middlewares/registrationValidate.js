@@ -29,7 +29,7 @@ module.exports = [
     body('email')
         .custom(function(value, {req}) {           
             db.User.findOne({
-                where: {email: value}
+                where: {email: req.body.email}
             }).then(user => {
                 console.log(user)
                 /*---Se chequea si el mail ya está registrado---*/
@@ -39,8 +39,8 @@ module.exports = [
                 }
                 console.log("NO SE ENCONTRO DICHO MAIL, DEBERIA RETORNAR TRUE");
                 return true;          
-            }).catch(err => {
-                let ErrorsJSON = JSON.stringify(err);
+            }).catch(error => {
+                let ErrorsJSON = JSON.stringify(error);
                 fs.appendFileSync(ErrorsDir, ErrorsJSON);
             })            
         })

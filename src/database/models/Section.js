@@ -49,8 +49,8 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey: "product_id"
         })
         Section.hasMany(models.Content, {
-            as: "contens",
-            foreignKey: "contens_id"
+            as: "Contents",
+            foreignKey: "section_id"
         })
     }
     
