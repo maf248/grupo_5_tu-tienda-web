@@ -67,8 +67,7 @@ const usersController = {
         
         if (!errors.isEmpty()) {
             return res.render('./users/register', {errors: errors.errors, firstName: req.body.firstName, lastName: req.body.lastName, email: req.body.email} );
-        } else {     
-            
+        } else {                 
             db.User.create({
                 hash_id: bcryptjs.hashSync("user name " + req.body.firstName, 10),
                 first_name: req.body.firstName,
@@ -76,11 +75,9 @@ const usersController = {
                 email: req.body.email,
                 password:  bcryptjs.hashSync(req.body.password, 10),
                 adminCode: 'user'
-            }).then(result => {
-                req.session.user = result.id
             })
 
-            res.redirect('/users/profile');
+            res.redirect('/users/login');
         }
     },
     profile: function (req, res, next) {

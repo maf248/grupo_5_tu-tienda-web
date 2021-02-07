@@ -64,7 +64,7 @@
 </table>
   <div class="botonesContenedor">
     <% if (locals.user != undefined) { %>
-    <% if (locals.user.adminCode) { %>
+    <% if (locals.user.role == "admin") { %>
 
     <a href="/products/<%= product.id %>/edit" class="botones">Editar</a>
 
@@ -77,7 +77,7 @@
 </div>
 <% }); %>
 <% if (locals.user != undefined) { %>
-  <% if ( locals.user.adminCode ) { %>
+  <% if ( locals.user.role == "admin") { %>
   <div class="crear-contenedor">
     <a href="/products/create" class="boton-crear">Crear producto nuevo</a>
   </div>

@@ -26,14 +26,14 @@ module.exports = [
             return false;
         })
         .withMessage('Las contraseñas no coinciden, intentá nuevamente'),
-    body('email')
+    /*body('email')
         .custom(function(value, {req}) {           
             db.User.findOne({
                 where: {email: req.body.email}
             }).then(user => {
                 console.log(user)
                 /*---Se chequea si el mail ya está registrado---*/
-                if(user != null) {
+                /*if(user != null) {
                     console.log("SE ENCONTRO DICHO MAIL, DEBERIA RETORNAR FALSE");
                     return false;
                 }
@@ -44,6 +44,6 @@ module.exports = [
                 fs.appendFileSync(ErrorsDir, ErrorsJSON);
             })            
         })
-        .withMessage('El email que ingresaste ya está registrado')
+        .withMessage('El email que ingresaste ya está registrado')*/
 
 ]
