@@ -173,22 +173,17 @@ const usersController = {
     photoUpdate: function (req, res, next) {
         /*---Aqui se guarda el nombre del archivo del nuevo avatar---*/
 
-        let photoUpdate =  db.User.update({
+        db.User.update({
             image: req.files[0].filename
         }, {
             where: {
                 id: {[db.Sequelize.Op.like] : [req.session.user.id]}
             }
-        })
-        let userSession = db.User.findByPk([req.session.user.id])
-        
-        .PromiseAll([photoUpdate, userSession])
-            .then( result => {
-                console.log(result)
-                req.session.user = result
-                res.redirect('/users/profile/')
+        })/*.then( result => {
+            db.User.findByPk(db.User.max('id').then( value => {return value})).then( user => {
+                return req.session.user = user
             })
-
+        })*/
     },
     logout: function (req, res, next) {
         /*---Aqui se resetean valores de mensajes de error----*/
@@ -203,14 +198,8 @@ const usersController = {
     },
     delete: function(req, res, next){
         /*---Aquí se borra el usuario del array dentro de la variable users----*/
-        users.splice(req.session.user.id -1, 1)
-         /*---Aquí se corrigen los ID de los usuarios restantes para evitar errores----*/
-        for(let i=0; i < users.length; i++){
-            users[i].id = i+1 
-        }
-        /*---Aquí se guardan los cambios en el JSON----*/
-        const usersJSON = JSON.stringify(users);
-        fs.writeFileSync(usersDir, usersJSON);
+        db.User.destroy({where: {id: {[db.Sequelize.Op.like] : [req.session.user.id]} }})
+        
         /*---Aquí se resetean valores de mensajes, se borra la cookie y se cierra session----*/
         loginMailValue = null;
         loginPassValue = null;
