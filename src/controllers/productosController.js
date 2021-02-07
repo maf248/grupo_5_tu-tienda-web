@@ -93,8 +93,7 @@ const productosController = {
           })
           .then((product) => {
             console.log(product);
-            res.send(product)
-            //res.render('./products/producto', {product: product});
+            res.render('./products/producto', {product: product});
           })
           .catch(err => {
             res.send(err)
