@@ -10,12 +10,8 @@ const indexController = {
     home: function(req, res, next) {
       db.Product.findAll({
         include: [
-          {association: "Sections"},
-          {association: "Categories",
-        include: [
-          {association: "Benefits"}
-        ]
-      }
+          {association: "Sections", attributes: ['title']},
+          {association: "Categories", attributes: ['name', 'image']}
         ]
       })
       .then((products) => {
