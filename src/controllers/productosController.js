@@ -131,9 +131,25 @@ const productosController = {
           type: req.body.type,
           title_banner: req.body.titleBanner1,
           subtitle_banner: req.body.subtitleBanner1,
-          image: imageDir.image
-        })
-
+          image: imageDir.image,
+          Sections: [{
+            title: req.body.atitle,
+            image: imageDir.aimage
+            },{
+            title: req.body.btitle,
+            image: imageDir.bimage
+            },{
+            title: req.body.ctitle,
+            image: imageDir.cimage
+            },{
+            title: req.body.dtitle,
+            image: imageDir.dimage
+            },{
+            title: req.body.etitle,
+            image: imageDir.eimage
+            }]
+        }, {include: [{association: 'Sections'}]})
+        /*
        db.Category.bulkCreate([{
         name: req.body.category1,
         image: imageDir.categoryImage1,
@@ -152,23 +168,6 @@ const productosController = {
         price: Number(req.body.price[2]),
         transaction_cost_percent: req.body.costoTransaccion[3],
         web_sections: req.body.cantidadSecciones3
-        }])
-
-      db.Section.bulkCreate([{
-        title: req.body.atitle,
-        image: imageDir.aimage
-        },{
-        title: req.body.btitle,
-        image: imageDir.bimage
-        },{
-        title: req.body.ctitle,
-        image: imageDir.cimage
-        },{
-        title: req.body.dtitle,
-        image: imageDir.dimage
-        },{
-        title: req.body.etitle,
-        image: imageDir.eimage
         }])
 
       db.Content.bulkCreate([{
@@ -351,7 +350,7 @@ const productosController = {
       },{
         type: "description",
         text: req.body.edescription4
-      }])
+      }])  */
 
         res.redirect('/products');
         },
