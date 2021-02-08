@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { Recoverable } = require('repl');
+const { isContext } = require('vm');
 const productsDir = path.join(__dirname, '..', 'data', 'products.json');
 const products = JSON.parse(fs.readFileSync(productsDir, 'utf-8'));
 
@@ -356,8 +357,22 @@ const productosController = {
         },
     edicion: function(req, res, next) {
       if (req.session.user != undefined && req.session.user.role == 'admin') {
-        db.Product.findOne()
-        res.render('./products/edit', {productToEdit: products[req.params.id -1], indexBenefits: indexBenefits});
+        db.Product.findByPk(req.params.id, {
+          include: [
+            {association: "Sections", 
+          include: [{association: "Contents"}]},
+            {association: "Categories",
+          include: [
+            {association: "Benefits"}
+          ]
+        }
+          ]
+        })
+        .then(product => {
+          console.log(product)
+          res.render('./products/edit', {productToEdit: product, indexBenefits: indexBenefits});
+        })
+       
       } else {
         res.redirect('/users/login')  
       }      
@@ -369,13 +384,32 @@ const productosController = {
     /*----Actualizando los datos de formularios, en la variable products----*/
       db.Product.update({
         name: req.body.name,
-        type: req.body.type
+        type: req.body.type,
+        title_banner: req.body.titleBanner1,
+        subtitle_banner: req.body.subtitleBaner1,
+        image: imageDir.image
       }, {where: {id: req.params.id}})
+
+      db.Category.update({
+        name: req.body.category1,
+        image: imageDir.categoryImage1,
+        price: Number(req.body.price[0]),
+        transaction_cost_percent: req.body.costoTransaccion[1],
+        web_sections: req.body.cantidadSecciones1        
+
+      }, {where: {product_id: req.params.id}})
+
+      db.Section.update({
+        title: req.body.atitle,
+        image: imageDir.aimage
+      }, {where: {product_id: req.params.id}})
+
+      db.Content.update({
+        type: 'icon',
+        text: imageDir.aicon1
+      }, {where: {product_id: req.params.id}})
+
                     /*----Generales----*/
-    products[req.params.id -1].name = req.body.name;
-    products[req.params.id -1].type = req.body.type;
-    products[req.params.id -1].titleBanner1 = req.body.titleBanner1;
-    products[req.params.id -1].subtitleBaner1 = req.body.subtitleBaner1;
     products[req.params.id -1].price = [Number(req.body.price[0]), Number(req.body.price[1]), Number(req.body.price[2])];
     products[req.params.id -1].category = [req.body.category1, req.body.category2, req.body.category3];
     products[req.params.id -1].categoryImage = [imageDir.categoryImage1, imageDir.categoryImage2, imageDir.categoryImage3];
