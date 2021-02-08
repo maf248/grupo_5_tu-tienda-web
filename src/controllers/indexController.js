@@ -21,24 +21,7 @@ const indexController = {
         res.send(err)
       })
         
-      },
-    test: function(req, res, next) {
-      db.Product.findAll({
-        include: [
-          {association: "Categories",
-        include: [
-          {association: "Benefits"}
-        ]
       }
-        ]
-      })
-      .then((productos) => {
-        res.send(productos)
-      })
-      .catch(err => {
-        res.send(err)
-      })
-    }
 }
 
 module.exports = indexController;

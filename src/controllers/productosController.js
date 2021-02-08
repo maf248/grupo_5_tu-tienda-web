@@ -2,8 +2,6 @@ const fs = require('fs');
 const path = require('path');
 const { Recoverable } = require('repl');
 const { isContext } = require('vm');
-const productsDir = path.join(__dirname, '..', 'data', 'products.json');
-const products = JSON.parse(fs.readFileSync(productsDir, 'utf-8'));
 
 const db = require('../database/models');
 

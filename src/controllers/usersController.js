@@ -6,8 +6,6 @@ const { localsName } = require('ejs');
 const session = require('express-session');
 const db = require('../database/models');
 
-const usersDir = path.join(__dirname, '..', 'data', 'users.json');
-const users = JSON.parse(fs.readFileSync(usersDir, 'utf-8'));
 const ErrorsDir = path.join(__dirname, '..', 'data', 'catchErrorsLog.json');
 var loginMailValue = null;
 var loginPassValue = null;
