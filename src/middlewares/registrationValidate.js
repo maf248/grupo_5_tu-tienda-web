@@ -26,5 +26,4 @@ module.exports = [
             return false;
         })
         .withMessage('Las contraseñas no coinciden, intentá nuevamente')
-
 ]
