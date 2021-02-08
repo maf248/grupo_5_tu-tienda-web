@@ -157,7 +157,7 @@ const productosController = {
                 text: imageDir.aicon1
               },{
                 type: "subtitle",
-                text: req.body.bsubtitle1
+                text: req.body.asubtitle1
               },{
                 type: "description",
                 text: req.body.adescription1
@@ -191,205 +191,170 @@ const productosController = {
               }]
             },{
             title: req.body.btitle,
-            image: imageDir.bimage
+            image: imageDir.bimage,
+              Contents: [{
+                type: "icon",
+                text: imageDir.bicon1
+              },{
+                type: "subtitle",
+                text: req.body.bsubtitle1
+              },{
+                type: "description",
+                text: req.body.bdescription1
+              },{
+                type: "icon",
+                text: imageDir.bicon2
+              },{
+                type: "subtitle",
+                text: req.body.bsubtitle2
+              },{
+                type: "description",
+                text: req.body.bdescription2
+              },{
+                type: "icon",
+                text: imageDir.bicon3
+              },{
+                type: "subtitle",
+                text: req.body.bsubtitle3
+              },{
+                type: "description",
+                text: req.body.bdescription3
+              },{
+                type: "icon",
+                text: imageDir.bicon4
+              },{
+                type: "subtitle",
+                text: req.body.bsubtitle4
+              },{
+                type: "description",
+                text: req.body.bdescription4
+              }]
             },{
             title: req.body.ctitle,
-            image: imageDir.cimage
+            image: imageDir.cimage,
+              Contents: [{
+                type: "icon",
+                text: imageDir.cicon1
+              },{
+                type: "subtitle",
+                text: req.body.csubtitle1
+              },{
+                type: "description",
+                text: req.body.cdescription1
+              },{
+                type: "icon",
+                text: imageDir.cicon2
+              },{
+                type: "subtitle",
+                text: req.body.csubtitle2
+              },{
+                type: "description",
+                text: req.body.cdescription2
+              },{
+                type: "icon",
+                text: imageDir.cicon3
+              },{
+                type: "subtitle",
+                text: req.body.csubtitle3
+              },{
+                type: "description",
+                text: req.body.cdescription3
+              },{
+                type: "icon",
+                text: imageDir.cicon4
+              },{
+                type: "subtitle",
+                text: req.body.csubtitle4
+              },{
+                type: "description",
+                text: req.body.cdescription4
+              }]
             },{
             title: req.body.dtitle,
-            image: imageDir.dimage
+            image: imageDir.dimage,
+              Contents: [{
+                type: "icon",
+                text: imageDir.dicon1
+              },{
+                type: "subtitle",
+                text: req.body.dsubtitle1
+              },{
+                type: "description",
+                text: req.body.ddescription1
+              },{
+                type: "icon",
+                text: imageDir.dicon2
+              },{
+                type: "subtitle",
+                text: req.body.dsubtitle2
+              },{
+                type: "description",
+                text: req.body.ddescription2
+              },{
+                type: "icon",
+                text: imageDir.dicon3
+              },{
+                type: "subtitle",
+                text: req.body.dsubtitle3
+              },{
+                type: "description",
+                text: req.body.ddescription3
+              },{
+                type: "icon",
+                text: imageDir.dicon4
+              },{
+                type: "subtitle",
+                text: req.body.dsubtitle4
+              },{
+                type: "description",
+                text: req.body.ddescription4
+              }]
             },{
             title: req.body.etitle,
-            image: imageDir.eimage
+            image: imageDir.eimage,
+              Contents: [{
+                type: "icon",
+                text: imageDir.eicon1
+              },{
+                type: "subtitle",
+                text: req.body.esubtitle1
+              },{
+                type: "description",
+                text: req.body.edescription1
+              },{
+                type: "icon",
+                text: imageDir.eicon2
+              },{
+                type: "subtitle",
+                text: req.body.esubtitle2
+              },{
+                type: "description",
+                text: req.body.edescription2
+              },{
+                type: "icon",
+                text: imageDir.eicon3
+              },{
+                type: "subtitle",
+                text: req.body.esubtitle3
+              },{
+                type: "description",
+                text: req.body.edescription3
+              },{
+                type: "icon",
+                text: imageDir.eicon4
+              },{
+                type: "subtitle",
+                text: req.body.esubtitle4
+              },{
+                type: "description",
+                text: req.body.edescription4
+              }]
             }]
         }, {include: [{association: 'Sections', include: [{association: 'Contents'}]}, {association: 'Categories'}]})
 
-
-        /*
-      
-      db.Content.bulkCreate([{
-        type: "icon",
-        text: imageDir.aicon1
-      },{
-        type: "subtitle",
-        text: req.body.bsubtitle1
-      },{
-        type: "description",
-        text: req.body.adescription1
-      },{
-        type: "icon",
-        text: imageDir.aicon2
-      },{
-        type: "subtitle",
-        text: req.body.asubtitle2
-      },{
-        type: "description",
-        text: req.body.adescription2
-      },{
-        type: "icon",
-        text: imageDir.aicon3
-      },{
-        type: "subtitle",
-        text: req.body.asubtitle3
-      },{
-        type: "description",
-        text: req.body.adescription3
-      },{
-        type: "icon",
-        text: imageDir.aicon4
-      },{
-        type: "subtitle",
-        text: req.body.asubtitle4
-      },{
-        type: "description",
-        text: req.body.adescription4
-      },{
-        type: "icon",
-        text: imageDir.bicon1
-      },{
-        type: "subtitle",
-        text: req.body.bsubtitle1
-      },{
-        type: "description",
-        text: req.body.bdescription1
-      },{
-        type: "icon",
-        text: imageDir.bicon2
-      },{
-        type: "subtitle",
-        text: req.body.bsubtitle2
-      },{
-        type: "description",
-        text: req.body.bdescription2
-      },{
-        type: "icon",
-        text: imageDir.bicon3
-      },{
-        type: "subtitle",
-        text: req.body.bsubtitle3
-      },{
-        type: "description",
-        text: req.body.bdescription3
-      },{
-        type: "icon",
-        text: imageDir.bicon4
-      },{
-        type: "subtitle",
-        text: req.body.bsubtitle4
-      },{
-        type: "description",
-        text: req.body.bdescription4
-      },{
-        type: "icon",
-        text: imageDir.cicon1
-      },{
-        type: "subtitle",
-        text: req.body.csubtitle1
-      },{
-        type: "description",
-        text: req.body.cdescription1
-      },{
-        type: "icon",
-        text: imageDir.cicon2
-      },{
-        type: "subtitle",
-        text: req.body.csubtitle2
-      },{
-        type: "description",
-        text: req.body.cdescription2
-      },{
-        type: "icon",
-        text: imageDir.cicon3
-      },{
-        type: "subtitle",
-        text: req.body.csubtitle3
-      },{
-        type: "description",
-        text: req.body.cdescription3
-      },{
-        type: "icon",
-        text: imageDir.cicon4
-      },{
-        type: "subtitle",
-        text: req.body.csubtitle4
-      },{
-        type: "description",
-        text: req.body.cdescription4
-      },{
-        type: "icon",
-        text: imageDir.dicon1
-      },{
-        type: "subtitle",
-        text: req.body.dsubtitle1
-      },{
-        type: "description",
-        text: req.body.ddescription1
-      },{
-        type: "icon",
-        text: imageDir.dicon2
-      },{
-        type: "subtitle",
-        text: req.body.dsubtitle2
-      },{
-        type: "description",
-        text: req.body.ddescription2
-      },{
-        type: "icon",
-        text: imageDir.dicon3
-      },{
-        type: "subtitle",
-        text: req.body.dsubtitle3
-      },{
-        type: "description",
-        text: req.body.ddescription3
-      },{
-        type: "icon",
-        text: imageDir.dicon4
-      },{
-        type: "subtitle",
-        text: req.body.dsubtitle4
-      },{
-        type: "description",
-        text: req.body.ddescription4
-      },{
-        type: "icon",
-        text: imageDir.eicon1
-      },{
-        type: "subtitle",
-        text: req.body.esubtitle1
-      },{
-        type: "description",
-        text: req.body.edescription1
-      },{
-        type: "icon",
-        text: imageDir.eicon2
-      },{
-        type: "subtitle",
-        text: req.body.esubtitle2
-      },{
-        type: "description",
-        text: req.body.edescription2
-      },{
-        type: "icon",
-        text: imageDir.eicon3
-      },{
-        type: "subtitle",
-        text: req.body.esubtitle3
-      },{
-        type: "description",
-        text: req.body.edescription3
-      },{
-        type: "icon",
-        text: imageDir.eicon4
-      },{
-        type: "subtitle",
-        text: req.body.esubtitle4
-      },{
-        type: "description",
-        text: req.body.edescription4
-      }])  */
-
-        res.redirect('/products');
+        
+          res.redirect('/products');
+        
         },
     edicion: function(req, res, next) {
       if (req.session.user != undefined && req.session.user.role == 'admin') {
