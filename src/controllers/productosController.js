@@ -166,9 +166,10 @@ const productosController = {
             image: imageDir.eimage
             }]
         }, {include: [{association: 'Sections'}, {association: 'Categories'}]})
-        /*
-       db.Category.bulkCreate([])
 
+
+        /*
+      
       db.Content.bulkCreate([{
         type: "icon",
         text: imageDir.aicon1
