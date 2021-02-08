@@ -132,6 +132,25 @@ const productosController = {
           title_banner: req.body.titleBanner1,
           subtitle_banner: req.body.subtitleBanner1,
           image: imageDir.image,
+          Categories: [{
+            name: req.body.category1,
+            image: imageDir.categoryImage1,
+            price: Number(req.body.price[0]),
+            transaction_cost_percent: req.body.costoTransaccion[1],
+            web_sections: req.body.cantidadSecciones1
+            },{
+            name: req.body.category2,
+            image: imageDir.categoryImage2,
+            price: Number(req.body.price[1]),
+            transaction_cost_percent: req.body.costoTransaccion[2],
+            web_sections: req.body.cantidadSecciones2
+            },{
+            name: req.body.category3,
+            image: imageDir.categoryImage3,
+            price: Number(req.body.price[2]),
+            transaction_cost_percent: req.body.costoTransaccion[3],
+            web_sections: req.body.cantidadSecciones3
+            }],
           Sections: [{
             title: req.body.atitle,
             image: imageDir.aimage
@@ -148,27 +167,9 @@ const productosController = {
             title: req.body.etitle,
             image: imageDir.eimage
             }]
-        }, {include: [{association: 'Sections'}]})
+        }, {include: [{association: 'Sections'}, {association: 'Categories'}]})
         /*
-       db.Category.bulkCreate([{
-        name: req.body.category1,
-        image: imageDir.categoryImage1,
-        price: Number(req.body.price[0]),
-        transaction_cost_percent: req.body.costoTransaccion[1],
-        web_sections: req.body.cantidadSecciones1
-        },{
-        name: req.body.category2,
-        image: imageDir.categoryImage2,
-        price: Number(req.body.price[1]),
-        transaction_cost_percent: req.body.costoTransaccion[2],
-        web_sections: req.body.cantidadSecciones2
-        },{
-        name: req.body.category3,
-        image: imageDir.categoryImage3,
-        price: Number(req.body.price[2]),
-        transaction_cost_percent: req.body.costoTransaccion[3],
-        web_sections: req.body.cantidadSecciones3
-        }])
+       db.Category.bulkCreate([])
 
       db.Content.bulkCreate([{
         type: "icon",
