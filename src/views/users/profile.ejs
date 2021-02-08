@@ -8,9 +8,9 @@
 <%- include('../partials/navbar') %>
 <div class="profile">
 
-    
+
     <form action="/users/profile/avatar" method="POST" class="imageForm" enctype="multipart/form-data">
-        <% if (locals.user.adminCode == true) { %>
+        <% if (user.role == 'admin') { %>
             <h2>Perfil de Administrador:</h2>
         <% } else { %>
             <h2>Perfil de Usuario:</h2>
@@ -30,19 +30,19 @@
 
     <form action="/users/profile/edit?_method=PATCH" method="POST" class="datosPersonales">
         
-        <input type="text" name="firstName" value="<%=locals.user.first_name%>">
+        <input type="text" name="firstName" value="<%=user.first_name%>">
         <% if (typeof errors != "undefined") {
             errors.forEach (error => { 
                 if (error.param == "firstName") { %>
                     <p><%= error.msg %></p>
             <% } }) } %>
-        <input type="text" name="lastName" value="<%=locals.user.last_name%>">
+        <input type="text" name="lastName" value="<%=user.last_name%>">
         <% if (typeof errors != "undefined") {
             errors.forEach (error => { 
                 if (error.param == "lastName") { %>
                     <p><%= error.msg %></p>
             <% } }) } %>
-        <input type="email" name="email" value="<%=locals.user.email%>">
+        <input type="email" name="email" value="<%=user.email%>">
         <% if (typeof errors != "undefined") {
         errors.forEach (error => { 
         if (error.param == "email") { %>
@@ -64,10 +64,10 @@
                 <p>La contrasena ha sido modificada con éxito</p>
             <% } %>
         <div class="productosContratados">
-            <h4>Tu plan: </h4> <p> <% if(locals.user.plan != undefined) { %> <%= locals.user.plan %> <% } else { %> Todavia no seleccionaste ningun plan <% } %></p>
+            <h4>Tu plan: </h4> <p> <% if(user.Products != undefined) { %> <%= user.Products.name %> <% } else { %> Todavia no seleccionaste ningun plan <% } %></p>
         </div>
         <div class="categoriaContratada">
-            <h4>Tu categoría: </h4> <p> <% if(locals.user.category != undefined) { %> <%= locals.user.category %> <% } else { %> Todavia no seleccionaste ninguna categoría <% } %></p>
+            <h4>Tu categoría: </h4> <p> <% if(user.Categories != undefined) { %> <%= user.Categories.name %> <% } else { %> Todavia no seleccionaste ninguna categoría <% } %></p>
         </div>
         <input type="password" name="adminCode" value="" placeholder="¿Código de administrador?" class="input-código">
         

@@ -27,6 +27,9 @@ errors.forEach ( error => {
         if (error.param == "email") { %>
             <p><%= error.msg %></p>
     <% } }) } %>
+<% if (typeof mailDuplicated != 'undefined' && mailDuplicated == true) { %>
+    <p>El email ya está registrado</p>
+<% } %>
 <input class="controls" type="password" name="password" placeholder="Contraseña">
 <% if (typeof errors != "undefined") {
     errors.forEach ( error => { 

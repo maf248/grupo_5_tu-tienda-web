@@ -62,12 +62,12 @@ const usersController = {
         
     },
     createUser: function(req, res) {
-        
+
         let errors = validationResult(req);
-        
+
         if (!errors.isEmpty()) {
             return res.render('./users/register', {errors: errors.errors, firstName: req.body.firstName, lastName: req.body.lastName, email: req.body.email} );
-        } else {                 
+        } else {
             let user = db.User.create({
                 hash_id: bcryptjs.hashSync("user name " + req.body.firstName, 10),
                 first_name: req.body.firstName,
@@ -79,7 +79,7 @@ const usersController = {
 
                 req.session.user = value
                 console.log(value)
-    
+
                 res.redirect('/users/profile');
             }
             )
@@ -90,8 +90,17 @@ const usersController = {
     profile: function (req, res, next) {
         if (req.session.user != undefined) {
 
-                return res.render('./users/profile');
-          
+            db.User.findByPk(req.session.user.id,
+                {include: [{
+                    association: "Products"
+                },
+                {
+                    association: "Categories"
+                }
+            ]}).then(user => { 
+                  res.render('./users/profile', {user: user});
+                })
+
             } else {
             res.redirect('/users/login')
         }
@@ -179,11 +188,9 @@ const usersController = {
             where: {
                 id: {[db.Sequelize.Op.like] : [req.session.user.id]}
             }
-        })/*.then( result => {
-            db.User.findByPk(db.User.max('id').then( value => {return value})).then( user => {
-                return req.session.user = user
-            })
-        })*/
+        }).then( value => {
+            res.redirect('/users/profile')
+        })
     },
     logout: function (req, res, next) {
         /*---Aqui se resetean valores de mensajes de error----*/
