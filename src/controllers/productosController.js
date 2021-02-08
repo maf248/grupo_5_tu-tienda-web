@@ -151,7 +151,44 @@ const productosController = {
             }],
           Sections: [{
             title: req.body.atitle,
-            image: imageDir.aimage
+            image: imageDir.aimage,
+              Contents: [{
+                type: "icon",
+                text: imageDir.aicon1
+              },{
+                type: "subtitle",
+                text: req.body.bsubtitle1
+              },{
+                type: "description",
+                text: req.body.adescription1
+              },{
+                type: "icon",
+                text: imageDir.aicon2
+              },{
+                type: "subtitle",
+                text: req.body.asubtitle2
+              },{
+                type: "description",
+                text: req.body.adescription2
+              },{
+                type: "icon",
+                text: imageDir.aicon3
+              },{
+                type: "subtitle",
+                text: req.body.asubtitle3
+              },{
+                type: "description",
+                text: req.body.adescription3
+              },{
+                type: "icon",
+                text: imageDir.aicon4
+              },{
+                type: "subtitle",
+                text: req.body.asubtitle4
+              },{
+                type: "description",
+                text: req.body.adescription4
+              }]
             },{
             title: req.body.btitle,
             image: imageDir.bimage
@@ -165,7 +202,7 @@ const productosController = {
             title: req.body.etitle,
             image: imageDir.eimage
             }]
-        }, {include: [{association: 'Sections'}, {association: 'Categories'}]})
+        }, {include: [{association: 'Sections', include: [{association: 'Contents'}]}, {association: 'Categories'}]})
 
 
         /*
