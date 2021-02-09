@@ -18,21 +18,29 @@ const storage = multer.diskStorage({
     function productID (id) {
             
             if(id != undefined) { 
-                return id;
+                const prodID = 'Producto-' + id;
+                    const dir = path.join('public', 'images', prodID);
+                    if (!fs.existsSync(dir)) {
+                    return fs.mkdir(dir, error => cb(error, dir))
+                    }
+                    return cb(null, dir);
             } else {
                 db.Product.count()
-                .then(lastId => {
-                    return lastId++;
+                .then((lastId) => {
+                    let newId = lastId + 1;
+                    const prodID = 'Producto-' + newId;
+                    const dir = path.join('public', 'images', prodID);
+                    if (!fs.existsSync(dir)) {
+                    return fs.mkdir(dir, error => cb(error, dir))
+                    }
+                    return cb(null, dir);
                 });
             }
     }
     
-    const prodID = 'Producto-' + productID(req.params.id);
-    const dir = path.join('public', 'images', prodID);
-    if (!fs.existsSync(dir)) {
-        return fs.mkdir(dir, error => cb(error, dir))
-    }
-     return cb(null, dir);
+    var nuevoId = productID(req.params.id);
+
+    
     },
     filename: function(req, file, cb) {
            

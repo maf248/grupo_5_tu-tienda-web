@@ -10,7 +10,6 @@ const ErrorsDir = path.join(__dirname, '..', 'data', 'catchErrorsLog.json');
 var loginMailValue = null;
 var loginPassValue = null;
 
-
 const usersController = {
     login: function(req, res, next) {
         if (req.session.user != undefined) {
@@ -86,7 +85,7 @@ const usersController = {
                     role: 'user'
                 }).then( value => {
     
-                    req.session.user = value
+                    req.session.user = value;
     
                     res.redirect('/users/profile');
                 }
