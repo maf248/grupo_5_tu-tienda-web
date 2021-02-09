@@ -4,13 +4,11 @@ const path = require('path');
 const multer = require('multer');
 
 const fs = require('fs');
+const db = require('../database/models');
 
-const productsDir = path.join(__dirname, '..', 'data', 'products.json');
-const products = JSON.parse(fs.readFileSync(productsDir, 'utf-8'));
 
 // ************ Controller Require ************
 const productosController = require("../controllers/productosController");
-
 
 // ************ Multer ************
 const storage = multer.diskStorage({
