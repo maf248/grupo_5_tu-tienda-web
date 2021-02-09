@@ -352,59 +352,15 @@ const productosController = {
               }]
             }]
         }, {include: [{association: 'Sections', include: [{association: 'Contents'}]}, {association: 'Categories'}]})
-
         
-        db.Benefit.bulkCreate({
-          name: req.body.a[0]
-        },{
-          name: req.body.b[0]
-        },{
-          name: req.body.c[0]
-        },{
-          name: req.body.d[0]
-        },{
-          name: req.body.e[0]
-        },{
-          name: req.body.e[0]
-        },{
-          name: req.body.f[0]
-        },{
-          name: req.body.g[0]
-        },{
-          name: req.body.h[0]
-        },{
-          name: req.body.i[0]
-        },{
-          name: req.body.j[0]
-        },{
-          name: req.body.k[0]
-        },{
-          name: req.body.l[0]
-        },{
-          name: req.body.m[0]
-        },{
-          name: req.body.n[0]
-        },{
-          name: req.body.o[0]
-        },{
-          name: req.body.p[0]
-        },{
-          name: req.body.q[0]
-        },{
-          name: req.body.r[0]
-        },{
-          name: req.body.s[0]
-        },{
-          name: req.body.t[0]
-        },{
-          name: req.body.u[0]
-        },{
-          name: req.body.v[0]
-        },{
-          name: req.body.w[0]
-        },{
-          name: req.body.x[0]
-        })
+
+          for (let i=0; i < indexBenefits.length; i++) {
+            if(req.body[indexBenefits[i]][0] != '') {
+              db.Benefit.create({
+                name: req.body[indexBenefits[i]][0]
+              })
+            }
+          }
 
           res.redirect('/products');
         
