@@ -14,17 +14,20 @@ const productosController = require("../controllers/productosController");
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
 
-        // ************ Funcion p/ Obtener el product ID y luego utilizarlo con multer ************
+    // ***** Funcion p/ Obtener el product ID correspondiente y luego utilizarlo con multer *****
     function productID (id) {
             
             if(id != undefined) { 
+
                 const prodID = 'Producto-' + id;
                     const dir = path.join('public', 'images', prodID);
                     if (!fs.existsSync(dir)) {
                     return fs.mkdir(dir, error => cb(error, dir))
                     }
                     return cb(null, dir);
+
             } else {
+
                 db.Product.count()
                 .then((lastId) => {
                     let newId = lastId + 1;
@@ -38,9 +41,8 @@ const storage = multer.diskStorage({
             }
     }
     
-    var nuevoId = productID(req.params.id);
+    productID(req.params.id);
 
-    
     },
     filename: function(req, file, cb) {
            
