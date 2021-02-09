@@ -42,7 +42,9 @@ module.exports = (sequelize, DataTypes) => {
         tableName: 'categories',
         timestamps: true,
         createdAt: 'created_at',
-        updatedAt: 'updated_at'
+        updatedAt: 'updated_at',
+        deletedAt: 'deleted_at',
+        paranoid: true
     }
     
     const Category = sequelize.define("Category", cols, config);

@@ -38,7 +38,9 @@ module.exports = (sequelize, DataTypes) => {
         tableName: 'sections',
         timestamps: true,
         createdAt: 'created_at',
-        updatedAt: 'updated_at'
+        updatedAt: 'updated_at',
+        deletedAt: 'deleted_at',
+        paranoid: true
     }
     
     const Section = sequelize.define("Section", cols, config);

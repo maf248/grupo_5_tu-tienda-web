@@ -33,7 +33,9 @@ module.exports = (sequelize, DataTypes) => {
         tableName: 'carts',
         timestamps: true,
         createdAt: 'created_at',
-        updatedAt: 'updated_at'
+        updatedAt: 'updated_at',
+        deletedAt: 'deleted_at',
+        paranoid: true
     }
     
     const Cart = sequelize.define("Cart", cols, config);

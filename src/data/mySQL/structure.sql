@@ -26,6 +26,7 @@ CREATE TABLE IF NOT EXISTS `tu_tienda_web`.`categories` (
   `web_sections` SMALLINT UNSIGNED NULL,
   `created_at` TIMESTAMP NOT NULL DEFAULT NOW(),
   `updated_at` TIMESTAMP NOT NULL DEFAULT NOW(),
+  `deleted_at` TIMESTAMP NULL DEFAULT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -42,6 +43,7 @@ CREATE TABLE IF NOT EXISTS `tu_tienda_web`.`products` (
   `image` VARCHAR(100) NULL DEFAULT NULL,
   `created_at` TIMESTAMP NOT NULL DEFAULT NOW(),
   `updated_at` TIMESTAMP NOT NULL DEFAULT NOW(),
+  `deleted_at` TIMESTAMP NULL DEFAULT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -62,6 +64,7 @@ CREATE TABLE IF NOT EXISTS `tu_tienda_web`.`users` (
   `category_id` BIGINT UNSIGNED NULL,
   `created_at` TIMESTAMP NOT NULL DEFAULT NOW(),
   `updated_at` TIMESTAMP NOT NULL DEFAULT NOW(),
+  `deleted_at` TIMESTAMP NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `hash_id_UNIQUE` (`hash_id` ASC),
   INDEX `category_user_idx` (`category_id` ASC),
@@ -89,6 +92,7 @@ CREATE TABLE IF NOT EXISTS `tu_tienda_web`.`sections` (
   `image` VARCHAR(100) NOT NULL,
   `created_at` TIMESTAMP NOT NULL DEFAULT NOW(),
   `updated_at` TIMESTAMP NOT NULL DEFAULT NOW(),
+  `deleted_at` TIMESTAMP NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   INDEX `products_section_1_idx` (`product_id` ASC),
   CONSTRAINT `products_sections`
@@ -107,6 +111,7 @@ CREATE TABLE IF NOT EXISTS `tu_tienda_web`.`benefits` (
   `name` VARCHAR(100) NOT NULL,
   `created_at` TIMESTAMP NOT NULL DEFAULT NOW(),
   `updated_at` TIMESTAMP NOT NULL DEFAULT NOW(),
+  `deleted_at` TIMESTAMP NULL DEFAULT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -120,6 +125,7 @@ CREATE TABLE IF NOT EXISTS `tu_tienda_web`.`benefit_category` (
   `category_id` BIGINT UNSIGNED NOT NULL,
   `created_at` TIMESTAMP NOT NULL DEFAULT NOW(),
   `updated_at` TIMESTAMP NOT NULL DEFAULT NOW(),
+  `deleted_at` TIMESTAMP NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   INDEX `benefit_pivot_category_idx` (`benefit_id` ASC),
   INDEX `category_pivot_benefit_idx` (`category_id` ASC),
@@ -146,6 +152,7 @@ CREATE TABLE IF NOT EXISTS `tu_tienda_web`.`carts` (
   `category_id` BIGINT UNSIGNED NOT NULL,
   `created_at` TIMESTAMP NOT NULL DEFAULT NOW(),
   `updated_at` TIMESTAMP NOT NULL DEFAULT NOW(),
+  `deleted_at` TIMESTAMP NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   INDEX `users_carts_idx` (`user_id` ASC),
   INDEX `products_carts_idx` (`product_id` ASC),
@@ -178,6 +185,7 @@ CREATE TABLE IF NOT EXISTS `tu_tienda_web`.`contents` (
   `text` TEXT NOT NULL,
   `created_at` TIMESTAMP NOT NULL DEFAULT NOW(),
   `updated_at` TIMESTAMP NOT NULL DEFAULT NOW(),
+  `deleted_at` TIMESTAMP NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   INDEX `sections_icons_idx` (`section_id` ASC),
   CONSTRAINT `sections_icons00`

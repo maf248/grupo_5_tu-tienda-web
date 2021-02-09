@@ -40,7 +40,9 @@ module.exports = (sequelize, DataTypes) => {
     const config = {
         timestamps: true,
         createdAt: 'created_at',
-        updatedAt: 'updated_at'
+        updatedAt: 'updated_at',
+        deletedAt: 'deleted_at',
+        paranoid: true
     }
     
     const Product = sequelize.define("Product", cols, config);
