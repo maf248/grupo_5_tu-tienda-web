@@ -445,13 +445,9 @@ const productosController = {
                 }])
 
               })
-              
-        
 
 
         })
-        
-        
         
         /*------Acá se guardan los nombres de los beneficios en caso de no ser strings vacíos------*/
           for (let i=0; i < indexBenefits.length; i++) {
@@ -570,59 +566,327 @@ const productosController = {
             }, {where: {id: associatedSections[4].id}})
 
           /*----Se buscan los contenidos asociados a cada sección, para luego actualizar dicha información----*/
-          /*for (let i=0; i < associatedSections.length; i++) {
             
             db.Content.findAll({
               include: [
-                {association: "Sections", where: {id: associatedSections[i].id}}
+                {association: "Sections", where: {product_id: req.params.id}}
               ]
             }).then(associatedContents => {
-              /*----Se actualizan los contenidos asociadas a dichas secciones----*/
-             /* db.Content.update({
+
+
+              /*-----Acá se actualizan los contenidos asociados a la seccion 1----*/
+              db.Content.update({
                 type: "icon",
                 text: imageDir.aicon1
-              },{
+              }, {where: {id: associatedSections[0].id}})
+
+              db.Content.update({
                 type: "subtitle",
                 text: req.body.asubtitle1
-              },{
+              }, {where: {id: associatedSections[0].id}})
+
+              db.Content.update({
                 type: "description",
                 text: req.body.adescription1
-              },{
+              }, {where: {id: associatedSections[0].id}})
+              
+              db.Content.update({
                 type: "icon",
                 text: imageDir.aicon2
-              },{
+              }, {where: {id: associatedSections[0].id}})
+
+              db.Content.update({
                 type: "subtitle",
                 text: req.body.asubtitle2
-              },{
+              }, {where: {id: associatedSections[0].id}})
+
+              db.Content.update({
                 type: "description",
                 text: req.body.adescription2
-              },{
+              }, {where: {id: associatedSections[0].id}})
+
+              db.Content.update({
                 type: "icon",
                 text: imageDir.aicon3
-              },{
+              }, {where: {id: associatedSections[0].id}})
+
+              db.Content.update({
                 type: "subtitle",
                 text: req.body.asubtitle3
-              },{
+              }, {where: {id: associatedSections[0].id}})
+
+              db.Content.update({
                 type: "description",
                 text: req.body.adescription3
-              },{
+              }, {where: {id: associatedSections[0].id}})
+
+              db.Content.update({
                 type: "icon",
                 text: imageDir.aicon4
-              },{
+              }, {where: {id: associatedSections[0].id}})
+
+              db.Content.update({
                 type: "subtitle",
                 text: req.body.asubtitle4
-              },{
+              }, {where: {id: associatedSections[0].id}})
+
+              db.Content.update({
                 type: "description",
                 text: req.body.adescription4
-              }, {where: {id: associatedSections[i].id}})
+              }, {where: {id: associatedSections[0].id}})
 
-            })
-            }*/
+              /*-----Acá se actualizan los contenidos asociados a la seccion 2----*/
+              db.Content.update({
+                type: "icon",
+                text: imageDir.bicon1
+              }, {where: {id: associatedSections[1].id}})
+
+              db.Content.update({
+                type: "subtitle",
+                text: req.body.bsubtitle1
+              }, {where: {id: associatedSections[1].id}})
+
+              db.Content.update({
+                type: "description",
+                text: req.body.bdescription1
+              }, {where: {id: associatedSections[1].id}})
+              
+              db.Content.update({
+                type: "icon",
+                text: imageDir.bicon2
+              }, {where: {id: associatedSections[1].id}})
+
+              db.Content.update({
+                type: "subtitle",
+                text: req.body.bsubtitle2
+              }, {where: {id: associatedSections[1].id}})
+
+              db.Content.update({
+                type: "description",
+                text: req.body.bdescription2
+              }, {where: {id: associatedSections[1].id}})
+
+              db.Content.update({
+                type: "icon",
+                text: imageDir.bicon3
+              }, {where: {id: associatedSections[1].id}})
+
+              db.Content.update({
+                type: "subtitle",
+                text: req.body.bsubtitle3
+              }, {where: {id: associatedSections[1].id}})
+
+              db.Content.update({
+                type: "description",
+                text: req.body.bdescription3
+              }, {where: {id: associatedSections[1].id}})
+        
+              db.Content.update({
+                type: "icon",
+                text: imageDir.bicon4
+              }, {where: {id: associatedSections[1].id}})
+
+              db.Content.update({
+                type: "subtitle",
+                text: req.body.bsubtitle4
+              }, {where: {id: associatedSections[1].id}})
+
+              db.Content.update({
+                type: "description",
+                text: req.body.bdescription4
+              }, {where: {id: associatedSections[1].id}})
+
+              /*-----Acá se actualizan los contenidos asociados a la seccion 3----*/
+              db.Content.update({
+                type: "icon",
+                text: imageDir.cicon1
+              }, {where: {id: associatedSections[2].id}})
+
+              db.Content.update({
+                type: "subtitle",
+                text: req.body.csubtitle1
+              }, {where: {id: associatedSections[2].id}})
+
+              db.Content.update({
+                type: "description",
+                text: req.body.cdescription1
+              }, {where: {id: associatedSections[2].id}})
+              
+              db.Content.update({
+                type: "icon",
+                text: imageDir.cicon2
+              }, {where: {id: associatedSections[2].id}})
+
+              db.Content.update({
+                type: "subtitle",
+                text: req.body.csubtitle2
+              }, {where: {id: associatedSections[2].id}})
+
+              db.Content.update({
+                type: "description",
+                text: req.body.cdescription2
+              }, {where: {id: associatedSections[2].id}})
+
+              db.Content.update({
+                type: "icon",
+                text: imageDir.cicon3
+              }, {where: {id: associatedSections[2].id}})
+
+              db.Content.update({
+                type: "subtitle",
+                text: req.body.csubtitle3
+              }, {where: {id: associatedSections[2].id}})
+
+              db.Content.update({
+                type: "description",
+                text: req.body.cdescription3
+              }, {where: {id: associatedSections[2].id}})
+        
+              db.Content.update({
+                type: "icon",
+                text: imageDir.cicon4
+              }, {where: {id: associatedSections[2].id}})
+
+              db.Content.update({
+                type: "subtitle",
+                text: req.body.csubtitle4
+              }, {where: {id: associatedSections[2].id}})
+
+              db.Content.update({
+                type: "description",
+                text: req.body.cdescription4
+              }, {where: {id: associatedSections[2].id}})
+
+              /*-----Acá se actualizan los contenidos asociados a la seccion 4----*/
+              db.Content.update({
+                type: "icon",
+                text: imageDir.dicon1
+              }, {where: {id: associatedSections[3].id}})
+
+              db.Content.update({
+                type: "subtitle",
+                text: req.body.dsubtitle1
+              }, {where: {id: associatedSections[3].id}})
+
+              db.Content.update({
+                type: "description",
+                text: req.body.ddescription1
+              }, {where: {id: associatedSections[3].id}})
+              
+              db.Content.update({
+                type: "icon",
+                text: imageDir.dicon2
+              }, {where: {id: associatedSections[3].id}})
+
+              db.Content.update({
+                type: "subtitle",
+                text: req.body.dsubtitle2
+              }, {where: {id: associatedSections[3].id}})
+
+              db.Content.update({
+                type: "description",
+                text: req.body.ddescription2
+              }, {where: {id: associatedSections[3].id}})
+
+              db.Content.update({
+                type: "icon",
+                text: imageDir.dicon3
+              }, {where: {id: associatedSections[3].id}})
+
+              db.Content.update({
+                type: "subtitle",
+                text: req.body.dsubtitle3
+              }, {where: {id: associatedSections[3].id}})
+
+              db.Content.update({
+                type: "description",
+                text: req.body.ddescription3
+              }, {where: {id: associatedSections[3].id}})
+        
+              db.Content.update({
+                type: "icon",
+                text: imageDir.dicon4
+              }, {where: {id: associatedSections[3].id}})
+
+              db.Content.update({
+                type: "subtitle",
+                text: req.body.dsubtitle4
+              }, {where: {id: associatedSections[3].id}})
+
+              db.Content.update({
+                type: "description",
+                text: req.body.ddescription4
+              }, {where: {id: associatedSections[3].id}})
+
+              /*-----Acá se actualizan los contenidos asociados a la seccion 5----*/
+              db.Content.update({
+                type: "icon",
+                text: imageDir.eicon1
+              }, {where: {id: associatedSections[4].id}})
+
+              db.Content.update({
+                type: "subtitle",
+                text: req.body.esubtitle1
+              }, {where: {id: associatedSections[4].id}})
+
+              db.Content.update({
+                type: "description",
+                text: req.body.edescription1
+              }, {where: {id: associatedSections[4].id}})
+              
+              db.Content.update({
+                type: "icon",
+                text: imageDir.eicon2
+              }, {where: {id: associatedSections[4].id}})
+
+              db.Content.update({
+                type: "subtitle",
+                text: req.body.esubtitle2
+              }, {where: {id: associatedSections[4].id}})
+
+              db.Content.update({
+                type: "description",
+                text: req.body.edescription2
+              }, {where: {id: associatedSections[4].id}})
+
+              db.Content.update({
+                type: "icon",
+                text: imageDir.eicon3
+              }, {where: {id: associatedSections[4].id}})
+
+              db.Content.update({
+                type: "subtitle",
+                text: req.body.esubtitle3
+              }, {where: {id: associatedSections[4].id}})
+
+              db.Content.update({
+                type: "description",
+                text: req.body.edescription3
+              }, {where: {id: associatedSections[4].id}})
+        
+              db.Content.update({
+                type: "icon",
+                text: imageDir.eicon4
+              }, {where: {id: associatedSections[4].id}})
+
+              db.Content.update({
+                type: "subtitle",
+                text: req.body.esubtitle4
+              }, {where: {id: associatedSections[4].id}})
+
+              db.Content.update({
+                type: "description",
+                text: req.body.edescription4
+              }, {where: {id: associatedSections[4].id}})
+              
+          })
+
+            
         })
 
         
-    /*
-    for (let i = 0; i < indexBenefits.length; i++) {
+    /*----Nos falta que actualice los beneficios---*/
+    /*for (let i = 0; i < indexBenefits.length; i++) {
       if (req.body[indexBenefits[i]][0] != "") {
         products[products.length -1].benefits[indexBenefits[i]] = [req.body[indexBenefits[i]][0], req.body[indexBenefits[i]][1], req.body[indexBenefits[i]][2], req.body[indexBenefits[i]][3]];
         }
@@ -630,6 +894,7 @@ const productosController = {
     */
    
 		res.redirect('/products');
+    
     },
     borrado: function(req, res, next) {
       /*----Borrando la fila del producto en la base de datos (soft-delete)----*/
