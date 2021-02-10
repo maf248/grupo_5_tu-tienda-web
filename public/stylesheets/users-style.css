@@ -24,7 +24,9 @@
     margin: 10px;
     width: 25px;
 }
-
+.barraSuperior-navExtra-usuario-registro, .barraSuperior-navExtra-usuario-login {
+    display: none !important;
+}
 
 /* Estilo de Login */
 .form-login {
@@ -236,8 +238,9 @@ form p {
    }
    .productosContratados p,
    .categoriaContratada p {
-       font-size: 1.0em;
-        margin: 3% 0;
+        font-size: 1.0em;
+        margin: 10px 0;
+        line-height: 2em;
    }
    .container-delete {
        display: flex;
