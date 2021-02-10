@@ -131,26 +131,70 @@ const productosController = {
           type: req.body.type,
           title_banner: req.body.titleBanner1,
           subtitle_banner: req.body.subtitleBanner1,
-          image: imageDir.image,
-          Categories: [{
-            name: req.body.category1,
-            image: imageDir.categoryImage1,
-            price: Number(req.body.price[0]),
-            transaction_cost_percent: req.body.costoTransaccion[1],
-            web_sections: req.body.cantidadSecciones1
-            },{
-            name: req.body.category2,
-            image: imageDir.categoryImage2,
-            price: Number(req.body.price[1]),
-            transaction_cost_percent: req.body.costoTransaccion[2],
-            web_sections: req.body.cantidadSecciones2
-            },{
-            name: req.body.category3,
-            image: imageDir.categoryImage3,
-            price: Number(req.body.price[2]),
-            transaction_cost_percent: req.body.costoTransaccion[3],
-            web_sections: req.body.cantidadSecciones3
-            }],
+          image: imageDir.image
+        }).then(newProduct => {
+
+            db.Category.create({
+              name: req.body.category1,
+              image: imageDir.categoryImage1,
+              price: Number(req.body.price[0]),
+              transaction_cost_percent: req.body.costoTransaccion[1],
+              web_sections: req.body.cantidadSecciones1
+              }).then(newCategory => {
+                newCategory.addProducts(newProduct.id)
+                })
+
+              db.Category.create({
+              name: req.body.category2,
+              image: imageDir.categoryImage2,
+              price: Number(req.body.price[1]),
+              transaction_cost_percent: req.body.costoTransaccion[2],
+              web_sections: req.body.cantidadSecciones2
+              }).then(newCategory => {
+                  newCategory.addProducts(newProduct.id)
+                })
+
+              db.Category.create({
+              name: req.body.category3,
+              image: imageDir.categoryImage3,
+              price: Number(req.body.price[2]),
+              transaction_cost_percent: req.body.costoTransaccion[3],
+              web_sections: req.body.cantidadSecciones3
+              }).then(newCategory => {
+                  newCategory.addProducts(newProduct.id)
+                })
+
+              db.Section.create({
+              product_id: newProduct.id,
+              title: req.body.atitle,
+              image: imageDir.aimage,
+              })
+              db.Section.create({
+              product_id: newProduct.id,
+              title: req.body.btitle,
+              image: imageDir.bimage,
+              })
+              db.Section.create({
+              product_id: newProduct.id,
+              title: req.body.ctitle,
+              image: imageDir.cimage,
+              })
+              db.Section.create({
+              product_id: newProduct.id,
+              title: req.body.dtitle,
+              image: imageDir.dimage,
+              })
+              db.Section.create({
+              product_id: newProduct.id,
+              title: req.body.etitle,
+              image: imageDir.eimage,
+              })
+
+
+              
+        })
+        
+       /* db.Product.create({
           Sections: [{
             title: req.body.atitle,
             image: imageDir.aimage,
@@ -353,6 +397,10 @@ const productosController = {
               }]
             }]
         }, {include: [{association: 'Sections', include: [{association: 'Contents'}]}, {association: 'Categories'}]})
+      
+      
+        */
+        
         
         /*------Acá se guardan los nombres de los beneficios en caso de no ser strings vacíos------*/
           for (let i=0; i < indexBenefits.length; i++) {
@@ -362,7 +410,7 @@ const productosController = {
               })
             }
           }
-
+          
           res.redirect('/products');
         
         },
