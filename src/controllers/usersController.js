@@ -154,7 +154,7 @@ const usersController = {
 
             /*---Si el UNICO error es de la contraseña vacia, guarda los demás datos, pero NO actualiza password---*/
         }   else if (errors.errors.length == 1 && req.body.passwordRepeat == '') { 
-                console.log('HOLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA ENTRE AL ELSE IFFFFFFF');
+                
                 db.User.update({
                     first_name: req.body.firstName,
                     last_name: req.body.lastName,
