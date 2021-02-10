@@ -152,8 +152,9 @@ const usersController = {
 
             res.render('./users/profile', {passwordConfirmation : passwordConfirmation});
 
-        }   else if (!errors.isEmpty()) { 
-                /*---Si el UNICO error es de la contraseña vacia, guarda los demás datos, pero NO actualiza password---*/
+            /*---Si el UNICO error es de la contraseña vacia, guarda los demás datos, pero NO actualiza password---*/
+        }   else if (errors.errors.length == 1 && req.body.passwordRepeat == '') { 
+                console.log('HOLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA ENTRE AL ELSE IFFFFFFF');
                 db.User.update({
                     first_name: req.body.firstName,
                     last_name: req.body.lastName,
@@ -206,12 +207,12 @@ const usersController = {
         /*---Aqui se borra la cookie, luego se cierra la session----*/
         res.cookie('recordame', '', {maxAge: 0});
 
-        delete req.session.user;
+        req.session.destroy();
 
         res.redirect('/');
     },
     delete: function(req, res, next){
-        /*---Aquí se borra el usuario del array dentro de la variable users----*/
+        /*---Aquí se borra el usuario de la base de datos, utilizando soft-delete----*/
         db.User.destroy({where: {id: {[db.Sequelize.Op.like] : [req.session.user.id]} }})
         
         /*---Aquí se resetean valores de mensajes, se borra la cookie y se cierra session----*/
@@ -221,7 +222,7 @@ const usersController = {
         res.cookie('recordame', '', {maxAge: 0});
 
         delete req.session.user;
-        /*---Aquí se redirije a inicio----*/
+        /*---Finalmente se redirije a inicio----*/
         res.redirect('/');
     }
 }

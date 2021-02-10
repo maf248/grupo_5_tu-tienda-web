@@ -239,8 +239,7 @@ form p {
    .productosContratados p,
    .categoriaContratada p {
         font-size: 1.0em;
-        margin: 10px 0;
-        line-height: 2em;
+        margin: 2% 0 2% 1%;
    }
    .container-delete {
        display: flex;
