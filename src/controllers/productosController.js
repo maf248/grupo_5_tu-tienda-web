@@ -573,10 +573,9 @@ const productosController = {
               ]
             }).then(associatedContents => {
 
-              res.send(associatedContents)
 
               /*-----Acá se actualizan los contenidos asociados a la seccion 1----*/
-              /*db.Content.update({
+              db.Content.update({
                 type: "icon",
                 text: imageDir.aicon1
               }, {where: {id: associatedSections[0].id}})
@@ -637,7 +636,7 @@ const productosController = {
               }, {where: {id: associatedSections[0].id}})
 
               /*-----Acá se actualizan los contenidos asociados a la seccion 2----*/
-              /*db.Content.update({
+              db.Content.update({
                 type: "icon",
                 text: imageDir.bicon1
               }, {where: {id: associatedSections[1].id}})
@@ -698,7 +697,7 @@ const productosController = {
               }, {where: {id: associatedSections[1].id}})
 
               /*-----Acá se actualizan los contenidos asociados a la seccion 3----*/
-              /*db.Content.update({
+              db.Content.update({
                 type: "icon",
                 text: imageDir.cicon1
               }, {where: {id: associatedSections[2].id}})
@@ -759,7 +758,7 @@ const productosController = {
               }, {where: {id: associatedSections[2].id}})
 
               /*-----Acá se actualizan los contenidos asociados a la seccion 4----*/
-              /*db.Content.update({
+              db.Content.update({
                 type: "icon",
                 text: imageDir.dicon1
               }, {where: {id: associatedSections[3].id}})
@@ -820,7 +819,7 @@ const productosController = {
               }, {where: {id: associatedSections[3].id}})
 
               /*-----Acá se actualizan los contenidos asociados a la seccion 5----*/
-              /*db.Content.update({
+              db.Content.update({
                 type: "icon",
                 text: imageDir.eicon1
               }, {where: {id: associatedSections[4].id}})
@@ -879,22 +878,23 @@ const productosController = {
                 type: "description",
                 text: req.body.edescription4
               }, {where: {id: associatedSections[4].id}})
-              */
+              
           })
 
             
         })
 
         
-    /*
-    for (let i = 0; i < indexBenefits.length; i++) {
+    /*----Nos falta que actualice los beneficios---*/
+    /*for (let i = 0; i < indexBenefits.length; i++) {
       if (req.body[indexBenefits[i]][0] != "") {
         products[products.length -1].benefits[indexBenefits[i]] = [req.body[indexBenefits[i]][0], req.body[indexBenefits[i]][1], req.body[indexBenefits[i]][2], req.body[indexBenefits[i]][3]];
         }
       }
     */
    
-		//res.redirect('/products');
+		res.redirect('/products');
+    
     },
     borrado: function(req, res, next) {
       /*----Borrando la fila del producto en la base de datos (soft-delete)----*/
