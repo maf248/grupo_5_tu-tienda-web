@@ -2,11 +2,11 @@
     
 <!--Elegir nombre del producto-->
 <label for="name"style="padding: 5px; width: 100%; text-align:center;">Elegí el nombre del producto:</label> <br>
-<input type="text" style="padding: 5px; width: 50%; text-align:center; border-color: rgba(0, 0, 0, 1); border-width: 0.1px; margin: auto;" name="name" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.name %>" <% } else { %> placeholder="Escribí aquí el nombre del producto" <% } %>> <br>
+<input required type="text" style="padding: 5px; width: 50%; text-align:center; border-color: rgba(0, 0, 0, 1); border-width: 0.1px; margin: auto;" name="name" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.name %>" <% } else { %> placeholder="Escribí aquí el nombre del producto" <% } %>> <br>
  
 <!--Elegir tipo de producto-->
 <label for="type" style="padding: 5px; width: 100%; text-align:center;">Elegí el tipo de producto:</label> <br>
-<select style="padding: 5px; width: 15%; text-align:center; border-color: rgba(0, 0, 0, 1); border-width: 0.1px; margin: auto;" name="type" <% if (typeof productToEdit != 'undefined' ) { %> placeholder="Seleccioná una opción" <% } %>>
+<select required style="padding: 5px; width: 15%; text-align:center; border-color: rgba(0, 0, 0, 1); border-width: 0.1px; margin: auto;" name="type" <% if (typeof productToEdit != 'undefined' ) { %> placeholder="Seleccioná una opción" <% } %>>
     <option value="pagina_web" <% if (typeof productToEdit != 'undefined' && productToEdit.type == 'pagina_web') { %> selected="selected" <% } %> >Página Web</option>
     <option value="tienda_web" <% if (typeof productToEdit != 'undefined' && productToEdit.type == 'tienda_web') { %> selected="selected" <% } %> >Tienda Web</option>
 </select>

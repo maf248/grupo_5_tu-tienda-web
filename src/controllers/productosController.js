@@ -354,7 +354,7 @@ const productosController = {
             }]
         }, {include: [{association: 'Sections', include: [{association: 'Contents'}]}, {association: 'Categories'}]})
         
-        /*------Acá se guardan los beneficios en caso de no ser strings vacíos------*/
+        /*------Acá se guardan los nombres de los beneficios en caso de no ser strings vacíos------*/
           for (let i=0; i < indexBenefits.length; i++) {
             if(req.body[indexBenefits[i]][0] != '') {
               db.Benefit.create({
@@ -470,18 +470,58 @@ const productosController = {
               image: imageDir.eimage
             }, {where: {id: associatedSections[4].id}})
 
+          /*----Se buscan los contenidos asociados a cada sección, para luego actualizar dicha información----*/
+          /*for (let i=0; i < associatedSections.length; i++) {
+            
+            db.Content.findAll({
+              include: [
+                {association: "Sections", where: {id: associatedSections[i].id}}
+              ]
+            }).then(associatedContents => {
+              /*----Se actualizan los contenidos asociadas a dichas secciones----*/
+             /* db.Content.update({
+                type: "icon",
+                text: imageDir.aicon1
+              },{
+                type: "subtitle",
+                text: req.body.asubtitle1
+              },{
+                type: "description",
+                text: req.body.adescription1
+              },{
+                type: "icon",
+                text: imageDir.aicon2
+              },{
+                type: "subtitle",
+                text: req.body.asubtitle2
+              },{
+                type: "description",
+                text: req.body.adescription2
+              },{
+                type: "icon",
+                text: imageDir.aicon3
+              },{
+                type: "subtitle",
+                text: req.body.asubtitle3
+              },{
+                type: "description",
+                text: req.body.adescription3
+              },{
+                type: "icon",
+                text: imageDir.aicon4
+              },{
+                type: "subtitle",
+                text: req.body.asubtitle4
+              },{
+                type: "description",
+                text: req.body.adescription4
+              }, {where: {id: associatedSections[i].id}})
+
+            })
+            }*/
         })
-/*      
-      db.Section.update({
-        title: req.body.atitle,
-        image: imageDir.aimage
-      }, {where: {product_id: req.params.id}})
 
-      db.Content.update({
-        type: 'icon',
-        text: imageDir.aicon1
-      }, {where: {product_id: req.params.id}})
-
+        
     /*
     for (let i = 0; i < indexBenefits.length; i++) {
       if (req.body[indexBenefits[i]][0] != "") {
