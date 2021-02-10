@@ -391,24 +391,87 @@ const productosController = {
     /*----Acá llamamos a la funcion creada, para que al recibir los archivos subidos, guarde sus nombres en imageDir----*/
     uploadFilesDir(req.files);
 
-    /*----Actualizando los datos de formularios, en la variable products----*/
-      db.Product.update({
+    /*----Actualizando los datos del producto en la base de datos----*/
+        db.Product.update({
         name: req.body.name,
         type: req.body.type,
         title_banner: req.body.titleBanner1,
-        subtitle_banner: req.body.subtitleBaner1,
+        subtitle_banner: req.body.subtitleBanner1,
         image: imageDir.image
       }, {where: {id: req.params.id}})
 
-      db.Category.update({
-        name: req.body.category1,
-        image: imageDir.categoryImage1,
-        price: Number(req.body.price[0]),
-        transaction_cost_percent: req.body.costoTransaccion[1],
-        web_sections: req.body.cantidadSecciones1        
+      /*----Se buscan las categorias asociadas, para luego actualizar dicha información----*/
+      db.Category.findAll({
+        include: [
+          {association: "Products", where: {id: req.params.id}}
+        ]
+      }).then(associatedCategories => {
 
-      }, {where: {product_id: req.params.id}})
+      /*----Se actualizan las categorías asociadas a dicho producto----*/
+        db.Category.update({
+          name: req.body.category1,
+          image: imageDir.categoryImage1,
+          price: Number(req.body.price[0]),
+          transaction_cost_percent: req.body.costoTransaccion[1],
+          web_sections: req.body.cantidadSecciones1        
 
+        }, {where: {id: associatedCategories[0].id}});
+        
+        db.Category.update({
+          name: req.body.category2,
+          image: imageDir.categoryImage2,
+          price: Number(req.body.price[1]),
+          transaction_cost_percent: req.body.costoTransaccion[2],
+          web_sections: req.body.cantidadSecciones2        
+  
+        }, {where: {id: associatedCategories[1].id}});
+
+        db.Category.update({
+          name: req.body.category3,
+          image: imageDir.categoryImage3,
+          price: Number(req.body.price[2]),
+          transaction_cost_percent: req.body.costoTransaccion[3],
+          web_sections: req.body.cantidadSecciones3        
+  
+        }, {where: {id: associatedCategories[2].id}});
+          
+        })
+        /*----Se buscan las secciones asociadas, para luego actualizar dicha información----*/
+        db.Section.findAll({
+          include: [
+            {association: "Products", where: {id: req.params.id}}
+          ]
+        }).then(associatedSections => {
+
+          /*----Se actualizan las categorías asociadas a dicho producto----*/
+          
+            db.Section.update({
+              title: req.body.atitle,
+              image: imageDir.aimage
+            }, {where: {id: associatedSections[0].id}})
+
+            db.Section.update({
+              title: req.body.btitle,
+              image: imageDir.bimage
+            }, {where: {id: associatedSections[1].id}})
+
+            db.Section.update({
+              title: req.body.ctitle,
+              image: imageDir.cimage
+            }, {where: {id: associatedSections[2].id}})
+
+            db.Section.update({
+              title: req.body.dtitle,
+              image: imageDir.dimage
+            }, {where: {id: associatedSections[3].id}})
+
+            db.Section.update({
+              title: req.body.etitle,
+              image: imageDir.eimage
+            }, {where: {id: associatedSections[4].id}})
+
+        })
+/*      
       db.Section.update({
         title: req.body.atitle,
         image: imageDir.aimage
