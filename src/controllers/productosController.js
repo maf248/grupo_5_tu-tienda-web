@@ -5,10 +5,10 @@ const { isContext } = require('vm');
 
 const db = require('../database/models');
 
-/*----- Acá generamos un indice alfabetico de Benefits para luego utilizar al recorrer los beneficios A, B, C....etc -----*/
+/*----- Acá generamos un indice alfabetico de Benefits para luego utilizar al iterar los beneficios A, B, C....etc -----*/
 const indexBenefits = "abcdefghijklmnopqrstuvwx";
 
-/*----Acá creamos un objeto que guardará el nombre de archivo subico, correspondiente a cada input----*/
+/*----Acá creamos un objeto que guardará el nombre de archivo subido, correspondiente a cada input----*/
 var imageDir = {}
 /*----Funcion que filtra archivos subidos, para que cada nombre de archivo se guarde en donde corresponde. Recibe como parametro req.files----*/
 function uploadFilesDir(files) {
@@ -123,8 +123,9 @@ const productosController = {
     creador: function(req, res, next) {
       /*----Acá llamamos a la funcion creada, para que al recibir los archivos subidos, guarde sus nombres en imageDir----*/
       uploadFilesDir(req.files);
-       /*----Acá guardamos toda la información del producto nuevo----*/
-       
+
+
+       /*----Acá guardamos toda la información del producto nuevo (a excepcion de los beneficios)----*/
        db.Product.create({
           name: req.body.name,
           type: req.body.type,
@@ -353,7 +354,7 @@ const productosController = {
             }]
         }, {include: [{association: 'Sections', include: [{association: 'Contents'}]}, {association: 'Categories'}]})
         
-
+        /*------Acá se guardan los beneficios en caso de no ser strings vacíos------*/
           for (let i=0; i < indexBenefits.length; i++) {
             if(req.body[indexBenefits[i]][0] != '') {
               db.Benefit.create({
@@ -379,7 +380,6 @@ const productosController = {
           ]
         })
         .then(product => {
-          console.log(product)
           res.render('./products/edit', {productToEdit: product, indexBenefits: indexBenefits});
         })
        
@@ -426,24 +426,13 @@ const productosController = {
         }
       }
     */
-    /*----Acá termina la actualización de datos de formularios, en la variable products----*/
-
-    /*----Guardando imagen nueva y cambios en productos data base----*/
-    /*
-		products[req.params.id -1].image = imageDir.image;
-		*/
+   
 		res.redirect('/products');
     },
     borrado: function(req, res, next) {
-      /*----Borrando indice del producto en variable----*/
-		products.splice(req.params.id -1, 1);
-		/*----Corrigiendo id en array productos----*/
-		for (let i = 0; i < products.length; i++){
-			products[i].id = i + 1;
-		}
-		/*----Guardando cambios en productos data base----*/
-		const productsJSON = JSON.stringify(products);
-		fs.writeFileSync(productsDir, productsJSON);
+      /*----Borrando la fila del producto en la base de datos (soft-delete)----*/
+    db.Product.destroy({where: {id: {[db.Sequelize.Op.like] : [req.params.id]} }})
+
     res.redirect('/products');
     }    
 }
