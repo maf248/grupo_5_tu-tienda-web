@@ -20,12 +20,12 @@
     <h2>
         <!--elegí el título del Banner 1-->
         <label for="titleBanner1">Titulo principal:</label>
-        <input type="text" style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 50%;" name="titleBanner1" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.title_banner %>" <% } else { %> placeholder="Escribí el texto aquí..." <% } %>>
+        <input required type="text" style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 50%;" name="titleBanner1" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.title_banner %>" <% } else { %> placeholder="Escribí el texto aquí..." <% } %>>
     </h2>
     <p>
         <!--elegí el título del Banner 1-->
         <label for="subtitleBanner1">Subtítulo principal:</label>
-        <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 40%;" name="subtitleBanner1" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.subtitle_banner %>" <% } else { %> placeholder="Escribí el texto aquí..." <% } %>>
+        <input required type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 40%;" name="subtitleBanner1" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.subtitle_banner %>" <% } else { %> placeholder="Escribí el texto aquí..." <% } %>>
     </p>
 </section>
 
@@ -34,7 +34,7 @@
         <h2 class="disenoBlanco-article1-tituloPrincipal">
             <!--Elegir titulo seccion 1-->
             <label for="atitle">Titulo seccion 1:</label> <br>
-            <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 60%;" name="atitle" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Sections[0].title %>" <% } else { %> placeholder="Escribí el texto aquí..." <% } %> >
+            <input required type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 60%;" name="atitle" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Sections[0].title %>" <% } else { %> placeholder="Escribí el texto aquí..." <% } %> >
         </h2>
     </article>
     <div class="disenoBlanco-containerArticle2">
@@ -417,11 +417,11 @@
 <div class="center">
 
 <label class="block" for="category1">Definí la categoría 1 que tendrá el producto:</label>
-<input class="block" type="text" name="category1" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[0].name %>" <% } else { %> placeholder="Escribí acá el nombre de la categoría 1" <% } %>>
+<input required class="block" style="width:50%" type="text" name="category1" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[0].name %>" <% } else { %> placeholder="Escribí acá el nombre de la categoría 1" <% } %>>
 <label class="block" for="category2">Definí la categoría 2 que tendrá el producto:</label>
-<input class="block" type="text" name="category2" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[1].name %>" <% } else { %> placeholder="Escribí acá el nombre de la categoría 2" <% } %>">
+<input required class="block" style="width:50%" type="text" name="category2" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[1].name %>" <% } else { %> placeholder="Escribí acá el nombre de la categoría 2" <% } %>">
 <label class="block" for="category3">Definí la categoría 3 que tendrá el producto:</label>
-<input class="block" type="text" name="category3" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[2].name %>" <% } else { %> placeholder="Escribí acá el nombre de la categoría 3" <% } %>">
+<input required class="block" style="width:50%" type="text" name="category3" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[2].name %>" <% } else { %> placeholder="Escribí acá el nombre de la categoría 3" <% } %>">
 
 </div>
         <table>
@@ -463,21 +463,21 @@
                     <div class="tdDiv">
                         <!--Elegir costo por transacción categoria 1-->
                         <label class="fontSize" for="costoTransaccion[1]">Costo transacción 1:</label>
-                        <input type="number" name="costoTransaccion[1]" <% if (typeof productToEdit != 'undefined' ) { %> placeholder="<%= productToEdit.Categories[0].transaction_cost_percent %>" <% } else { %> placeholder="Escribí aquí cual será el costo por transacción" <% } %> id="costoTransaccion[1]">
+                        <input type="number" name="costoTransaccion[1]" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[0].transaction_cost_percent %>" <% } else { %> placeholder="Valor porcentual %" <% } %> id="costoTransaccion[1]">
                     </div>
                 </td>
                 <td>
                     <div class="tdDiv">
                         <!--Elegir costo por transacción categoria 2-->
                         <label class="fontSize" for="costoTransaccion[2]">Costo transacción 2:</label>
-                        <input type="number" name="costoTransaccion[2]" <% if (typeof productToEdit != 'undefined' ) { %> placeholder="<%= productToEdit.Categories[1].transaction_cost_percent %>" <% } else { %> placeholder="Escribí aquí cual será el costo por transacción" <% } %> id="costoTransaccion[2]">
+                        <input type="number" name="costoTransaccion[2]" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[1].transaction_cost_percent %>" <% } else { %> placeholder="Valor porcentual %" <% } %> id="costoTransaccion[2]">
                     </div>
                 </td>
                 <td>
                     <div class="tdDiv">
                         <!--Elegir costo por transacción categoria 3-->
                         <label class="fontSize" for="costoTransaccion[3]">Costo transacción 3:</label>
-                        <input type="number" name="costoTransaccion[3]" <% if (typeof productToEdit != 'undefined' ) { %> placeholder="<%= productToEdit.Categories[2].transaction_cost_percent %>" <% } else { %> placeholder="Escribí aquí cual será el costo por transacción" <% } %>  id="costoTransaccion[3]">
+                        <input type="number" name="costoTransaccion[3]" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[2].transaction_cost_percent %>" <% } else { %> placeholder="Valor porcentual %" <% } %>  id="costoTransaccion[3]">
                     </div>
                 </td>
             </tr>
@@ -491,21 +491,21 @@
                     <div class="tdDiv">
                         <!--Elegir cantidad de secciones categoria 1-->
                         <label class="fontSize" for="cantidadSecciones1">Cantidad secciones 1:</label>
-                        <input type="number" name="cantidadSecciones1" <% if (typeof productToEdit != 'undefined' ) { %> placeholder="<%= productToEdit.Categories[0].web_sections %>" <% } else { %> placeholder="Escribí aquí cual será la cantidad de secciones" <% } %>  id="cantidadSecciones1">
+                        <input type="number" name="cantidadSecciones1" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[0].web_sections %>" <% } else { %> placeholder="Ingresá un numero" <% } %>  id="cantidadSecciones1">
                     </div>
                 </td>
                 <td>
                     <div class="tdDiv">
                         <!--Elegir cantidad de secciones categoria 2-->
                         <label class="fontSize" for="cantidadSecciones2">Cantidad secciones 2:</label>
-                        <input type="number" name="cantidadSecciones2" <% if (typeof productToEdit != 'undefined' ) { %> placeholder="<%= productToEdit.Categories[1].web_sections %>" <% } else { %> placeholder="Escribí aquí cual será la cantidad de secciones" <% } %>id="cantidadSecciones2">
+                        <input type="number" name="cantidadSecciones2" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[1].web_sections %>" <% } else { %> placeholder="Ingresá un numero" <% } %>id="cantidadSecciones2">
                     </div>
                 </td>
                 <td>
                     <div class="tdDiv">
                         <!--Elegir cantidad de secciones categoria 3-->
                         <label class="fontSize" for="cantidadSecciones3">Cantidad secciones 3:</label>
-                        <input type="number" name="cantidadSecciones3" <% if (typeof productToEdit != 'undefined' ) { %> placeholder="<%= productToEdit.Categories[2].web_sections %>" <% } else { %> placeholder="Escribí aquí cual será la cantidad de secciones" <% } %> id="cantidadSecciones3">
+                        <input type="number" name="cantidadSecciones3" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[2].web_sections %>" <% } else { %> placeholder="Ingresá un numero" <% } %> id="cantidadSecciones3">
                     </div>
                 </td>
             </tr>
@@ -543,17 +543,17 @@
                 </td>
                 <td>
                     <div class="tdDiv">
-                        <input type="number" name="price[0]" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[0].price %>" <% } else { %> placeholder="$" <% } %>>
+                        <input type="number" name="price[0]" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[0].price %>" <% } else { %> placeholder="$ / mensual" <% } %>>
                     </div>
                 </td>
                 <td>
                     <div class="tdDiv">
-                        <input type="number" name="price[1]" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[1].price %>" <% } else { %> placeholder="$" <% } %>>
+                        <input type="number" name="price[1]" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[1].price %>" <% } else { %> placeholder="$ / mensual" <% } %>>
                     </div>
                 </td>
                 <td>
                     <div class="tdDiv">
-                        <input type="number" name="price[2]" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[2].price %>" <% } else { %> placeholder="$" <% } %>>
+                        <input type="number" name="price[2]" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[2].price %>" <% } else { %> placeholder="$ / mensual" <% } %>>
                     </div>
                 </td>
             </tr>
