@@ -99,3 +99,15 @@ Referencias:
 ## ★ Código de administrador:
 
 ○ Al introducir en /users/profile el codigo "sarasa.20", como codigo de administrador, dicha cuenta adquiere más privilegios (editar y crear productos).
+
+## ★ Observaciones y pendientes:
+
+○ Nos quedan pendientes para el próximo sprint ciertas mejoras, que no pudimos llevar a cabo en este, tras habernos retrasado en gran medida por haber comprendido mal parte de la consigna durante varias semanas (no habiamos entendido hasta semanas mas tarde de comenzado el sprint, que el CRUD requerido debia funcionar con la base de datos implementada totalmente en el sitio). Por esto mismo, quedan pendientes las siguientes mejoras y sugerencias para el próximo sprint:
+
+- Continuar con las mejoras orientadas hacia unificar el diseño y mejorarlo, haciendolo más simple y minimalista.
+
+- Reducir la cantidad de texto y de repeticiónes en el sitio (principalmente en detalle de productos).
+
+- Dividir en varias etapas la creacion y edicion de productos, para que sea mas simple de mantener a nivel código, y dando una mejor experiencia al usuario. (Posibles etapas a implementar: Producto / Categorías / Secciónes / Beneficios)
+
+- Concluir la edición y creación mediante sequelize de: Beneficios y Contenidos.

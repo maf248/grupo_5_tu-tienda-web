@@ -1,20 +1,19 @@
 # RETRO SPRINT-6
 
-## COMPLETAR ANTES DE FECHA DE ENTREGA 10/02/2021
-
 ### 1) Comenzar a hacer
-mas participacion de todos los integrantes
+Más participacion de todos los integrantes.
 
 ### 2) Hacer más:
-juntadas de zoom para estar al tanto de los avances de cada uno
+Juntadas de zoom para estar al tanto de los avances de cada uno.
 
 ### 3) Continuar haciendo:
-la ayuda y el apoyo entre todos 
+La ayuda y el apoyo entre todos.
 
 ### 4) Hacer menos:
-hacer menos estilos diferentes, si no que mas uniformes
-
+Hacer menos estilos diferentes, si no que el estilo general del sitio sea más uniforme.
 
 ### 5) Dejar de hacer:
-dejar de hacer trabajo individual y dividirlo mas
+Dejar de hacer trabajo individual y dividirlo más.
+Comprender mal las consignas, tal como nos sucedió en este sprint, que pensamos durante bastante tiempo que no debiamos impelementar la base de datos en el sitio. Si bien el PDF no era del todo claro, para los próximos sprints nos aseguraremos de comprender en detalle los objetivos desde el principio para no atrasarnos y tener dificultades. Y en caso de no estár seguros de comprenderlos, preguntar a tiempo.
+
 

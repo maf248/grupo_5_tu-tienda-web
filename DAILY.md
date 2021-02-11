@@ -1,3 +1,8 @@
+## Daily 10/02/2021
+Nos reunimos via Zoom para ponernos al tanto sobre los avances del proyecto, que partes faltaban y que ya estaba hecho. Decidimos como resolver en caso de no llegar a concluir el sprint (aclarando las cosas que quedaron pendientes en el Readme tal como recomendó el profesor Alejandro), y decidiendo que debiamos priorizar.
+Priorizamos concluir las tareas del sprint, y postergar mejoras recomendadas en caso de no llegar, tales como: mejoras en cuanto al estilo, reducir la repeticion de ciertos textos, o la division de creacion/edicion de productos en etapas).
+Luego tuvimos varias reuniones esporadicas varios días, cuando algunos miembros coincidian en tiempo libre, para ayudarnos mutuamente. Las mismas no han sido incluidas en las dailys.
+
 ## Daily 01/02/2021
 Nos reunimos via Zoom para instalar Sequelize, configurarlo, crear un modelo (User.js) entre todos.
 Nos dividimos los modelos restantes, para realizarlos en los dias siguientes, de la siguiente manera:

@@ -573,9 +573,8 @@ const productosController = {
               ]
             }).then(associatedContents => {
 
-
               /*-----Acá se actualizan los contenidos asociados a la seccion 1----*/
-              db.Content.update({
+              /*db.Content.update({
                 type: "icon",
                 text: imageDir.aicon1
               }, {where: {id: associatedSections[0].id}})
@@ -636,7 +635,7 @@ const productosController = {
               }, {where: {id: associatedSections[0].id}})
 
               /*-----Acá se actualizan los contenidos asociados a la seccion 2----*/
-              db.Content.update({
+              /*db.Content.update({
                 type: "icon",
                 text: imageDir.bicon1
               }, {where: {id: associatedSections[1].id}})
@@ -697,7 +696,7 @@ const productosController = {
               }, {where: {id: associatedSections[1].id}})
 
               /*-----Acá se actualizan los contenidos asociados a la seccion 3----*/
-              db.Content.update({
+              /*db.Content.update({
                 type: "icon",
                 text: imageDir.cicon1
               }, {where: {id: associatedSections[2].id}})
@@ -758,7 +757,7 @@ const productosController = {
               }, {where: {id: associatedSections[2].id}})
 
               /*-----Acá se actualizan los contenidos asociados a la seccion 4----*/
-              db.Content.update({
+              /*db.Content.update({
                 type: "icon",
                 text: imageDir.dicon1
               }, {where: {id: associatedSections[3].id}})
@@ -819,7 +818,7 @@ const productosController = {
               }, {where: {id: associatedSections[3].id}})
 
               /*-----Acá se actualizan los contenidos asociados a la seccion 5----*/
-              db.Content.update({
+              /*db.Content.update({
                 type: "icon",
                 text: imageDir.eicon1
               }, {where: {id: associatedSections[4].id}})
@@ -878,7 +877,7 @@ const productosController = {
                 type: "description",
                 text: req.body.edescription4
               }, {where: {id: associatedSections[4].id}})
-              
+            */
           })
 
             
