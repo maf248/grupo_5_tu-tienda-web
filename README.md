@@ -110,4 +110,6 @@ Referencias:
 
 - Dividir en varias etapas la creacion y edicion de productos, para que sea mas simple de mantener a nivel código, y dando una mejor experiencia al usuario. (Posibles etapas a implementar: Producto / Categorías / Secciónes / Beneficios)
 
-- Concluir la edición y creación mediante sequelize de: Beneficios y Contenidos.
+- Concluir la edición de productos mediante sequelize de: Beneficios (que los checkboxes, "esta categoría, incluye este beneficio (o no)" modifiquen la tabla pivot benefit_category).
+
+-Reparar la vista de detalle de producto, para que no "crashee" al crear un producto sin todas las secciones o contenidos.

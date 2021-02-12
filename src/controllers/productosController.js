@@ -125,7 +125,7 @@ const productosController = {
       uploadFilesDir(req.files);
 
 
-       /*----Acá guardamos toda la información del producto nuevo (a excepcion de los beneficios)----*/
+       /*----Acá guardamos toda la información del producto nuevo----*/
        db.Product.create({
           name: req.body.name,
           type: req.body.type,
@@ -134,36 +134,7 @@ const productosController = {
           image: imageDir.image
         }).then(newProduct => {
 
-            db.Category.create({
-              name: req.body.category1,
-              image: imageDir.categoryImage1,
-              price: Number(req.body.price[0]),
-              transaction_cost_percent: req.body.costoTransaccion[1],
-              web_sections: req.body.cantidadSecciones1
-              }).then(newCategory => {
-                newCategory.addProducts(newProduct.id)
-                })
-
-              db.Category.create({
-              name: req.body.category2,
-              image: imageDir.categoryImage2,
-              price: Number(req.body.price[1]),
-              transaction_cost_percent: req.body.costoTransaccion[2],
-              web_sections: req.body.cantidadSecciones2
-              }).then(newCategory => {
-                  newCategory.addProducts(newProduct.id)
-                })
-
-              db.Category.create({
-              name: req.body.category3,
-              image: imageDir.categoryImage3,
-              price: Number(req.body.price[2]),
-              transaction_cost_percent: req.body.costoTransaccion[3],
-              web_sections: req.body.cantidadSecciones3
-              }).then(newCategory => {
-                  newCategory.addProducts(newProduct.id)
-                })
-
+          /*----Acá guardamos toda la información de las secciones de dicho producto----*/
               db.Section.create({
               product_id: newProduct.id,
               title: req.body.atitle,
@@ -218,7 +189,6 @@ const productosController = {
                   type: "description",
                   text: req.body.adescription4
                 }])
-
               })
               db.Section.create({
               product_id: newProduct.id,
@@ -275,7 +245,6 @@ const productosController = {
                   text: req.body.bdescription4
                 }])
               })
-
               db.Section.create({
               product_id: newProduct.id,
               title: req.body.ctitle,
@@ -331,7 +300,6 @@ const productosController = {
                   text: req.body.cdescription4
                 }])
               })
-
               db.Section.create({
               product_id: newProduct.id,
               title: req.body.dtitle,
@@ -386,9 +354,7 @@ const productosController = {
                   type: "description",
                   text: req.body.ddescription4
                 }])
-
               })
-
               db.Section.create({
               product_id: newProduct.id,
               title: req.body.etitle,
@@ -443,23 +409,59 @@ const productosController = {
                   type: "description",
                   text: req.body.edescription4
                 }])
+              })
+            /*-----Acá se guardan las categorias del nuevo producto, luego se asocian a dicho producto----*/
+              db.Category.bulkCreate([{
+                name: req.body.category1,
+                image: imageDir.categoryImage1,
+                price: Number(req.body.price[0]),
+                transaction_cost_percent: req.body.costoTransaccion[1],
+                web_sections: req.body.cantidadSecciones1
+                },{
+                name: req.body.category2,
+                image: imageDir.categoryImage2,
+                price: Number(req.body.price[1]),
+                transaction_cost_percent: req.body.costoTransaccion[2],
+                web_sections: req.body.cantidadSecciones2
+                },{
+                name: req.body.category3,
+                image: imageDir.categoryImage3,
+                price: Number(req.body.price[2]),
+                transaction_cost_percent: req.body.costoTransaccion[3],
+                web_sections: req.body.cantidadSecciones3
+              }])
+              .then(newCategories => {
+              /*----Acá se asocian las categorias nuevas al producto nuevo----*/
+                for (let newCategory of newCategories) {
+                  newCategory.addProducts(newProduct.id);
+                }
+                
+              /*------Acá se recorren los beneficios, y se guardan los nombres en caso de NO ser strings vacíos------*/
+                for (let i=0; i < indexBenefits.length; i++) {
+
+                    if(req.body[indexBenefits[i]][0] != '') {
+
+                      db.Benefit.create({
+                        name: req.body[indexBenefits[i]][0]
+                      }).then(newBenefit => {
+                      
+                        /*----Recorro las categorías, y las asocio al beneficio (o no) dependiendo de los checkboxes---*/
+                        for (let j=0; j < newCategories.length; j++){
+
+                          if(req.body[indexBenefits[i]][j+1] == 'true'){
+                            newBenefit.addCategories(newCategories[j].id);
+                          }
+                        }
+                        
+                      })
+
+                    }
+                }
 
               })
-
 
         })
-        
-        /*------Acá se guardan los nombres de los beneficios en caso de no ser strings vacíos------*/
-          for (let i=0; i < indexBenefits.length; i++) {
-            if(req.body[indexBenefits[i]][0] != '') {
-              db.Benefit.create({
-                name: req.body[indexBenefits[i]][0]
-              })
-            }
-          }
-          
-          res.redirect('/products');
-        
+        res.redirect('/products');
         },
     edicion: function(req, res, next) {
       if (req.session.user != undefined && req.session.user.role == 'admin') {
@@ -468,10 +470,7 @@ const productosController = {
             {association: "Sections", 
           include: [{association: "Contents"}]},
             {association: "Categories",
-          include: [
-            {association: "Benefits"}
-          ]
-        }
+          include: [{association: "Benefits"}]}
           ]
         })
         .then(product => {
@@ -890,20 +889,28 @@ const productosController = {
                 type: "description",
                 text: req.body.edescription4
               }, {where: {id: contentIndex[59], section_id: sectionIndex[4]}})
-          
               
           })
 
-        
-    /*----Nos falta que actualice los beneficios---*/
-    /*for (let i = 0; i < indexBenefits.length; i++) {
-      if (req.body[indexBenefits[i]][0] != "") {
-        products[products.length -1].benefits[indexBenefits[i]] = [req.body[indexBenefits[i]][0], req.body[indexBenefits[i]][1], req.body[indexBenefits[i]][2], req.body[indexBenefits[i]][3]];
-        }
-      }
-    */
-   
-		res.redirect('/products');
+        /*----Se buscan los beneficios asociados a cada categoria del producto, para luego actualizar dicha información----*/
+          db.Benefit.findAll({
+            include: [
+              {association: "Categories", 
+              include: [{association: "Products"}], where: {id: req.params.id}}
+            ]
+          }).then(associatedBenefits => {
+          /*----Recorre los beneficios, y actualiza los nombres----*/
+            for (let i=0; i < indexBenefits.length; i++) {
+
+              db.Benefit.update({
+              name: req.body[indexBenefits[i]][0]
+              },{where: {id: associatedBenefits[i].id}})
+
+            }
+            //FALTA ACTUALIZAR LA RELACION DE LA PIVOT BENEFIT_CATEGORY (X CATEGORIA INCLUYE O NO ESTE BENEFICIO) ACORDE A LOS CHECKBOXES
+          })
+
+		  res.redirect('/products');
     
     },
     borrado: function(req, res, next) {
