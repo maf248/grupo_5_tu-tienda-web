@@ -494,42 +494,6 @@ const productosController = {
         image: imageDir.image
       }, {where: {id: req.params.id}})
 
-      /*----Se buscan las categorias asociadas, para luego actualizar dicha información----*/
-      db.Category.findAll({
-        include: [
-          {association: "Products", where: {id: req.params.id}}
-        ]
-      }).then(associatedCategories => {
-
-      /*----Se actualizan las categorías asociadas a dicho producto----*/
-        db.Category.update({
-          name: req.body.category1,
-          image: imageDir.categoryImage1,
-          price: Number(req.body.price[0]),
-          transaction_cost_percent: req.body.costoTransaccion[1],
-          web_sections: req.body.cantidadSecciones1        
-
-        }, {where: {id: associatedCategories[0].id}});
-        
-        db.Category.update({
-          name: req.body.category2,
-          image: imageDir.categoryImage2,
-          price: Number(req.body.price[1]),
-          transaction_cost_percent: req.body.costoTransaccion[2],
-          web_sections: req.body.cantidadSecciones2        
-  
-        }, {where: {id: associatedCategories[1].id}});
-
-        db.Category.update({
-          name: req.body.category3,
-          image: imageDir.categoryImage3,
-          price: Number(req.body.price[2]),
-          transaction_cost_percent: req.body.costoTransaccion[3],
-          web_sections: req.body.cantidadSecciones3        
-  
-        }, {where: {id: associatedCategories[2].id}});
-          
-        })
         /*----Se buscan las secciones asociadas, para luego actualizar dicha información----*/
         db.Section.findAll({
           include: [
@@ -584,7 +548,6 @@ const productosController = {
                   sectionIndex.push(associatedContents[i].section_id);
                 }
               }
-            
               /*-----Acá se actualizan los contenidos asociados a la seccion 1----*/
               db.Content.update({
                 type: "icon",
@@ -892,23 +855,85 @@ const productosController = {
               
           })
 
-        /*----Se buscan los beneficios asociados a cada categoria del producto, para luego actualizar dicha información----*/
-          db.Benefit.findAll({
-            include: [
-              {association: "Categories", 
-              include: [{association: "Products"}], where: {id: req.params.id}}
-            ]
-          }).then(associatedBenefits => {
-          /*----Recorre los beneficios, y actualiza los nombres----*/
-            for (let i=0; i < indexBenefits.length; i++) {
+        /*----Se buscan las categorias asociadas, para luego actualizar dicha información----*/
+        db.Category.findAll({
+          include: [
+            {association: "Products", where: {id: req.params.id}}
+          ]
+        }).then(associatedCategories => {
 
-              db.Benefit.update({
-              name: req.body[indexBenefits[i]][0]
-              },{where: {id: associatedBenefits[i].id}})
+        /*----Se actualizan las categorías asociadas a dicho producto----*/
+          db.Category.update({
+            name: req.body.category1,
+            image: imageDir.categoryImage1,
+            price: Number(req.body.price[0]),
+            transaction_cost_percent: req.body.costoTransaccion[1],
+            web_sections: req.body.cantidadSecciones1        
 
-            }
-            //FALTA ACTUALIZAR LA RELACION DE LA PIVOT BENEFIT_CATEGORY (X CATEGORIA INCLUYE O NO ESTE BENEFICIO) ACORDE A LOS CHECKBOXES
-          })
+          }, {where: {id: associatedCategories[0].id}});
+          
+          db.Category.update({
+            name: req.body.category2,
+            image: imageDir.categoryImage2,
+            price: Number(req.body.price[1]),
+            transaction_cost_percent: req.body.costoTransaccion[2],
+            web_sections: req.body.cantidadSecciones2        
+    
+          }, {where: {id: associatedCategories[1].id}});
+
+          db.Category.update({
+            name: req.body.category3,
+            image: imageDir.categoryImage3,
+            price: Number(req.body.price[2]),
+            transaction_cost_percent: req.body.costoTransaccion[3],
+            web_sections: req.body.cantidadSecciones3        
+    
+          }, {where: {id: associatedCategories[2].id}});
+            
+          
+            /*----Se buscan los beneficios asociados a cada categoria del producto, para luego actualizar dicha información----*/
+              db.Benefit.findAll({
+                include: [
+                  {association: "Categories", 
+                  include: [{association: "Products", where: {id: req.params.id}}]}
+                ]
+              }).then(associatedBenefits => {
+
+              /*----Recorre los beneficios, y actualiza los nombres----*/
+                for (let i=0; i < associatedBenefits.length; i++) {
+                  /*----Si el nombre del beneficio NO es un string vacío, se actualiza dicho beneficio----*/
+                  if(typeof req.body[indexBenefits[i]][0] != 'undefined' && req.body[indexBenefits[i]][0] != '') {
+                    /*---Guarda los cambios en el nombre de beneficio----*/
+                    db.Benefit.update({
+                      name: req.body[indexBenefits[i]][0]
+                      },{where: {id: associatedBenefits[i].id}})
+
+                  /*----Si el nombre del beneficio es un string vacío, se borra dicho beneficio----*/
+                  } else if(typeof req.body[indexBenefits[i]][0] != 'undefined' && req.body[indexBenefits[i]][0] == '') {
+
+                    db.Benefit.destroy({where: {id: {[db.Sequelize.Op.like] : [associatedBenefits[i].id]} }})
+                  }
+                  
+                  /*----Chequea las asociaciones de beneficios con categorias, y las modifica si fueron modificados los checkboxes---*/
+                  
+                  /*---Dentro de cada beneficio, recorre cada Categoría----*/
+                  // for (let j=0; j < associatedCategories.length; j++) {
+                    
+                  //   /*---Si el checkbox está destilado, pero está asociado el beneficio a la categoria, borra la asociacion----*/
+                  //   if(typeof req.body[indexBenefits[i]] != 'undefined' && req.body[indexBenefits[i]][j+1] != 'true' && typeof associatedBenefits[i].Categories[j] != 'undefined' && associatedBenefits[i].Categories[j].id == associatedCategories[j].id) {
+                  //     associatedBenefits[i].removeCategories(associatedCategories[j].id);
+                  //   }
+                  //   /*---Si el checkbox está tildado, pero NO está asociado el beneficio a la categoria, crea la asociacion----*/
+                  //   if(typeof req.body[indexBenefits[i]] != 'undefined' && req.body[indexBenefits[i]][j+1] == 'true' && typeof associatedBenefits[i].Categories[j] != 'undefined' && associatedBenefits[i].Categories[j].id != associatedCategories[j].id) {
+                  //     associatedBenefits[i].addCategories(associatedCategories[j].id);
+                  //   }
+
+                  // }
+
+                  }
+                
+              })
+        })
 
 		  res.redirect('/products');
     
