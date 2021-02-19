@@ -18,33 +18,34 @@
         <section class="contenedorProductos" id="contenedorProductos">
             <table>
             <form action="/products" method="POST" enctype="multipart/form-data">
-                
-                <% for (let i= 0; i < indexBenefits.length; i++) { %>          
+                <% var index = 0; %>
+                <% productToEdit.Categories[0].Benefits.forEach(benefit => { %>          
                     <tr>
                         <td class="beneficio fontSize">
                             <div class="tdDiv">
                                 <!--Elegir titulo beneficio 1-->
-                                <label for="<%= indexBenefits[i] %>[0]">Beneficio:</label> <br>
-                                <input class="inputBeneficio" type="text" name="<%= indexBenefits[i] %>[0]" <% if (typeof productToEdit != 'undefined' ) { %> <% if (productToEdit.Categories[0].Benefits[i] != undefined) { %> value="<%= productToEdit.Categories[0].Benefits[i].name %>" <% } } else { %> placeholder="Escribí aquí el beneficio" <% } %>>
+                                <label for="<%= indexBenefits[index] %>[0]">Beneficio:</label> <br>
+                                <input class="inputBeneficio" type="text" name="<%= indexBenefits[index] %>[0]" <% if (typeof productToEdit != 'undefined' ) { %> <% if (productToEdit.Categories[0].Benefits[index] != undefined) { %> value="<%= productToEdit.Categories[0].Benefits[index].name %>" <% } } else { %> placeholder="Escribí aquí el beneficio" <% } %>>
                             </div>
                         </td>
                         <td>
                             <div class="tdDiv">
-                                <input class="inputBeneficio" type="checkbox" name="<%= indexBenefits[i] %>[1]" value="true" style="align-self: center;" <% if (typeof productToEdit != 'undefined' && productToEdit.Categories[0].Benefits[i] != undefined) { %> checked <% } %>>
+                                <input class="inputBeneficio" type="checkbox" name="<%= indexBenefits[index] %>[1]" value="true" style="align-self: center;" <% if (typeof productToEdit != 'undefined' && productToEdit.Categories[0].Benefits[index] != undefined) { %> checked <% } %>>
                             </div>
                         </td>
                         <td>
                             <div class="tdDiv">
-                                <input class="inputBeneficio" type="checkbox" name="<%= indexBenefits[i] %>[2]" value="true" style="align-self: center;" <% if (typeof productToEdit != 'undefined' && productToEdit.Categories[1].Benefits[i] != undefined) { %> checked <% } %>>
+                                <input class="inputBeneficio" type="checkbox" name="<%= indexBenefits[index] %>[2]" value="true" style="align-self: center;" <% if (typeof productToEdit != 'undefined' && productToEdit.Categories[1].Benefits[index] != undefined) { %> checked <% } %>>
                             </div>
                         </td>
                         <td>
                             <div class="tdDiv">
-                                <input type="checkbox" name="<%= indexBenefits[i] %>[3]" value="true" style="align-self: center;" <% if (typeof productToEdit != 'undefined' && productToEdit.Categories[2].Benefits[i] != undefined) { %> checked <% } %>>
+                                <input type="checkbox" name="<%= indexBenefits[index] %>[3]" value="true" style="align-self: center;" <% if (typeof productToEdit != 'undefined' && productToEdit.Categories[2].Benefits[index] != undefined) { %> checked <% } %>>
                             </div>
                         </td>
                     </tr>
-                    <% } %>
+                    <% index++ %>
+                    <% }) %>
                 </table>
         </section>
 
