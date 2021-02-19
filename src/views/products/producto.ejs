@@ -25,6 +25,7 @@
             </form>
         </section>
 
+        <% if (typeof product.Sections != 'undefined') { %>
         <% for (var i = 0; i < product.Sections.length; i+=2) { %>
 
             <section class="disenoBlanco">
@@ -82,6 +83,7 @@
         </section>
 
         <% if (product.Sections[i+1]) { %> 
+            
         <section class="disenoVerde">
             <article class="disenoVerde-article1">
                 <h2 class="disenoVerde-article1-tituloPrincipal">
@@ -135,12 +137,8 @@
                 </button>
             </form>
         </section>
-        <% } %>
 
-       <% } %>
-         
-
-        
+        <% } } } %>
 
         <section class="contenedorProductos" id="contenedorProductos">
             <h2>¡Elegí una de nuestras suscripciones y potenciá tu negocio digitalmente!</h2>
@@ -174,6 +172,7 @@
                                 </td>
                             <% } %>
                         </tr>
+                        <% if (typeof product.Categories[0].Benefits != 'undefined') { %>
                         <% for (let i = 0; i < product.Categories[0].Benefits.length; i++) { %>
                         <tr>  
                             <td class="beneficio">
@@ -192,8 +191,10 @@
                                         </div>
                                     </td>
                                 <% } %>
-                         <% } %>
                         </tr>
+                        
+                         <% } } %>
+                        
                         <tr>
                             <td>
                                 <div class="tdDiv">
