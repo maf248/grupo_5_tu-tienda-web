@@ -17,7 +17,7 @@ a {
     margin-bottom: 2%;
     transition: 600ms;
 }
-.disenoBlanco article:hover .icon, .disenoAzul article:hover .icon {
+.disenoBlanco article:hover .icon, .disenoVerde article:hover .icon {
     transform: rotate(-90deg);
 }
 button:hover {
@@ -117,41 +117,41 @@ button:hover {
 
 /*DISENO FONDO AZUL*/
 
-.disenoAzul {
+.disenoVerde {
     background-color: rgb(100, 197, 149);
 }
-.disenoAzul-articleImg {
+.disenoVerde-articleImg {
     display: none;
 }
-.disenoAzul-article1 {
+.disenoVerde-article1 {
     border-bottom: 1px solid white;
 }
-.disenoAzul-article1-tituloPrincipal {
+.disenoVerde-article1-tituloPrincipal {
     padding: 5%;
     text-align: center;
     color: white;
 }
-.disenoAzul-article2 {
+.disenoVerde-article2 {
     border-bottom: 1px solid white;
 }
-.disenoAzul-article2-titulo {
+.disenoVerde-article2-titulo {
     padding: 2%;
     color: white;
     text-align: center;
 }
-.disenoAzul-article2-parrafo {
+.disenoVerde-article2-parrafo {
     padding: 2%;
     color: white;
     text-align: center;
 }
-.disenoAzul-form {
+.disenoVerde-form {
     margin: 1% auto;
     width: max-content;
 }
-.disenoAzul i {
+.disenoVerde i {
     color: white;
 }
-.disenoAzul-form button {
+.disenoVerde-form button {
     font-size: 0.75em;
     font-weight: bold;
     text-transform: uppercase;
@@ -162,52 +162,52 @@ button:hover {
 }
 
 @media (min-width: 570px) {
-    .disenoAzul {
+    .disenoVerde {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
     }
-    .disenoAzul-article1 {
+    .disenoVerde-article1 {
         width: 100%;
     }
-    .disenoAzul-articleImg {
+    .disenoVerde-articleImg {
         display: inline-block;
         width: 50%;
         margin: auto;
     }
-    .disenoAzul-articleImg img {
+    .disenoVerde-articleImg img {
         width: 100%;
         padding: 2%;
 
     }
-    .disenoAzul-containerArticle2 {
+    .disenoVerde-containerArticle2 {
         width: 50%;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
     }
-    .disenoAzul-article2 {
+    .disenoVerde-article2 {
         width: 100%;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
     }
-    .disenoAzul-article2-titulo {
+    .disenoVerde-article2-titulo {
         align-self: flex-end;
         width: 100%;
     }
-    .disenoAzul-form button {
+    .disenoVerde-form button {
         font-size: 1em;
     }
 }
 @media (min-width: 1024px) {
-    .disenoAzul-article1-tituloPrincipal {
+    .disenoVerde-article1-tituloPrincipal {
         font-size: 3em;
     }
-    .disenoAzul-article2-titulo {
+    .disenoVerde-article2-titulo {
         font-size: 2em;
     }
-    .disenoAzul-article2-parrafo {
+    .disenoVerde-article2-parrafo {
         font-size: 1.5em;
     }
 }
