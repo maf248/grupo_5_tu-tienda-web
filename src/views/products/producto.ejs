@@ -25,53 +25,54 @@
             </form>
         </section>
 
-        
+        <% for (var i = 0; i < product.Sections.length; i+=2) { %>
+
             <section class="disenoBlanco">
                 <article class="disenoBlanco-article1">
                     <h2 class="disenoBlanco-article1-tituloPrincipal">
-                        <%= product.Sections[0].title %>
+                        <%= product.Sections[i].title %>
                     </h2>
                 </article>
                 <div class="disenoBlanco-containerArticle2">
                     <article class="disenoBlanco-article2">
                         <h3 class="disenoBlanco-article2-titulo">
-                            <img src="/images/Producto-<%= product.id %>/<%= product.Sections[0].Contents[0].text %>" class="icon" alt=""> <br>
-                            <%= product.Sections[0].Contents[1].text %>
+                            <img src="/images/Producto-<%= product.id %>/<%= product.Sections[i].Contents[0].text %>" class="icon" alt=""> <br>
+                            <%= product.Sections[i].Contents[1].text %>
                         </h3>
                         <p  class="disenoBlanco-article2-parrafo">
-                            <%= product.Sections[0].Contents[2].text %>
+                            <%= product.Sections[i].Contents[2].text %>
                         </p>
                     </article>
                     <article class="disenoBlanco-article2">
                         <h3 class="disenoBlanco-article2-titulo">
-                            <img src="/images/Producto-<%= product.id %>/<%= product.Sections[0].Contents[3].text %>" class="icon" alt=""> <br>
-                            <%= product.Sections[0].Contents[4].text %>
+                            <img src="/images/Producto-<%= product.id %>/<%= product.Sections[i].Contents[3].text %>" class="icon" alt=""> <br>
+                            <%= product.Sections[i].Contents[4].text %>
                         </h3>
                         <p  class="disenoBlanco-article2-parrafo">
-                            <%= product.Sections[0].Contents[5].text %>
+                            <%= product.Sections[i].Contents[5].text %>
                         </p>
                     </article>
                     <article class="disenoBlanco-article2">
                         <h3 class="disenoBlanco-article2-titulo">
-                            <img src="/images/Producto-<%= product.id %>/<%= product.Sections[0].Contents[6].text %>" class="icon" alt=""> <br>
-                            <%= product.Sections[0].Contents[7].text %>
+                            <img src="/images/Producto-<%= product.id %>/<%= product.Sections[i].Contents[6].text %>" class="icon" alt=""> <br>
+                            <%= product.Sections[i].Contents[7].text %>
                         </h3>
                         <p  class="disenoBlanco-article2-parrafo">
-                            <%= product.Sections[0].Contents[8].text %>
+                            <%= product.Sections[i].Contents[8].text %>
                         </p>
                     </article>
                     <article class="disenoBlanco-article2">
                         <h3 class="disenoBlanco-article2-titulo">
-                            <img src="/images/Producto-<%= product.id %>/<%= product.Sections[0].Contents[9].text %>" class="icon" alt=""> <br>
-                            <%= product.Sections[0].Contents[10].text %>
+                            <img src="/images/Producto-<%= product.id %>/<%= product.Sections[i].Contents[9].text %>" class="icon" alt=""> <br>
+                            <%= product.Sections[i].Contents[10].text %>
                         </h3>
                         <p  class="disenoBlanco-article2-parrafo">
-                            <%= product.Sections[0].Contents[11].text %>
+                            <%= product.Sections[i].Contents[11].text %>
                         </p>
                     </article>
                 </div>
                 <article class="disenoBlanco-articleImg">
-                    <img src="/images/Producto-<%= product.id %>/<%= product.Sections[0].image %>" alt="">
+                    <img src="/images/Producto-<%= product.id %>/<%= product.Sections[i].image %>" alt="">
                 </article>
                 <form action="#contenedorProductos" method="GET"   class="disenoBlanco-form">
                     <button>
@@ -79,223 +80,67 @@
                     </button>
                 </form>
         </section>
+        
+        <% if (product.Sections[i+1]) { %> 
+        <section class="disenoAzul">
+            <article class="disenoAzul-article1">
+                <h2 class="disenoAzul-article1-tituloPrincipal">
+                    <%= product.Sections[i+1].title %>
+                </h2>
+            </article>
+            <article class="disenoAzul-articleImg">
+                <img src="/images/Producto-<%= product.id %>/<%= product.Sections[i+1].image %>" alt="">
+            </article>
+            <div class="disenoAzul-containerArticle2">
+                <article class="disenoAzul-article2">
+                    <h3 class="disenoAzul-article2-titulo">
+                        <img src="/images/Producto-<%= product.id %>/<%= product.Sections[i+1].Contents[0].text %>" class="icon" alt=""> <br>
+                        <%= product.Sections[i+1].Contents[1].text %>
+                    </h3>
+                    <p  class="disenoAzul-article2-parrafo">
+                        <%= product.Sections[i+1].Contents[2].text %>
+                    </p>
+                </article>
+                <article class="disenoAzul-article2">
+                    <h3 class="disenoAzul-article2-titulo">
+                        <img src="/images/Producto-<%= product.id %>/<%= product.Sections[i+1].Contents[3].text %>" class="icon" alt=""> <br>
+                        <%= product.Sections[i+1].Contents[4].text %>
+                    </h3>
+                    <p  class="disenoAzul-article2-parrafo">
+                        <%= product.Sections[i+1].Contents[5].text %>
+                    </p>
+                </article>
+                <article class="disenoAzul-article2">
+                    <h3 class="disenoAzul-article2-titulo">
+                        <img src="/images/Producto-<%= product.id %>/<%= product.Sections[i+1].Contents[6].text %>" class="icon" alt=""> <br>
+                        <%= product.Sections[i+1].Contents[7].text %>
+                    </h3>
+                    <p  class="disenoAzul-article2-parrafo">
+                        <%= product.Sections[i+1].Contents[8].text %>
+                    </p>
+                </article>
+                <article class="disenoAzul-article2">
+                    <h3 class="disenoAzul-article2-titulo">
+                        <img src="/images/Producto-<%= product.id %>/<%= product.Sections[i+1].Contents[9].text %>" class="icon" alt=""> <br>
+                        <%= product.Sections[i+1].Contents[10].text %>
+                    </h3>
+                    <p  class="disenoAzul-article2-parrafo">
+                        <%= product.Sections[i+1].Contents[11].text %>
+                    </p>
+                </article>
+            </div>
+            <form action="#contenedorProductos" method="GET"   class="disenoAzul-form">
+                <button>
+                    Empezá ya
+                </button>
+            </form>
+        </section>
+        <% } %>
+
+       <% } %>
          
 
-        <section class="disenoAzul">
-            <article class="disenoAzul-article1">
-                <h2 class="disenoAzul-article1-tituloPrincipal">
-                    <%= product.Sections[1].title %>
-                </h2>
-            </article>
-            <article class="disenoAzul-articleImg">
-                <img src="/images/Producto-<%= product.id %>/<%= product.Sections[1].image %>" alt="">
-            </article>
-            <div class="disenoAzul-containerArticle2">
-                <article class="disenoAzul-article2">
-                    <h3 class="disenoAzul-article2-titulo">
-                        <img src="/images/Producto-<%= product.id %>/<%= product.Sections[1].Contents[0].text %>" class="icon" alt=""> <br>
-                        <%= product.Sections[1].Contents[1].text %>
-                    </h3>
-                    <p  class="disenoAzul-article2-parrafo">
-                        <%= product.Sections[1].Contents[2].text %>
-                    </p>
-                </article>
-                <article class="disenoAzul-article2">
-                    <h3 class="disenoAzul-article2-titulo">
-                        <img src="/images/Producto-<%= product.id %>/<%= product.Sections[1].Contents[3].text %>" class="icon" alt=""> <br>
-                        <%= product.Sections[1].Contents[4].text %>
-                    </h3>
-                    <p  class="disenoAzul-article2-parrafo">
-                        <%= product.Sections[1].Contents[5].text %>
-                    </p>
-                </article>
-                <article class="disenoAzul-article2">
-                    <h3 class="disenoAzul-article2-titulo">
-                        <img src="/images/Producto-<%= product.id %>/<%= product.Sections[1].Contents[6].text %>" class="icon" alt=""> <br>
-                        <%= product.Sections[1].Contents[7].text %>
-                    </h3>
-                    <p  class="disenoAzul-article2-parrafo">
-                        <%= product.Sections[1].Contents[8].text %>
-                    </p>
-                </article>
-                <article class="disenoAzul-article2">
-                    <h3 class="disenoAzul-article2-titulo">
-                        <img src="/images/Producto-<%= product.id %>/<%= product.Sections[1].Contents[9].text %>" class="icon" alt=""> <br>
-                        <%= product.Sections[1].Contents[10].text %>
-                    </h3>
-                    <p  class="disenoAzul-article2-parrafo">
-                        <%= product.Sections[1].Contents[11].text %>
-                    </p>
-                </article>
-            </div>
-            <form action="#contenedorProductos" method="GET"   class="disenoAzul-form">
-                <button>
-                    Empezá ya
-                </button>
-            </form>
-        </section>
-
-        <section class="disenoBlanco">
-            <article class="disenoBlanco-article1">
-                <h2 class="disenoBlanco-article1-tituloPrincipal">
-                    <%= product.Sections[2].title %>
-                </h2>
-            </article>
-            <div class="disenoBlanco-containerArticle2">
-                <article class="disenoBlanco-article2">
-                    <h3 class="disenoBlanco-article2-titulo">
-                        <img src="/images/Producto-<%= product.id %>/<%= product.Sections[2].Contents[0].text %>" class="icon" alt=""> <br>
-                        <%= product.Sections[2].Contents[1].text %>
-                    </h3>
-                    <p  class="disenoBlanco-article2-parrafo">
-                        <%= product.Sections[2].Contents[2].text %>
-                    </p>
-                </article>
-                <article class="disenoBlanco-article2">
-                    <h3 class="disenoBlanco-article2-titulo">
-                        <img src="/images/Producto-<%= product.id %>/<%= product.Sections[2].Contents[3].text %>" class="icon" alt=""> <br>
-                        <%= product.Sections[2].Contents[4].text %>
-                    </h3>
-                    <p  class="disenoBlanco-article2-parrafo">
-                        <%= product.Sections[2].Contents[5].text %>
-                    </p>
-                </article>
-                <article class="disenoBlanco-article2">
-                    <h3 class="disenoBlanco-article2-titulo">
-                        <img src="/images/Producto-<%= product.id %>/<%= product.Sections[2].Contents[6].text %>" class="icon" alt=""> <br>
-                        <%= product.Sections[2].Contents[7].text %>
-                    </h3>
-                    <p  class="disenoBlanco-article2-parrafo">
-                        <%= product.Sections[2].Contents[8].text %>
-                    </p>
-                </article>
-                <article class="disenoBlanco-article2">
-                    <h3 class="disenoBlanco-article2-titulo">
-                        <img src="/images/Producto-<%= product.id %>/<%= product.Sections[2].Contents[9].text %>" class="icon" alt=""> <br>
-                        <%= product.Sections[2].Contents[10].text %>
-                    </h3>
-                    <p  class="disenoBlanco-article2-parrafo">
-                        <%= product.Sections[2].Contents[11].text %>
-                    </p>
-                </article>
-            </div>
-            <article class="disenoBlanco-articleImg">
-                <img src="/images/Producto-<%= product.id %>/<%= product.Sections[2].image %>" alt="">
-            </article>
-            <form action="#contenedorProductos" method="GET"   class="disenoBlanco-form">
-                <button>
-                    Empezá ya
-                </button>
-            </form>
-        </section>
-
-        <section class="disenoAzul">
-            <article class="disenoAzul-article1">
-                <h2 class="disenoAzul-article1-tituloPrincipal">
-                    <%= product.Sections[3].title %>
-                </h2>
-            </article>
-            <article class="disenoAzul-articleImg">
-                <img src="/images/Producto-<%= product.id %>/<%= product.Sections[3].image %>" alt="">
-            </article>
-            <div class="disenoAzul-containerArticle2">
-                <article class="disenoAzul-article2">
-                    <h3 class="disenoAzul-article2-titulo">
-                        <img src="/images/Producto-<%= product.id %>/<%= product.Sections[3].Contents[0].text %>" class="icon" alt=""> <br>
-                        <%= product.Sections[3].Contents[1].text %>
-                    </h3>
-                    <p  class="disenoAzul-article2-parrafo">
-                        <%= product.Sections[3].Contents[2].text %>
-                    </p>
-                </article>
-                <article class="disenoAzul-article2">
-                    <h3 class="disenoAzul-article2-titulo">
-                        <img src="/images/Producto-<%= product.id %>/<%= product.Sections[3].Contents[3].text %>" class="icon" alt=""> <br>
-                        <%= product.Sections[3].Contents[4].text %>
-                    </h3>
-                    <p  class="disenoAzul-article2-parrafo">
-                        <%= product.Sections[3].Contents[5].text %>
-                    </p>
-                </article>
-                <article class="disenoAzul-article2">
-                    <h3 class="disenoAzul-article2-titulo">
-                        <img src="/images/Producto-<%= product.id %>/<%= product.Sections[3].Contents[6].text %>" class="icon" alt=""> <br>
-                        <%= product.Sections[3].Contents[7].text %>
-                    </h3>
-                    <p  class="disenoAzul-article2-parrafo">
-                        <%= product.Sections[3].Contents[8].text %>
-                    </p>
-                </article>
-                <article class="disenoAzul-article2">
-                    <h3 class="disenoAzul-article2-titulo">
-                        <img src="/images/Producto-<%= product.id %>/<%= product.Sections[3].Contents[9].text %>" class="icon" alt=""> <br>
-                        <%= product.Sections[3].Contents[10].text %>
-                    </h3>
-                    <p  class="disenoAzul-article2-parrafo">
-                        <%= product.Sections[3].Contents[11].text %>
-                    </p>
-                </article>
-            </div>
-            <form action="#contenedorProductos" method="GET"   class="disenoAzul-form">
-                <button>
-                    Empezá ya
-                </button>
-            </form>
-        </section>
-
-        <section class="disenoBlanco" id="vendeEnMasCanales">
-            <article class="disenoBlanco-article1">
-                <h2 class="disenoBlanco-article1-tituloPrincipal">
-                    <%= product.Sections[4].title %>
-                </h2>
-            </article>
-            <div class="disenoBlanco-containerArticle2">
-                <article class="disenoBlanco-article2">
-                    <h3 class="disenoBlanco-article2-titulo">
-                        <img src="/images/Producto-<%= product.id %>/<%= product.Sections[4].Contents[0].text %>" class="icon" alt=""> <br>
-                        <%= product.Sections[4].Contents[1].text %>
-                    </h3>
-                    <p  class="disenoBlanco-article2-parrafo">
-                        <%= product.Sections[4].Contents[2].text %>
-                    </p>
-                </article>
-                <article class="disenoBlanco-article2">
-                    <h3 class="disenoBlanco-article2-titulo">
-                        <img src="/images/Producto-<%= product.id %>/<%= product.Sections[4].Contents[3].text %>" class="icon" alt=""> <br>
-                        <%= product.Sections[4].Contents[4].text %>
-                    </h3>
-                    <p  class="disenoBlanco-article2-parrafo">
-                        <%= product.Sections[4].Contents[5].text %>
-                    </p>
-                </article>
-                <article class="disenoBlanco-article2">
-                    <h3 class="disenoBlanco-article2-titulo">
-                        <img src="/images/Producto-<%= product.id %>/<%= product.Sections[4].Contents[6].text %>" class="icon" alt=""> <br>
-                        <%= product.Sections[4].Contents[7].text %>
-                    </h3>
-                    <p  class="disenoBlanco-article2-parrafo">
-                        <%= product.Sections[4].Contents[8].text %>
-                    </p>
-                </article>
-                <article class="disenoBlanco-article2">
-                    <h3 class="disenoBlanco-article2-titulo">
-                        <img src="/images/Producto-<%= product.id %>/<%= product.Sections[4].Contents[9].text %>" class="icon" alt=""> <br>
-                        <%= product.Sections[4].Contents[10].text %>
-                    </h3>
-                    <p  class="disenoBlanco-article2-parrafo">
-                        <%= product.Sections[4].Contents[11].text %>
-                    </p>
-                </article>
-            </div>
-            <article class="disenoBlanco-articleImg">
-                <img src="/images/Producto-<%= product.id %>/<%= product.Sections[4].image %>" alt="">
-            </article>
-            <form action="#contenedorProductos" method="GET"   class="disenoBlanco-form">
-                <button>
-                    Empezá ya
-                </button>
-            </form>
-        </section>
+        
 
         <section class="contenedorProductos" id="contenedorProductos">
             <h2>¡Elegí una de nuestras suscripciones y potenciá tu negocio digitalmente!</h2>
