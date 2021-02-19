@@ -111,7 +111,7 @@ const productosController = {
           .catch(err => {
             res.send(err)
           })
-          
+ 
         },
     creacion: function(req, res, next) {
       if (req.session.user != undefined && req.session.user.role == 'admin') {

@@ -70,13 +70,13 @@ td input {
     font-size: 25em;
     margin: 0.5em auto;
 }
-.disenoAzul-articleImg, .disenoBlanco-articleImg {
+.disenoVerde-articleImg, .disenoBlanco-articleImg {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
 }
-.disenoAzul-articleImg input, .disenoBlanco-articleImg input {
+.disenoVerde-articleImg input, .disenoBlanco-articleImg input {
     width: fit-content;
     align-self: center;
 }
