@@ -56,10 +56,11 @@ const upload = multer({storage: storage});
 router.get('/', productosController.listado);
 router.post('/', upload.any(), productosController.creador);
 router.get('/create', productosController.creacion);
+router.get('/create/sections-contents', productosController.creacionSectionsContents);
 router.get('/:id', productosController.detalle);
 router.put('/:id', upload.any(), productosController.editor);
 router.get('/:id/edit', productosController.edicion);
-router.get('/:id/edit/section-contents', productosController.edicionSectionContents);
+router.get('/:id/edit/section-contents', productosController.edicionSectionsContents);
 router.delete('/:id', productosController.borrado);
 
 module.exports = router;

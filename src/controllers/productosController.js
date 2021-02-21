@@ -120,6 +120,13 @@ const productosController = {
             res.redirect('/users/login')
           }
         },
+    creacionSectionsContents: function(req, res, next) {
+      if (req.session.user != undefined && req.session.user.role == 'admin') {
+            res.render('./products/create/create-sections-contents', {indexBenefits: indexBenefits} ); 
+          } else {
+            res.redirect('/users/login')
+          }
+        },
     creador: function(req, res, next) {
       /*----Acá llamamos a la funcion creada, para que al recibir los archivos subidos, guarde sus nombres en imageDir----*/
       uploadFilesDir(req.files);
@@ -938,7 +945,7 @@ const productosController = {
 		  res.redirect('/products');
     
     },
-    edicionSectionContents: function(req, res, next) {
+    edicionSectionsContents: function(req, res, next) {
       if (req.session.user != undefined && req.session.user.role == 'admin') {
         
         db.Product.findByPk(req.params.id, {

@@ -24,12 +24,12 @@
                 <input type="file" name="aicon1" id="aicon1" accept="image/svg"> <br>
                 <!--Elegir subtitulo.1 seccion 1-->
                 <label for="asubtitle1">Subtítulo:</label> <br>
-                <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="asubtitle1" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Sections[0].Contents[1].text %>" <% } else { %> placeholder="Escribí el texto aquí..." <% } %>>
+                <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="asubtitle1" placeholder="Escribí el texto aquí...">
             </h3>
             <p  class="disenoBlanco-article2-parrafo">
                 <!--Elegir descripcion.1 seccion 1-->
                 <label for="adescription1">Descripcion:</label> <br>
-                <textarea cols="30" rows="5" style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="adescription1"><% if (typeof productToEdit != 'undefined' ) { %><%= productToEdit.Sections[0].Contents[2].text %><% } else { %>Escribí el texto aquí...<% } %></textarea>
+                <textarea cols="30" rows="5" style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="adescription1">Escribí el texto aquí...</textarea>
             </p>
         </article>
     </div>
