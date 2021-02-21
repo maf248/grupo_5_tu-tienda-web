@@ -13,7 +13,7 @@
         <h2>
             <!--Elegir titulo seccion 1-->
             <label for="atitle">Titulo seccion</label> <br>
-            <input required type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 60%;" name="atitle" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Sections[0].title %>" <% } else { %> placeholder="Escribí el texto aquí..." <% } %> >
+            <input required type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 60%;" name="atitle" placeholder="Escribí el texto aquí...">
         </h2>
     </article>
     <div>
@@ -29,7 +29,7 @@
             <p  class="disenoBlanco-article2-parrafo">
                 <!--Elegir descripcion.1 seccion 1-->
                 <label for="adescription1">Descripcion:</label> <br>
-                <textarea cols="30" rows="5" style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="adescription1">Escribí el texto aquí...</textarea>
+                <textarea cols="30" rows="5" style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="adescription1" placeholder="Escribe el texto aqui..."></textarea>
             </p>
         </article>
     </div>
