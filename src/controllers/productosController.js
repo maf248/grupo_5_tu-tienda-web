@@ -940,6 +940,7 @@ const productosController = {
     },
     edicionSectionContents: function(req, res, next) {
       if (req.session.user != undefined && req.session.user.role == 'admin') {
+        
         db.Product.findByPk(req.params.id, {
           include: [
             {association: "Sections", 

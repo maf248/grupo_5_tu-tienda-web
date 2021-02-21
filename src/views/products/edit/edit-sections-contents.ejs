@@ -9,41 +9,138 @@
 <%- include('../../partials/navbar') %>
 
 
-    <% console.log(productToEdit.id) %>
-    <section>
-        <article>
-            <h2>
-                <!--Elegir titulo seccion 1-->
-                <label for="atitle">Titulo seccion</label> <br>
-                <input required type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 60%;" name="atitle" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Sections[0].title %>" <% } else { %> placeholder="Escribí el texto aquí..." <% } %> >
-            </h2>
-        </article>
-        <div>
+    <% for (let i = 0; i < productToEdit.Sections.length ; i++) { %>
+    
+        <section style="background-color: lightblue;">
             <article>
-                <h3>
-                    <!--Elegir icono.1 seccion 1--> <br>
-                    <label for="aicon1">Icono:</label><br>
-                    <input type="file" name="aicon1" id="aicon1" accept="image/svg"> <br>
-                    <!--Elegir subtitulo.1 seccion 1-->
-                    <label for="asubtitle1">Subtítulo:</label> <br>
-                    <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="asubtitle1" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Sections[0].Contents[1].text %>" <% } else { %> placeholder="Escribí el texto aquí..." <% } %>>
-                </h3>
-                <p  class="disenoBlanco-article2-parrafo">
-                    <!--Elegir descripcion.1 seccion 1-->
-                    <label for="adescription1">Descripcion:</label> <br>
-                    <textarea cols="30" rows="5" style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="adescription1"><% if (typeof productToEdit != 'undefined' ) { %><%= productToEdit.Sections[0].Contents[2].text %><% } else { %>Escribí el texto aquí...<% } %></textarea>
-                </p>
+                <h2>
+                    <!--Elegir titulo seccion 1-->
+                    <label for="atitle">Titulo seccion</label> <br>
+                    <input required type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 60%;" name="<%= indexBenefits[i] %>title"value="<%= productToEdit.Sections[i].title %>" >
+                </h2>
             </article>
-        </div>
-        <article>
-            <label for="aimage" style="display: block; width: 100%"><img src="/images/Producto-<%= productToEdit.id %>/<%= productToEdit.Sections[0].image %>" style="width: 20%"></label><br>
-            <input type="file" name="aimage" id="aimage" accept="image/png"> <br>
-        </article>
-    
-    
-    </section>
+            <div>
+                <article>
+                    <h3>
+                        <!--Elegir icono.1 seccion 1--> <br>
+                        <label for="<%= indexBenefits[i] %>icon<%= i + 1 %>"> <img src="/images/Producto-<%= productToEdit.id %>/<%= productToEdit.Sections[i].Contents[0].text %>" style="width: 10%;"> </label><br>
+                        <input type="file" name="<%= indexBenefits[i] %>icon<%= i + 1 %>" id="aicon1" accept="image/svg"> <br>
+                        <!--Elegir subtitulo.1 seccion 1-->
+                        <label for="<%= indexBenefits[i] %>subtitle<%= i + 1 %>">Subtítulo:</label> <br>
+                        <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="<%= indexBenefits[i] %>subtitle<%= i + 1 %>" value="<%= productToEdit.Sections[i].Contents[1].text %>"
+                    </h3>
+                    <p  class="disenoBlanco-article2-parrafo">
+                        <!--Elegir descripcion.1 seccion 1-->
+                        <label for="<%= indexBenefits[i] %>description<%= i + 1 %>">Descripcion:</label> <br>
+                        <textarea cols="30" rows="5" style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="<%= indexBenefits[i] %>description<%= i + 1 %>"><%= productToEdit.Sections[i].Contents[2].text %></textarea>
+                    </p>
+                </article>
+                                
+                <form action="/products/edited-section" method="post">
 
-    <hr />
+                    <button type="submit">Guardar artículo</button>
+                    <button type="delete">Eliminar artículo</button>
+                
+                </form>
+                
+            </div>
+            <div >
+                <article>
+                    <h3>
+                        <!--Elegir icono.1 seccion 1--> <br>
+                        <label for="<%= indexBenefits[i] %>icon<%= i + 2 %>"> <img src="/images/Producto-<%= productToEdit.id %>/<%= productToEdit.Sections[i].Contents[3].text %>" style="width: 10%;"></label><br>
+                        <input type="file" name="<%= indexBenefits[i] %>icon<%= i + 2 %>" id="aicon1" accept="image/svg"> <br>
+                        <!--Elegir subtitulo.1 seccion 1-->
+                        <label for="<%= indexBenefits[i] %>subtitle<%= i + 2 %>">Subtítulo:</label> <br>
+                        <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="<%= indexBenefits[i] %>subtitle<%= i + 2 %>" value="<%= productToEdit.Sections[i].Contents[4].text %>"
+                    </h3>
+                    <p  class="disenoBlanco-article2-parrafo">
+                        <!--Elegir descripcion.1 seccion 1-->
+                        <label for="<%= indexBenefits[i] %>description<%= i + 2 %>">Descripcion:</label> <br>
+                        <textarea cols="30" rows="5" style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="<%= indexBenefits[i] %>description<%= i + 2 %>"><%= productToEdit.Sections[i].Contents[5].text %></textarea>
+                    </p>
+                </article>      
+                                
+                <form action="/products/edited-section" method="post">
+
+                    <button type="submit">Guardar artículo</button>
+                    <button type="delete">Eliminar artículo</button>
+                
+                </form>
+                          
+            </div>
+            <div>
+                <article>
+                    <h3>
+                        <!--Elegir icono.1 seccion 1--> <br>
+                        <label for="<%= indexBenefits[i] %>icon<%= i + 3 %>"> <img src="/images/Producto-<%= productToEdit.id %>/<%= productToEdit.Sections[i].Contents[6].text %>" style="width: 10%;"></label><br>
+                        <input type="file" name="<%= indexBenefits[i] %>icon<%= i + 3 %>" id="aicon1" accept="image/svg"> <br>
+                        <!--Elegir subtitulo.1 seccion 1-->
+                        <label for="<%= indexBenefits[i] %>subtitle<%= i + 3 %>">Subtítulo:</label> <br>
+                        <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="<%= indexBenefits[i] %>subtitle<%= i + 3 %>" value="<%= productToEdit.Sections[i].Contents[7].text %>"
+                    </h3>
+                    <p  class="disenoBlanco-article2-parrafo">
+                        <!--Elegir descripcion.1 seccion 1-->
+                        <label for="<%= indexBenefits[i] %>description<%= i + 3 %>">Descripcion:</label> <br>
+                        <textarea cols="30" rows="5" style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="<%= indexBenefits[i] %>description<%= i + 3 %>"><%= productToEdit.Sections[i].Contents[8].text %></textarea>
+                    </p>
+                </article>       
+                
+                <form action="/products/edited-section" method="post">
+
+                    <button type="submit">Guardar artículo</button>
+                    <button type="delete">Eliminar artículo</button>
+                
+                </form>
+
+            </div>
+            <div>
+                <article>
+                    <h3>
+                        <!--Elegir icono.1 seccion 1--> <br>
+                        <label for="<%= indexBenefits[i] %>icon<%= i + 4 %>"> <img src="/images/Producto-<%= productToEdit.id %>/<%= productToEdit.Sections[i].Contents[9].text %>" style="width: 10%;"></label><br>
+                        <input type="file" name="<%= indexBenefits[i] %>icon<%= i + 4 %>" id="aicon1" accept="image/svg"> <br>
+                        <!--Elegir subtitulo.1 seccion 1-->
+                        <label for="<%= indexBenefits[i] %>subtitle<%= i + 4 %>">Subtítulo:</label> <br>
+                        <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="<%= indexBenefits[i] %>subtitle<%= i + 4 %>" value="<%= productToEdit.Sections[i].Contents[10].text %>"
+                    </h3>
+                    <p  class="disenoBlanco-article2-parrafo">
+                        <!--Elegir descripcion.1 seccion 1-->
+                        <label for="<%= indexBenefits[i] %>description<%= i + 4 %>">Descripcion:</label> <br>
+                        <textarea cols="30" rows="5" style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="<%= indexBenefits[i] %>description<%= i + 4 %>"><%= productToEdit.Sections[i].Contents[11].text %></textarea>
+                    </p>
+
+                    <form action="/products/edited-section" method="post">
+
+                        <button type="submit">Guardar artículo</button>
+                        <button type="delete">Eliminar artículo</button>
+                    
+                    </form>
+
+                </article>                
+            </div>
+            <article>
+                <label for="<%= indexBenefits[i] %>image" style="display: block; width: 100%"><img src="/images/Producto-<%= productToEdit.id %>/<%= productToEdit.Sections[i].image %>" style="width: 20%"></label><br>
+                <input type="file" name="<%= indexBenefits[i] %>image" id="aimage" accept="image/png"> <br>
+            </article>
+
+            <form action="/products/edited-section" method="post">
+
+                <button type="submit">Guardar sección</button>
+                <button type="delete">Eliminar sección</button>
+            
+            </form>
+        
+        
+        </section>
+    
+        <hr />
+        <hr />
+        <hr />
+    
+
+    <% } %>
+    
 
     <section>
         
