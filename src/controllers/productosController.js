@@ -938,6 +938,22 @@ const productosController = {
 		  res.redirect('/products');
     
     },
+    edicionSectionContents: function(req, res, next) {
+      if (req.session.user != undefined && req.session.user.role == 'admin') {
+        db.Product.findByPk(req.params.id, {
+          include: [
+            {association: "Sections", 
+          include: [{association: "Contents"}]}
+          ]
+        })
+        .then(product => {
+          res.render('./products/edit/edit-sections-contents', {productToEdit: product, indexBenefits: indexBenefits});
+        })
+       
+      } else {
+        res.redirect('/users/login')  
+      }      
+    },
     borrado: function(req, res, next) {
       /*----Borrando la fila del producto en la base de datos (soft-delete)----*/
     db.Product.destroy({where: {id: {[db.Sequelize.Op.like] : [req.params.id]} }})

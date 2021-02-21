@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('../../partials/head') %>
+    <link rel="stylesheet" href="/stylesheets/producto-style.css">
+    <link rel="stylesheet" href="/stylesheets/crear-editar-style.css">
+</head>
+
+<%- include('../../partials/navbar') %>
+
+
+    <% console.log(productToEdit.id) %>
+    <section>
+        <article>
+            <h2>
+                <!--Elegir titulo seccion 1-->
+                <label for="atitle">Titulo seccion</label> <br>
+                <input required type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 60%;" name="atitle" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Sections[0].title %>" <% } else { %> placeholder="Escribí el texto aquí..." <% } %> >
+            </h2>
+        </article>
+        <div>
+            <article>
+                <h3>
+                    <!--Elegir icono.1 seccion 1--> <br>
+                    <label for="aicon1">Icono:</label><br>
+                    <input type="file" name="aicon1" id="aicon1" accept="image/svg"> <br>
+                    <!--Elegir subtitulo.1 seccion 1-->
+                    <label for="asubtitle1">Subtítulo:</label> <br>
+                    <input type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="asubtitle1" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Sections[0].Contents[1].text %>" <% } else { %> placeholder="Escribí el texto aquí..." <% } %>>
+                </h3>
+                <p  class="disenoBlanco-article2-parrafo">
+                    <!--Elegir descripcion.1 seccion 1-->
+                    <label for="adescription1">Descripcion:</label> <br>
+                    <textarea cols="30" rows="5" style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 100%;" name="adescription1"><% if (typeof productToEdit != 'undefined' ) { %><%= productToEdit.Sections[0].Contents[2].text %><% } else { %>Escribí el texto aquí...<% } %></textarea>
+                </p>
+            </article>
+        </div>
+        <article>
+            <label for="aimage" style="display: block; width: 100%"><img src="/images/Producto-<%= productToEdit.id %>/<%= productToEdit.Sections[0].image %>" style="width: 20%"></label><br>
+            <input type="file" name="aimage" id="aimage" accept="image/png"> <br>
+        </article>
+    
+    
+    </section>
+
+    <hr />
+
+    <section>
+        
+        <form action="/products/edited-section" method="post">
+
+            <button type="submit">Continuar</button>
+            <button type="reset">Borrar campos</button>
+        
+        </form>
+
+    </section>
+
+
+
+<%- include('../../partials/footer') %>
