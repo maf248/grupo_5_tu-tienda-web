@@ -54,13 +54,32 @@ const upload = multer({storage: storage});
 
 /* Rutas a Productos */
 router.get('/', productosController.listado);
+
+/*---Rutas para crear GET---*/
+router.get('/create', productosController.creacionProduct);
+router.get('/create/categories', productosController.creacionCategory);
+router.get('/create/benefits', productosController.creacionBenefits);
+router.get('/create/sections', productosController.creacionSections);
+router.get('/create/contents', productosController.creacionContents);
+
+/*---Rutas para crear POST---*/
 router.post('/', upload.any(), productosController.creador);
-router.get('/create', productosController.creacion);
-router.get('/create/sections-contents', productosController.creacionSectionsContents);
-router.get('/:id', productosController.detalle);
+
+
+/*---Rutas para editar GET---*/
+router.get('/:id/edit', productosController.edicionProduct);
+router.get('/:id/edit/categories', productosController.edicionCategories);
+router.get('/:id/edit/benefits', productosController.edicionBenefits);
+router.get('/:id/edit/sections', productosController.edicionSections);
+router.get('/:id/edit/contents', productosController.edicionContents);
+
+
+/*---Rutas para crear POST---*/
 router.put('/:id', upload.any(), productosController.editor);
-router.get('/:id/edit', productosController.edicion);
-router.get('/:id/edit/section-contents', productosController.edicionSectionsContents);
+
+
+router.get('/:id', productosController.detalle);
+
 router.delete('/:id', productosController.borrado);
 
 module.exports = router;

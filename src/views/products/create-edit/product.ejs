@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <%- include('../partials/head') %>
+    <%- include('../../partials/head') %>
     <link rel="stylesheet" href="/stylesheets/producto-style.css">
     <link rel="stylesheet" href="/stylesheets/crear-editar-style.css">
 </head>
 
-<%- include('../partials/navbar') %>
+<%- include('../../partials/navbar') %>
+
 
 
 <div class="creadorContainer">
-    <h1 class="titulo">Editor de productos</h1>
-    <div class="subtituloContenedor">
-     <h2 class="subtitulo">Estás editando:</h2> <p class="subtitulo-producto"><%= productToEdit.name %></p>
-    </div>
-    <form action="/products/<%= productToEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+    <% if (typeof productToEdit != 'undefined') { %>
+        <h1 class="titulo">Editor de producto: <%= productToEdit.name %></h1>
+    <% } else { %>
+        <h1 class="titulo">Creador de producto nuevo</h1>
+    <% } %>
+    
 
-        <%- include('../partials/product-form') %>
+    <form action="/products" method="POST" enctype="multipart/form-data">
+        
+       
         <label for="name"style="padding: 5px; width: 100%; text-align:center;">Elegí el nombre del producto:</label> <br>
 <input required type="text" style="padding: 5px; width: 50%; text-align:center; border-color: rgba(0, 0, 0, 1); border-width: 0.1px; margin: auto;" name="name" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.name %>" <% } else { %> placeholder="Escribí aquí el nombre del producto" <% } %>> <br>
  
@@ -47,14 +51,16 @@
 
         <div class="buttons-form">
             <button type="reset" class="reset">Borrar campos</button>
-            <button type="submit" class="submit">Enviar</button>
+            <button type="submit" class="submit">Siguiente</button>
+            <% if (typeof productToEdit != 'undefined') { %>
+                <a href="/products/<%= productToEdit.id %>/edit/categories">SIGUIENTE DEV</a>
+            <% } else { %>
+                <a href="/products/create/categories">SIGUIENTE DEV</a> 
+            <% } %>
+            
         </div>
-    </form>
-    <form action="/products/<%= productToEdit.id %>?_method=DELETE" method="POST">
-        <div class="buttons-form">
-            <button type="submit" class="delete">Eliminar producto</button>
-        </div>
+        
     </form>
 </div>
 
-<%- include('../partials/footer') %>
+<%- include('../../partials/footer') %>

@@ -8,6 +8,12 @@
 
 <%- include('../../partials/navbar') %>
 
+<% if (typeof productToEdit != 'undefined') { %>
+    <h1 class="titulo">Editor de secciones: <%= productToEdit.name %></h1>
+<% } else { %>
+    <h1 class="titulo">Creador de secciones nuevas</h1>
+<% } %>
+
 <section>
     <article>
         <h2>
@@ -56,6 +62,11 @@
     
             <button type="submit">Continuar</button>
             <button type="reset">Borrar campos</button>
+            <% if (typeof productToEdit != 'undefined') { %>
+                <a href="/products/<%= productToEdit.id %>/edit/contents">SIGUIENTE DEV</a>
+            <% } else { %>
+                <a href="/products/create/contents">SIGUIENTE DEV</a> 
+            <% } %>
         
         </form>
 

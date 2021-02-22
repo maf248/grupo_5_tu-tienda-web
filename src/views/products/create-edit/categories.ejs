@@ -9,11 +9,14 @@
 <%- include('../../partials/navbar') %>
 
 <div class="creadorContainer">
-    <h1 class="titulo">Editor de categorías</h1>
-    <div class="subtituloContenedor">
-     <h2 class="subtitulo">Estás editando:</h2> <p class="subtitulo-producto"><%= productToEdit.name %></p>
-</div>
-    <form action="/products/<%= productToEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+    <% if (typeof productToEdit != 'undefined') { %>
+        <h1 class="titulo">Editor de categorías: <%= productToEdit.name %></h1>
+    <% } else { %>
+        <h1 class="titulo">Creador de categorías</h1>
+    <% } %>
+
+    <form action="/products" method="POST" enctype="multipart/form-data">
+        
 
         <section class="contenedorProductos" id="contenedorProductos">
             <h2>¡Hacé las suscripciones a tu medida y potenciá tu negocio digitalmente!</h2>
@@ -158,13 +161,14 @@
 
         <div class="buttons-form">
             <button type="reset" class="reset">Borrar campos</button>
-            <button type="submit" class="submit">Enviar</button>
+            <button type="submit" class="submit">Siguiente</button>
+            <% if (typeof productToEdit != 'undefined') { %>
+                <a href="/products/<%= productToEdit.id %>/edit/benefits">SIGUIENTE DEV</a>
+            <% } else { %>
+                <a href="/products/create/benefits">SIGUIENTE DEV</a> 
+            <% } %>
         </div>
-    </form>
-    <form action="/products/<%= productToEdit.id %>?_method=DELETE" method="POST">
-        <div class="buttons-form">
-            <button type="submit" class="delete">Eliminar producto</button>
-        </div>
+        
     </form>
 </div>
 

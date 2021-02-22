@@ -113,20 +113,42 @@ const productosController = {
           })
  
         },
-    creacion: function(req, res, next) {
+    creacionProduct: function(req, res, next) {
       if (req.session.user != undefined && req.session.user.role == 'admin') {
-            res.render('./products/create', {indexBenefits: indexBenefits} ); 
+            res.render('./products/create-edit/product'); 
           } else {
             res.redirect('/users/login')
           }
         },
-    creacionSectionsContents: function(req, res, next) {
+     creacionCategory: function(req, res, next) {
       if (req.session.user != undefined && req.session.user.role == 'admin') {
-            res.render('./products/create/create-sections-contents', {indexBenefits: indexBenefits} ); 
+            res.render('./products/create-edit/categories'); 
           } else {
             res.redirect('/users/login')
           }
         },
+      creacionBenefits: function(req, res, next) {
+      if (req.session.user != undefined && req.session.user.role == 'admin') {
+            res.render('./products/create-edit/benefits', {indexBenefits: indexBenefits}); 
+          } else {
+            res.redirect('/users/login')
+          }
+        },
+      creacionSections: function(req, res, next) {
+      if (req.session.user != undefined && req.session.user.role == 'admin') {
+            res.render('./products/create-edit/sections'); 
+          } else {
+            res.redirect('/users/login')
+          }
+        },
+      creacionContents: function(req, res, next) {
+      if (req.session.user != undefined && req.session.user.role == 'admin') {
+            res.render('./products/create-edit/contents'); 
+          } else {
+            res.redirect('/users/login')
+          }
+        },
+  
     creador: function(req, res, next) {
       /*----Acá llamamos a la funcion creada, para que al recibir los archivos subidos, guarde sus nombres en imageDir----*/
       uploadFilesDir(req.files);
@@ -470,7 +492,18 @@ const productosController = {
         })
         res.redirect('/products');
         },
-    edicion: function(req, res, next) {
+    edicionProduct: function(req, res, next) {
+      if (req.session.user != undefined && req.session.user.role == 'admin') {
+        db.Product.findByPk(req.params.id)
+        .then(product => {
+          res.render('./products/create-edit/product', {productToEdit: product});
+        })
+       
+      } else {
+        res.redirect('/users/login')  
+      }      
+    },
+    edicionCategories: function(req, res, next) {
       if (req.session.user != undefined && req.session.user.role == 'admin') {
         db.Product.findByPk(req.params.id, {
           include: [
@@ -481,13 +514,68 @@ const productosController = {
           ]
         })
         .then(product => {
-          res.render('./products/edit', {productToEdit: product, indexBenefits: indexBenefits});
+          res.render('./products/create-edit/categories', {productToEdit: product});
         })
        
       } else {
         res.redirect('/users/login')  
       }      
     },
+    edicionBenefits: function(req, res, next) {
+      if (req.session.user != undefined && req.session.user.role == 'admin') {
+        db.Product.findByPk(req.params.id, {
+          include: [
+            {association: "Sections", 
+          include: [{association: "Contents"}]},
+            {association: "Categories",
+          include: [{association: "Benefits"}]}
+          ]
+        })
+        .then(product => {
+          res.render('./products/create-edit/benefits', {productToEdit: product, indexBenefits: indexBenefits});
+        })
+       
+      } else {
+        res.redirect('/users/login')  
+      }      
+    },
+    edicionSections: function(req, res, next) {
+      if (req.session.user != undefined && req.session.user.role == 'admin') {
+        db.Product.findByPk(req.params.id, {
+          include: [
+            {association: "Sections", 
+          include: [{association: "Contents"}]},
+            {association: "Categories",
+          include: [{association: "Benefits"}]}
+          ]
+        })
+        .then(product => {
+          res.render('./products/create-edit/sections', {productToEdit: product});
+        })
+       
+      } else {
+        res.redirect('/users/login')  
+      }      
+    },
+    edicionContents: function(req, res, next) {
+      if (req.session.user != undefined && req.session.user.role == 'admin') {
+        db.Product.findByPk(req.params.id, {
+          include: [
+            {association: "Sections", 
+          include: [{association: "Contents"}]},
+            {association: "Categories",
+          include: [{association: "Benefits"}]}
+          ]
+        })
+        .then(product => {
+          res.render('./products/create-edit/contents', {productToEdit: product});
+        })
+       
+      } else {
+        res.redirect('/users/login')  
+      }      
+    },
+
     editor: function(req, res, next) {
     /*----Acá llamamos a la funcion creada, para que al recibir los archivos subidos, guarde sus nombres en imageDir----*/
     uploadFilesDir(req.files);
