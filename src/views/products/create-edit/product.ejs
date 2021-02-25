@@ -13,15 +13,17 @@
 <div class="creadorContainer">
     <% if (typeof productToEdit != 'undefined') { %>
         <h1 class="titulo">Editor de producto: <%= productToEdit.name %></h1>
+        <form action="/products/:id/edit" method="POST" enctype="multipart/form-data">
     <% } else { %>
         <h1 class="titulo">Creador de producto nuevo</h1>
+        <form action="/products/create" method="POST" enctype="multipart/form-data">
     <% } %>
     
 
-    <form action="/products" method="POST" enctype="multipart/form-data">
+    
         
        
-        <label for="name"style="padding: 5px; width: 100%; text-align:center;">Elegí el nombre del producto:</label> <br>
+<label for="name"style="padding: 5px; width: 100%; text-align:center;">Elegí el nombre del producto:</label> <br>
 <input required type="text" style="padding: 5px; width: 50%; text-align:center; border-color: rgba(0, 0, 0, 1); border-width: 0.1px; margin: auto;" name="name" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.name %>" <% } else { %> placeholder="Escribí aquí el nombre del producto" <% } %>> <br>
  
 <!--Elegir tipo de producto-->

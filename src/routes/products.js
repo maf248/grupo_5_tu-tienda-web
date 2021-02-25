@@ -56,27 +56,30 @@ const upload = multer({storage: storage});
 router.get('/', productosController.listado);
 
 /*---Rutas para crear GET---*/
-router.get('/create', productosController.creacionProduct);
-router.get('/create/categories', productosController.creacionCategory);
-router.get('/create/benefits', productosController.creacionBenefits);
-router.get('/create/sections', productosController.creacionSections);
-router.get('/create/contents', productosController.creacionContents);
+router.get('/create', productosController.createProduct);
+router.get('/create/categories', productosController.createCategory);
+router.get('/create/benefits', productosController.createBenefits);
+router.get('/create/sections', productosController.createSections);
+router.get('/create/contents', productosController.createContents);
 
 /*---Rutas para crear POST---*/
 router.post('/', upload.any(), productosController.creador);
 
+router.post('/create', upload.any(), productosController.saveProduct);
+
 
 /*---Rutas para editar GET---*/
-router.get('/:id/edit', productosController.edicionProduct);
-router.get('/:id/edit/categories', productosController.edicionCategories);
-router.get('/:id/edit/benefits', productosController.edicionBenefits);
-router.get('/:id/edit/sections', productosController.edicionSections);
-router.get('/:id/edit/contents', productosController.edicionContents);
+router.get('/:id/edit', productosController.editProduct);
+router.get('/:id/edit/categories', productosController.editCategories);
+router.get('/:id/edit/benefits', productosController.editBenefits);
+router.get('/:id/edit/sections', productosController.editSections);
+router.get('/:id/edit/contents', productosController.editContents);
 
 
 /*---Rutas para crear POST---*/
 router.put('/:id', upload.any(), productosController.editor);
 
+router.put('/create', upload.any(), productosController.creador);
 
 router.get('/:id', productosController.detalle);
 

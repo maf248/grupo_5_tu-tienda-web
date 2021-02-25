@@ -113,35 +113,52 @@ const productosController = {
           })
  
         },
-    creacionProduct: function(req, res, next) {
+    createProduct: function(req, res, next) {
       if (req.session.user != undefined && req.session.user.role == 'admin') {
             res.render('./products/create-edit/product'); 
           } else {
             res.redirect('/users/login')
           }
         },
-     creacionCategory: function(req, res, next) {
+      saveProduct: function (req, res, next) {
+        uploadFilesDir(req.files);
+        
+        db.Product.create({
+          name: req.body.name,
+          type: req.body.type,
+          title_banner: req.body.titleBanner1,
+          subtitle_banner: req.body.subtitleBanner1,
+          image: imageDir.image
+        })
+        .then(newProduct => {
+          res.redirect('/products/create/categories')
+        })
+        .catch(err => {
+          res.send(err)
+        })
+      },
+     createCategory: function(req, res, next) {
       if (req.session.user != undefined && req.session.user.role == 'admin') {
             res.render('./products/create-edit/categories'); 
           } else {
             res.redirect('/users/login')
           }
         },
-      creacionBenefits: function(req, res, next) {
+      createBenefits: function(req, res, next) {
       if (req.session.user != undefined && req.session.user.role == 'admin') {
             res.render('./products/create-edit/benefits', {indexBenefits: indexBenefits}); 
           } else {
             res.redirect('/users/login')
           }
         },
-      creacionSections: function(req, res, next) {
+      createSections: function(req, res, next) {
       if (req.session.user != undefined && req.session.user.role == 'admin') {
             res.render('./products/create-edit/sections'); 
           } else {
             res.redirect('/users/login')
           }
         },
-      creacionContents: function(req, res, next) {
+      createContents: function(req, res, next) {
       if (req.session.user != undefined && req.session.user.role == 'admin') {
             res.render('./products/create-edit/contents'); 
           } else {
@@ -492,7 +509,7 @@ const productosController = {
         })
         res.redirect('/products');
         },
-    edicionProduct: function(req, res, next) {
+    editProduct: function(req, res, next) {
       if (req.session.user != undefined && req.session.user.role == 'admin') {
         db.Product.findByPk(req.params.id)
         .then(product => {
@@ -503,7 +520,7 @@ const productosController = {
         res.redirect('/users/login')  
       }      
     },
-    edicionCategories: function(req, res, next) {
+    editCategories: function(req, res, next) {
       if (req.session.user != undefined && req.session.user.role == 'admin') {
         db.Product.findByPk(req.params.id, {
           include: [
@@ -521,7 +538,7 @@ const productosController = {
         res.redirect('/users/login')  
       }      
     },
-    edicionBenefits: function(req, res, next) {
+    editBenefits: function(req, res, next) {
       if (req.session.user != undefined && req.session.user.role == 'admin') {
         db.Product.findByPk(req.params.id, {
           include: [
@@ -539,7 +556,7 @@ const productosController = {
         res.redirect('/users/login')  
       }      
     },
-    edicionSections: function(req, res, next) {
+    editSections: function(req, res, next) {
       if (req.session.user != undefined && req.session.user.role == 'admin') {
         db.Product.findByPk(req.params.id, {
           include: [
@@ -557,7 +574,7 @@ const productosController = {
         res.redirect('/users/login')  
       }      
     },
-    edicionContents: function(req, res, next) {
+    editContents: function(req, res, next) {
       if (req.session.user != undefined && req.session.user.role == 'admin') {
         db.Product.findByPk(req.params.id, {
           include: [
@@ -1032,23 +1049,6 @@ const productosController = {
 
 		  res.redirect('/products');
     
-    },
-    edicionSectionsContents: function(req, res, next) {
-      if (req.session.user != undefined && req.session.user.role == 'admin') {
-        
-        db.Product.findByPk(req.params.id, {
-          include: [
-            {association: "Sections", 
-          include: [{association: "Contents"}]}
-          ]
-        })
-        .then(product => {
-          res.render('./products/edit/edit-sections-contents', {productToEdit: product, indexBenefits: indexBenefits});
-        })
-       
-      } else {
-        res.redirect('/users/login')  
-      }      
     },
     borrado: function(req, res, next) {
       /*----Borrando la fila del producto en la base de datos (soft-delete)----*/
