@@ -11,8 +11,10 @@
 <div class="creadorContainer">
     <% if (typeof productToEdit != 'undefined') { %>
         <h1 class="titulo">Editor de categorías: <%= productToEdit.name %></h1>
+        <form action="/products/<%= productToEdit.id %>/categories?_method=PUT" method="POST" enctype="multipart/form-data">
     <% } else { %>
         <h1 class="titulo">Creador de categorías</h1>
+        <form action="/products/create/categories" method="POST" enctype="multipart/form-data">
     <% } %>
 
     <form action="/products" method="POST" enctype="multipart/form-data">
@@ -162,11 +164,6 @@
         <div class="buttons-form">
             <button type="reset" class="reset">Borrar campos</button>
             <button type="submit" class="submit">Siguiente</button>
-            <% if (typeof productToEdit != 'undefined') { %>
-                <a href="/products/<%= productToEdit.id %>/edit/benefits">SIGUIENTE DEV</a>
-            <% } else { %>
-                <a href="/products/create/benefits">SIGUIENTE DEV</a> 
-            <% } %>
         </div>
         
     </form>

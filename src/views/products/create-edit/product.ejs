@@ -50,12 +50,6 @@
         <div class="buttons-form">
             <button type="reset" class="reset">Borrar campos</button>
             <button type="submit" class="submit">Siguiente</button>
-            <% if (typeof productToEdit != 'undefined') { %>
-                <a href="/products/<%= productToEdit.id %>/edit/categories">SIGUIENTE DEV</a>
-            <% } else { %>
-                <a href="/products/create/categories">SIGUIENTE DEV</a> 
-            <% } %>
-            
         </div>
         
     </form>

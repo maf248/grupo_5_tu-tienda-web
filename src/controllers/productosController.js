@@ -145,6 +145,8 @@ const productosController = {
             res.redirect('/users/login')
           }
         },
+      saveCategories: function(req, res, next) {
+      },
       createBenefits: function(req, res, next) {
       if (req.session.user != undefined && req.session.user.role == 'admin') {
             res.render('./products/create-edit/benefits', {indexBenefits: indexBenefits}); 
@@ -521,24 +523,6 @@ const productosController = {
         res.redirect('/users/login')  
       }      
     },
-    editCategories: function(req, res, next) {
-      if (req.session.user != undefined && req.session.user.role == 'admin') {
-        db.Product.findByPk(req.params.id, {
-          include: [
-            {association: "Sections", 
-          include: [{association: "Contents"}]},
-            {association: "Categories",
-          include: [{association: "Benefits"}]}
-          ]
-        })
-        .then(product => {
-          res.render('./products/create-edit/categories', {productToEdit: product});
-        })
-       
-      } else {
-        res.redirect('/users/login')  
-      }      
-    },
     modifyProduct: function(req, res, next) {
       uploadFilesDir(req.files);
 
@@ -557,6 +541,67 @@ const productosController = {
           console.log(error);
           let ErrorsJSON = JSON.stringify(error);
           fs.appendFileSync(ErrorsDir, ErrorsJSON);
+      })    
+    },
+    editCategories: function(req, res, next) {
+      if (req.session.user != undefined && req.session.user.role == 'admin') {
+        db.Product.findByPk(req.params.id, {
+          include: [
+            {association: "Sections", 
+          include: [{association: "Contents"}]},
+            {association: "Categories",
+          include: [{association: "Benefits"}]}
+          ]
+        })
+        .then(product => {
+          res.render('./products/create-edit/categories', {productToEdit: product});
+        })
+       
+      } else {
+        res.redirect('/users/login')  
+      }      
+    },
+    modifyCategories: function(req, res, next) {
+      uploadFilesDir(req.files);
+
+      /*----Se buscan las categorias asociadas, para luego actualizar dicha información----*/
+      db.Category.findAll({
+        include: [
+          {association: "Products", where: {id: req.params.id}}
+        ]
+      }).then(associatedCategories => {
+
+      /*----Se actualizan las categorías asociadas a dicho producto----*/
+        db.Category.update({
+          name: req.body.category1,
+          image: imageDir.categoryImage1,
+          price: Number(req.body.price[0]),
+          transaction_cost_percent: req.body.costoTransaccion[1],
+          web_sections: req.body.cantidadSecciones1        
+
+        }, {where: {id: associatedCategories[0].id}});
+        
+        db.Category.update({
+          name: req.body.category2,
+          image: imageDir.categoryImage2,
+          price: Number(req.body.price[1]),
+          transaction_cost_percent: req.body.costoTransaccion[2],
+          web_sections: req.body.cantidadSecciones2        
+
+        }, {where: {id: associatedCategories[1].id}});
+
+        db.Category.update({
+          name: req.body.category3,
+          image: imageDir.categoryImage3,
+          price: Number(req.body.price[2]),
+          transaction_cost_percent: req.body.costoTransaccion[3],
+          web_sections: req.body.cantidadSecciones3        
+
+        }, {where: {id: associatedCategories[2].id}});
+        
+      })
+      .then(() => {
+        res.redirect(`/products/${req.params.id}/edit/benefits`);
       })    
     },
     editBenefits: function(req, res, next) {

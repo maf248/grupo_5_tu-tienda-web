@@ -66,6 +66,7 @@ router.get('/create/contents', productosController.createContents);
 //router.post('/', upload.any(), productosController.creador);
 
 router.post('/create', upload.any(), productosController.saveProduct);
+router.post('/create/categories', upload.any(), productosController.saveCategories);
 
 
 /*---Rutas para editar GET---*/
@@ -80,6 +81,8 @@ router.get('/:id/edit/contents', productosController.editContents);
 //router.put('/:id', upload.any(), productosController.editor);
 
 router.put('/:id', upload.any(), productosController.modifyProduct);
+router.put('/:id/categories', upload.any(), productosController.modifyCategories);
+
 
 router.get('/:id', productosController.detalle);
 
