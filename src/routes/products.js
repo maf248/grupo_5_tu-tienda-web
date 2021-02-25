@@ -63,7 +63,7 @@ router.get('/create/sections', productosController.createSections);
 router.get('/create/contents', productosController.createContents);
 
 /*---Rutas para crear POST---*/
-router.post('/', upload.any(), productosController.creador);
+//router.post('/', upload.any(), productosController.creador);
 
 router.post('/create', upload.any(), productosController.saveProduct);
 
@@ -77,9 +77,9 @@ router.get('/:id/edit/contents', productosController.editContents);
 
 
 /*---Rutas para crear POST---*/
-router.put('/:id', upload.any(), productosController.editor);
+//router.put('/:id', upload.any(), productosController.editor);
 
-router.put('/create', upload.any(), productosController.creador);
+router.put('/:id', upload.any(), productosController.modifyProduct);
 
 router.get('/:id', productosController.detalle);
 

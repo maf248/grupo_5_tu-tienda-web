@@ -12,6 +12,7 @@ const indexBenefits = "abcdefghijklmnopqrstuvwx";
 var imageDir = {}
 /*----Funcion que filtra archivos subidos, para que cada nombre de archivo se guarde en donde corresponde. Recibe como parametro req.files----*/
 function uploadFilesDir(files) {
+  imageDir = {}
 files.forEach (file => {
   switch (file.fieldname) {
     case 'image': imageDir.image = file.filename
@@ -122,7 +123,7 @@ const productosController = {
         },
       saveProduct: function (req, res, next) {
         uploadFilesDir(req.files);
-        
+
         db.Product.create({
           name: req.body.name,
           type: req.body.type,
@@ -537,6 +538,26 @@ const productosController = {
       } else {
         res.redirect('/users/login')  
       }      
+    },
+    modifyProduct: function(req, res, next) {
+      uploadFilesDir(req.files);
+
+    /*----Actualizando los datos del producto en la base de datos----*/
+        db.Product.update({
+        name: req.body.name,
+        type: req.body.type,
+        title_banner: req.body.titleBanner1,
+        subtitle_banner: req.body.subtitleBanner1,
+        image: imageDir.image
+      }, {where: {id: req.params.id}})
+        .then(()=> {
+          res.redirect(`/products/${req.params.id}/edit/categories`);
+        })
+        .catch((error) => {
+          console.log(error);
+          let ErrorsJSON = JSON.stringify(error);
+          fs.appendFileSync(ErrorsDir, ErrorsJSON);
+      })    
     },
     editBenefits: function(req, res, next) {
       if (req.session.user != undefined && req.session.user.role == 'admin') {

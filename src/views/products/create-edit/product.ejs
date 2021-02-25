@@ -9,18 +9,14 @@
 <%- include('../../partials/navbar') %>
 
 
-
 <div class="creadorContainer">
     <% if (typeof productToEdit != 'undefined') { %>
         <h1 class="titulo">Editor de producto: <%= productToEdit.name %></h1>
-        <form action="/products/:id/edit" method="POST" enctype="multipart/form-data">
+        <form action="/products/<%= productToEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
     <% } else { %>
         <h1 class="titulo">Creador de producto nuevo</h1>
         <form action="/products/create" method="POST" enctype="multipart/form-data">
     <% } %>
-    
-
-    
         
        
 <label for="name"style="padding: 5px; width: 100%; text-align:center;">Elegí el nombre del producto:</label> <br>
