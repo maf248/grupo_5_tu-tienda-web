@@ -10,8 +10,10 @@
 
 <% if (typeof productToEdit != 'undefined') { %>
     <h1 class="titulo">Editor de contenidos: <%= productToEdit.name %></h1>
+    <form action="/products/<%= productToEdit.id %>/edit/contents?_method=PUT" method="POST">
 <% } else { %>
     <h1 class="titulo">Creador de contenidos nuevo</h1>
+    <form action="/products/create/contents" method="POST">
 <% } %>
 
 <section>
@@ -44,28 +46,16 @@
         <input type="file" name="aimage" id="aimage" accept="image/png"> <br>
     </article>
 
-    <div>
 
-        <form action="/" method="GET">
-    
-            <button type="submit">Agregar más contenido</button>
-        
-        </form>
 
+    <div class="buttons-form">
+        <button type="reset" class="reset">Borrar campos</button>
+        <button type="submit" class="submit">Finalizar</button>
     </div>
-
-
-
-    <div>
-
-        <form action="/products/edited-section" method="post">
     
-            <button type="submit">Finalizar</button>
-            <button type="reset">Borrar campos</button>
-        
-        </form>
+</form>
 
-    </div>
+
 
 
 </section>

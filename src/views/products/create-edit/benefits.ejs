@@ -11,15 +11,13 @@
 <div class="creadorContainer">
     <% if (typeof productToEdit != 'undefined') { %>
         <h1 class="titulo">Editor de beneficios: <%= productToEdit.name %></h1>
+        <form action="/products/<%= productToEdit.id %>/edit/benefits?_method=PUT" method="POST">
     <% } else { %>
         <h1 class="titulo">Creador de beneficios nuevos</h1>
+        <form action="/products/create/benefits" method="POST">
     <% } %>
 </div>
-    <% if (typeof productToEdit != 'undefined') { %>
-    <form action="/products/<%= productToEdit.id %>?_method=PUT" method="POST">
-        <% } else { %>
-    <form action="/products" method="POST">
-        <% } %>   
+ 
         <section class="contenedorProductos" id="contenedorProductos">
             <table>
             

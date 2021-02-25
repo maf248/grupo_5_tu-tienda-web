@@ -146,6 +146,7 @@ const productosController = {
           }
         },
       saveCategories: function(req, res, next) {
+        //Guarda las nuevas categorias y las asocia (al producto)
       },
       createBenefits: function(req, res, next) {
       if (req.session.user != undefined && req.session.user.role == 'admin') {
@@ -154,6 +155,9 @@ const productosController = {
             res.redirect('/users/login')
           }
         },
+      saveBenefits: function(req, res, next) {
+        //Guarda los nuevos beneficios y las asocia (a las categorias)
+      },
       createSections: function(req, res, next) {
       if (req.session.user != undefined && req.session.user.role == 'admin') {
             res.render('./products/create-edit/sections'); 
@@ -161,6 +165,9 @@ const productosController = {
             res.redirect('/users/login')
           }
         },
+      saveSections: function(req, res, next) {
+        //Guarda las nuevas secciones y las asocia (al producto)
+      },
       createContents: function(req, res, next) {
       if (req.session.user != undefined && req.session.user.role == 'admin') {
             res.render('./products/create-edit/contents'); 
@@ -168,6 +175,9 @@ const productosController = {
             res.redirect('/users/login')
           }
         },
+      saveContents: function(req, res, next) {
+        //Guarda los nuevas contenidos y las asocia (a las secciones)
+      },
   
     creador: function(req, res, next) {
       /*----Acá llamamos a la funcion creada, para que al recibir los archivos subidos, guarde sus nombres en imageDir----*/
@@ -525,7 +535,6 @@ const productosController = {
     },
     modifyProduct: function(req, res, next) {
       uploadFilesDir(req.files);
-
     /*----Actualizando los datos del producto en la base de datos----*/
         db.Product.update({
         name: req.body.name,
@@ -563,7 +572,6 @@ const productosController = {
     },
     modifyCategories: function(req, res, next) {
       uploadFilesDir(req.files);
-
       /*----Se buscan las categorias asociadas, para luego actualizar dicha información----*/
       db.Category.findAll({
         include: [
@@ -602,7 +610,12 @@ const productosController = {
       })
       .then(() => {
         res.redirect(`/products/${req.params.id}/edit/benefits`);
-      })    
+      })
+      .catch((error) => {
+        console.log(error);
+        let ErrorsJSON = JSON.stringify(error);
+        fs.appendFileSync(ErrorsDir, ErrorsJSON);
+      })   
     },
     editBenefits: function(req, res, next) {
       if (req.session.user != undefined && req.session.user.role == 'admin') {
@@ -622,6 +635,9 @@ const productosController = {
         res.redirect('/users/login')  
       }      
     },
+    modifyBenefits: function(req, res, next) {
+      
+    },
     editSections: function(req, res, next) {
       if (req.session.user != undefined && req.session.user.role == 'admin') {
         db.Product.findByPk(req.params.id, {
@@ -640,6 +656,9 @@ const productosController = {
         res.redirect('/users/login')  
       }      
     },
+    modifySections: function(req, res, next) {
+      
+    },
     editContents: function(req, res, next) {
       if (req.session.user != undefined && req.session.user.role == 'admin') {
         db.Product.findByPk(req.params.id, {
@@ -657,6 +676,9 @@ const productosController = {
       } else {
         res.redirect('/users/login')  
       }      
+    },
+    modifyContents: function(req, res, next) {
+      
     },
 
     editor: function(req, res, next) {
