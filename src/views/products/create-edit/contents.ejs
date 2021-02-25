@@ -13,7 +13,7 @@
     <form action="/products/<%= productToEdit.id %>/edit/contents?_method=PUT" method="POST">
 <% } else { %>
     <h1 class="titulo">Creador de contenidos nuevo</h1>
-    <form action="/products/create/contents" method="POST">
+    <form action="/products/<%= newID %>/create/contents" method="POST">
 <% } %>
 
 <section>

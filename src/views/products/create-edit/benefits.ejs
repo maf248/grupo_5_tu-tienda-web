@@ -14,7 +14,7 @@
         <form action="/products/<%= productToEdit.id %>/edit/benefits?_method=PUT" method="POST">
     <% } else { %>
         <h1 class="titulo">Creador de beneficios nuevos</h1>
-        <form action="/products/create/benefits" method="POST">
+        <form action="/products/<%= newID %>/create/benefits" method="POST">
     <% } %>
 </div>
  

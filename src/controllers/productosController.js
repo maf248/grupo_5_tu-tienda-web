@@ -132,7 +132,8 @@ const productosController = {
           image: imageDir.image
         })
         .then(newProduct => {
-          res.redirect('/products/create/categories')
+
+          res.redirect(`/products/${newProduct.id}/create/categories`);
         })
         .catch(err => {
           res.send(err)
@@ -140,17 +141,47 @@ const productosController = {
       },
      createCategory: function(req, res, next) {
       if (req.session.user != undefined && req.session.user.role == 'admin') {
-            res.render('./products/create-edit/categories'); 
+            res.render('./products/create-edit/categories', {newID: req.params.id}); 
           } else {
             res.redirect('/users/login')
           }
         },
       saveCategories: function(req, res, next) {
-        //Guarda las nuevas categorias y las asocia (al producto)
+        uploadFilesDir(req.files);
+
+        db.Category.bulkCreate([{
+          name: req.body.category1,
+          image: imageDir.categoryImage1,
+          price: Number(req.body.price[0]),
+          transaction_cost_percent: req.body.costoTransaccion[1],
+          web_sections: req.body.cantidadSecciones1
+          },{
+          name: req.body.category2,
+          image: imageDir.categoryImage2,
+          price: Number(req.body.price[1]),
+          transaction_cost_percent: req.body.costoTransaccion[2],
+          web_sections: req.body.cantidadSecciones2
+          },{
+          name: req.body.category3,
+          image: imageDir.categoryImage3,
+          price: Number(req.body.price[2]),
+          transaction_cost_percent: req.body.costoTransaccion[3],
+          web_sections: req.body.cantidadSecciones3
+        }])
+        .then(newCategories => {
+        /*----Acá se asocian las categorias nuevas al producto nuevo----*/
+          for (let newCategory of newCategories) {
+            newCategory.addProducts(req.params.id);
+          }
+          res.redirect(`/products/${req.params.id}/create/benefits`);
+        })
+        .catch(err => {
+          res.send(err)
+        })
       },
       createBenefits: function(req, res, next) {
       if (req.session.user != undefined && req.session.user.role == 'admin') {
-            res.render('./products/create-edit/benefits', {indexBenefits: indexBenefits}); 
+            res.render('./products/create-edit/benefits', {indexBenefits: indexBenefits, newID: req.params.id}); 
           } else {
             res.redirect('/users/login')
           }
@@ -160,7 +191,7 @@ const productosController = {
       },
       createSections: function(req, res, next) {
       if (req.session.user != undefined && req.session.user.role == 'admin') {
-            res.render('./products/create-edit/sections'); 
+            res.render('./products/create-edit/sections', {newID: req.params.id}); 
           } else {
             res.redirect('/users/login')
           }
@@ -170,7 +201,7 @@ const productosController = {
       },
       createContents: function(req, res, next) {
       if (req.session.user != undefined && req.session.user.role == 'admin') {
-            res.render('./products/create-edit/contents'); 
+            res.render('./products/create-edit/contents', {newID: req.params.id}); 
           } else {
             res.redirect('/users/login')
           }
