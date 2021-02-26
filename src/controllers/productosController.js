@@ -714,7 +714,6 @@ const productosController = {
       }      
     },
     modifySections: function(req, res, next) {
-      
     },
     editContents: function(req, res, next) {
       if (req.session.user != undefined && req.session.user.role == 'admin') {
