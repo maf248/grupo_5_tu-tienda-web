@@ -73,6 +73,8 @@ files.forEach (file => {
     break
     case 'categoryImage3': imageDir.categoryImage3 = file.filename
     break
+    case 'sectionImage': imageDir.sectionImage = file.filename
+    break
   }
 });
 };
@@ -190,14 +192,38 @@ const productosController = {
         //Guarda los nuevos beneficios y las asocia (a las categorias)
       },
       createSections: function(req, res, next) {
-      if (req.session.user != undefined && req.session.user.role == 'admin') {
-            res.render('./products/create-edit/sections', {newID: req.params.id}); 
-          } else {
-            res.redirect('/users/login')
-          }
-        },
+        if (req.session.user != undefined && req.session.user.role == 'admin') {
+
+          db.Section.findAll({
+            where: {
+            product_id: req.params.id
+            }
+          }).then( section => {
+            res.render('./products/create-edit/sections', {newID: req.params.id, section: section}); 
+          })
+            .catch( err => console.log(err) )
+            } else {
+              res.redirect('/users/login')
+        }
+      },
       saveSections: function(req, res, next) {
-        //Guarda las nuevas secciones y las asocia (al producto)
+
+        uploadFilesDir(req.files);
+
+        db.Section.create({
+
+          product_id: req.params.id,
+          title: req.body.sectionTitle,
+          image: imageDir.sectionImage
+
+          }).then( () => {
+
+            res.redirect(`/products/${req.params.id}/create/sections`)
+
+          }).catch( (err) => {
+            console.log(err)
+          })
+        
       },
       createContents: function(req, res, next) {
       if (req.session.user != undefined && req.session.user.role == 'admin') {

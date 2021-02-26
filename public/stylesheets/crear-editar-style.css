@@ -117,3 +117,8 @@ td input {
     border-radius: 20px;
     margin: 15px auto;
 }
+.descripcion {
+    margin: 16px auto;
+    padding: 0 16px;
+    text-align: center;
+}

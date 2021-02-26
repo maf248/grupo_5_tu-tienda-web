@@ -10,41 +10,112 @@
 
 <% if (typeof productToEdit != 'undefined') { %>
     <h1 class="titulo">Editor de secciones: <%= productToEdit.name %></h1>
-    <form action="/products/<%= productToEdit.id %>/edit/sections?_method=PUT" method="POST">
+
+        <section>
+            <article>
+                <h2>
+                    <!--Elegir titulo seccion 1-->
+                    <label for="atitle">Titulo seccion</label> <br>
+                    <input required type="text" style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 60%;" name="atitle" placeholder="Escribí el texto aquí...">
+                </h2>
+            </article>
+            
+            <article>
+                <label for="aimage" style="display: block; width: 100%"><i class="far fa-file-image" style="width: 100%; text-align: center;"></i></label><br>
+                <input type="file" name="aimage" id="aimage" accept="image/png"> <br>
+            </article>
+        
+                <div class="buttons-form">
+                    <button type="reset" class="reset">Borrar campos</button>
+                    <button type="submit" class="submit">Siguiente</button>
+                    <a href="/products/<%= productToEdit.id %>/edit/contents">SIGUIENTE DEV</a>
+                </div>
+                        
+        </section>
+
+
+        
 <% } else { %>
     <h1 class="titulo">Creador de secciones nuevas</h1>
-    <form action="/products/<%= newID %>/create/sections" method="POST">
-<% } %>
 
-<section>
-    <article>
-        <h2>
-            <!--Elegir titulo seccion 1-->
-            <label for="atitle">Titulo seccion</label> <br>
-            <input required type="text" style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 60%;" name="atitle" placeholder="Escribí el texto aquí...">
-        </h2>
-    </article>
-    
-    <article>
-        <label for="aimage" style="display: block; width: 100%"><i class="far fa-file-image" style="width: 100%; text-align: center;"></i></label><br>
-        <input type="file" name="aimage" id="aimage" accept="image/png"> <br>
-    </article>
+    <article class="descripcion">
 
-        <div class="buttons-form">
-            <button type="reset" class="reset">Borrar campos</button>
-            <button type="submit" class="submit">Siguiente</button>
-            <% if (typeof productToEdit != 'undefined') { %>
-                <a href="/products/<%= productToEdit.id %>/edit/contents">SIGUIENTE DEV</a>
-            <% } else { %>
-                <a href="/products/create/contents">SIGUIENTE DEV</a> 
-            <% } %>
-        </div>
+        <p>En esta sección estarás creando contenido adicional al producto que se agregará al detalle del mismo para venderlo mejor. <br> Puntualmente se le agregará un título y una imagen únicamente.</p>
         
+    </article>
+
+    <form action="/products/<%= newID %>/create/sections" method="POST" enctype="multipart/form-data">
+        
+        <label for="sectionTitle">Elegí el título de la sección que estás por crear:</label>
+        <input type="text" name="sectionTitle" id="sectionTitle" placeholder="Escribe el texto aqui..." style="width: 100%; border: 1px solid black; margin: 16px auto;">
+
+        <label for="sectionImage">Elegí la imagen de la sección que estás por crear:</label>
+        <input type="file" name="sectionImage" id="sectionImage" accept="image/png image/jpg" style="display: block;">
+
+        <button type="submit" class="reset" style="display: block;">Guardar y seguir creando</button>
+
     </form>
 
+    <div style="display: flex; justify-content: space-around; flex-wrap: nowrap;">
+
+        <% section.forEach (sec => { %>
+            <% console.log(sec.image) %>
+            <% console.log(newID) %>
+            <section class="disenoBlanco" style="width: 25%;">
+                <article class="disenoBlanco-article1">
+                    <h2 class="disenoBlanco-article1-tituloPrincipal" style="font-size: 15px;">
+                        <!--Elegir titulo seccion 1-->
+                        <%= sec.title %>
+                    </h2>
+                </article>
+                <div class="disenoBlanco-containerArticle2">
+                    <article class="disenoBlanco-article2">
+                        <h3 class="disenoBlanco-article2-titulo" style="margin: auto; font-size: 12px;">
+                            <p>Sección de contenido, se edita luego</p>
+                        </h3>
+                    </article>
+                    <article class="disenoBlanco-article2">
+                        <h3 class="disenoBlanco-article2-titulo" style="margin: auto; font-size: 12px;">
+                            <p>Sección de contenido, se edita luego</p>
+                        </h3>
+                    </article>
+                    <article class="disenoBlanco-article2">
+                        <h3 class="disenoBlanco-article2-titulo" style="margin: auto; font-size: 12px;">
+                            <p>Sección de contenido, se edita luego</p>
+                        </h3>
+                    </article>
+                    <article class="disenoBlanco-article2">
+                        <h3 class="disenoBlanco-article2-titulo" style="margin: auto; font-size: 12px;">
+                            <p>Sección de contenido, se edita luego</p>
+                        </h3>
+                    </article>
+                </div>
+                <article class="disenoBlanco-articleImg">
+                    <img src="/images/Producto-<%= newID %>/<%= sec.image %>" alt="imagen descriptiva de las características del producto">
+                </article>
+        
+            </section>
+    
+        <% }) %>
+
+    </div>
+
+    <div class="buttons-form">
+
+        <button class="submit"><a style="text-decoration: none; color: black;" href="/products/<%= newID %>/create/contents">Siguiente</a></button>
+
+    </div>
 
 
-</section>
+<% } %>
+
+
+
+
+
+
+
+
 
 
 <%- include('../../partials/footer') %>
