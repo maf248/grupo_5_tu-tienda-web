@@ -76,16 +76,17 @@ router.get('/:id/edit', productosController.editProduct);
 router.get('/:id/edit/categories', productosController.editCategories);
 router.get('/:id/edit/benefits', productosController.editBenefits);
 router.get('/:id/edit/sections', productosController.editSections);
+router.get('/:id/edit/sections/:section', productosController.showSection);
 router.get('/:id/edit/contents', productosController.editContents);
 
 
-/*---Rutas para crear POST---*/
+/*---Rutas para editar POST---*/
 //router.put('/:id', upload.any(), productosController.editor);
 
 router.put('/:id/edit', upload.any(), productosController.modifyProduct);
 router.put('/:id/edit/categories', upload.any(), productosController.modifyCategories);
 router.put('/:id/edit/benefits', productosController.modifyBenefits);
-router.put('/:id/edit/sections', upload.any(), productosController.modifySections);
+router.put('/:id/edit/sections/:section/edited-section', upload.any(), productosController.modifySection);
 router.put('/:id/edit/contents', upload.any(), productosController.modifyContents);
 
 router.get('/:id', productosController.detalle);

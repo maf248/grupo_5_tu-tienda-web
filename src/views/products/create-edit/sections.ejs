@@ -17,61 +17,82 @@
         
     </article>
 
-    <div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
+    <section>
+
+        <ul class="selectSection"> <h3 style="text-align: center;">Hacé click en el titulo de la sección que querés editar:</h3>
+            <% productToEdit.Sections.forEach( section => { %>
+                <li>
+                    <a href="/products/<%=section.product_id %>/edit/sections/<%= section.id %>"><%=section.title%></a>
+                </li>
+            <% }) %>
+            </ul>
+
+    </section>
+
+
+    <% if (typeof sectionToEdit != 'undefined' ) { %>
+
+        <div class="editFormContainer">
+
+            <form action="/products/<%= productToEdit.id %>/edit/sections/<%= sectionToEdit.id %>/edited-section?_method=PUT" method="POST" enctype="multipart/form-data">
     
-        <% productToEdit.Sections.forEach(section => { %>
-
-            <section class="disenoBlanco" style="width: 25%;">
-                <article class="disenoBlanco-article1">
-                    <h2 class="disenoBlanco-article1-tituloPrincipal" style="font-size: 15px;">
-                        <!--Elegir titulo seccion 1-->
-                    
-                        <form action="" method="POST">
-
-                            <input type="text" name="editTitle" id="editTitle" value="<%= section.title %>">
-                            <button type="submit" class="submit" style="margin: 5px auto;">Guardar</button>
-
-                        </form>
-                    </h2>
-                </article>
-                <div class="disenoBlanco-containerArticle2">
-                    <article class="disenoBlanco-article2">
-                        <h3 class="disenoBlanco-article2-titulo" style="margin: auto; font-size: 12px;">
-                            <p>Sección de contenido, se edita luego</p>
-                        </h3>
-                    </article>
-                    <article class="disenoBlanco-article2">
-                        <h3 class="disenoBlanco-article2-titulo" style="margin: auto; font-size: 12px;">
-                            <p>Sección de contenido, se edita luego</p>
-                        </h3>
-                    </article>
-                    <article class="disenoBlanco-article2">
-                        <h3 class="disenoBlanco-article2-titulo" style="margin: auto; font-size: 12px;">
-                            <p>Sección de contenido, se edita luego</p>
-                        </h3>
-                    </article>
-                    <article class="disenoBlanco-article2">
-                        <h3 class="disenoBlanco-article2-titulo" style="margin: auto; font-size: 12px;">
-                            <p>Sección de contenido, se edita luego</p>
-                        </h3>
-                    </article>
-                </div>
-                <article class="disenoBlanco-articleImg">
-                    <img src="/images/Producto-<%= productToEdit.id %>/<%= section.image %>" alt="imagen descriptiva de las características del producto" style="height: 40vh;">
-
-                        <form action="" method="POST" enctype="multipart/form-data">
-                        
-                            <label for="editImage" style="padding: 10px; margin: auto;"><p style="text-align: center; margin: 2px; cursor: pointer;">Selecciona la imagen</p></label>
-                            <input type="file" name="editImage" id="editImage" value="<%= section.title %>" style="display: none;">
-                            <button type="submit" class="submit" style="margin: 5px auto;">Guardar</button>
-    
-                        </form>
-
-                </article>
+                <input type="text" name="editSectionTitle" id="editTitle" class="editTextInput" value="<%= sectionToEdit.title %>">
         
-            </section>
-        <% }) %>
+                <label for="editSectionImage" style="padding: 10px; margin: auto;"><p style="text-align: center; margin: 2px; cursor: pointer;">Selecciona la imagen</p></label>
+                <input type="file" name="editSectionImage" id="editImage" style="align-self: center;">
+                
+                <button type="submit" class="submit" style="margin: 5px auto; display: block;">Guardar</button>
+        
+            </form>
     
+        </div>
+
+        <section class="disenoBlanco">
+            <article class="disenoBlanco-article1">
+                <h2 class="disenoBlanco-article1-tituloPrincipal">
+                    <%= sectionToEdit.title %>
+                </h2>
+            </article>
+            <div class="disenoBlanco-containerArticle2">
+                <article class="disenoBlanco-article2">
+                    <h3 class="disenoBlanco-article2-titulo">
+                        Sección de contenido, se edita luego
+                    </h3>
+                </article>
+                <article class="disenoBlanco-article2">
+                    <h3 class="disenoBlanco-article2-titulo">
+                        Sección de contenido, se edita luego
+                    </h3>
+                </article>
+                <article class="disenoBlanco-article2">
+                    <h3 class="disenoBlanco-article2-titulo">
+                        Sección de contenido, se edita luego
+                    </h3>
+                </article>
+                <article class="disenoBlanco-article2">
+                    <h3 class="disenoBlanco-article2-titulo">
+                        Sección de contenido, se edita luego
+                    </h3>
+                </article>
+            </div>
+            <article class="disenoBlanco-articleImg">
+                <img src="/images/Producto-<%= productToEdit.id %>/<%= sectionToEdit.image %>" alt="imagen descriptiva de las características del producto">
+            </article>
+            <form action="#contenedorProductos" method="GET"   class="disenoBlanco-form">
+                <button>
+                    Empezá ya
+                </button>
+            </form>
+    </section>    
+
+    <% } %>
+
+    <div class="sectionContainer"></div>
+
+    <div class="buttons-form">
+
+        <button class="submit"><a style="text-decoration: none; color: black;" href="/products/<%= productToEdit.id %>/edit/contents">Siguiente</a></button>
+
     </div>
         
 <% } else { %>
@@ -145,14 +166,6 @@
 
 
 <% } %>
-
-
-
-
-
-
-
-
 
 
 <%- include('../../partials/footer') %>

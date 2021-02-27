@@ -122,3 +122,31 @@ td input {
     padding: 0 16px;
     text-align: center;
 }
+.editFormContainer form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 5% 0;
+}
+.editTextInput {
+    border: 1px solid black;
+    width: 80%;
+    padding: 5px;
+    margin: auto;
+    align-self: center;
+}
+.selectSection {
+    display: block;
+    width: 100%;
+}
+.selectSection li {
+    text-align: center;
+    color: black;
+    cursor: pointer;
+}
+
+@media (max-width: 556px) {
+    .disenoBlanco {
+        width: 100%;
+    }
+}

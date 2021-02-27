@@ -75,6 +75,8 @@ files.forEach (file => {
     break
     case 'sectionImage': imageDir.sectionImage = file.filename
     break
+    case 'editSectionImage': imageDir.sectionImage = file.filename
+    break
   }
 });
 };
@@ -708,12 +710,36 @@ const productosController = {
         .then(product => {
           res.render('./products/create-edit/sections', {productToEdit: product});
         })
-       
       } else {
         res.redirect('/users/login')  
       }      
     },
-    modifySections: function(req, res, next) {
+    showSection: function(req, res, next) {
+      db.Product.findByPk(req.params.id, {
+        include: [
+          {association: "Sections", 
+        include: [{association: "Contents"}]},
+          {association: "Categories",
+        include: [{association: "Benefits"}]}
+        ]
+      })
+      .then(product => {
+        db.Section.findByPk(req.params.section).then( sec => {
+          res.render('./products/create-edit/sections', {productToEdit: product, sectionToEdit: sec});
+        })
+      })
+      .catch ( err => console.log(err))
+    },
+    modifySection: function(req, res, next) {
+      uploadFilesDir(req.files);
+      db.Section.update({
+        title: req.body.editSectionTitle,
+        image: imageDir.editSectionImage
+      },
+        {where: {id: req.params.section}
+    }).then( () => {
+        res.redirect(`/products/${req.params.id}/edit/sections/${req.params.section}`)
+      }).catch( err => console.log(err))
     },
     editContents: function(req, res, next) {
       if (req.session.user != undefined && req.session.user.role == 'admin') {
@@ -727,8 +753,7 @@ const productosController = {
         })
         .then(product => {
           res.render('./products/create-edit/contents', {productToEdit: product});
-        })
-       
+        }).catch( err => console.log(err))               
       } else {
         res.redirect('/users/login')  
       }      
