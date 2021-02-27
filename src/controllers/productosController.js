@@ -187,7 +187,14 @@ const productosController = {
       },
       createBenefits: function(req, res, next) {
       if (req.session.user != undefined && req.session.user.role == 'admin') {
-            res.render('./products/create-edit/benefits', {indexBenefits: indexBenefits, newID: req.params.id}); 
+
+          db.Product.findByPk(req.params.id, {
+            include: [{association: "Categories"}]
+          })
+          .then(product => {
+            res.render('./products/create-edit/benefits', {indexBenefits: indexBenefits, newID: req.params.id, product: product});
+          })
+             
           } else {
             res.redirect('/users/login')
           }
