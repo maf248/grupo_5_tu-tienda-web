@@ -36,10 +36,10 @@
 
             <form action="/products/<%= productToEdit.id %>/edit/sections/<%= sectionToEdit.id %>/edited-section?_method=PUT" method="POST" enctype="multipart/form-data">
     
-                <input type="text" name="editSectionTitle" id="editTitle" class="editTextInput" value="<%= sectionToEdit.title %>">
+                <input type="text" name="editSectionTitle" id="editSectionTitle" class="editTextInput" value="<%= sectionToEdit.title %>">
         
                 <label for="editSectionImage" style="padding: 10px; margin: auto;"><p style="text-align: center; margin: 2px; cursor: pointer;">Selecciona la imagen</p></label>
-                <input type="file" name="editSectionImage" id="editImage" style="align-self: center;">
+                <input type="file" name="editSectionImage" id="editSectionImage" style="align-self: center;">
                 
                 <button type="submit" class="submit" style="margin: 5px auto; display: block;">Guardar</button>
         
@@ -78,11 +78,6 @@
             <article class="disenoBlanco-articleImg">
                 <img src="/images/Producto-<%= productToEdit.id %>/<%= sectionToEdit.image %>" alt="imagen descriptiva de las características del producto">
             </article>
-            <form action="#contenedorProductos" method="GET"   class="disenoBlanco-form">
-                <button>
-                    Empezá ya
-                </button>
-            </form>
     </section>    
 
     <% } %>

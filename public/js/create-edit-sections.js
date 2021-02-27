@@ -1,6 +1,7 @@
 const qs = (text) => document.querySelector(text);
 const qsa = (text) => document.querySelectorAll(text);
 
+
 let sectionToShow = qsa('.showSection')
 
 sectionToShow.forEach( section => {
@@ -9,7 +10,6 @@ sectionToShow.forEach( section => {
         let sectionContainer = qs('.sectionContainer');
 
         sectionContainer.innerHTML = `
-
             <section>
                 <article class="disenoBlanco-article1">
                     <h2 class="disenoBlanco-article1-tituloPrincipal" style="font-size: 15px;">

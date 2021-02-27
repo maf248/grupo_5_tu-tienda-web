@@ -77,6 +77,8 @@ files.forEach (file => {
     break
     case 'editSectionImage': imageDir.sectionImage = file.filename
     break
+    case 'contentIcon': imageDir.contentIcon = file.filename
+    break
   }
 });
 };
@@ -229,15 +231,75 @@ const productosController = {
       },
       createContents: function(req, res, next) {
       if (req.session.user != undefined && req.session.user.role == 'admin') {
-            res.render('./products/create-edit/contents', {newID: req.params.id}); 
-          } else {
-            res.redirect('/users/login')
+
+        db.Section.findAll({
+          where: {
+            product_id: req.params.id
           }
-        },
-      saveContents: function(req, res, next) {
-        //Guarda los nuevas contenidos y las asocia (a las secciones)
+        })
+        .then(section => {
+
+          res.render('./products/create-edit/contents', {newID: req.params.id, section: section}); 
+
+        }).catch( err => console.log(err))         
+        } else {
+          res.redirect('/users/login')
+        }
       },
-  
+      showSectionIdForContentsCreation: function (req, res, next) {
+
+        db.Product.findByPk(req.params.id, {
+          include: [
+            {association: "Sections", 
+          include: [{association: "Contents"}]}
+          ]
+        })
+
+        .then(product => {
+          db.Section.findByPk(req.params.section, {
+            include: [{association: "Contents"}]
+          }).then( sec => {
+            res.render('./products/create-edit/contents', {productToCreate: product, sectionToCreate: sec});
+          })
+        })
+        .catch ( err => console.log(err)) 
+        
+      },
+      saveContents: function(req, res, next) {
+
+        uploadFilesDir(req.files);
+      
+        db.Section.findByPk(req.params.section, {
+          include: [{
+            association: "Contents"
+          }]
+        })
+        .then( section => {
+          if (section.Contents.length < 12) {
+            db.Content.bulkCreate([
+              {
+                section_id: req.params.section,
+                type: "icon",
+                text: imageDir.contentIcon,
+              },
+              {
+                section_id: req.params.section,
+                type: "subtitle",
+                text: req.body.contentSubtitle,
+              },
+              {
+                section_id: req.params.section,
+                type: "description",
+                text: req.body.contentDescription,
+              }
+            ]).then( () => {
+              res.redirect(`/products/${req.params.id}/create/contents/${req.params.section}`)
+            })
+          } else {
+            res.redirect(`/products/${req.params.id}/create/contents`)
+          }
+        })       
+      },
     creador: function(req, res, next) {
       /*----Acá llamamos a la funcion creada, para que al recibir los archivos subidos, guarde sus nombres en imageDir----*/
       uploadFilesDir(req.files);
@@ -732,6 +794,7 @@ const productosController = {
     },
     modifySection: function(req, res, next) {
       uploadFilesDir(req.files);
+
       db.Section.update({
         title: req.body.editSectionTitle,
         image: imageDir.editSectionImage
