@@ -877,31 +877,39 @@ const productosController = {
       }).catch( err => console.log(err))
     },
     modifyContents: function(req, res, next) {
-      uploadFilesDir(req.files);
 
-      db.Content.update(
-        {
-          section_id: req.params.section,
-          type: req.params.type,
-          text: () => {
-            if(typeof req.body.editedContent === '') {
 
-              console.log(editedContent)
-              req.body.editedContent
+      if (typeof req.body.editedContent === 'string') {
 
-            } else {
-
-              console.log(editedContent)
-              imageDir.editedContent
-
-            }
+        db.Content.update(
+          {
+            section_id: req.params.section,
+            type: req.params.type,
+            text: req.body.editedContent
+          },
+          {
+          where: {
+            id: req.params.content
           }
-        },
-        {
-        where: content_id = req.params.content
-      }).then( () => {
-        res.redirect('/products')
-      })
+        }).then( () => {
+          res.redirect(`/products/${req.params.id}/edit/contents/${req.params.section}`)
+        }).catch( err => console.log(err))
+      } else {
+        uploadFilesDir(req.files);
+        db.Content.update(
+          {
+            section_id: req.params.section,
+            type: req.params.type,
+            text: imageDir.editedContent
+          },
+          {
+          where: {
+            id: req.params.content
+          }
+        }).then( () => {
+          res.redirect(`/products/${req.params.id}/edit/contents/${req.params.section}`)
+        }).catch( err => console.log(err))
+      }
     },
 
     editor: function(req, res, next) {
