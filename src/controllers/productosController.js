@@ -844,9 +844,7 @@ const productosController = {
         db.Product.findByPk(req.params.id, {
           include: [
             {association: "Sections", 
-          include: [{association: "Contents"}]},
-            {association: "Categories",
-          include: [{association: "Benefits"}]}
+          include: [{association: "Contents"}]}
           ]
         })
         .then(product => {
@@ -855,6 +853,18 @@ const productosController = {
       } else {
         res.redirect('/users/login')  
       }      
+    },
+    showSectionIdForContentEdition: function (req, res, next) {
+      db.Product.findByPk(req.params.id)
+      .then( product => {
+        db.Section.findByPk(req.params.section, {
+          include: [{
+            association: "Contents"
+          }]
+        }).then( section => {
+          res.render('./products/create-edit/contents', {productToEdit: product, sectionToEdit: section})
+        })
+      }).catch( err => console.log(err))
     },
     modifyContents: function(req, res, next) {
       

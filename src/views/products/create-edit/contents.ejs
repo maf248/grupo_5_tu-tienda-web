@@ -10,7 +10,84 @@
 
 <% if (typeof productToEdit != 'undefined') { %>
     <h1 class="titulo">Editor de contenidos: <%= productToEdit.name %></h1>
-    <form action="/products/<%= productToEdit.id %>/edit/contents?_method=PUT" method="POST">
+    <article class="descripcion">
+
+        <p>En esta sección estarás editando contenido adicional al producto que se agregará al detalle del mismo para venderlo mejor.</p>
+        
+    </article>
+
+
+    <% if (typeof productToEdit.Sections != 'undefined') {%>
+        <section>
+
+            <ul class="selectSection"> <h3 style="text-align: center;">Hacé click en el titulo de la sección que querés editar:</h3>
+                <% productToEdit.Sections.forEach( sec => { %>
+                    <li>
+                        <a href="/products/<%= productToEdit.id %>/edit/contents/<%= sec.id %>"><%=sec.title%></a>
+                    </li>
+                <% }) %>
+                </ul>
+    
+        </section>
+    <% } %>
+
+
+
+    <% if (typeof sectionToEdit != 'undefined') { %>
+
+        <hr>
+        <br>
+
+        <h3 style="text-align: center; text-decoration: underline;">Hacé click en el contenido que quieres editar:</h3>
+
+        <ul class="contentList">
+            <% sectionToEdit.Contents.forEach(con => {%>
+                <li>
+                    <p class="selectedContent"><%= con.text %></p> <br>
+                    <div class="contentToEditContainer"></div>
+                </li>
+            <% }) %> 
+        </ul>
+
+
+        <div style="display: flex; justify-content: space-around; flex-wrap: nowrap;">
+
+            <section class="disenoBlanco">
+                <article class="disenoBlanco-article1">
+                    <h2 class="disenoBlanco-article1-tituloPrincipal">
+                        <!--Elegir titulo seccion 1-->
+                        <%= sectionToEdit.title %>
+                    </h2>
+                </article>
+                <div class="disenoBlanco-containerArticle2">
+                    <article class="disenoBlanco-article2">
+                    <% if (typeof sectionToEdit.Contents != 'undefined') { %>
+                        <% sectionToEdit.Contents.forEach(con => { %>
+                            <%if (con.type == 'icon') {%>
+                                <img src="/images/Producto-<%= productToEdit.id %>/<%= con.text %>" alt="" style="width: 10%;" class="iconContent">
+                            <% } %>
+
+                            <% if (con.type == 'subtitle') { %>
+                                <h3 class="disenoBlanco-article2-titulo subtitleContent">
+                                    <%= con.text  %>
+                                </h3>
+                            <% } %>    
+                            <% if (con.type == 'description') {%>
+                                <p class="descriptionContent">  <%= con.text  %> </p>
+                            <% } %>
+                        <% }) %>
+                    <% } %>
+                </div>
+                <article class="disenoBlanco-articleImg">
+                    <img src="/images/Producto-<%= productToEdit.id %>/<%= sectionToEdit.image %>" alt="imagen descriptiva de las características del producto">
+                </article>
+        
+            </section> 
+
+        </div>
+
+    <% } %>   
+
 <% } else { %>
 
         <h1 class="titulo">Creador de contenidos nuevos</h1>
@@ -108,3 +185,4 @@
 
 
 <%- include('../../partials/footer') %>
+
