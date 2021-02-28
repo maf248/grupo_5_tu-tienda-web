@@ -201,6 +201,34 @@ const productosController = {
         },
       saveBenefits: function(req, res, next) {
         //Guarda los nuevos beneficios y las asocia (a las categorias)
+        if(req.body.newBenefitName != '') {
+
+          db.Benefit.create({
+            name: req.body.newBenefitName
+          }).then(newBenefit => {
+
+            db.Product.findByPk(req.params.id, {
+              include: [{association: "Categories"}]
+            })
+            .then(product => {
+                if(req.body.newBenefitCat1 == 'true') {
+                  newBenefit.addCategories(product.Categories[0].id);
+                }
+                if(req.body.newBenefitCat2 == 'true') {
+                  newBenefit.addCategories(product.Categories[1].id);
+                }
+                if(req.body.newBenefitCat3 == 'true') {
+                  newBenefit.addCategories(product.Categories[2].id);
+                }
+            
+              res.redirect(`/products/${req.params.id}/create/benefits`);
+            })
+          
+            
+          })
+
+        }
+
       },
       createSections: function(req, res, next) {
         if (req.session.user != undefined && req.session.user.role == 'admin') {
