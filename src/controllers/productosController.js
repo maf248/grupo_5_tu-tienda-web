@@ -192,7 +192,13 @@ const productosController = {
             include: [{association: "Categories"}]
           })
           .then(product => {
-            res.render('./products/create-edit/benefits', {indexBenefits: indexBenefits, newID: req.params.id, product: product});
+            db.Benefit.findAll({
+              include: [{association: "Categories", where: {id: [product.Categories[0].id,product.Categories[1].id, product.Categories[2].id]}}]
+            })
+            .then(benefits => {
+              res.render('./products/create-edit/benefits', {benefits: benefits, product: product, newID: req.params.id});
+            })
+           
           })
              
           } else {
@@ -775,21 +781,23 @@ const productosController = {
     },
     editBenefits: function(req, res, next) {
       if (req.session.user != undefined && req.session.user.role == 'admin') {
+
         db.Product.findByPk(req.params.id, {
-          include: [
-            {association: "Sections", 
-          include: [{association: "Contents"}]},
-            {association: "Categories",
-          include: [{association: "Benefits"}]}
-          ]
+          include: [{association: "Categories"}]
         })
         .then(product => {
-          res.render('./products/create-edit/benefits', {productToEdit: product, indexBenefits: indexBenefits});
+          db.Benefit.findAll({
+            include: [{association: "Categories", where: {id: [product.Categories[0].id,product.Categories[1].id, product.Categories[2].id]}}]
+          })
+          .then(benefits => {
+            res.render('./products/create-edit/benefits', {benefits: benefits, product: product});
+          })
+         
         })
-       
-      } else {
-        res.redirect('/users/login')  
-      }      
+           
+        } else {
+          res.redirect('/users/login')
+        }
     },
     modifyBenefits: function(req, res, next) {
       

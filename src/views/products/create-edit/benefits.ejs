@@ -9,15 +9,15 @@
 <%- include('../../partials/navbar') %>
 
 <div class="creadorContainer">
-    <% if (typeof productToEdit != 'undefined') { %>
-        <h1 class="titulo">Editor de beneficios: <%= productToEdit.name %></h1>
-        <form action="/products/<%= productToEdit.id %>/edit/benefits?_method=PUT" method="POST">
+    <% if (typeof newID == 'undefined') { %>
+        <h1 class="titulo">Editor de beneficios: <%= product.name %></h1>
+        <form action="/products/<%= product.id %>/edit/benefits?_method=PUT" method="POST">
     <% } else { %>
         <h1 class="titulo">Creador de beneficios nuevos</h1>
         <form action="/products/<%= newID %>/create/benefits" method="POST">
     <% } %>
 </div>
-    <% if (typeof productToEdit == 'undefined') { %>
+    
         <section class="contenedorProductos" id="contenedorProductos">
             <table>
                 <tr>
@@ -43,61 +43,35 @@
                         </div>
                     </td>
                 </tr>
-                <% } %>
-                <% if (typeof productToEdit != 'undefined') { %>
-                    <section class="contenedorProductos" id="contenedorProductos">
-                        <table>
-                            <tr>
-                                <td class="beneficio fontSize">
-                                    <div class="tdDiv">
-                                        <!--Categorías-->
-                                        <p>Categorías:</p> <br>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="tdDiv">
-                                        <p><%= productToEdit.Categories[0].name %></p>   
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="tdDiv">
-                                        <p><%=  productToEdit.Categories[1].name %></p>     
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="tdDiv">
-                                        <p><%= productToEdit.Categories[2].name %></p>   
-                                    </div>
-                                </td>
-                            </tr>
+                   
                 <% var index = 0; %>
-                <% productToEdit.Categories[0].Benefits.forEach(benefit => { %>          
+                <% benefits.forEach(benefit => { %>          
                     <tr>
                         <td class="beneficio fontSize">
                             <div class="tdDiv">
                                 <!--Elegir titulo beneficio 1-->
-                                <label for="<%= indexBenefits[index] %>[0]">Beneficio:</label> <br>
-                                <input class="inputBeneficio" type="text" name="<%= indexBenefits[index] %>[0]" <% if (typeof productToEdit != 'undefined' ) { %> <% if (productToEdit.Categories[0].Benefits[index] != undefined) { %> value="<%= productToEdit.Categories[0].Benefits[index].name %>" <% } } else { %> placeholder="Escribí aquí el beneficio" <% } %>>
+                                <label for="benefit<%= benefit.id %>Name">Beneficio:</label> <br>
+                                <input class="inputBeneficio" type="text" name="benefit<%= benefit.id %>Name" value="<%= benefit.name %>">
                             </div>
                         </td>
                         <td>
                             <div class="tdDiv">
-                                <input class="inputBeneficio" type="checkbox" name="<%= indexBenefits[index] %>[1]" value="true" style="align-self: center;" <% if (productToEdit.Categories[0].Benefits[index] != undefined) { %> checked <% } %>>
+                                <input class="inputBeneficio" type="checkbox" name="benefit<%= benefit.id %>Cat1" value="true" style="align-self: center;" <% if (typeof benefit.Categories[0] != 'undefined' && benefit.Categories[0].id == product.Categories[0].id) { %> checked <% } %>>
                             </div>
                         </td>
                         <td>
                             <div class="tdDiv">
-                                <input class="inputBeneficio" type="checkbox" name="<%= indexBenefits[index] %>[2]" value="true" style="align-self: center;" <% if (productToEdit.Categories[1].Benefits[index] != undefined) { %> checked <% } %>>
+                                <input class="inputBeneficio" type="checkbox" name="benefit<%= benefit.id %>Cat2" value="true" style="align-self: center;" <% if (typeof benefit.Categories[1] != 'undefined' && benefit.Categories[1].id == product.Categories[1].id) { %> checked <% } %>>
                             </div>
                         </td>
                         <td>
                             <div class="tdDiv">
-                                <input type="checkbox" name="<%= indexBenefits[index] %>[3]" value="true" style="align-self: center;" <% if (productToEdit.Categories[2].Benefits[index] != undefined) { %> checked <% } %>>
+                                <input type="checkbox" name="benefit<%= benefit.id %>Cat3" value="true" style="align-self: center;" <% if (typeof benefit.Categories[2] != 'undefined' && benefit.Categories[2].id == product.Categories[2].id) { %> checked <% } %>>
                             </div>
                         </td>
                     </tr>
                     <% index++ %>
-                    <% }) } %>
+                    <% }) %>
 
                         <tr>
                             <td class="beneficio fontSize">
@@ -131,8 +105,8 @@
             <button type="reset" class="reset">Borrar campos</button>
 
             <button type="submit" class="submit">Guardar beneficio</button>
-            <% if (typeof productToEdit != 'undefined') { %>
-                <a class="submit" href="/products/<%= productToEdit.id %>/edit/sections">SIGUIENTE DEV</a>
+            <% if (typeof newID == 'undefined') { %>
+                <a class="submit" href="/products/<%= product.id %>/edit/sections">SIGUIENTE DEV</a>
             <% } else { %>
                 <a class="submit" href="/products/<%= newID %>/create/sections">SIGUIENTE DEV</a> 
             <% } %>
