@@ -8,6 +8,10 @@
 
 <%- include('../../partials/navbar') %>
 
+
+
+
+
 <% if (typeof productToEdit != 'undefined') { %>
     <h1 class="titulo">Editor de contenidos: <%= productToEdit.name %></h1>
     <article class="descripcion">
@@ -34,18 +38,55 @@
 
 
     <% if (typeof sectionToEdit != 'undefined') { %>
-
         <hr>
         <br>
 
-        <h3 style="text-align: center; text-decoration: underline;">Hacé click en el contenido que quieres editar:</h3>
+        <h3 style="text-align: center; text-decoration: underline;">Pasá el mouse por encime del contenido que quieres editar:</h3>
 
         <ul class="contentList">
             <% sectionToEdit.Contents.forEach(con => {%>
-                <li>
-                    <p class="selectedContent"><%= con.text %></p> <br>
-                    <div class="contentToEditContainer"></div>
-                </li>
+                <% if (con.type == 'icon') { %>
+                    <li>
+                        <h6 class="typeOfContentToEdit">Icon:</h6>
+                        <img src="/images/Producto-<%= productToEdit.id %>/<%= con.text %>" alt="" class="contentIconToEdit"><br>
+                        <div class="contentToEditContainer">
+                            <form action="/products/<%=productToEdit.id %>/edit/contents/<%= sectionToEdit.id %>/<%= con.type %>/<%= con.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                                
+                                <input type="file" name="editedContent" id="iconToEdit">
+                                <button type="submit">Guardar Cambios</button>
+                            
+                            </form>
+                        </div>
+                    </li>
+                <% } %>
+                <% if (con.type == 'subtitle') { %>
+                    <li>
+                        <h6 class="typeOfContentToEdit">Subtitle:</h6>
+                        <p class="contentToEdit"><%= con.text %></p> <br>
+                        <div class="contentToEditContainer">
+                            <form action="/products/<%=productToEdit.id %>/edit/contents/<%= sectionToEdit.id %>/<%= con.type %>/<%= con.id %>?_method=PUT" method="POST">
+                                
+                                <input type="text" name="editedContent" id="subtitleToEdit" placeholder="Escribe el texto aqui">
+                                <button type="submit">Guardar Cambios</button>
+                            
+                            </form>
+                        </div>
+                    </li>
+                <% } %>
+                <% if (con.type == 'description') { %>
+                    <li>
+                        <h6 class="typeOfContentToEdit">Description:</h6>
+                        <p class="contentToEdit"><%= con.text %></p>  <br>
+                        <div class="contentToEditContainer">
+                            <form action="/products/<%=productToEdit.id %>/edit/contents/<%= sectionToEdit.id %>/<%= con.type %>/<%= con.id %>?_method=PUT" method="POST">
+                                
+                                <textarea name="editedContent" id="descriptionToEdit" placeholder="Escribe el texto aqui" cols="100" rows="10"></textarea> <br>
+                                <button type="submit">Guardar Cambios</button>
+                            
+                            </form>
+                        </div>
+                    </li>
+                <% } %>
             <% }) %> 
         </ul>
 
@@ -184,5 +225,5 @@
 <% } %>
 
 
-<%- include('../../partials/footer') %>
 
+<%- include('../../partials/footer') %>

@@ -89,7 +89,7 @@ router.put('/:id/edit', upload.any(), productosController.modifyProduct);
 router.put('/:id/edit/categories', upload.any(), productosController.modifyCategories);
 router.put('/:id/edit/benefits', productosController.modifyBenefits);
 router.put('/:id/edit/sections/:section/edited-section', upload.any(), productosController.modifySection);
-router.put('/:id/edit/contents', upload.any(), productosController.modifyContents);
+router.put('/:id/edit/contents/:section/:type/:content', upload.any(), productosController.modifyContents);
 
 router.get('/:id', productosController.detalle);
 

@@ -149,8 +149,39 @@ td input {
     margin: 10px auto;
     list-style: none;
 }
-.selectedContent {
+.contentToEdit {
     cursor: pointer;
+}
+.contentList li button {
+    border: none;
+    background-color: white;
+    margin: 10px;
+}
+.contentList li:hover .contentToEditContainer {
+    display: block;
+}
+.contentToEditContainer {
+    display: none;
+}
+
+#descriptionToEdit,
+#subtitleToEdit {
+    border: 1px solid black;
+    padding: 5px;
+    margin: 10px;
+}
+#iconToEdit {
+    margin: 10px;
+}
+#subtitleToEdit {
+    width: 50%;
+}
+.contentIconToEdit {
+    width: 5%;
+    background-color: black;
+}
+.typeOfContentToEdit {
+    margin: 10px;
 }
 
 @media (max-width: 556px) {

@@ -79,6 +79,8 @@ files.forEach (file => {
     break
     case 'contentIcon': imageDir.contentIcon = file.filename
     break
+    case 'editedContent': imageDir.editedContent = file.filename
+    break
   }
 });
 };
@@ -875,7 +877,31 @@ const productosController = {
       }).catch( err => console.log(err))
     },
     modifyContents: function(req, res, next) {
-      
+      uploadFilesDir(req.files);
+
+      db.Content.update(
+        {
+          section_id: req.params.section,
+          type: req.params.type,
+          text: () => {
+            if(typeof req.body.editedContent === '') {
+
+              console.log(editedContent)
+              req.body.editedContent
+
+            } else {
+
+              console.log(editedContent)
+              imageDir.editedContent
+
+            }
+          }
+        },
+        {
+        where: content_id = req.params.content
+      }).then( () => {
+        res.redirect('/products')
+      })
     },
 
     editor: function(req, res, next) {
