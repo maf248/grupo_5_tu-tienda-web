@@ -56,17 +56,17 @@
                         </td>
                         <td>
                             <div class="tdDiv">
-                                <input class="inputBeneficio" type="checkbox" name="benefit<%= benefit.id %>Cat1" value="true" style="align-self: center;" <% if (typeof benefit.Categories[0] != 'undefined' && benefit.Categories[0].id == product.Categories[0].id) { %> checked <% } %>>
+                                <input class="inputBeneficio" type="checkbox" name="benefit<%= benefit.id %>Cat1" value="true" style="align-self: center;" <% if ((typeof benefit.Categories[0] != 'undefined' && benefit.Categories[0].id == product.Categories[0].id) || (typeof benefit.Categories[1] != 'undefined' && benefit.Categories[1].id == product.Categories[0].id) || (typeof benefit.Categories[2] != 'undefined' && benefit.Categories[2].id == product.Categories[0].id)) { %> checked <% } %>>
                             </div>
                         </td>
                         <td>
                             <div class="tdDiv">
-                                <input class="inputBeneficio" type="checkbox" name="benefit<%= benefit.id %>Cat2" value="true" style="align-self: center;" <% if (typeof benefit.Categories[1] != 'undefined' && benefit.Categories[1].id == product.Categories[1].id) { %> checked <% } %>>
+                                <input class="inputBeneficio" type="checkbox" name="benefit<%= benefit.id %>Cat2" value="true" style="align-self: center;" <% if ((typeof benefit.Categories[0] != 'undefined' && benefit.Categories[0].id == product.Categories[1].id) || (typeof benefit.Categories[1] != 'undefined' && benefit.Categories[1].id == product.Categories[1].id) || (typeof benefit.Categories[2] != 'undefined' && benefit.Categories[2].id == product.Categories[1].id)) { %> checked <% } %>>
                             </div>
                         </td>
                         <td>
                             <div class="tdDiv">
-                                <input type="checkbox" name="benefit<%= benefit.id %>Cat3" value="true" style="align-self: center;" <% if (typeof benefit.Categories[2] != 'undefined' && benefit.Categories[2].id == product.Categories[2].id) { %> checked <% } %>>
+                                <input type="checkbox" name="benefit<%= benefit.id %>Cat3" value="true" style="align-self: center;" <% if ((typeof benefit.Categories[0] != 'undefined' && benefit.Categories[0].id == product.Categories[2].id) || (typeof benefit.Categories[1] != 'undefined' && benefit.Categories[1].id == product.Categories[2].id) || (typeof benefit.Categories[2] != 'undefined' && benefit.Categories[2].id == product.Categories[2].id)) { %> checked <% } %>>
                             </div>
                         </td>
                     </tr>
