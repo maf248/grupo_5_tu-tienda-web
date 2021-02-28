@@ -79,6 +79,7 @@ router.get('/:id/edit/benefits', productosController.editBenefits);
 router.get('/:id/edit/sections', productosController.editSections);
 router.get('/:id/edit/sections/:section', productosController.showSection);
 router.get('/:id/edit/contents', productosController.editContents);
+router.get('/:id/edit/contents/:section', productosController.showSectionIdForContentEdition);
 
 
 /*---Rutas para editar POST---*/

@@ -144,6 +144,14 @@ td input {
     color: black;
     cursor: pointer;
 }
+.contentList {
+    text-align: center;
+    margin: 10px auto;
+    list-style: none;
+}
+.selectedContent {
+    cursor: pointer;
+}
 
 @media (max-width: 556px) {
     .disenoBlanco {
