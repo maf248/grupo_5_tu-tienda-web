@@ -33,6 +33,13 @@
                 </ul>
     
         </section>
+
+
+        <a class="reset" style="text-decoration: none; color: black; text-align: center;" href="/products/<%= productToEdit.id %>/edit/sections">Volver</a>
+        
+        <a class="submit" style="text-decoration: none; color: black; text-align: center;" href="/products">Terminar</a>
+
+
     <% } %>
 
 
@@ -125,7 +132,15 @@
         
             </section> 
 
+
+
         </div>
+
+        <a class="reset" style="text-decoration: none; color: black; text-align: center;" href="/products/<%= productToEdit.id %>/edit/contents">Volver a editar otra sección</a>
+        
+        <a class="submit" style="text-decoration: none; color: black; text-align: center;" href="/products">Terminar</a>
+
+
 
     <% } %>   
 
@@ -151,6 +166,9 @@
                     </ul>
         
             </section>
+
+            <a href="/products/<%= newID %>/create/sections" class="reset" style="text-align: center; color: black;">Volver a crear secciones</a>
+            <a href="/products" class="submit" style="text-align: center; color: black;">Terminar</a>
         <% } %>
 
 
@@ -216,7 +234,7 @@
 
                 <button class="submit"><a style="text-decoration: none; color: black;" href="/products/<%= productToCreate.id %>/create/contents">Volver y crear en otra sección</a></button>
         
-                <button class="submit"><a style="text-decoration: none; color: black;" href="/products">Siguiente</a></button>
+                <button class="submit"><a style="text-decoration: none; color: black;" href="/products">Terminar</a></button>
 
 
             </div>
