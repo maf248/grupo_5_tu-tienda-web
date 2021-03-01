@@ -56,8 +56,8 @@
                     <li tabindex="0">
                         <h6 class="typeOfContentToEdit">Icon:</h6>
                         <img src="/images/Producto-<%= productToEdit.id %>/<%= con.text %>" alt="" class="contentIconToEdit">
-                        <div class="contentToEditContainer">
-                            <form action="/products/<%=productToEdit.id %>/edit/contents/<%= sectionToEdit.id %>/<%= con.type %>/<%= con.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                        <div class="contentToEditIconContainer">
+                            <form action="/products/<%= productToEdit.id %>/edit/contents/<%= sectionToEdit.id %>/<%= con.type %>/<%= con.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                                 
                                 <input type="file" name="editedContent" id="iconToEdit">
                                 <button type="submit">Guardar Cambios</button>
@@ -73,7 +73,7 @@
                         <div class="contentToEditContainer">
                             <form action="/products/<%=productToEdit.id %>/edit/contents/<%= sectionToEdit.id %>/<%= con.type %>/<%= con.id %>?_method=PUT" method="POST">
                                 
-                                <input type="text" name="editedContent" id="subtitleToEdit" placeholder="Escribe el texto aqui">
+                                <input type="text" name="editedContent" id="subtitleToEdit" value="<%= con.text %>">
                                 <button type="submit">Guardar Cambios</button>
                             
                             </form>
@@ -87,7 +87,7 @@
                         <div class="contentToEditContainer">
                             <form action="/products/<%=productToEdit.id %>/edit/contents/<%= sectionToEdit.id %>/<%= con.type %>/<%= con.id %>?_method=PUT" method="POST">
                                 
-                                <textarea name="editedContent" id="descriptionToEdit" placeholder="Escribe el texto aqui" cols="50" rows="5"></textarea> <br>
+                                <textarea name="editedContent" id="descriptionToEdit"  cols="50" rows="5"><%= con.text %></textarea> <br>
                                 <button type="submit">Guardar Cambios</button>
                             
                             </form>
@@ -108,21 +108,21 @@
                     </h2>
                 </article>
                 <div class="disenoBlanco-containerArticle2">
-                    <article class="disenoBlanco-article2">
                     <% if (typeof sectionToEdit.Contents != 'undefined') { %>
                         <% sectionToEdit.Contents.forEach(con => { %>
-                            <%if (con.type == 'icon') {%>
-                                <img src="/images/Producto-<%= productToEdit.id %>/<%= con.text %>" alt="" style="width: 10%;" class="iconContent">
-                            <% } %>
 
-                            <% if (con.type == 'subtitle') { %>
-                                <h3 class="disenoBlanco-article2-titulo subtitleContent">
-                                    <%= con.text  %>
-                                </h3>
-                            <% } %>    
-                            <% if (con.type == 'description') {%>
-                                <p class="descriptionContent">  <%= con.text  %> </p>
-                            <% } %>
+                                <%if (con.type == 'icon') {%>
+                                    <img src="/images/Producto-<%= productToEdit.id %>/<%= con.text %>" alt="" style="width: 10%;" class="iconContent">
+                                <% } %>
+
+                                <% if (con.type == 'subtitle') { %>
+                                    <h3 class="disenoBlanco-article2-titulo subtitleContent">
+                                        <%= con.text  %>
+                                    </h3>
+                                <% } %>    
+                                <% if (con.type == 'description') {%>
+                                    <p class="descriptionContent">  <%= con.text  %> </p>
+                                <% } %>
                         <% }) %>
                     <% } %>
                 </div>
@@ -245,3 +245,34 @@
 
 
 <%- include('../../partials/footer') %>
+<script>
+
+    const qs = (text) => document.querySelector(text);
+    const qsa = (text) => document.querySelectorAll(text);
+
+    const contentToClick = qsa('.contentToEdit');
+    const contentToClickIcon = qsa('.contentIconToEdit');
+
+    for (let i = 0; i < contentToClick.length ; i++) {
+
+        contentToClick[i].addEventListener('click', (e) => {
+            
+            const contentToShow = qsa('.contentToEditContainer');
+            
+            contentToShow[i].style.display = 'block' 
+        })
+
+    }
+
+    for (let i = 0; i < contentToClickIcon.length ; i++) {
+
+    contentToClickIcon[i].addEventListener('click', (e) => {
+    
+    const contentToShowIcon = qsa('.contentToEditIconContainer');
+    
+    contentToShowIcon[i].style.display = 'block' 
+})
+
+}
+
+</script>

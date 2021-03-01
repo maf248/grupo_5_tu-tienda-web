@@ -158,10 +158,8 @@ td input {
     background-color: white;
     margin: 10px;
 }
-.contentList li:focus .contentToEditContainer {
-    display: block;
-}  
-.contentToEditContainer {
+.contentToEditContainer,
+.contentToEditIconContainer {
     display: none;
 }
 #descriptionToEdit,
