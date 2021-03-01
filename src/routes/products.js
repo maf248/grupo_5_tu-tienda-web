@@ -64,7 +64,6 @@ router.get('/:id/create/contents', productosController.createContents);
 router.get('/:id/create/contents/:section', productosController.showSectionIdForContentsCreation);
 
 /*---Rutas para crear POST---*/
-//router.post('/', upload.any(), productosController.creador);
 
 router.post('/create', upload.any(), productosController.saveProduct);
 router.post('/:id/create/categories', upload.any(), productosController.saveCategories);
@@ -83,7 +82,6 @@ router.get('/:id/edit/contents/:section', productosController.showSectionIdForCo
 
 
 /*---Rutas para editar POST---*/
-//router.put('/:id', upload.any(), productosController.editor);
 
 router.put('/:id/edit', upload.any(), productosController.modifyProduct);
 router.put('/:id/edit/categories', upload.any(), productosController.modifyCategories);
