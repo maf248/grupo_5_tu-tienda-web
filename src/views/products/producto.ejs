@@ -172,20 +172,20 @@
                                 </td>
                             <% } %>
                         </tr>
-                        <% if (typeof product.Categories[0].Benefits != 'undefined') { %>
-                        <% for (let i = 0; i < product.Categories[0].Benefits.length; i++) { %>
+                        <% if (typeof benefits != 'undefined') { %>
+                        <% benefits.forEach(benefit => { %>  
                         <tr>  
                             <td class="beneficio">
                                 <div class="tdDiv">
-                                    <%= product.Categories[0].Benefits[i].name %>
+                                    <%= benefit.name %>
                                 </div>
                             </td>
                                 <% for (let j = 0; j < product.Categories.length; j++) { %>
                                     <td class="beneficio">
                                         <div class="tdDiv">
-                                            <% if (product.Categories[j].Benefits[i] != null) { %>
+                                            <% if ((typeof benefit.Categories[0] != 'undefined' && benefit.Categories[0].id == product.Categories[j].id) || (typeof benefit.Categories[1] != 'undefined' && benefit.Categories[1].id == product.Categories[j].id) || (typeof benefit.Categories[2] != 'undefined' && benefit.Categories[2].id == product.Categories[j].id)) { %>
                                                 <i class="fas fa-check"></i>
-                                            <% } else if (product.Categories[j].Benefits[i] == null) { %>
+                                            <% } else { %>
                                                 <i class="fas fa-times"></i>
                                             <% } %>
                                         </div>
@@ -193,7 +193,7 @@
                                 <% } %>
                         </tr>
                         
-                         <% } } %>
+                         <% }) } %>
                         
                         <tr>
                             <td>

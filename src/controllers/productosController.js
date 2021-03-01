@@ -92,16 +92,17 @@ const productosController = {
             include: [
               {association: "Sections", 
             include: [{association: "Contents"}]},
-              {association: "Categories",
-            include: [
-              {association: "Benefits"}
-            ]
-          }
+              {association: "Categories"}
             ]
           })
           .then((product) => {
-          
-            res.render('./products/producto', {product: product});
+            db.Benefit.findAll({
+              include: [{association: "Categories", where: {id: [product.Categories[0].id,product.Categories[1].id, product.Categories[2].id]}}]
+            })
+            .then(benefits => {
+              res.render('./products/producto', {product: product, benefits: benefits});
+            })
+            
           })
           .catch(err => {
             res.send(err)
