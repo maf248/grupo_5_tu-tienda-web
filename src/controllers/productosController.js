@@ -482,6 +482,51 @@ const productosController = {
 
                 db.Benefit.destroy({where: {id: {[db.Sequelize.Op.like] : [associatedBenefits[i].id]} }})
               }
+              /*----Recorre las categorías y chequea las asociaciones con los beneficios en cuestion----*/
+              if (associatedBenefits[i].Categories) {
+          
+              associatedBenefits[i].Categories.forEach(asociatedCategory => {
+
+                /*--Si esta tildado el checkbox de categoría 1, lo asocia en caso de NO estarlo--*/
+                if(req.body['benefit' + associatedBenefits[i].id + 'Cat1'] == 'true') {
+
+                  if (product.Categories[0].id != asociatedCategory.id) {
+                    associatedBenefits[i].addCategories(product.Categories[0].id)
+                  }
+                /*----Si NO esta tildado el checkbox de categoría 1, pero sí esta asociado con esa categoría, lo desasocia---*/
+                } else {
+                  if (product.Categories[0].id == asociatedCategory.id) {
+                    associatedBenefits[i].removeCategories(product.Categories[0].id)
+                  }
+                }
+                 /*--Si esta tildado el checkbox de categoría 2, lo asocia en caso de NO estarlo--*/
+                 if(req.body['benefit' + associatedBenefits[i].id + 'Cat2'] == 'true') {
+
+                  if (product.Categories[1].id != asociatedCategory.id) {
+                    associatedBenefits[i].addCategories(product.Categories[1].id)
+                  }
+                /*----Si NO esta tildado el checkbox de categoría 2, pero sí esta asociado con esa categoría, lo desasocia---*/
+                } else {
+                  if (product.Categories[1].id == asociatedCategory.id) {
+                    associatedBenefits[i].removeCategories(product.Categories[1].id)
+                  }
+                }
+                 /*--Si esta tildado el checkbox de categoría 3, lo asocia en caso de NO estarlo--*/
+                 if(req.body['benefit' + associatedBenefits[i].id + 'Cat3'] == 'true') {
+
+                  if (product.Categories[2].id != asociatedCategory.id) {
+                    associatedBenefits[i].addCategories(product.Categories[2].id)
+                  }
+                /*----Si NO esta tildado el checkbox de categoría 3, pero sí esta asociado con esa categoría, lo desasocia---*/
+                } else {
+                  if (product.Categories[2].id == asociatedCategory.id) {
+                    associatedBenefits[i].removeCategories(product.Categories[2].id)
+                  }
+                }
+                
+              })
+            }
+
           }
 
             res.redirect(`/products/${product.id}`)
