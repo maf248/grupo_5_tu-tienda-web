@@ -149,7 +149,8 @@ td input {
     margin: 10px auto;
     list-style: none;
 }
-.contentToEdit {
+.contentToEdit,
+.contentIconToEdit {
     cursor: pointer;
 }
 .contentList li button {
@@ -157,13 +158,12 @@ td input {
     background-color: white;
     margin: 10px;
 }
-.contentList li:hover .contentToEditContainer {
+.contentList li:focus .contentToEditContainer {
     display: block;
-}
+}  
 .contentToEditContainer {
     display: none;
 }
-
 #descriptionToEdit,
 #subtitleToEdit {
     border: 1px solid black;
