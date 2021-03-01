@@ -75,7 +75,7 @@ files.forEach (file => {
     break
     case 'sectionImage': imageDir.sectionImage = file.filename
     break
-    case 'editSectionImage': imageDir.sectionImage = file.filename
+    case 'editSectionImage': imageDir.editSectionImage = file.filename
     break
     case 'contentIcon': imageDir.contentIcon = file.filename
     break
