@@ -5,6 +5,7 @@ const multer = require('multer');
 
 const fs = require('fs');
 const db = require('../database/models');
+const createEditProductValidate = require('../middlewares/productValidate')
 
 
 // ************ Controller Require ************
@@ -65,7 +66,7 @@ router.get('/:id/create/contents/:section', productosController.showSectionIdFor
 
 /*---Rutas para crear POST---*/
 
-router.post('/create', upload.any(), productosController.saveProduct);
+router.post('/create', upload.any(), createEditProductValidate, productosController.saveProduct);
 router.post('/:id/create/categories', upload.any(), productosController.saveCategories);
 router.post('/:id/create/benefits', productosController.saveBenefits);
 router.post('/:id/create/sections', upload.any(), productosController.saveSections);
@@ -83,7 +84,7 @@ router.get('/:id/edit/contents/:section', productosController.showSectionIdForCo
 
 /*---Rutas para editar POST---*/
 
-router.put('/:id/edit', upload.any(), productosController.modifyProduct);
+router.put('/:id/edit', upload.any(), createEditProductValidate, productosController.modifyProduct);
 router.put('/:id/edit/categories', upload.any(), productosController.modifyCategories);
 router.put('/:id/edit/benefits', productosController.modifyBenefits);
 router.put('/:id/edit/sections/:section/edited-section', upload.any(), productosController.modifySection);

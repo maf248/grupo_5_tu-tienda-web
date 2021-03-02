@@ -131,6 +131,11 @@ const productosController = {
           }
         },
       saveProduct: function (req, res, next) {
+        let errors = validationResult(req);
+        if (errors.isEmpty()) {
+          
+        }
+
         uploadFilesDir(req.files);
 
         db.Product.create({
