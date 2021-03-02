@@ -20,31 +20,49 @@
         
        
 <label for="name"style="padding: 5px; width: 100%; text-align:center;">Elegí el nombre del producto:</label> <br>
-<input required type="text" style="padding: 5px; width: 50%; text-align:center; border-color: rgba(0, 0, 0, 1); border-width: 0.1px; margin: auto;" name="name" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.name %>" <% } else { %> placeholder="Escribí aquí el nombre del producto" <% } %>> <br>
- 
+<input required type="text" style="padding: 5px; width: 50%; text-align:center; border-color: rgba(0, 0, 0, 1); border-width: 0.1px; margin: auto;" name="name" <% if (typeof body != 'undefined') { %> value="<%= body.name %>" <% } else if (typeof productToEdit != 'undefined') { %> value="<%= productToEdit.name %>" <% } else { %> placeholder="Escribí aquí el nombre del producto" <% } %>> <br>
+<% if (typeof errors != "undefined") {
+    errors.forEach ( error => { 
+        if (error.param == "name") { %>
+            <p class="errors"><%= error.msg %></p>
+    <% } }) } %>
 <!--Elegir tipo de producto-->
 <label for="type" style="padding: 5px; width: 100%; text-align:center;">Elegí el tipo de producto:</label> <br>
-<select required style="padding: 5px; width: 15%; text-align:center; border-color: rgba(0, 0, 0, 1); border-width: 0.1px; margin: auto;" name="type" <% if (typeof productToEdit != 'undefined' ) { %> placeholder="Seleccioná una opción" <% } %>>
+<select required style="padding: 5px; width: 15%; text-align:center; border-color: rgba(0, 0, 0, 1); border-width: 0.1px; margin: auto;" name="type">
     <option value="pagina_web" <% if (typeof productToEdit != 'undefined' && productToEdit.type == 'pagina_web') { %> selected="selected" <% } %> >Página Web</option>
     <option value="tienda_web" <% if (typeof productToEdit != 'undefined' && productToEdit.type == 'tienda_web') { %> selected="selected" <% } %> >Tienda Web</option>
 </select>
 <!--Elegir imagen del producto-->
 <label style="display: block; padding: 5px; width: 100%; text-align:center;margin-top: 1%;" for="image">Elegí una imagen que describa el producto:</label>
 <input style="margin: 1% auto" type="file" name="image" id="image">
-
+<% if (typeof errors != "undefined") {
+    errors.forEach ( error => { 
+        if (error.param == "image") { %>
+            <p class="errors"><%= error.msg %></p>
+    <% } }) } %>
 </div>
 
 <section class="banner1">
     <h2>
         <!--elegí el título del Banner 1-->
         <label for="titleBanner1">Titulo principal:</label>
-        <input required type="text" style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 50%;" name="titleBanner1" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.title_banner %>" <% } else { %> placeholder="Escribí el texto aquí..." <% } %>>
+        <input required type="text" style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 50%;" name="titleBanner1" <% if (typeof body != 'undefined') { %> value="<%= body.titleBanner1 %>" <% } else if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.title_banner %>" <% } else { %> placeholder="Escribí el texto aquí..." <% } %>>
     </h2>
+    <% if (typeof errors != "undefined") {
+        errors.forEach ( error => { 
+            if (error.param == "titleBanner1") { %>
+                <p class="errors"><%= error.msg %></p>
+        <% } }) } %>
     <p>
         <!--elegí el título del Banner 1-->
         <label for="subtitleBanner1">Subtítulo principal:</label>
-        <input required type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 40%;" name="subtitleBanner1" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.subtitle_banner %>" <% } else { %> placeholder="Escribí el texto aquí..." <% } %>>
+        <input required type="text"  style="padding: 5px; margin: 2% auto; border-radius: 3px;width: 40%;" name="subtitleBanner1" <% if (typeof body != 'undefined') { %> value="<%= body.subtitleBanner1 %>" <% } else if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.subtitle_banner %>"  <% } else { %> placeholder="Escribí el texto aquí..." <% } %>>
     </p>
+    <% if (typeof errors != "undefined") {
+        errors.forEach ( error => { 
+            if (error.param == "subtitleBanner1") { %>
+                <p class="errors"><%= error.msg %></p>
+        <% } }) } %>
 </section>
 
         <div class="buttons-form">

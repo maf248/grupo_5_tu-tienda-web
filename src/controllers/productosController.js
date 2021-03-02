@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { Recoverable } = require('repl');
 const { isContext } = require('vm');
+const {validationResult} = require('express-validator');
 
 const db = require('../database/models');
 
@@ -133,25 +134,28 @@ const productosController = {
       saveProduct: function (req, res, next) {
         let errors = validationResult(req);
         if (errors.isEmpty()) {
-          
+
+          uploadFilesDir(req.files);
+
+          db.Product.create({
+            name: req.body.name,
+            type: req.body.type,
+            title_banner: req.body.titleBanner1,
+            subtitle_banner: req.body.subtitleBanner1,
+            image: imageDir.image
+          })
+          .then(newProduct => {
+
+            res.redirect(`/products/${newProduct.id}/create/categories`);
+          })
+          .catch(err => {
+            res.send(err)
+          })
+        } else {
+          res.render('./products/create-edit/product', {errors: errors.errors, body: req.body});
         }
 
-        uploadFilesDir(req.files);
-
-        db.Product.create({
-          name: req.body.name,
-          type: req.body.type,
-          title_banner: req.body.titleBanner1,
-          subtitle_banner: req.body.subtitleBanner1,
-          image: imageDir.image
-        })
-        .then(newProduct => {
-
-          res.redirect(`/products/${newProduct.id}/create/categories`);
-        })
-        .catch(err => {
-          res.send(err)
-        })
+        
       },
      createCategory: function(req, res, next) {
       if (req.session.user != undefined && req.session.user.role == 'admin') {
@@ -361,23 +365,31 @@ const productosController = {
       }      
     },
     modifyProduct: function(req, res, next) {
-      uploadFilesDir(req.files);
-    /*----Actualizando los datos del producto en la base de datos----*/
-        db.Product.update({
-        name: req.body.name,
-        type: req.body.type,
-        title_banner: req.body.titleBanner1,
-        subtitle_banner: req.body.subtitleBanner1,
-        image: imageDir.image
-      }, {where: {id: req.params.id}})
-        .then(()=> {
-          res.redirect(`/products/${req.params.id}/edit/categories`);
+      let errors = validationResult(req);
+      if (errors.isEmpty()) {
+        uploadFilesDir(req.files);
+      /*----Actualizando los datos del producto en la base de datos----*/
+          db.Product.update({
+          name: req.body.name,
+          type: req.body.type,
+          title_banner: req.body.titleBanner1,
+          subtitle_banner: req.body.subtitleBanner1,
+          image: imageDir.image
+        }, {where: {id: req.params.id}})
+          .then(()=> {
+            res.redirect(`/products/${req.params.id}/edit/categories`);
+          })
+          .catch((error) => {
+            console.log(error);
+            let ErrorsJSON = JSON.stringify(error);
+            fs.appendFileSync(ErrorsDir, ErrorsJSON);
         })
-        .catch((error) => {
-          console.log(error);
-          let ErrorsJSON = JSON.stringify(error);
-          fs.appendFileSync(ErrorsDir, ErrorsJSON);
-      })    
+      } else {
+        db.Product.findByPk(req.params.id)
+        .then(product => {
+          res.render('./products/create-edit/product', {productToEdit: product, errors: errors.errors, body: req.body});
+        })
+      }
     },
     editCategories: function(req, res, next) {
       if (req.session.user != undefined && req.session.user.role == 'admin') {

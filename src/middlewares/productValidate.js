@@ -12,9 +12,9 @@ module.exports = [
     body('image')
     .custom(function(value, {req}) {
         if (req.params.id) {
-            if (typeof req.file != 'undefined') {
+            if (typeof req.files[0] != 'undefined') {
 
-                var extension = (path.extname(req.file.filename)).toLowerCase();
+                var extension = (path.extname(req.files[0].filename)).toLowerCase();
                 switch (extension) {
                 case '.jpg':
                     return true;
@@ -29,9 +29,10 @@ module.exports = [
             return true;
 
         } else {
-            if (typeof req.file != 'undefined') {
-
-                var extension = (path.extname(req.file.filename)).toLowerCase();
+ 
+            if (typeof req.files[0] != 'undefined') {
+                
+                var extension = (path.extname(req.files[0].filename)).toLowerCase();
                 switch (extension) {
                 case '.jpg':
                     return true;
