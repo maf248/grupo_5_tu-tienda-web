@@ -213,13 +213,17 @@ const createTitleInput = qs('#sectionTitle');
 const createImageInput = qs('#sectionImage');
 
 console.log(editTitleInput)
+console.log(createTitleInput)
 console.log(editImageInput.value)
+console.log(createImageInput.value)
 
 editTitleInput.addEventListener('change', (e) => {
     if (editTitleInput.value.length < 3) {
         const messageToShow = qs('#editSectionTitleContainer')
         messageToShow.innerHTML = `<p> El título debe contener al menos 3 caracteres </p>`
         messageToShow.style.textAlign = "center"
+        messageToShow.style.color = "red"
+        messageToShow.style.margin = "15px"
         const formToPrevent = qs('#formToEdit');
         formToPrevent.addEventListener('click', ev => {
             ev.preventDefault()
@@ -229,7 +233,7 @@ editTitleInput.addEventListener('change', (e) => {
         messageToShow.innerHTML = "" 
         const formToPrevent = qs('#formToEdit');
         formToPrevent.addEventListener('click', ev => {
-            
+
         })
     }
 })
@@ -251,6 +255,8 @@ createTitleInput.addEventListener('change', (e) => {
         const messageToShow = qs('#sectionTitleContainer')
         messageToShow.innerHTML = "<p> El título debe contener al menos 3 caracteres </p>" 
         messageToShow.style.textAlign = "center"
+        messageToShow.style.color = "red"
+        messageToShow.style.margin = "15px"
         const formToPrevent = qs('#formToEdit');
         formToPrevent.addEventListener('click', ev => {
             ev.preventDefault()
@@ -268,11 +274,11 @@ createTitleInput.addEventListener('change', (e) => {
 createImageInput.addEventListener('change', (e) => {
     console.log(createImageInput.value.split('.')[1])
     if (createImageInput.value.split('.')[1] != "jpg" || createImageInput.value.split('.')[1] != "jpeg" || createImageInput.value.split('.')[1] != "png") {
-        const messageToShow = qs('#editSectionImageContainer')
+        const messageToShow = qs('#sectionImageContainer')
         messageToShow.innerHTML = `<p> La imagen debe estar en formato JPG, JPEG o PNG </p>`
         messageToShow.style.textAlign = "center"
     } else {
-        const messageToShow = qs('#editSectionTitleContainer')
+        const messageToShow = qs('#sectionTitleContainer')
         messageToShow.innerHTML = "" 
     }
 })
