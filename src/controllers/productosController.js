@@ -106,8 +106,7 @@ const productosController = {
           })
           .catch(err => {
             res.send(err)
-          })
-          
+          })          
     },
     listado: function(req, res, next) {
           db.Product.findAll({
