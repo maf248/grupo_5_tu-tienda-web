@@ -88,7 +88,7 @@ router.get('/:id/edit/contents/:section', productosController.showSectionIdForCo
 router.put('/:id/edit', upload.any(), productValidate, productosController.modifyProduct);
 router.put('/:id/edit/categories', upload.any(), productosController.modifyCategories);
 router.put('/:id/edit/benefits', productosController.modifyBenefits);
-router.put('/:id/edit/sections/:section/edited-section', upload.any(), productosController.modifySection);
+router.put('/:id/edit/sections/:section/edited-section', upload.any(), sectionValidate, productosController.modifySection);
 router.put('/:id/edit/contents/:section/:type/:content', upload.any(), productosController.modifyContents);
 
 router.get('/:id', productosController.detalle);
