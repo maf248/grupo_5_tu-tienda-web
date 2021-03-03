@@ -90,5 +90,4 @@ module.exports = [
         }
     })
     .withMessage('Debe subir una imagen en formatos: jpg, jpeg o png')
-
 ]

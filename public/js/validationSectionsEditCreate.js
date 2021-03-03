@@ -24,11 +24,6 @@ if (window.location.pathname.includes('edit')) {
             messageToShow.style.margin = "15px"
             variable1 = false;
 
-            let botonQueActiva = qs('#botonDeMierda')
-            botonQueActiva.addEventListener('click', ev => {
-    
-                ev.preventDefault()
-            })  
     
         } else {
             let messageToShow = qs('#editSectionTitleContainer')
@@ -45,12 +40,6 @@ if (window.location.pathname.includes('edit')) {
             messageToShow.style.color = "red"
             messageToShow.style.margin = "15px"
             variable2 = false
-
-            let botonQueActiva = qs('#botonDeMierda')
-            botonQueActiva.addEventListener('click', ev => {
-    
-                ev.preventDefault()
-            })  
 
         } else {
             let messageToShow = qs('#editSectionImageContainer')
@@ -106,23 +95,12 @@ if (window.location.pathname.includes('edit')) {
     })
 }
 
-formToSubmit.addEventListener('change', (e) => {
-    console.log(variable1)
-    console.log(variable2)
-    if( variable1 == true && variable2 == true) {
+formToSubmit.addEventListener('submit', (e) => {
 
-        console.log('ahora pasa')
-        let botonQueActiva = qs('#botonDeMierda')
-        botonQueActiva.addEventListener('click', ev => {
-            formToSubmit.submit()
-        })  
-    } else {
-        console.log('ahora NO pasa')
-        let botonQueActiva = qs('#botonDeMierda')
-        botonQueActiva.addEventListener('click', ev => {
 
-            ev.preventDefault()
-        })  
+    if( variable1 == false || variable2 == false) {
+
+        e.preventDefault()
     }
 })
 
