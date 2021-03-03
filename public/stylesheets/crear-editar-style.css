@@ -8,6 +8,21 @@
 h1, h2, h3, h4, h5, h6, button, th {
     font-family: 'Raleway', sans-serif;
 }
+.nombre-producto{
+    position: relative;
+    left: 630px;
+    margin: 10px;
+}
+.tipo-producto{
+    position: relative;
+    left: 630px;
+    margin: 10px;
+}
+.imagen-producto{
+    position: relative;
+    left: 765px;
+    margin: 10px;
+}
 .titulo {
     margin: 20px 0px 10px 0px;
     font-size: 1.8em;
@@ -88,30 +103,35 @@ td input {
     width: 25%;
     min-width: fit-content;
     padding: 10px;
-    background-color: rgb(100, 197, 149);
     border: 1px solid rgb(100, 197, 149);
     font-size: 1.2em;
     font-weight: bold;
     border-radius: 20px;
     margin: 15px auto;
 }
+.submit:hover{
+    background-color: rgb(100, 197, 149);
+}
 .reset {
     width: 25%;
     min-width: fit-content;
     padding: 10px;
-    background-color: rgb(255, 77, 29);
     border: 1px solid rgb(255, 77, 29);
     font-size: 1.2em;
     font-weight: bold;
     border-radius: 20px;
     margin: 15px auto;
 }
+.reset:hover{
+    content: '';
+    background-color: rgb(255, 77, 29);
+}
 .delete {
     width: 25%;
     min-width: fit-content;
     padding: 10px;
     background-color: rgb(255, 0, 0);
-    border: 1px solid rgb(255, 0, 0);
+    border:  1px solid rgb(255, 0, 0);
     font-size: 1.2em;
     font-weight: bold;
     border-radius: 20px;
