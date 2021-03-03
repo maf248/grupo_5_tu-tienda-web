@@ -34,9 +34,11 @@
 
         <div class="editFormContainer">
 
-            <form action="/products/<%= productToEdit.id %>/edit/sections/<%= sectionToEdit.id %>/edited-section?_method=PUT" method="POST" enctype="multipart/form-data">
+            <form action="/products/<%= productToEdit.id %>/edit/sections/<%= sectionToEdit.id %>/edited-section?_method=PUT" method="POST" enctype="multipart/form-data" id="formToEdit">
     
                 <input type="text" name="editSectionTitle" id="editSectionTitle" class="editTextInput" value="<%= sectionToEdit.title %>">
+                <div id="editSectionTitleContainer"></div>
+            
 
                 <% if (typeof errors != 'undefined') { %>
                     <% errors.forEach (error => { %>
@@ -48,6 +50,7 @@
         
                 <label for="editSectionImage" style="padding: 10px; margin: auto;"><p style="text-align: center; margin: 2px; cursor: pointer;">Selecciona la imagen</p></label>
                 <input type="file" name="editSectionImage" id="editSectionImage" style="align-self: center;">
+                <div id="editSectionImageContainer"></div>
                 
                 <% if (typeof errors != 'undefined') { %>
                     <% errors.forEach (error => { %>
@@ -115,10 +118,11 @@
         
     </article>
 
-    <form action="/products/<%= newID %>/create/sections" method="POST" enctype="multipart/form-data">
+    <form action="/products/<%= newID %>/create/sections" method="POST" enctype="multipart/form-data" id="formToCreate">
         
         <label for="sectionTitle">Elegí el título de la sección que estás por crear:</label>
         <input type="text" name="sectionTitle" id="sectionTitle" placeholder="Escribe el texto aqui..." style="width: 100%; border: 1px solid black; margin: 16px auto;">
+        <div id="sectionTitleContainer"></div>
 
             <% if (typeof errors != 'undefined') { %>
                 <% errors.forEach (error => { %>
@@ -130,6 +134,7 @@
 
         <label for="sectionImage">Elegí la imagen de la sección que estás por crear:</label>
         <input type="file" name="sectionImage" id="sectionImage" accept="image/png image/jpg" style="display: block;">
+        <div id="sectionImageContainer"></div>
 
         <% if (typeof errors != 'undefined') { %>
             <% errors.forEach (error => { %>
@@ -196,3 +201,80 @@
 
 
 <%- include('../../partials/footer') %>
+
+<script>
+
+const qs = (text) => document.querySelector(text);
+const qsa = (text) => document.querySelectorAll(text);
+
+const editTitleInput = qs('#editSectionTitle');
+const editImageInput = qs('#editSectionImage');
+const createTitleInput = qs('#sectionTitle');
+const createImageInput = qs('#sectionImage');
+
+console.log(editTitleInput)
+console.log(editImageInput.value)
+
+editTitleInput.addEventListener('change', (e) => {
+    if (editTitleInput.value.length < 3) {
+        const messageToShow = qs('#editSectionTitleContainer')
+        messageToShow.innerHTML = `<p> El título debe contener al menos 3 caracteres </p>`
+        messageToShow.style.textAlign = "center"
+        const formToPrevent = qs('#formToEdit');
+        formToPrevent.addEventListener('click', ev => {
+            ev.preventDefault()
+        })
+    } else {
+        const messageToShow = qs('#editSectionTitleContainer')
+        messageToShow.innerHTML = "" 
+        const formToPrevent = qs('#formToEdit');
+        formToPrevent.addEventListener('click', ev => {
+            
+        })
+    }
+})
+
+editImageInput.addEventListener('change', (e) => {
+    console.log(editImageInput.value.split('.')[1])
+    if (editImageInput.value.split('.')[1] != "jpg" || editImageInput.value.split('.')[1] != "jpeg" || editImageInput.value.split('.')[1] != "png") {
+        const messageToShow = qs('#editSectionImageContainer')
+        messageToShow.innerHTML = `<p> La imagen debe estar en formato JPG, JPEG o PNG </p>`
+        messageToShow.style.textAlign = "center"
+    } else {
+        const messageToShow = qs('#editSectionTitleContainer')
+        messageToShow.innerHTML = "" 
+    }
+})
+
+createTitleInput.addEventListener('change', (e) => {
+    if (createTitleInput.value.length < 3) {
+        const messageToShow = qs('#sectionTitleContainer')
+        messageToShow.innerHTML = "<p> El título debe contener al menos 3 caracteres </p>" 
+        messageToShow.style.textAlign = "center"
+        const formToPrevent = qs('#formToEdit');
+        formToPrevent.addEventListener('click', ev => {
+            ev.preventDefault()
+        })
+    } else {
+        const messageToShow = qs('#sectionTitleContainer')
+        messageToShow.innerHTML = "" 
+        const formToPrevent = qs('#formToEdit');
+        formToPrevent.addEventListener('click', ev => {
+            
+        })
+    }
+})
+
+createImageInput.addEventListener('change', (e) => {
+    console.log(createImageInput.value.split('.')[1])
+    if (createImageInput.value.split('.')[1] != "jpg" || createImageInput.value.split('.')[1] != "jpeg" || createImageInput.value.split('.')[1] != "png") {
+        const messageToShow = qs('#editSectionImageContainer')
+        messageToShow.innerHTML = `<p> La imagen debe estar en formato JPG, JPEG o PNG </p>`
+        messageToShow.style.textAlign = "center"
+    } else {
+        const messageToShow = qs('#editSectionTitleContainer')
+        messageToShow.innerHTML = "" 
+    }
+})
+
+</script>
