@@ -37,10 +37,26 @@
             <form action="/products/<%= productToEdit.id %>/edit/sections/<%= sectionToEdit.id %>/edited-section?_method=PUT" method="POST" enctype="multipart/form-data">
     
                 <input type="text" name="editSectionTitle" id="editSectionTitle" class="editTextInput" value="<%= sectionToEdit.title %>">
+
+                <% if (typeof errors != 'undefined') { %>
+                    <% errors.forEach (error => { %>
+                        <% if (error.param == "editSectionTitle") { %>
+                            <p class="errors"><%= error.msg %></p>
+                        <% } %>
+                    <% }) %>
+                <% } %>
         
                 <label for="editSectionImage" style="padding: 10px; margin: auto;"><p style="text-align: center; margin: 2px; cursor: pointer;">Selecciona la imagen</p></label>
                 <input type="file" name="editSectionImage" id="editSectionImage" style="align-self: center;">
                 
+                <% if (typeof errors != 'undefined') { %>
+                    <% errors.forEach (error => { %>
+                        <% if (error.param == "editSectionImage") { %>
+                            <p class="errors"><%= error.msg %></p>
+                        <% } %>
+                    <% }) %>
+                <% } %>
+
                 <button type="submit" class="submit" style="margin: 5px auto; display: block;">Guardar</button>
         
             </form>
@@ -104,8 +120,24 @@
         <label for="sectionTitle">Elegí el título de la sección que estás por crear:</label>
         <input type="text" name="sectionTitle" id="sectionTitle" placeholder="Escribe el texto aqui..." style="width: 100%; border: 1px solid black; margin: 16px auto;">
 
+            <% if (typeof errors != 'undefined') { %>
+                <% errors.forEach (error => { %>
+                    <% if (error.param == "sectionTitle") { %>
+                        <p class="errors"><%= error.msg %></p>
+                    <% } %>
+                <% }) %>
+            <% } %>
+
         <label for="sectionImage">Elegí la imagen de la sección que estás por crear:</label>
         <input type="file" name="sectionImage" id="sectionImage" accept="image/png image/jpg" style="display: block;">
+
+        <% if (typeof errors != 'undefined') { %>
+            <% errors.forEach (error => { %>
+                <% if (error.param == "sectionImage") { %>
+                    <p class="errors"><%= error.msg %></p>
+                <% } %>
+            <% }) %>
+        <% } %>
 
         <button type="submit" class="reset" style="display: block;">Guardar y seguir creando</button>
 

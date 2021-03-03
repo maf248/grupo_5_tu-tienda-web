@@ -18,56 +18,6 @@ files.forEach (file => {
   switch (file.fieldname) {
     case 'image': imageDir.image = file.filename
     break
-    case 'aicon1': imageDir.aicon1 = file.filename
-    break
-    case 'aicon2': imageDir.aicon2 = file.filename
-    break
-    case 'aicon3': imageDir.aicon3 = file.filename
-    break
-    case 'aicon4': imageDir.aicon4 = file.filename
-    break
-    case 'aimage': imageDir.aimage = file.filename
-    break
-    case 'bimage': imageDir.bimage = file.filename
-    break
-    case 'bicon1': imageDir.bicon1 = file.filename
-    break
-    case 'bicon2': imageDir.bicon2 = file.filename
-    break
-    case 'bicon3': imageDir.bicon3 = file.filename
-    break
-    case 'bicon4': imageDir.bicon4 = file.filename
-    break
-    case 'cicon1': imageDir.cicon1 = file.filename
-    break
-    case 'cicon2': imageDir.cicon2 = file.filename
-    break
-    case 'cicon3': imageDir.cicon3 = file.filename
-    break
-    case 'cicon4': imageDir.cicon4 = file.filename
-    break
-    case 'cimage': imageDir.cimage = file.filename
-    break
-    case 'dimage': imageDir.dimage = file.filename
-    break
-    case 'dicon1': imageDir.dicon1 = file.filename
-    break
-    case 'dicon2': imageDir.dicon2 = file.filename
-    break
-    case 'dicon3': imageDir.dicon3 = file.filename
-    break
-    case 'dicon4': imageDir.dicon4 = file.filename
-    break
-    case 'eicon1': imageDir.eicon1 = file.filename
-    break
-    case 'eicon2': imageDir.eicon2 = file.filename
-    break
-    case 'eicon3': imageDir.eicon3 = file.filename
-    break
-    case 'eicon4': imageDir.eicon4 = file.filename
-    break
-    case 'eimage': imageDir.eimage = file.filename
-    break
     case 'categoryImage1': imageDir.categoryImage1 = file.filename
     break
     case 'categoryImage2': imageDir.categoryImage2 = file.filename
@@ -263,22 +213,28 @@ const productosController = {
         }
       },
       saveSections: function(req, res, next) {
+        let errors = validationResult(req);
 
-        uploadFilesDir(req.files);
+        if (errors.isEmpty()) {
 
-        db.Section.create({
+          uploadFilesDir(req.files);
 
-          product_id: req.params.id,
-          title: req.body.sectionTitle,
-          image: imageDir.sectionImage
+          db.Section.create({
 
-          }).then( () => {
+            product_id: req.params.id,
+            title: req.body.sectionTitle,
+            image: imageDir.sectionImage
 
-            res.redirect(`/products/${req.params.id}/create/sections`)
+            }).then( () => {
 
-          }).catch( (err) => {
-            console.log(err)
-          })
+              res.redirect(`/products/${req.params.id}/create/sections`)
+
+            }).catch( (err) => {
+              console.log(err)
+            })
+        } else {
+          res.render('./products/create-edit/sections', {newID: req.params.id, section: section, errors: errors.errors, body: req.body});
+        }
         
       },
       createContents: function(req, res, next) {
@@ -568,32 +524,37 @@ const productosController = {
       }      
     },
     showSection: function(req, res, next) {
+      let errors = validationResult(req);
+
       db.Product.findByPk(req.params.id, {
         include: [
-          {association: "Sections", 
-        include: [{association: "Contents"}]},
-          {association: "Categories",
-        include: [{association: "Benefits"}]}
+          {association: "Sections"}
         ]
       })
       .then(product => {
         db.Section.findByPk(req.params.section).then( sec => {
-          res.render('./products/create-edit/sections', {productToEdit: product, sectionToEdit: sec});
+          res.render('./products/create-edit/sections', {productToEdit: product, sectionToEdit: sec, errors: errors.errors, body: req.body});
         })
       })
       .catch ( err => console.log(err))
     },
     modifySection: function(req, res, next) {
-      uploadFilesDir(req.files);
+      let errors = validationResult(req);
 
-      db.Section.update({
-        title: req.body.editSectionTitle,
-        image: imageDir.editSectionImage
-      },
-        {where: {id: req.params.section}
-    }).then( () => {
-        res.redirect(`/products/${req.params.id}/edit/sections/${req.params.section}`)
-      }).catch( err => console.log(err))
+      if (errors.isEmpty()) {
+        uploadFilesDir(req.files);
+
+        db.Section.update({
+          title: req.body.editSectionTitle,
+          image: imageDir.editSectionImage
+        },
+          {where: {id: req.params.section}
+        }).then( () => {
+          res.redirect(`/products/${req.params.id}/edit/sections/${req.params.section}`)
+        }).catch( err => console.log(err))
+    } else {
+      res.redirect(`/products/${req.params.id}/edit/sections/${req.params.section}`)
+    }
     },
     editContents: function(req, res, next) {
       if (req.session.user != undefined && req.session.user.role == 'admin') {
