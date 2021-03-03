@@ -19,22 +19,22 @@
     <% } %>
         
        
-<label for="name"style="padding: 5px; width: 100%; text-align:center;">Elegí el nombre del producto:</label> <br>
-<input required type="text" style="padding: 5px; width: 50%; text-align:center; border-color: rgba(0, 0, 0, 1); border-width: 0.1px; margin: auto;" name="name" <% if (typeof body != 'undefined') { %> value="<%= body.name %>" <% } else if (typeof productToEdit != 'undefined') { %> value="<%= productToEdit.name %>" <% } else { %> placeholder="Escribí aquí el nombre del producto" <% } %>> <br>
+<label class="nombre-producto" for="name"style="padding: 5px; width: 100%; tenterxt-align:ce;">Elegí el nombre del producto:</label> <br>
+<input class="nombre-producto" required type="text" style="padding: 10px; width: 30%; text-align:center; border-color: rgba(0, 0, 0, 1); border-width: 0.1px;" name="name" <% if (typeof body != 'undefined') { %> value="<%= body.name %>" <% } else if (typeof productToEdit != 'undefined') { %> value="<%= productToEdit.name %>" <% } else { %> placeholder="Escribí aquí el nombre del producto" <% } %>> <br>
 <% if (typeof errors != "undefined") {
     errors.forEach ( error => { 
         if (error.param == "name") { %>
             <p class="errors"><%= error.msg %></p>
     <% } }) } %>
 <!--Elegir tipo de producto-->
-<label for="type" style="padding: 5px; width: 100%; text-align:center;">Elegí el tipo de producto:</label> <br>
-<select required style="padding: 5px; width: 15%; text-align:center; border-color: rgba(0, 0, 0, 1); border-width: 0.1px; margin: auto;" name="type">
+<label class="tipo-producto" for="type" style="padding: 5px; width: 100%; text-align:center;">Elegí el tipo de producto:</label> <br>
+<select class="tipo-producto" required style="padding: 5px; width: 15%; text-align:center; border-color: rgba(0, 0, 0, 1); border-width: 0.1px; " name="type">
     <option value="pagina_web" <% if (typeof productToEdit != 'undefined' && productToEdit.type == 'pagina_web') { %> selected="selected" <% } %> >Página Web</option>
     <option value="tienda_web" <% if (typeof productToEdit != 'undefined' && productToEdit.type == 'tienda_web') { %> selected="selected" <% } %> >Tienda Web</option>
 </select>
 <!--Elegir imagen del producto-->
-<label style="display: block; padding: 5px; width: 100%; text-align:center;margin-top: 1%;" for="image">Elegí una imagen que describa el producto:</label>
-<input style="margin: 1% auto" type="file" name="image" id="image">
+<label style="display: block; margin-left: 30px; padding: 5px; width: 100%; text-align:center;margin-top: 1%;" for="image">Elegí una imagen que describa el producto:</label>
+<input class="imagen-producto" style="margin: 1% auto"   type="file" name="image" id="image">
 <% if (typeof errors != "undefined") {
     errors.forEach ( error => { 
         if (error.param == "image") { %>
