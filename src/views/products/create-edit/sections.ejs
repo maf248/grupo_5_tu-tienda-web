@@ -37,26 +37,26 @@
 
             <form action="/products/<%= productToEdit.id %>/edit/sections/<%= sectionToEdit.id %>/edited-section?_method=PUT" method="POST" enctype="multipart/form-data" id="formToEdit">
     
-                <input type="text" name="editSectionTitle" id="editSectionTitle" class="editTextInput" value="<%= sectionToEdit.title %>">
+                <input type="text" name="sectionTitle" id="editSectionTitle" class="editTextInput" <% if (typeof body != 'undefined') { %> value="<%= body.sectionTitle %>" <% } else if (typeof sectionToEdit != 'undefined') { %> value="<%= sectionToEdit.title %>" <% } %>>
                 <div id="editSectionTitleContainer"></div>
             
 
                 <% if (typeof errors != 'undefined') { %>
                     <% errors.forEach (error => { %>
-                        <% if (error.param == "editSectionTitle") { %>
-                            <p class="errors"><%= error.msg %></p>
+                        <% if (error.param == "sectionTitle") { %>
+                            <p class="errors" style="text-align: center;"><%= error.msg %></p>
                         <% } %>
                     <% }) %>
                 <% } %>
         
                 <label for="editSectionImage" style="padding: 10px; margin: auto;"><p style="text-align: center; margin: 2px; cursor: pointer;">Selecciona la imagen</p></label>
-                <input type="file" name="editSectionImage" id="editSectionImage" style="align-self: center;">
+                <input type="file" name="sectionImage" id="editSectionImage" style="align-self: center;">
                 <div id="editSectionImageContainer"></div>
                 
                 <% if (typeof errors != 'undefined') { %>
                     <% errors.forEach (error => { %>
-                        <% if (error.param == "editSectionImage") { %>
-                            <p class="errors"><%= error.msg %></p>
+                        <% if (error.param == "sectionImage") { %>
+                            <p class="errors" style="text-align: center;"><%= error.msg %></p>
                         <% } %>
                     <% }) %>
                 <% } %>
@@ -122,7 +122,7 @@
     <form action="/products/<%= newID %>/create/sections" method="POST" enctype="multipart/form-data" id="formToCreate">
         
         <label for="sectionTitle">Elegí el título de la sección que estás por crear:</label>
-        <input type="text" name="sectionTitle" id="sectionTitle" placeholder="Escribe el texto aqui..." style="width: 100%; border: 1px solid black; margin: 16px auto;">
+        <input type="text" name="sectionTitle" id="sectionTitle" <% if (typeof body != 'undefined') { %> value="<%= body.sectionTitle %>" <% } else { %> placeholder="Escribí tu texto aquí" <% } %> style="width: 100%; border: 1px solid black; margin: 16px auto;">
         <div id="sectionTitleContainer"></div>
 
             <% if (typeof errors != 'undefined') { %>

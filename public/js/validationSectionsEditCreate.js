@@ -8,6 +8,7 @@ const editImageInput = qs('#editSectionImage');
 const createTitleInput = qs('#sectionTitle');
 const createImageInput = qs('#sectionImage');
 const formToSubmit = qs('#formToEdit');
+const formToCreate = qs('#formToCreate');
 
 const reactivarFormulario = qs('#botonDeMierda');
 
@@ -48,7 +49,19 @@ if (window.location.pathname.includes('edit')) {
             
         }
     })
-} else {
+
+    formToSubmit.addEventListener('submit', (e) => {
+
+        if( variable1 == false || variable2 == false) {
+    
+            e.preventDefault()
+    
+        }
+    
+    })
+} 
+
+else {
     createTitleInput.addEventListener('change', (e) => {
         if (createTitleInput.value.length < 3) {
             const messageToShow = qs('#sectionTitleContainer')
@@ -93,16 +106,20 @@ if (window.location.pathname.includes('edit')) {
             variable2 = true
         }
     })
+    formToCreate.addEventListener('submit', (e) => {
+
+        if( variable1 == false || variable2 == false) {
+    
+            e.preventDefault()
+            
+        }
+    
+    })
 }
 
-formToSubmit.addEventListener('submit', (e) => {
 
 
-    if( variable1 == false || variable2 == false) {
 
-        e.preventDefault()
-    }
-})
 
 
 
