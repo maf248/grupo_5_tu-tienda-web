@@ -1,115 +1,165 @@
 const qs = (text) => document.querySelector(text);
 const qsa = (text) => document.querySelectorAll(text);
 
-const editTitleInput = qs('#editSectionTitle');
-const editImageInput = qs('#editSectionImage');
-const createTitleInput = qs('#sectionTitle');
-const createImageInput = qs('#sectionImage');
-const formToSubmit = qs('#formToEdit');
+const productName = qs('#productName');
+const productImage = qs('#productImage');
+const bannerTitle = qs('#bannerTitle');
+const bannerSubtitle = qs('#bannerSubtitle');
+const formToEdit = qs('#formToEdit');
 const formToCreate = qs('#formToCreate');
 
-const reactivarFormulario = qs('#botonDeMierda');
+const formButton = qs('#formButton');
 
-let variable1 = false;
-let variable2 = true;
+let productNameOK = false;
+let productImageOK = true;
+let bannerTitleOK = false;
+let bannerSubtitleOK = false;
 
 if (window.location.pathname.includes('edit')) {
-    editTitleInput.addEventListener('change', (e) => {
-        if (editTitleInput.value.length < 3) {
-            let messageToShow = qs('#editSectionTitleContainer')
-            messageToShow.innerHTML = `<p> El título debe contener al menos 3 caracteres </p>`
+    productName.addEventListener('change', (e) => {
+        if (productName.value.length < 3) {
+            let messageToShow = qs('#productNameError')
+            messageToShow.innerHTML = `<p> Debe contener al menos 3 caracteres </p>`
             messageToShow.style.textAlign = "center"
             messageToShow.style.color = "red"
             messageToShow.style.margin = "15px"
-            variable1 = false;
-
+            productNameOK = false;
     
         } else {
-            let messageToShow = qs('#editSectionTitleContainer')
+            let messageToShow = qs('#productNameError')
             messageToShow.innerHTML = "" 
-            variable1 = true;
+            productNameOK = true;
         }
     })
     
-    editImageInput.addEventListener('change', (e) => {
-        if (editImageInput.value.split('.')[1] != "jpg" && editImageInput.value.split('.')[1] != "jpeg" && editImageInput.value.split('.')[1] != "png") {   
-            let messageToShow = qs('#editSectionImageContainer')
+    productImage.addEventListener('change', (e) => {
+        if (productImage.value.split('.')[1] != "jpg" && productImage.value.split('.')[1] != "jpeg" && productImage.value.split('.')[1] != "png") {   
+            let messageToShow = qs('#productImageError')
             messageToShow.innerHTML = `<p> La imagen debe estar en formato JPG, JPEG o PNG </p>`
             messageToShow.style.textAlign = "center"
             messageToShow.style.color = "red"
             messageToShow.style.margin = "15px"
-            variable2 = false
+            productImageOK = false
 
         } else {
-            let messageToShow = qs('#editSectionImageContainer')
+            let messageToShow = qs('#productImageError')
             messageToShow.innerHTML = "" 
-            variable2 = true
+            productImageOK = true
             
         }
     })
+    bannerTitle.addEventListener('change', (e) => {
+        if (bannerTitle.value.length < 3) {
+            let messageToShow = qs('#bannerTitleError')
+            messageToShow.innerHTML = `<p> Debe contener al menos 3 caracteres </p>`
+            messageToShow.style.textAlign = "center"
+            messageToShow.style.color = "red"
+            messageToShow.style.margin = "15px"
+            bannerTitleOK = false;
+    
+        } else {
+            let messageToShow = qs('#bannerTitleError')
+            messageToShow.innerHTML = "" 
+            bannerTitleOK = true;
+        }
+    })
 
-    formToSubmit.addEventListener('submit', (e) => {
+    bannerSubtitle.addEventListener('change', (e) => {
+        if (bannerSubtitle.value.length < 3) {
+            let messageToShow = qs('#bannerSubtitleError')
+            messageToShow.innerHTML = `<p> Debe contener al menos 3 caracteres </p>`
+            messageToShow.style.textAlign = "center"
+            messageToShow.style.color = "red"
+            messageToShow.style.margin = "15px"
+            bannerSubtitleOK = false;
+    
+        } else {
+            let messageToShow = qs('#bannerSubtitleError')
+            messageToShow.innerHTML = "" 
+            bannerSubtitleOK = true;
+        }
+    })
 
-        if( variable1 == false || variable2 == false) {
+    formToEdit.addEventListener('submit', (e) => {
+
+        if(productNameOK == false || productImageOK == false || bannerTitleOK == false || bannerSubtitleOK == false) {
     
             e.preventDefault()
     
         }
     
     })
-} 
-
-else {
-    createTitleInput.addEventListener('change', (e) => {
-        if (createTitleInput.value.length < 3) {
-            const messageToShow = qs('#sectionTitleContainer')
-            messageToShow.innerHTML = "<p> El título debe contener al menos 3 caracteres </p>" 
+} else {
+    productName.addEventListener('change', (e) => {
+        if (productName.value.length < 3) {
+            let messageToShow = qs('#productNameError')
+            messageToShow.innerHTML = `<p> Debe contener al menos 3 caracteres </p>`
             messageToShow.style.textAlign = "center"
             messageToShow.style.color = "red"
             messageToShow.style.margin = "15px"
-            variable1 = false
-
-            let botonQueActiva = qs('#botonDeMierda')
-            botonQueActiva.addEventListener('click', ev => {
+            productNameOK = false;
     
-                ev.preventDefault()
-            })  
-
         } else {
-            const messageToShow = qs('#sectionTitleContainer')
+            let messageToShow = qs('#productNameError')
             messageToShow.innerHTML = "" 
-            variable1 = true
+            productNameOK = true;
         }
     })
     
-    createImageInput.addEventListener('change', (e) => {
-        console.log(createImageInput.value.split('.')[1])
-        if (createImageInput.value.split('.')[1] != "jpg" && createImageInput.value.split('.')[1] != "jpeg" && createImageInput.value.split('.')[1] != "png") {
-            const messageToShow = qs('#sectionImageContainer')
+    productImage.addEventListener('change', (e) => {
+        if (productImage.value.split('.')[1] != "jpg" && productImage.value.split('.')[1] != "jpeg" && productImage.value.split('.')[1] != "png") {   
+            let messageToShow = qs('#productImageError')
             messageToShow.innerHTML = `<p> La imagen debe estar en formato JPG, JPEG o PNG </p>`
             messageToShow.style.textAlign = "center"
             messageToShow.style.color = "red"
             messageToShow.style.margin = "15px"
-            variable2 = false
-
-            let botonQueActiva = qs('#botonDeMierda')
-            botonQueActiva.addEventListener('click', ev => {
-    
-                ev.preventDefault()
-            })  
+            productImageOK = false
 
         } else {
-            const messageToShow = qs('#sectionImageContainer')
+            let messageToShow = qs('#productImageError')
             messageToShow.innerHTML = "" 
-            variable2 = true
+            productImageOK = true
+            
         }
     })
+    bannerTitle.addEventListener('change', (e) => {
+        if (bannerTitle.value.length < 3) {
+            let messageToShow = qs('#bannerTitleError')
+            messageToShow.innerHTML = `<p> Debe contener al menos 3 caracteres </p>`
+            messageToShow.style.textAlign = "center"
+            messageToShow.style.color = "red"
+            messageToShow.style.margin = "15px"
+            bannerTitleOK = false;
+    
+        } else {
+            let messageToShow = qs('#bannerTitleError')
+            messageToShow.innerHTML = "" 
+            bannerTitleOK = true;
+        }
+    })
+
+    bannerSubtitle.addEventListener('change', (e) => {
+        if (bannerSubtitle.value.length < 3) {
+            let messageToShow = qs('#bannerSubtitleError')
+            messageToShow.innerHTML = `<p> Debe contener al menos 3 caracteres </p>`
+            messageToShow.style.textAlign = "center"
+            messageToShow.style.color = "red"
+            messageToShow.style.margin = "15px"
+            bannerSubtitleOK = false;
+    
+        } else {
+            let messageToShow = qs('#bannerSubtitleError')
+            messageToShow.innerHTML = "" 
+            bannerSubtitleOK = true;
+        }
+    })
+
     formToCreate.addEventListener('submit', (e) => {
 
-        if( variable1 == false || variable2 == false) {
+        if(productNameOK == false || productImageOK == false || bannerTitleOK == false || bannerSubtitleOK == false) {
     
             e.preventDefault()
-            
+    
         }
     
     })
