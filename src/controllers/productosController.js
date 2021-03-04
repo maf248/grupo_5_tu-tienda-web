@@ -114,37 +114,44 @@ const productosController = {
           }
         },
       saveCategories: function(req, res, next) {
-        uploadFilesDir(req.files);
+        
+        let errors = validationResult(req);
 
-        db.Category.bulkCreate([{
-          name: req.body.category1,
-          image: imageDir.categoryImage1,
-          price: Number(req.body.price[0]),
-          transaction_cost_percent: req.body.costoTransaccion[1],
-          web_sections: req.body.cantidadSecciones1
-          },{
-          name: req.body.category2,
-          image: imageDir.categoryImage2,
-          price: Number(req.body.price[1]),
-          transaction_cost_percent: req.body.costoTransaccion[2],
-          web_sections: req.body.cantidadSecciones2
-          },{
-          name: req.body.category3,
-          image: imageDir.categoryImage3,
-          price: Number(req.body.price[2]),
-          transaction_cost_percent: req.body.costoTransaccion[3],
-          web_sections: req.body.cantidadSecciones3
-        }])
-        .then(newCategories => {
-        /*----Acá se asocian las categorias nuevas al producto nuevo----*/
-          for (let newCategory of newCategories) {
-            newCategory.addProducts(req.params.id);
-          }
-          res.redirect(`/products/${req.params.id}/create/benefits`);
-        })
-        .catch(err => {
-          res.send(err)
-        })
+        if (errors.isEmpty()) {
+
+          uploadFilesDir(req.files);
+          db.Category.bulkCreate([{
+            name: req.body.category1,
+            image: imageDir.categoryImage1,
+            price: Number(req.body.price[0]),
+            transaction_cost_percent: req.body.costoTransaccion[1],
+            web_sections: req.body.cantidadSecciones1
+            },{
+            name: req.body.category2,
+            image: imageDir.categoryImage2,
+            price: Number(req.body.price[1]),
+            transaction_cost_percent: req.body.costoTransaccion[2],
+            web_sections: req.body.cantidadSecciones2
+            },{
+            name: req.body.category3,
+            image: imageDir.categoryImage3,
+            price: Number(req.body.price[2]),
+            transaction_cost_percent: req.body.costoTransaccion[3],
+            web_sections: req.body.cantidadSecciones3
+          }])
+          .then(newCategories => {
+          /*----Acá se asocian las categorias nuevas al producto nuevo----*/
+            for (let newCategory of newCategories) {
+              newCategory.addProducts(req.params.id);
+            }
+            res.redirect(`/products/${req.params.id}/create/benefits`);
+          })
+          .catch(err => {
+            res.send(err)
+          })
+        } else {
+          res.render('./products/create-edit/categories', {newID: req.params.id, errors: errors.errors, body: req.body});
+        }
       },
       createBenefits: function(req, res, next) {
       if (req.session.user != undefined && req.session.user.role == 'admin') {
@@ -365,51 +372,66 @@ const productosController = {
       }      
     },
     modifyCategories: function(req, res, next) {
-      uploadFilesDir(req.files);
-      /*----Se buscan las categorias asociadas, para luego actualizar dicha información----*/
-      db.Category.findAll({
-        include: [
-          {association: "Products", where: {id: req.params.id}}
-        ]
-      }).then(associatedCategories => {
+      let errors = validationResult(req);
+      if (errors.isEmpty()) {
+        uploadFilesDir(req.files);
+        /*----Se buscan las categorias asociadas, para luego actualizar dicha información----*/
+        db.Category.findAll({
+          include: [
+            {association: "Products", where: {id: req.params.id}}
+          ]
+        }).then(associatedCategories => {
 
-      /*----Se actualizan las categorías asociadas a dicho producto----*/
-        db.Category.update({
-          name: req.body.category1,
-          image: imageDir.categoryImage1,
-          price: Number(req.body.price[0]),
-          transaction_cost_percent: req.body.costoTransaccion[1],
-          web_sections: req.body.cantidadSecciones1        
+        /*----Se actualizan las categorías asociadas a dicho producto----*/
+          db.Category.update({
+            name: req.body.category1,
+            image: imageDir.categoryImage1,
+            price: Number(req.body.price[0]),
+            transaction_cost_percent: req.body.costoTransaccion[1],
+            web_sections: req.body.cantidadSecciones1        
 
-        }, {where: {id: associatedCategories[0].id}});
-        
-        db.Category.update({
-          name: req.body.category2,
-          image: imageDir.categoryImage2,
-          price: Number(req.body.price[1]),
-          transaction_cost_percent: req.body.costoTransaccion[2],
-          web_sections: req.body.cantidadSecciones2        
+          }, {where: {id: associatedCategories[0].id}});
+          
+          db.Category.update({
+            name: req.body.category2,
+            image: imageDir.categoryImage2,
+            price: Number(req.body.price[1]),
+            transaction_cost_percent: req.body.costoTransaccion[2],
+            web_sections: req.body.cantidadSecciones2        
 
-        }, {where: {id: associatedCategories[1].id}});
+          }, {where: {id: associatedCategories[1].id}});
 
-        db.Category.update({
-          name: req.body.category3,
-          image: imageDir.categoryImage3,
-          price: Number(req.body.price[2]),
-          transaction_cost_percent: req.body.costoTransaccion[3],
-          web_sections: req.body.cantidadSecciones3        
+          db.Category.update({
+            name: req.body.category3,
+            image: imageDir.categoryImage3,
+            price: Number(req.body.price[2]),
+            transaction_cost_percent: req.body.costoTransaccion[3],
+            web_sections: req.body.cantidadSecciones3        
 
-        }, {where: {id: associatedCategories[2].id}});
-        
-      })
-      .then(() => {
-        res.redirect(`/products/${req.params.id}/edit/benefits`);
-      })
-      .catch((error) => {
-        console.log(error);
-        let ErrorsJSON = JSON.stringify(error);
-        fs.appendFileSync(ErrorsDir, ErrorsJSON);
-      })   
+          }, {where: {id: associatedCategories[2].id}});
+          
+        })
+        .then(() => {
+          res.redirect(`/products/${req.params.id}/edit/benefits`);
+        })
+        .catch((error) => {
+          console.log(error);
+          let ErrorsJSON = JSON.stringify(error);
+          fs.appendFileSync(ErrorsDir, ErrorsJSON);
+        })  
+      } else {
+        db.Product.findByPk(req.params.id, {
+          include: [
+            {association: "Sections", 
+          include: [{association: "Contents"}]},
+            {association: "Categories",
+          include: [{association: "Benefits"}]}
+          ]
+        })
+        .then(product => {
+          res.render('./products/create-edit/categories', {productToEdit: product, errors: errors.errors, body: req.body});
+        })
+      }
     },
     editBenefits: function(req, res, next) {
       if (req.session.user != undefined && req.session.user.role == 'admin') {

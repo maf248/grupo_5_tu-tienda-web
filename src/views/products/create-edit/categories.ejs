@@ -33,6 +33,11 @@
                                     <!--Elegir nombre de la categoria 1-->
                                     <label class="block" for="category1">Nombre de categoría 1</label>
                                     <input required class="block" style="width:50%" type="text" name="category1" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[0].name %>" <% } else { %> placeholder="Ejemplo: Oro" <% } %>>
+                                    <% if (typeof errors != "undefined") {
+                                        errors.forEach ( error => { 
+                                            if (error.param == "category1") { %>
+                                                <p class="errors"><%= error.msg %></p>
+                                        <% } }) } %>
                                 </div>
                             </th>
                             <th>
@@ -40,6 +45,11 @@
                                     <!--Elegir nombre de la categoria 2-->
                                     <label class="block" for="category2">Nombre de categoría 2</label>
                                     <input required class="block" style="width:50%" type="text" name="category2" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[1].name %>" <% } else { %> placeholder="Ejemplo: Plata" <% } %>">
+                                    <% if (typeof errors != "undefined") {
+                                        errors.forEach ( error => { 
+                                            if (error.param == "category2") { %>
+                                                <p class="errors"><%= error.msg %></p>
+                                        <% } }) } %>
                                 </div>
                             </th>
                             <th>
@@ -47,6 +57,11 @@
                                     <!--Elegir nombre de la categoria 3-->
                                     <label class="block" for="category3">Nombre de categoría 3</label>
                                     <input required class="block" style="width:50%" type="text" name="category3" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[2].name %>" <% } else { %> placeholder="Ejemplo: Bronce" <% } %>">
+                                    <% if (typeof errors != "undefined") {
+                                        errors.forEach ( error => { 
+                                            if (error.param == "category3") { %>
+                                                <p class="errors"><%= error.msg %></p>
+                                        <% } }) } %>
                                 </div>
                             </th>
                         </tr>
@@ -61,6 +76,11 @@
                                     <!--Elegir imagen de la categoria 1-->
                                     <label class="labelPointer fontSize" for="categoryImage1">Click y sube el logo de la categoría 1</label>
                                     <input class="inputNone" type="file" name="categoryImage1" id="categoryImage1" accept="image/png image/jpg" >
+                                    <% if (typeof errors != "undefined") {
+                                        errors.forEach ( error => { 
+                                            if (error.param == "categoryImage1") { %>
+                                                <p class="errors"><%= error.msg %></p>
+                                        <% } }) } %>
                                 </div>
                             </th>
                             <th>
@@ -68,6 +88,11 @@
                                     <!--Elegir imagen de la categoria 2-->
                                     <label class="labelPointer fontSize" for="categoryImage2">Click y sube el logo de la categoría 2</label>
                                     <input class="inputNone" type="file" name="categoryImage2" id="categoryImage2" accept="image/png image/jpg">
+                                    <% if (typeof errors != "undefined") {
+                                        errors.forEach ( error => { 
+                                            if (error.param == "categoryImage2") { %>
+                                                <p class="errors"><%= error.msg %></p>
+                                        <% } }) } %>
                                 </div>
                             </th>
                             <th>
@@ -75,6 +100,11 @@
                                     <!--Elegir imagen de la categoria 3-->
                                     <label class="labelPointer fontSize" for="categoryImage3">Click y sube el logo de la categoría 3</label>
                                     <input class="inputNone" type="file" name="categoryImage3" id="categoryImage3" accept="image/png image/jpg">
+                                    <% if (typeof errors != "undefined") {
+                                        errors.forEach ( error => { 
+                                            if (error.param == "categoryImage3") { %>
+                                                <p class="errors"><%= error.msg %></p>
+                                        <% } }) } %>
                                 </div>
                             </th>
                         </tr>
@@ -89,6 +119,11 @@
                                     <!--Elegir costo por transacción categoria 1-->
                                     <label class="fontSize" for="costoTransaccion[1]">Costo transacción 1:</label>
                                     <input type="number" name="costoTransaccion[1]" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[0].transaction_cost_percent %>" <% } else { %> placeholder="Valor porcentual %" <% } %> id="costoTransaccion[1]">
+                                    <% if (typeof errors != "undefined") {
+                                        errors.forEach ( error => { 
+                                            if (error.param == "costoTransaccion[1]") { %>
+                                                <p class="errors"><%= error.msg %></p>
+                                        <% } }) } %>
                                 </div>
                             </td>
                             <td>
@@ -96,6 +131,11 @@
                                     <!--Elegir costo por transacción categoria 2-->
                                     <label class="fontSize" for="costoTransaccion[2]">Costo transacción 2:</label>
                                     <input type="number" name="costoTransaccion[2]" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[1].transaction_cost_percent %>" <% } else { %> placeholder="Valor porcentual %" <% } %> id="costoTransaccion[2]">
+                                    <% if (typeof errors != "undefined") {
+                                        errors.forEach ( error => { 
+                                            if (error.param == "costoTransaccion[2]") { %>
+                                                <p class="errors"><%= error.msg %></p>
+                                        <% } }) } %>
                                 </div>
                             </td>
                             <td>
@@ -103,6 +143,11 @@
                                     <!--Elegir costo por transacción categoria 3-->
                                     <label class="fontSize" for="costoTransaccion[3]">Costo transacción 3:</label>
                                     <input type="number" name="costoTransaccion[3]" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[2].transaction_cost_percent %>" <% } else { %> placeholder="Valor porcentual %" <% } %>  id="costoTransaccion[3]">
+                                    <% if (typeof errors != "undefined") {
+                                        errors.forEach ( error => { 
+                                            if (error.param == "costoTransaccion[3]") { %>
+                                                <p class="errors"><%= error.msg %></p>
+                                        <% } }) } %>
                                 </div>
                             </td>
                         </tr>
@@ -117,6 +162,11 @@
                                     <!--Elegir cantidad de secciones categoria 1-->
                                     <label class="fontSize" for="cantidadSecciones1">Cantidad secciones 1:</label>
                                     <input type="number" name="cantidadSecciones1" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[0].web_sections %>" <% } else { %> placeholder="Ingresá un numero" <% } %>  id="cantidadSecciones1">
+                                    <% if (typeof errors != "undefined") {
+                                        errors.forEach ( error => { 
+                                            if (error.param == "cantidadSecciones1") { %>
+                                                <p class="errors"><%= error.msg %></p>
+                                        <% } }) } %>
                                 </div>
                             </td>
                             <td>
@@ -124,6 +174,11 @@
                                     <!--Elegir cantidad de secciones categoria 2-->
                                     <label class="fontSize" for="cantidadSecciones2">Cantidad secciones 2:</label>
                                     <input type="number" name="cantidadSecciones2" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[1].web_sections %>" <% } else { %> placeholder="Ingresá un numero" <% } %>id="cantidadSecciones2">
+                                    <% if (typeof errors != "undefined") {
+                                        errors.forEach ( error => { 
+                                            if (error.param == "cantidadSecciones2") { %>
+                                                <p class="errors"><%= error.msg %></p>
+                                        <% } }) } %>
                                 </div>
                             </td>
                             <td>
@@ -131,6 +186,11 @@
                                     <!--Elegir cantidad de secciones categoria 3-->
                                     <label class="fontSize" for="cantidadSecciones3">Cantidad secciones 3:</label>
                                     <input type="number" name="cantidadSecciones3" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[2].web_sections %>" <% } else { %> placeholder="Ingresá un numero" <% } %> id="cantidadSecciones3">
+                                    <% if (typeof errors != "undefined") {
+                                        errors.forEach ( error => { 
+                                            if (error.param == "cantidadSecciones3") { %>
+                                                <p class="errors"><%= error.msg %></p>
+                                        <% } }) } %>
                                 </div>
                             </td>
                         </tr>
@@ -143,16 +203,31 @@
                     <td>
                         <div class="tdDiv">
                             <input type="number" name="price[0]" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[0].price %>" <% } else { %> placeholder="$ / mensual" <% } %>>
+                            <% if (typeof errors != "undefined") {
+                                errors.forEach ( error => { 
+                                    if (error.param == "price[0]") { %>
+                                        <p class="errors"><%= error.msg %></p>
+                                <% } }) } %>
                         </div>
                     </td>
                     <td>
                         <div class="tdDiv">
                             <input type="number" name="price[1]" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[1].price %>" <% } else { %> placeholder="$ / mensual" <% } %>>
+                            <% if (typeof errors != "undefined") {
+                                errors.forEach ( error => { 
+                                    if (error.param == "price[1]") { %>
+                                        <p class="errors"><%= error.msg %></p>
+                                <% } }) } %>
                         </div>
                     </td>
                     <td>
                         <div class="tdDiv">
                             <input type="number" name="price[2]" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[2].price %>" <% } else { %> placeholder="$ / mensual" <% } %>>
+                            <% if (typeof errors != "undefined") {
+                                errors.forEach ( error => { 
+                                    if (error.param == "price[2]") { %>
+                                        <p class="errors"><%= error.msg %></p>
+                                <% } }) } %>
                         </div>
                     </td>
                 </tr>
