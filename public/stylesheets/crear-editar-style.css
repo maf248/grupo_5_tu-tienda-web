@@ -29,6 +29,10 @@ h1, h2, h3, h4, h5, h6, button, th {
 .contenedorMedalla-tdDiv{
     font-size: 1.4em;
 }
+.sections-titlet{
+    text-align: center;
+    margin: 20px;
+}
 .titulo {
     margin: 20px 0px 10px 0px;
     font-size: 1.8em;

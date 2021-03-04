@@ -120,9 +120,9 @@
     </article>
 
     <form action="/products/<%= newID %>/create/sections" method="POST" enctype="multipart/form-data" id="formToCreate">
-        
-        <label for="sectionTitle">Elegí el título de la sección que estás por crear:</label>
-        <input type="text" name="sectionTitle" id="sectionTitle" <% if (typeof body != 'undefined') { %> value="<%= body.sectionTitle %>" <% } else { %> placeholder="Escribí tu texto aquí" <% } %> style="width: 100%; border: 1px solid black; margin: 16px auto;">
+    <div class="sections-titlet">
+        <label for="sectionTitle">Elegí el título de la sección que estás por crear:</label><br>
+        <input type="text" name="sectionTitle" id="sectionTitle" <% if (typeof body != 'undefined') { %> value="<%= body.sectionTitle %>" <% } else { %> placeholder="Escribí tu texto aquí" <% } %> style="width: 30%; border: 1px solid black; margin: 16px auto;">
         <div id="sectionTitleContainer"></div>
 
             <% if (typeof errors != 'undefined') { %>
@@ -133,8 +133,8 @@
                 <% }) %>
             <% } %>
 
-        <label for="sectionImage">Elegí la imagen de la sección que estás por crear:</label>
-        <input type="file" name="sectionImage" id="sectionImage" accept="image/png image/jpg" style="display: block;">
+        <label for="sectionImage">Elegí la imagen de la sección que estás por crear:</label><br>
+        <input type="file" name="sectionImage" id="sectionImage" accept="image/png image/jpg"">
         <div id="sectionImageContainer"></div>
 
         <% if (typeof errors != 'undefined') { %>
@@ -144,7 +144,7 @@
                 <% } %>
             <% }) %>
         <% } %>
-
+    </div>
         <button type="submit" class="reset" style="display: block;">Guardar y seguir creando</button>
 
     </form>
