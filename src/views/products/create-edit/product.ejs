@@ -35,14 +35,9 @@
     <option value="tienda_web" <% if (typeof productToEdit != 'undefined' && productToEdit.type == 'tienda_web') { %> selected="selected" <% } %> >Tienda Web</option>
 </select>
 <!--Elegir imagen del producto-->
-<<<<<<< HEAD
 <label style="display: block; margin-left: 30px; padding: 5px;  margin-left: 30%;" for="image">Elegí una imagen que describa el producto:</label>
-<input class="imagen-producto" style="margin: 1% auto"   type="file" name="image" id="image">
-=======
-<label style="display: block; margin-left: 30px; padding: 5px; width: 100%; text-align:center;margin-top: 1%;" for="image">Elegí una imagen que describa el producto:</label>
-<input class="imagen-producto" id="productImage" style="margin: 1% auto" type="file" name="image" id="image">
+<input class="imagen-producto" style="margin: 1% auto" id="productImage" type="file" name="image" id="image">
 <div id="productImageError"></div>
->>>>>>> 35e410b9b6cbbc8bc912f056298413983191414a
 <% if (typeof errors != "undefined") {
     errors.forEach ( error => { 
         if (error.param == "image") { %>
