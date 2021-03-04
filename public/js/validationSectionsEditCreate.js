@@ -16,6 +16,10 @@ let variable1 = false;
 let variable2 = true;
 
 if (window.location.pathname.includes('edit')) {
+
+    // Acá manejamos todo lo que pasa cuando en la ventana se está editando contenido
+
+    
     editTitleInput.addEventListener('change', (e) => {
         if (editTitleInput.value.length < 3) {
             let messageToShow = qs('#editSectionTitleContainer')
@@ -62,6 +66,10 @@ if (window.location.pathname.includes('edit')) {
 } 
 
 else {
+
+    // Acá manejamos todo lo que pasa cuando en la ventana se está creando contenido
+
+
     createTitleInput.addEventListener('change', (e) => {
         if (createTitleInput.value.length < 3) {
             const messageToShow = qs('#sectionTitleContainer')

@@ -4,12 +4,10 @@
     <%- include('../../partials/head') %>
     <link rel="stylesheet" href="/stylesheets/producto-style.css">
     <link rel="stylesheet" href="/stylesheets/crear-editar-style.css">
+    <script src="/js/validationContents.js" defer></script>
 </head>
 
 <%- include('../../partials/navbar') %>
-
-
-
 
 
 <% if (typeof productToEdit != 'undefined') { %>
@@ -57,9 +55,11 @@
                         <h6 class="typeOfContentToEdit">Icon:</h6>
                         <img src="/images/Producto-<%= productToEdit.id %>/<%= con.text %>" alt="" class="contentIconToEdit">
                         <div class="contentToEditIconContainer">
-                            <form action="/products/<%= productToEdit.id %>/edit/contents/<%= sectionToEdit.id %>/<%= con.type %>/<%= con.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                            <form action="/products/<%= productToEdit.id %>/edit/contents/<%= sectionToEdit.id %>/<%= con.type %>/<%= con.id %>?_method=PUT" method="POST" enctype="multipart/form-data" id="formToEditIcon">
                                 
                                 <input type="file" name="editedContent" id="iconToEdit">
+
+                                <div id="editIconContainer"></div>
                                 <button type="submit">Guardar Cambios</button>
                             
                             </form>
@@ -71,9 +71,12 @@
                         <h6 class="typeOfContentToEdit">Subtitle:</h6>
                         <p class="contentToEdit"><%= con.text %></p>
                         <div class="contentToEditContainer">
-                            <form action="/products/<%=productToEdit.id %>/edit/contents/<%= sectionToEdit.id %>/<%= con.type %>/<%= con.id %>?_method=PUT" method="POST">
+                            <form action="/products/<%=productToEdit.id %>/edit/contents/<%= sectionToEdit.id %>/<%= con.type %>/<%= con.id %>?_method=PUT" method="POST" id="formToEditSubtitle">
                                 
                                 <input type="text" name="editedContent" id="subtitleToEdit" value="<%= con.text %>">
+
+                                <div id="editSubtitleContainer"></div>
+
                                 <button type="submit">Guardar Cambios</button>
                             
                             </form>
@@ -85,9 +88,12 @@
                         <h6 class="typeOfContentToEdit">Description:</h6>
                         <p class="contentToEdit"><%= con.text %></p>
                         <div class="contentToEditContainer">
-                            <form action="/products/<%=productToEdit.id %>/edit/contents/<%= sectionToEdit.id %>/<%= con.type %>/<%= con.id %>?_method=PUT" method="POST">
+                            <form action="/products/<%=productToEdit.id %>/edit/contents/<%= sectionToEdit.id %>/<%= con.type %>/<%= con.id %>?_method=PUT" method="POST" id="formToEditDescription">
                                 
                                 <textarea name="editedContent" id="descriptionToEdit"  cols="50" rows="5"><%= con.text %></textarea> <br>
+
+                                <div id="editDescriptionContainer"></div>
+
                                 <button type="submit">Guardar Cambios</button>
                             
                             </form>
@@ -174,18 +180,23 @@
 
         <% if (typeof sectionToCreate != 'undefined') {%>
 
-            <form action="" method="POST" enctype="multipart/form-data">
+            <form action="" method="POST" enctype="multipart/form-data" id="formToCreateContents">
 
                 <label for="contentIcon">Elegí el ícono del contenido que estás por crear:</label>
                 <input type="file" name="contentIcon" id="contentIcon" accept="image/svg" style="display: block;">
+                <div id="containerOfCreateIconValidation"></div>
 
                 
                 <label for="contentSubtitle">Elegí el subtítulo del contenido que estás por crear:</label>
                 <input type="text" name="contentSubtitle" id="contentSubtitle" placeholder="Escribe el texto aqui..." style="width: 100%; border: 1px solid black; margin: 16px auto;">
+                <div id="containerOfCreateSubtitleValidation"></div>
         
                 <label for="contentDescription">Elegí la descripción del contenido que estás por crear:</label>
                 <input type="text" name="contentDescription" id="contentDescription" placeholder="Escribe el texto aqui..." style="width: 100%; border: 1px solid black; margin: 16px auto;">
-        
+                <div id="containerOfCreateDescriptionValidation"></div>
+
+
+                <div id="containerOfCreateNoIconValidation"></div>
                 <button type="submit" class="reset" style="display: block;">Guardar y seguir creando</button>
         
             </form>
@@ -245,34 +256,3 @@
 
 
 <%- include('../../partials/footer') %>
-<script>
-
-    const qs = (text) => document.querySelector(text);
-    const qsa = (text) => document.querySelectorAll(text);
-
-    const contentToClick = qsa('.contentToEdit');
-    const contentToClickIcon = qsa('.contentIconToEdit');
-
-    for (let i = 0; i < contentToClick.length ; i++) {
-
-        contentToClick[i].addEventListener('click', (e) => {
-            
-            const contentToShow = qsa('.contentToEditContainer');
-            
-            contentToShow[i].style.display = 'block' 
-        })
-
-    }
-
-    for (let i = 0; i < contentToClickIcon.length ; i++) {
-
-    contentToClickIcon[i].addEventListener('click', (e) => {
-    
-    const contentToShowIcon = qsa('.contentToEditIconContainer');
-    
-    contentToShowIcon[i].style.display = 'block' 
-})
-
-}
-
-</script>
