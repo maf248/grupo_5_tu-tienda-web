@@ -24,26 +24,26 @@
                     <table>
                         <tr>
                             <th class="fontSize">
-                                <div class="tdDiv">
+                                <div class="tdDiv" style="font-size: 1.4em;">
                                     Categorías del producto:
                                 </div>
                             </th>
                             <th> 
-                                <div class="contenedorMedalla tdDiv">
+                                <div class="contenedorMedalla-tdDiv">
                                     <!--Elegir nombre de la categoria 1-->
                                     <label class="block" for="category1">Nombre de categoría 1</label>
                                     <input required class="block" style="width:50%" type="text" name="category1" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[0].name %>" <% } else { %> placeholder="Ejemplo: Oro" <% } %>>
                                 </div>
                             </th>
                             <th>
-                                <div class="contenedorMedalla tdDiv">
+                                <div class="contenedorMedalla-tdDiv">
                                     <!--Elegir nombre de la categoria 2-->
                                     <label class="block" for="category2">Nombre de categoría 2</label>
                                     <input required class="block" style="width:50%" type="text" name="category2" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[1].name %>" <% } else { %> placeholder="Ejemplo: Plata" <% } %>">
                                 </div>
                             </th>
                             <th>
-                                <div class="contenedorMedalla tdDiv">
+                                <div class="contenedorMedalla-tdDiv">
                                     <!--Elegir nombre de la categoria 3-->
                                     <label class="block" for="category3">Nombre de categoría 3</label>
                                     <input required class="block" style="width:50%" type="text" name="category3" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[2].name %>" <% } else { %> placeholder="Ejemplo: Bronce" <% } %>">
@@ -52,14 +52,14 @@
                         </tr>
                         <tr>
                             <th class="fontSize">
-                                <div class="tdDiv">
+                                <div class="tdDiv"  style="font-size: 1.4em;">
                                     Imágenes:
                                 </div>
                             </th>
                             <th> 
                                 <div class="contenedorMedalla tdDiv">
                                     <!--Elegir imagen de la categoria 1-->
-                                    <label class="labelPointer fontSize" for="categoryImage1">Click y sube el logo de la categoría 1</label>
+                                    <label class="labelPointer fontSize" for="categoryImage1">Click sube el logo de la categoría 1</label>
                                     <input class="inputNone" type="file" name="categoryImage1" id="categoryImage1" accept="image/png image/jpg" >
                                 </div>
                             </th>
@@ -79,7 +79,7 @@
                             </th>
                         </tr>
                         <tr>
-                            <td class="beneficio fontSize">
+                            <td class="beneficio fontSize"  style="font-size: 1.4em;">
                                 <div class="tdDiv">
                                     Costo por transacción                       
                                 </div>
@@ -107,7 +107,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="beneficio fontSize">
+                            <td class="beneficio fontSize"  style="font-size: 1.4em;">
                                 <div class="tdDiv">
                                     Cantidad de secciones
                                 </div>
@@ -136,7 +136,7 @@
                         </tr>
                 <tr>
                     <td class="beneficio fontSize">
-                        <div class="tdDiv">
+                        <div class="tdDiv"  style="font-size: 1.4em;">
                             Subscribirse
                         </div>
                     </td>
