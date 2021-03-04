@@ -10,18 +10,24 @@ h1, h2, h3, h4, h5, h6, button, th {
 }
 .nombre-producto{
     position: relative;
-    left: 630px;
+    left: 30%;
     margin: 10px;
 }
 .tipo-producto{
     position: relative;
-    left: 630px;
+    left: 30%;
     margin: 10px;
 }
 .imagen-producto{
     position: relative;
-    left: 765px;
+    left: 30%;
     margin: 10px;
+}
+.tdDiv p{
+    font-size: 1.8em;
+}
+.contenedorMedalla-tdDiv{
+    font-size: 1.4em;
 }
 .titulo {
     margin: 20px 0px 10px 0px;
