@@ -52,9 +52,9 @@ if (window.location.pathname.includes('edit')) {
     const editDescriptionInput = qs('#descriptionToEdit');
     const formToEditDescription = qs('#formToEditDescription');
 
-    createIconInput.addEventListener('change', (e) => {
+    editIconInput.addEventListener('change', (e) => {
         if (editIconInput.value.split('.')[1] != "svg") {   
-            let messageToShow = qs('#containerOfCreateIconValidation')
+            let messageToShow = qs('#editIconContainer')
             messageToShow.innerHTML = `<p> La imagen debe estar en formato SVG </p>`
             messageToShow.style.textAlign = "center"
             messageToShow.style.color = "red"
@@ -142,8 +142,7 @@ if (window.location.pathname.includes('edit')) {
 
     // Acá llamamos a los inputs y formularios correspondientes para trabajar en la CREACIÓN de contenidos.
 
-    const createIconInput = qs('#contentIcon');
-    console.log(createIconInput.value)
+    const createIconInput = qs('#contentIcon'); 
 
     const createSubtitleInput = qs('#contentSubtitle');
 
@@ -153,7 +152,6 @@ if (window.location.pathname.includes('edit')) {
     const formToCreateContents = qs('#formToCreateContents');
 
     createIconInput.addEventListener('change', (e) => {
-        console.log(createIconInput.value.split('.')[1])
         if (createIconInput.value.split('.')[1] != "svg") {   
             let messageToShow = qs('#containerOfCreateIconValidation')
             messageToShow.innerHTML = `<p> La imagen debe estar en formato SVG </p>`
