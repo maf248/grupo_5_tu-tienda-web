@@ -3,9 +3,9 @@ INSERT INTO products (name, type, title_banner, subtitle_banner, image) VALUES
 ('Página Web','pagina_web','EL LUGAR PERFECTO PARA CREAR TU PÁGINA WEB PROFESIONAL','Empezá a crear tu página web ya totalmente gratis','web-color-borde.png');
 
 INSERT INTO categories (name, image, price, transaction_cost_percent, web_sections) VALUES
-('Oro','plan-oro.png',6999,0.5,20),
-('Plata','plan-plata.png',2999,1,10),
-('Bronce','plan-bronce.png',1799,2,5);
+('Oro','plan-oro.png',6999,1,20),
+('Plata','plan-plata.png',2999,2,10),
+('Bronce','plan-bronce.png',1799,3,5);
 
 INSERT INTO users (hash_id, first_name, last_name, email, password, image, role, product_id, category_id) VALUES 
 ('$2a$10$1EHxHf5rQ.gyJ2xnJ55sFeHVnMlxbXReGoaFC1ID/dhumC8mGG8Ii','Tobias','Blaksley','tobias.blaksley@hotmail.com','$2a$10$nY9qIx.MJ4cXVG5csGpFFeQzQl4J2h0zhT.VndbdlnZOGzYjdbcmW','Usuario-1_1610562779647.jfif','admin',1,1),
