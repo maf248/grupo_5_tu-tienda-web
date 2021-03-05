@@ -2,26 +2,31 @@
 <html lang="es">
 <head>
     <link rel="stylesheet" href="/stylesheets/users-style.css">
+    <script src="/js/validationRegister.js" defer></script>
+
     <%- include('../partials/head') %>
 </head>
 
 <%- include('../partials/navbar') %>
 
-<form class="form-registro" action="/users/register" method="POST">
+<form class="form-registro" action="/users/register" method="POST" id="registerForm">
 <h5> Registrate </h5>
-<input class="controls" type="text" name="firstName" placeholder="Nombre" <% if (typeof firstName != 'undefined') { %> value="<%= firstName %>"<% } %>>
+<input id="firstName"class="controls" type="text" name="firstName" placeholder="Nombre" <% if (typeof firstName != 'undefined') { %> value="<%= firstName %>"<% } %>>
+<div id="firstNameError"></div>
 <% if (typeof errors != "undefined") {
 errors.forEach ( error => { 
     if (error.param == "firstName") { %>
         <p><%= error.msg %></p>
 <% } }) } %>
-<input class="controls" type="text" name="lastName" placeholder="Apellido" <% if (typeof lastName != 'undefined') { %> value="<%= lastName %>"<% } %>>
+<input id="lastName" class="controls" type="text" name="lastName" placeholder="Apellido" <% if (typeof lastName != 'undefined') { %> value="<%= lastName %>"<% } %>>
+<div id="lastNameError"></div>
 <% if (typeof errors != "undefined") {
     errors.forEach ( error => { 
         if (error.param == "lastName") { %>
             <p><%= error.msg %></p>
     <% } }) } %>
-<input class="controls" type="email" name="email" placeholder="Email" <% if (typeof email != 'undefined') { %> value="<%= email %>"<% } %>>
+<input id="email" class="controls" type="mail" name="email" placeholder="Email" <% if (typeof email != 'undefined') { %> value="<%= email %>"<% } %>>
+<div id="emailError"></div>
 <% if (typeof errors != "undefined") {
     errors.forEach ( error => { 
         if (error.param == "email") { %>
@@ -30,19 +35,21 @@ errors.forEach ( error => {
 <% if (typeof mailDuplicated != 'undefined' && mailDuplicated == true) { %>
     <p>El email ingresado ya está registrado</p>
 <% } %>
-<input class="controls" type="password" name="password" placeholder="Contraseña">
+<input  id="password" class="controls" type="password" name="password" placeholder="Contraseña">
+<div id="passwordError"></div>
 <% if (typeof errors != "undefined") {
     errors.forEach ( error => { 
         if (error.param == "password") { %>
             <p><%= error.msg %></p>
     <% } }) } %>
-<input class="controls" type="password" name="passwordRepeat" placeholder="Repetir Contraseña">
+<input id="passwordRepeat" class="controls" type="password" name="passwordRepeat" placeholder="Repetir Contraseña">
+<div id="passwordRepeatError"></div>
 <% if (typeof errors != "undefined") {
     errors.forEach (error => { 
         if (error.param == "passwordRepeat") { %>
             <p><%= error.msg %></p>
     <% } }) } %>    
-<input class="buttons" type="submit"  value="Registrarse" >
+<input id="formButton" class="buttons" type="submit"  value="Registrarse" >
 <P><a class="boton-login" href="/users/login">¿Ya tenes cuenta? <strong>Inicia sesión</strong></a></p>
 <div class="form-oauth">
     <div class="form-oauth-titulo">Registro rápido con:</div>
