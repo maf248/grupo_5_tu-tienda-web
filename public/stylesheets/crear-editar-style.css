@@ -230,6 +230,11 @@ td input {
     margin: 3px;
     font-size: 0.45em;
 }
+.transactionCostsErrors {
+    color: red;
+    margin: 3px;
+    font-size: 0.45em;
+}
 
 
 @media (max-width: 556px) {

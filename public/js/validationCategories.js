@@ -1,10 +1,6 @@
 const qs = (text) => document.querySelector(text);
 const qsa = (text) => document.querySelectorAll(text);
 
-
-const transactionCost1 = qs('#transactionCost1');
-const transactionCost2 = qs('#transactionCost2');
-const transactionCost3 = qs('#transactionCost3');
 const sections1 = qs('#sections1');
 const sections2 = qs('#sections2');
 const sections3 = qs('#sections3');
@@ -21,6 +17,11 @@ const categoryImages = qsa('input.categoryImages');
 console.log(categoryImages);
 let messageImageErrors = qsa(`div.categoryImageErrors`);
 console.log(messageImageErrors);
+
+const transactionCosts = qsa('input.transactionCosts');
+console.log(transactionCosts);
+let transactionCostsErrors = qsa(`div.transactionCostsErrors`);
+console.log(transactionCostsErrors);
 
 const formToEdit = qs('#formToEdit');
 const formToCreate = qs('#formToCreate');
@@ -55,22 +56,19 @@ for(let i=0; i < categoryImages.length; i++) {
     })
  
 }
+for(let i=0; i < transactionCosts.length; i++) {   
+    transactionCosts[i].addEventListener('change', (e) => {
+        if (transactionCosts[i].value < 0 || transactionCosts[i].value > 100) {
+            
+            transactionCostsErrors[i].innerHTML = `<p> Debe ingresar un numero entre 0 y 100 </p>`
+    
+        } else {
+            transactionCostsErrors[i].innerHTML = "" 
+        }
+    })
+ 
+}
 
-
-transactionCost1.addEventListener('change', (e) => {
-    if (transactionCost1.value < 0 || transactionCost1.value > 100) {
-        let messageToShow = qs('#transactionCost1Error')
-        messageToShow.innerHTML = `<p> Debe ingresar un numero entre 0 y 100 </p>`
-        messageToShow.style.textAlign = "center"
-        messageToShow.style.color = "red"
-        messageToShow.style.margin = "15px"
-        messageToShow.style.fontSize = "0.5em"
-
-    } else {
-        let messageToShow = qs('#transactionCost1Error')
-        messageToShow.innerHTML = "" 
-    }
-})
 
 sections1.addEventListener('change', (e) => {
     if (sections1.value < 1 || sections1.value > 500) {

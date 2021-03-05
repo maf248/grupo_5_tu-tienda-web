@@ -125,8 +125,8 @@
                                 <div class="tdDiv">
                                     <!--Elegir costo por transacción categoria 1-->
                                     <label class="fontSize" for="costoTransaccion[1]">Costo transacción 1:</label>
-                                    <input type="number" name="costoTransaccion[1]" id="transactionCost1" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[0].transaction_cost_percent %>" <% } else { %> placeholder="Valor porcentual %" <% } %> id="costoTransaccion[1]">
-                                    <div id="transactionCost1Error"></div>
+                                    <input type="number" name="costoTransaccion[1]" class="transactionCosts" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[0].transaction_cost_percent %>" <% } else { %> placeholder="Valor porcentual %" <% } %> id="costoTransaccion[1]">
+                                    <div class="transactionCostsErrors"></div>
                                     <% if (typeof errors != "undefined") {
                                         errors.forEach ( error => { 
                                             if (error.param == "costoTransaccion[1]") { %>
@@ -138,8 +138,8 @@
                                 <div class="tdDiv">
                                     <!--Elegir costo por transacción categoria 2-->
                                     <label class="fontSize" for="costoTransaccion[2]">Costo transacción 2:</label>
-                                    <input type="number" name="costoTransaccion[2]" id="transactionCost2" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[1].transaction_cost_percent %>" <% } else { %> placeholder="Valor porcentual %" <% } %> id="costoTransaccion[2]">
-                                    <div id="transactionCost2Error"></div>
+                                    <input type="number" name="costoTransaccion[2]" class="transactionCosts" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[1].transaction_cost_percent %>" <% } else { %> placeholder="Valor porcentual %" <% } %> id="costoTransaccion[2]">
+                                    <div class="transactionCostsErrors"></div>
                                     <% if (typeof errors != "undefined") {
                                         errors.forEach ( error => { 
                                             if (error.param == "costoTransaccion[2]") { %>
@@ -151,8 +151,8 @@
                                 <div class="tdDiv">
                                     <!--Elegir costo por transacción categoria 3-->
                                     <label class="fontSize" for="costoTransaccion[3]">Costo transacción 3:</label>
-                                    <input type="number" name="costoTransaccion[3]" id="transactionCost3" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[2].transaction_cost_percent %>" <% } else { %> placeholder="Valor porcentual %" <% } %>  id="costoTransaccion[3]">
-                                    <div id="transactionCost3Error"></div>
+                                    <input type="number" name="costoTransaccion[3]" class="transactionCosts" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[2].transaction_cost_percent %>" <% } else { %> placeholder="Valor porcentual %" <% } %>  id="costoTransaccion[3]">
+                                    <div class="transactionCostsErrors"></div>
                                     <% if (typeof errors != "undefined") {
                                         errors.forEach ( error => { 
                                             if (error.param == "costoTransaccion[3]") { %>
