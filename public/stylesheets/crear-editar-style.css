@@ -89,7 +89,7 @@ td input {
     width: 100%;
     text-align: center;
     margin: 1% auto;
-    padding: 2px,;
+    padding: 2px;
 }
 .fa-file-image {
     font-size: 25em;
@@ -211,6 +211,26 @@ td input {
 .typeOfContentToEdit {
     margin: 10px;
 }
+
+/*--------------------------*/
+.fontSize {
+    font-size: 0.8em;
+}
+
+.categoryNames {
+    font-size: 0.6em;
+}
+.categoryNameErrors {
+    color: red;
+    margin: 3px;
+    font-size: 0.6em;
+}
+.categoryImageErrors {
+    color: red;
+    margin: 3px;
+    font-size: 0.45em;
+}
+
 
 @media (max-width: 556px) {
     .disenoBlanco {

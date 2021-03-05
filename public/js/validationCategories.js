@@ -1,12 +1,7 @@
 const qs = (text) => document.querySelector(text);
 const qsa = (text) => document.querySelectorAll(text);
 
-const category1Name = qs('#category1Name');
-const category2Name = qs('#category2Name');
-const category3Name = qs('#category3Name');
-const categoryImage1 = qs('#categoryImage1');
-const categoryImage2 = qs('#categoryImage2');
-const categoryImage3 = qs('#categoryImage3');
+
 const transactionCost1 = qs('#transactionCost1');
 const transactionCost2 = qs('#transactionCost2');
 const transactionCost3 = qs('#transactionCost3');
@@ -17,13 +12,18 @@ const price1 = qs('#price1');
 const price2 = qs('#price2');
 const price3 = qs('#price3');
 
-const categoryNames = qsa('#categoryNames')
+const categoryNames = qsa('input.categoryNames');
 console.log(categoryNames);
-let messageToShow = qsa(`#categoryNameError`)
+let messageNameErrors = qsa(`div.categoryNameErrors`);
+console.log(messageNameErrors);
+
+const categoryImages = qsa('input.categoryImages');
+console.log(categoryImages);
+let messageImageErrors = qsa(`div.categoryImageErrors`);
+console.log(messageImageErrors);
 
 const formToEdit = qs('#formToEdit');
 const formToCreate = qs('#formToCreate');
-
 const formButton = qs('#formButton');
 
 // let productNameOK = false;
@@ -35,36 +35,28 @@ for(let i=0; i < categoryNames.length; i++) {
     categoryNames[i].addEventListener('change', (e) => {
         if (categoryNames[i].value.length < 3) {
             
-            messageToShow[i].innerHTML = `<p> Debe contener al menos 3 caracteres </p>`
-            messageToShow[i].style.textAlign = "center"
-            messageToShow[i].style.color = "red"
-            messageToShow[i].style.margin = "15px"
-            messageToShow[i].style.fontSize = "0.5em"
+            messageNameErrors[i].innerHTML = `<p> Debe contener al menos 3 caracteres </p>`
     
         } else {
-            messageToShow[i].innerHTML = "" 
+            messageNameErrors[i].innerHTML = "" 
+        }
+    })
+ 
+}
+for(let i=0; i < categoryImages.length; i++) {   
+    categoryImages[i].addEventListener('change', (e) => {
+        if (categoryImages[i].value.split('.')[1] != "jpg" && categoryImages[i].value.split('.')[1] != "jpeg" && categoryImages[i].value.split('.')[1] != "png") {
+            
+            messageImageErrors[i].innerHTML = `<p> La imagen debe estar en formato JPG, JPEG o PNG </p>`
+    
+        } else {
+            messageImageErrors[i].innerHTML = "" 
         }
     })
  
 }
 
 
-
-categoryImage1.addEventListener('change', (e) => {
-    if (categoryImage1.value.split('.')[1] != "jpg" && categoryImage1.value.split('.')[1] != "jpeg" && categoryImage1.value.split('.')[1] != "png") {   
-        let messageToShow = qs('#categoryImage1Error')
-        messageToShow.innerHTML = `<p> La imagen debe estar en formato JPG, JPEG o PNG </p>`
-        messageToShow.style.textAlign = "center"
-        messageToShow.style.color = "red"
-        messageToShow.style.margin = "15px"
-        messageToShow.style.fontSize = "0.5em"
-
-    } else {
-        let messageToShow = qs('#categoryImage1Error')
-        messageToShow.innerHTML = "" 
-        
-    }
-})
 transactionCost1.addEventListener('change', (e) => {
     if (transactionCost1.value < 0 || transactionCost1.value > 100) {
         let messageToShow = qs('#transactionCost1Error')
