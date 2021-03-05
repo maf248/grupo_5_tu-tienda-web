@@ -1,15 +1,31 @@
 const qs = (text) => document.querySelector(text);
 const qsa = (text) => document.querySelectorAll(text);
 
-const productName = qs('#productName');
-const productImage = qs('#productImage');
-const bannerTitle = qs('#bannerTitle');
-const bannerSubtitle = qs('#bannerSubtitle');
+const category1Name = qs('#category1Name');
+const category2Name = qs('#category2Name');
+const category3Name = qs('#category3Name');
+const categoryImage1 = qs('#categoryImage1');
+const categoryImage2 = qs('#categoryImage2');
+const categoryImage3 = qs('#categoryImage3');
+const transactionCost1 = qs('#transactionCost1');
+const transactionCost2 = qs('#transactionCost2');
+const transactionCost3 = qs('#transactionCost3');
+const sections1 = qs('#sections1');
+const sections2 = qs('#sections2');
+const sections3 = qs('#sections3');
+const price1 = qs('#price1');
+const price2 = qs('#price2');
+const price3 = qs('#price3');
+
 const formToEdit = qs('#formToEdit');
 const formToCreate = qs('#formToCreate');
 
 const formButton = qs('#formButton');
-
+// <div id="category1NameError"></div>
+//<div id="categoryImage3Error"></div>
+//<div id="transactionCost1Error"></div>
+//<div id="sections1Error"></div>
+//<div id="price1Error"></div>
 let productNameOK = false;
 let productImageOK = true;
 let bannerTitleOK = false;
