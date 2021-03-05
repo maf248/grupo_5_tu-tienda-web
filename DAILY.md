@@ -1,3 +1,16 @@
+## Daily 05/03/2021
+Nos reunimos via zoom para escribir codigo juntos. Luego hablamos mediante el grupo de whatsapp para comunicarnos mas comodamente, sobre el trabajo realizado y trabajo faltante. Listamos lo faltante al dia de la fecha aproximadamente es:
+BACK-END:
+- Login (¿esta bien desde el controller? Sino, como hacer desde express-validator una consulta a la DB)
+- Beneficios (edicion y creacion)
+- Contenido (edicion y creacion)
+
+
+FRONT-END:
+- Login
+- Categorias (edicion y creacion)
+
+---> Arreglar el estilo general (y CSS de las etapas nuevas de creacion o edicion de productos)
 ## Daily 01/03/2021
 Nos reunimos via zoom luego de haber concluido la división en etapas del proceso de creación/modificación de productos. Definimos como mejorar dichas etapas nuevas visualmente, definiendo normas comunes de estilo para las mismas.
 Además, nos dividimos las tareas faltantes del sprint-7 actual (validaciones por backend y frontend).

@@ -92,7 +92,7 @@ Referencias:
 
 ○ Formulario de registro y login (/users/registro y /users/login)
 
-○ Formulario de carga y edición de productos ( /products/create y /products/1/edicion)
+○ Formulario de carga y edición de productos (/products/create y /products/1/edit)
 
 ○ Perfil de usuario (/users/profile)
 
@@ -102,14 +102,13 @@ Referencias:
 
 ## ★ Observaciones y pendientes:
 
-○ Nos quedan pendientes para el próximo sprint ciertas mejoras, que no pudimos llevar a cabo en este, tras habernos retrasado en gran medida por haber comprendido mal parte de la consigna durante varias semanas (no habiamos entendido hasta semanas mas tarde de comenzado el sprint, que el CRUD requerido debia funcionar con la base de datos implementada totalmente en el sitio). Por esto mismo, quedan pendientes las siguientes mejoras y sugerencias para el próximo sprint:
+OBSERVACIONES:
+↑ Dividimos en varias etapas la creacion y edicion de productos, para que sea mas simple de mantener a nivel código, y dando una mejor experiencia al usuario. (Posibles etapas a implementar: Producto / Categorías / Secciónes / Beneficios)
+
+PENDIENTES: 
 
 - Continuar con las mejoras orientadas hacia unificar el diseño y mejorarlo, haciendolo más simple y minimalista.
 
 - Reducir la cantidad de texto y de repeticiónes en el sitio (principalmente en detalle de productos).
 
-- Dividir en varias etapas la creacion y edicion de productos, para que sea mas simple de mantener a nivel código, y dando una mejor experiencia al usuario. (Posibles etapas a implementar: Producto / Categorías / Secciónes / Beneficios)
-
-- Concluir la edición de productos mediante sequelize de: Beneficios (que los checkboxes, "esta categoría, incluye este beneficio (o no)" modifiquen la tabla pivot benefit_category).
-
--Reparar la vista de detalle de producto, para que no "crashee" al crear un producto sin todas las secciones o contenidos.
+- Reparar la vista de detalle de producto, para que no "crashee" al crear un producto sin todas las secciones o contenidos.
