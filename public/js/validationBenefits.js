@@ -3,14 +3,17 @@ const qsa = (text) => document.querySelectorAll(text);
 
 const benefitsNames = qsa('input.benefitsNames');
 let messageBenefitsErrors = qsa(`div.messageBenefitsErrors`);
+let messageAsociationErrors = qsa(`div.messageAsociationErrors`);
 
 let benefitsNamesOk = []
-let checkboxesOk = []
-for(let i=0; i < benefitsNames.length; i++) {
-    console.log(`checkboxes${i}`)
+let checkboxesBenefit = []
+let checkboxesBenefitOk = []
 
-    checkboxesOk[i] = qsa(`checkbox.checkboxes${i}`);
-    console.log(checkboxesOk)
+for(let i=0; i < benefitsNames.length; i++) {
+    
+    checkboxesBenefit[i] = qsa(`input[type=checkbox].checkboxes${i}`);
+    console.log(checkboxesBenefit[i]);
+
     benefitsNames[i].addEventListener('change', (e) => {
         if (benefitsNames[i].value.length < 3) {
     
@@ -23,18 +26,21 @@ for(let i=0; i < benefitsNames.length; i++) {
             benefitsNamesOk[i] = true
         }
     })
-    checkboxesOk[i].addEventListener('change', (e) => {
-            if(checkboxesOk[i][0].value != 'true' &&  checkboxesOk[i][1].value != 'true' && checkboxesOk[i][2].value != 'true'){
+    checkboxesBenefit[i].forEach(checkboxBenefit => {
+        checkboxBenefit.addEventListener('change', (e) => {
+            if(checkboxesBenefit[i][0].checked != true &&  checkboxesBenefit[i][1].checked != true && checkboxesBenefit[i][2].checked != true){
     
-                messageBenefitsErrors[i].innerHTML = `<p> Debe estar asosiado al menos a una categoria</p>`
-                benefitsNamesOk[i] = false
+                messageAsociationErrors[i].innerHTML = `<p> Debe estar asosiado al menos a una categoria</p>`
+                checkboxesBenefitOk [i] = false
     
         
             } else {
-                messageBenefitsErrors[i].innerHTML = "" 
-                benefitsNamesOk[i] = true
+                messageAsociationErrors[i].innerHTML = "" 
+                checkboxesBenefitOk[i] = true
             }
         })
+    })
+    
     
 }
 
@@ -42,7 +48,7 @@ if (window.location.pathname.includes('edit')) {
 
     formToEdit.addEventListener('submit', (e) => {
 
-        if( benefitsNamesOk.includes(false)) {
+        if(benefitsNamesOk.includes(false) || checkboxesBenefitOk.includes(false)) {
     
             e.preventDefault()
     
@@ -54,7 +60,7 @@ if (window.location.pathname.includes('edit')) {
     
     formToCreate.addEventListener('submit', (e) => {
 
-        if(benefitsNamesOk.includes(false)) {
+        if(benefitsNamesOk.includes(false) || checkboxesBenefitOk.includes(false)) {
     
             e.preventDefault()
     
