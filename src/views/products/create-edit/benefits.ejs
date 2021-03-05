@@ -4,6 +4,7 @@
     <%- include('../../partials/head') %>
     <link rel="stylesheet" href="/stylesheets/producto-style.css">
     <link rel="stylesheet" href="/stylesheets/crear-editar-style.css">
+    <script src="/js/validationBenefits.js" defer></script>
 </head>
 
 <%- include('../../partials/navbar') %>
@@ -11,10 +12,10 @@
 <div class="creadorContainer">
     <% if (typeof newID == 'undefined') { %>
         <h1 class="titulo">Editor de beneficios: <%= product.name %></h1>
-        <form action="/products/<%= product.id %>/edit/benefits?_method=PUT" method="POST">
+        <form action="/products/<%= product.id %>/edit/benefits?_method=PUT" method="POST" id="formToEdit">
     <% } else { %>
         <h1 class="titulo">Creador de beneficios nuevos</h1>
-        <form action="/products/<%= newID %>/create/benefits" method="POST">
+        <form action="/products/<%= newID %>/create/benefits" method="POST" id="formToCreate">
     <% } %>
 </div>
     
@@ -51,22 +52,23 @@
                             <div class="tdDiv">
                                 <!--Elegir titulo beneficio 1-->
                                 <label for="benefit<%= benefit.id %>Name">Beneficio:</label> <br>
-                                <input class="inputBeneficio" type="text" name="benefit<%= benefit.id %>Name" value="<%= benefit.name %>">
+                                <input class="benefitsNames inputBeneficio" type="text" name="benefit<%= benefit.id %>Name" value="<%= benefit.name %>">
+                                <div class="messageBenefitsErrors"> </div>
                             </div>
                         </td>
                         <td>
                             <div class="tdDiv">
-                                <input class="inputBeneficio" type="checkbox" name="benefit<%= benefit.id %>Cat1" value="true" style="align-self: center;" <% if ((typeof benefit.Categories[0] != 'undefined' && benefit.Categories[0].id == product.Categories[0].id) || (typeof benefit.Categories[1] != 'undefined' && benefit.Categories[1].id == product.Categories[0].id) || (typeof benefit.Categories[2] != 'undefined' && benefit.Categories[2].id == product.Categories[0].id)) { %> checked <% } %>>
+                                <input class="<%= `checkboxes${index}` %>"type="checkbox" name="benefit<%= benefit.id %>Cat1" value="true" style="align-self: center;" <% if ((typeof benefit.Categories[0] != 'undefined' && benefit.Categories[0].id == product.Categories[0].id) || (typeof benefit.Categories[1] != 'undefined' && benefit.Categories[1].id == product.Categories[0].id) || (typeof benefit.Categories[2] != 'undefined' && benefit.Categories[2].id == product.Categories[0].id)) { %> checked <% } %>>
                             </div>
                         </td>
                         <td>
                             <div class="tdDiv">
-                                <input class="inputBeneficio" type="checkbox" name="benefit<%= benefit.id %>Cat2" value="true" style="align-self: center;" <% if ((typeof benefit.Categories[0] != 'undefined' && benefit.Categories[0].id == product.Categories[1].id) || (typeof benefit.Categories[1] != 'undefined' && benefit.Categories[1].id == product.Categories[1].id) || (typeof benefit.Categories[2] != 'undefined' && benefit.Categories[2].id == product.Categories[1].id)) { %> checked <% } %>>
+                                <input class="<%= `checkboxes${index}` %>" type="checkbox" name="benefit<%= benefit.id %>Cat2" value="true" style="align-self: center;" <% if ((typeof benefit.Categories[0] != 'undefined' && benefit.Categories[0].id == product.Categories[1].id) || (typeof benefit.Categories[1] != 'undefined' && benefit.Categories[1].id == product.Categories[1].id) || (typeof benefit.Categories[2] != 'undefined' && benefit.Categories[2].id == product.Categories[1].id)) { %> checked <% } %>>
                             </div>
                         </td>
                         <td>
                             <div class="tdDiv">
-                                <input type="checkbox" name="benefit<%= benefit.id %>Cat3" value="true" style="align-self: center;" <% if ((typeof benefit.Categories[0] != 'undefined' && benefit.Categories[0].id == product.Categories[2].id) || (typeof benefit.Categories[1] != 'undefined' && benefit.Categories[1].id == product.Categories[2].id) || (typeof benefit.Categories[2] != 'undefined' && benefit.Categories[2].id == product.Categories[2].id)) { %> checked <% } %>>
+                                <input class="<%= `checkboxes${index}` %>" type="checkbox" name="benefit<%= benefit.id %>Cat3" value="true" style="align-self: center;" <% if ((typeof benefit.Categories[0] != 'undefined' && benefit.Categories[0].id == product.Categories[2].id) || (typeof benefit.Categories[1] != 'undefined' && benefit.Categories[1].id == product.Categories[2].id) || (typeof benefit.Categories[2] != 'undefined' && benefit.Categories[2].id == product.Categories[2].id)) { %> checked <% } %>>
                             </div>
                         </td>
                     </tr>
@@ -104,7 +106,7 @@
         <div class="buttons-form">
             <button type="reset" class="reset">Borrar campos</button>
 
-            <button type="submit" class="submit">Guardar beneficio</button>
+            <button type="submit" class="submit" id="formButton">Guardar beneficio</button>
             <% if (typeof newID == 'undefined') { %>
                 <a class="submit" href="/products/<%= product.id %>/edit/sections">SIGUIENTE DEV</a>
             <% } else { %>
