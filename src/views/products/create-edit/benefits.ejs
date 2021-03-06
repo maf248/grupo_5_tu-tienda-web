@@ -25,26 +25,28 @@
                     <td class="beneficio fontSize">
                         <div class="tdDiv">
                             <!--Categorías-->
-                            <p>Categorías:</p> <br>
+                            <h2 class="categoriesTitles subrayado"><em>Categorías:</em></h2> <br>
                         </div>
                     </td>
                     <td>
                         <div class="tdDiv">
-                            <p><%= product.Categories[0].name %></p>   
+                            <h2 class="categoriesTitles"><%= product.Categories[0].name %></h2>   
                         </div>
                     </td>
                     <td>
                         <div class="tdDiv">
-                            <p><%=  product.Categories[1].name %></p>     
+                            <h2 class="categoriesTitles"><%=  product.Categories[1].name %></h2>     
                         </div>
                     </td>
                     <td>
                         <div class="tdDiv">
-                            <p><%= product.Categories[2].name %></p>   
+                            <h2 class="categoriesTitles"><%= product.Categories[2].name %></h2>   
                         </div>
                     </td>
                 </tr>
                    
+                
+        <% if (typeof newID == 'undefined') { %>
                 <% var index = 0; %>
                 <% benefits.forEach(benefit => { %>          
                     <tr>
@@ -76,7 +78,30 @@
                     </tr>
                     <% index++ %>
                     <% }) %>
-
+        <% } %>
+        <% if (typeof newID != 'undefined') { %>
+            <% if (typeof benefits != 'undefined') { %>
+                <% benefits.forEach(benefit => { %>  
+                <tr>  
+                    <td class="beneficio">
+                        <div class="tdDiv">
+                            <%= benefit.name %>
+                        </div>
+                    </td>
+                        <% for (let j = 0; j < product.Categories.length; j++) { %>
+                            <td class="beneficio">
+                                <div class="tdDiv">
+                                    <% if ((typeof benefit.Categories[0] != 'undefined' && benefit.Categories[0].id == product.Categories[j].id) || (typeof benefit.Categories[1] != 'undefined' && benefit.Categories[1].id == product.Categories[j].id) || (typeof benefit.Categories[2] != 'undefined' && benefit.Categories[2].id == product.Categories[j].id)) { %>
+                                        <i class="fas fa-check"></i>
+                                    <% } else { %>
+                                        <i class="fas fa-times"></i>
+                                    <% } %>
+                                </div>
+                            </td>
+                        <% } %>
+                </tr>
+                
+                 <% }) } %>
                         <tr>
                             <td class="beneficio fontSize">
                                 <div class="tdDiv">
@@ -101,9 +126,9 @@
                                 </div>
                             </td>
                         </tr> 
+        <% } %>
                 </table>
         </section>
-
 
         <div class="buttons-form">
             <button type="reset" class="reset">Borrar campos</button>

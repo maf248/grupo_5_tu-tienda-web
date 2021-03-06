@@ -235,6 +235,13 @@ td input {
     margin: 3px;
     font-size: 0.4em;
 }
+.categoriesTitles {
+    font-size: 1.5em;
+}
+.categoriesTitles em {
+    text-decoration: underline;
+    font-style: normal;
+}
 
 
 @media (max-width: 556px) {
