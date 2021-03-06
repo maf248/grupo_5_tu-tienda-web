@@ -635,7 +635,7 @@ const productosController = {
 
                         }
 
-                        res.redirect(`/products/${product.id}`)
+                        res.redirect(`/products/${product.id}/edit/benefits `)
                     })
 
             })
