@@ -220,20 +220,21 @@ td input {
 .categoryNames {
     font-size: 0.6em;
 }
-.categoryNameErrors {
+.categoryNameErrors p {
     color: red;
-    margin: 3px;
-    font-size: 0.6em;
+    margin-top: 7px;
+    font-size: 0.52em;
 }
-.transactionCostsErrors, .sectionsWebErrors, .priceSubscriptionErrors {
+.transactionCostsErrors p, .sectionsWebErrors p, .priceSubscriptionErrors p {
+    font-weight: 600;
     color: red;
-    margin: 3px;
-    font-size: 0.45em;
+    margin-bottom: 10px;
+    font-size: 0.8em;
 }
-.categoryImageErrors {
+.categoryImageErrors p {
     color: red;
     margin: 3px;
-    font-size: 0.4em;
+    font-size: 0.7em;
 }
 .categoriesTitles {
     font-size: 1.5em;
@@ -242,10 +243,17 @@ td input {
     text-decoration: underline;
     font-style: normal;
 }
+.messageBenefitsErrors, .messageAsociationErrors {
+    color: red;
+    font-size: 1.3em;
+}
 
 
 @media (max-width: 556px) {
     .disenoBlanco {
         width: 100%;
+    }
+    .messageBenefitsErrors, .messageAsociationErrors {
+        font-size: 1em;
     }
 }

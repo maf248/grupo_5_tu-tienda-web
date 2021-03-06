@@ -15,7 +15,7 @@ let productImageOK = true;
 productName.addEventListener('change', (e) => {
     if (productName.value.length < 3) {
         let messageToShow = qs('#productNameError')
-        messageToShow.innerHTML = `<p> Debe contener al menos 3 caracteres </p>`
+        messageToShow.innerHTML = `<p> - Debe contener al menos 3 caracteres </p>`
         messageToShow.style.textAlign = "center"
         messageToShow.style.color = "red"
         messageToShow.style.margin = "15px"
@@ -29,7 +29,7 @@ productName.addEventListener('change', (e) => {
 productImage.addEventListener('change', (e) => {
     if (productImage.value.split('.')[1] != "jpg" && productImage.value.split('.')[1] != "jpeg" && productImage.value.split('.')[1] != "png") {   
         let messageToShow = qs('#productImageError')
-        messageToShow.innerHTML = `<p> La imagen debe estar en formato JPG, JPEG o PNG </p>`
+        messageToShow.innerHTML = `<p> - La imagen debe estar en formato JPG, JPEG o PNG </p>`
         messageToShow.style.textAlign = "center"
         messageToShow.style.color = "red"
         messageToShow.style.margin = "15px"
@@ -44,7 +44,7 @@ productImage.addEventListener('change', (e) => {
 bannerTitle.addEventListener('change', (e) => {
     if (bannerTitle.value.length < 3) {
         let messageToShow = qs('#bannerTitleError')
-        messageToShow.innerHTML = `<p> Debe contener al menos 3 caracteres </p>`
+        messageToShow.innerHTML = `<p> - Debe contener al menos 3 caracteres </p>`
         messageToShow.style.textAlign = "center"
         messageToShow.style.color = "red"
         messageToShow.style.margin = "15px"
@@ -58,7 +58,7 @@ bannerTitle.addEventListener('change', (e) => {
 bannerSubtitle.addEventListener('change', (e) => {
     if (bannerSubtitle.value.length < 3) {
         let messageToShow = qs('#bannerSubtitleError')
-        messageToShow.innerHTML = `<p> Debe contener al menos 3 caracteres </p>`
+        messageToShow.innerHTML = `<p> - Debe contener al menos 3 caracteres </p>`
         messageToShow.style.textAlign = "center"
         messageToShow.style.color = "red"
         messageToShow.style.margin = "15px"

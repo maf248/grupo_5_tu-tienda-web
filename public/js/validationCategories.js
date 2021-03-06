@@ -37,7 +37,7 @@ for(let i=0; i < categoryNames.length; i++) {
     categoryNames[i].addEventListener('change', (e) => {
         if (categoryNames[i].value.length < 3) {
 
-            categoryNameErrors[i].innerHTML = `<p> Debe contener al menos 3 caracteres </p>`
+            categoryNameErrors[i].innerHTML = `<p> - Debe contener al menos 3 caracteres </p>`
             categoryNamesOk[i] = false
 
         } else {
@@ -51,7 +51,7 @@ for(let i=0; i < categoryImages.length; i++) {
     categoryImages[i].addEventListener('change', (e) => {
         if (categoryImages[i].value.split('.')[1] != "jpg" && categoryImages[i].value.split('.')[1] != "jpeg" && categoryImages[i].value.split('.')[1] != "png") {
             
-            categoryImageErrors[i].innerHTML = `<p> La imagen debe estar en formato JPG, JPEG o PNG </p>`
+            categoryImageErrors[i].innerHTML = `<p> - Formatos de imagen validos: JPG, JPEG o PNG </p>`
             categoryImagesOk[i] = false
 
         } else {
@@ -65,7 +65,7 @@ for(let i=0; i < transactionCosts.length; i++) {
     transactionCosts[i].addEventListener('change', (e) => {
         if (transactionCosts[i].value < 0 || transactionCosts[i].value > 100) {
             
-            transactionCostsErrors[i].innerHTML = `<p> Debe ingresar un numero entre 0 y 100 </p>`
+            transactionCostsErrors[i].innerHTML = `<p> - Debe ingresar un numero entre 0 y 100 </p>`
             transactionCostsOk[i] = false
     
         } else {
@@ -79,7 +79,7 @@ for(let i=0; i < sectionsWeb.length; i++) {
     sectionsWeb[i].addEventListener('change', (e) => {
         if (sectionsWeb[i].value < 1 || sectionsWeb[i].value > 500) {
             
-            sectionsWebErrors[i].innerHTML = `<p> Debe ingresar un numero entre 1 y 500 </p>`
+            sectionsWebErrors[i].innerHTML = `<p> - Debe ingresar un numero entre 1 y 500 </p>`
             sectionsWebOk[i] = false
     
         } else {
@@ -93,7 +93,7 @@ for(let i=0; i < priceSubscription.length; i++) {
     priceSubscription[i].addEventListener('change', (e) => {
         if (priceSubscription[i].value < 0 || priceSubscription[i].value > 16777215) {
             
-            priceSubscriptionErrors[i].innerHTML = `<p> Debe ingresar un numero mayor o igual a 0</p>`
+            priceSubscriptionErrors[i].innerHTML = `<p> - Debe ingresar un numero mayor o igual a 0</p>`
             priceSubscriptionsOk[i] = false
     
         } else {
