@@ -38,7 +38,7 @@
                                     <% if (typeof errors != "undefined") {
                                         errors.forEach ( error => { 
                                             if (error.param == "category1") { %>
-                                                <p class="errors"><%= error.msg %></p>
+                                                <p class="categoryNameErrors"><%= error.msg %></p>
                                         <% } }) } %>
                                 </div>
                             </th>
@@ -51,7 +51,7 @@
                                     <% if (typeof errors != "undefined") {
                                         errors.forEach ( error => { 
                                             if (error.param == "category2") { %>
-                                                <p class="errors"><%= error.msg %></p>
+                                                <p class="categoryNameErrors"><%= error.msg %></p>
                                         <% } }) } %>
                                 </div>
                             </th>
@@ -64,7 +64,7 @@
                                     <% if (typeof errors != "undefined") {
                                         errors.forEach ( error => { 
                                             if (error.param == "category3") { %>
-                                                <p class="errors"><%= error.msg %></p>
+                                                <p class="categoryNameErrors"><%= error.msg %></p>
                                         <% } }) } %>
                                 </div>
                             </th>
@@ -84,7 +84,7 @@
                                     <% if (typeof errors != "undefined") {
                                         errors.forEach ( error => { 
                                             if (error.param == "categoryImage1") { %>
-                                                <p class="errors"><%= error.msg %></p>
+                                                <p class="categoryImageErrors"><%= error.msg %></p>
                                         <% } }) } %>
                                 </div>
                             </th>
@@ -97,7 +97,7 @@
                                     <% if (typeof errors != "undefined") {
                                         errors.forEach ( error => { 
                                             if (error.param == "categoryImage2") { %>
-                                                <p class="errors"><%= error.msg %></p>
+                                                <p class="categoryImageErrors"><%= error.msg %></p>
                                         <% } }) } %>
                                 </div>
                             </th>
@@ -110,7 +110,7 @@
                                     <% if (typeof errors != "undefined") {
                                         errors.forEach ( error => { 
                                             if (error.param == "categoryImage3") { %>
-                                                <p class="errors"><%= error.msg %></p>
+                                                <p class="categoryImageErrors"><%= error.msg %></p>
                                         <% } }) } %>
                                 </div>
                             </th>
@@ -130,7 +130,7 @@
                                     <% if (typeof errors != "undefined") {
                                         errors.forEach ( error => { 
                                             if (error.param == "costoTransaccion[1]") { %>
-                                                <p class="errors"><%= error.msg %></p>
+                                                <p class="transactionCostsErrors"><%= error.msg %></p>
                                         <% } }) } %>
                                 </div>
                             </td>
@@ -143,7 +143,7 @@
                                     <% if (typeof errors != "undefined") {
                                         errors.forEach ( error => { 
                                             if (error.param == "costoTransaccion[2]") { %>
-                                                <p class="errors"><%= error.msg %></p>
+                                                <p class="transactionCostsErrors"><%= error.msg %></p>
                                         <% } }) } %>
                                 </div>
                             </td>
@@ -156,7 +156,7 @@
                                     <% if (typeof errors != "undefined") {
                                         errors.forEach ( error => { 
                                             if (error.param == "costoTransaccion[3]") { %>
-                                                <p class="errors"><%= error.msg %></p>
+                                                <p class="transactionCostsErrors"><%= error.msg %></p>
                                         <% } }) } %>
                                 </div>
                             </td>
@@ -171,12 +171,12 @@
                                 <div class="tdDiv">
                                     <!--Elegir cantidad de secciones categoria 1-->
                                     <label class="fontSize" for="cantidadSecciones1">Cantidad secciones 1:</label>
-                                    <input type="number" name="cantidadSecciones1" id="sections1" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[0].web_sections %>" <% } else { %> placeholder="Ingresá un numero" <% } %>  id="cantidadSecciones1">
-                                    <div id="sections1Error"></div>
+                                    <input type="number" class="sectionsWeb" name="cantidadSecciones1" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[0].web_sections %>" <% } else { %> placeholder="Ingresá un numero" <% } %>  id="cantidadSecciones1">
+                                    <div class="sectionsWebErrors"></div>
                                     <% if (typeof errors != "undefined") {
                                         errors.forEach ( error => { 
                                             if (error.param == "cantidadSecciones1") { %>
-                                                <p class="errors"><%= error.msg %></p>
+                                                <p class="sectionsWebErrors"><%= error.msg %></p>
                                         <% } }) } %>
                                 </div>
                             </td>
@@ -184,12 +184,12 @@
                                 <div class="tdDiv">
                                     <!--Elegir cantidad de secciones categoria 2-->
                                     <label class="fontSize" for="cantidadSecciones2">Cantidad secciones 2:</label>
-                                    <input type="number" name="cantidadSecciones2" id="sections2" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[1].web_sections %>" <% } else { %> placeholder="Ingresá un numero" <% } %>id="cantidadSecciones2">
-                                    <div id="sections2Error"></div>
+                                    <input type="number" class="sectionsWeb" name="cantidadSecciones2" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[1].web_sections %>" <% } else { %> placeholder="Ingresá un numero" <% } %>id="cantidadSecciones2">
+                                    <div class="sectionsWebErrors"></div>
                                     <% if (typeof errors != "undefined") {
                                         errors.forEach ( error => { 
                                             if (error.param == "cantidadSecciones2") { %>
-                                                <p class="errors"><%= error.msg %></p>
+                                                <p class="sectionsWebErrors"><%= error.msg %></p>
                                         <% } }) } %>
                                 </div>
                             </td>
@@ -197,12 +197,12 @@
                                 <div class="tdDiv">
                                     <!--Elegir cantidad de secciones categoria 3-->
                                     <label class="fontSize" for="cantidadSecciones3">Cantidad secciones 3:</label>
-                                    <input type="number" name="cantidadSecciones3" id="sections3" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[2].web_sections %>" <% } else { %> placeholder="Ingresá un numero" <% } %> id="cantidadSecciones3">
-                                    <div id="sections3Error"></div>
+                                    <input type="number" class="sectionsWeb" name="cantidadSecciones3" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[2].web_sections %>" <% } else { %> placeholder="Ingresá un numero" <% } %> id="cantidadSecciones3">
+                                    <div class="sectionsWebErrors"></div>
                                     <% if (typeof errors != "undefined") {
                                         errors.forEach ( error => { 
                                             if (error.param == "cantidadSecciones3") { %>
-                                                <p class="errors"><%= error.msg %></p>
+                                                <p class="sectionsWebErrors"><%= error.msg %></p>
                                         <% } }) } %>
                                 </div>
                             </td>
@@ -215,34 +215,34 @@
                     </td>
                     <td>
                         <div class="tdDiv">
-                            <input type="number" name="price[0]" id="price1" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[0].price %>" <% } else { %> placeholder="$ / mensual" <% } %>>
-                            <div id="price1Error"></div>
+                            <input type="number" class="priceSubscription" name="price[0]" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[0].price %>" <% } else { %> placeholder="$ / mensual" <% } %>>
+                            <div class="priceSubscriptionErrors"></div>
                             <% if (typeof errors != "undefined") {
                                 errors.forEach ( error => { 
                                     if (error.param == "price[0]") { %>
-                                        <p class="errors"><%= error.msg %></p>
+                                        <p class="priceSubscriptionErrors"><%= error.msg %></p>
                                 <% } }) } %>
                         </div>
                     </td>
                     <td>
                         <div class="tdDiv">
-                            <input type="number" name="price[1]" id="price2" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[1].price %>" <% } else { %> placeholder="$ / mensual" <% } %>>
-                            <div id="price2Error"></div>
+                            <input type="number" class="priceSubscription" name="price[1]" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[1].price %>" <% } else { %> placeholder="$ / mensual" <% } %>>
+                            <div class="priceSubscriptionErrors"></div>
                             <% if (typeof errors != "undefined") {
                                 errors.forEach ( error => { 
                                     if (error.param == "price[1]") { %>
-                                        <p class="errors"><%= error.msg %></p>
+                                        <p class="priceSubscriptionErrors"><%= error.msg %></p>
                                 <% } }) } %>
                         </div>
                     </td>
                     <td>
                         <div class="tdDiv">
-                            <input type="number" name="price[2]" id="price3" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[2].price %>" <% } else { %> placeholder="$ / mensual" <% } %>>
-                            <div id="price3Error"></div>
+                            <input type="number" class="priceSubscription" name="price[2]" <% if (typeof productToEdit != 'undefined' ) { %> value="<%= productToEdit.Categories[2].price %>" <% } else { %> placeholder="$ / mensual" <% } %>>
+                            <div class="priceSubscriptionErrors"></div>
                             <% if (typeof errors != "undefined") {
                                 errors.forEach ( error => { 
                                     if (error.param == "price[2]") { %>
-                                        <p class="errors"><%= error.msg %></p>
+                                        <p class="priceSubscriptionErrors"><%= error.msg %></p>
                                 <% } }) } %>
                         </div>
                     </td>

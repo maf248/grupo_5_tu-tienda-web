@@ -1,45 +1,48 @@
 const qs = (text) => document.querySelector(text);
 const qsa = (text) => document.querySelectorAll(text);
 
-const sections1 = qs('#sections1');
-const sections2 = qs('#sections2');
-const sections3 = qs('#sections3');
-const price1 = qs('#price1');
-const price2 = qs('#price2');
-const price3 = qs('#price3');
-
 const categoryNames = qsa('input.categoryNames');
-console.log(categoryNames);
-let messageNameErrors = qsa(`div.categoryNameErrors`);
-console.log(messageNameErrors);
+let categoryNameErrors = qsa(`div.categoryNameErrors`);
+let categoryNamesOk = []
 
 const categoryImages = qsa('input.categoryImages');
-console.log(categoryImages);
-let messageImageErrors = qsa(`div.categoryImageErrors`);
-console.log(messageImageErrors);
+let categoryImageErrors = qsa(`div.categoryImageErrors`);
+let categoryImagesOk = []
 
 const transactionCosts = qsa('input.transactionCosts');
-console.log(transactionCosts);
 let transactionCostsErrors = qsa(`div.transactionCostsErrors`);
-console.log(transactionCostsErrors);
+let transactionCostsOk = []
+
+const sectionsWeb = qsa('input.sectionsWeb');
+let sectionsWebErrors = qsa(`div.sectionsWebErrors`);
+let sectionsWebOk = []
+
+const priceSubscription = qsa('input.priceSubscription');
+let priceSubscriptionErrors = qsa(`div.priceSubscriptionErrors`);
+let priceSubscriptionsOk = []
 
 const formToEdit = qs('#formToEdit');
 const formToCreate = qs('#formToCreate');
 const formButton = qs('#formButton');
 
-// let productNameOK = false;
-// let productImageOK = true;
-// let bannerTitleOK = false;
-// let bannerSubtitleOK = false;
+if (window.location.pathname.includes('create')) {
+    categoryNamesOk = [false, false, false]
+    transactionCostsOk = [false, false, false]
+    sectionsWebOk = [false, false, false]
+    priceSubscriptionsOk = [false, false, false]
+}
+
 
 for(let i=0; i < categoryNames.length; i++) {   
     categoryNames[i].addEventListener('change', (e) => {
         if (categoryNames[i].value.length < 3) {
-            
-            messageNameErrors[i].innerHTML = `<p> Debe contener al menos 3 caracteres </p>`
-    
+
+            categoryNameErrors[i].innerHTML = `<p> Debe contener al menos 3 caracteres </p>`
+            categoryNamesOk[i] = false
+
         } else {
-            messageNameErrors[i].innerHTML = "" 
+            categoryNameErrors[i].innerHTML = ""
+            categoryNamesOk[i] = true
         }
     })
  
@@ -48,10 +51,12 @@ for(let i=0; i < categoryImages.length; i++) {
     categoryImages[i].addEventListener('change', (e) => {
         if (categoryImages[i].value.split('.')[1] != "jpg" && categoryImages[i].value.split('.')[1] != "jpeg" && categoryImages[i].value.split('.')[1] != "png") {
             
-            messageImageErrors[i].innerHTML = `<p> La imagen debe estar en formato JPG, JPEG o PNG </p>`
-    
+            categoryImageErrors[i].innerHTML = `<p> La imagen debe estar en formato JPG, JPEG o PNG </p>`
+            categoryImagesOk[i] = false
+
         } else {
-            messageImageErrors[i].innerHTML = "" 
+            categoryImageErrors[i].innerHTML = ""
+            categoryImagesOk[i] = true
         }
     })
  
@@ -61,51 +66,54 @@ for(let i=0; i < transactionCosts.length; i++) {
         if (transactionCosts[i].value < 0 || transactionCosts[i].value > 100) {
             
             transactionCostsErrors[i].innerHTML = `<p> Debe ingresar un numero entre 0 y 100 </p>`
+            transactionCostsOk[i] = false
     
         } else {
-            transactionCostsErrors[i].innerHTML = "" 
+            transactionCostsErrors[i].innerHTML = ""
+            transactionCostsOk[i] = true
+        }
+    })
+ 
+}
+for(let i=0; i < sectionsWeb.length; i++) {   
+    sectionsWeb[i].addEventListener('change', (e) => {
+        if (sectionsWeb[i].value < 1 || sectionsWeb[i].value > 500) {
+            
+            sectionsWebErrors[i].innerHTML = `<p> Debe ingresar un numero entre 1 y 500 </p>`
+            sectionsWebOk[i] = false
+    
+        } else {
+            sectionsWebErrors[i].innerHTML = ""
+            sectionsWebOk[i] = true
+        }
+    })
+ 
+}
+for(let i=0; i < priceSubscription.length; i++) {   
+    priceSubscription[i].addEventListener('change', (e) => {
+        if (priceSubscription[i].value < 0 || priceSubscription[i].value > 16777215) {
+            
+            priceSubscriptionErrors[i].innerHTML = `<p> Debe ingresar un numero mayor o igual a 0</p>`
+            priceSubscriptionsOk[i] = false
+    
+        } else {
+            priceSubscriptionErrors[i].innerHTML = ""
+            priceSubscriptionsOk[i] = true
         }
     })
  
 }
 
 
-sections1.addEventListener('change', (e) => {
-    if (sections1.value < 1 || sections1.value > 500) {
-        let messageToShow = qs('#sections1Error')
-        messageToShow.innerHTML = `<p> Debe ingresar un numero entre 1 y 500 </p>`
-        messageToShow.style.textAlign = "center"
-        messageToShow.style.color = "red"
-        messageToShow.style.margin = "15px"
-        messageToShow.style.fontSize = "0.5em"
-
-    } else {
-        let messageToShow = qs('#sections1Error')
-        messageToShow.innerHTML = "" 
-    }
-})
-
-price1.addEventListener('change', (e) => {
-    if (price1.value < 0 || price1.value > 16777215) {
-        let messageToShow = qs('#price1Error')
-        messageToShow.innerHTML = `<p> Debe ingresar un numero mayor o igual a 0 </p>`
-        messageToShow.style.textAlign = "center"
-        messageToShow.style.color = "red"
-        messageToShow.style.margin = "15px"
-        messageToShow.style.fontSize = "0.5em"
-
-    } else {
-        let messageToShow = qs('#price1Error')
-        messageToShow.innerHTML = "" 
-    }
-})
-
-
 if (window.location.pathname.includes('edit')) {
 
     formToEdit.addEventListener('submit', (e) => {
-
-        if(productNameOK == false || productImageOK == false || bannerTitleOK == false || bannerSubtitleOK == false) {
+        console.log(categoryNamesOk.includes(false));
+        console.log(categoryImagesOk.includes(false));
+        console.log(transactionCostsOk.includes(false))
+        console.log(sectionsWebOk.includes(false));
+        console.log(priceSubscriptionsOk.includes(false));
+        if(categoryNamesOk.includes(false) || categoryImagesOk.includes(false) || transactionCostsOk.includes(false) || sectionsWebOk.includes(false) || priceSubscriptionsOk.includes(false)) {
     
             e.preventDefault()
     
@@ -116,8 +124,12 @@ if (window.location.pathname.includes('edit')) {
 } else {
     
     formToCreate.addEventListener('submit', (e) => {
-
-        if(productNameOK == false || productImageOK == false || bannerTitleOK == false || bannerSubtitleOK == false) {
+        console.log(categoryNamesOk.includes(false));
+        console.log(categoryImagesOk.includes(false));
+        console.log(transactionCostsOk.includes(false))
+        console.log(sectionsWebOk.includes(false));
+        console.log(priceSubscriptionsOk.includes(false));
+        if(categoryNamesOk.includes(false) || categoryImagesOk.includes(false) || transactionCostsOk.includes(false) || sectionsWebOk.includes(false) || priceSubscriptionsOk.includes(false)) {
     
             e.preventDefault()
     
