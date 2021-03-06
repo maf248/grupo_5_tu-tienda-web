@@ -102,27 +102,30 @@
                 </tr>
                 
                  <% }) } %>
+                 <% var index = 0; %>
                         <tr>
                             <td class="beneficio fontSize">
                                 <div class="tdDiv">
                                     <!--Elegir titulo beneficio 1-->
                                     <label for="newBenefitName">Beneficio:</label> <br>
-                                    <input class="inputBeneficio" type="text" name="newBenefitName" placeholder="Escribí aquí el beneficio">
+                                    <input class="benefitsNames inputBeneficio" type="text" name="newBenefitName" placeholder="Escribí aquí el beneficio">
+                                    <div class="messageBenefitsErrors"> </div>
+                                    <div class="messageAsociationErrors"></div>
                                 </div>
                             </td>
                             <td>
                                 <div class="tdDiv">
-                                    <input class="inputBeneficio" type="checkbox" name="newBenefitCat1" value="true" style="align-self: center;">
+                                    <input class="<%= `checkboxes${index}` %>" type="checkbox" name="newBenefitCat1" value="true" style="align-self: center;">
                                 </div>
                             </td>
                             <td>
                                 <div class="tdDiv">
-                                    <input class="inputBeneficio" type="checkbox" name="newBenefitCat2" value="true" style="align-self: center;">
+                                    <input class="<%= `checkboxes${index}` %>" type="checkbox" name="newBenefitCat2" value="true" style="align-self: center;">
                                 </div>
                             </td>
                             <td>
                                 <div class="tdDiv">
-                                    <input class="inputBeneficio" type="checkbox" name="newBenefitCat3" value="true" style="align-self: center;">
+                                    <input class="<%= `checkboxes${index}` %>" type="checkbox" name="newBenefitCat3" value="true" style="align-self: center;">
                                 </div>
                             </td>
                         </tr> 

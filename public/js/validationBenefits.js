@@ -16,7 +16,7 @@ for(let i=0; i < benefitsNames.length; i++) {
     benefitsNames[i].addEventListener('change', (e) => {
         if (benefitsNames[i].value.length < 3) {
     
-            messageBenefitsErrors[i].innerHTML = `<p> Debe contener al menos 3 caracteres</p>`
+            messageBenefitsErrors[i].innerHTML = `<p> Debe contener al menos 3 caracteres </p>`
             benefitsNamesOk[i] = false
 
     
@@ -27,9 +27,9 @@ for(let i=0; i < benefitsNames.length; i++) {
     })
     checkboxesBenefit[i].forEach(checkboxBenefit => {
         checkboxBenefit.addEventListener('change', (e) => {
-            if(checkboxesBenefit[i][0].checked != true &&  checkboxesBenefit[i][1].checked != true && checkboxesBenefit[i][2].checked != true){
+            if(checkboxesBenefit[i][0].checked != true && checkboxesBenefit[i][1].checked != true && checkboxesBenefit[i][2].checked != true){
     
-                messageAsociationErrors[i].innerHTML = `<p> Debe estar asosiado al menos a una categoria</p>`
+                messageAsociationErrors[i].innerHTML = `<p> Debe estar asosiado al menos a una categoria </p>`
                 checkboxesBenefitOk [i] = false
     
         
@@ -48,7 +48,8 @@ if (window.location.pathname.includes('edit')) {
     formToEdit.addEventListener('submit', (e) => {
 
         if(benefitsNamesOk.includes(false) || checkboxesBenefitOk.includes(false)) {
-    
+            console.log('pasan benefits :' + benefitsNamesOk.includes(false));
+            console.log('pasan checkboxes :' + checkboxesBenefitOk.includes(false));
             e.preventDefault()
     
         }
@@ -56,11 +57,15 @@ if (window.location.pathname.includes('edit')) {
     })
 
 } else {
-    
+    /*---En caso de creacion, seteamos en falso los formularios vacios por default para que funcione bien la verificacion----*/
+    benefitsNamesOk[0] = false;
+    checkboxesBenefitOk[0] = false;
+
     formToCreate.addEventListener('submit', (e) => {
 
         if(benefitsNamesOk.includes(false) || checkboxesBenefitOk.includes(false)) {
-    
+            console.log('pasan benefits :' + benefitsNamesOk.includes(false));
+            console.log('pasan checkboxes :' + checkboxesBenefitOk.includes(false));
             e.preventDefault()
     
         }
