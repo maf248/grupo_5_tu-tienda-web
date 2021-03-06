@@ -24,7 +24,7 @@ h1, h2, h3, h4, h5, h6, button, th {
     margin: 10px;
 }
 .tdDiv p{
-    font-size: 1.8em;
+    font-size: 0.8em;
 }
 .contenedorMedalla-tdDiv{
     font-size: 1.4em;
@@ -225,15 +225,15 @@ td input {
     margin: 3px;
     font-size: 0.6em;
 }
-.categoryImageErrors {
+.transactionCostsErrors, .sectionsWebErrors, .priceSubscriptionErrors {
     color: red;
     margin: 3px;
     font-size: 0.45em;
 }
-.transactionCostsErrors {
+.categoryImageErrors {
     color: red;
     margin: 3px;
-    font-size: 0.45em;
+    font-size: 0.4em;
 }
 
 

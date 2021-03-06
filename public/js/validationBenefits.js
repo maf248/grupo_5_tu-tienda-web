@@ -12,7 +12,6 @@ let checkboxesBenefitOk = []
 for(let i=0; i < benefitsNames.length; i++) {
     
     checkboxesBenefit[i] = qsa(`input[type=checkbox].checkboxes${i}`);
-    console.log(checkboxesBenefit[i]);
 
     benefitsNames[i].addEventListener('change', (e) => {
         if (benefitsNames[i].value.length < 3) {
