@@ -69,7 +69,7 @@ router.get('/:id/create/contents/:section', productosController.showSectionIdFor
 
 /*---Rutas para crear POST---*/
 
-router.post('/create', upload.any(), productValidate, productosController.saveProduct);
+router.post('/create', upload.single('image'), productValidate, productosController.saveProduct);
 router.post('/:id/create/categories', upload.any(), categoryValidate, productosController.saveCategories);
 router.post('/:id/create/benefits', productosController.saveBenefits);
 router.post('/:id/create/sections', upload.any(), sectionValidate, productosController.saveSections);
@@ -87,7 +87,7 @@ router.get('/:id/edit/contents/:section', productosController.showSectionIdForCo
 
 /*---Rutas para editar POST---*/
 
-router.put('/:id/edit', upload.any(), productValidate, productosController.modifyProduct);
+router.put('/:id/edit', upload.single('image'), productValidate, productosController.modifyProduct);
 router.put('/:id/edit/categories', upload.any(), categoryValidate, productosController.modifyCategories);
 router.put('/:id/edit/benefits', productosController.modifyBenefits);
 router.put('/:id/edit/sections/:section/edited-section', upload.any(), sectionValidate, productosController.modifySection);
