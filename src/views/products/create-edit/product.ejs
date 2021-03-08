@@ -71,11 +71,18 @@
 </section>
 
         <div class="buttons-form">
-            <button type="reset" class="reset">Borrar campos</button>
+            <button type="reset" class="reset">Restablecer campos</button>
             <button type="submit" id="formButton" class="submit">Siguiente</button>
         </div>
         
     </form>
+    <% if (typeof productToEdit != 'undefined') { %>
+    <form action="/products/<%= productToEdit.id %>?_method=DELETE" method="POST">
+        <div class="buttons-form">
+            <button type="submit" class="delete">Eliminar producto</button>
+        </div>
+    </form>
+    <% } %>
 </div>
 
 <%- include('../../partials/footer') %>

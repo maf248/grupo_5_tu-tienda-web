@@ -134,13 +134,13 @@
         </section>
 
         <div class="buttons-form">
-            <button type="reset" class="reset">Borrar campos</button>
+            <button type="reset" class="reset">Restablecer campos</button>
 
             <button type="submit" class="submit" id="formButton">Guardar beneficio</button>
             <% if (typeof newID == 'undefined') { %>
-                <a class="submit" href="/products/<%= product.id %>/edit/sections">SIGUIENTE DEV</a>
+                <a class="submit linkButton" href="/products/<%= product.id %>/edit/sections">Siguiente</a>
             <% } else { %>
-                <a class="submit" href="/products/<%= newID %>/create/sections">SIGUIENTE DEV</a> 
+                <a class="submit linkButton" href="/products/<%= newID %>/create/sections">Siguiente</a> 
             <% } %>
         </div>
         

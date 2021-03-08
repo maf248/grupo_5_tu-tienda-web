@@ -113,11 +113,21 @@ td input {
     width: 25%;
     min-width: fit-content;
     padding: 10px;
-    border: 1px solid rgb(100, 197, 149);
+    border: 2px solid rgb(100, 197, 149);
     font-size: 1.2em;
     font-weight: bold;
     border-radius: 20px;
     margin: 15px auto;
+}
+.linkButton {
+    font-family: 'Raleway', sans-serif !important;
+    text-align: center;
+    color: black;
+}
+.linkButton:hover {
+    transition: 300ms;
+    transform: scale(1.1);
+    cursor: pointer;
 }
 .submit:hover{
     background-color: rgb(100, 197, 149);
@@ -126,7 +136,7 @@ td input {
     width: 25%;
     min-width: fit-content;
     padding: 10px;
-    border: 1px solid rgb(255, 77, 29);
+    border: 2px solid rgb(255, 77, 29);
     font-size: 1.2em;
     font-weight: bold;
     border-radius: 20px;
@@ -140,12 +150,15 @@ td input {
     width: 25%;
     min-width: fit-content;
     padding: 10px;
-    background-color: rgb(255, 0, 0);
-    border:  1px solid rgb(255, 0, 0);
+    border: 2px solid red;
     font-size: 1.2em;
     font-weight: bold;
     border-radius: 20px;
     margin: 15px auto;
+}
+.delete:hover{
+    content: '';
+    background-color: red;
 }
 .descripcion {
     margin: 16px auto;
