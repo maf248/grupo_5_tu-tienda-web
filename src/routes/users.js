@@ -31,7 +31,7 @@ router.get('/register', usersController.register);
 router.post('/register', registrationValidate, usersController.createUser);
 router.get('/profile', usersController.profile);
 router.patch('/profile/edit', registrationValidate, usersController.editProfile);
-router.post('/profile/avatar', upload.any(), usersController.photoUpdate);
+router.post('/profile/avatar', upload.single('imagenPerfilInput'), usersController.photoUpdate);
 router.post('/logout', usersController.logout);
 router.delete('/profile/delete', usersController.delete);
 module.exports = router;

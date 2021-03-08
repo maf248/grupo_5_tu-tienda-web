@@ -191,7 +191,7 @@ const usersController = {
     photoUpdate: function (req, res, next) {
         /*---Aqui se guarda el nombre del archivo del nuevo avatar---*/
         db.User.update({
-            image: req.files[0].filename
+            image: req.file.filename
         }, {
             where: {
                 id: {[db.Sequelize.Op.like] : [req.session.user.id]}
