@@ -348,38 +348,59 @@ const productosController = {
 
     },
     saveContents: function (req, res, next) {
+        let errors = validationResult(req);
 
-        uploadFilesDir(req.files);
+        if (errors.isEmpty()) {
 
-        db.Section.findByPk(req.params.section, {
-                include: [{
-                    association: "Contents"
-                }]
-            })
-            .then(section => {
-                if (section.Contents.length < 12) {
-                    db.Content.bulkCreate([{
-                            section_id: req.params.section,
-                            type: "icon",
-                            text: imageDir.contentIcon,
-                        },
-                        {
-                            section_id: req.params.section,
-                            type: "subtitle",
-                            text: req.body.contentSubtitle,
-                        },
-                        {
-                            section_id: req.params.section,
-                            type: "description",
-                            text: req.body.contentDescription,
-                        }
-                    ]).then(() => {
-                        res.redirect(`/products/${req.params.id}/create/contents/${req.params.section}`)
+            uploadFilesDir(req.files);
+
+            db.Section.findByPk(req.params.section, {
+                    include: [{
+                        association: "Contents"
+                    }]
+                })
+                .then(section => {
+                    if (section.Contents.length < 12) {
+                        db.Content.bulkCreate([{
+                                section_id: req.params.section,
+                                type: "icon",
+                                text: imageDir.contentIcon,
+                            },
+                            {
+                                section_id: req.params.section,
+                                type: "subtitle",
+                                text: req.body.contentSubtitle,
+                            },
+                            {
+                                section_id: req.params.section,
+                                type: "description",
+                                text: req.body.contentDescription,
+                            }
+                        ]).then(() => {
+                            res.redirect(`/products/${req.params.id}/create/contents/${req.params.section}`)
+                        })
+                    } else {
+                        res.redirect(`/products/${req.params.id}/create/contents`)
+                    }
+                })
+
+        } else {
+            db.Product.findByPk(req.params.id)
+            .then(product => {
+                db.Section.findByPk(req.params.section, {
+                    include: [{association: "Contents"}]
+                })
+                .then(section => {
+                    res.render('./products/create-edit/contents', {
+                        productToCreate: product,
+                        sectionToCreate: section,
+                        errors: errors.errors,
+                        body: req.body
                     })
-                } else {
-                    res.redirect(`/products/${req.params.id}/create/contents`)
-                }
+                })
             })
+
+        }
     },
     editProduct: function (req, res, next) {
         if (req.session.user != undefined && req.session.user.role == 'admin') {

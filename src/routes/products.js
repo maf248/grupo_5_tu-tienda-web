@@ -8,6 +8,7 @@ const db = require('../database/models');
 const productValidate = require('../middlewares/productValidate')
 const categoryValidate = require('../middlewares/categoryValidate')
 const sectionValidate = require('../middlewares/sectionValidate')
+const contentValidate = require('../middlewares/contentValidate')
 
 
 // ************ Controller Require ************
@@ -72,7 +73,7 @@ router.post('/create', upload.any(), productValidate, productosController.savePr
 router.post('/:id/create/categories', upload.any(), categoryValidate, productosController.saveCategories);
 router.post('/:id/create/benefits', productosController.saveBenefits);
 router.post('/:id/create/sections', upload.any(), sectionValidate, productosController.saveSections);
-router.post('/:id/create/contents/:section', upload.any(), productosController.saveContents);
+router.post('/:id/create/contents/:section', upload.any(), contentValidate, productosController.saveContents);
 
 /*---Rutas para editar GET---*/
 router.get('/:id/edit', productosController.editProduct);
@@ -90,7 +91,7 @@ router.put('/:id/edit', upload.any(), productValidate, productosController.modif
 router.put('/:id/edit/categories', upload.any(), categoryValidate, productosController.modifyCategories);
 router.put('/:id/edit/benefits', productosController.modifyBenefits);
 router.put('/:id/edit/sections/:section/edited-section', upload.any(), sectionValidate, productosController.modifySection);
-router.put('/:id/edit/contents/:section/:type/:content', upload.any(), productosController.modifyContents);
+router.put('/:id/edit/contents/:section/:type/:content', upload.any(), contentValidate, productosController.modifyContents);
 
 router.get('/:id', productosController.detalle);
 

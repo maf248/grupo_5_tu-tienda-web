@@ -57,7 +57,15 @@
                         <div class="contentToEditIconContainer">
                             <form action="/products/<%= productToEdit.id %>/edit/contents/<%= sectionToEdit.id %>/<%= con.type %>/<%= con.id %>?_method=PUT" method="POST" enctype="multipart/form-data" id="formToEditIcon">
                                 
-                                <input type="file" name="editedContent" id="iconToEdit">
+                                <input type="file" name="contentIcon" id="iconToEdit">
+
+                                <% if (typeof errors != 'undefined') { %>
+                                    <% errors.forEach (error => { %>
+                                        <% if (error.param == "contentIcon") { %>
+                                            <p class="errors" style="text-align: center;"><%= error.msg %></p>
+                                        <% } %>
+                                    <% }) %>
+                                <% } %>
 
                                 <div id="editIconContainer"></div>
                                 <button type="submit">Guardar Cambios</button>
@@ -73,7 +81,15 @@
                         <div class="contentToEditContainer">
                             <form action="/products/<%=productToEdit.id %>/edit/contents/<%= sectionToEdit.id %>/<%= con.type %>/<%= con.id %>?_method=PUT" method="POST" id="formToEditSubtitle">
                                 
-                                <input type="text" name="editedContent" id="subtitleToEdit" value="<%= con.text %>">
+                                <input type="text" name="contentSubtitle" id="subtitleToEdit" value="<%= con.text %>">
+
+                                <% if (typeof errors != 'undefined') { %>
+                                    <% errors.forEach (error => { %>
+                                        <% if (error.param == "contentSubtitle") { %>
+                                            <p class="errors" style="text-align: center;"><%= error.msg %></p>
+                                        <% } %>
+                                    <% }) %>
+                                <% } %>
 
                                 <div id="editSubtitleContainer"></div>
 
@@ -90,7 +106,15 @@
                         <div class="contentToEditContainer">
                             <form action="/products/<%=productToEdit.id %>/edit/contents/<%= sectionToEdit.id %>/<%= con.type %>/<%= con.id %>?_method=PUT" method="POST" id="formToEditDescription">
                                 
-                                <textarea name="editedContent" id="descriptionToEdit"  cols="50" rows="5"><%= con.text %></textarea> <br>
+                                <textarea name="contentDescription" id="descriptionToEdit"  cols="50" rows="5"><%= con.text %></textarea> <br>
+
+                                <% if (typeof errors != 'undefined') { %>
+                                    <% errors.forEach (error => { %>
+                                        <% if (error.param == "contentDescription") { %>
+                                            <p class="errors" style="text-align: center;"><%= error.msg %></p>
+                                        <% } %>
+                                    <% }) %>
+                                <% } %>
 
                                 <div id="editDescriptionContainer"></div>
 
@@ -186,15 +210,38 @@
                 <input type="file" name="contentIcon" id="contentIcon" accept="image/svg" style="display: block;">
                 <div id="containerOfCreateIconValidation"></div>
 
+                <% if (typeof errors != 'undefined') { %>
+                    <% errors.forEach (error => { %>
+                        <% if (error.param == "contentIcon") { %>
+                            <p class="errors" style="text-align: center;"><%= error.msg %></p>
+                        <% } %>
+                    <% }) %>
+                <% } %>
+
                 
                 <label for="contentSubtitle">Elegí el subtítulo del contenido que estás por crear:</label>
                 <input type="text" name="contentSubtitle" id="contentSubtitle" placeholder="Escribe el texto aqui..." style="width: 100%; border: 1px solid black; margin: 16px auto;">
                 <div id="containerOfCreateSubtitleValidation"></div>
+
+                <% if (typeof errors != 'undefined') { %>
+                    <% errors.forEach (error => { %>
+                        <% if (error.param == "contentSubtitle") { %>
+                            <p class="errors" style="text-align: center;"><%= error.msg %></p>
+                        <% } %>
+                    <% }) %>
+                <% } %>
         
                 <label for="contentDescription">Elegí la descripción del contenido que estás por crear:</label>
                 <input type="text" name="contentDescription" id="contentDescription" placeholder="Escribe el texto aqui..." style="width: 100%; border: 1px solid black; margin: 16px auto;">
                 <div id="containerOfCreateDescriptionValidation"></div>
 
+                <% if (typeof errors != 'undefined') { %>
+                    <% errors.forEach (error => { %>
+                        <% if (error.param == "contentDescription") { %>
+                            <p class="errors" style="text-align: center;"><%= error.msg %></p>
+                        <% } %>
+                    <% }) %>
+                <% } %>
 
                 <div id="containerOfCreateNoIconValidation"></div>
                 <button type="submit" class="reset" style="display: block;">Guardar y seguir creando</button>
