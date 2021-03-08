@@ -124,15 +124,19 @@ h1 {
     min-width: fit-content;
     white-space: nowrap;
     padding: 10px;
-    background-color: rgb(100, 197, 149);
+    border: 2px solid rgb(100, 197, 149);
     font-size: 1.3em;
     font-weight: bold;
     border-radius: 20px;
     margin: 15px auto;
-    justify-self: center;
+    justify-self: center;  
+
 }
 .boton-crear:hover {
+    background-color: rgb(100, 197, 149);
     text-decoration: underline;
+    transition: 300ms;
+    transform: scale(1.1);
     cursor: pointer;
 }
 
