@@ -14,61 +14,63 @@ var imageDir = {}
 /*----Funcion que filtra archivos subidos, para que cada nombre de archivo se guarde en donde corresponde. Recibe como parametro req.files----*/
 function uploadFilesDir(files) {
     imageDir = {}
-    if (files.length < 1) {
-        files.forEach(file => {
-            switch (file.fieldname) {
+    if (typeof files != 'undefined') {
+        if (files.length < 1) {
+            files.forEach(file => {
+                switch (file.fieldname) {
+                    case 'image':
+                        imageDir.image = file.filename
+                        break
+                    case 'categoryImage1':
+                        imageDir.categoryImage1 = file.filename
+                        break
+                    case 'categoryImage2':
+                        imageDir.categoryImage2 = file.filename
+                        break
+                    case 'categoryImage3':
+                        imageDir.categoryImage3 = file.filename
+                        break
+                    case 'sectionImage':
+                        imageDir.sectionImage = file.filename
+                        break
+                    case 'editSectionImage':
+                        imageDir.editSectionImage = file.filename
+                        break
+                    case 'contentIcon':
+                        imageDir.contentIcon = file.filename
+                        break
+                    case 'editedContent':
+                        imageDir.editedContent = file.filename
+                        break
+                }
+            });
+        } else {
+            switch (files.fieldname) {
                 case 'image':
-                    imageDir.image = file.filename
+                    imageDir.image = files.filename
                     break
                 case 'categoryImage1':
-                    imageDir.categoryImage1 = file.filename
+                    imageDir.categoryImage1 = files.filename
                     break
                 case 'categoryImage2':
-                    imageDir.categoryImage2 = file.filename
+                    imageDir.categoryImage2 = files.filename
                     break
                 case 'categoryImage3':
-                    imageDir.categoryImage3 = file.filename
+                    imageDir.categoryImage3 = files.filename
                     break
                 case 'sectionImage':
-                    imageDir.sectionImage = file.filename
+                    imageDir.sectionImage = files.filename
                     break
                 case 'editSectionImage':
-                    imageDir.editSectionImage = file.filename
+                    imageDir.editSectionImage = files.filename
                     break
                 case 'contentIcon':
-                    imageDir.contentIcon = file.filename
+                    imageDir.contentIcon = files.filename
                     break
                 case 'editedContent':
-                    imageDir.editedContent = file.filename
+                    imageDir.editedContent = files.filename
                     break
             }
-        });
-    } else {
-        switch (files.fieldname) {
-            case 'image':
-                imageDir.image = files.filename
-                break
-            case 'categoryImage1':
-                imageDir.categoryImage1 = files.filename
-                break
-            case 'categoryImage2':
-                imageDir.categoryImage2 = files.filename
-                break
-            case 'categoryImage3':
-                imageDir.categoryImage3 = files.filename
-                break
-            case 'sectionImage':
-                imageDir.sectionImage = files.filename
-                break
-            case 'editSectionImage':
-                imageDir.editSectionImage = files.filename
-                break
-            case 'contentIcon':
-                imageDir.contentIcon = files.filename
-                break
-            case 'editedContent':
-                imageDir.editedContent = files.filename
-                break
         }
     }
 };
@@ -136,7 +138,7 @@ const productosController = {
         let errors = validationResult(req);
         if (errors.isEmpty()) {
 
-            uploadFilesDir(req.file);
+            uploadFilesDir();
 
             db.Product.create({
                     name: req.body.name,

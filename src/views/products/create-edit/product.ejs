@@ -36,7 +36,7 @@
 </select>
 <!--Elegir imagen del producto-->
 <label style="display: block; margin-left: 30px; padding: 5px;  margin-left: 30%;" for="image">Elegí una imagen que describa el producto:</label>
-<input class="imagen-producto" style="margin: 1% auto" id="productImage" type="file" name="image" id="image">
+<input class="imagen-producto" style="margin: 1% auto" id="productImage" type="file" name="image" id="image" <% if (typeof productToEdit == 'undefined') { %> required <% } %> >
 <div id="productImageError"></div>
 <% if (typeof errors != "undefined") {
     errors.forEach ( error => { 
