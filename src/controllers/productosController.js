@@ -138,14 +138,12 @@ const productosController = {
         let errors = validationResult(req);
         if (errors.isEmpty()) {
 
-            uploadFilesDir();
-
             db.Product.create({
                     name: req.body.name,
                     type: req.body.type,
                     title_banner: req.body.titleBanner1,
                     subtitle_banner: req.body.subtitleBanner1,
-                    image: imageDir.image
+                    image: req.file.filename
                 })
                 .then(newProduct => {
 
@@ -299,7 +297,7 @@ const productosController = {
 
         if (errors.isEmpty()) {
 
-            uploadFilesDir(req.files);
+            uploadFilesDir(req.file);
 
             db.Section.create({
 
@@ -740,7 +738,7 @@ const productosController = {
         let errors = validationResult(req);
 
         if (errors.isEmpty()) {
-            uploadFilesDir(req.files);
+            uploadFilesDir(req.file);
 
             db.Section.update({
                 title: req.body.sectionTitle,
