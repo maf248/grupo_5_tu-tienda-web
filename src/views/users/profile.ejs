@@ -2,14 +2,15 @@
 <html lang="es">
 <head>
     <link rel="stylesheet" href="/stylesheets/users-style.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="/js/validationProfile.js" defer></script>
     <%- include('../partials/head') %>
 </head>
 
 <%- include('../partials/navbar') %>
 <div class="profile">
 
-
-    <form action="/users/profile/avatar" method="POST" class="imageForm" enctype="multipart/form-data">
+    <form action="/users/profile/avatar" method="POST" class="imageForm" enctype="multipart/form-data" id="imageForm">
         <% if (user.role == 'admin') { %>
             <h2>Perfil de Administrador:</h2>
         <% } else { %>
@@ -24,37 +25,43 @@
         </label>
 
         <input type="file" name="imagenPerfilInput" class="imagenPerfilInputb" id="imagenPerfilInput" required>
+        <div id="imagenPerfilInputError"></div>
         <button type="submit">Guardar cambios</button>
 
     </form>
 
-    <form action="/users/profile/edit?_method=PATCH" method="POST" class="datosPersonales">
+    <form action="/users/profile/edit?_method=PATCH" method="POST" class="datosPersonales" id="profileForm">
         
-        <input type="text" name="firstName" value="<%=user.first_name%>">
+        <input type="text" name="firstName" id="firstName" value="<%=user.first_name%>">
+        <div id="firstNameError"></div>
         <% if (typeof errors != "undefined") {
             errors.forEach (error => { 
                 if (error.param == "firstName") { %>
                     <p><%= error.msg %></p>
             <% } }) } %>
-        <input type="text" name="lastName" value="<%=user.last_name%>">
+        <input type="text" name="lastName" id="lastName" value="<%=user.last_name%>">
+        <div id="lastNameError"></div>
         <% if (typeof errors != "undefined") {
             errors.forEach (error => { 
                 if (error.param == "lastName") { %>
                     <p><%= error.msg %></p>
             <% } }) } %>
-        <input type="email" name="email" value="<%=user.email%>">
+        <input type="email" name="email" id="email" value="<%=user.email%>">
+        <div id="emailError"></div>
         <% if (typeof errors != "undefined") {
         errors.forEach (error => { 
         if (error.param == "email") { %>
             <p><%= error.msg %></p>
     <% } }) } %>
-        <input type="password" name="password" placeholder="Actualizar contraseña">
+        <input type="password" name="password" id="password" placeholder="Actualizar contraseña">
+        <div id="passwordError"></div>
         <% if (typeof errors != "undefined") {
             errors.forEach (error => { 
                 if (error.param == "password" && error.value != '') { %>
                     <p><%= error.msg %></p>
             <% } }) } %>
-        <input type="password" name="passwordRepeat" placeholder="Repetí tu nueva contraseña">
+        <input type="password" name="passwordRepeat" id="passwordRepeat" placeholder="Repetí tu nueva contraseña">
+        <div id="passwordRepeatError"></div>
         <% if (typeof errors != "undefined") {
             errors.forEach (error => { 
                 if (error.param == "passwordRepeat") { %>
@@ -76,8 +83,8 @@
 
     </form>
 
-    <form action="/users/profile/delete/?_method=DELETE" method="POST" class="container-delete">
-        <button onclick="return confirm('¿Estas seguro que querés borrar tu cuenta de usuario?');" type="submit" class="button-delete">Eliminar cuenta ⚠</button>
+    <form action="/users/profile/delete/?_method=DELETE" method="POST" class="container-delete" id="deleteForm">
+        <button  type="submit" class="button-delete" id="delete">Eliminar cuenta ⚠</button>
     </form>
 </div>
 <%- include('../partials/footer') %>
