@@ -2,18 +2,21 @@
 <html lang="es">
 <head>
     <link rel="stylesheet" href="/stylesheets/users-style.css">
+    <script src="/js/validationLogin.js" defer></script>
     <%- include('../partials/head') %>
 </head>
 
 <%- include('../partials/navbar') %>
 
-<form class="form-login" action="/users/login" method="POST">
+<form class="form-login" action="/users/login" method="POST" id="loginForm">
     <h5>¡Hola! Completa tus datos</h5>
-        <input class="usuario" type="email" name="user" placeholder="Correo del usuario"<% if (typeof email != 'undefined') { %> value="<%= email %>"<% } %>>
-    <% if (loginMailValue == false && loginMailValue != null) {%>
+        <input id="user" class="usuario" type="email" name="user" placeholder="Correo del usuario"<% if (typeof email != 'undefined') { %> value="<%= email %>"<% } %>>
+        <div id="userError"></div>
+        <% if (loginMailValue == false && loginMailValue != null) {%>
         <p>El email ingresado no se encuentra registrado</p>     
     <% } %>
-        <input class="usuario" type="password" name="password" placeholder="Contraseña">
+        <input id="password" class="usuario" type="password" name="password" placeholder="Contraseña">
+        <div id="passwordError"></div>
     <% if (loginPassValue == false && loginPassValue != null) {%>
         <p>La contraseña ingresada es incorrecta</p>      
     <% } %>
