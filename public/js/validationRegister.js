@@ -88,7 +88,7 @@ passwordRepeat.addEventListener('change', (e) => {
 
 
 registerForm.addEventListener('submit', (e) => {
-
+    
     if(verification.includes(false)) {
 
         e.preventDefault()

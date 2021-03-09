@@ -8,11 +8,8 @@ const userError = qs('#userError')
 const password = qs('#password')
 const passwordError = qs('#passwordError')
 
-const formButton = qs('#formButton')
-
 var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 var passwordformat = /^(?=^.{8,}$)(?=.*\d)(?=.*[!@#$%^&*]+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/;
-let verification = [false, false]
 
 user.addEventListener('change', (e) => {
     if (!user.value.match(mailformat)) {
@@ -20,11 +17,9 @@ user.addEventListener('change', (e) => {
         userError.style.textAlign = "center"
         userError.style.color = "red"
         userError.style.margin = "10px"
-        verification[0] = false
 
     } else {
         userError.innerHTML = "" 
-        verification[0] = true
     }
 })
 password.addEventListener('change', (e) => {
@@ -33,20 +28,16 @@ password.addEventListener('change', (e) => {
         passwordError.style.textAlign = "center"
         passwordError.style.color = "red"
         passwordError.style.margin = "10px"
-        verification[1] = false
 
     } else {
         passwordError.innerHTML = "" 
-        verification[1] = true
     }
 })
 
 loginForm.addEventListener('submit', (e) => {
-
-    if(verification.includes(false)) {
-
+   
+    if(!user.value.match(mailformat) && !password.value.match(passwordformat)) {
         e.preventDefault()
-
     }
 
 })
