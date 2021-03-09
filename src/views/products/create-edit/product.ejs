@@ -4,6 +4,7 @@
     <%- include('../../partials/head') %>
     <link rel="stylesheet" href="/stylesheets/producto-style.css">
     <link rel="stylesheet" href="/stylesheets/crear-editar-style.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="/js/validationProduct.js" defer></script>
 </head>
 
@@ -77,9 +78,9 @@
         
     </form>
     <% if (typeof productToEdit != 'undefined') { %>
-    <form action="/products/<%= productToEdit.id %>?_method=DELETE" method="POST">
+    <form action="/products/<%= productToEdit.id %>?_method=DELETE" method="POST" id="deleteForm">
         <div class="buttons-form">
-            <button type="submit" class="delete">Eliminar producto</button>
+            <button type="submit" class="delete" id="delete">Eliminar producto</button>
         </div>
     </form>
     <% } %>

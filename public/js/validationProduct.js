@@ -92,3 +92,40 @@ if (window.location.pathname.includes('edit')) {
     
     })
 }
+
+/*----Sweet alert al eliminar producto----*/
+const deleteButton = qs('#delete');
+const deleteForm = qs('#deleteForm');
+
+
+deleteForm.addEventListener('submit', (e) => {
+
+    e.preventDefault()
+
+    swal({
+        title: "¿Estas seguro que deseas eliminar el producto?",
+        text: "Esta acción es irreversible",
+        icon: "warning",
+        buttons: ["Cancelar", "Eliminar"],
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        
+        if (willDelete) {
+            swal("El producto ha sido eliminado", {
+                icon: "success",
+            })
+            .then(() => {
+                deleteForm.submit()
+            })
+            
+            
+        } else {
+            swal("El producto NO se ha eliminado");
+            
+        }
+      })
+      
+})
+
+
