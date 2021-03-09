@@ -19,7 +19,7 @@ user.addEventListener('change', (e) => {
         userError.innerHTML = `<p> Debe ingresar un mail valido </p>`
         userError.style.textAlign = "center"
         userError.style.color = "red"
-        userError.style.margin = "15px"
+        userError.style.margin = "10px"
         verification[0] = false
 
     } else {
@@ -29,10 +29,10 @@ user.addEventListener('change', (e) => {
 })
 password.addEventListener('change', (e) => {
     if (!password.value.match(passwordformat)) {
-        passwordError.innerHTML = `<p> Debe tener una mayuscula, una miniscula, 8 caracteres, un numero y un simbolo </p>`
+        passwordError.innerHTML = `<p> Debe tener 8 caracteres, incluyendo una mayúscula, una minúscula, un numero y un simbolo </p>`
         passwordError.style.textAlign = "center"
         passwordError.style.color = "red"
-        passwordError.style.margin = "15px"
+        passwordError.style.margin = "10px"
         verification[1] = false
 
     } else {

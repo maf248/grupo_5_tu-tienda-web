@@ -118,7 +118,7 @@ form p {
    .controls{
        width: 100%;
        border: 1px solid #017bab;
-       margin-bottom: 15px;
+       margin-top: 15px;
        padding: 11px 10px;
        background: white;
        font-size: 14px;
@@ -131,7 +131,7 @@ form p {
        background: #017bab;
        border: none;
        color: white;
-       margin: 16px 0px;
+       margin: 20px 0px;
        cursor: pointer;
    }
    .form-registro p {
