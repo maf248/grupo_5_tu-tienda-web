@@ -15,7 +15,7 @@ var imageDir = {}
 function uploadFilesDir(files) {
     imageDir = {}
     if (typeof files != 'undefined') {
-        if (files.length < 1) {
+        if (files.length > 1) {
             files.forEach(file => {
                 switch (file.fieldname) {
                     case 'image':
@@ -39,36 +39,30 @@ function uploadFilesDir(files) {
                     case 'contentIcon':
                         imageDir.contentIcon = file.filename
                         break
-                    case 'editedContent':
-                        imageDir.editedContent = file.filename
-                        break
                 }
             });
         } else {
-            switch (files.fieldname) {
+            switch (files[0].fieldname) {
                 case 'image':
-                    imageDir.image = files.filename
+                    imageDir.image = files[0].filename
                     break
                 case 'categoryImage1':
-                    imageDir.categoryImage1 = files.filename
+                    imageDir.categoryImage1 = files[0].filename
                     break
                 case 'categoryImage2':
-                    imageDir.categoryImage2 = files.filename
+                    imageDir.categoryImage2 = files[0].filename
                     break
                 case 'categoryImage3':
-                    imageDir.categoryImage3 = files.filename
+                    imageDir.categoryImage3 = files[0].filename
                     break
                 case 'sectionImage':
-                    imageDir.sectionImage = files.filename
+                    imageDir.sectionImage = files[0].filename
                     break
                 case 'editSectionImage':
-                    imageDir.editSectionImage = files.filename
+                    imageDir.editSectionImage = files[0].filename
                     break
                 case 'contentIcon':
-                    imageDir.contentIcon = files.filename
-                    break
-                case 'editedContent':
-                    imageDir.editedContent = files.filename
+                    imageDir.contentIcon = files[0].filename
                     break
             }
         }
@@ -805,12 +799,12 @@ const productosController = {
     },
     modifyContents: function (req, res, next) {
 
-        if (typeof req.body.editedContent === 'string') {
+        if (req.params.type == 'subtitle') {
 
             db.Content.update({
                 section_id: req.params.section,
                 type: req.params.type,
-                text: req.body.editedContent
+                text: req.body.contentSubtitle
             }, {
                 where: {
                     id: req.params.content
@@ -818,12 +812,28 @@ const productosController = {
             }).then(() => {
                 res.redirect(`/products/${req.params.id}/edit/contents/${req.params.section}`)
             }).catch(err => console.log(err))
-        } else {
-            uploadFilesDir(req.files);
+
+        } else if (req.params.type == 'description') {
+
             db.Content.update({
                 section_id: req.params.section,
                 type: req.params.type,
-                text: imageDir.editedContent
+                text: req.body.contentDescription
+            }, {
+                where: {
+                    id: req.params.content
+                }
+            }).then(() => {
+                res.redirect(`/products/${req.params.id}/edit/contents/${req.params.section}`)
+            }).catch(err => console.log(err))
+
+        } else if (req.params.type == 'icon') {
+            uploadFilesDir(req.files);
+
+            db.Content.update({
+                section_id: req.params.section,
+                type: req.params.type,
+                text: imageDir.contentIcon
             }, {
                 where: {
                     id: req.params.content
