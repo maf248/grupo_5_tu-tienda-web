@@ -799,8 +799,26 @@ const productosController = {
     },
     modifyContents: function (req, res, next) {
 
-        if (req.params.type == 'subtitle') {
+        let errors = validationResult(req);
+        console.log(errors);
+        let subtitleError = false;
+        let descriptionError = false;
+        let iconError = false;
 
+        errors.errors.forEach(error => {
+            switch (error.param) {
+                case 'contentSubtitle':
+                    subtitleError = true
+                    break
+                case 'contentDescription':
+                    descriptionError = true
+                    break
+                case 'contentIcon':
+                    iconError = true
+                    break
+            }
+        })
+        if (req.params.type == 'subtitle' && !subtitleError) {
             db.Content.update({
                 section_id: req.params.section,
                 type: req.params.type,
@@ -813,7 +831,7 @@ const productosController = {
                 res.redirect(`/products/${req.params.id}/edit/contents/${req.params.section}`)
             }).catch(err => console.log(err))
 
-        } else if (req.params.type == 'description') {
+        } else if (req.params.type == 'description'  && !descriptionError) {
 
             db.Content.update({
                 section_id: req.params.section,
@@ -827,7 +845,7 @@ const productosController = {
                 res.redirect(`/products/${req.params.id}/edit/contents/${req.params.section}`)
             }).catch(err => console.log(err))
 
-        } else if (req.params.type == 'icon') {
+        } else if (req.params.type == 'icon'  && !iconError) {
             uploadFilesDir(req.files);
 
             db.Content.update({
@@ -840,6 +858,23 @@ const productosController = {
                 }
             }).then(() => {
                 res.redirect(`/products/${req.params.id}/edit/contents/${req.params.section}`)
+            }).catch(err => console.log(err))
+        
+        } else if (subtitleError || descriptionError || iconError) {
+
+            db.Product.findByPk(req.params.id)
+            .then(product => {
+                db.Section.findByPk(req.params.section, {
+                    include: [{
+                        association: "Contents"
+                    }]
+                }).then(section => {
+                    res.render('./products/create-edit/contents', {
+                        productToEdit: product,
+                        sectionToEdit: section,
+                        errors: errors.errors
+                    })
+                })
             }).catch(err => console.log(err))
         }
     },

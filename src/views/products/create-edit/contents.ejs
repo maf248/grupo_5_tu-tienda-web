@@ -106,7 +106,7 @@
                         <div class="contentToEditContainer">
                             <form action="/products/<%=productToEdit.id %>/edit/contents/<%= sectionToEdit.id %>/<%= con.type %>/<%= con.id %>?_method=PUT" method="POST" id="formToEditDescription">
                                 
-                                <textarea name="contentDescription" id="descriptionToEdit"  cols="50" rows="5"><%= con.text %></textarea> <br>
+                                <textarea name="contentDescription" id="descriptionToEdit" cols="50" rows="5"><%= con.text %></textarea> <br>
 
                                 <% if (typeof errors != 'undefined') { %>
                                     <% errors.forEach (error => { %>

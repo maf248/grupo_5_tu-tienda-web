@@ -6,10 +6,10 @@ const fs = require('fs');
 const ErrorsDir = path.join(__dirname, '..', 'data', 'catchErrorsLog.json');
 
 module.exports = [
-    check('contentSubtitle')
+    body('contentSubtitle')
     .isLength({min:3})
     .withMessage('Este campo debe contener al menos 3 carateres'),
-    check('contentDescription')
+    body('contentDescription')
     .isLength({min:10})
     .withMessage('Este campo debe contener al menos 10 carateres'),
     body('contentIcon')

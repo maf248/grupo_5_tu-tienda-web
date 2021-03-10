@@ -70,7 +70,7 @@ if (window.location.pathname.includes('edit')) {
         })
         formToEditIcons[i].addEventListener('submit', (e) => {
 
-            if(iconsVerifications[i] == false) {
+            if (iconsVerifications[i] == false) {
         
                 e.preventDefault()
         
@@ -96,7 +96,8 @@ if (window.location.pathname.includes('edit')) {
         })
         formToEditSubtitles[i].addEventListener('submit', (e) => {
 
-            if(subtitlesVerifications[i] == false) {
+            if (subtitlesVerifications[i] == false) {
+                
                 e.preventDefault()
             }
         
@@ -120,7 +121,8 @@ if (window.location.pathname.includes('edit')) {
         })
         formToEditDescriptions[i].addEventListener('submit', (e) => {
 
-            if(descriptionsVerifications[i] == false) {
+            if (descriptionsVerifications[i] == false) {
+            
                 e.preventDefault()
             }
         
@@ -194,7 +196,7 @@ if (window.location.pathname.includes('edit')) {
 
     formToCreateContents.addEventListener('submit', (e) => {
 
-        if(iconsVerifications[0] == false || subtitlesVerifications[0] == false || descriptionsVerifications[0] == false ) {
+        if (iconsVerifications[0] == false || subtitlesVerifications[0] == false || descriptionsVerifications[0] == false) {
     
             e.preventDefault()
     
