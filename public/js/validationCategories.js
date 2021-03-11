@@ -108,11 +108,7 @@ for(let i=0; i < priceSubscription.length; i++) {
 if (window.location.pathname.includes('edit')) {
 
     formToEdit.addEventListener('submit', (e) => {
-        console.log(categoryNamesOk.includes(false));
-        console.log(categoryImagesOk.includes(false));
-        console.log(transactionCostsOk.includes(false))
-        console.log(sectionsWebOk.includes(false));
-        console.log(priceSubscriptionsOk.includes(false));
+       
         if(categoryNamesOk.includes(false) || categoryImagesOk.includes(false) || transactionCostsOk.includes(false) || sectionsWebOk.includes(false) || priceSubscriptionsOk.includes(false)) {
     
             e.preventDefault()
@@ -124,15 +120,10 @@ if (window.location.pathname.includes('edit')) {
 } else {
     
     formToCreate.addEventListener('submit', (e) => {
-        console.log(categoryNamesOk.includes(false));
-        console.log(categoryImagesOk.includes(false));
-        console.log(transactionCostsOk.includes(false))
-        console.log(sectionsWebOk.includes(false));
-        console.log(priceSubscriptionsOk.includes(false));
+        
         if(categoryNamesOk.includes(false) || categoryImagesOk.includes(false) || transactionCostsOk.includes(false) || sectionsWebOk.includes(false) || priceSubscriptionsOk.includes(false)) {
     
             e.preventDefault()
-    
         }
     
     })

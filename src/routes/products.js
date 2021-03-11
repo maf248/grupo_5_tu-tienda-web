@@ -7,7 +7,8 @@ const fs = require('fs');
 const db = require('../database/models');
 const productValidate = require('../middlewares/productValidate')
 const categoryValidate = require('../middlewares/categoryValidate')
-const benefitValidate = require('../middlewares/benefitValidate')
+const createBenefitValidate = require('../middlewares/createBenefitValidate')
+const editBenefitValidate = require('../middlewares/editBenefitValidate')
 const sectionValidate = require('../middlewares/sectionValidate')
 const contentValidate = require('../middlewares/contentValidate')
 
@@ -72,14 +73,14 @@ router.get('/:id/create/contents/:section', productosController.showSectionIdFor
 
 router.post('/create', upload.single('image'), productValidate, productosController.saveProduct);
 router.post('/:id/create/categories', upload.any(), categoryValidate, productosController.saveCategories);
-router.post('/:id/create/benefits', benefitValidate, productosController.saveBenefits);
+router.post('/:id/create/benefits', createBenefitValidate, productosController.saveBenefits);
 router.post('/:id/create/sections', upload.single('sectionImage'), sectionValidate, productosController.saveSections);
 router.post('/:id/create/contents/:section', upload.any(), contentValidate, productosController.saveContents);
 
 /*---Rutas para editar GET---*/
 router.get('/:id/edit', productosController.editProduct);
 router.get('/:id/edit/categories', productosController.editCategories);
-router.get('/:id/edit/benefits', benefitValidate, productosController.editBenefits);
+router.get('/:id/edit/benefits', productosController.editBenefits);
 router.get('/:id/edit/sections', productosController.editSections);
 router.get('/:id/edit/sections/:section', productosController.showSection);
 router.get('/:id/edit/contents', productosController.editContents);
@@ -90,7 +91,7 @@ router.get('/:id/edit/contents/:section', productosController.showSectionIdForCo
 
 router.put('/:id/edit', upload.single('image'), productValidate, productosController.modifyProduct);
 router.put('/:id/edit/categories', upload.any(), categoryValidate, productosController.modifyCategories);
-router.put('/:id/edit/benefits', productosController.modifyBenefits);
+router.put('/:id/edit/benefits', editBenefitValidate, productosController.modifyBenefits);
 router.put('/:id/edit/sections/:section/edited-section', upload.single('sectionImage'), sectionValidate, productosController.modifySection);
 router.put('/:id/edit/contents/:section/:type/:content', upload.any(), contentValidate, productosController.modifyContents);
 

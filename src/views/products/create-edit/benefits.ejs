@@ -44,7 +44,15 @@
                         </div>
                     </td>
                 </tr>
-                   
+                <div style="width: 100%">
+                <% if (typeof errors != "undefined") {
+                    errors.forEach ( error => { 
+                    if (error.param == "benefit1Name") { %>
+                        <p class="errors" style="margin: 20px; text-align: center; font-size: 0.8em;"><%= error.msg %></p>
+                    <% } else if (error.param == "benefit1Cat1") { %>
+                        <p class="errors" style="margin: 20px; text-align: center; font-size: 0.8em;"><%= error.msg %></p>
+                <% } }) } %>
+                </div> 
                 
         <% if (typeof newID == 'undefined') { %>
                 <% var index = 0; %>

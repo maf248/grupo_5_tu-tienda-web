@@ -621,96 +621,125 @@ const productosController = {
         }
     },
     modifyBenefits: function (req, res, next) {
-        db.Product.findByPk(req.params.id, {
-                include: [{
-                    association: "Categories"
-                }]
-            })
-            .then(product => {
-                db.Benefit.findAll({
-                        include: [{
-                            association: "Categories",
-                            where: {
-                                id: [product.Categories[0].id, product.Categories[1].id, product.Categories[2].id]
+        let errors = validationResult(req);
+        if (errors.isEmpty()) {
+
+            db.Product.findByPk(req.params.id, {
+                    include: [{
+                        association: "Categories"
+                    }]
+                })
+                .then(product => {
+                    db.Benefit.findAll({
+                            include: [{
+                                association: "Categories",
+                                where: {
+                                    id: [product.Categories[0].id, product.Categories[1].id, product.Categories[2].id]
+                                }
+                            }]
+                        })
+                        .then(associatedBenefits => {
+                            /*----Recorre los beneficios, y actualiza los nombres----*/
+                            for (let i = 0; i < associatedBenefits.length; i++) {
+                                /*----Si el nombre del beneficio NO es un string vacío, se actualiza dicho beneficio----*/
+                                if (typeof req.body['benefit' + associatedBenefits[i].id + 'Name'] != 'undefined' && req.body['benefit' + associatedBenefits[i].id + 'Name'] != '') {
+                                    /*---Guarda los cambios en el nombre de beneficio----*/
+                                    db.Benefit.update({
+                                        name: req.body['benefit' + associatedBenefits[i].id + 'Name']
+                                    }, {
+                                        where: {
+                                            id: associatedBenefits[i].id
+                                        }
+                                    })
+
+                                    /*----Si el nombre del beneficio es un string vacío, se borra dicho beneficio----*/
+                                } else if (typeof req.body['benefit' + associatedBenefits[i].id + 'Name'] != 'undefined' && req.body['benefit' + associatedBenefits[i].id + 'Name'] == '') {
+
+                                    db.Benefit.destroy({
+                                        where: {
+                                            id: {
+                                                [db.Sequelize.Op.like]: [associatedBenefits[i].id]
+                                            }
+                                        }
+                                    })
+                                }
+                                /*----Recorre las categorías y chequea las asociaciones con los beneficios en cuestion----*/
+                                if (associatedBenefits[i].Categories) {
+
+                                    associatedBenefits[i].Categories.forEach(asociatedCategory => {
+
+                                        /*--Si esta tildado el checkbox de categoría 1, lo asocia en caso de NO estarlo--*/
+                                        if (req.body['benefit' + associatedBenefits[i].id + 'Cat1'] == 'true') {
+
+                                            if (product.Categories[0].id != asociatedCategory.id) {
+                                                associatedBenefits[i].addCategories(product.Categories[0].id)
+                                            }
+                                            /*----Si NO esta tildado el checkbox de categoría 1, pero sí esta asociado con esa categoría, lo desasocia---*/
+                                        } else {
+                                            if (product.Categories[0].id == asociatedCategory.id) {
+                                                associatedBenefits[i].removeCategories(product.Categories[0].id)
+                                            }
+                                        }
+                                        /*--Si esta tildado el checkbox de categoría 2, lo asocia en caso de NO estarlo--*/
+                                        if (req.body['benefit' + associatedBenefits[i].id + 'Cat2'] == 'true') {
+
+                                            if (product.Categories[1].id != asociatedCategory.id) {
+                                                associatedBenefits[i].addCategories(product.Categories[1].id)
+                                            }
+                                            /*----Si NO esta tildado el checkbox de categoría 2, pero sí esta asociado con esa categoría, lo desasocia---*/
+                                        } else {
+                                            if (product.Categories[1].id == asociatedCategory.id) {
+                                                associatedBenefits[i].removeCategories(product.Categories[1].id)
+                                            }
+                                        }
+                                        /*--Si esta tildado el checkbox de categoría 3, lo asocia en caso de NO estarlo--*/
+                                        if (req.body['benefit' + associatedBenefits[i].id + 'Cat3'] == 'true') {
+
+                                            if (product.Categories[2].id != asociatedCategory.id) {
+                                                associatedBenefits[i].addCategories(product.Categories[2].id)
+                                            }
+                                            /*----Si NO esta tildado el checkbox de categoría 3, pero sí esta asociado con esa categoría, lo desasocia---*/
+                                        } else {
+                                            if (product.Categories[2].id == asociatedCategory.id) {
+                                                associatedBenefits[i].removeCategories(product.Categories[2].id)
+                                            }
+                                        }
+
+                                    })
+                                }
+
                             }
-                        }]
-                    })
-                    .then(associatedBenefits => {
-                        /*----Recorre los beneficios, y actualiza los nombres----*/
-                        for (let i = 0; i < associatedBenefits.length; i++) {
-                            /*----Si el nombre del beneficio NO es un string vacío, se actualiza dicho beneficio----*/
-                            if (typeof req.body['benefit' + associatedBenefits[i].id + 'Name'] != 'undefined' && req.body['benefit' + associatedBenefits[i].id + 'Name'] != '') {
-                                /*---Guarda los cambios en el nombre de beneficio----*/
-                                db.Benefit.update({
-                                    name: req.body['benefit' + associatedBenefits[i].id + 'Name']
-                                }, {
-                                    where: {
-                                        id: associatedBenefits[i].id
-                                    }
-                                })
 
-                                /*----Si el nombre del beneficio es un string vacío, se borra dicho beneficio----*/
-                            } else if (typeof req.body['benefit' + associatedBenefits[i].id + 'Name'] != 'undefined' && req.body['benefit' + associatedBenefits[i].id + 'Name'] == '') {
+                            res.redirect(`/products/${product.id}/edit/benefits`)
+                        })
 
-                                db.Benefit.destroy({
-                                    where: {
-                                        id: {
-                                            [db.Sequelize.Op.like]: [associatedBenefits[i].id]
-                                        }
-                                    }
-                                })
-                            }
-                            /*----Recorre las categorías y chequea las asociaciones con los beneficios en cuestion----*/
-                            if (associatedBenefits[i].Categories) {
+                })
+        } else {
+                db.Product.findByPk(req.params.id, {
+                    include: [{
+                        association: "Categories"
+                    }]
+                })
+                .then(product => {
+                    db.Benefit.findAll({
+                            include: [{
+                                association: "Categories",
+                                where: {
+                                    id: [product.Categories[0].id, product.Categories[1].id, product.Categories[2].id]
+                                }
+                            }]
+                        })
+                        .then(benefits => {
+                            res.render('./products/create-edit/benefits', {
+                                benefits: benefits,
+                                product: product,
+                                body: req.body,
+                                errors: errors.errors
+                            });
+                        })
 
-                                associatedBenefits[i].Categories.forEach(asociatedCategory => {
-
-                                    /*--Si esta tildado el checkbox de categoría 1, lo asocia en caso de NO estarlo--*/
-                                    if (req.body['benefit' + associatedBenefits[i].id + 'Cat1'] == 'true') {
-
-                                        if (product.Categories[0].id != asociatedCategory.id) {
-                                            associatedBenefits[i].addCategories(product.Categories[0].id)
-                                        }
-                                        /*----Si NO esta tildado el checkbox de categoría 1, pero sí esta asociado con esa categoría, lo desasocia---*/
-                                    } else {
-                                        if (product.Categories[0].id == asociatedCategory.id) {
-                                            associatedBenefits[i].removeCategories(product.Categories[0].id)
-                                        }
-                                    }
-                                    /*--Si esta tildado el checkbox de categoría 2, lo asocia en caso de NO estarlo--*/
-                                    if (req.body['benefit' + associatedBenefits[i].id + 'Cat2'] == 'true') {
-
-                                        if (product.Categories[1].id != asociatedCategory.id) {
-                                            associatedBenefits[i].addCategories(product.Categories[1].id)
-                                        }
-                                        /*----Si NO esta tildado el checkbox de categoría 2, pero sí esta asociado con esa categoría, lo desasocia---*/
-                                    } else {
-                                        if (product.Categories[1].id == asociatedCategory.id) {
-                                            associatedBenefits[i].removeCategories(product.Categories[1].id)
-                                        }
-                                    }
-                                    /*--Si esta tildado el checkbox de categoría 3, lo asocia en caso de NO estarlo--*/
-                                    if (req.body['benefit' + associatedBenefits[i].id + 'Cat3'] == 'true') {
-
-                                        if (product.Categories[2].id != asociatedCategory.id) {
-                                            associatedBenefits[i].addCategories(product.Categories[2].id)
-                                        }
-                                        /*----Si NO esta tildado el checkbox de categoría 3, pero sí esta asociado con esa categoría, lo desasocia---*/
-                                    } else {
-                                        if (product.Categories[2].id == asociatedCategory.id) {
-                                            associatedBenefits[i].removeCategories(product.Categories[2].id)
-                                        }
-                                    }
-
-                                })
-                            }
-
-                        }
-
-                        res.redirect(`/products/${product.id}/edit/benefits`)
-                    })
-
-            })
+                })
+        }
     },
     editSections: function (req, res, next) {
         if (req.session.user != undefined && req.session.user.role == 'admin') {

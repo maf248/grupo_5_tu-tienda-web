@@ -11,6 +11,7 @@ module.exports =[
     .withMessage('Debe contener al menos 3 carateres'),
     body('newBenefitCat1')
     .custom((value, {req}) => {
+        console.log(req.body);
         if (value || req.body.newBenefitCat2 || req.body.newBenefitCat3) {
             return true;
         }
