@@ -146,12 +146,12 @@
                                 <% } %>
 
                                 <% if (con.type == 'subtitle') { %>
-                                    <h3 class="disenoBlanco-article2-titulo subtitleContent">
+                                    <h3 class="disenoBlanco-article2-titulo subtitleContent" style="width: 100%; text-align: center;">
                                         <%= con.text  %>
                                     </h3>
                                 <% } %>    
                                 <% if (con.type == 'description') {%>
-                                    <p class="descriptionContent">  <%= con.text  %> </p>
+                                    <p class="descriptionContent" style="width: 100%; text-align: center;">  <%= con.text  %> </p>
                                 <% } %>
                         <% }) %>
                     <% } %>
@@ -250,9 +250,9 @@
         
             <div style="display: flex; justify-content: space-around; flex-wrap: nowrap;">
 
-                    <section class="disenoBlanco" style="width: 25%;">
+                    <section class="disenoBlanco">
                         <article class="disenoBlanco-article1">
-                            <h2 class="disenoBlanco-article1-tituloPrincipal" style="font-size: 15px;">
+                            <h2 class="disenoBlanco-article1-tituloPrincipal" >
                                 <!--Elegir titulo seccion 1-->
                                 <%= sectionToCreate.title %>
                             </h2>
@@ -262,16 +262,16 @@
                             <% if (typeof sectionToCreate.Contents != 'undefined') { %>
                                 <% sectionToCreate.Contents.forEach(con => { %>
                                     <%if (con.type == 'icon') {%>
-                                        <img src="/images/Producto-<%= productToCreate.id %>/<%= con.text %>" alt="" style="width: 50%;">
+                                        <img src="/images/Producto-<%= productToCreate.id %>/<%= con.text %>" alt="" style="width: 15%">
                                     <% } %>
 
                                     <% if (con.type == 'subtitle') { %>
-                                        <h3 class="disenoBlanco-article2-titulo" style="margin: auto; font-size: 12px;">
+                                        <h3 class="disenoBlanco-article2-titulo" style="width: 100%; text-align: center;">
                                             <%= con.text  %>
                                         </h3>
                                     <% } %>    
                                     <% if (con.type == 'description') {%>
-                                        <p>  <%= con.text  %> </p>
+                                        <p style="width: 100%; text-align: center;">  <%= con.text  %> </p>
                                     <% } %>
                                 <% }) %>
                             <% } else { %>

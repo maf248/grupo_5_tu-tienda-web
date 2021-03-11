@@ -11,7 +11,7 @@ module.exports =[
         let benefitNamesOk = [];
         for (let i= 1 ; i < 50; i++) {
             if (typeof req.body[`benefit${i}Name`] != 'undefined') {
-                
+
                 if (req.body[`benefit${i}Name`].length > 3) {
                     benefitNamesOk[i] = true;
                 } else {

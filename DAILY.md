@@ -1,3 +1,8 @@
+## Daily 11/03/2021
+Nos juntamos via zoom para resolver entre todos la validación de EDICION de BENEFICIOS por BACKEND. Pudimos resolverla, habria que revisar la validacion de backend de contents para que al editar funcione correctamente.
+Después corregimos algunos errores entre todos, bugs al subir imagenes en algunas etapas, etc.
+Repasamos los objetivos faltantes para el sprint y nos organizamos para poder llegar a concluir los mismos antes de la fecha de entrega.
+
 ## Daily 05/03/2021
 Nos reunimos via zoom para escribir codigo juntos. Luego hablamos mediante el grupo de whatsapp para comunicarnos mas comodamente, sobre el trabajo realizado y trabajo faltante. Listamos lo faltante al dia de la fecha aproximadamente es:
 BACK-END:

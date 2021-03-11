@@ -16,9 +16,9 @@ module.exports = [
     .custom(function(value, {req}) {
 
         if (req.url.includes('create')) {
-            if (typeof req.files[0] != 'undefined') {
+            if (typeof req.file != 'undefined') {
 
-                var extension = (path.extname(req.files[0].filename)).toLowerCase();
+                var extension = (path.extname(req.file.filename)).toLowerCase();
                 switch (extension) {
                 case '.svg':
                     return true;
@@ -31,9 +31,9 @@ module.exports = [
 
         } else {
  
-            if (typeof req.files[0] != 'undefined') {
+            if (typeof req.file != 'undefined') {
                 
-                var extension = (path.extname(req.files[0].filename)).toLowerCase();
+                var extension = (path.extname(req.file.filename)).toLowerCase();
                 switch (extension) {
                 case '.svg':
                     return true;

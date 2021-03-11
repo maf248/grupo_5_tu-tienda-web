@@ -15,7 +15,9 @@ var imageDir = {}
 function uploadFilesDir(files) {
     imageDir = {}
     if (typeof files != 'undefined') {
+    
         if (files.length > 1) {
+            
             files.forEach(file => {
                 switch (file.fieldname) {
                     case 'image':
@@ -42,29 +44,33 @@ function uploadFilesDir(files) {
                 }
             });
         } else {
-            switch (files[0].fieldname) {
-                case 'image':
-                    imageDir.image = files[0].filename
-                    break
-                case 'categoryImage1':
-                    imageDir.categoryImage1 = files[0].filename
-                    break
-                case 'categoryImage2':
-                    imageDir.categoryImage2 = files[0].filename
-                    break
-                case 'categoryImage3':
-                    imageDir.categoryImage3 = files[0].filename
-                    break
-                case 'sectionImage':
-                    imageDir.sectionImage = files[0].filename
-                    break
-                case 'editSectionImage':
-                    imageDir.editSectionImage = files[0].filename
-                    break
-                case 'contentIcon':
-                    imageDir.contentIcon = files[0].filename
-                    break
+            if (typeof files == 'object'){
+                
+                switch (files.fieldname) {
+                    case 'image':
+                        imageDir.image = files.filename
+                        break
+                    case 'categoryImage1':
+                        imageDir.categoryImage1 = files.filename
+                        break
+                    case 'categoryImage2':
+                        imageDir.categoryImage2 = files.filename
+                        break
+                    case 'categoryImage3':
+                        imageDir.categoryImage3 = files.filename
+                        break
+                    case 'sectionImage':
+                        imageDir.sectionImage = files.filename
+                        break
+                    case 'editSectionImage':
+                        imageDir.editSectionImage = files.filename
+                        break
+                    case 'contentIcon':
+                        imageDir.contentIcon = files.filename
+                        break
+                }
             }
+            
         }
     }
 };
@@ -403,7 +409,7 @@ const productosController = {
 
         if (errors.isEmpty()) {
 
-            uploadFilesDir(req.files);
+            uploadFilesDir(req.file);
 
             db.Section.findByPk(req.params.section, {
                     include: [{
@@ -857,7 +863,7 @@ const productosController = {
     modifyContents: function (req, res, next) {
 
         let errors = validationResult(req);
-        console.log(errors);
+        
         let subtitleError = false;
         let descriptionError = false;
         let iconError = false;
@@ -903,7 +909,7 @@ const productosController = {
             }).catch(err => console.log(err))
 
         } else if (req.params.type == 'icon'  && !iconError) {
-            uploadFilesDir(req.files);
+            uploadFilesDir(req.file);
 
             db.Content.update({
                 section_id: req.params.section,
