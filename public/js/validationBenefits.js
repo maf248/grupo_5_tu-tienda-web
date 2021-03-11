@@ -50,6 +50,8 @@ if (window.location.pathname.includes('edit')) {
         if(benefitsNamesOk.includes(false) || checkboxesBenefitOk.includes(false)) {
 
             e.preventDefault()
+
+
         }
     
     })
@@ -64,6 +66,15 @@ if (window.location.pathname.includes('edit')) {
         if(benefitsNamesOk.includes(false) || checkboxesBenefitOk.includes(false)) {
            
             e.preventDefault()
+
+            if(benefitsNames[0].value.length < 3) {
+                messageBenefitsErrors[0].innerHTML = `<p> - Mínimo requerido: 3 caracteres </p>`
+                benefitsNamesOk[0] = false
+            }
+            if(checkboxesBenefit[0][0].checked != true && checkboxesBenefit[0][1].checked != true && checkboxesBenefit[0][2].checked != true) {
+                messageAsociationErrors[0].innerHTML = `<p> - Debe estar asosiado al menos a una categoria </p>`
+                checkboxesBenefitOk[0] = false
+            }
         }
     
     })
