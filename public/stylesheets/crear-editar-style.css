@@ -230,6 +230,12 @@ td input {
     font-size: 0.8em;
 }
 
+.errors {
+    color: red !important;
+    margin-top: 4px;
+    font-size: 0.65em;
+}
+
 .categoryNames {
     font-size: 0.6em;
 }

@@ -236,8 +236,11 @@ const productosController = {
         }
     },
     saveBenefits: function (req, res, next) {
-        //Guarda los nuevos beneficios y las asocia (a las categorias)
-        if (req.body.newBenefitName != '') {
+
+        let errors = validationResult(req);
+        
+        if (errors.isEmpty()) {
+        //Guarda el nuevo beneficio y lo asocia (a las categorias)
 
             db.Benefit.create({
                 name: req.body.newBenefitName
@@ -265,6 +268,31 @@ const productosController = {
 
             })
 
+        } else {
+            db.Product.findByPk(req.params.id, {
+                include: [{
+                    association: "Categories"
+                }]
+            })
+            .then(product => {
+                db.Benefit.findAll({
+                        include: [{
+                            association: "Categories",
+                            where: {
+                                id: [product.Categories[0].id, product.Categories[1].id, product.Categories[2].id]
+                            }
+                        }]
+                    })
+                    .then(benefits => {
+                        res.render('./products/create-edit/benefits', {
+                            benefits: benefits,
+                            product: product,
+                            newID: req.params.id,
+                            errors: errors.errors,
+                            body: req.body
+                        });
+                    })
+                });
         }
 
     },
