@@ -8,6 +8,9 @@
 h1, h2, h3, h4, h5, h6, button, th {
     font-family: 'Raleway', sans-serif;
 }
+th {
+    min-height: fit-content;
+}
 .nombre-producto{
     position: relative;
     left: 30%;
@@ -266,9 +269,32 @@ td input {
     color: red;
     font-size: 1.3em;
 }
-
+.tdDiv h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+}
+.priceSubscription {
+    min-width: 50px;
+    max-width: fit-content;
+}
+.buttons-form {
+    display: flex;
+    flex-wrap: wrap;
+}
+.inputBeneficio {
+    min-width: fit-content;
+}
 
 @media (max-width: 556px) {
+    .tdDiv h4{
+        font-size: 12px;
+    }
+    .contenedorMedalla-tdDiv{
+        font-size: 1em;
+    }
+    .submit, .delete, .reset {
+        font-size: 0.9em;
+    }
     .disenoBlanco {
         width: 100%;
     }
