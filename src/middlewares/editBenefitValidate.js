@@ -38,7 +38,6 @@ module.exports =[
             index++
             }
         }
-        console.log('ESTE ES INDEX AMIWOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO : ' + index);
         
         for (let j= 1 ; j <= index ; j++) {
                
