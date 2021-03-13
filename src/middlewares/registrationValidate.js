@@ -15,6 +15,29 @@ module.exports = [
     check('email')
         .isEmail()
         .withMessage('Tiene que tener un formato de email válido'),
+    check('email')
+        .custom(async function(value, {req}) {
+                let user;
+                try {
+                    user = await db.User.findOne({
+                        where: {
+                            email: req.body.email
+                        }
+                    });
+
+                    if (user == null) {
+                        return true;
+        
+                    } else if (user != null) {
+                        return Promise.reject();
+                    }
+
+                } catch (error) {
+                    console.log(error);
+                }
+                
+        })
+        .withMessage('El email introducido ya se encuentra registrado'),
     check('password')
         .isStrongPassword()
         .withMessage('La contraseña debe tener un mínimo de 8 caracteres, incluyendo una minúscula, una mayúscula, un número y un símbolo'),

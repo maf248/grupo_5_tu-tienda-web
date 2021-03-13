@@ -60,39 +60,26 @@ const usersController = {
     },
     createUser: function(req, res) {
         let errors = validationResult(req);
-        let mailDuplicated = false;
+
+        console.log(errors.errors);
+        
         if (!errors.isEmpty()) {
             return res.render('./users/register', {errors: errors.errors, firstName: req.body.firstName, lastName: req.body.lastName, email: req.body.email} );
-        } 
-        db.User.findOne({
-            where: {
-                email: req.body.email
-            }
-        }).then((user) => {
-            
-            if (user != null) {
-                mailDuplicated = true;
-                return res.render('./users/register', {mailDuplicated: mailDuplicated});
+        } else {
+            db.User.create({
+                hash_id: bcryptjs.hashSync("user name " + req.body.firstName, 10),
+                first_name: req.body.firstName,
+                last_name: req.body.lastName,
+                email: req.body.email,
+                password:  bcryptjs.hashSync(req.body.password, 10),
+                role: 'user'
+            }).then( value => {
 
-            } else if (user == null) {
+                req.session.user = value;
+                res.redirect('/users/profile');
+            })
 
-                let user = db.User.create({
-                    hash_id: bcryptjs.hashSync("user name " + req.body.firstName, 10),
-                    first_name: req.body.firstName,
-                    last_name: req.body.lastName,
-                    email: req.body.email,
-                    password:  bcryptjs.hashSync(req.body.password, 10),
-                    role: 'user'
-                }).then( value => {
-    
-                    req.session.user = value;
-    
-                    res.redirect('/users/profile');
-                }
-                )
-            }
-            
-        })
+        }
     
     },
     profile: function (req, res, next) {
