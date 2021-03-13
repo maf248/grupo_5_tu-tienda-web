@@ -10,16 +10,20 @@
 
 <form class="form-login" action="/users/login" method="POST" id="loginForm">
     <h5>¡Hola! Completa tus datos</h5>
-        <input id="user" class="usuario" type="email" name="user" placeholder="Correo del usuario"<% if (typeof email != 'undefined') { %> value="<%= email %>"<% } %>>
+        <input id="user" class="usuario" type="email" name="user" placeholder="Correo del usuario"<% if (typeof user != 'undefined') { %> value="<%= user %>"<% } %>>
         <div id="userError"></div>
-        <% if (loginMailValue == false && loginMailValue != null) {%>
-        <p>El email ingresado no se encuentra registrado</p>     
-    <% } %>
+        <% if (typeof errors != "undefined") {
+            errors.forEach ( error => { 
+                if (error.param == "user") { %>
+                    <p><%= error.msg %></p>
+            <% } }) } %>
         <input id="password" class="usuario" type="password" name="password" placeholder="Contraseña">
         <div id="passwordError"></div>
-    <% if (loginPassValue == false && loginPassValue != null) {%>
-        <p>La contraseña ingresada es incorrecta</p>      
-    <% } %>
+        <% if (typeof errors != "undefined") {
+            errors.forEach ( error => { 
+                if (error.param == "password") { %>
+                    <p><%= error.msg %></p>
+            <% } }) } %>
     <div class="rememberMe">
         <input type="checkbox" name="remember" id="">
         <label for="remember">Mantener sesión iniciada</label>

@@ -3,6 +3,7 @@ const router = express.Router();
 const path = require('path');
 const multer = require('multer');
 const registrationValidate = require('../middlewares/registrationValidate')
+const loginValidate = require('../middlewares/loginValidate')
 
 // ************ Controller Require ************
 var usersController = require("../controllers/usersController");
@@ -26,7 +27,7 @@ const upload = multer({storage: storage});
 
 /* Rutas a Usuarios */
 router.get('/login', usersController.login);
-router.post('/login', usersController.validate);
+router.post('/login', loginValidate, usersController.validate);
 router.get('/register', usersController.register);
 router.post('/register', registrationValidate, usersController.createUser);
 router.get('/profile', usersController.profile);

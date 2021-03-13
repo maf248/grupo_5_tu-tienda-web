@@ -19,36 +19,27 @@ const usersController = {
             }
         },
     validate: function(req, res, next) {
-        db.User.findOne({
-            where: {
-                email: req.body.user
-            }
-        }).then((user) => {
-                if (user != null) {
-                    var check = bcryptjs.compareSync(req.body.password, user.password);
-                        if (check) {
+        let errors = validationResult(req);
 
-                            req.session.user = user;
-                            
-                            if(req.body.remember != undefined ) {
-                                res.cookie('recordame', user.hash_id, {maxAge: 1000*60*60*24})
-                            } 
-        
-                            return res.redirect('/users/profile');
-                                                
-                        } else if (!check) {
-                            
-                            return res.render('./users/login', {loginPassValue: false, loginMailValue: null, email: user.email});
-                        }     
-                } else {
-        
-                    return res.render('./users/login', {loginPassValue: null, loginMailValue: false, email: req.body.user});
+        if (errors.isEmpty()) {
+            db.User.findOne({
+                where: {
+                    email: req.body.user
                 }
+            }).then((user) => {
+                req.session.user = user;
+                if(req.body.remember != undefined ) {
+                        res.cookie('recordame', user.hash_id, {maxAge: 1000*60*60*24})
+                } 
+        
+                return res.redirect('/users/profile');
+                                                
             })
-            .catch((err) => {
-                let ErrorsJSON = JSON.stringify(err);
-                fs.appendFileSync(ErrorsDir, ErrorsJSON);
-            })    
+                
+        } else {        
+                return res.render('./users/login', {errors: errors.errors, user: req.body.user});
+            }     
+               
     },
     register: function(req, res, next) {
         if (req.session.user == undefined) {
@@ -61,11 +52,12 @@ const usersController = {
     createUser: function(req, res) {
         let errors = validationResult(req);
 
-        console.log(errors.errors);
-        
         if (!errors.isEmpty()) {
+
             return res.render('./users/register', {errors: errors.errors, firstName: req.body.firstName, lastName: req.body.lastName, email: req.body.email} );
+        
         } else {
+
             db.User.create({
                 hash_id: bcryptjs.hashSync("user name " + req.body.firstName, 10),
                 first_name: req.body.firstName,

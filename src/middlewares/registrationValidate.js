@@ -41,7 +41,7 @@ module.exports = [
     check('password')
         .isStrongPassword()
         .withMessage('La contraseña debe tener un mínimo de 8 caracteres, incluyendo una minúscula, una mayúscula, un número y un símbolo'),
-    body('passwordRepeat')
+    check('passwordRepeat')
         .custom(function(value, {req}) {
             if (value == req.body.password) {
                 return true;
