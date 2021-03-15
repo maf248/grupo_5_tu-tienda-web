@@ -22,7 +22,7 @@
 
         <ul class="selectSection"> <h3 style="text-align: center;">Hacé click en el titulo de la sección que querés editar:</h3>
             <% productToEdit.Sections.forEach( section => { %>
-                <li>
+                <li class="sectionTitleLink">
                     <a href="/products/<%=section.product_id %>/edit/sections/<%= section.id %>"><%=section.title%></a>
                 </li>
             <% }) %>

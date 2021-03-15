@@ -196,9 +196,17 @@ td input {
     margin: auto;
     align-self: center;
 }
+/*---Crear o editar secciones y contenidos---*/
 .selectSection {
     display: block;
     width: 100%;
+    padding: 25px;
+}
+.sectionTitleLink {
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    margin-top: 20px;
 }
 .selectSection li {
     text-align: center;
@@ -279,7 +287,7 @@ td input {
     margin-top: 4px;
     font-size: 0.65em;
 }
-
+/*--- Crear o editar Categorias---*/
 .categoryNames {
     font-size: 0.6em;
 }

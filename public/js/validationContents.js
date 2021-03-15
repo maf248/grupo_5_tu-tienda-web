@@ -1,30 +1,30 @@
 const qs = (text) => document.querySelector(text);
 const qsa = (text) => document.querySelectorAll(text);
 
-const contentToClick = qsa('.contentToEdit');
-const contentToClickIcon = qsa('.contentIconToEdit');
+// const contentToClick = qsa('.contentToEdit');
+// const contentToClickIcon = qsa('.contentIconToEdit');
 
-for (let i = 0; i < contentToClick.length ; i++) {
+// for (let i = 0; i < contentToClick.length ; i++) {
 
-    contentToClick[i].addEventListener('click', (e) => {
+//     contentToClick[i].addEventListener('click', (e) => {
         
-        const contentToShow = qsa('.contentToEditContainer');
+//         const contentToShow = qsa('.contentToEditContainer');
         
-        contentToShow[i].style.display = 'block' 
-    })
+//         contentToShow[i].style.display = 'block' 
+//     })
 
-}
+// }
 
-for (let i = 0; i < contentToClickIcon.length ; i++) {
+// for (let i = 0; i < contentToClickIcon.length ; i++) {
 
-contentToClickIcon[i].addEventListener('click', (e) => {
+// contentToClickIcon[i].addEventListener('click', (e) => {
 
-const contentToShowIcon = qsa('.contentToEditIconContainer');
+// const contentToShowIcon = qsa('.contentToEditIconContainer');
 
-contentToShowIcon[i].style.display = 'block' 
-})
+// contentToShowIcon[i].style.display = 'block' 
+// })
 
-}
+// }
 
 //Acá comienza la lógica para validar los imputs
 

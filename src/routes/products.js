@@ -10,7 +10,8 @@ const categoryValidate = require('../middlewares/categoryValidate')
 const createBenefitValidate = require('../middlewares/createBenefitValidate')
 const editBenefitValidate = require('../middlewares/editBenefitValidate')
 const sectionValidate = require('../middlewares/sectionValidate')
-const contentValidate = require('../middlewares/contentValidate')
+const contentCreationValidate = require('../middlewares/contentCreationValidate')
+const contentsEditionValidate = require('../middlewares/contentsEditionValidate')
 
 
 // ************ Controller Require ************
@@ -75,7 +76,7 @@ router.post('/create', upload.single('image'), productValidate, productosControl
 router.post('/:id/create/categories', upload.any(), categoryValidate, productosController.saveCategories);
 router.post('/:id/create/benefits', createBenefitValidate, productosController.saveBenefits);
 router.post('/:id/create/sections', upload.single('sectionImage'), sectionValidate, productosController.saveSections);
-router.post('/:id/create/contents/:section', upload.single('contentIcon'), contentValidate, productosController.saveContents);
+router.post('/:id/create/contents/:section', upload.single('contentIcon'), contentCreationValidate, productosController.saveContents);
 
 /*---Rutas para editar GET---*/
 router.get('/:id/edit', productosController.editProduct);
@@ -93,7 +94,7 @@ router.put('/:id/edit', upload.single('image'), productValidate, productosContro
 router.put('/:id/edit/categories', upload.any(), categoryValidate, productosController.modifyCategories);
 router.put('/:id/edit/benefits', editBenefitValidate, productosController.modifyBenefits);
 router.put('/:id/edit/sections/:section/edited-section', upload.single('sectionImage'), sectionValidate, productosController.modifySection);
-router.put('/:id/edit/contents/:section/:type/:content', upload.single('contentIcon'), contentValidate, productosController.modifyContents);
+router.put('/:id/edit/contents/:section/:type/:content', upload.single('contentIcon'), contentsEditionValidate, productosController.modifyContents);
 
 router.get('/:id', productosController.detalle);
 

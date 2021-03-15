@@ -863,7 +863,10 @@ const productosController = {
     modifyContents: function (req, res, next) {
 
         let errors = validationResult(req);
-        
+        console.log(req.body.contentSubtitle);
+        console.log(req.body.contentDescription);
+        console.log(req.body.contentIcon);
+        console.log(errors.errors);
         let subtitleError = false;
         let descriptionError = false;
         let iconError = false;
