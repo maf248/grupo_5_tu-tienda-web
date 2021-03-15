@@ -32,33 +32,24 @@ th {
 .contenedorMedalla-tdDiv{
     font-size: 1.4em;
 }
-.sections-titlet{
+.sections-titlet {
     text-align: center;
     margin: 20px;
 }
 
-.one{
-   
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    left: 120%;
-    bottom: 90px;
-
-}
-.two{
-   
-    position: relative;
-    right: 110%;
-    bottom: 230px;
-}
-.contentToEditIconContainer{
-    
-    position: relative;
-    
-}
 .typeOfContentToEdit{
     font-size: 1.3em;
+    margin: 5px;
+}
+.iconToEditContainer {
+
+}
+.subtitleToEditContainer {
+
+}
+.descriptionToEditContainer {
+    width: 100%;
+    margin: 2%;
 }
 .titulo {
     margin: 20px 0px 10px 0px;
@@ -218,25 +209,54 @@ td input {
     text-align: center;
     margin: 10px auto;
     list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.contentList li {
+    align-self: center;
+    max-width: 100%;
+    min-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
 }
 .contentToEdit,
 .contentIconToEdit {
     cursor: pointer;
+    margin: 20px 0px;
 }
 .contentList li button {
     border: none;
     background-color: white;
     margin: 10px;
 }
-.contentToEditContainer,
-.contentToEditIconContainer {
-   display: "";
+.contentIcon {
+    display: block;
+    min-width: max-content;
+    margin: 16px auto 16px auto;
 }
+.contentSubtitle {
+    min-width: fit-content;
+    width: 50%;
+    border: 1px solid black;
+    margin: 16px 25% 16px 25%;
+}
+.contentDescription {
+    width: 80%;
+    border: 1px solid black;
+    margin: 16px 10% 16px 10%;
+    height: 60px;
+}
+#descriptionToEdit {
+    width: 80%;
+}
+
 #descriptionToEdit,
 #subtitleToEdit {
     border: 1px solid black;
     padding: 5px;
-    margin: 10px;
+    margin: 10px 10px 22px 10px;
+    min-width: fit-content;
 }
 #iconToEdit {
     margin: 10px;
@@ -245,13 +265,8 @@ td input {
     width: 50%;
 }
 .contentIconToEdit {
-    width: 5%;
+    width: 7%;
     background-color: black;
-}
-.ok{
-    margin: 10px;
-    
-  
 }
 
 /*--------------------------*/

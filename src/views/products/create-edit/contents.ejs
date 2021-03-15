@@ -50,10 +50,13 @@
         <h3 style="text-align: center; text-decoration: underline;">Hacé click sobre el contenido que quieres editar:</h3>
 
         <ul class="contentList">
+            <% let index = 1; %>
             <% sectionToEdit.Contents.forEach(con => {%>
+                
                 <% if (con.type == 'icon') { %>
                     <li tabindex="0">
-                        <h6 class="typeOfContentToEdit">Icon:</h6>
+                        <div class="iconToEditContainer">
+                        <h6 class="typeOfContentToEdit">Icono <%= Math.ceil(index/3) %>:</h6>
                         <img src="/images/Producto-<%= productToEdit.id %>/<%= con.text %>" alt="" class="contentIconToEdit" style="margin-bottom: 10px;">
                         <div class="contentToEditIconContainer">
                             <form action="/products/<%= productToEdit.id %>/edit/contents/<%= sectionToEdit.id %>/<%= con.type %>/<%= con.id %>?_method=PUT" method="POST" enctype="multipart/form-data" id="formToEditIcon">
@@ -77,8 +80,8 @@
                 <% } %>
                 <% if (con.type == 'subtitle') { %>
                     <li tabindex="0">
-                        <div class="contentToEditContainer one">
-                        <h6 class="typeOfContentToEdit ok">Subtitle:</h6>
+                        <div class="subtitleToEditContainer">
+                        <h6 class="typeOfContentToEdit">Subtitulo <%= Math.ceil(index/3) %>:</h6>
                         <p class="contentToEdit"><%= con.text %></p>
                         
                             <form action="/products/<%=productToEdit.id %>/edit/contents/<%= sectionToEdit.id %>/<%= con.type %>/<%= con.id %>?_method=PUT" method="POST" id="formToEditSubtitle">
@@ -103,8 +106,8 @@
                 <% } %>
                 <% if (con.type == 'description') { %>
                     <li tabindex="0">
-                        <div class="contentToEditContainer two">
-                        <h6 class="typeOfContentToEdit ok">Description:</h6>
+                        <div class="descriptionToEditContainer">
+                        <h6 class="typeOfContentToEdit ok">Descripción <%= Math.ceil(index/3) %>:</h6>
                         <p class="contentToEdit"><%= con.text %></p>
                         
                             <form action="/products/<%=productToEdit.id %>/edit/contents/<%= sectionToEdit.id %>/<%= con.type %>/<%= con.id %>?_method=PUT" method="POST" id="formToEditDescription">
@@ -127,6 +130,7 @@
                         </div>
                     </li>
                 <% } %>
+                <% index++ %>
             <% }) %> 
         </ul>
     
@@ -209,8 +213,8 @@
 
             <form action="" method="POST" enctype="multipart/form-data" id="formToCreateContents">
 
-                <label for="contentIcon">Elegí el ícono del contenido que estás por crear:</label>
-                <input type="file" name="contentIcon" id="contentIcon" accept="image/svg" style="display: block;">
+                <label for="contentIcon">Elegí el <strong>ícono</strong> del contenido que estás por crear:</label>
+                <input type="file" name="contentIcon" id="contentIcon" accept="image/svg" class="contentIcon">
                 <div id="containerOfCreateIconValidation"></div>
 
                 <% if (typeof errors != 'undefined') { %>
@@ -222,8 +226,8 @@
                 <% } %>
 
                 
-                <label for="contentSubtitle">Elegí el subtítulo del contenido que estás por crear:</label>
-                <input type="text" name="contentSubtitle" id="contentSubtitle" placeholder="Escribe el texto aqui..." style="width: 100%; border: 1px solid black; margin: 16px auto;">
+                <label for="contentSubtitle">Elegí el <strong>subtítulo</strong> del contenido que estás por crear:</label>
+                <input type="text" name="contentSubtitle" id="contentSubtitle" class="contentSubtitle" placeholder="Escribe el texto aqui...">
                 <div id="containerOfCreateSubtitleValidation"></div>
 
                 <% if (typeof errors != 'undefined') { %>
@@ -234,8 +238,8 @@
                     <% }) %>
                 <% } %>
         
-                <label for="contentDescription">Elegí la descripción del contenido que estás por crear:</label>
-                <input type="text" name="contentDescription" id="contentDescription" placeholder="Escribe el texto aqui..." style="width: 100%; border: 1px solid black; margin: 16px auto;">
+                <label for="contentDescription">Elegí la <strong>Descripción</strong> del contenido que estás por crear:</label>
+                <input type="text" name="contentDescription" id="contentDescription" class="contentDescription" placeholder="Escribe el texto aqui...">
                 <div id="containerOfCreateDescriptionValidation"></div>
 
                 <% if (typeof errors != 'undefined') { %>
