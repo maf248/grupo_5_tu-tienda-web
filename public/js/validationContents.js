@@ -180,7 +180,7 @@ if (window.location.pathname.includes('edit')) {
     createDescriptionInput.addEventListener('change', (e) => {
         if (createDescriptionInput.value.length < 10) {
             let messageToShow = qs('#containerOfCreateDescriptionValidation')
-            messageToShow.innerHTML = `<p> El título debe contener al menos 10 caracteres </p>`
+            messageToShow.innerHTML = `<p> La descripción debe contener al menos 10 caracteres </p>`
             messageToShow.style.textAlign = "center"
             messageToShow.style.color = "red"
             messageToShow.style.margin = "15px"
