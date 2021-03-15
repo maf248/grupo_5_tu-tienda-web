@@ -20,6 +20,7 @@
 
 
     <% if (typeof productToEdit.Sections != 'undefined') {%>
+    
         <section>
 
             <ul class="selectSection"> <h3 style="text-align: center;">Hacé click en el titulo de la sección que querés editar:</h3>
@@ -53,7 +54,7 @@
                 <% if (con.type == 'icon') { %>
                     <li tabindex="0">
                         <h6 class="typeOfContentToEdit">Icon:</h6>
-                        <img src="/images/Producto-<%= productToEdit.id %>/<%= con.text %>" alt="" class="contentIconToEdit">
+                        <img src="/images/Producto-<%= productToEdit.id %>/<%= con.text %>" alt="" class="contentIconToEdit" style="margin-bottom: 10px;">
                         <div class="contentToEditIconContainer">
                             <form action="/products/<%= productToEdit.id %>/edit/contents/<%= sectionToEdit.id %>/<%= con.type %>/<%= con.id %>?_method=PUT" method="POST" enctype="multipart/form-data" id="formToEditIcon">
                                 
@@ -76,9 +77,10 @@
                 <% } %>
                 <% if (con.type == 'subtitle') { %>
                     <li tabindex="0">
-                        <h6 class="typeOfContentToEdit">Subtitle:</h6>
+                        <div class="contentToEditContainer one">
+                        <h6 class="typeOfContentToEdit ok">Subtitle:</h6>
                         <p class="contentToEdit"><%= con.text %></p>
-                        <div class="contentToEditContainer">
+                        
                             <form action="/products/<%=productToEdit.id %>/edit/contents/<%= sectionToEdit.id %>/<%= con.type %>/<%= con.id %>?_method=PUT" method="POST" id="formToEditSubtitle">
                                 
                                 <input type="text" name="contentSubtitle" id="subtitleToEdit" value="<%= con.text %>">
@@ -101,9 +103,10 @@
                 <% } %>
                 <% if (con.type == 'description') { %>
                     <li tabindex="0">
-                        <h6 class="typeOfContentToEdit">Description:</h6>
+                        <div class="contentToEditContainer two">
+                        <h6 class="typeOfContentToEdit ok">Description:</h6>
                         <p class="contentToEdit"><%= con.text %></p>
-                        <div class="contentToEditContainer">
+                        
                             <form action="/products/<%=productToEdit.id %>/edit/contents/<%= sectionToEdit.id %>/<%= con.type %>/<%= con.id %>?_method=PUT" method="POST" id="formToEditDescription">
                                 
                                 <textarea name="contentDescription" id="descriptionToEdit" cols="50" rows="5"><%= con.text %></textarea> <br>
@@ -126,7 +129,7 @@
                 <% } %>
             <% }) %> 
         </ul>
-
+    
 
         <div style="display: flex; justify-content: space-around; flex-wrap: nowrap;">
 

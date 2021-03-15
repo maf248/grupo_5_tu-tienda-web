@@ -36,6 +36,30 @@ th {
     text-align: center;
     margin: 20px;
 }
+
+.one{
+   
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 120%;
+    bottom: 90px;
+
+}
+.two{
+   
+    position: relative;
+    right: 110%;
+    bottom: 230px;
+}
+.contentToEditIconContainer{
+    
+    position: relative;
+    
+}
+.typeOfContentToEdit{
+    font-size: 1.3em;
+}
 .titulo {
     margin: 20px 0px 10px 0px;
     font-size: 1.8em;
@@ -206,7 +230,7 @@ td input {
 }
 .contentToEditContainer,
 .contentToEditIconContainer {
-    display: none;
+   display: "";
 }
 #descriptionToEdit,
 #subtitleToEdit {
@@ -224,8 +248,10 @@ td input {
     width: 5%;
     background-color: black;
 }
-.typeOfContentToEdit {
+.ok{
     margin: 10px;
+    
+  
 }
 
 /*--------------------------*/
