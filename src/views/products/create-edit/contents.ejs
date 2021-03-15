@@ -23,9 +23,9 @@
     
         <section>
 
-            <ul class="selectSection"> <h3 style="text-align: center;">Hacé click en el titulo de la sección que querés editar:</h3>
+            <ul class="selectSection"> <h3 style="text-align: center;">Editar los contenidos de la sección:</h3>
                 <% productToEdit.Sections.forEach( sec => { %>
-                    <li>
+                    <li class="sectionTitleLink">
                         <a href="/products/<%= productToEdit.id %>/edit/contents/<%= sec.id %>"><%=sec.title%></a>
                     </li>
                 <% }) %>
@@ -65,7 +65,7 @@
 
                                 <% if (typeof errors != 'undefined') { %>
                                     <% errors.forEach (error => { %>
-                                        <% if (error.param == "contentIcon") { %>
+                                        <% if (error.param == "contentIcon" && contentEdited == con.id) { %>
                                             <p class="errors" style="text-align: center;"><%= error.msg %></p>
                                         <% } %>
                                     <% }) %>
@@ -86,11 +86,11 @@
                         
                             <form action="/products/<%=productToEdit.id %>/edit/contents/<%= sectionToEdit.id %>/<%= con.type %>/<%= con.id %>?_method=PUT" method="POST" id="formToEditSubtitle">
                                 
-                                <input type="text" name="contentSubtitle" id="subtitleToEdit" value="<%= con.text %>">
+                                <input type="text" name="contentSubtitle" id="subtitleToEdit" <% if (typeof body != 'undefined' && typeof body.contentSubtitle != 'undefined' && contentEdited == con.id) { %> value="<%= body.contentSubtitle %>" <% } else { %> value="<%= con.text %>" <% } %> >
 
                                 <% if (typeof errors != 'undefined') { %>
                                     <% errors.forEach (error => { %>
-                                        <% if (error.param == "contentSubtitle") { %>
+                                        <% if (error.param == "contentSubtitle" && contentEdited == con.id) { %>
                                             <p class="errors" style="text-align: center;"><%= error.msg %></p>
                                         <% } %>
                                     <% }) %>
@@ -112,11 +112,11 @@
                         
                             <form action="/products/<%=productToEdit.id %>/edit/contents/<%= sectionToEdit.id %>/<%= con.type %>/<%= con.id %>?_method=PUT" method="POST" id="formToEditDescription">
                                 
-                                <textarea name="contentDescription" id="descriptionToEdit" cols="50" rows="5"><%= con.text %></textarea> <br>
+                                <textarea name="contentDescription" id="descriptionToEdit" cols="50" rows="5"><% if (typeof body != 'undefined' && typeof body.contentDescription != 'undefined' && contentEdited == con.id) { %><%= body.contentDescription %><% } else { %><%= con.text %><% } %></textarea> <br>
 
                                 <% if (typeof errors != 'undefined') { %>
                                     <% errors.forEach (error => { %>
-                                        <% if (error.param == "contentDescription") { %>
+                                        <% if (error.param == "contentDescription" && contentEdited == con.id) { %>
                                             <p class="errors" style="text-align: center;"><%= error.msg %></p>
                                         <% } %>
                                     <% }) %>
@@ -194,9 +194,9 @@
         <% if (typeof sectionToCreate == 'undefined') { %>
             <section>
 
-                <ul class="selectSection"> <h3 style="text-align: center;">Hacé click en el titulo de la sección que querés editar:</h3>
+                <ul class="selectSection"> <h3 style="text-align: center;">Editar los contenidos de la sección:</h3>
                     <% section.forEach( sec => { %>
-                        <li>
+                        <li class="sectionTitleLink">
                             <a href="/products/<%= newID %>/create/contents/<%= sec.id %>"><%=sec.title%></a>
                         </li>
                     <% }) %>

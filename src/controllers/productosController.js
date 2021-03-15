@@ -938,6 +938,8 @@ const productosController = {
                     res.render('./products/create-edit/contents', {
                         productToEdit: product,
                         sectionToEdit: section,
+                        contentEdited: req.params.content,
+                        body: req.body,
                         errors: errors.errors
                     })
                 })
