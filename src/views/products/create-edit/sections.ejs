@@ -64,6 +64,10 @@
                 <button  id="botonDeMierda" type="submit" class="submit" style="margin: 5px auto; display: block;">Guardar</button>
         
             </form>
+
+            <form action="/products/<%= productToEdit.id %>/delete/sections/<%= sectionToEdit.id %>?_method=DELETE" method="POST" >
+                <button class="reset">Borrar Sección</button>
+            </form>
     
         </div>
 

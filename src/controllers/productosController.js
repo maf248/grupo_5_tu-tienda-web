@@ -949,6 +949,18 @@ const productosController = {
 
         res.redirect(`/products/${req.params.id}/edit/benefits`);
     },
+    deleteSection: function (req, res, next) {
+        /*----Borrando la fila del producto en la base de datos (soft-delete)----*/
+        db.Section.destroy({
+            where: {
+                id: {
+                    [db.Sequelize.Op.like]: [req.params.section]
+                }
+            }
+        })
+
+        res.redirect(`/products/${req.params.id}/edit/sections/`);
+    },
     deleteProduct: function (req, res, next) {
         /*----Borrando la fila del producto en la base de datos (soft-delete)----*/
         db.Product.destroy({

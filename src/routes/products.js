@@ -100,5 +100,7 @@ router.get('/:id', productosController.detalle);
 
 router.delete('/:id/delete/benefits/:benefit', productosController.deleteBenefit);
 router.delete('/:id', productosController.deleteProduct);
+router.delete('/:id/delete/sections/:section', productosController.deleteSection);
+
 
 module.exports = router;
