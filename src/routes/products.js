@@ -92,11 +92,13 @@ router.get('/:id/edit/contents/:section', productosController.showSectionIdForCo
 
 router.put('/:id/edit', upload.single('image'), productValidate, productosController.modifyProduct);
 router.put('/:id/edit/categories', upload.any(), categoryValidate, productosController.modifyCategories);
-router.put('/:id/edit/benefits', productosController.modifyBenefits);
+router.put('/:id/edit/benefits', editBenefitValidate, productosController.modifyBenefits);
 router.put('/:id/edit/sections/:section/edited-section', upload.single('sectionImage'), sectionValidate, productosController.modifySection);
 router.put('/:id/edit/contents/:section/:type/:content', upload.single('contentIcon'), contentsEditionValidate, productosController.modifyContents);
 
 router.get('/:id', productosController.detalle);
+
+/*Rutas DELETE para eliminar productos, secciones, beneficios y contenidos*/
 
 router.delete('/:id/delete/sections/:section', productosController.deleteSection);
 router.delete('/:id/delete/contents/:section/:type/:content', productosController.deleteContents);
