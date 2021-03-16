@@ -24,20 +24,28 @@ user.addEventListener('change', (e) => {
 })
 password.addEventListener('change', (e) => {
     if (!password.value.match(passwordformat)) {
+        console.log('LA PASS NO PASA');
         passwordError.innerHTML = `<p> Debe tener 8 caracteres, incluyendo una mayúscula, una minúscula, un numero y un simbolo </p>`
         passwordError.style.textAlign = "center"
         passwordError.style.color = "red"
         passwordError.style.margin = "10px"
 
     } else {
+    
         passwordError.innerHTML = "" 
     }
 })
 
 loginForm.addEventListener('submit', (e) => {
-   
-    if(!user.value.match(mailformat) && !password.value.match(passwordformat)) {
+
+    if(!user.value.match(mailformat) || !password.value.match(passwordformat)) {
         e.preventDefault()
-    }
+       if(!password.value.match(passwordformat)) {
+        passwordError.innerHTML = `<p> Debe tener 8 caracteres, incluyendo una mayúscula, una minúscula, un numero y un simbolo </p>`
+        passwordError.style.textAlign = "center"
+        passwordError.style.color = "red"
+        passwordError.style.margin = "10px" 
+       }
+    } 
 
 })

@@ -10,7 +10,7 @@
 
 <form class="form-login" action="/users/login" method="POST" id="loginForm">
     <h5>¡Hola! Completa tus datos</h5>
-        <input id="user" class="usuario" type="email" name="user" placeholder="Correo del usuario"<% if (typeof user != 'undefined') { %> value="<%= user %>"<% } %>>
+        <input id="user" class="usuario" type="email" name="user" placeholder="Correo del usuario"<% if (typeof email != 'undefined') { %> value="<%= email %>"<% } %>>
         <div id="userError"></div>
         <% if (typeof errors != "undefined") {
             errors.forEach ( error => { 
