@@ -15,7 +15,7 @@ const usersController = {
         if (req.session.user != undefined) {
             res.redirect('/users/profile');
          } else {
-            res.render('./users/login', {loginMailValue: loginMailValue, loginPassValue: loginPassValue});
+            res.render('./users/login');
             }
         },
     validate: function(req, res, next) {
@@ -37,7 +37,7 @@ const usersController = {
             })
                 
         } else {        
-                return res.render('./users/login', {errors: errors.errors, user: req.body.user});
+                return res.render('./users/login', {errors: errors.errors, email: req.body.user});
             }     
                
     },
