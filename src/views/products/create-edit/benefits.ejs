@@ -12,6 +12,7 @@
 
 <div class="creadorContainer">
     <% if (typeof newID == 'undefined') { %>
+        <form method="POST" id="deleteForm"></form>
         <h1 class="titulo">Editor de beneficios: <%= product.name %></h1>
         <form action="/products/<%= product.id %>/edit/benefits?_method=PUT" method="POST" id="formToEdit">
     <% } else { %>
@@ -93,15 +94,14 @@
                         </td>
                         <td class="tdDivActions">
                             <div class="divActions">
-                                <form action="/products/<%= product.id %>/delete/benefits/<%= benefit.id %>?_method=DELETE" method="POST" class="deleteForm">
-                                    <button> X </button>
-                                </form>
+                                    <button id="delete" value="<%= benefit.id %>"> X </button>
                             </div>
                         </td>
                     </tr>
                     <% index++ %>
                     <% }) %>
         <% } %>
+        
         <% if (typeof newID != 'undefined') { %>
             <% if (typeof benefits != 'undefined') { %>
                 <% benefits.forEach(benefit => { %>  
