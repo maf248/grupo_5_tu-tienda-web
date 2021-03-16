@@ -81,13 +81,17 @@ if (window.location.pathname.includes('edit')) {
 }
 
 /*---Sweet alert para confirmacion de DELETE BENEFIT---*/
+const deleteButtons = qsa('#delete');
+const deleteBenefitForm = qs('#deleteForm');
+deleteBenefitForm.style.display = "none";
+console.log(deleteBenefitForm);
 
-const deleteBenefitsForms = qsa('.deleteForm');
+deleteButtons.forEach(deleteButton => {
 
-deleteBenefitsForms.forEach( deleteForm => {
-    deleteForm.addEventListener('submit', (e) => {
-
-        e.preventDefault()
+    deleteButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        deleteBenefitForm.action =`/products/${window.location.pathname[10]}/delete/benefits/${deleteButton.value}?_method=DELETE`
 
         swal({
             title: "¿Estas seguro que deseas eliminar el beneficio?",
@@ -103,7 +107,7 @@ deleteBenefitsForms.forEach( deleteForm => {
                     icon: "success",
                 })
                 .then(() => {
-                    deleteForm.submit()
+                    deleteBenefitForm.submit();
                 })
                 
                 
