@@ -307,8 +307,15 @@ td input {
     margin: 3px;
     font-size: 0.7em;
 }
+.categoriesTR {
+    display: flex;
+    flex-direction: row;
+    padding: 0px 3% 0px 0px;
+    justify-content: space-between;
+}
 .categoriesTitles {
-    font-size: 1.5em;
+    margin-bottom: 20px;
+    font-size: 1.6em;
 }
 .categoriesTitles em {
     text-decoration: underline;
@@ -331,10 +338,58 @@ td input {
     flex-wrap: wrap;
 }
 .inputBeneficio {
+    width: 100%;
     min-width: fit-content;
+}
+tr {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border-bottom: 1px solid white;
+}
+td {
+    border-bottom: none !important;
+}
+td.tdDiv {
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+}
+.tdDivActions {
+    
+}
+.editBenefits {
+    padding: 25px;
+    width: 40%;
+}
+.editBenefitsDiv {
+    width: 100%;
+}
+.divActions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+    width: 100%;
+    padding: 3%;
 }
 
 @media (max-width: 556px) {
+    .editBenefits {
+        padding: 20px;
+        width: 100%;
+    }
+    .categoriesTitles {
+        margin: 5px;
+    }
+    .divActions p {
+        display: none;
+    }
+    .categoriesTitles {
+        margin-bottom: 20px;
+        font-size: 1.3em;
+    }
     .tdDiv h4{
         font-size: 12px;
     }

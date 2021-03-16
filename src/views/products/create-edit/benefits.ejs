@@ -21,28 +21,35 @@
     
         <section class="contenedorProductos" id="contenedorProductos">
             <table>
-                <tr>
-                    <td class="beneficio fontSize">
+                <tr cass="categoriesTR">
+                    <td class="editBenefits fontSize">
                         <div class="tdDiv">
                             <!--Categorías-->
                             <h2 class="categoriesTitles subrayado"><em>Categorías:</em></h2> <br>
                         </div>
                     </td>
-                    <td>
-                        <div class="tdDiv">
+                    <td class="tdDivActions">
+                        <div class="divActions">
                             <h2 class="categoriesTitles"><%= product.Categories[0].name %></h2>   
                         </div>
                     </td>
-                    <td>
-                        <div class="tdDiv">
+                    <td class="tdDivActions">
+                        <div class="divActions">
                             <h2 class="categoriesTitles"><%=  product.Categories[1].name %></h2>     
                         </div>
                     </td>
-                    <td>
-                        <div class="tdDiv">
+                    <td class="tdDivActions">
+                        <div class="divActions">
                             <h2 class="categoriesTitles"><%= product.Categories[2].name %></h2>   
                         </div>
                     </td>
+                    <% if (typeof newID == 'undefined') { %>
+                    <td class="tdDivActions">
+                        <div class="divActions">
+                            <p>Eliminar</p>   
+                        </div>
+                    </td>
+                    <% } %>
                 </tr>
                 <div style="width: 100%">
                 <% if (typeof errors != "undefined") {
@@ -58,8 +65,8 @@
                 <% var index = 0; %>
                 <% benefits.forEach(benefit => { %>          
                     <tr>
-                        <td class="beneficio fontSize">
-                            <div class="tdDiv">
+                        <td class="editBenefits fontSize">
+                            <div class="tdDiv editBenefitsDiv">
                                 <!--Elegir titulo beneficio 1-->
                                 <label for="benefit<%= benefit.id %>Name">Beneficio:</label> <br>
                                 <input class="benefitsNames inputBeneficio" type="text" name="benefit<%= benefit.id %>Name" value="<%= benefit.name %>">
@@ -68,19 +75,26 @@
 
                             </div>
                         </td>
-                        <td>
-                            <div class="tdDiv">
+                        <td class="tdDivActions">
+                            <div class="divActions">
                                 <input class="<%= `checkboxes${index}` %>" type="checkbox" name="benefit<%= benefit.id %>Cat1" value="true" style="align-self: center;" <% if ((typeof benefit.Categories[0] != 'undefined' && benefit.Categories[0].id == product.Categories[0].id) || (typeof benefit.Categories[1] != 'undefined' && benefit.Categories[1].id == product.Categories[0].id) || (typeof benefit.Categories[2] != 'undefined' && benefit.Categories[2].id == product.Categories[0].id)) { %> checked <% } %>>
                             </div>
                         </td>
-                        <td>
-                            <div class="tdDiv">
+                        <td class="tdDivActions">
+                            <div class="divActions">
                                 <input class="<%= `checkboxes${index}` %>" type="checkbox" name="benefit<%= benefit.id %>Cat2" value="true" style="align-self: center;" <% if ((typeof benefit.Categories[0] != 'undefined' && benefit.Categories[0].id == product.Categories[1].id) || (typeof benefit.Categories[1] != 'undefined' && benefit.Categories[1].id == product.Categories[1].id) || (typeof benefit.Categories[2] != 'undefined' && benefit.Categories[2].id == product.Categories[1].id)) { %> checked <% } %>>
                             </div>
                         </td>
-                        <td>
-                            <div class="tdDiv">
+                        <td class="tdDivActions">
+                            <div class="divActions">
                                 <input class="<%= `checkboxes${index}` %>" type="checkbox" name="benefit<%= benefit.id %>Cat3" value="true" style="align-self: center;" <% if ((typeof benefit.Categories[0] != 'undefined' && benefit.Categories[0].id == product.Categories[2].id) || (typeof benefit.Categories[1] != 'undefined' && benefit.Categories[1].id == product.Categories[2].id) || (typeof benefit.Categories[2] != 'undefined' && benefit.Categories[2].id == product.Categories[2].id)) { %> checked <% } %>>
+                            </div>
+                        </td>
+                        <td class="tdDivActions">
+                            <div class="divActions">
+                                <form action="/products/<%= product.id %>/delete/benefits/<%= benefit.id %>?_method=DELETE" method="POST">
+                                    <button class="<%= `delete${index}` %>"> X </button>
+                                </form>
                             </div>
                         </td>
                     </tr>
@@ -91,7 +105,7 @@
             <% if (typeof benefits != 'undefined') { %>
                 <% benefits.forEach(benefit => { %>  
                 <tr>  
-                    <td class="beneficio">
+                    <td class="editBenefits">
                         <div class="tdDiv">
                             <%= benefit.name %>
                         </div>
@@ -112,7 +126,7 @@
                  <% }) } %>
                  <% var index = 0; %>
                         <tr>
-                            <td class="beneficio fontSize">
+                            <td class="editBenefits fontSize">
                                 <div class="tdDiv">
                                     <!--Elegir titulo beneficio 1-->
                                     <label for="newBenefitName">Beneficio:</label> <br>

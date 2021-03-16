@@ -658,17 +658,8 @@ const productosController = {
                                         }
                                     })
 
-                                    /*----Si el nombre del beneficio es un string vacío, se borra dicho beneficio----*/
-                                } else if (typeof req.body['benefit' + associatedBenefits[i].id + 'Name'] != 'undefined' && req.body['benefit' + associatedBenefits[i].id + 'Name'] == '') {
-
-                                    db.Benefit.destroy({
-                                        where: {
-                                            id: {
-                                                [db.Sequelize.Op.like]: [associatedBenefits[i].id]
-                                            }
-                                        }
-                                    })
-                                }
+                                
+                                } 
                                 /*----Recorre las categorías y chequea las asociaciones con los beneficios en cuestion----*/
                                 if (associatedBenefits[i].Categories) {
 
@@ -946,7 +937,19 @@ const productosController = {
             }).catch(err => console.log(err))
         }
     },
-    borrado: function (req, res, next) {
+    deleteBenefit: function (req, res, next) {
+        /*----Borrando la fila del producto en la base de datos (soft-delete)----*/
+        db.Benefit.destroy({
+            where: {
+                id: {
+                    [db.Sequelize.Op.like]: [req.params.benefit]
+                }
+            }
+        })
+
+        res.redirect(`/products/${req.params.id}/edit/benefits`);
+    },
+    deleteProduct: function (req, res, next) {
         /*----Borrando la fila del producto en la base de datos (soft-delete)----*/
         db.Product.destroy({
             where: {
