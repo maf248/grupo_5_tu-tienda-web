@@ -79,3 +79,39 @@ if (window.location.pathname.includes('edit')) {
     
     })
 }
+
+/*---Sweet alert para confirmacion de DELETE BENEFIT---*/
+
+const deleteBenefitsForms = qsa('.deleteForm');
+
+deleteBenefitsForms.forEach( deleteForm => {
+    deleteForm.addEventListener('submit', (e) => {
+
+        e.preventDefault()
+
+        swal({
+            title: "¿Estas seguro que deseas eliminar el beneficio?",
+            text: "Esta acción es irreversible",
+            icon: "warning",
+            buttons: ["Cancelar", "Eliminar"],
+            dangerMode: true,
+        })
+        .then((willDelete) => {
+            
+            if (willDelete) {
+                swal("El beneficio ha sido eliminado", {
+                    icon: "success",
+                })
+                .then(() => {
+                    deleteForm.submit()
+                })
+                
+                
+            } else {
+                swal("El beneficio NO se ha eliminado");
+                
+            }
+        })
+        
+    })
+})
