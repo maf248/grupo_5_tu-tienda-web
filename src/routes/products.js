@@ -98,9 +98,10 @@ router.put('/:id/edit/contents/:section/:type/:content', upload.single('contentI
 
 router.get('/:id', productosController.detalle);
 
+router.delete('/:id/delete/sections/:section', productosController.deleteSection);
+router.delete('/:id/delete/contents/:section/:type/:content', productosController.deleteContents);
 router.delete('/:id/delete/benefits/:benefit', productosController.deleteBenefit);
 router.delete('/:id', productosController.deleteProduct);
-router.delete('/:id/delete/sections/:section', productosController.deleteSection);
 
 
 module.exports = router;

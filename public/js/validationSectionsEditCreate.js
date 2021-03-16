@@ -125,6 +125,41 @@ else {
     })
 }
 
+// Implementación de Sweet alert para eliminar una sección
+
+const deleteForm = qs('#deleteForm');
+
+
+deleteForm.addEventListener('submit', (e) => {
+
+    e.preventDefault()
+
+    swal({
+        title: "¿Estas seguro que deseas eliminar el producto?",
+        text: "Esta acción es irreversible",
+        icon: "warning",
+        buttons: ["Cancelar", "Eliminar"],
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        
+        if (willDelete) {
+            swal("Se ha eliminado la sección seleccionada", {
+                icon: "success",
+            })
+            .then(() => {
+                deleteForm.submit()
+            })
+            
+            
+        } else {
+            swal("El producto NO se ha eliminado");
+            
+        }
+      })
+      
+})
+
 
 
 

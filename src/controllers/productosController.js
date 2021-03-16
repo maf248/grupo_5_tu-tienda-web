@@ -949,8 +949,38 @@ const productosController = {
 
         res.redirect(`/products/${req.params.id}/edit/benefits`);
     },
+    deleteContents: function (req, res, next) {
+
+                    db.Content.destroy({
+                        where: {
+                            id: {
+                                [db.Sequelize.Op.like]: [req.params.content -2],
+                            }
+                        }
+                    }).then( () => {
+                        db.Content.destroy({
+                            where: {
+                                id: {
+                                    [db.Sequelize.Op.like]: [req.params.content -1],
+                                }
+                            }
+                        }).then( () => {
+                            db.Content.destroy({
+                                where: {
+                                    id: {
+                                        [db.Sequelize.Op.like]: [req.params.content],
+                                    }
+                                }
+                            }).then( () => {
+                                res.redirect(`/products/${req.params.id}/edit/contents/${req.params.section}`);
+                            }).catch(err => {console.log(err)})
+                        }).catch(err => {console.log(err)})
+                    }).catch(err => {console.log(err)})
+
+        
+    },
     deleteSection: function (req, res, next) {
-        /*----Borrando la fila del producto en la base de datos (soft-delete)----*/
+        /*----Borrando la fila de la sección del producto en la base de datos (soft-delete)----*/
         db.Section.destroy({
             where: {
                 id: {

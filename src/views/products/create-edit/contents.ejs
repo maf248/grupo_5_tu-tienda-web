@@ -4,6 +4,7 @@
     <%- include('../../partials/head') %>
     <link rel="stylesheet" href="/stylesheets/producto-style.css">
     <link rel="stylesheet" href="/stylesheets/crear-editar-style.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" defer></script>
     <script src="/js/validationContents.js" defer></script>
 </head>
 
@@ -105,14 +106,14 @@
                     </li>
                 <% } %>
                 <% if (con.type == 'description') { %>
-                    <li tabindex="0">
+                    <li tabindex="0" style="width: 100%;">
                         <div class="descriptionToEditContainer">
                         <h6 class="typeOfContentToEdit ok">Descripción <%= Math.ceil(index/3) %>:</h6>
                         <p class="contentToEdit"><%= con.text %></p>
                         
                             <form action="/products/<%=productToEdit.id %>/edit/contents/<%= sectionToEdit.id %>/<%= con.type %>/<%= con.id %>?_method=PUT" method="POST" id="formToEditDescription">
                                 
-                                <textarea name="contentDescription" id="descriptionToEdit" cols="50" rows="5"><% if (typeof body != 'undefined' && typeof body.contentDescription != 'undefined' && contentEdited == con.id) { %><%= body.contentDescription %><% } else { %><%= con.text %><% } %></textarea> <br>
+                                <textarea style="text-align: center;" name="contentDescription" id="descriptionToEdit" cols="50" rows="5"><% if (typeof body != 'undefined' && typeof body.contentDescription != 'undefined' && contentEdited == con.id) { %><%= body.contentDescription %><% } else { %><%= con.text %><% } %></textarea> <br>
 
                                 <% if (typeof errors != 'undefined') { %>
                                     <% errors.forEach (error => { %>
@@ -128,9 +129,21 @@
                             
                             </form>
                         </div>
+                        
+                        <div style="display: block;">
+        
+                            <form action="/products/<%=productToEdit.id %>/delete/contents/<%= sectionToEdit.id %>/<%= con.type %>/<%= con.id %>?_method=DELETE" method="POST" id="deleteForm">
+                                <button class="reset" >Borrar Contenido</button>
+                            </form>
+    
+                        </div>
+
                     </li>
+
                 <% } %>
+
                 <% index++ %>
+
             <% }) %> 
         </ul>
     
