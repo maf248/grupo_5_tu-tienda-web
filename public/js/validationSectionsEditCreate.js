@@ -135,7 +135,7 @@ deleteForm.addEventListener('submit', (e) => {
     e.preventDefault()
 
     swal({
-        title: "¿Estas seguro que deseas eliminar el producto?",
+        title: "¿Estas seguro que deseas eliminar la sección?",
         text: "Esta acción es irreversible",
         icon: "warning",
         buttons: ["Cancelar", "Eliminar"],
@@ -153,7 +153,7 @@ deleteForm.addEventListener('submit', (e) => {
             
             
         } else {
-            swal("El producto NO se ha eliminado");
+            swal("La sección NO se ha eliminado");
             
         }
       })
