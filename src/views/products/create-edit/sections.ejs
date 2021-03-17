@@ -39,7 +39,7 @@
 
             <form action="/products/<%= productToEdit.id %>/edit/sections/<%= sectionToEdit.id %>/edited-section?_method=PUT" method="POST" enctype="multipart/form-data" id="formToEdit">
     
-                <input type="text" name="sectionTitle" id="editSectionTitle" class="editTextInput" <% if (typeof body != 'undefined') { %> value="<%= body.sectionTitle %>" <% } else if (typeof sectionToEdit != 'undefined') { %> value="<%= sectionToEdit.title %>" <% } %>>
+                <input type="text" name="sectionTitle" id="editSectionTitle" class="editTextInput" style="text-align: center; width: 50%;"<% if (typeof body != 'undefined') { %> value="<%= body.sectionTitle %>" <% } else if (typeof sectionToEdit != 'undefined') { %> value="<%= sectionToEdit.title %>" <% } %>>
                 <div id="editSectionTitleContainer"></div>
             
 
