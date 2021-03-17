@@ -17,7 +17,12 @@
                 if (error.param == "user") { %>
                     <p><%= error.msg %></p>
             <% } }) } %>
-        <input id="password" class="usuario" type="password" name="password" placeholder="Contraseña">
+        <div class="passwordContainer">
+            <input id="password" class="password" type="password" name="password" placeholder="Contraseña">
+            <div id="showPassword" class="showPassword">
+                <i class="fas fa-eye"></i>
+            </div>
+        </div>
         <div id="passwordError"></div>
         <% if (typeof errors != "undefined") {
             errors.forEach ( error => { 

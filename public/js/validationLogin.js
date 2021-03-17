@@ -49,3 +49,17 @@ loginForm.addEventListener('submit', (e) => {
     } 
 
 })
+
+/*---Show/hide password---*/
+const showPassword = qs('#showPassword')
+
+
+showPassword.addEventListener('click', () => {
+    if(password.getAttribute('type') == 'password') {
+        password.setAttribute('type', 'text')
+        showPassword.innerHTML = '<i class="fas fa-eye-slash"></i>';
+    } else {
+        password.setAttribute('type', 'password')
+        showPassword.innerHTML = '<i class="fas fa-eye"></i>';
+    }
+});
