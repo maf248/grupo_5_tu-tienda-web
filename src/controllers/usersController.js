@@ -34,7 +34,7 @@ const usersController = {
         
                 return res.redirect('/users/profile');
                                                 
-            })
+            }).catch(err => console.log(err))
                 
         } else {        
                 return res.render('./users/login', {errors: errors.errors, email: req.body.user});
@@ -69,7 +69,7 @@ const usersController = {
 
                 req.session.user = value;
                 res.redirect('/users/profile');
-            })
+            }).catch(err => console.log(err))
 
         }
     
@@ -86,7 +86,7 @@ const usersController = {
                 }
             ]}).then(user => { 
                   res.render('./users/profile', {user: user});
-                })
+                }).catch(err => console.log(err))
 
             } else {
             res.redirect('/users/login')
@@ -177,7 +177,7 @@ const usersController = {
             }
         }).then( value => {
             res.redirect('/users/profile')
-        })
+        }).catch(err => console.log(err))
     },
     logout: function (req, res, next) {
         /*---Aqui se resetean valores de mensajes de error----*/
