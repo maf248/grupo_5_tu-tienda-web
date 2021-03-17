@@ -84,7 +84,6 @@ if (window.location.pathname.includes('edit')) {
 const deleteButtons = qsa('#delete');
 const deleteBenefitForm = qs('#deleteForm');
 deleteBenefitForm.style.display = "none";
-console.log(deleteBenefitForm);
 
 deleteButtons.forEach(deleteButton => {
 
