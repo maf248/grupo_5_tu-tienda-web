@@ -104,8 +104,9 @@ const productosController = {
                             product: product,
                             benefits: benefits
                         });
+                    }).catch(err => {
+                        res.send(err)
                     })
-
             })
             .catch(err => {
                 res.send(err)
@@ -233,8 +234,12 @@ const productosController = {
                                 product: product,
                                 newID: req.params.id
                             });
+                        }).catch(err => {
+                            res.send(err)
                         })
 
+                }).catch(err => {
+                    res.send(err)
                 })
 
         } else {
@@ -269,9 +274,11 @@ const productosController = {
                         }
 
                         res.redirect(`/products/${req.params.id}/create/benefits`);
+                    }).catch(err => {
+                        res.send(err)
                     })
-
-
+            }).catch(err => {
+                res.send(err)
             })
 
         } else {
@@ -297,7 +304,11 @@ const productosController = {
                             errors: errors.errors,
                             body: req.body
                         });
-                    })
+                    }).catch(err => {
+                        res.send(err)
+                    });
+                }).catch(err => {
+                    res.send(err)
                 });
         }
 
@@ -399,7 +410,7 @@ const productosController = {
                         productToCreate: product,
                         sectionToCreate: sec
                     });
-                })
+                }).catch(err => console.log(err))
             })
             .catch(err => console.log(err))
 
@@ -435,11 +446,11 @@ const productosController = {
                             }
                         ]).then(() => {
                             res.redirect(`/products/${req.params.id}/create/contents/${req.params.section}`)
-                        })
+                        }).catch(err => console.log(err))
                     } else {
                         res.redirect(`/products/${req.params.id}/create/contents`)
                     }
-                })
+                }).catch(err => console.log(err))
 
         } else {
             db.Product.findByPk(req.params.id)
@@ -454,8 +465,8 @@ const productosController = {
                         errors: errors.errors,
                         body: req.body
                     })
-                })
-            })
+                }).catch(err => console.log(err))
+            }).catch(err => console.log(err))
 
         }
     },
@@ -466,7 +477,7 @@ const productosController = {
                     res.render('./products/create-edit/product', {
                         productToEdit: product
                     });
-                })
+                }).catch(err => console.log(err))
 
         } else {
             res.redirect('/users/login')
@@ -504,7 +515,7 @@ const productosController = {
                         errors: errors.errors,
                         body: req.body
                     });
-                })
+                }).catch(err => console.log(err))
         }
     },
     editCategories: function (req, res, next) {
@@ -528,7 +539,7 @@ const productosController = {
                     res.render('./products/create-edit/categories', {
                         productToEdit: product
                     });
-                })
+                }).catch(err => console.log(err))
 
         } else {
             res.redirect('/users/login')
@@ -593,7 +604,7 @@ const productosController = {
           })
           .then(product => {
             res.render('./products/create-edit/categories', {productToEdit: product, errors: errors.errors, body: req.body});
-          })
+          }).catch(err => console.log(err))
         }
       },
     editBenefits: function (req, res, next) {
@@ -618,9 +629,9 @@ const productosController = {
                                 benefits: benefits,
                                 product: product
                             });
-                        })
+                        }).catch(err => console.log(err))
 
-                })
+                }).catch(err => console.log(err))
 
         } else {
             res.redirect('/users/login')
@@ -708,9 +719,9 @@ const productosController = {
                             }
 
                             res.redirect(`/products/${product.id}/edit/benefits`)
-                        })
+                        }).catch(err => console.log(err))
 
-                })
+                }).catch(err => console.log(err))
         } else {
                 db.Product.findByPk(req.params.id, {
                     include: [{
@@ -733,9 +744,9 @@ const productosController = {
                                 body: req.body,
                                 errors: errors.errors
                             });
-                        })
+                        }).catch(err => console.log(err))
 
-                })
+                }).catch(err => console.log(err))
         }
     },
     editSections: function (req, res, next) {
@@ -759,7 +770,7 @@ const productosController = {
                     res.render('./products/create-edit/sections', {
                         productToEdit: product
                     });
-                })
+                }).catch(err => console.log(err))
         } else {
             res.redirect('/users/login')
         }
@@ -797,7 +808,7 @@ const productosController = {
                 }
             }).then( () => {
                 res.redirect(`/products/${req.params.id}/edit/sections/${req.params.section}`)
-            })
+            }).catch(err => console.log(err))
             } else {
                 db.Product.findByPk(req.params.id, {
                     include: [{
@@ -814,7 +825,7 @@ const productosController = {
                             body: req.body
                         });
                     }).catch(err => console.log(err))
-                })
+                }).catch(err => console.log(err))
         }
     },
     editContents: function (req, res, next) {
@@ -848,7 +859,7 @@ const productosController = {
                         productToEdit: product,
                         sectionToEdit: section
                     })
-                })
+                }).catch(err => console.log(err))
             }).catch(err => console.log(err))
     },
     modifyContents: function (req, res, next) {
@@ -933,7 +944,7 @@ const productosController = {
                         body: req.body,
                         errors: errors.errors
                     })
-                })
+                }).catch(err => console.log(err))
             }).catch(err => console.log(err))
         }
     },
