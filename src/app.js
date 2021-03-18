@@ -12,6 +12,7 @@ var indexRouter = require('./routes/index');
 var carritoRouter = require('./routes/carrito');
 var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
+var apiProductRouter = require('./routes/api/product');
 var loginMiddleware = require('./middlewares/loginMiddleware');
 
 var app = express();
@@ -33,6 +34,7 @@ app.use('/', indexRouter);
 app.use('/products', productsRouter);
 app.use('/carrito', carritoRouter);
 app.use('/users', usersRouter);
+app.use('/api/product', apiProductRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
