@@ -24,7 +24,6 @@ user.addEventListener('change', (e) => {
 })
 password.addEventListener('change', (e) => {
     if (!password.value.match(passwordformat)) {
-        console.log('LA PASS NO PASA');
         passwordError.innerHTML = `<p> Debe tener 8 caracteres, incluyendo una mayúscula, una minúscula, un numero y un simbolo </p>`
         passwordError.style.textAlign = "center"
         passwordError.style.color = "red"
