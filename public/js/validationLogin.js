@@ -54,7 +54,7 @@ loginForm.addEventListener('submit', (e) => {
 const showPassword = qs('#showPassword')
 
 
-showPassword.addEventListener('click', () => {
+showPassword.addEventListener('mousedown', () => {
     if(password.getAttribute('type') == 'password') {
         password.setAttribute('type', 'text')
         showPassword.innerHTML = '<i class="fas fa-eye-slash"></i>';
@@ -62,4 +62,12 @@ showPassword.addEventListener('click', () => {
         password.setAttribute('type', 'password')
         showPassword.innerHTML = '<i class="fas fa-eye"></i>';
     }
+});
+
+password.addEventListener('blur', () => {
+    if(password.getAttribute('type') != 'password') {
+        password.setAttribute('type', 'password')
+        showPassword.innerHTML = '<i class="fas fa-eye"></i>';
+    } 
+    
 });
