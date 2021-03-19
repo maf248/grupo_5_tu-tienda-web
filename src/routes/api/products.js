@@ -8,7 +8,7 @@ const db = require('../../database/models');
 const productsApiController = require('../../controllers/api/productsController');
 
 
-router.get('/', productsApiController.listado);
-
+router.get('/products', productsApiController.listado);
+router.get('/products/:id', productsApiController.detalle);
 
 module.exports = router;

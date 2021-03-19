@@ -18,5 +18,29 @@ module.exports = {
         .catch(err => {
             console.log(err)
         })
+    },
+    detalle: function (req, res, next) {
+        db.Product.findByPk(req.params.id, {
+            include: [{
+                    association: "Sections",
+                    include: [{
+                        association: "Contents"
+                    }]
+                },
+                {
+                    association: "Categories"
+                }
+            ]
+        })
+        .then((product) => {
+            var listado = {
+                meta: {status:200, ID: product.id}, 
+                data: product
+            }
+            res.json(listado)
+        })
+        .catch(err => {
+            res.send(err)
+        })
     }
 }
