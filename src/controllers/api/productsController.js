@@ -67,7 +67,17 @@ module.exports = {
         .then((product) => {
             var listado = {
                 meta: {status:200, ID: product.id}, 
-                data: product
+                data: {
+                    id: product.id,
+                    name: product.name,
+                    type: product.type,
+                    title_banner: product.title_banner,
+                    subtitle_banner: product.subtitle_banner,
+                    image : `http://localhost:3000/images/Producto-${product.id}/${product.image}`,
+                    created_at: product.created_at,
+                    Categories: product.Categories,
+                    Sections: product.Sections
+                }
             }
             res.json(listado)
         })
