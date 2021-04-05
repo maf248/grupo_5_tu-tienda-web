@@ -14,6 +14,7 @@ module.exports = {
             users.forEach(user => {
                 let informacion = {
                     id: user.id,
+                    url: `http://localhost:3000/api/users/${user.id}`,
                     first_name: user.first_name,
                     last_name: user.last_name,
                     email: user.email,
@@ -52,7 +53,7 @@ module.exports = {
                     first_name: user.first_name,
                     last_name: user.last_name,
                     email: user.email,
-                    image: user.image,
+                    image: `http://localhost:3000/images/users/${user.image}`,
                     product_id: user.product_id,
                     category_id: user.category_id,
                     category_info: user.Categories,
