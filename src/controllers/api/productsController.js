@@ -9,9 +9,41 @@ module.exports = {
             }]
         })
         .then((products) => {
+            var detalleProducto = []
+            var cantidadCategorias = {}
+            products.forEach(product => {
+                detalleProducto.push({
+                    id: product.id,
+                    url : `http://localhost:3000/api/products/${product.id}`,
+                    name: product.name,
+                    type: product.type,
+                    title_banner: product.title_banner,
+                    subtitle_banner: product.subtitle_banner,
+                    image: product.image,
+                    created_at: product.created_at,
+                    Categories: product.Categories,
+                    
+                })
+                product.Categories.forEach(category =>{
+                    var keys = Object.keys(cantidadCategorias)
+                    if(keys.includes(category.name)){
+                        cantidadCategorias[category.name] +=1
+
+                    }else{
+                        cantidadCategorias[category.name] =1
+                    }
+                    
+                    
+                })
+                
+            });
            var listado = {
-               meta: {status:200, total: products.length}, 
-               data: products
+               meta: {
+                status:200,
+                total: products.length,
+                totalCategory: cantidadCategorias
+                }, 
+               data: detalleProducto
            }
            res.json(listado)
         })
