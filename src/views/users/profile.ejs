@@ -11,12 +11,15 @@
 <div class="profile">
     <% if (user.role == 'admin') { %>
         <h2>Perfil de Administrador:</h2>
+
+        <form action="http://localhost:5000" method="GET" target="_blank" class="dashboard">
+            <button type="submit">Panel de Administrador</button>
+        </form>
+
     <% } else { %>
         <h2>Perfil de Usuario:</h2>
     <% } %>
-    <form action="http://localhost:5000" method="GET" target="_blank" class="dashboard">
-        <button type="submit">Panel de Administrador</button>
-    </form>
+    
 
     <form action="/users/profile/avatar" method="POST" class="imageForm" enctype="multipart/form-data" id="imageForm">
 
