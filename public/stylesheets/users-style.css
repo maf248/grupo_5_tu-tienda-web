@@ -178,18 +178,39 @@ form p {
        display: flex;
        flex-direction: column;
    }
+   .profile h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4em;
+    text-decoration: underline;
+    width: 100%;
+    text-align: center;
+    }
+   .dashboard {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    }
+    .dashboard button {
+    width: fit-content;
+    margin: 15px 0px;
+    border: none;
+    font-size: 0.7em;
+    text-align: center;
+    padding: 10px;
+    outline: none;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 3px;
+    background-color: rgb(100, 197, 149);
+    cursor: pointer;
+    }
+
    .imageForm {
        display: flex;
        flex-direction: column;
        align-items: center;
        width: 100%;
-       padding: 3%;
-   }
-   .imageForm h2 {
-       font-family: 'Montserrat', sans-serif;
-       font-size: 1.3em;
-       text-decoration: underline;
-       padding: 20px 0px 30px 0px;
+       padding: 0px 3%;
    }
    .imageForm button {
     align-self: center;
@@ -287,6 +308,14 @@ form p {
         flex-direction: row;
         flex-wrap: wrap;
        }
+       .profile h2 {
+        text-align: left;
+        padding: 10px 12%;
+       }
+       .dashboard button {
+        margin-left: 15%;
+        margin-right: auto;
+       }
        .imageForm {
            width: 40%;
            height: auto;
@@ -295,7 +324,7 @@ form p {
         padding: 0px 0px 40px 0px;
         }
         .imagenPerfil {
-            margin: 10px;
+            margin: 20px;
         }
        .datosPersonales {
            width: 60%;
@@ -329,6 +358,7 @@ form p {
 
    }
    @media (max-width: 500px){
+    
     .form-login {
         transform: scale(0.9);
     }
