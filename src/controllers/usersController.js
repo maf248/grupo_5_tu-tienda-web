@@ -51,7 +51,7 @@ const usersController = {
     },
     createUser: function(req, res) {
         let errors = validationResult(req);
-
+        
         if (!errors.isEmpty()) {
 
             return res.render('./users/register', {errors: errors.errors, firstName: req.body.firstName, lastName: req.body.lastName, email: req.body.email} );
@@ -96,7 +96,7 @@ const usersController = {
     editProfile: function (req, res, next) {
         let errors = validationResult(req);
         let passwordConfirmation = false;
-                
+        
         /*---Se chequean los inputs. Si no hay errores los guarda---*/
         if (errors.isEmpty()) {
             /*---Si NO hay errores en los campos, guarda todo---*/
@@ -113,6 +113,7 @@ const usersController = {
             passwordConfirmation = true;
 
             /*---Chequea si el Admin Code es correcto, para hacer a ese usuario administrador del sitio---*/
+            
             if (req.body.adminCode == "sarasa.20") {
                 db.User.update({
                     role: 'admin'
@@ -132,7 +133,7 @@ const usersController = {
             res.render('./users/profile', {passwordConfirmation : passwordConfirmation});
 
             /*---Si el UNICO error es de la contraseña vacia, guarda los demás datos, pero NO actualiza password---*/
-        }   else if (errors.errors.length == 1 && req.body.passwordRepeat == '') { 
+        }   else if (errors.errors.length >= 1 && req.body.passwordRepeat == '') { 
                 
                 db.User.update({
                     first_name: req.body.firstName,
@@ -142,9 +143,11 @@ const usersController = {
                     where: {
                     id: {[db.Sequelize.Op.like] : [req.session.user.id]}
                 }})
-
+                
                 /*---Chequea si el Admin Code es correcto, para hacer a ese usuario administrador del sitio---*/
+                
                 if (req.body.adminCode == "sarasa.20") {
+                    
                     db.User.update({
                         role: 'admin'
                     }, {
