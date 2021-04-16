@@ -14,6 +14,7 @@ function rememberMiddleware(req, res, next) {
           }
         }).then(user => {
           return req.session.user = user
+
         }).catch(err => {
           let ErrorsJSON = JSON.stringify(err);
           fs.appendFileSync(ErrorsDir, ErrorsJSON);
@@ -21,7 +22,7 @@ function rememberMiddleware(req, res, next) {
   }
   /*--Luego se guarda la variable locals, partiendo de la session ya abierta o generada mediante la cookie--*/
   if (req.session.user != undefined) {
-
+    
     res.locals.user = req.session.user;
 
   }

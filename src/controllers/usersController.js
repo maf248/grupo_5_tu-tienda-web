@@ -109,7 +109,7 @@ const usersController = {
                 where: {
                 id: {[db.Sequelize.Op.like] : [req.session.user.id]}
             }})
-
+            
             passwordConfirmation = true;
 
             /*---Chequea si el Admin Code es correcto, para hacer a ese usuario administrador del sitio---*/
@@ -121,6 +121,24 @@ const usersController = {
                     where: {
                     id: {[db.Sequelize.Op.like] : [req.session.user.id]}
                 }})
+                .then(() => {
+                    db.User.findByPk(req.session.user.id)
+                    .then((value) => {
+            
+                        delete req.session.user;
+                        req.session.user = value;
+
+                        res.redirect('/users/profile/');
+                    })
+                    .catch(err => {
+                        console.log(err)
+                    })
+                })
+                .catch(err => {
+                    console.log(err)
+                })
+                
+    
             } else if (req.body.adminCode != "") {
                 db.User.update({
                     role: 'user'
@@ -128,6 +146,24 @@ const usersController = {
                     where: {
                     id: {[db.Sequelize.Op.like] : [req.session.user.id]}
                 }})
+                .then(() => {
+                    db.User.findByPk(req.session.user.id)
+                    .then((value) => {
+            
+                        delete req.session.user;
+                        req.session.user = value;
+
+                        res.redirect('/users/profile/');
+                    })
+                    .catch(err => {
+                        console.log(err)
+                    })
+                })
+                .catch(err => {
+                    console.log(err)
+                })
+                
+    
             }
 
             res.render('./users/profile', {passwordConfirmation : passwordConfirmation});
@@ -154,21 +190,55 @@ const usersController = {
                         where: {
                         id: {[db.Sequelize.Op.like] : [req.session.user.id]}
                     }})
-                    } else if (req.body.adminCode != "") {
+                    .then(() => {
+                        db.User.findByPk(req.session.user.id)
+                        .then((value) => {
+                
+                            delete req.session.user;
+                            req.session.user = value;
+
+                            res.redirect('/users/profile/');
+                        })
+                        .catch(err => {
+                            console.log(err)
+                        })
+                    })
+                    .catch(err => {
+                        console.log(err)
+                    })
+        
+                } else if (req.body.adminCode != "") {
                         db.User.update({
                             role: 'user'
                         }, {
                             where: {
                             id: {[db.Sequelize.Op.like] : [req.session.user.id]}
                         }})
-                    }
-                        
-                        res.redirect('/users/profile/');
+                        .then(() => {
+                            db.User.findByPk(req.session.user.id)
+                            .then((value) => {
+                    
+                                delete req.session.user;
+                                req.session.user = value;
 
-                    /*---Si hay varios errores redirige mostrandolos---*/
-            } else {
-                return res.render('./users/profile', {errors: errors.errors});
-            }                    
+                                res.redirect('/users/profile/');
+                            })
+                            .catch(err => {
+                                console.log(err)
+                            })
+                        })
+                        .catch(err => {
+                            console.log(err)
+                        })
+                               
+                }
+                
+         
+                /*---Si hay varios errores redirige mostrandolos---*/
+        } else {
+
+            return res.render('./users/profile', {errors: errors.errors});
+        }                    
     },
     photoUpdate: function (req, res, next) {
         /*---Aqui se guarda el nombre del archivo del nuevo avatar---*/

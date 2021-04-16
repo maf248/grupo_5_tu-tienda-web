@@ -93,7 +93,7 @@ else {
     })
     
     createImageInput.addEventListener('change', (e) => {
-        console.log(createImageInput.value.split('.')[1])
+        
         if (createImageInput.value.split('.')[1] != "jpg" && createImageInput.value.split('.')[1] != "jpeg" && createImageInput.value.split('.')[1] != "png") {
             const messageToShow = qs('#sectionImageContainer')
             messageToShow.innerHTML = `<p> La imagen debe estar en formato JPG, JPEG o PNG </p>`

@@ -15,7 +15,6 @@ var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
 var apiRouter = require('./routes/api/apiRouter');
 
-
 var loginMiddleware = require('./middlewares/loginMiddleware');
 
 var app = express();
