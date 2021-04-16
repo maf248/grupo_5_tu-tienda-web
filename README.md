@@ -33,11 +33,9 @@ Un listado de al menos 5 sitios de referencia indicando brevemente por qué fuer
 #### Tobias Blaksley:
 Tengo 30 años, soy recaudador de fondos en una ONG y vendedor de seguros patrimoniales. Desde chico me gustó la informática y siempre me sentí atraído por ella pero soy nuevo en esto de la programación. Dentro de mis hobbies se encuentra el fútbol, juntarme con amigos. También me gusta mucho viajar, sobre todo a playas.
 
-
 #### Marcelo Fanego:
 Tengo 29 años, soy técnico electrico, psicólogo y amante de la computación desde chico. Dentro de mis hobbies se destacan la música, la lectura, el parkour, la comedia, entre otros...
 Hoy en día estoy profundizando mis conocimientos en informatica y programación para, a futuro, poder aprovechar mi potencial en el mercado laboral.
-
 
 #### Gonzalo Molina Ferrer:
 Tengo 25 años, soy estudiante de contabilidad y trabajo de eso mismo. Estoy haciendo mis primeros pasos en el mundo de la programacion y me encantaria en un futuro poder aplicar mis conocimientos en algun proyecto laboral.
@@ -100,15 +98,6 @@ Referencias:
 
 ○ Al introducir en /users/profile el codigo "sarasa.20", como codigo de administrador, dicha cuenta adquiere más privilegios (editar y crear productos).
 
-## ★ Observaciones y pendientes:
+## ★ Panel de administrador - Dashboard:
 
-OBSERVACIONES:
-↑ Dividimos en varias etapas la creacion y edicion de productos, para que sea mas simple de mantener a nivel código, y dando una mejor experiencia al usuario. (Posibles etapas a implementar: Producto / Categorías / Secciónes / Beneficios)
-
-PENDIENTES: 
-
-- Continuar con las mejoras orientadas hacia unificar el diseño y mejorarlo, haciendolo más simple y minimalista.
-
-- Reducir la cantidad de texto y de repeticiónes en el sitio (principalmente en detalle de productos).
-
-- Reparar la vista de detalle de producto, para que no "crashee" al crear un producto sin todas las secciones o contenidos.
+○ [Github Dashboard administrador](https://github.com/maf248/grupo_5_tu-tienda-web_dashboard)
