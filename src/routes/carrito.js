@@ -5,4 +5,6 @@ var carritoController = require("../controllers/carritoController");
 /* Ruta a Carrito */
 router.get('/', carritoController.carrito);
 
+router.post('/add/:productID/:categoryID', carritoController.add)
+
 module.exports = router;

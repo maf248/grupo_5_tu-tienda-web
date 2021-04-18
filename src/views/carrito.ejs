@@ -9,27 +9,39 @@
 
 <div class="contenedor">
     <div class="contenedor-producto">
-        <h2>Tu producto:</h2>
+        <h2>Productos del carrito</h2>
         <div class="contenedor-producto-elegido">
-            <h3 class="elegido-titulo">¡Lo sentimos!...No has elegido ningún producto.</h3>
+            <% if (carts.length >= 1) { carts.forEach(cart => { %>
+                <h3 class="elegido-titulo"><%= cart.Products.name%> - Plan <%= cart.Categories.name %></h3>
+                <br>
+            <% })} else { %>
+                <h3 class="elegido-titulo">No has agregado ningún producto al carrito.</h3>
+            <% } %>
         </div>
     </div>
 
     <div class="contenedor-precios"> 
         
-     <h2>Detalles del precio:</h2>
+     <h2>Precio total</h2>
         <div class="contenedor-precios-total">
             <div class="contenedor-precios-texto">
+            <% if (carts.length >= 1) { carts.forEach(cart => { %>
+                <h3>Suscripción mensual:</h3>
+            <% })} else { %>
                 <h3>Precio:</h3>
-                <h3>Descuento:</h3>
-                <h3>Total:</h3>
+            <% } %>
             </div>
             <div class="contenedor-precios-contenido">
-                <h3>--</h3>
-                <h3>--</h3>
-                <h3>--</h3>
+                <% if (carts.length >= 1) { carts.forEach(cart => { %>
+                    <h3>$ <%= cart.Categories.price %></h3>  
+                <% })} else { %>
+                    <h3>--</h3>
+                <% } %>
             </div>
+            
         </div>
+        <hr>
+        <h3 style="display: inline-block; text-align: center; width: 50%; padding: 10px">Total: </h3><h3 style="display: inline-block; text-align: center; width: 50%; padding: 10px">$ <% let totalCart = 0; carts.map(cart => { totalCart = totalCart + Number(cart.Categories.price)}) %><%= totalCart %></h3>
     </div> 
 </div>
 

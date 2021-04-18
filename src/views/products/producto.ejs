@@ -218,8 +218,9 @@
                             <% for (let i=0; i < product.Categories.length; i++) { %>
                             <td>
                                 <div class="tdDiv">
-                                    <form action="/carrito" method="get">
-                                        <button>
+                                    <% console.log(product.Categories[i]) %>
+                                    <form action="/carrito/add/<%= product.id %>/<%= product.Categories[i].id %>" method="POST">
+                                        <button type="submit">
                                             <% if (product.Categories[i].price !== 0) { %>
                                                 <p>$ <%= product.Categories[i].price %></p>
                                                 <% } else { %>
