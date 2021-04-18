@@ -12,7 +12,7 @@ const carritoController = {
             association: "Categories"
           }]
       }).then(carts => {
-
+        // res.send(carts)
         res.render('carrito', {carts: carts});
       })
       .catch(err => console.log(err))

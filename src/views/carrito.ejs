@@ -11,12 +11,18 @@
     <div class="contenedor-producto">
         <h2>Productos del carrito</h2>
         <div class="contenedor-producto-elegido">
+        
             <% if (carts.length >= 1) { carts.forEach(cart => { %>
+            <div class="contenedor-producto-listado">
+                <img class="product-image" src="/images/Producto-<%= cart.Products.id %>/<%= cart.Products.image %>">
                 <h3 class="elegido-titulo"><%= cart.Products.name%> - Plan <%= cart.Categories.name %></h3>
-                <br>
+            </div>
             <% })} else { %>
+            <div>
                 <h3 class="elegido-titulo">No has agregado ningún producto al carrito.</h3>
+            </div>
             <% } %>
+        
         </div>
     </div>
 
