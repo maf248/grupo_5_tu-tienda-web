@@ -16,10 +16,10 @@ module.exports = {
     "dialect": "mysql"
   },
   "production": {
-    "username": "be2ceb2e6508ee",
-    "password": "f7f9fabc",
-    "database": "heroku_ef71bdbc53096bb",
-    "host": "us-cdbr-east-03.cleardb.com",
+    "username": "b31b6829aa6e45",
+    "password": "08711cea",
+    "database": "heroku_f7afb2e4e2ed803",
+    "host": "us-cdbr-east-04.cleardb.com",
     "dialect": "mysql"
   }
 }
