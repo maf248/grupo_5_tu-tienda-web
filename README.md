@@ -27,6 +27,11 @@ Un listado de al menos 5 sitios de referencia indicando brevemente por qué fuer
 [- Webnode](https://www.webnode.es/#top)
 
 
+## [★ Live version:](https://grupo-5-tu-tienda-web.herokuapp.com)
+
+Podes ver la última version corriendo! Hicimos deploy tanto de la base de datos como del repositorio en [Heroku](https://grupo-5-tu-tienda-web.herokuapp.com)
+
+
 ## ● Información del grupo:
 ### Grupo #5 - Digital House, Full Stack Web Developer - 2020
 
