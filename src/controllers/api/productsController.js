@@ -14,7 +14,7 @@ module.exports = {
             products.forEach(product => {
                 detalleProducto.push({
                     id: product.id,
-                    url : `http://localhost:3000/api/products/${product.id}`,
+                    url : `http://grupo-5-tu-tienda-web.herokuapp.com/api/products/${product.id}`,
                     name: product.name,
                     type: product.type,
                     title_banner: product.title_banner,
@@ -73,7 +73,7 @@ module.exports = {
                     type: product.type,
                     title_banner: product.title_banner,
                     subtitle_banner: product.subtitle_banner,
-                    image : `http://localhost:3000/images/Producto-${product.id}/${product.image}`,
+                    image : `http://grupo-5-tu-tienda-web.herokuapp.com/images/Producto-${product.id}/${product.image}`,
                     created_at: product.created_at,
                     Categories: product.Categories,
                     Sections: product.Sections
